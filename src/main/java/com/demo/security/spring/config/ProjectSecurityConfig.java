@@ -13,18 +13,24 @@ public class ProjectSecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception  {
-        http.authorizeHttpRequests((requests) ->
-                requests.requestMatchers(
-                        AccountController.ACCOUNT_RESOURCE_PATH,
-                        AccountController.ACCOUNT_RESOURCE_PATH + "/**",
-                        BalanceController.BALANCE_RESOURCE_PATH,
-                        BalanceController.BALANCE_RESOURCE_PATH + "/**",
-                        CardsController.CARDS_RESOURCE_PATH,
-                        CardsController.CARDS_RESOURCE_PATH + "/**",
-                        LoansController.LOANS_RESOURCE_PATH,
-                        LoansController.LOANS_RESOURCE_PATH + "/**"
-                ).authenticated()
-                .anyRequest().permitAll()
+        http.authorizeHttpRequests((requests) -> requests
+                .requestMatchers(
+                    AccountController.ACCOUNT_RESOURCE_PATH,
+                    AccountController.ACCOUNT_RESOURCE_PATH + "/**",
+                    BalanceController.BALANCE_RESOURCE_PATH,
+                    BalanceController.BALANCE_RESOURCE_PATH + "/**",
+                    CardsController.CARDS_RESOURCE_PATH,
+                    CardsController.CARDS_RESOURCE_PATH + "/**",
+                    LoansController.LOANS_RESOURCE_PATH,
+                    LoansController.LOANS_RESOURCE_PATH + "/**")
+                .authenticated()
+                .requestMatchers(
+                       NoticesController.NOTICES_RESOURCE_PATH,
+                       NoticesController.NOTICES_RESOURCE_PATH + "/**",
+                       ContactController.CONTACT_RESOURCE_PATH,
+                       ContactController.CONTACT_RESOURCE_PATH + "/**"
+                )
+                .permitAll()
         );
         http.formLogin(withDefaults());
         http.httpBasic(withDefaults());
