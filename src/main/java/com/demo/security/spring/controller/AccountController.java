@@ -8,7 +8,7 @@ public class AccountController {
 
     public static final String ACCOUNT_RESOURCE_PATH = "/myAccount";
 
-    @GetMapping(ACCOUNT_RESOURCE_PATH)
+    @GetMapping( ACCOUNT_RESOURCE_PATH)
     public String getAccountDetails() {
         return "Placeholder account details";
     }
