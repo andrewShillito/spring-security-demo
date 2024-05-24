@@ -1,4 +1,4 @@
-package com.security.basic;
+package com.demo.security.spring.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +20,14 @@ class WelcomeControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    private static final String WELCOME_RESOURCE = "/welcome";
-
     @Test
     void testWelcomeUnauthorized() throws Exception {
-        mockMvc.perform(get(WELCOME_RESOURCE)).andExpect(status().isUnauthorized());
+        mockMvc.perform(get(WelcomeController.WELCOME_RESOURCE_PATH)).andExpect(status().isUnauthorized());
     }
 
     @Test
     void testWelcomeBasicAuth() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get(WELCOME_RESOURCE).with(user("welcome-user")))
+        MvcResult mvcResult = mockMvc.perform(get(WelcomeController.WELCOME_RESOURCE_PATH).with(user("welcome-user")))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.TEXT_PLAIN + ";charset=UTF-8"))
                 .andReturn();
