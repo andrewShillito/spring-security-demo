@@ -1,0 +1,4 @@
+user,password,read
+admin,password,admin
+other,password,read
+otherAdmin,password,read|admin

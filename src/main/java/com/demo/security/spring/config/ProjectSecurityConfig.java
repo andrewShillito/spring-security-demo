@@ -1,9 +1,12 @@
 package com.demo.security.spring.config;
 
 import com.demo.security.spring.controller.*;
+import com.demo.security.spring.utils.SeedUtils;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
@@ -35,5 +38,16 @@ public class ProjectSecurityConfig {
         http.formLogin(withDefaults());
         http.httpBasic(withDefaults());
         return http.build();
+    }
+
+    /**
+     * <em>For demo/dev-environment purposes only</em>
+     * <p>Seeds a number of users from a local csv file into an in-memory user details manager</p>
+     * @return an in memory user details manager which is only safe for local demo or sample applications
+     */
+    @Bean
+    @ConditionalOnProperty(value = "inMemory.user.details.manager", havingValue = "true")
+    public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
+        return new InMemoryUserDetailsManager(SeedUtils.getInMemoryUsers());
     }
 }
