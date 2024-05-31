@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
@@ -54,8 +56,8 @@ public class ProjectSecurityConfig {
      */
     @Bean(name = "userDetailsService")
     @Profile(PROFILE_IN_MEMORY_USERS)
-    public UserDetailsService inMemoryUserDetailsManager() {
-        return new InMemoryUserDetailsManager(SeedUtils.getInMemoryUsers());
+    public UserDetailsService inMemoryUserDetailsManager(final PasswordEncoder passwordEncoder) {
+        return new InMemoryUserDetailsManager(SeedUtils.getInMemoryUsers(passwordEncoder));
     }
 
     /**
@@ -68,5 +70,10 @@ public class ProjectSecurityConfig {
     @Profile("! " + PROFILE_IN_MEMORY_USERS)
     public UserDetailsService jdbcUserDetailsManager(final DataSource dataSource) {
         return new JdbcUserDetailsManager(dataSource);
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 }

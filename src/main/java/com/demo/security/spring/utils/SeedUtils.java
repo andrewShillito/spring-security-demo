@@ -7,6 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class SeedUtils {
      * userName3,password3,authority1|authority2
      * @return list of user details object to be seeded into in-memory user details manager
      */
-    public static List<UserDetails> getInMemoryUsers() {
+    public static List<UserDetails> getInMemoryUsers(final PasswordEncoder passwordEncoder) {
         ClassPathResource resource = getClassPathResource("seed/in-memory-users.csv");
         try (BufferedReader in = new BufferedReader(new InputStreamReader(resource.getInputStream()))) {
             List<UserDetails> users = new ArrayList<>();
@@ -41,11 +42,10 @@ public class SeedUtils {
                     log.warn(() -> "User from line " + finalLine + " has no authorities!");
                 }
                 // unsafe and only for sample local app
-                users.add(User.withDefaultPasswordEncoder()
-                        .username(cols[0].trim())
-                        .password(cols[1].trim())
-                        .authorities(authorities)
-                        .build()
+                users.add(User
+                        .withUsername(cols[0].trim())
+                        .password(passwordEncoder.encode(cols[1].trim()))
+                        .authorities(authorities).build()
                 );
             }
             if (!users.isEmpty()) {

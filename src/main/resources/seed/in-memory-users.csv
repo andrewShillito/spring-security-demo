@@ -1,4 +1,6 @@
 user,password,read
 admin,password,admin
-other,password,read
+otherUser,password,read
 otherAdmin,password,read|admin
+userDisabled,password,read
+adminDisabled,password,admin
