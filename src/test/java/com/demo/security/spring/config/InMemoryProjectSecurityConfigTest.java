@@ -9,8 +9,9 @@ import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
-@ActiveProfiles(value = "inMemoryUsers")
+@SpringBootTest(properties = "spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration")
+// can also turn off org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration if hibernate / jpa is added in
+@ActiveProfiles(value = ProjectSecurityConfig.PROFILE_IN_MEMORY_USERS)
 class InMemoryProjectSecurityConfigTest {
 
     @Autowired
