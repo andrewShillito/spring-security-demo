@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="SpringSecurityDemoApplication - inMemoryUsers" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-    <option name="ACTIVE_PROFILES" value="inMemoryUsers" />
+    <option name="ACTIVE_PROFILES" value="inMemoryUsers,default" />
     <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
     <module name="SpringSecurityDemo" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.security.spring.SpringSecurityDemoApplication" />
