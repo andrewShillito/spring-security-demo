@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-@Table(name = "security_user")
+@Table(name = "security_users")
 @Getter
 @Setter
 @ToString(exclude = {"username", "password"}) // don't want these in logs
@@ -53,7 +53,7 @@ public class SecurityUser implements UserDetails {
     @Column(name = "locked_date")
     private ZonedDateTime lockedDate;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<SecurityAuthorities> authorities;
 
     @Override

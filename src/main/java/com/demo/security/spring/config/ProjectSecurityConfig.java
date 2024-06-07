@@ -1,6 +1,8 @@
 package com.demo.security.spring.config;
 
 import com.demo.security.spring.controller.*;
+import com.demo.security.spring.repository.SecurityUserRepository;
+import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
 import com.demo.security.spring.utils.SeedUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -63,13 +65,16 @@ public class ProjectSecurityConfig {
     /**
      * Create a jdbc user details manager. Note that the docker-compose file and spring-boot-docker-compose
      * by default start a postgres and adminer container.
-     * @param dataSource
+     * @param repository - a spring data jpa repository
      * @return JdbcUserDetailsManager
      */
     @Bean(name = "userDetailsService")
     @Profile("! " + PROFILE_IN_MEMORY_USERS)
-    public UserDetailsService jdbcUserDetailsManager(final DataSource dataSource) {
-        return new JdbcUserDetailsManager(dataSource);
+    public UserDetailsService jpaUserDetailsService(final SecurityUserRepository repository) {
+        return SpringDataJpaUserDetailsService
+            .builder()
+            .securityUserRepository(repository)
+            .build();
     }
 
     @Bean

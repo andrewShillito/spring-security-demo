@@ -1,5 +1,5 @@
 INSERT INTO
-    security_users (id, username, email, password, user_type, user_role, enabled)
+    demo.security_users (id, username, email, password, user_type, user_role, enabled)
 VALUES
     (1, 'user', 'user@demo.com', '{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa', 'external', 'standard', true),
     (2, 'admin', 'admin@demo.com', '{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa', 'internal', 'admin', true),
@@ -10,7 +10,7 @@ VALUES
 ;
 
 INSERT INTO
-    security_authorities (user_id, authority)
+    demo.security_authorities (user_id, authority)
 VALUES
     (1, 'read'),
     (2, 'admin'),
