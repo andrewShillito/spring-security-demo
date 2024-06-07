@@ -16,7 +16,8 @@ public class SpringDataJpaUserDetailsService implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    Preconditions.checkArgument(StringUtils.isNotBlank(username), "Username " + username + " is not valid");
+    Preconditions.checkArgument(StringUtils.isNotBlank(username),
+        "Username " + username + " is not valid");
     final SecurityUser user = securityUserRepository.getSecurityUserByUsername(username);
     if (user == null) {
       throw new UsernameNotFoundException("User with username " + username + " was not found.");

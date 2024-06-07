@@ -5,9 +5,13 @@ import lombok.ToString;
 @ToString
 public enum UserType {
 
-    /** External users of the application */
-    external,
+  /**
+   * External users of the application
+   */
+  external,
 
-    /** internal users of the application */
-    internal
+  /**
+   * internal users of the application
+   */
+  internal
 }
