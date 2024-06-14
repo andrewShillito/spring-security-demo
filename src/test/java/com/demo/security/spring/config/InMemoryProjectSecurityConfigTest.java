@@ -9,7 +9,9 @@ import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(properties = "spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration")
+@SpringBootTest(properties = "spring.autoconfigure.exclude="
+    + "org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration"
+    + ",org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration")
 // can also turn off org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration if hibernate / jpa is added in
 @ActiveProfiles(value = ProjectSecurityConfig.PROFILE_IN_MEMORY_USERS)
 class InMemoryProjectSecurityConfigTest {

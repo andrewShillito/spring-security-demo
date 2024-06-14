@@ -18,8 +18,6 @@ create table IF NOT EXISTS demo.security_users
     locked_date timestamp
 );
 
-ALTER SEQUENCE demo.security_users_id_seq INCREMENT BY 50;
-
 create table IF NOT EXISTS demo.security_authorities
 (
     id bigserial not null primary key,
@@ -29,5 +27,3 @@ create table IF NOT EXISTS demo.security_authorities
 );
 
 create unique index IF NOT EXISTS ix_auth_user_id on demo.security_authorities (user_id, authority);
-
-ALTER SEQUENCE demo.security_authorities_id_seq INCREMENT BY 50;

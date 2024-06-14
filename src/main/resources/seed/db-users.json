@@ -1,0 +1,83 @@
+[
+  {
+    "username": "user",
+    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "userType": "external",
+    "email": "user@demo.com",
+    "userRole": "STANDARD",
+    "enabled": true,
+    "authorities": [
+      {
+        "authority": "ROLE_USER"
+      }
+    ]
+  },
+  {
+    "username": "admin",
+    "email": "admin@demo.com",
+    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "userType": "internal",
+    "userRole": "ADMIN",
+    "enabled": true,
+    "authorities": [
+      {
+        "authority": "ROLE_ADMIN"
+      }
+    ]
+  },
+  {
+    "username": "otherUser",
+    "email": "otherUser@demo.com",
+    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "userType": "external",
+    "userRole": "STANDARD",
+    "enabled": true,
+    "authorities": [
+      {
+        "authority": "ROLE_USER"
+      }
+    ]
+  },
+  {
+    "username": "otherAdmin",
+    "email": "otherAdmin@demo.com",
+    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "userType": "internal",
+    "userRole": "ADMIN",
+    "enabled": true,
+    "authorities": [
+      {
+        "authority": "ROLE_ADMIN"
+      },
+      {
+        "authority": "ROLE_USER"
+      }
+    ]
+  },
+  {
+    "username": "userDisabled",
+    "email": "userDisabled@demo.com",
+    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "userType": "external",
+    "userRole": "STANDARD",
+    "enabled": false,
+    "authorities": [
+      {
+        "authority": "ROLE_USER"
+      }
+    ]
+  },
+  {
+    "username": "adminDisabled",
+    "email": "adminDisabled@demo.com",
+    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "userType": "internal",
+    "userRole": "ADMIN",
+    "enabled": false,
+    "authorities": [
+      {
+        "authority": "ROLE_ADMIN"
+      }
+    ]
+  }
+]

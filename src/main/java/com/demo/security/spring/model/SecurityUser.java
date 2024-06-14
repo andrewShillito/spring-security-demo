@@ -10,7 +10,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.time.ZonedDateTime;
 import java.util.Collection;
 import java.util.List;
@@ -25,23 +28,29 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Getter
 @Setter
 @ToString(exclude = {"username", "password"}) // don't want these in logs
+@SequenceGenerator(name = "security_users_id_seq", sequenceName = "security_users_id_seq", allocationSize = 50)
 public class SecurityUser implements UserDetails {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "security_users_id_seq")
   private Long id;
 
+  @NotBlank
   private String username;
 
+  @NotBlank
   private String email;
 
+  @NotBlank
   private String password;
 
   @Column(name = "user_type")
   @Enumerated(EnumType.STRING)
-  private UserType userType;
+  @NotNull
+  private UserType userType = UserType.external;
 
-  private String userRole;
+  @NotBlank
+  private String userRole = "STANDARD";
 
   private boolean enabled;
 
@@ -68,6 +77,11 @@ public class SecurityUser implements UserDetails {
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
     return authorities;
+  }
+
+  public void setAuthorities(List<SecurityAuthority> authorities) {
+    authorities.forEach(auth -> { if (auth.getUser() == null) { auth.setUser(this); } });
+    this.authorities = authorities;
   }
 
   @Override

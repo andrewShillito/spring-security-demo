@@ -1,16 +1,22 @@
 package com.demo.security.spring.controller;
 
+import com.demo.security.spring.controller.error.UserCreationException;
 import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
-import com.demo.security.spring.repository.SecurityUserRepository;
+import com.demo.security.spring.service.LoginService;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.base.Preconditions;
-import org.apache.commons.lang3.StringUtils;
+import jakarta.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.ErrorResponseException;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,75 +26,76 @@ public class LoginController {
 
   public static final String RESOURCE_PATH = "/user";
 
-  // TODO: setup different login services for in-memory vs. using db repository
   @Autowired
-  private SecurityUserRepository securityUserRepository;
+  private LoginService loginService;
 
   @Autowired
   private ObjectMapper objectMapper;
 
   /**
-   * TODO: handle error responses
-   * TODO: implement roles and privleges
-   *
+   * Create a new user
    * @param user
    * @return
    */
   @PostMapping(RESOURCE_PATH)
-  public ResponseEntity<String> registerUser(@Validated @RequestBody final SecurityUser user) {
+  public ResponseEntity<String> registerUser(@Valid @RequestBody final SecurityUser user, BindingResult bindingResult) {
     ResponseEntity<String> responseEntity = null;
-    try {
-      validateUser(user);
-      setAuthoritiesParentUser(user);
-    } catch (Exception e) {
-      throw new ErrorResponseException(HttpStatus.BAD_REQUEST, e);
+    if (bindingResult.hasErrors()) {
+      throw new UserCreationException(HttpStatus.BAD_REQUEST, bindingResult.getAllErrors().toString());
     }
     try {
-      if (securityUserRepository.getSecurityUserByUsername(user.getUsername()) != null) {
-        throw new ErrorResponseException(HttpStatus.BAD_REQUEST, new IllegalArgumentException(
-            "User with username: '" + user.getUsername() + "' already exists"));
-      }
-      final SecurityUser createdUser = securityUserRepository.save(user);
+      final SecurityUser createdUser = loginService.createUser(user);
       if (createdUser.getId() != null) {
+        final UserCreationResponse response = UserCreationResponse
+            .builder()
+            .id(createdUser.getId())
+            .username(createdUser.getUsername())
+            .authorities(createdUser.getAuthorities().stream().map(AuthorityCreationResponse::fromAuthority).toList())
+            .build();
         responseEntity = ResponseEntity
             .status(HttpStatus.CREATED.value())
-            // TODO: do not send full user - only new id
-            .body(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(createdUser));
+            .body(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response));
       }
     } catch (Exception e) {
-      throw new ErrorResponseException(HttpStatus.BAD_REQUEST, e);
+      throw new UserCreationException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
     }
     return responseEntity;
   }
 
-  private void validateUser(final SecurityUser user) {
-    Preconditions.checkNotNull(user, "Received empty user");
-    Preconditions.checkArgument(user.getId() == null, "User id must not be provided");
-    Preconditions.checkArgument(StringUtils.isNotBlank(user.getUsername()),
-        "Username must not be blank");
-    Preconditions.checkNotNull(user.getUserType(),
-        "User type must be one of 'external', or 'internal'");
-    Preconditions.checkArgument(StringUtils.isNotBlank(user.getEmail()),
-        "User email must not be blank");
-    Preconditions.checkArgument(user.getAuthorities() != null
-            && !user.getAuthorities().isEmpty()
-            && user.getAuthorities().stream().allMatch(it -> StringUtils.isNotBlank(it.getAuthority())),
-        "User must have at least one authority and authorities must be non blank");
+  @Getter
+  @Setter
+  @Builder
+  @JsonPropertyOrder(value = { "id", "username" })
+  public static class UserCreationResponse {
+
+    private Long id;
+
+    private String username;
+
+    private List<AuthorityCreationResponse> authorities = new ArrayList<>();
+
   }
 
-  /**
-   * We need to set the parent user for authorities passed in via api, otherwise they don't save
-   * appropriately.
-   * TODO: can use custom json-deserialization for this or modify the setter in the SecurityUser instead
-   */
-  private void setAuthoritiesParentUser(SecurityUser user) {
-    user.getAuthorities().forEach(it -> {
-      if (it instanceof SecurityAuthority) {
-        ((SecurityAuthority) it).setUser(user);
+  @Getter
+  @Setter
+  @Builder
+  @JsonPropertyOrder(value = { "id", "role" })
+  public static class AuthorityCreationResponse {
+
+    private String role;
+
+    private Long id;
+
+    static AuthorityCreationResponse fromAuthority(GrantedAuthority authority) {
+      if (authority instanceof SecurityAuthority securityAuthority) {
+        return AuthorityCreationResponse.builder()
+            .id(securityAuthority.getId())
+            .role(securityAuthority.getAuthority())
+            .build();
       } else {
-        throw new IllegalArgumentException("Found invalid authority type");
+        throw new IllegalArgumentException("Authority implementations other than SimpleGrantedAuthority are not supported.");
       }
-    });
+    }
   }
 
 }

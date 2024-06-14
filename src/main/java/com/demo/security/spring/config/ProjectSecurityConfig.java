@@ -10,7 +10,11 @@ import com.demo.security.spring.controller.LoansController;
 import com.demo.security.spring.controller.LoginController;
 import com.demo.security.spring.controller.NoticesController;
 import com.demo.security.spring.repository.SecurityUserRepository;
+import com.demo.security.spring.service.InMemoryLoginService;
+import com.demo.security.spring.service.JpaLoginService;
+import com.demo.security.spring.service.LoginService;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
+import com.demo.security.spring.utils.DevEnvironmentDbPopulator;
 import com.demo.security.spring.utils.SeedUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,6 +34,9 @@ public class ProjectSecurityConfig {
    * of postgres and adminer
    */
   public static final String PROFILE_IN_MEMORY_USERS = "inMemoryUsers";
+
+  /** A profile which uses postgres database */
+  public static final String PROFILE_POSTGRES = "postgres";
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -91,8 +98,38 @@ public class ProjectSecurityConfig {
         .build();
   }
 
+  /**
+   * For development environment usage only.
+   * Populates the database with test users defined in a json resource file.
+   * @param repository
+   * @return DevEnvironmentDbPopulator
+   */
+  @Bean
+  @Profile("! " + PROFILE_IN_MEMORY_USERS + " && " + PROFILE_POSTGRES)
+  public DevEnvironmentDbPopulator devEnvironmentDbPopulator(final SecurityUserRepository repository) {
+    return DevEnvironmentDbPopulator.builder()
+        .securityUserRepository(repository)
+        .build();
+  }
+
   @Bean
   public PasswordEncoder passwordEncoder() {
     return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+  }
+
+  @Bean(name = "loginService")
+  @Profile(PROFILE_IN_MEMORY_USERS)
+  public LoginService inMemoryLoginService(UserDetailsService userDetailsService) {
+    if (!(userDetailsService instanceof InMemoryUserDetailsManager)) {
+      throw new RuntimeException("Provided userDetailsService was expected to be InMemoryUserDetailsManager but was "
+          + userDetailsService.getClass().getName());
+    }
+    return InMemoryLoginService.builder().userDetailsService(userDetailsService).build();
+  }
+
+  @Bean(name = "loginService")
+  @Profile("! " + PROFILE_IN_MEMORY_USERS)
+  public LoginService jpaLoginService(final SecurityUserRepository securityUserRepository) {
+    return JpaLoginService.builder().securityUserRepository(securityUserRepository).build();
   }
 }
