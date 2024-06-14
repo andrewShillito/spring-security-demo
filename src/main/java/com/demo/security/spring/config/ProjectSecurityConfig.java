@@ -129,7 +129,10 @@ public class ProjectSecurityConfig {
 
   @Bean(name = "loginService")
   @Profile("! " + PROFILE_IN_MEMORY_USERS)
-  public LoginService jpaLoginService(final SecurityUserRepository securityUserRepository) {
-    return JpaLoginService.builder().securityUserRepository(securityUserRepository).build();
+  public LoginService jpaLoginService(final SecurityUserRepository securityUserRepository, final PasswordEncoder passwordEncoder) {
+    return JpaLoginService.builder()
+        .securityUserRepository(securityUserRepository)
+        .passwordEncoder(passwordEncoder)
+        .build();
   }
 }

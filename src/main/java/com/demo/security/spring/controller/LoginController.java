@@ -1,10 +1,13 @@
 package com.demo.security.spring.controller;
 
+import com.demo.security.spring.controller.error.BindingResultUtils;
+import com.demo.security.spring.controller.error.ErrorDetailsResponse;
 import com.demo.security.spring.controller.error.UserCreationException;
 import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.service.LoginService;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.validation.Valid;
 import java.util.ArrayList;
@@ -17,6 +20,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,11 +30,19 @@ public class LoginController {
 
   public static final String RESOURCE_PATH = "/user";
 
-  @Autowired
   private LoginService loginService;
 
-  @Autowired
   private ObjectMapper objectMapper;
+
+  @Autowired
+  public void setLoginService(LoginService loginService) {
+    this.loginService = loginService;
+  }
+
+  @Autowired
+  public void setObjectMapper(ObjectMapper objectMapper) {
+    this.objectMapper = objectMapper;
+  }
 
   /**
    * Create a new user
@@ -38,10 +50,13 @@ public class LoginController {
    * @return
    */
   @PostMapping(RESOURCE_PATH)
-  public ResponseEntity<String> registerUser(@Valid @RequestBody final SecurityUser user, BindingResult bindingResult) {
+  public ResponseEntity<String> registerUser(@Valid @RequestBody final SecurityUser user, final BindingResult bindingResult)
+      throws JsonProcessingException {
     ResponseEntity<String> responseEntity = null;
     if (bindingResult.hasErrors()) {
-      throw new UserCreationException(HttpStatus.BAD_REQUEST, bindingResult.getAllErrors().toString());
+      final String body = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(
+          BindingResultUtils.generateErrorDetails(bindingResult));
+      throw new UserCreationException(HttpStatus.BAD_REQUEST, body);
     }
     try {
       final SecurityUser createdUser = loginService.createUser(user);
@@ -57,7 +72,10 @@ public class LoginController {
             .body(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response));
       }
     } catch (Exception e) {
-      throw new UserCreationException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
+      final String errorMessage = "Failed to create user with error: " + e.getMessage();
+      final ErrorDetailsResponse response = ErrorDetailsResponse.builder().errorMessage(errorMessage).build();
+      throw new UserCreationException(HttpStatus.BAD_REQUEST,
+          objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response), e);
     }
     return responseEntity;
   }
@@ -96,6 +114,14 @@ public class LoginController {
         throw new IllegalArgumentException("Authority implementations other than SimpleGrantedAuthority are not supported.");
       }
     }
+  }
+
+  @ExceptionHandler(value = { UserCreationException.class })
+  public ResponseEntity<Object> handleUserCreationException(UserCreationException ex) {
+    return ResponseEntity
+        .status(ex.getStatusCode())
+        .headers(ex.getHeaders())
+        .body(ex.getReason());
   }
 
 }
