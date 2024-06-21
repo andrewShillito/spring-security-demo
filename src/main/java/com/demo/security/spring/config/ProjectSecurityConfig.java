@@ -15,7 +15,7 @@ import com.demo.security.spring.service.JpaLoginService;
 import com.demo.security.spring.service.LoginService;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
 import com.demo.security.spring.utils.DevEnvironmentDbPopulator;
-import com.demo.security.spring.utils.SeedUtils;
+import com.demo.security.spring.service.ExampleUsersManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -78,8 +78,8 @@ public class ProjectSecurityConfig {
    */
   @Bean(name = "userDetailsService")
   @Profile(PROFILE_IN_MEMORY_USERS)
-  public UserDetailsService inMemoryUserDetailsManager() {
-    return new InMemoryUserDetailsManager(SeedUtils.getInMemoryUsers());
+  public UserDetailsService inMemoryUserDetailsManager(final ExampleUsersManager exampleUsersManager) {
+    return new InMemoryUserDetailsManager(exampleUsersManager.getInMemoryUsers());
   }
 
   /**
@@ -106,8 +106,9 @@ public class ProjectSecurityConfig {
    */
   @Bean
   @Profile("! " + PROFILE_IN_MEMORY_USERS + " && " + PROFILE_POSTGRES)
-  public DevEnvironmentDbPopulator devEnvironmentDbPopulator(final SecurityUserRepository repository) {
+  public DevEnvironmentDbPopulator devEnvironmentDbPopulator(final SecurityUserRepository repository, final ExampleUsersManager exampleUsersManager) {
     return DevEnvironmentDbPopulator.builder()
+        .exampleUsersManager(exampleUsersManager)
         .securityUserRepository(repository)
         .build();
   }
@@ -134,5 +135,16 @@ public class ProjectSecurityConfig {
         .securityUserRepository(securityUserRepository)
         .passwordEncoder(passwordEncoder)
         .build();
+  }
+
+  /**
+   * The examples users manager handles retrieving example users from resource files
+   * for development and testing environments
+   * @param passwordEncoder the encoder to use for user passwords
+   * @return an example users manager
+   */
+  @Bean
+  public ExampleUsersManager exampleUsersManager(final PasswordEncoder passwordEncoder) {
+    return ExampleUsersManager.builder().passwordEncoder(passwordEncoder).build();
   }
 }

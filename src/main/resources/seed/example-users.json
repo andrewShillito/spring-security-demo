@@ -1,7 +1,7 @@
 [
   {
     "username": "user",
-    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "password": "password",
     "userType": "external",
     "email": "user@demo.com",
     "userRole": "STANDARD",
@@ -15,7 +15,7 @@
   {
     "username": "admin",
     "email": "admin@demo.com",
-    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "password": "password",
     "userType": "internal",
     "userRole": "ADMIN",
     "enabled": true,
@@ -28,7 +28,7 @@
   {
     "username": "otherUser",
     "email": "otherUser@demo.com",
-    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "password": "password",
     "userType": "external",
     "userRole": "STANDARD",
     "enabled": true,
@@ -41,7 +41,7 @@
   {
     "username": "otherAdmin",
     "email": "otherAdmin@demo.com",
-    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "password": "password",
     "userType": "internal",
     "userRole": "ADMIN",
     "enabled": true,
@@ -57,7 +57,7 @@
   {
     "username": "userDisabled",
     "email": "userDisabled@demo.com",
-    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "password": "password",
     "userType": "external",
     "userRole": "STANDARD",
     "enabled": false,
@@ -70,7 +70,7 @@
   {
     "username": "adminDisabled",
     "email": "adminDisabled@demo.com",
-    "password": "{bcrypt}$2a$10$8BVum5sbIjSE9tx7KY24ZerJyKkm8zyIS8p.XEB4PwHeOP6K3lzpa",
+    "password": "password",
     "userType": "internal",
     "userRole": "ADMIN",
     "enabled": false,

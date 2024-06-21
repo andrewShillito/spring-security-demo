@@ -1,4 +1,4 @@
-package com.demo.security.spring.utils;
+package com.demo.security.spring.service;
 
 import com.demo.security.spring.model.SecurityUser;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -6,21 +6,35 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.Builder;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * Handles retrieving lists of example users from resource files for local dev environment testing.
+ */
 @Log4j2
-public class SeedUtils {
+@Builder
+@Setter
+public class ExampleUsersManager {
+
+  private PasswordEncoder passwordEncoder;
 
   /**
    * Returns a list of UserDetails from the result of {@link #getDevEnvironmentUsers()}
    * which reads a json file of example {@link SecurityUser} records.
+   * Encodes the example users passwords with the provided encoder.
    * @return list of user details object to be seeded into in-memory user details manager
    */
-  public static List<UserDetails> getInMemoryUsers() {
+  public List<UserDetails> getInMemoryUsers() {
     final List<SecurityUser> securityUsers = getDevEnvironmentUsers();
-    return securityUsers.stream().map(it -> (UserDetails) it).collect(Collectors.toList());
+    return securityUsers
+        .stream()
+        .map(it -> (UserDetails) it)
+        .collect(Collectors.toList());
   }
 
   /**
@@ -30,7 +44,7 @@ public class SeedUtils {
    * Should not be used in any production environment.
    * @return a List of security users to populate into the database
    */
-  public static List<SecurityUser> getDevEnvironmentUsers() {
+  public List<SecurityUser> getDevEnvironmentUsers() {
     final ClassPathResource resource = getClassPathResource("seed/example-users.json");
     if (!resource.exists()) {
       throw new RuntimeException("Unable to locate development environment users seed file");
@@ -40,7 +54,9 @@ public class SeedUtils {
     final ObjectMapper objectMapper = new ObjectMapper();
     try {
       SecurityUser[] users = objectMapper.readValue(resource.getInputStream(), SecurityUser[].class);
-      return Arrays.asList(users);
+      return Arrays.stream(users)
+          .peek(user -> user.setPassword(passwordEncoder.encode(user.getPassword())))
+          .toList();
     } catch (IOException e) {
       throw new RuntimeException("Failed to populate development environment users into the database");
     }
@@ -54,7 +70,7 @@ public class SeedUtils {
    * @param path the resource path where the file is located
    * @return the ClassPathResource object
    */
-  public static ClassPathResource getClassPathResource(String path) {
+  private ClassPathResource getClassPathResource(String path) {
     // Guava has some nice stuff for reading classpath resources, I just wanted to do this manually this time
     ClassPathResource resource = new ClassPathResource(path);
     if (!resource.exists()) {
