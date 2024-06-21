@@ -1,9 +1,11 @@
 package com.demo.security.spring.authentication;
 
+import com.demo.security.spring.config.ProjectSecurityConfig;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,9 +15,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 /**
- * A small example username + password authentication provider
+ * A small example username + password authentication provider.
+ * This is only implemented for the postgres spring profile currently.
+ * InMemoryUserDetailsManager instead uses default spring-security authentication providers.
  */
 @Component
+@Profile(ProjectSecurityConfig.PROFILE_POSTGRES)
 public class UsernamePasswordAuthenticationProvider implements AuthenticationProvider {
 
   private SecurityUserRepository userRepository;
