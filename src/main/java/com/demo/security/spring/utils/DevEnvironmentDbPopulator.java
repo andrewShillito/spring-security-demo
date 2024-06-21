@@ -20,7 +20,7 @@ public class DevEnvironmentDbPopulator {
       log.info(() -> "Not repopulating development environment users as the table already contains data");
     } else {
       log.info(() -> "Populating development environment security users.");
-      List<SecurityUser> users = SeedUtils.getDevEnvironmentDbUsers();
+      List<SecurityUser> users = SeedUtils.getDevEnvironmentUsers();
       try {
         securityUserRepository.saveAll(users);
         log.info(() -> "Finished populating " + users.size() + " development environment users");

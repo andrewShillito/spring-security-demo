@@ -7,7 +7,7 @@ import com.demo.security.spring.controller.BalanceController;
 import com.demo.security.spring.controller.CardsController;
 import com.demo.security.spring.controller.ContactController;
 import com.demo.security.spring.controller.LoansController;
-import com.demo.security.spring.controller.LoginController;
+import com.demo.security.spring.controller.UserController;
 import com.demo.security.spring.controller.NoticesController;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.service.InMemoryLoginService;
@@ -52,8 +52,8 @@ public class ProjectSecurityConfig {
             LoansController.LOANS_RESOURCE_PATH + "/**")
         .authenticated()
         .requestMatchers(
-            LoginController.RESOURCE_PATH,
-            LoginController.RESOURCE_PATH + "/**"
+            UserController.RESOURCE_PATH,
+            UserController.RESOURCE_PATH + "/**"
         )
         .hasRole("ADMIN")
         .requestMatchers(
@@ -78,8 +78,8 @@ public class ProjectSecurityConfig {
    */
   @Bean(name = "userDetailsService")
   @Profile(PROFILE_IN_MEMORY_USERS)
-  public UserDetailsService inMemoryUserDetailsManager(final PasswordEncoder passwordEncoder) {
-    return new InMemoryUserDetailsManager(SeedUtils.getInMemoryUsers(passwordEncoder));
+  public UserDetailsService inMemoryUserDetailsManager() {
+    return new InMemoryUserDetailsManager(SeedUtils.getInMemoryUsers());
   }
 
   /**
@@ -101,7 +101,7 @@ public class ProjectSecurityConfig {
   /**
    * For development environment usage only.
    * Populates the database with test users defined in a json resource file.
-   * @param repository
+   * @param repository the {@link SecurityUserRepository} for interacting with postgres db
    * @return DevEnvironmentDbPopulator
    */
   @Bean

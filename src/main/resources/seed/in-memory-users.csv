@@ -1,6 +1,0 @@
-user,password,read
-admin,password,admin
-otherUser,password,read
-otherAdmin,password,read|admin
-userDisabled,password,read
-adminDisabled,password,admin

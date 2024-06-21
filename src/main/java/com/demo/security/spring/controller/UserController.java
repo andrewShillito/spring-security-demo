@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
@@ -23,10 +22,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class LoginController {
+@RequestMapping(UserController.RESOURCE_PATH)
+public class UserController {
 
   public static final String RESOURCE_PATH = "/user";
 
@@ -45,11 +46,13 @@ public class LoginController {
   }
 
   /**
-   * Create a new user
-   * @param user
-   * @return
+   * Create a new user if no validation errors for the given user and the provided username is unique.
+   * Otherwise, it throws {@link UserCreationException}.
+   * @param user the user to be registered - must have a unique username
+   * @param bindingResult the result of validating the provided user
+   * @return a response entity containing {@link UserCreationResponse} object or throws {@link UserCreationException}
    */
-  @PostMapping(RESOURCE_PATH)
+  @PostMapping
   public ResponseEntity<String> registerUser(@Valid @RequestBody final SecurityUser user, final BindingResult bindingResult)
       throws JsonProcessingException {
     ResponseEntity<String> responseEntity = null;
@@ -90,7 +93,7 @@ public class LoginController {
 
     private String username;
 
-    private List<AuthorityCreationResponse> authorities = new ArrayList<>();
+    private List<AuthorityCreationResponse> authorities;
 
   }
 
