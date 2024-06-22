@@ -1,3 +1,7 @@
+# About
+
+This repository is an in-progress spring security example app.
+
 # How to run
 
 **Requires Java 21 JDK**
