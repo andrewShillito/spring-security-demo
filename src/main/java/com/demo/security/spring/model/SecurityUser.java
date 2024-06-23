@@ -2,6 +2,7 @@ package com.demo.security.spring.model;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -10,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -73,6 +75,12 @@ public class SecurityUser implements UserDetails {
 
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
   private List<SecurityAuthority> authorities;
+
+  @OneToOne(fetch = FetchType.LAZY)
+  private Account account;
+
+  @Embedded
+  private EntityControlDates controlDates = new EntityControlDates();
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {

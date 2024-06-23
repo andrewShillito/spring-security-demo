@@ -14,12 +14,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * Handles retrieving lists of example users from resource files for local dev environment testing.
+ * Handles retrieving lists of example users and other data from resource files for local dev environment testing.
  */
 @Log4j2
 @Builder
 @Setter
-public class ExampleUsersManager {
+public class DevEnvironmentExampleDataManager {
 
   private PasswordEncoder passwordEncoder;
 

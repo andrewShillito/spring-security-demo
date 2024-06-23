@@ -15,7 +15,7 @@ import com.demo.security.spring.service.JpaLoginService;
 import com.demo.security.spring.service.LoginService;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
 import com.demo.security.spring.utils.DevEnvironmentDbPopulator;
-import com.demo.security.spring.service.ExampleUsersManager;
+import com.demo.security.spring.service.DevEnvironmentExampleDataManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -78,8 +78,8 @@ public class ProjectSecurityConfig {
    */
   @Bean(name = "userDetailsService")
   @Profile(PROFILE_IN_MEMORY_USERS)
-  public UserDetailsService inMemoryUserDetailsManager(final ExampleUsersManager exampleUsersManager) {
-    return new InMemoryUserDetailsManager(exampleUsersManager.getInMemoryUsers());
+  public UserDetailsService inMemoryUserDetailsManager(final DevEnvironmentExampleDataManager devEnvironmentExampleDataManager) {
+    return new InMemoryUserDetailsManager(devEnvironmentExampleDataManager.getInMemoryUsers());
   }
 
   /**
@@ -106,9 +106,9 @@ public class ProjectSecurityConfig {
    */
   @Bean
   @Profile("! " + PROFILE_IN_MEMORY_USERS + " && " + PROFILE_POSTGRES)
-  public DevEnvironmentDbPopulator devEnvironmentDbPopulator(final SecurityUserRepository repository, final ExampleUsersManager exampleUsersManager) {
+  public DevEnvironmentDbPopulator devEnvironmentDbPopulator(final SecurityUserRepository repository, final DevEnvironmentExampleDataManager devEnvironmentExampleDataManager) {
     return DevEnvironmentDbPopulator.builder()
-        .exampleUsersManager(exampleUsersManager)
+        .exampleDataManager(devEnvironmentExampleDataManager)
         .securityUserRepository(repository)
         .build();
   }
@@ -144,7 +144,7 @@ public class ProjectSecurityConfig {
    * @return an example users manager
    */
   @Bean
-  public ExampleUsersManager exampleUsersManager(final PasswordEncoder passwordEncoder) {
-    return ExampleUsersManager.builder().passwordEncoder(passwordEncoder).build();
+  public DevEnvironmentExampleDataManager exampleUsersManager(final PasswordEncoder passwordEncoder) {
+    return DevEnvironmentExampleDataManager.builder().passwordEncoder(passwordEncoder).build();
   }
 }

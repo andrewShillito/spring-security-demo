@@ -1,3 +1,3 @@
 SELECT 1 AS DUMMY;
 
--- database seeding is being handled by DevEnvironmentDbPopulator which seems to work better with JPA
+-- db population is handled by DevEnvironmentDbPopulator which works better with JPA and can have conditional logic

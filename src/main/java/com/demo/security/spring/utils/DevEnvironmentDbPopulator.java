@@ -2,7 +2,7 @@ package com.demo.security.spring.utils;
 
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.SecurityUserRepository;
-import com.demo.security.spring.service.ExampleUsersManager;
+import com.demo.security.spring.service.DevEnvironmentExampleDataManager;
 import java.util.List;
 import lombok.Builder;
 import lombok.extern.log4j.Log4j2;
@@ -14,7 +14,17 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Log4j2
 public class DevEnvironmentDbPopulator {
 
-  private ExampleUsersManager exampleUsersManager;
+  /*
+  * TODO:
+  *  - see https://github.com/eazybytes/springsecurity6/blob/3.2.0/section6/springsecsection6/src/main/resources/sql/scripts.sql
+  *    for some example insert statements to change into jpa config / population
+  *  - update/create jpa entities
+  *  - make jpa repositories & queries as needed
+  *  - finish this class
+  *  - note that this class is only loaded for postgres profile right now ( so does not run in test h2 db )
+  */
+
+  private DevEnvironmentExampleDataManager exampleDataManager;
 
   private SecurityUserRepository securityUserRepository;
 
@@ -22,11 +32,15 @@ public class DevEnvironmentDbPopulator {
 
   @EventListener(ContextRefreshedEvent.class)
   public void seedDatabaseIfEmpty() {
+    populateUsers();
+  }
+
+  private void populateUsers() {
     if (securityUserRepository.count() > 0) {
       log.info(() -> "Not repopulating development environment users as the table already contains data");
     } else {
       log.info(() -> "Populating development environment security users.");
-      List<SecurityUser> users = exampleUsersManager.getDevEnvironmentUsers();
+      List<SecurityUser> users = exampleDataManager.getDevEnvironmentUsers();
       try {
         securityUserRepository.saveAll(users);
         log.info(() -> "Finished populating " + users.size() + " development environment users");
@@ -34,6 +48,30 @@ public class DevEnvironmentDbPopulator {
         throw new RuntimeException("Failed to populate development environment security users with error!", e);
       }
     }
+  }
+
+  private void populateAccounts() {
+
+  }
+
+  private void populateAccountTransactions() {
+
+  }
+
+  private void populateLoans() {
+
+  }
+
+  private void populateCards() {
+
+  }
+
+  private void populateNoticeDetails() {
+
+  }
+
+  private void populateContactMessages() {
+
   }
 
 }
