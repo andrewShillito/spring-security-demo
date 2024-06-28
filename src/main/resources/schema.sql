@@ -81,8 +81,8 @@ CREATE TABLE IF NOT EXISTS demo.notice_details (
     notice_id bigserial not null primary key,
     notice_summary varchar(200) not null,
     notice_details varchar(500) not null,
-    notice_start_date timestamp with time zone not null,
-    notice_end_date timestamp with time zone not null,
+    start_date timestamp with time zone not null,
+    end_date timestamp with time zone not null,
     created_date timestamp with time zone not null,
     last_updated_date timestamp with time zone not null
 );
