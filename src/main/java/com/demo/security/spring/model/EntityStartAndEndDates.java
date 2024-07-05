@@ -23,20 +23,4 @@ public class EntityStartAndEndDates {
   @Column(name = "end_date")
   private ZonedDateTime end_date;
 
-  @Column(name = "created_date")
-  private ZonedDateTime created;
-
-  @Column(name = "last_updated_date")
-  private ZonedDateTime lastUpdated;
-
-  @PrePersist
-  protected void onCreate() {
-    created = ZonedDateTime.now();
-    lastUpdated = ZonedDateTime.now();
-  }
-
-  @PreUpdate
-  protected void onUpdate() {
-    lastUpdated = ZonedDateTime.now();
-  }
 }

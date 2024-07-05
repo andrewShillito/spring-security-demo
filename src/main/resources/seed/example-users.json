@@ -10,7 +10,54 @@
       {
         "authority": "ROLE_USER"
       }
-    ]
+    ],
+    "account": {
+      "accountType": "Savings",
+      "branchAddress": "Suite 062 863 Rocio Causeway, Lake Gordonland, PA 45886-5341",
+      "createdDate": "Tue May 21 20:16:00 EDT 2024",
+      "accountTransactions": [
+        {
+          "transactionDate": "Sat Jun 15 14:04:01 EDT 2024",
+          "transactionSummary": "Synergistic Silk Shoes",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.5853774268729366,
+          "closingBalance": 0.9800331046250589,
+          "createdDate": "1713439795102"
+        },
+        {
+          "transactionDate": "Wed May 29 05:44:30 EDT 2024",
+          "transactionSummary": "Incredible Steel Knife",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.24822661653975842,
+          "closingBalance": 0.24084155272671381,
+          "createdDate": "1715612363191"
+        },
+        {
+          "transactionDate": "Mon Apr 01 13:39:37 EDT 2024",
+          "transactionSummary": "Practical Cotton Car",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.8878048931088368,
+          "closingBalance": 0.32115507441783353,
+          "createdDate": "1717073226310"
+        },
+        {
+          "transactionDate": "Sat May 18 02:26:49 EDT 2024",
+          "transactionSummary": "Intelligent Wool Coat",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.10914676431844572,
+          "closingBalance": 0.5191553696210022,
+          "createdDate": "1716453333041"
+        },
+        {
+          "transactionDate": "Sat Jun 08 15:41:54 EDT 2024",
+          "transactionSummary": "Intelligent Bronze Bag",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.2352621126870016,
+          "closingBalance": 0.9959136313937731,
+          "createdDate": "1719543011734"
+        }
+      ]
+    }
   },
   {
     "username": "admin",
@@ -23,7 +70,54 @@
       {
         "authority": "ROLE_ADMIN"
       }
-    ]
+    ],
+    "account": {
+      "accountType": "Savings",
+      "branchAddress": "3209 Heathcote Shoal, Schillerfort, WY 94726-9100",
+      "createdDate": "Fri May 17 19:33:48 EDT 2024",
+      "accountTransactions": [
+        {
+          "transactionDate": "Wed May 22 09:01:00 EDT 2024",
+          "transactionSummary": "Aerodynamic Cotton Pants",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.32907769928335273,
+          "closingBalance": 0.08710675833992754,
+          "createdDate": "1714160482658"
+        },
+        {
+          "transactionDate": "Wed May 22 13:15:14 EDT 2024",
+          "transactionSummary": "Fantastic Concrete Hat",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.25829309596322325,
+          "closingBalance": 0.7692697661361761,
+          "createdDate": "1715933056876"
+        },
+        {
+          "transactionDate": "Tue Apr 02 13:49:29 EDT 2024",
+          "transactionSummary": "Intelligent Granite Keyboard",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.9555528434342488,
+          "closingBalance": 0.5439064272268848,
+          "createdDate": "1714894720738"
+        },
+        {
+          "transactionDate": "Fri May 03 14:37:53 EDT 2024",
+          "transactionSummary": "Small Paper Pants",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.9370229999661346,
+          "closingBalance": 0.4480987522244789,
+          "createdDate": "1715290883847"
+        },
+        {
+          "transactionDate": "Tue May 14 21:41:36 EDT 2024",
+          "transactionSummary": "Rustic Wooden Bag",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.8005948062308484,
+          "closingBalance": 0.03743706876728292,
+          "createdDate": "1719467332398"
+        }
+      ]
+    }
   },
   {
     "username": "otherUser",
@@ -36,7 +130,54 @@
       {
         "authority": "ROLE_USER"
       }
-    ]
+    ],
+    "account": {
+      "accountType": "Savings",
+      "branchAddress": "5470 Quitzon Harbor, New Giovanni, WY 20323",
+      "createdDate": "Fri May 17 21:54:01 EDT 2024",
+      "accountTransactions": [
+        {
+          "transactionDate": "Sat Jun 08 09:33:10 EDT 2024",
+          "transactionSummary": "Durable Granite Lamp",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.8377130897366729,
+          "closingBalance": 0.48556232686257317,
+          "createdDate": "1717895169388"
+        },
+        {
+          "transactionDate": "Sun Apr 28 18:52:23 EDT 2024",
+          "transactionSummary": "Durable Wool Bench",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.23006000990898756,
+          "closingBalance": 0.016295953287993492,
+          "createdDate": "1713231494958"
+        },
+        {
+          "transactionDate": "Fri May 10 12:43:48 EDT 2024",
+          "transactionSummary": "Durable Bronze Gloves",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.443274067091907,
+          "closingBalance": 0.8298147441849744,
+          "createdDate": "1715684038688"
+        },
+        {
+          "transactionDate": "Thu Apr 11 05:47:22 EDT 2024",
+          "transactionSummary": "Practical Concrete Bench",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.0342396651954443,
+          "closingBalance": 0.041308794411121785,
+          "createdDate": "1712782484707"
+        },
+        {
+          "transactionDate": "Tue Jun 04 07:21:37 EDT 2024",
+          "transactionSummary": "Aerodynamic Leather Pants",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.5456845076342531,
+          "closingBalance": 0.9504721725663084,
+          "createdDate": "1713958455570"
+        }
+      ]
+    }
   },
   {
     "username": "otherAdmin",
@@ -52,7 +193,54 @@
       {
         "authority": "ROLE_USER"
       }
-    ]
+    ],
+    "account": {
+      "accountType": "Savings",
+      "branchAddress": "3977 Koss Greens, West Evelinchester, MT 94792",
+      "createdDate": "Fri Mar 29 07:47:51 EDT 2024",
+      "accountTransactions": [
+        {
+          "transactionDate": "Thu Jun 27 00:20:24 EDT 2024",
+          "transactionSummary": "Ergonomic Marble Table",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.6336305565257737,
+          "closingBalance": 0.5732579939461857,
+          "createdDate": "1719041488219"
+        },
+        {
+          "transactionDate": "Fri May 31 16:54:17 EDT 2024",
+          "transactionSummary": "Mediocre Wooden Lamp",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.27361616881854856,
+          "closingBalance": 0.8011283088830545,
+          "createdDate": "1712880244504"
+        },
+        {
+          "transactionDate": "Sat Apr 13 00:09:37 EDT 2024",
+          "transactionSummary": "Intelligent Copper Computer",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.42729578791272615,
+          "closingBalance": 0.7703440828313348,
+          "createdDate": "1717479791816"
+        },
+        {
+          "transactionDate": "Tue Apr 23 23:32:55 EDT 2024",
+          "transactionSummary": "Fantastic Wooden Hat",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.3100719281506148,
+          "closingBalance": 0.8704427930989704,
+          "createdDate": "1719135046929"
+        },
+        {
+          "transactionDate": "Mon Apr 08 12:50:13 EDT 2024",
+          "transactionSummary": "Aerodynamic Granite Pants",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.3507291882250376,
+          "closingBalance": 0.08758134922032201,
+          "createdDate": "1716944921062"
+        }
+      ]
+    }
   },
   {
     "username": "userDisabled",
@@ -65,7 +253,54 @@
       {
         "authority": "ROLE_USER"
       }
-    ]
+    ],
+    "account": {
+      "accountType": "Savings",
+      "branchAddress": "Apt. 832 2375 Rogahn Plains, Lake Manborough, FL 54489",
+      "createdDate": "Sat May 11 20:14:13 EDT 2024",
+      "accountTransactions": [
+        {
+          "transactionDate": "Tue Jun 18 07:23:41 EDT 2024",
+          "transactionSummary": "Incredible Cotton Gloves",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.8927970074388353,
+          "closingBalance": 0.8274310180844616,
+          "createdDate": "1716270117486"
+        },
+        {
+          "transactionDate": "Sat Apr 06 21:08:40 EDT 2024",
+          "transactionSummary": "Awesome Leather Gloves",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.7392454052210872,
+          "closingBalance": 0.5530123224270628,
+          "createdDate": "1712780468409"
+        },
+        {
+          "transactionDate": "Sun May 26 11:51:41 EDT 2024",
+          "transactionSummary": "Heavy Duty Leather Knife",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.3911540843375364,
+          "closingBalance": 0.791571605257124,
+          "createdDate": "1715264067456"
+        },
+        {
+          "transactionDate": "Wed May 08 15:06:55 EDT 2024",
+          "transactionSummary": "Synergistic Paper Computer",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.3903666836133456,
+          "closingBalance": 0.2533093654591936,
+          "createdDate": "1712570718191"
+        },
+        {
+          "transactionDate": "Sun May 19 20:24:29 EDT 2024",
+          "transactionSummary": "Heavy Duty Leather Bottle",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.9738109567983255,
+          "closingBalance": 0.03196915077450557,
+          "createdDate": "1719821876226"
+        }
+      ]
+    }
   },
   {
     "username": "adminDisabled",
@@ -78,6 +313,353 @@
       {
         "authority": "ROLE_ADMIN"
       }
-    ]
+    ],
+    "account": {
+      "accountType": "Savings",
+      "branchAddress": "Apt. 237 80381 Nada Valley, Napoleonburgh, MT 60823-7844",
+      "createdDate": "Thu Apr 11 00:59:29 EDT 2024",
+      "accountTransactions": [
+        {
+          "transactionDate": "Sat May 04 21:32:32 EDT 2024",
+          "transactionSummary": "Incredible Marble Knife",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.3102794436492149,
+          "closingBalance": 0.2735670668462038,
+          "createdDate": "1715705679110"
+        },
+        {
+          "transactionDate": "Sat Jun 15 16:10:13 EDT 2024",
+          "transactionSummary": "Sleek Paper Pants",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.5233118918830846,
+          "closingBalance": 0.19278283038969468,
+          "createdDate": "1715529941545"
+        },
+        {
+          "transactionDate": "Wed Apr 10 09:34:53 EDT 2024",
+          "transactionSummary": "Incredible Bronze Car",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.7451797669832102,
+          "closingBalance": 0.5458922157510723,
+          "createdDate": "1713743363039"
+        },
+        {
+          "transactionDate": "Sun Mar 31 13:08:39 EDT 2024",
+          "transactionSummary": "Mediocre Cotton Bench",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.8643513203043773,
+          "closingBalance": 0.22795436005220215,
+          "createdDate": "1716881249890"
+        },
+        {
+          "transactionDate": "Fri Apr 19 20:31:12 EDT 2024",
+          "transactionSummary": "Aerodynamic Iron Clock",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.1496185393895244,
+          "closingBalance": 0.20888482216948223,
+          "createdDate": "1715204023908"
+        }
+      ]
+    }
+  },
+  {
+    "username": "Julian Bashir",
+    "email": "JulianBashir@demo.com",
+    "password": "zv4glwcn0p0l",
+    "userType": "external",
+    "userRole": "STANDARD",
+    "enabled": false,
+    "authorities": [
+      {
+        "authority": "ROLE_USER"
+      }
+    ],
+    "account": {
+      "accountType": "Savings",
+      "branchAddress": "2640 Nathanael Track, East Noel, MI 92025",
+      "createdDate": "Wed May 15 10:01:17 EDT 2024",
+      "accountTransactions": [
+        {
+          "transactionDate": "Tue Apr 23 21:56:09 EDT 2024",
+          "transactionSummary": "Enormous Paper Keyboard",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.3946511160702647,
+          "closingBalance": 0.18484222504613324,
+          "createdDate": "1712542379034"
+        },
+        {
+          "transactionDate": "Sat Jun 22 00:17:48 EDT 2024",
+          "transactionSummary": "Mediocre Linen Wallet",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.2516513903447376,
+          "closingBalance": 0.10710451432840629,
+          "createdDate": "1719099692360"
+        },
+        {
+          "transactionDate": "Mon May 13 16:18:22 EDT 2024",
+          "transactionSummary": "Small Cotton Lamp",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.1911793070153952,
+          "closingBalance": 0.246975672685796,
+          "createdDate": "1715907280421"
+        },
+        {
+          "transactionDate": "Mon Apr 01 16:26:39 EDT 2024",
+          "transactionSummary": "Enormous Iron Knife",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.4653416509791929,
+          "closingBalance": 0.8010314214030526,
+          "createdDate": "1715939472392"
+        },
+        {
+          "transactionDate": "Sat May 25 05:36:00 EDT 2024",
+          "transactionSummary": "Awesome Copper Pants",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.5466450602471805,
+          "closingBalance": 0.9286763941528365,
+          "createdDate": "1712978557144"
+        }
+      ]
+    }
+  },
+  {
+    "username": "Worf",
+    "email": "Worf@demo.com",
+    "password": "m8z1iakhxrp4vy",
+    "userType": "external",
+    "userRole": "STANDARD",
+    "enabled": false,
+    "authorities": [
+      {
+        "authority": "ROLE_USER"
+      }
+    ],
+    "account": {
+      "accountType": "Savings",
+      "branchAddress": "85613 Shizuko Circle, Kyleemouth, WA 44560",
+      "createdDate": "Fri Jun 21 16:47:52 EDT 2024",
+      "accountTransactions": [
+        {
+          "transactionDate": "Fri Mar 29 03:47:10 EDT 2024",
+          "transactionSummary": "Aerodynamic Wool Watch",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.8756523746968972,
+          "closingBalance": 0.058398790950399904,
+          "createdDate": "1719939953495"
+        },
+        {
+          "transactionDate": "Thu Jun 20 12:51:20 EDT 2024",
+          "transactionSummary": "Durable Marble Chair",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.6136364480241915,
+          "closingBalance": 0.4201385833720491,
+          "createdDate": "1719896583644"
+        },
+        {
+          "transactionDate": "Sun May 26 16:45:17 EDT 2024",
+          "transactionSummary": "Mediocre Bronze Computer",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.33891711533237545,
+          "closingBalance": 0.05866996060866658,
+          "createdDate": "1713216693947"
+        },
+        {
+          "transactionDate": "Sun May 26 01:25:51 EDT 2024",
+          "transactionSummary": "Mediocre Marble Wallet",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.8003815178674873,
+          "closingBalance": 0.7106874775229926,
+          "createdDate": "1718089998473"
+        },
+        {
+          "transactionDate": "Sun Jun 23 02:13:23 EDT 2024",
+          "transactionSummary": "Intelligent Wool Plate",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.1630271317089479,
+          "closingBalance": 0.7947496838023514,
+          "createdDate": "1719350140306"
+        }
+      ]
+    }
+  },
+  {
+    "username": "Leonard McCoy",
+    "email": "LeonardMcCoy@demo.com",
+    "password": "mssfg0a4o5sx",
+    "userType": "external",
+    "userRole": "STANDARD",
+    "enabled": false,
+    "authorities": [
+      {
+        "authority": "ROLE_USER"
+      }
+    ],
+    "account": {
+      "accountType": "Savings",
+      "branchAddress": "Apt. 588 72423 Homenick Corners, Brigidaport, NY 65625",
+      "createdDate": "Sun May 05 08:16:20 EDT 2024",
+      "accountTransactions": [
+        {
+          "transactionDate": "Fri Apr 19 19:26:22 EDT 2024",
+          "transactionSummary": "Gorgeous Aluminum Shirt",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.28878964664359086,
+          "closingBalance": 0.9711825553822048,
+          "createdDate": "1718226050911"
+        },
+        {
+          "transactionDate": "Wed Mar 27 16:47:38 EDT 2024",
+          "transactionSummary": "Intelligent Granite Lamp",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.11289547521465348,
+          "closingBalance": 0.24745645874002864,
+          "createdDate": "1716388154743"
+        },
+        {
+          "transactionDate": "Sun Jun 23 21:14:48 EDT 2024",
+          "transactionSummary": "Durable Aluminum Gloves",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.6418077471222051,
+          "closingBalance": 0.5649409601573099,
+          "createdDate": "1713617422636"
+        },
+        {
+          "transactionDate": "Wed Jun 26 05:00:19 EDT 2024",
+          "transactionSummary": "Incredible Concrete Computer",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.5802812705039979,
+          "closingBalance": 0.9585045517166211,
+          "createdDate": "1719837734319"
+        },
+        {
+          "transactionDate": "Thu May 16 21:08:30 EDT 2024",
+          "transactionSummary": "Sleek Leather Lamp",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.6818485590443891,
+          "closingBalance": 0.673181087779556,
+          "createdDate": "1719113818610"
+        }
+      ]
+    }
+  },
+  {
+    "username": "Seven of Nine",
+    "email": "SevenofNine@demo.com",
+    "password": "2g06m65ynrpj2",
+    "userType": "external",
+    "userRole": "STANDARD",
+    "enabled": false,
+    "authorities": [
+      {
+        "authority": "ROLE_USER"
+      }
+    ],
+    "account": {
+      "accountType": "Savings",
+      "branchAddress": "04945 Cormier Wells, Bruenview, VA 65471-9983",
+      "createdDate": "Mon Apr 29 23:52:09 EDT 2024",
+      "accountTransactions": [
+        {
+          "transactionDate": "Mon May 06 12:08:51 EDT 2024",
+          "transactionSummary": "Lightweight Cotton Watch",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.8002989788134712,
+          "closingBalance": 0.47070020605866847,
+          "createdDate": "1718531246098"
+        },
+        {
+          "transactionDate": "Sat Jun 22 18:35:25 EDT 2024",
+          "transactionSummary": "Incredible Paper Gloves",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.1551103206957205,
+          "closingBalance": 0.584570649540949,
+          "createdDate": "1712214039020"
+        },
+        {
+          "transactionDate": "Thu Jun 20 01:00:20 EDT 2024",
+          "transactionSummary": "Sleek Iron Plate",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.9617598835034974,
+          "closingBalance": 0.778449267285152,
+          "createdDate": "1716579217868"
+        },
+        {
+          "transactionDate": "Mon Jun 03 00:18:13 EDT 2024",
+          "transactionSummary": "Ergonomic Marble Keyboard",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.803537136821861,
+          "closingBalance": 0.38895163202892746,
+          "createdDate": "1713386136274"
+        },
+        {
+          "transactionDate": "Fri May 24 15:35:40 EDT 2024",
+          "transactionSummary": "Awesome Concrete Bag",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.8475797957683867,
+          "closingBalance": 0.013019802053687024,
+          "createdDate": "1715679577562"
+        }
+      ]
+    }
+  },
+  {
+    "username": "Neelix",
+    "email": "Neelix@demo.com",
+    "password": "f862ok2hl8y8mtg",
+    "userType": "external",
+    "userRole": "STANDARD",
+    "enabled": false,
+    "authorities": [
+      {
+        "authority": "ROLE_USER"
+      }
+    ],
+    "account": {
+      "accountType": "Savings",
+      "branchAddress": "Apt. 500 599 Runolfsdottir Forest, O'Reillyport, OK 61004-4576",
+      "createdDate": "Wed Jun 19 01:52:31 EDT 2024",
+      "accountTransactions": [
+        {
+          "transactionDate": "Thu Apr 25 10:57:42 EDT 2024",
+          "transactionSummary": "Awesome Steel Table",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.4941191614041175,
+          "closingBalance": 0.05855770760748058,
+          "createdDate": "1711652033186"
+        },
+        {
+          "transactionDate": "Fri Apr 05 12:42:07 EDT 2024",
+          "transactionSummary": "Sleek Aluminum Gloves",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.9474635602865085,
+          "closingBalance": 0.1176622070894141,
+          "createdDate": "1716917571309"
+        },
+        {
+          "transactionDate": "Wed Apr 10 16:07:26 EDT 2024",
+          "transactionSummary": "Enormous Plastic Knife",
+          "transactionType": "Deposit",
+          "transactionAmount": 0.4599888028093483,
+          "closingBalance": 0.040109972875518096,
+          "createdDate": "1712762459480"
+        },
+        {
+          "transactionDate": "Sun May 26 06:09:15 EDT 2024",
+          "transactionSummary": "Enormous Linen Bench",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.03869682056517665,
+          "closingBalance": 0.11548934948553868,
+          "createdDate": "1713001927968"
+        },
+        {
+          "transactionDate": "Tue May 28 10:20:32 EDT 2024",
+          "transactionSummary": "Ergonomic Marble Computer",
+          "transactionType": "Withdrawal",
+          "transactionAmount": 0.518941886293318,
+          "closingBalance": 0.18339756850440403,
+          "createdDate": "1717019713438"
+        }
+      ]
+    }
   }
 ]

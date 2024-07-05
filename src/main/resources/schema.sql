@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS demo.security_users
     locked boolean not null default false,
     locked_date timestamp with time zone,
     created_date timestamp with time zone not null,
-    last_updated_date timestamp with time zone not null,
+    last_updated_date timestamp with time zone not null
 );
 
 CREATE TABLE IF NOT EXISTS demo.security_authorities
