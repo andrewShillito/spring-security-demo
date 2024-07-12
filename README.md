@@ -39,3 +39,7 @@ Example usage:
 ## To run test suites
 
 `./mvnw clean verify`
+
+## To regenerate dev environment example data
+
+See 'Steps to use' section of [ExampleDataGenerator.groovy](ExampleDataGenerator.groovy) groovy script documentation. The regeneration of example data on startup may be moved into a spring profile in the future for ease of use.
