@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import lombok.Builder;
 import lombok.Setter;
@@ -58,10 +59,16 @@ public class DevEnvironmentExampleDataManager {
       return Arrays.stream(users)
           .peek(user -> {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
-            if (user.getAccount() != null && user.getAccount().getAccountTransactions() != null) {
-              // this is jpa related - because we have double-bound relationship we need to make sure the
-              // read account transactions have User set as well
-              user.getAccount().getAccountTransactions().stream().forEach(t -> t.setUser(user));
+            if (user.getAccounts() != null) {
+              user.getAccounts().stream().forEach(account -> {
+                if (account.getAccountTransactions() != null) {
+                  // this is jpa related - because we have bi-directional references we need to make sure the
+                  // seeded account transactions have User object set as well
+                  account.getAccountTransactions().stream().filter(Objects::nonNull).forEach(transaction -> {
+                    transaction.setUser(user);
+                  });
+                }
+              });
             }
           })
           .toList();

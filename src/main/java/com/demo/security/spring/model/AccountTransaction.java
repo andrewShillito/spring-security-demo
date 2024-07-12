@@ -33,13 +33,13 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString(exclude = { "account", "user" } )
-@SequenceGenerator(name = "account_transactions_id_seq", sequenceName = "account_transactions_id_seq", allocationSize = 50)
+@SequenceGenerator(name = "account_transactions_transaction_id_seq", sequenceName = "account_transactions_transaction_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class AccountTransaction {
 
   @Id
   @Column(name = "transaction_id")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "account_transactions_id_seq")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "account_transactions_transaction_id_seq")
   private Long transactionId;
 
   @ManyToOne(fetch = FetchType.EAGER)

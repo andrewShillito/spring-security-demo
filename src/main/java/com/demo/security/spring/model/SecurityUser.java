@@ -3,7 +3,6 @@ package com.demo.security.spring.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -15,7 +14,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -34,7 +32,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Getter
 @Setter
 @ToString(exclude = {"username", "password"}) // don't want these in logs
-@SequenceGenerator(name = "security_users_id_seq", sequenceName = "security_users_id_seq", allocationSize = 50)
+@SequenceGenerator(name = "security_users_id_seq", sequenceName = "security_users_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class SecurityUser implements UserDetails {
 
@@ -81,8 +79,8 @@ public class SecurityUser implements UserDetails {
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
   private List<SecurityAuthority> authorities;
 
-  @OneToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE })
-  private Account account;
+  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE })
+  private List<Account> accounts;
 
   @Embedded
   private EntityControlDates controlDates = new EntityControlDates();
@@ -120,10 +118,10 @@ public class SecurityUser implements UserDetails {
     return enabled;
   }
 
-  public void setAccount(Account account) {
-    this.account = account;
-    if (account != null) {
-      account.setUser(this);
+  public void setAccounts(List<Account> accounts) {
+    this.accounts = accounts;
+    if (accounts != null) {
+      accounts.stream().forEach(account -> account.setUser(this));
     }
   }
 }

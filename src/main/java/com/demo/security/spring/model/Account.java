@@ -12,8 +12,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
@@ -26,7 +26,7 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "accounts")
-@SequenceGenerator(name = "accounts_id_seq", sequenceName = "accounts_id_seq", allocationSize = 50)
+@SequenceGenerator(name = "accounts_account_number_seq", sequenceName = "accounts_account_number_seq", allocationSize = 50, initialValue = 1)
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -36,10 +36,10 @@ public class Account {
 
   @Id
   @Column(name = "account_number")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "accounts_id_seq")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "accounts_account_number_seq")
   private Long accountNumber;
 
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "user_id", nullable = false, updatable = false, insertable = true)
   @JsonIgnore
   @NotNull

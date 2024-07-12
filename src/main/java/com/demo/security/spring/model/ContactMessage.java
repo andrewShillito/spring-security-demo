@@ -21,7 +21,7 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString
-@SequenceGenerator(name = "contact_messages_id_seq", sequenceName = "contact_messages_id_seq", allocationSize = 50)
+@SequenceGenerator(name = "contact_messages_id_seq", sequenceName = "contact_messages_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class ContactMessage {
 

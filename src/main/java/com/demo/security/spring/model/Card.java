@@ -30,7 +30,7 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString(exclude = { "user" } )
-@SequenceGenerator(name = "cards_id_seq", sequenceName = "cards_id_seq", allocationSize = 50)
+@SequenceGenerator(name = "cards_id_seq", sequenceName = "cards_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class Card {
 

@@ -162,7 +162,7 @@ class Generator {
         user.setUserRole(user.getUserType() == UserType.internal ? "ADMIN" : "STANDARD")
         user.setAuthorities(toAuthorities(roles))
         user.setEmail(username + "@demo.com")
-        user.setAccount(generateAccount())
+        user.setAccounts(List.of(generateAccount()))
         user.setControlDates(randomEntityControlDates())
         return user
     }

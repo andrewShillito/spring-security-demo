@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS demo.accounts (
 );
 
 CREATE TABLE IF NOT EXISTS demo.account_transactions (
-    transaction_id varchar(200) not null primary key,
+    transaction_id bigserial not null primary key,
     account_number integer not null,
     user_id bigint not null,
     transaction_date timestamp with time zone not null,
@@ -95,3 +95,13 @@ CREATE TABLE IF NOT EXISTS demo.contact_messages (
     message varchar(2000) not null,
     created_date timestamp with time zone not null
 );
+
+ALTER SEQUENCE demo.security_authorities_id_seq INCREMENT BY 50;
+ALTER SEQUENCE demo.security_authorities_user_id_seq INCREMENT BY 50;
+ALTER SEQUENCE demo.accounts_account_number_seq INCREMENT BY 50;
+ALTER SEQUENCE demo.account_transactions_transaction_id_seq INCREMENT BY 50;
+ALTER SEQUENCE demo.loans_loan_number_seq INCREMENT BY 50;
+ALTER SEQUENCE demo.cards_card_id_seq INCREMENT BY 50;
+ALTER SEQUENCE demo.notice_details_notice_id_seq INCREMENT BY 50;
+ALTER SEQUENCE demo.contact_messages_contact_id_seq INCREMENT BY 50;
+ALTER SEQUENCE demo.security_users_id_seq INCREMENT BY 50;

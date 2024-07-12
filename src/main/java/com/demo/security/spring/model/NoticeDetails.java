@@ -21,7 +21,7 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString
-@SequenceGenerator(name = "notice_details_id_seq", sequenceName = "notice_details_id_seq", allocationSize = 50)
+@SequenceGenerator(name = "notice_details_id_seq", sequenceName = "notice_details_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class NoticeDetails {
 

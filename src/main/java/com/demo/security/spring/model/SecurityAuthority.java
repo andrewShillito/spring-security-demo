@@ -25,7 +25,7 @@ import org.springframework.security.core.GrantedAuthority;
 @ToString(exclude = "user")
 @Entity
 @Table(name = "security_authorities")
-@SequenceGenerator(name = "security_authorities_id_seq", sequenceName = "security_authorities_id_seq", allocationSize = 50)
+@SequenceGenerator(name = "security_authorities_id_seq", sequenceName = "security_authorities_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class SecurityAuthority implements GrantedAuthority {
 
