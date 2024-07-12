@@ -26,6 +26,10 @@ public class DevEnvironmentExampleDataManager {
 
   private ObjectMapper objectMapper;
 
+  private ExampleDataGenerationService generationService;
+
+  private boolean regenerateData;
+
   /**
    * Returns a list of UserDetails from the result of {@link #getDevEnvironmentUsers()}
    * which reads a json file of example {@link SecurityUser} records.
@@ -48,33 +52,37 @@ public class DevEnvironmentExampleDataManager {
    * @return a List of security users to populate into the database
    */
   public List<SecurityUser> getDevEnvironmentUsers() {
-    final ClassPathResource resource = getClassPathResource("seed/example-users.json");
-    if (!resource.exists()) {
-      throw new RuntimeException("Unable to locate development environment users seed file");
-    } else if (!resource.isReadable()) {
-      throw new RuntimeException("Unable to read from development environment users seed file");
+    List<SecurityUser> securityUsers;
+    if (regenerateData) {
+      securityUsers = generationService.generateUsers(true);
+    } else {
+      final ClassPathResource resource = getClassPathResource("seed/example-users.json");
+      if (!resource.exists()) {
+        throw new RuntimeException("Unable to locate development environment users seed file");
+      } else if (!resource.isReadable()) {
+        throw new RuntimeException("Unable to read from development environment users seed file");
+      }
+      try {
+        securityUsers = Arrays.stream(objectMapper.readValue(resource.getInputStream(), SecurityUser[].class)).toList();
+      } catch (IOException e) {
+        throw new RuntimeException("Failed to read development environment users from classpath resource " + resource.getPath(), e);
+      }
     }
-    try {
-      SecurityUser[] users = objectMapper.readValue(resource.getInputStream(), SecurityUser[].class);
-      return Arrays.stream(users)
-          .peek(user -> {
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
-            if (user.getAccounts() != null) {
-              user.getAccounts().stream().forEach(account -> {
-                if (account.getAccountTransactions() != null) {
-                  // this is jpa related - because we have bi-directional references we need to make sure the
-                  // seeded account transactions have User object set as well
-                  account.getAccountTransactions().stream().filter(Objects::nonNull).forEach(transaction -> {
-                    transaction.setUser(user);
-                  });
-                }
-              });
-            }
-          })
-          .toList();
-    } catch (IOException e) {
-      throw new RuntimeException("Failed to read development environment users from classpath resource " + resource.getPath(), e);
-    }
+    return securityUsers.stream().peek(user -> {
+          user.setPassword(passwordEncoder.encode(user.getPassword()));
+          if (user.getAccounts() != null) {
+            user.getAccounts().stream().forEach(account -> {
+              if (account.getAccountTransactions() != null) {
+                // this is jpa related - because we have bi-directional references we need to make sure the
+                // seeded account transactions have User object set as well
+                account.getAccountTransactions().stream().filter(Objects::nonNull).forEach(transaction -> {
+                  transaction.setUser(user);
+                });
+              }
+            });
+          }
+        })
+        .toList();
   }
 
   /**

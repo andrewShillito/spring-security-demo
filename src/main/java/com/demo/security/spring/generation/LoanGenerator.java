@@ -1,14 +1,26 @@
-package com.demo.security.spring.utils;
+package com.demo.security.spring.generation;
 
 import com.demo.security.spring.model.Loan;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.log4j.Log4j2;
+import net.datafaker.Faker;
 
 @Log4j2
 public class LoanGenerator extends AbstractGenerator<List<Loan>> {
+
+  public LoanGenerator(Faker faker,
+      ObjectMapper objectMapper) {
+    super(faker, objectMapper);
+  }
+
+  public LoanGenerator(Faker faker,
+      ObjectMapper objectMapper, int itemCount) {
+    super(faker, objectMapper, itemCount);
+  }
 
   @Override
   public List<Loan> generate() {

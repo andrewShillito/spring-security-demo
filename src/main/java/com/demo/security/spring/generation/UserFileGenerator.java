@@ -1,40 +1,48 @@
-package com.demo.security.spring.utils;
+package com.demo.security.spring.generation;
 
 import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.model.UserType;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
+import net.datafaker.Faker;
 
 @Log4j2
 public class UserFileGenerator extends AbstractFileGenerator {
 
   protected static final String DEFAULT_TESTING_PASSWORD = "password";
-  protected static final int DEFAULT_RANDOM_USER_COUNT = 20;
 
-  private int userCount = DEFAULT_RANDOM_USER_COUNT;
-
-  @Getter
-  private final AccountGenerator accountGenerator = new AccountGenerator();
+  public static final String DEFAULT_OUTPUT_FILE = "example-users.json";
 
   @Getter
-  private final LoanGenerator loanGenerator = new LoanGenerator();
+  @Setter
+  private AccountGenerator accountGenerator;
 
   @Getter
-  private final CardGenerator cardGenerator = new CardGenerator();
+  @Setter
+  private LoanGenerator loanGenerator;
 
-  public UserFileGenerator(String fileName) {
-    super(fileName);
+  @Getter
+  @Setter
+  private CardGenerator cardGenerator;
+
+  public UserFileGenerator(Faker faker, ObjectMapper objectMapper) {
+    this(faker, objectMapper, DEFAULT_OUTPUT_FILE);
   }
 
-  public UserFileGenerator(String outputFileDir, String fileName) {
-    super(outputFileDir, fileName);
+  public UserFileGenerator(Faker faker,
+      ObjectMapper objectMapper, String fileName) {
+    super(faker, objectMapper, fileName);
   }
 
-  public UserFileGenerator(String outputFileDir, String fileName, boolean overwriteFiles) {
-    super(outputFileDir, fileName, overwriteFiles);
+  public UserFileGenerator(Faker faker,
+      ObjectMapper objectMapper, String outputFileDir, String fileName,
+      boolean overwriteFiles) {
+    super(faker, objectMapper, outputFileDir, fileName, overwriteFiles);
   }
 
   @Override
@@ -175,10 +183,5 @@ public class UserFileGenerator extends AbstractFileGenerator {
       authority.setAuthority(role);
       return authority;
     }).toList();
-  }
-
-  @Override
-  public UserFileGenerator setItemCount(int itemCount) {
-    return (UserFileGenerator) super.setItemCount(itemCount);
   }
 }

@@ -42,4 +42,16 @@ Example usage:
 
 ## To regenerate dev environment example data
 
-See 'Steps to use' section of [ExampleDataGenerator.groovy](ExampleDataGenerator.groovy) groovy script documentation. The regeneration of example data on startup may be moved into a spring profile in the future for ease of use.
+Set property `example-data.regenerate` to true causes example data which is seeded into the DB to be regenerated during startup prior to it being populated into the db.
+When regenerated, the data is also written to the source files which are used when not generating data on startup. This allows also for referencing the data which was populated into the db on startup.
+
+Example data generation leverages the DataFaker library.
+
+#### Some other related properties:
+
+- `example-data.cards.count` - sets the number of cards per user to create during regeneration
+- `example-data.loan.count` - sets the number of loans per user to create during regeneration
+- `example-data.notice.count` - sets the number of notices to create during regeneration
+- `example-data.message.count` - sets the number of contact messages to create during regeneration
+- `example-data.account.count` - sets the number of accounts per user to create during regeneration
+- `example-data.user.count` - sets the number of randomized users to create during regeneration. There is also a set of standard non-randomized users which is always created.

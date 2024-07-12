@@ -1,24 +1,39 @@
-package com.demo.security.spring.utils;
+package com.demo.security.spring.generation;
 
 import com.demo.security.spring.model.EntityControlDates;
 import com.demo.security.spring.model.EntityCreatedDate;
 import com.demo.security.spring.model.EntityStartAndEndDates;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.google.common.base.Preconditions;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.concurrent.TimeUnit;
 import lombok.Getter;
+import lombok.Setter;
 import net.datafaker.Faker;
 
+@Getter
 public abstract class AbstractGenerator<T> implements Generator<T> {
 
-  protected final Faker faker = new Faker();
-  protected final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
+  protected final Faker faker;
 
-  @Getter
-  private int itemCount = 20;
+  protected final ObjectMapper objectMapper;
+
+  public static final int DEFAULT_ITEM_COUNT = 20;
+
+  @Setter
+  private int itemCount;
+
+  public AbstractGenerator(Faker faker, ObjectMapper objectMapper) {
+    this.faker = faker;
+    this.objectMapper = objectMapper;
+    this.itemCount = DEFAULT_ITEM_COUNT;
+  }
+
+  public AbstractGenerator(Faker faker, ObjectMapper objectMapper, int itemCount) {
+    this.faker = faker;
+    this.objectMapper = objectMapper;
+    this.itemCount = itemCount;
+  }
 
   protected ZonedDateTime randomPastDate() {
     return randomPastDate(100, TimeUnit.DAYS);
@@ -63,11 +78,4 @@ public abstract class AbstractGenerator<T> implements Generator<T> {
     startAndEndDates.setEndDate(randomFutureDate());
     return startAndEndDates;
   }
-
-  public AbstractGenerator<T> setItemCount(int itemCount) {
-    Preconditions.checkArgument(itemCount > 0, "Item count for generation must be > 0");
-    this.itemCount = itemCount;
-    return this;
-  }
-
 }

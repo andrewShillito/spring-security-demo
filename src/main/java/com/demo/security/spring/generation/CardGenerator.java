@@ -1,13 +1,25 @@
-package com.demo.security.spring.utils;
+package com.demo.security.spring.generation;
 
 import com.demo.security.spring.model.Card;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.log4j.Log4j2;
+import net.datafaker.Faker;
 
 @Log4j2
 public class CardGenerator extends AbstractGenerator<List<Card>> {
+
+  public CardGenerator(Faker faker,
+      ObjectMapper objectMapper) {
+    super(faker, objectMapper);
+  }
+
+  public CardGenerator(Faker faker,
+      ObjectMapper objectMapper, int itemCount) {
+    super(faker, objectMapper, itemCount);
+  }
 
   @Override
   public List<Card> generate() {

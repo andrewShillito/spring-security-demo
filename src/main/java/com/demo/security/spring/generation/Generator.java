@@ -1,6 +1,4 @@
-package com.demo.security.spring.utils;
-
-import java.util.Collection;
+package com.demo.security.spring.generation;
 
 public interface Generator<T> {
 

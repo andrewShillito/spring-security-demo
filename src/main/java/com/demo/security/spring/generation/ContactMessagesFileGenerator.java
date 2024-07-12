@@ -1,23 +1,31 @@
-package com.demo.security.spring.utils;
+package com.demo.security.spring.generation;
 
 import com.demo.security.spring.model.ContactMessage;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.log4j.Log4j2;
+import net.datafaker.Faker;
 
 @Log4j2
 public class ContactMessagesFileGenerator extends AbstractFileGenerator {
 
-  public ContactMessagesFileGenerator(String fileName) {
-    super(fileName);
+  public static final String DEFAULT_OUTPUT_FILE = "example-contact-messages.json";
+
+  public ContactMessagesFileGenerator(Faker faker,
+      ObjectMapper objectMapper) {
+    super(faker, objectMapper, DEFAULT_OUTPUT_FILE);
   }
 
-  public ContactMessagesFileGenerator(String outputFileDir, String fileName) {
-    super(outputFileDir, fileName);
+  public ContactMessagesFileGenerator(Faker faker,
+      ObjectMapper objectMapper, String fileName) {
+    super(faker, objectMapper, fileName);
   }
 
-  public ContactMessagesFileGenerator(String outputFileDir, String fileName, boolean overwriteFiles) {
-    super(outputFileDir, fileName, overwriteFiles);
+  public ContactMessagesFileGenerator(Faker faker,
+      ObjectMapper objectMapper, String outputFileDir, String fileName,
+      boolean overwriteFiles) {
+    super(faker, objectMapper, outputFileDir, fileName, overwriteFiles);
   }
 
   @Override
@@ -38,10 +46,5 @@ public class ContactMessagesFileGenerator extends AbstractFileGenerator {
     contactMessage.setMessage(faker.lorem().paragraph());
     contactMessage.setCreatedDate(randomPastDate());
     return contactMessage;
-  }
-
-  @Override
-  public ContactMessagesFileGenerator setItemCount(int itemCount) {
-    return (ContactMessagesFileGenerator) super.setItemCount(itemCount);
   }
 }

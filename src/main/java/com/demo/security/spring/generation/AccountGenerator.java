@@ -1,25 +1,35 @@
-package com.demo.security.spring.utils;
+package com.demo.security.spring.generation;
 
 import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.AccountTransaction;
 import com.demo.security.spring.model.TransactionType;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.log4j.Log4j2;
+import net.datafaker.Faker;
 
 @Log4j2
 public class AccountGenerator extends AbstractGenerator<List<Account>> {
 
   protected static final BigDecimal DEFAULT_STARTING_BALANCE = BigDecimal.valueOf(500.00);
 
+  public AccountGenerator(Faker faker,
+      ObjectMapper objectMapper) {
+    super(faker, objectMapper);
+  }
+
+  public AccountGenerator(Faker faker,
+      ObjectMapper objectMapper, int itemCount) {
+    super(faker, objectMapper, itemCount);
+  }
+
   /**
    * The default item count is 1 for accounts but can be overridden with setItemCount()
    */
-  public AccountGenerator() {
-    setItemCount(1);
-  }
+
 
   @Override
   public List<Account> generate() {

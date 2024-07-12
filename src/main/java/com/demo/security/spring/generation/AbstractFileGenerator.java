@@ -1,10 +1,12 @@
-package com.demo.security.spring.utils;
+package com.demo.security.spring.generation;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Preconditions;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 import lombok.extern.log4j.Log4j2;
+import net.datafaker.Faker;
 import org.apache.commons.lang3.StringUtils;
 
 @Log4j2
@@ -16,15 +18,12 @@ public abstract class AbstractFileGenerator extends AbstractGenerator<Collection
 
   protected final File outputFile;
 
-  public AbstractFileGenerator(String fileName) {
-    this(DEFAULT_OUTPUT_DIRECTORY, fileName);
+  public AbstractFileGenerator(Faker faker, ObjectMapper objectMapper, String fileName) {
+    this(faker, objectMapper, DEFAULT_OUTPUT_DIRECTORY, fileName, true);
   }
 
-  public AbstractFileGenerator(String outputFileDir, String fileName) {
-    this(outputFileDir, fileName, true);
-  }
-
-  public AbstractFileGenerator(String outputFileDir, String fileName, boolean overwriteFiles) {
+  public AbstractFileGenerator(Faker faker, ObjectMapper objectMapper, String outputFileDir, String fileName, boolean overwriteFiles) {
+    super(faker, objectMapper);
     Preconditions.checkArgument(StringUtils.isNotBlank(outputFileDir), "File path cannot be empty");
     validateArgs(outputFileDir, fileName);
     this.overwriteFiles = overwriteFiles;
@@ -39,8 +38,12 @@ public abstract class AbstractFileGenerator extends AbstractGenerator<Collection
 
   @Override
   public void write() {
+    write(generate());
+  }
+
+  @Override
+  public void write(Collection<?> generated) {
     try {
-      Collection<?> generated = generate();
       if (generated != null && !generated.isEmpty()) {
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, generated);
       } else {
@@ -63,7 +66,7 @@ public abstract class AbstractFileGenerator extends AbstractGenerator<Collection
         log.error(() -> "Failed to initialize output file with path " + file.getPath());
       }
     }
-    Preconditions.checkArgument(file.exists(), "Output file ${file} does not exist");
+    Preconditions.checkArgument(file.exists(), "Output file does not exist " + file + " - current dir " + System.getProperty("user.dir"));
     Preconditions.checkArgument(file.canWrite(), "Write permissions to file ${file} are required in order to run user generation");
   }
 }
