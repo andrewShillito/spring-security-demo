@@ -1,5 +1,9 @@
 package com.demo.security.spring.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -31,6 +35,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Setter
 @ToString(exclude = {"username", "password"}) // don't want these in logs
 @SequenceGenerator(name = "security_users_id_seq", sequenceName = "security_users_id_seq", allocationSize = 50)
+@JsonInclude(Include.NON_EMPTY)
 public class SecurityUser implements UserDetails {
 
   @Id
@@ -76,7 +81,7 @@ public class SecurityUser implements UserDetails {
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
   private List<SecurityAuthority> authorities;
 
-  @OneToOne(fetch = FetchType.LAZY)
+  @OneToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE })
   private Account account;
 
   @Embedded
@@ -93,16 +98,19 @@ public class SecurityUser implements UserDetails {
   }
 
   @Override
+  @JsonIgnore
   public boolean isAccountNonExpired() {
     return !accountExpired;
   }
 
   @Override
+  @JsonIgnore
   public boolean isAccountNonLocked() {
     return !locked;
   }
 
   @Override
+  @JsonIgnore
   public boolean isCredentialsNonExpired() {
     return !passwordExpired;
   }
@@ -110,5 +118,12 @@ public class SecurityUser implements UserDetails {
   @Override
   public boolean isEnabled() {
     return enabled;
+  }
+
+  public void setAccount(Account account) {
+    this.account = account;
+    if (account != null) {
+      account.setUser(this);
+    }
   }
 }

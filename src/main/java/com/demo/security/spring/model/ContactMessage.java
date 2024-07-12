@@ -1,5 +1,7 @@
 package com.demo.security.spring.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +22,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @SequenceGenerator(name = "contact_messages_id_seq", sequenceName = "contact_messages_id_seq", allocationSize = 50)
+@JsonInclude(Include.NON_EMPTY)
 public class ContactMessage {
 
   @Id

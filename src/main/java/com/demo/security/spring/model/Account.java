@@ -1,6 +1,8 @@
 package com.demo.security.spring.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -16,6 +18,7 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Objects;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,6 +31,7 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString(exclude = "user")
+@JsonInclude(Include.NON_EMPTY)
 public class Account {
 
   @Id
@@ -54,4 +58,13 @@ public class Account {
   @OneToMany(mappedBy = "account", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
   private List<AccountTransaction> accountTransactions;
 
+  public void setAccountTransactions(List<AccountTransaction> accountTransactions) {
+    this.accountTransactions = accountTransactions;
+    if (accountTransactions != null) {
+      accountTransactions.stream().filter(Objects::nonNull).forEach(transaction -> {
+        transaction.setAccount(this);
+        transaction.setUser(this.getUser());
+      });
+    }
+  }
 }

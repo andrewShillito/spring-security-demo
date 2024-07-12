@@ -23,6 +23,8 @@ public class DevEnvironmentExampleDataManager {
 
   private PasswordEncoder passwordEncoder;
 
+  private ObjectMapper objectMapper;
+
   /**
    * Returns a list of UserDetails from the result of {@link #getDevEnvironmentUsers()}
    * which reads a json file of example {@link SecurityUser} records.
@@ -51,14 +53,20 @@ public class DevEnvironmentExampleDataManager {
     } else if (!resource.isReadable()) {
       throw new RuntimeException("Unable to read from development environment users seed file");
     }
-    final ObjectMapper objectMapper = new ObjectMapper();
     try {
       SecurityUser[] users = objectMapper.readValue(resource.getInputStream(), SecurityUser[].class);
       return Arrays.stream(users)
-          .peek(user -> user.setPassword(passwordEncoder.encode(user.getPassword())))
+          .peek(user -> {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            if (user.getAccount() != null && user.getAccount().getAccountTransactions() != null) {
+              // this is jpa related - because we have double-bound relationship we need to make sure the
+              // read account transactions have User set as well
+              user.getAccount().getAccountTransactions().stream().forEach(t -> t.setUser(user));
+            }
+          })
           .toList();
     } catch (IOException e) {
-      throw new RuntimeException("Failed to populate development environment users into the database");
+      throw new RuntimeException("Failed to read development environment users from classpath resource " + resource.getPath(), e);
     }
   }
 

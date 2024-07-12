@@ -1,5 +1,7 @@
 package com.demo.security.spring.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.PrePersist;
@@ -15,6 +17,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @EqualsAndHashCode
+@JsonInclude(Include.NON_EMPTY)
 public class EntityStartAndEndDates {
 
   @Column(name = "start_date")

@@ -2,6 +2,8 @@ package com.demo.security.spring.model;
 
 import com.demo.security.spring.utils.DecimalScaleManager;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -32,6 +34,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString(exclude = { "account", "user" } )
 @SequenceGenerator(name = "account_transactions_id_seq", sequenceName = "account_transactions_id_seq", allocationSize = 50)
+@JsonInclude(Include.NON_EMPTY)
 public class AccountTransaction {
 
   @Id

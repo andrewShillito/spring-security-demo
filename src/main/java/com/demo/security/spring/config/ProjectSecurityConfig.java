@@ -16,6 +16,8 @@ import com.demo.security.spring.service.LoginService;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
 import com.demo.security.spring.utils.DevEnvironmentDbPopulator;
 import com.demo.security.spring.service.DevEnvironmentExampleDataManager;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -140,11 +142,20 @@ public class ProjectSecurityConfig {
   /**
    * The examples users manager handles retrieving example users from resource files
    * for development and testing environments
-   * @param passwordEncoder the encoder to use for user passwords
    * @return an example users manager
    */
   @Bean
-  public DevEnvironmentExampleDataManager exampleUsersManager(final PasswordEncoder passwordEncoder) {
-    return DevEnvironmentExampleDataManager.builder().passwordEncoder(passwordEncoder).build();
+  public DevEnvironmentExampleDataManager exampleUsersManager(){
+    return DevEnvironmentExampleDataManager.builder()
+        .passwordEncoder(passwordEncoder())
+        .objectMapper(objectMapper())
+        .build();
+  }
+
+  @Bean
+  public ObjectMapper objectMapper() {
+    final ObjectMapper objectMapper = new ObjectMapper();
+    objectMapper.registerModule(new JavaTimeModule());
+    return objectMapper;
   }
 }

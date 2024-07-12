@@ -1,7 +1,10 @@
 package com.demo.security.spring.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.util.Map;
 
+@JsonInclude(Include.NON_EMPTY)
 public enum TransactionType {
 
   Withdrawal,
