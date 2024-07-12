@@ -1,9 +1,11 @@
 CREATE SCHEMA IF NOT EXISTS demo;
 
+CREATE SEQUENCE IF NOT EXISTS demo.security_users_id_seq INCREMENT BY 50;
+
 -- name 'security_users' avoids conflict with h2 default schema's 'USERS' table
 CREATE TABLE IF NOT EXISTS demo.security_users
 (
-    id bigserial not null primary key,
+    id bigint not null primary key default nextval('demo.security_users_id_seq'),
     username varchar(50) not null unique,
     email varchar(50) not null,
     password varchar(500) not null,
@@ -20,27 +22,33 @@ CREATE TABLE IF NOT EXISTS demo.security_users
     last_updated_date timestamp with time zone not null
 );
 
+CREATE SEQUENCE IF NOT EXISTS demo.security_authorities_id_seq INCREMENT BY 50;
+
 CREATE TABLE IF NOT EXISTS demo.security_authorities
 (
-    id bigserial not null primary key,
-    user_id bigserial not null,
+    id bigint not null primary key default nextval('demo.security_authorities_id_seq'),
+    user_id bigint not null,
     authority varchar(50) not null,
     constraint fk_security_authorities_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id)
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS ix_auth_user_id on demo.security_authorities (user_id, authority);
 
+CREATE SEQUENCE IF NOT EXISTS demo.accounts_account_number_seq INCREMENT BY 50;
+
 CREATE TABLE IF NOT EXISTS demo.accounts (
     user_id bigint not null, -- foreign key of security_users.id
-    account_number bigserial not null primary key,
+    account_number bigint not null primary key default nextval('demo.accounts_account_number_seq'),
     account_type varchar(100) not null,
     branch_address varchar(200) not null,
     created_date timestamp with time zone default null,
     constraint fk_accounts_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
 
+CREATE SEQUENCE IF NOT EXISTS demo.account_transactions_transaction_id_seq INCREMENT BY 50;
+
 CREATE TABLE IF NOT EXISTS demo.account_transactions (
-    transaction_id bigserial not null primary key,
+    transaction_id bigint not null primary key default nextval('demo.account_transactions_transaction_id_seq'),
     account_number integer not null,
     user_id bigint not null,
     transaction_date timestamp with time zone not null,
@@ -53,8 +61,10 @@ CREATE TABLE IF NOT EXISTS demo.account_transactions (
     constraint fk_account_transactions_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
 
+CREATE SEQUENCE IF NOT EXISTS demo.loans_loan_number_seq INCREMENT BY 50;
+
 CREATE TABLE IF NOT EXISTS demo.loans (
-    loan_number bigserial not null primary key,
+    loan_number bigint not null primary key default nextval('demo.loans_loan_number_seq'),
     user_id bigint not null,
     start_date timestamp with time zone not null,
     loan_type varchar(100) not null,
@@ -65,8 +75,10 @@ CREATE TABLE IF NOT EXISTS demo.loans (
     constraint fk_loans_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
 
+CREATE SEQUENCE IF NOT EXISTS demo.cards_card_id_seq INCREMENT BY 50;
+
 CREATE TABLE IF NOT EXISTS demo.cards (
-    card_id bigserial not null primary key,
+    card_id bigint not null primary key default nextval('demo.cards_card_id_seq'),
     card_number varchar(100) not null,
     user_id bigint not null,
     card_type varchar(100) not null,
@@ -77,8 +89,10 @@ CREATE TABLE IF NOT EXISTS demo.cards (
     constraint fk_cards_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
 
+CREATE SEQUENCE IF NOT EXISTS demo.notice_details_notice_id_seq INCREMENT BY 50;
+
 CREATE TABLE IF NOT EXISTS demo.notice_details (
-    notice_id bigserial not null primary key,
+    notice_id bigint not null primary key default nextval('demo.notice_details_notice_id_seq'),
     notice_summary varchar(200) not null,
     notice_details varchar(500) not null,
     start_date timestamp with time zone not null,
@@ -87,21 +101,13 @@ CREATE TABLE IF NOT EXISTS demo.notice_details (
     last_updated_date timestamp with time zone not null
 );
 
+CREATE SEQUENCE IF NOT EXISTS demo.contact_messages_contact_id_seq INCREMENT BY 50;
+
 CREATE TABLE IF NOT EXISTS demo.contact_messages (
-    contact_id bigserial not null primary key,
+    contact_id bigint not null primary key default nextval('demo.contact_messages_contact_id_seq'),
     contact_name varchar(50) not null,
     contact_email varchar(100) not null,
     subject varchar(500) not null,
     message varchar(2000) not null,
     created_date timestamp with time zone not null
 );
-
-ALTER SEQUENCE demo.security_authorities_id_seq INCREMENT BY 50;
-ALTER SEQUENCE demo.security_authorities_user_id_seq INCREMENT BY 50;
-ALTER SEQUENCE demo.accounts_account_number_seq INCREMENT BY 50;
-ALTER SEQUENCE demo.account_transactions_transaction_id_seq INCREMENT BY 50;
-ALTER SEQUENCE demo.loans_loan_number_seq INCREMENT BY 50;
-ALTER SEQUENCE demo.cards_card_id_seq INCREMENT BY 50;
-ALTER SEQUENCE demo.notice_details_notice_id_seq INCREMENT BY 50;
-ALTER SEQUENCE demo.contact_messages_contact_id_seq INCREMENT BY 50;
-ALTER SEQUENCE demo.security_users_id_seq INCREMENT BY 50;
