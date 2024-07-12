@@ -16,6 +16,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
@@ -25,6 +26,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+@Table(name = "loans")
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -44,6 +46,7 @@ public class Loan {
   @NotNull
   private SecurityUser user;
 
+  // TODO: create loan types enum
   @Column(name = "loan_type")
   private String loanType;
 

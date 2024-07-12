@@ -4,8 +4,8 @@ import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.model.UserType;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
+import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -16,7 +16,14 @@ public class UserFileGenerator extends AbstractFileGenerator {
 
   private int userCount = DEFAULT_RANDOM_USER_COUNT;
 
+  @Getter
   private final AccountGenerator accountGenerator = new AccountGenerator();
+
+  @Getter
+  private final LoanGenerator loanGenerator = new LoanGenerator();
+
+  @Getter
+  private final CardGenerator cardGenerator = new CardGenerator();
 
   public UserFileGenerator(String fileName) {
     super(fileName);
@@ -134,6 +141,8 @@ public class UserFileGenerator extends AbstractFileGenerator {
     user.setEmail(username + "@demo.com");
     user.setAccounts(accountGenerator.generate());
     user.setControlDates(randomEntityControlDates());
+    user.setLoans(loanGenerator.generate());
+    user.setCards(cardGenerator.generate());
     return user;
   }
 

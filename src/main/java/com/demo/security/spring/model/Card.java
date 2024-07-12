@@ -48,6 +48,7 @@ public class Card {
   @NotNull
   private SecurityUser user;
 
+  // TODO: Create card type enum
   @Column(name = "card_type")
   private String cardType;
 

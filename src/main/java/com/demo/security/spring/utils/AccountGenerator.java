@@ -14,6 +14,9 @@ public class AccountGenerator extends AbstractGenerator<List<Account>> {
 
   protected static final BigDecimal DEFAULT_STARTING_BALANCE = BigDecimal.valueOf(500.00);
 
+  /**
+   * The default item count is 1 for accounts but can be overridden with setItemCount()
+   */
   public AccountGenerator() {
     setItemCount(1);
   }
