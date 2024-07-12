@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
 import java.time.ZonedDateTime;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -21,9 +19,9 @@ import lombok.ToString;
 public class EntityStartAndEndDates {
 
   @Column(name = "start_date")
-  private ZonedDateTime start_date;
+  private ZonedDateTime startDate;
 
   @Column(name = "end_date")
-  private ZonedDateTime end_date;
+  private ZonedDateTime endDate;
 
 }

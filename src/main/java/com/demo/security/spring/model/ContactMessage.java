@@ -21,13 +21,13 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString
-@SequenceGenerator(name = "contact_messages_id_seq", sequenceName = "contact_messages_id_seq", allocationSize = 50, initialValue = 1)
+@SequenceGenerator(name = "contact_messages_contact_id_seq", sequenceName = "contact_messages_contact_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class ContactMessage {
 
   @Id
   @Column(name = "contact_id")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contact_messages_id_seq")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contact_messages_contact_id_seq")
   private Long contactId;
 
   @Column(name = "contact_name")

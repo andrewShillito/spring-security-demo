@@ -30,13 +30,13 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString(exclude = { "user" } )
-@SequenceGenerator(name = "cards_id_seq", sequenceName = "cards_id_seq", allocationSize = 50, initialValue = 1)
+@SequenceGenerator(name = "cards_card_id_seq", sequenceName = "cards_card_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class Card {
 
   @Id
   @Column(name = "card_id")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cards_id_seq")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cards_card_id_seq")
   private Long id;
 
   @Column(name = "card_number")

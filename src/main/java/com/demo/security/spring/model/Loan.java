@@ -29,13 +29,13 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString(exclude = { "user" })
-@SequenceGenerator(name = "loans_id_seq", sequenceName = "loans_id_seq", allocationSize = 50, initialValue = 1)
+@SequenceGenerator(name = "loans_loan_number_seq", sequenceName = "loans_loan_number_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class Loan {
 
   @Id
   @Column(name = "loan_number")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "loans_id_seq")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "loans_loan_number_seq")
   private Long loanNumber;
 
   @ManyToOne(fetch = FetchType.LAZY)
