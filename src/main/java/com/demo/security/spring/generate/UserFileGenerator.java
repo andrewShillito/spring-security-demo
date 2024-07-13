@@ -5,6 +5,7 @@ import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.model.UserType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
@@ -47,13 +48,18 @@ public class UserFileGenerator extends AbstractFileGenerator {
 
   @Override
   public List<SecurityUser> generate() {
+    return generateUsers(getItemCount());
+  }
+
+  @Override
+  public Collection<?> generate(int count) {
     log.info(() -> "Starting user generation");
-    final List<SecurityUser> generatedUsers = generateUsers();
+    final List<SecurityUser> generatedUsers = generateUsers(count);
     log.info(() -> "Generated " + generatedUsers.size() + " users");
     return generatedUsers;
   }
 
-  private List<SecurityUser> generateUsers() {
+  private List<SecurityUser> generateUsers(int count) {
     final List<SecurityUser> users = new ArrayList<>(List.of(
         generateUser("user", false),
         generateUser("admin", true),
@@ -62,7 +68,7 @@ public class UserFileGenerator extends AbstractFileGenerator {
         disable(generateUser("userDisabled", false)),
         disable(generateUser("adminDisabled", true))
     ));
-    for (int i = 0; i < getItemCount(); i++) {
+    for (int i = 0; i < count; i++) {
       final String username = faker.internet().username();
       users.add(faker.random().nextBoolean() ? generateRandomActiveUser(username) : generateRandomUser(username));
     }

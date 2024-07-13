@@ -3,6 +3,7 @@ package com.demo.security.spring.generate;
 import com.demo.security.spring.model.NoticeDetails;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
@@ -30,8 +31,13 @@ public class NoticeDetailsFileGenerator extends AbstractFileGenerator {
 
   @Override
   public List<NoticeDetails> generate() {
+    return generate(getItemCount());
+  }
+
+  @Override
+  public List<NoticeDetails> generate(int count) {
     final List<NoticeDetails> noticeDetails = new ArrayList<>();
-    for (int i = 0; i < getItemCount(); i++) {
+    for (int i = 0; i < count; i++) {
       noticeDetails.add(generateNotice());
     }
     log.info(() -> "Generated " + noticeDetails.size() + " noticeDetails");

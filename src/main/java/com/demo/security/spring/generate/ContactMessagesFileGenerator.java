@@ -30,8 +30,13 @@ public class ContactMessagesFileGenerator extends AbstractFileGenerator {
 
   @Override
   public List<ContactMessage> generate() {
+    return generate(getItemCount());
+  }
+
+  @Override
+  public List<ContactMessage> generate(int count) {
     final List<ContactMessage> contactMessages = new ArrayList<>();
-    for (int i = 0; i < getItemCount(); i++) {
+    for (int i = 0; i < count; i++) {
       contactMessages.add(generateContactMessage());
     }
     log.info(() -> "Generated " + contactMessages.size() + " contactMessages");
@@ -44,7 +49,7 @@ public class ContactMessagesFileGenerator extends AbstractFileGenerator {
     contactMessage.setContactName(faker.name().fullName());
     contactMessage.setSubject(faker.lorem().sentence());
     contactMessage.setMessage(faker.lorem().paragraph());
-    contactMessage.setCreatedDate(randomPastDate());
+    contactMessage.setCreated(randomPastDate());
     return contactMessage;
   }
 }

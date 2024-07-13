@@ -24,8 +24,13 @@ public class LoanGenerator extends AbstractGenerator<List<Loan>> {
 
   @Override
   public List<Loan> generate() {
+    return generate(getItemCount());
+  }
+
+  @Override
+  public List<Loan> generate(int count) {
     final List<Loan> loans = new ArrayList<>();
-    for (int i = 0; i < getItemCount(); i++) {
+    for (int i = 0; i < count; i++) {
       loans.add(generateLoan());
     }
     log.info(() -> "Generated " + loans.size() + " loans");

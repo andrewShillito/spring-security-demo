@@ -33,8 +33,13 @@ public class AccountGenerator extends AbstractGenerator<List<Account>> {
 
   @Override
   public List<Account> generate() {
+    return generate(getItemCount());
+  }
+
+  @Override
+  public List<Account> generate(int count) {
     final List<Account> accounts = new ArrayList<>();
-    for (int i = 0; i < getItemCount(); i++) {
+    for (int i = 0; i < count; i++) {
       accounts.add(generateAccount());
     }
     log.info(() -> "Generated " + accounts.size() + " accounts");

@@ -23,8 +23,13 @@ public class CardGenerator extends AbstractGenerator<List<Card>> {
 
   @Override
   public List<Card> generate() {
+    return generate(getItemCount());
+  }
+
+  @Override
+  public List<Card> generate(int count) {
     final List<Card> cards = new ArrayList<>();
-    for (int i = 0; i < getItemCount(); i++) {
+    for (int i = 0; i < count; i++) {
       cards.add(generateCard());
     }
     log.info(() -> "Generated " + cards.size() + " cards");

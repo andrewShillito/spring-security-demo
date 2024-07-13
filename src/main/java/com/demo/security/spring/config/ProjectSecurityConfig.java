@@ -18,6 +18,8 @@ import com.demo.security.spring.generate.UserFileGenerator;
 import com.demo.security.spring.repository.ContactMessageRepository;
 import com.demo.security.spring.repository.NoticeDetailsRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
+import com.demo.security.spring.serialization.ZonedDateTimeDeserializer;
+import com.demo.security.spring.serialization.ZonedDateTimeSerializer;
 import com.demo.security.spring.service.ExampleDataGenerationService;
 import com.demo.security.spring.service.InMemoryLoginService;
 import com.demo.security.spring.service.JpaLoginService;
@@ -26,7 +28,9 @@ import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
 import com.demo.security.spring.utils.StartupDatabasePopulator;
 import com.demo.security.spring.service.ExampleDataManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import java.time.ZonedDateTime;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -186,6 +190,11 @@ public class ProjectSecurityConfig {
   public ObjectMapper objectMapper() {
     final ObjectMapper objectMapper = new ObjectMapper();
     objectMapper.registerModule(new JavaTimeModule());
+    // add module to serialize and deserialize ZonedDateTime as string instead of instant
+    final SimpleModule customModule = new SimpleModule("security-demo-module");
+    customModule.addDeserializer(ZonedDateTime.class, new ZonedDateTimeDeserializer(ZonedDateTime.class));
+    customModule.addSerializer(ZonedDateTime.class, new ZonedDateTimeSerializer(ZonedDateTime.class));
+    objectMapper.registerModule(customModule);
     return objectMapper;
   }
 
