@@ -1,4 +1,4 @@
-package com.demo.security.spring.generation;
+package com.demo.security.spring.generate;
 
 import com.demo.security.spring.model.Loan;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -39,7 +39,7 @@ public class LoanGenerator extends AbstractGenerator<List<Loan>> {
     loan.setTotalAmount(BigDecimal.valueOf(faker.random().nextDouble(10000, 500000)).setScale(2, RoundingMode.HALF_EVEN));
     loan.setAmountPaid(BigDecimal.valueOf(faker.random().nextDouble(0, loan.getTotalAmount().doubleValue())).setScale(2, RoundingMode.HALF_EVEN));
     loan.setOutstandingAmount(loan.getTotalAmount().subtract(loan.getAmountPaid()).setScale(2, RoundingMode.HALF_EVEN));
-    loan.setStartDate(randomPastDate());
+    loan.setStartDate(randomPastDate(loan.getCreatedDate().getCreated()));
     return loan;
   }
 }

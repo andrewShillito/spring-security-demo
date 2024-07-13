@@ -1,5 +1,7 @@
 package com.demo.security.spring.service;
 
+import com.demo.security.spring.model.ContactMessage;
+import com.demo.security.spring.model.NoticeDetails;
 import com.demo.security.spring.model.SecurityUser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
@@ -20,7 +22,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Log4j2
 @Builder
 @Setter
-public class DevEnvironmentExampleDataManager {
+public class ExampleDataManager {
 
   private PasswordEncoder passwordEncoder;
 
@@ -31,13 +33,13 @@ public class DevEnvironmentExampleDataManager {
   private boolean regenerateData;
 
   /**
-   * Returns a list of UserDetails from the result of {@link #getDevEnvironmentUsers()}
+   * Returns a list of UserDetails from the result of {@link #getUsers()}
    * which reads a json file of example {@link SecurityUser} records.
    * Encodes the example users passwords with the provided encoder.
    * @return list of user details object to be seeded into in-memory user details manager
    */
   public List<UserDetails> getInMemoryUsers() {
-    final List<SecurityUser> securityUsers = getDevEnvironmentUsers();
+    final List<SecurityUser> securityUsers = getUsers();
     return securityUsers
         .stream()
         .map(it -> (UserDetails) it)
@@ -51,7 +53,7 @@ public class DevEnvironmentExampleDataManager {
    * Should not be used in any production environment.
    * @return a List of security users to populate into the database
    */
-  public List<SecurityUser> getDevEnvironmentUsers() {
+  public List<SecurityUser> getUsers() {
     List<SecurityUser> securityUsers;
     if (regenerateData) {
       securityUsers = generationService.generateUsers(true);
@@ -69,20 +71,50 @@ public class DevEnvironmentExampleDataManager {
       }
     }
     return securityUsers.stream().peek(user -> {
-          user.setPassword(passwordEncoder.encode(user.getPassword()));
-          if (user.getAccounts() != null) {
-            user.getAccounts().stream().forEach(account -> {
-              if (account.getAccountTransactions() != null) {
-                // this is jpa related - because we have bi-directional references we need to make sure the
-                // seeded account transactions have User object set as well
-                account.getAccountTransactions().stream().filter(Objects::nonNull).forEach(transaction -> {
-                  transaction.setUser(user);
-                });
-              }
+      user.setPassword(passwordEncoder.encode(user.getPassword()));
+      if (user.getAccounts() != null) {
+        user.getAccounts().stream().forEach(account -> {
+          if (account.getAccountTransactions() != null) {
+            // this is jpa related - because we have bi-directional references we need to make sure the
+            // seeded account transactions have User object set as well
+            account.getAccountTransactions().stream().filter(Objects::nonNull).forEach(transaction -> {
+              transaction.setUser(user);
             });
           }
-        })
-        .toList();
+        });
+      }
+    })
+    .toList();
+  }
+
+  public List<NoticeDetails> getNoticeDetails() {
+    List<NoticeDetails> noticeDetails;
+    if (regenerateData) {
+      noticeDetails = generationService.generateNotices(true);
+    } else {
+      final ClassPathResource resource = getClassPathResource("seed/example-notice-details.json");
+      try {
+        noticeDetails = Arrays.stream(objectMapper.readValue(resource.getInputStream(), NoticeDetails[].class)).toList();
+      } catch (IOException e) {
+        throw new RuntimeException("Failed to read development environment notice details from classpath resource " + resource.getPath(), e);
+      }
+    }
+    return noticeDetails;
+  }
+
+  public List<ContactMessage> getContactMessages() {
+    List<ContactMessage> contactMessages;
+    if (regenerateData) {
+      contactMessages = generationService.generateMessages(true);
+    } else {
+      final ClassPathResource resource = getClassPathResource("seed/example-contact-messages.json");
+      try {
+        contactMessages = Arrays.stream(objectMapper.readValue(resource.getInputStream(), ContactMessage[].class)).toList();
+      } catch (IOException e) {
+        throw new RuntimeException("Failed to read development environment contact messages from classpath resource " + resource.getPath(), e);
+      }
+    }
+    return contactMessages;
   }
 
   /**

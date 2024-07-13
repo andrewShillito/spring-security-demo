@@ -9,20 +9,22 @@ import com.demo.security.spring.controller.ContactController;
 import com.demo.security.spring.controller.LoansController;
 import com.demo.security.spring.controller.UserController;
 import com.demo.security.spring.controller.NoticesController;
-import com.demo.security.spring.generation.AccountGenerator;
-import com.demo.security.spring.generation.CardGenerator;
-import com.demo.security.spring.generation.ContactMessagesFileGenerator;
-import com.demo.security.spring.generation.LoanGenerator;
-import com.demo.security.spring.generation.NoticeDetailsFileGenerator;
-import com.demo.security.spring.generation.UserFileGenerator;
+import com.demo.security.spring.generate.AccountGenerator;
+import com.demo.security.spring.generate.CardGenerator;
+import com.demo.security.spring.generate.ContactMessagesFileGenerator;
+import com.demo.security.spring.generate.LoanGenerator;
+import com.demo.security.spring.generate.NoticeDetailsFileGenerator;
+import com.demo.security.spring.generate.UserFileGenerator;
+import com.demo.security.spring.repository.ContactMessageRepository;
+import com.demo.security.spring.repository.NoticeDetailsRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.service.ExampleDataGenerationService;
 import com.demo.security.spring.service.InMemoryLoginService;
 import com.demo.security.spring.service.JpaLoginService;
 import com.demo.security.spring.service.LoginService;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
-import com.demo.security.spring.utils.DevEnvironmentDbPopulator;
-import com.demo.security.spring.service.DevEnvironmentExampleDataManager;
+import com.demo.security.spring.utils.StartupDatabasePopulator;
+import com.demo.security.spring.service.ExampleDataManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import net.datafaker.Faker;
@@ -89,8 +91,8 @@ public class ProjectSecurityConfig {
    */
   @Bean(name = "userDetailsService")
   @Profile(PROFILE_IN_MEMORY_USERS)
-  public UserDetailsService inMemoryUserDetailsManager(final DevEnvironmentExampleDataManager devEnvironmentExampleDataManager) {
-    return new InMemoryUserDetailsManager(devEnvironmentExampleDataManager.getInMemoryUsers());
+  public UserDetailsService inMemoryUserDetailsManager(final ExampleDataManager exampleDataManager) {
+    return new InMemoryUserDetailsManager(exampleDataManager.getInMemoryUsers());
   }
 
   /**
@@ -112,15 +114,24 @@ public class ProjectSecurityConfig {
   /**
    * For development environment usage only.
    * Populates the database with test users defined in a json resource file.
-   * @param repository the {@link SecurityUserRepository} for interacting with postgres db
-   * @return DevEnvironmentDbPopulator
+   * @param userRepository the {@link SecurityUserRepository} for interacting with postgres db
+   * @param noticeDetailsRepository the {@link NoticeDetailsRepository} for interacting with postgres db
+   * @param contactMessageRepository the {@link ContactMessageRepository} for interacting with postgres db
+   * @return StartupDatabasePopulator
    */
   @Bean
   @Profile("! " + PROFILE_IN_MEMORY_USERS + " && " + PROFILE_POSTGRES)
-  public DevEnvironmentDbPopulator devEnvironmentDbPopulator(final SecurityUserRepository repository, final DevEnvironmentExampleDataManager devEnvironmentExampleDataManager) {
-    return DevEnvironmentDbPopulator.builder()
-        .exampleDataManager(devEnvironmentExampleDataManager)
-        .securityUserRepository(repository)
+  public StartupDatabasePopulator startupDatabasePopulator(
+      final SecurityUserRepository userRepository,
+      final NoticeDetailsRepository noticeDetailsRepository,
+      final ContactMessageRepository contactMessageRepository,
+      final ExampleDataManager exampleDataManager
+  ) {
+    return StartupDatabasePopulator.builder()
+        .exampleDataManager(exampleDataManager)
+        .securityUserRepository(userRepository)
+        .noticeDetailsRepository(noticeDetailsRepository)
+        .contactMessageRepository(contactMessageRepository)
         .build();
   }
 
@@ -154,11 +165,11 @@ public class ProjectSecurityConfig {
    * @return an example users manager
    */
   @Bean
-  public DevEnvironmentExampleDataManager exampleUsersManager(
+  public ExampleDataManager exampleDataManager(
       final ExampleDataGenerationService generationService,
       @Value("${example-data.regenerate:false}") boolean regenerateData
   ) {
-    return DevEnvironmentExampleDataManager.builder()
+    return ExampleDataManager.builder()
         .passwordEncoder(passwordEncoder())
         .objectMapper(objectMapper())
         .generationService(generationService)

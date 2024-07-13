@@ -1,6 +1,6 @@
-import com.demo.security.spring.generation.ContactMessagesFileGenerator
-import com.demo.security.spring.generation.NoticeDetailsFileGenerator
-import com.demo.security.spring.generation.UserFileGenerator
+import com.demo.security.spring.generate.ContactMessagesFileGenerator
+import com.demo.security.spring.generate.NoticeDetailsFileGenerator
+import com.demo.security.spring.generate.UserFileGenerator
 
 /**
  * A groovy script to use for generating random dev environment data.

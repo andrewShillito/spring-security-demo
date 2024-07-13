@@ -1,4 +1,4 @@
-package com.demo.security.spring.generation;
+package com.demo.security.spring.generate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Preconditions;

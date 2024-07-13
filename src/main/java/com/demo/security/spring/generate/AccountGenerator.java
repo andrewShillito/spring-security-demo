@@ -1,4 +1,4 @@
-package com.demo.security.spring.generation;
+package com.demo.security.spring.generate;
 
 import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.AccountTransaction;
@@ -60,11 +60,11 @@ public class AccountGenerator extends AbstractGenerator<List<Account>> {
   private AccountTransaction generateAccountTransaction(BigDecimal previousClosingBalance) {
     final AccountTransaction accountTransaction = new AccountTransaction();
     accountTransaction.setCreatedDate(randomEntityCreatedDate());
-    accountTransaction.setTransactionDate(randomPastDate());
+    accountTransaction.setTransactionDate(accountTransaction.getCreatedDate().getCreated());
     accountTransaction.setTransactionSummary(faker.commerce().productName());
     // add other transaction types as needed
     accountTransaction.setTransactionType(faker.random().nextBoolean() ? TransactionType.Withdrawal : TransactionType.Deposit);
-    accountTransaction.setTransactionAmount(BigDecimal.valueOf(Math.abs(faker.random().nextDouble())).setScale(2, RoundingMode.HALF_EVEN));
+    accountTransaction.setTransactionAmount(BigDecimal.valueOf(Math.abs(faker.random().nextDouble() * 100)).setScale(2, RoundingMode.HALF_EVEN));
     if (accountTransaction.getTransactionType() == TransactionType.Withdrawal) {
       accountTransaction.setClosingBalance(previousClosingBalance.subtract(accountTransaction.getTransactionAmount()).setScale(2, RoundingMode.HALF_EVEN));
     } else {

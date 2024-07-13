@@ -16,7 +16,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "cards")
+@Table(name = "contact_messages")
 @Getter
 @Setter
 @EqualsAndHashCode

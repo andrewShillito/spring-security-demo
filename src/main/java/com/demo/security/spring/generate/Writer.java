@@ -1,4 +1,4 @@
-package com.demo.security.spring.generation;
+package com.demo.security.spring.generate;
 
 import java.util.Collection;
 

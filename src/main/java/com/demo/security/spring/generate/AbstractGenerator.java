@@ -1,4 +1,4 @@
-package com.demo.security.spring.generation;
+package com.demo.security.spring.generate;
 
 import com.demo.security.spring.model.EntityControlDates;
 import com.demo.security.spring.model.EntityCreatedDate;
@@ -45,6 +45,14 @@ public abstract class AbstractGenerator<T> implements Generator<T> {
 
   protected ZonedDateTime randomPastDate(int atMost, int min, TimeUnit timeUnit) {
     return ZonedDateTime.ofInstant(faker.timeAndDate().past(atMost, min, timeUnit), ZoneId.systemDefault());
+  }
+
+  protected ZonedDateTime randomPastDate(ZonedDateTime referenceDate) {
+    return randomPastDate(100, TimeUnit.DAYS, referenceDate);
+  }
+
+  protected ZonedDateTime randomPastDate(int atMost, TimeUnit timeUnit, ZonedDateTime referenceDate) {
+    return ZonedDateTime.ofInstant(faker.timeAndDate().past(atMost, timeUnit, referenceDate.toInstant()), ZoneId.systemDefault());
   }
 
   protected ZonedDateTime randomFutureDate() {
