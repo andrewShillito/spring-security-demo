@@ -2,9 +2,7 @@ CREATE SCHEMA IF NOT EXISTS demo;
 
 CREATE SEQUENCE IF NOT EXISTS demo.security_users_id_seq INCREMENT BY 50;
 
--- name 'security_users' avoids conflict with h2 default schema's 'USERS' table
-CREATE TABLE IF NOT EXISTS demo.security_users
-(
+CREATE TABLE IF NOT EXISTS demo.security_users (
     id bigint not null primary key default nextval('demo.security_users_id_seq'),
     username varchar(50) not null unique,
     email varchar(50) not null,
