@@ -76,7 +76,7 @@ public class UserFileGenerator extends AbstractFileGenerator {
         faker.internet().password(),
         type,
         getRolesForType(type),
-    true,
+        true,
         false,
         false,
         false
