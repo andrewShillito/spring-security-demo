@@ -42,8 +42,9 @@ Example usage:
 
 ## To regenerate dev environment example data
 
-Set property `example-data.regenerate` to true causes example data which is seeded into the DB to be regenerated during startup prior to it being populated into the db.
-When regenerated, the data is also written to the source files which are used when not generating data on startup. This allows also for referencing the data which was populated into the db on startup.
+Setting property `example-data.regenerate=true` either in properties files or from the command line ie: `-Dexample-data.regenerate=true` causes example data which is seeded into the DB to be regenerated during startup prior to it being populated into the db.
+When regenerated, the data is also written to `.json` files in [./src/main/resources/seed](./src/main/resources/seed) for reference. Those files are also used to populate the db during startup when `example-data.regenerate=false`.
+The intelliJ run configuration `SpringSecurityDemoApplication Regenerate Example Data` can be used to startup and regenerate example data.
 
 Example data generation leverages the DataFaker library.
 
