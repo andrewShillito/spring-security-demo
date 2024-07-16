@@ -6,17 +6,22 @@ import com.demo.security.spring.generate.ContactMessagesFileGenerator;
 import com.demo.security.spring.model.ContactMessage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.ResultActions;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -26,6 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@Log4j2
 class ContactControllerTest extends AbstractControllerTest {
 
     @Autowired
@@ -55,40 +61,76 @@ class ContactControllerTest extends AbstractControllerTest {
 
     private void testSuccessfulRequest() throws Exception {
         final String original = randomContactMessageString();
-        final MvcResult result = mockMvc.perform(post(ContactController.CONTACT_RESOURCE_PATH)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(original))
+        final MvcResult result = executeValidPost(original)
             .andExpect(status().isCreated())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andReturn();
-        ContactMessage actual = fromString(result.getResponse().getContentAsString());
+        ContactMessage actual = asMessage(result.getResponse().getContentAsString());
         assertEqualsExceptId(original, result.getResponse().getContentAsString());
         assertNotNull(actual.getContactId());
     }
 
-    @Test
-    void testCreateContactMessageMessageValidation() throws Exception {
-        ContactMessage message = randomContactMessage();
-        message.setMessage(null);
-        final MvcResult result = mockMvc.perform(post(ContactController.CONTACT_RESOURCE_PATH)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(asString(message)))
-            .andExpect(status().isBadRequest())
+    private ResultActions executeValidPost(String content) throws Exception {
+        return mockMvc.perform(post(ContactController.CONTACT_RESOURCE_PATH)
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(content));
+    }
+
+    private MvcResult expectBadRequest(ResultActions resultActions) throws Exception {
+        return resultActions.andExpect(status().isBadRequest())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andReturn();
-        assertEquals(HttpStatus.BAD_REQUEST.value(), result.getResponse().getStatus());
-        List<Map> actualList = asList(result.getResponse().getContentAsString());
-        assertNotNull(actualList);
-        assertEquals(1, actualList.size());
-        // test content of response
+    }
+
+    @Test
+    void testFieldValidationRules() {
+        final List<String> testValues = new ArrayList<>();
+        testValues.add(null);
+        testValues.add("");
+        testValues.add(" ");
+        Arrays.stream(ContactMessage.class.getDeclaredFields())
+            .filter(field -> Objects.equals(String.class, field.getType()))
+            .forEach(field -> {
+                testValues.forEach(value -> {
+                    log.info(() -> "Testing field " + field.getName() + " validation with value " + (value == null ? "'null'" : "'" + value + "'"));
+                    ContactMessage message = randomContactMessage();
+                    ReflectionTestUtils.invokeSetterMethod(message, field.getName(), value);
+                    try {
+                        final MvcResult result = expectBadRequest(executeValidPost(asString(message)));
+                        List<ErrorDetailsResponse> responseContent = asErrorDetailsList(result, 1);
+                        testErrorDetailsResponse(field.getName(), "".equals(value) ? null : value, responseContent.getFirst());
+                    } catch (Exception e) {
+                        fail(e);
+                    }
+                });
+            });
+    }
+
+    private void testErrorDetailsResponse(String fieldName, String rejectedValue, ErrorDetailsResponse actual) {
         final ErrorDetailsResponse expectedErrorDetails = ErrorDetailsResponse.builder()
-            .fieldName("message")
-            .errorCode("NotEmpty")
-            .errorMessage("must not be empty")
-            .rejectedValue(null)
+            .fieldName(fieldName)
+            .errorCode("NotBlank")
+            .errorMessage("must not be blank")
+            .rejectedValue(rejectedValue)
             .build();
-        final ErrorDetailsResponse actualErrorDetails = asErrorDetails(actualList.getFirst());
-        assertEquals(expectedErrorDetails, actualErrorDetails);
+        testErrorDetailsResponse(expectedErrorDetails, actual);
+    }
+
+    private void testErrorDetailsResponse(ErrorDetailsResponse expected, ErrorDetailsResponse actual) {
+        assertEquals(expected, actual);
+    }
+
+    private List<ErrorDetailsResponse> asErrorDetailsList(MvcResult mvcResult)
+        throws IOException {
+        List<Map> actualList = asList(mvcResult.getResponse().getContentAsString());
+        return actualList.stream().map(this::asErrorDetails).toList();
+    }
+
+    private List<ErrorDetailsResponse> asErrorDetailsList(MvcResult mvcResult, int expectedSize)
+        throws IOException {
+        final List<ErrorDetailsResponse> result = asErrorDetailsList(mvcResult);
+        assertEquals(result.size(), expectedSize);
+        return result;
     }
 
     private ContactMessage randomContactMessage() {
@@ -100,8 +142,8 @@ class ContactControllerTest extends AbstractControllerTest {
     }
 
     private void assertEqualsExceptId(String expected, String actual) throws Exception {
-        final ContactMessage expectedMessage = fromString(expected);
-        final ContactMessage actualMessage = fromString(actual);
+        final ContactMessage expectedMessage = asMessage(expected);
+        final ContactMessage actualMessage = asMessage(actual);
         assertEqualsExceptId(expectedMessage, actualMessage);
     }
 
@@ -114,7 +156,7 @@ class ContactControllerTest extends AbstractControllerTest {
         assertEquals(expected.getMessage(), actual.getMessage());
     }
 
-    private ContactMessage fromString(String contactMessageString) throws IOException {
+    private ContactMessage asMessage(String contactMessageString) throws IOException {
         return objectMapper.readValue(contactMessageString, ContactMessage.class);
     }
 

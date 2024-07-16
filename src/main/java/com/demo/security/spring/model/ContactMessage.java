@@ -11,7 +11,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotBlank;
 import java.time.ZonedDateTime;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -33,19 +33,19 @@ public class ContactMessage {
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contact_messages_contact_id_seq")
   private Long contactId;
 
-  @NotEmpty
+  @NotBlank
   @Column(name = "contact_name")
   private String contactName;
 
-  @NotEmpty
+  @NotBlank
   @Column(name = "contact_email")
   private String contactEmail;
 
-  @NotEmpty
+  @NotBlank
   @Column(name = "subject")
   private String subject;
 
-  @NotEmpty
+  @NotBlank
   @Column(name = "message")
   private String message;
 
