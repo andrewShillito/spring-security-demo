@@ -13,12 +13,22 @@ public class DemoAssertions {
   /** For fuzzy matching of datetime */
   private static final List<Integer> FUZZ_FACTOR_LIST = List.of(-1, 0, 1);
 
+  /**
+   * Checks that two zonedDateTime objects are equal when truncated to {@link ChronoUnit#SECONDS}.
+   * Prevents erroneous failures relating to milliseconds/nano-time.
+   * @param expected the expected zonedDateTime
+   * @param actual the actual zonedDateTime
+   */
   public static void assertDateEquals(ZonedDateTime expected, ZonedDateTime actual) {
     assertEquals(expected.truncatedTo(ChronoUnit.SECONDS), actual.truncatedTo(ChronoUnit.SECONDS));
   }
 
+  /**
+   * Checks that a date is equal to now +/- 1 minute. Fuzzy is matching is for testing stability
+   * while still asserting that the datetime is roughly 'now'. Does not do any zone id conversion.
+   * @param actual the datetime to check against truncated {@link ZonedDateTime#now()}
+   */
   public static void assertDateIsNowIsh(ZonedDateTime actual) {
-    // round the date to the nearest 2 minutes for test stability...
     assertNotNull(actual);
     final ZonedDateTime nowTruncated = ZonedDateTime.now().truncatedTo(ChronoUnit.MINUTES);
     final ZonedDateTime actualTruncated = actual.truncatedTo(ChronoUnit.MINUTES);
