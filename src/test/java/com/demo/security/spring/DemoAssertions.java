@@ -24,7 +24,7 @@ public class DemoAssertions {
   }
 
   /**
-   * Checks that a date is equal to now +/- 1 minute. Fuzzy is matching is for testing stability
+   * Checks that a date is equal to now +/- 1 minute. Fuzzy matching is for testing stability
    * while still asserting that the datetime is roughly 'now'. Does not do any zone id conversion.
    * @param actual the datetime to check against truncated {@link ZonedDateTime#now()}
    */
