@@ -1,5 +1,6 @@
 package com.demo.security.spring.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import jakarta.persistence.Column;
@@ -10,6 +11,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import java.time.ZonedDateTime;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,10 +33,12 @@ public class NoticeDetails {
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "notice_details_notice_id_seq")
   private Long noticeId;
 
-  @Column(name = "notice_summary")
+  @Column(name = "notice_summary", length = 255)
+  @NotBlank
   private String noticeSummary;
 
-  @Column(name = "notice_details")
+  @Column(name = "notice_details", length = 500)
+  @NotBlank
   private String noticeDetails;
 
   @Embedded
@@ -42,4 +47,28 @@ public class NoticeDetails {
   @Embedded
   private EntityStartAndEndDates entityStartAndEndDates;
 
+  @JsonIgnore
+  public boolean isFuture() {
+    return startAndEndAreValid() && entityStartAndEndDates.getStartDate().isAfter(ZonedDateTime.now());
+  }
+
+  @JsonIgnore
+  public boolean isPast() {
+    return startAndEndAreValid() && entityStartAndEndDates.getEndDate().isBefore(ZonedDateTime.now());
+  }
+
+  @JsonIgnore
+  public boolean isActive() {
+    return startAndEndAreValid()
+        && entityStartAndEndDates.getStartDate().isBefore(ZonedDateTime.now())
+        && entityStartAndEndDates.getEndDate().isAfter(ZonedDateTime.now());
+  }
+
+  private boolean startAndEndAreValid() {
+    return entityStartAndEndDates != null
+        && entityStartAndEndDates.getStartDate() != null
+        && entityStartAndEndDates.getEndDate() != null
+        // should assert this at other times as well - this would be bad data
+        && entityStartAndEndDates.getEndDate().isAfter(entityStartAndEndDates.getStartDate());
+  }
 }

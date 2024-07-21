@@ -34,19 +34,19 @@ public class ContactMessage {
   private Long contactId;
 
   @NotBlank
-  @Column(name = "contact_name")
+  @Column(name = "contact_name", length = 50)
   private String contactName;
 
   @NotBlank
-  @Column(name = "contact_email")
+  @Column(name = "contact_email", length = 100)
   private String contactEmail;
 
   @NotBlank
-  @Column(name = "subject")
+  @Column(name = "subject", length = 500)
   private String subject;
 
   @NotBlank
-  @Column(name = "message")
+  @Column(name = "message", length = 2000)
   private String message;
 
   @Column(name = "created_date")

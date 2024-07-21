@@ -4,11 +4,11 @@ CREATE SEQUENCE IF NOT EXISTS demo.security_users_id_seq INCREMENT BY 50;
 
 CREATE TABLE IF NOT EXISTS demo.security_users (
     id bigint not null primary key default nextval('demo.security_users_id_seq'),
-    username varchar(50) not null unique,
-    email varchar(50) not null,
+    username varchar(100) not null unique,
+    email varchar(100) not null,
     password varchar(500) not null,
-    user_type varchar(50) not null,
-    user_role varchar(45) not null,
+    user_type varchar(100) not null,
+    user_role varchar(100) not null,
     enabled boolean not null default true,
     account_expired boolean not null default false,
     account_expired_date timestamp with time zone,
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS demo.security_authorities
 (
     id bigint not null primary key default nextval('demo.security_authorities_id_seq'),
     user_id bigint not null,
-    authority varchar(50) not null,
+    authority varchar(100) not null,
     constraint fk_security_authorities_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id)
 );
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS demo.accounts (
     user_id bigint not null, -- foreign key of security_users.id
     account_number bigint not null primary key default nextval('demo.accounts_account_number_seq'),
     account_type varchar(100) not null,
-    branch_address varchar(200) not null,
+    branch_address varchar(255) not null,
     created_date timestamp with time zone default null,
     constraint fk_accounts_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS demo.account_transactions (
     account_number integer not null,
     user_id bigint not null,
     transaction_date timestamp with time zone not null,
-    transaction_summary varchar(200) not null,
+    transaction_summary varchar(255) not null,
     transaction_type varchar(100) not null,
     transaction_amount decimal not null,
     closing_balance decimal not null,
@@ -91,7 +91,7 @@ CREATE SEQUENCE IF NOT EXISTS demo.notice_details_notice_id_seq INCREMENT BY 50;
 
 CREATE TABLE IF NOT EXISTS demo.notice_details (
     notice_id bigint not null primary key default nextval('demo.notice_details_notice_id_seq'),
-    notice_summary varchar(200) not null,
+    notice_summary varchar(255) not null,
     notice_details varchar(500) not null,
     start_date timestamp with time zone not null,
     end_date timestamp with time zone not null,

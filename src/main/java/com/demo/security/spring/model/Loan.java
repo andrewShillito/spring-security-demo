@@ -47,7 +47,7 @@ public class Loan {
   private SecurityUser user;
 
   // TODO: create loan types enum
-  @Column(name = "loan_type")
+  @Column(name = "loan_type", length = 100)
   private String loanType;
 
   @Column(name = "start_date")

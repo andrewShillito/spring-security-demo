@@ -4,6 +4,7 @@ import com.demo.security.spring.validation.IsValidRole;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -41,6 +42,7 @@ public class SecurityAuthority implements GrantedAuthority {
 
   @NotBlank
   @IsValidRole
+  @Column(name = "authority", length = 100)
   private String authority;
 
 }

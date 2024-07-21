@@ -57,10 +57,10 @@ public class AccountTransaction {
   @Column(name = "transaction_date")
   private ZonedDateTime transactionDate;
 
-  @Column(name = "transaction_summary")
+  @Column(name = "transaction_summary", length = 255)
   private String transactionSummary;
 
-  @Column(name = "transaction_type")
+  @Column(name = "transaction_type", length = 100)
   @Enumerated(EnumType.STRING)
   private TransactionType transactionType;
 

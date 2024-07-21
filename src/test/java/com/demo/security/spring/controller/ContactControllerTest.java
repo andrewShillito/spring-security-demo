@@ -193,5 +193,4 @@ class ContactControllerTest extends AbstractControllerTest {
         return null; // unreachable but required by compiler
     }
 
-
 }

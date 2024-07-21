@@ -39,7 +39,7 @@ public class Card {
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cards_card_id_seq")
   private Long id;
 
-  @Column(name = "card_number")
+  @Column(name = "card_number", length = 100)
   private String cardNumber;
 
   @ManyToOne(fetch = FetchType.LAZY)
@@ -49,7 +49,7 @@ public class Card {
   private SecurityUser user;
 
   // TODO: Create card type enum
-  @Column(name = "card_type")
+  @Column(name = "card_type", length = 100)
   private String cardType;
 
   @Column(name = "total_limit")

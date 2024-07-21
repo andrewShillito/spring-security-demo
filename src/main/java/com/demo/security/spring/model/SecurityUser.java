@@ -41,20 +41,24 @@ public class SecurityUser implements UserDetails {
   private Long id;
 
   @NotBlank
+  @Column(name = "username", length = 100)
   private String username;
 
   @NotBlank
+  @Column(name = "email", length = 100)
   private String email;
 
   @NotBlank
+  @Column(name = "password", length = 500)
   private String password;
 
-  @Column(name = "user_type")
+  @Column(name = "user_type", length = 100)
   @Enumerated(EnumType.STRING)
   @NotNull
   private UserType userType = UserType.external;
 
   @NotBlank
+  @Column(name = "user_role", length = 100)
   private String userRole = "STANDARD";
 
   private boolean enabled;

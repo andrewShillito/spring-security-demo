@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
@@ -20,7 +21,7 @@ public class DemoAssertions {
    * @param actual the actual zonedDateTime
    */
   public static void assertDateEquals(ZonedDateTime expected, ZonedDateTime actual) {
-    assertEquals(expected.truncatedTo(ChronoUnit.SECONDS), actual.truncatedTo(ChronoUnit.SECONDS));
+    assertEquals(expected.truncatedTo(ChronoUnit.SECONDS), actual.truncatedTo(ChronoUnit.SECONDS).withZoneSameInstant(ZoneId.systemDefault()));
   }
 
   /**
@@ -31,9 +32,9 @@ public class DemoAssertions {
   public static void assertDateIsNowIsh(ZonedDateTime actual) {
     assertNotNull(actual);
     final ZonedDateTime nowTruncated = ZonedDateTime.now().truncatedTo(ChronoUnit.MINUTES);
-    final ZonedDateTime actualTruncated = actual.truncatedTo(ChronoUnit.MINUTES);
+    final ZonedDateTime actualTruncated = actual.truncatedTo(ChronoUnit.MINUTES).withZoneSameInstant(ZoneId.systemDefault());
     assertTrue(FUZZ_FACTOR_LIST.stream().anyMatch(factor -> nowTruncated.plusMinutes(factor).equals(actualTruncated)),
-        "Expected datetime to be now-ish but was " + actual);
+        "Expected datetime to be now-ish relative to " + ZonedDateTime.now() + " but was " + actual);
     assertEquals(nowTruncated.truncatedTo(ChronoUnit.DAYS), actualTruncated.truncatedTo(ChronoUnit.DAYS));
   }
 

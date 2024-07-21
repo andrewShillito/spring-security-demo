@@ -111,11 +111,11 @@ public class UserFileGenerator extends AbstractFileGenerator {
   }
 
   private SecurityUser generateUser(String username, boolean isInternal) {
-    return isInternal ? generateExternalUser(username, DEFAULT_TESTING_PASSWORD) : generateInternalUser(username, DEFAULT_TESTING_PASSWORD);
+    return isInternal ? generateInternalUser(username, DEFAULT_TESTING_PASSWORD) :  generateExternalUser(username, DEFAULT_TESTING_PASSWORD);
   }
 
   private SecurityUser generateUser(String username, boolean isInternal, List<String> roles) {
-    final SecurityUser user = isInternal ? generateExternalUser(username, DEFAULT_TESTING_PASSWORD) : generateInternalUser(username, DEFAULT_TESTING_PASSWORD);
+    final SecurityUser user = isInternal ? generateInternalUser(username, DEFAULT_TESTING_PASSWORD) : generateExternalUser(username, DEFAULT_TESTING_PASSWORD);
     user.setAuthorities(toAuthorities(roles));
     return user;
   }

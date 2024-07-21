@@ -45,11 +45,11 @@ public class Account {
   @NotNull
   private SecurityUser user;
 
-  @Column(name = "account_type")
+  @Column(name = "account_type", length = 100)
   private String accountType;
 
   // TODO: This is a free-text address, but Address object would be preferable
-  @Column(name = "branch_address")
+  @Column(name = "branch_address", length = 255)
   private String branchAddress;
 
   @Embedded
