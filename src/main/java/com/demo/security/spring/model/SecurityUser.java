@@ -3,6 +3,8 @@ package com.demo.security.spring.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -18,14 +20,21 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import java.lang.reflect.Field;
 import java.time.ZonedDateTime;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.util.ReflectionUtils;
 
 @Entity
 @Table(name = "security_users")
@@ -50,6 +59,7 @@ public class SecurityUser implements UserDetails {
 
   @NotBlank
   @Column(name = "password", length = 500)
+  @JsonProperty(access = Access.WRITE_ONLY)
   private String password;
 
   @Column(name = "user_type", length = 100)
@@ -146,6 +156,67 @@ public class SecurityUser implements UserDetails {
     this.cards = cards;
     if (cards != null) {
       cards.stream().forEach(card -> card.setUser(this));
+    }
+  }
+
+  /**
+   * Returns a representation of this object as a map which is used for exporting local
+   * example test/development environment data to example-users.json.
+   * Doesn't look at field annotations which could cause issues if property names are changed
+   * using annotations and there is an attempt to read jackson generated json back into SecurityUser
+   * object. That is not currently the case for all field names.
+   * Uses a custom comparator for declared field ordering to be used in example-users.json
+   * @return this as a map
+   */
+  public Map<String, Object> toMap() {
+    Map<String, Object> result = new TreeMap<>(new SecurityUserExampleDataComparator());
+    Arrays.stream(this.getClass().getDeclaredFields()).forEach(field -> {
+      field.setAccessible(true);
+      result.put(field.getName(), ReflectionUtils.getField(field, this));
+    });
+    return result;
+  }
+
+  /**
+   * A comparator for quality of life ordering in the example-users.json output.
+   * This relates to handling which allows SecurityUser#password to be write only for
+   * security reasons but also to be output into the example-users.json for local
+   * development & testing data.
+   */
+  protected static class SecurityUserExampleDataComparator implements Comparator<String> {
+
+    /** A local static copy of {@link SecurityUser} declared fields */
+    private static final Field[] fields = SecurityUser.class.getDeclaredFields();
+
+    /** Prevents iterating through fields array for every field compared */
+    private static final Map<String, Integer> FIELD_NAME_TO_DECLARED_ORDER_MAP = new HashMap<>();
+
+    static {
+      for (int i = 0; i < fields.length; i++) {
+        FIELD_NAME_TO_DECLARED_ORDER_MAP.put(fields[i].getName(), i);
+      }
+    }
+
+    /**
+     * Returns a value based on the order of declared fields in {@link SecurityUser}.
+     * @param fieldName1 the first field name to be compared.
+     * @param fieldName2 the second field name to be compared.
+     * @return
+     *   1 if fieldName1 is declared before fieldName2
+     *   1 if fieldName1 is declared after fieldName2
+     *   0 if fieldName1 is declared at the same position as fieldName2 ( probably only for duplicate field name )
+     *   sorts null last ( which should not happen )
+     */
+    @Override
+    public int compare(String fieldName1, String fieldName2) {
+      Integer position1 = FIELD_NAME_TO_DECLARED_ORDER_MAP.get(fieldName1);
+      Integer position2 = FIELD_NAME_TO_DECLARED_ORDER_MAP.get(fieldName2);
+      if (fieldName1 == null) {
+        return 1;
+      } else if (fieldName2 == null) {
+        return -1;
+      } else
+        return position1.compareTo(position2);
     }
   }
 }

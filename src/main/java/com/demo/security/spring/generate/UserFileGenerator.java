@@ -75,6 +75,22 @@ public class UserFileGenerator extends AbstractFileGenerator {
     return users;
   }
 
+  /**
+   * Override from super to handle transforming generated security users
+   * into a sub-class which allows full-visibility because it allows seeing
+   * passwords in generated example-users.json for reference for testing envs.
+   * @param generated the generated data
+   */
+  @Override
+  public void write(Collection<?> generated) {
+    if (generated != null && !generated.isEmpty()) {
+      super.write(generated.stream()
+          .filter(it -> it instanceof SecurityUser)
+          .map(it -> ((SecurityUser) it).toMap())
+          .toList());
+    }
+  }
+
   private SecurityUser generateRandomActiveUser(String username) {
     final String type = faker.random().nextBoolean() ? "external" : "internal";
     return generateUser(
