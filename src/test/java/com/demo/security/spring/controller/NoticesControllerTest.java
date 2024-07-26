@@ -2,7 +2,6 @@ package com.demo.security.spring.controller;
 
 import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.generate.NoticeDetailsFileGenerator;
-import com.demo.security.spring.model.EntityStartAndEndDates;
 import com.demo.security.spring.model.NoticeDetails;
 import com.demo.security.spring.repository.NoticeDetailsRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -156,43 +155,22 @@ class NoticesControllerTest extends AbstractControllerTest {
 
     private NoticeDetails generateCurrentNotice() {
         NoticeDetails noticeDetails = noticesGenerator.generate(1).getFirst();
-        noticeDetails.setEntityStartAndEndDates(currentDate());
+        noticeDetails.setEntityStartAndEndDates(noticesGenerator.currentDate());
         return noticeDetails;
     }
 
     private NoticeDetails generateFutureNotice() {
         NoticeDetails noticeDetails = noticesGenerator.generate(1).getFirst();
-        noticeDetails.setEntityStartAndEndDates(futureDate());
+        noticeDetails.setEntityStartAndEndDates(noticesGenerator.futureDate());
         return noticeDetails;
     }
 
     private NoticeDetails generatePastNotice() {
         NoticeDetails noticeDetails = noticesGenerator.generate(1).getFirst();
-        noticeDetails.setEntityStartAndEndDates(pastDate());
+        noticeDetails.setEntityStartAndEndDates(noticesGenerator.pastDate());
         return noticeDetails;
     }
 
-    private EntityStartAndEndDates currentDate() {
-        EntityStartAndEndDates startAndEndDates = new EntityStartAndEndDates();
-        startAndEndDates.setStartDate(ZonedDateTime.now().minusDays(faker.random().nextInt(1, 365)));
-        startAndEndDates.setEndDate(ZonedDateTime.now().plusDays(faker.random().nextInt(1, 365)));
-        return startAndEndDates;
-    }
-
-    private EntityStartAndEndDates futureDate() {
-        EntityStartAndEndDates startAndEndDates = new EntityStartAndEndDates();
-        startAndEndDates.setStartDate(ZonedDateTime.now().plusDays(faker.random().nextInt(1, 365)));
-        startAndEndDates.setEndDate(ZonedDateTime.now().plusDays(faker.random().nextInt(365, 730)));
-        return startAndEndDates;
-    }
-
-
-    private EntityStartAndEndDates pastDate() {
-        EntityStartAndEndDates startAndEndDates = new EntityStartAndEndDates();
-        startAndEndDates.setStartDate(ZonedDateTime.now().minusDays(faker.random().nextInt(365, 730)));
-        startAndEndDates.setEndDate(ZonedDateTime.now().minusDays(faker.random().nextInt(1, 365)));
-        return startAndEndDates;
-    }
 
     @Builder
     @Getter

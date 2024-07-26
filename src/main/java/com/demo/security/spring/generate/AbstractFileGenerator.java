@@ -1,9 +1,11 @@
 package com.demo.security.spring.generate;
 
+import com.demo.security.spring.model.EntityStartAndEndDates;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Preconditions;
 import java.io.File;
 import java.io.IOException;
+import java.time.ZonedDateTime;
 import java.util.Collection;
 import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
@@ -68,5 +70,27 @@ public abstract class AbstractFileGenerator extends AbstractGenerator<Collection
     }
     Preconditions.checkArgument(file.exists(), "Output file does not exist " + file + " - current dir " + System.getProperty("user.dir"));
     Preconditions.checkArgument(file.canWrite(), "Write permissions to file ${file} are required in order to run user generation");
+  }
+
+  public EntityStartAndEndDates currentDate() {
+    EntityStartAndEndDates startAndEndDates = new EntityStartAndEndDates();
+    startAndEndDates.setStartDate(ZonedDateTime.now().minusDays(faker.random().nextInt(1, 365)));
+    startAndEndDates.setEndDate(ZonedDateTime.now().plusDays(faker.random().nextInt(1, 365)));
+    return startAndEndDates;
+  }
+
+  public EntityStartAndEndDates futureDate() {
+    EntityStartAndEndDates startAndEndDates = new EntityStartAndEndDates();
+    startAndEndDates.setStartDate(ZonedDateTime.now().plusDays(faker.random().nextInt(1, 365)));
+    startAndEndDates.setEndDate(ZonedDateTime.now().plusDays(faker.random().nextInt(365, 730)));
+    return startAndEndDates;
+  }
+
+
+  public EntityStartAndEndDates pastDate() {
+    EntityStartAndEndDates startAndEndDates = new EntityStartAndEndDates();
+    startAndEndDates.setStartDate(ZonedDateTime.now().minusDays(faker.random().nextInt(365, 730)));
+    startAndEndDates.setEndDate(ZonedDateTime.now().minusDays(faker.random().nextInt(1, 365)));
+    return startAndEndDates;
   }
 }
