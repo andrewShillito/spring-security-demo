@@ -77,8 +77,8 @@ public class UserFileGenerator extends AbstractFileGenerator {
 
   /**
    * Override from super to handle transforming generated security users
-   * into a sub-class which allows full-visibility because it allows seeing
-   * passwords in generated example-users.json for reference for testing envs.
+   * in order to write password ( which is json access write only ) to
+   * generated example-users.json for reference in dev/test envs.
    * @param generated the generated data
    */
   @Override
