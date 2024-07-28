@@ -55,7 +55,7 @@ class NoticesControllerTest extends AbstractControllerTest {
         assertEquals(0, noticeDetails.size());
         // confirm non-empty notices
         final ZonedDateTime now = ZonedDateTime.now();
-        final TestData testData = generateTestData(10, 10, 10);
+        final TestData testData = generateTestData(10);
         List<NoticeDetails> flattenedTestData = testData.flattened();
         Collections.shuffle(flattenedTestData);
         noticesRepository.saveAll(flattenedTestData);
@@ -139,38 +139,15 @@ class NoticesControllerTest extends AbstractControllerTest {
         assertNotNull(notice.getEntityStartAndEndDates().getEndDate());
     }
 
-    private TestData generateTestData(int numberActive, int numberFuture, int numberPast) {
+    private TestData generateTestData(final int numberEachType) {
         TestData testData = TestData.builder().build();
-        for (int i = 0; i < numberActive; i++) {
-            testData.addCurrent(generateCurrentNotice());
-        }
-        for (int i = 0; i < numberFuture; i++) {
-            testData.addFuture(generateFutureNotice());
-        }
-        for (int i = 0; i < numberPast; i++) {
-            testData.addPast(generatePastNotice());
+        for (int i = 0; i < numberEachType; i++) {
+            testData.addCurrent(noticesGenerator.generateCurrentNotice());
+            testData.addFuture(noticesGenerator.generateFutureNotice());
+            testData.addPast(noticesGenerator.generatePastNotice());
         }
         return testData;
     }
-
-    private NoticeDetails generateCurrentNotice() {
-        NoticeDetails noticeDetails = noticesGenerator.generate(1).getFirst();
-        noticeDetails.setEntityStartAndEndDates(noticesGenerator.currentDate());
-        return noticeDetails;
-    }
-
-    private NoticeDetails generateFutureNotice() {
-        NoticeDetails noticeDetails = noticesGenerator.generate(1).getFirst();
-        noticeDetails.setEntityStartAndEndDates(noticesGenerator.futureDate());
-        return noticeDetails;
-    }
-
-    private NoticeDetails generatePastNotice() {
-        NoticeDetails noticeDetails = noticesGenerator.generate(1).getFirst();
-        noticeDetails.setEntityStartAndEndDates(noticesGenerator.pastDate());
-        return noticeDetails;
-    }
-
 
     @Builder
     @Getter
