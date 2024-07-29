@@ -25,7 +25,6 @@ public class NoticesController {
   }
 
   @GetMapping(NOTICES_RESOURCE_PATH)
-  @CrossOrigin(origins = { "http://localhost:9000", "https://localhost:9000" })
   public ResponseEntity<List<NoticeDetails>> getNotices() {
     final List<NoticeDetails> activeNotices = noticeDetailsRepository.getAllActiveNotices();
     if (activeNotices != null) {

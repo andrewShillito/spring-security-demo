@@ -25,23 +25,31 @@ import com.demo.security.spring.service.InMemoryLoginService;
 import com.demo.security.spring.service.JpaLoginService;
 import com.demo.security.spring.service.LoginService;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
+import com.demo.security.spring.utils.Constants;
 import com.demo.security.spring.utils.StartupDatabasePopulator;
 import com.demo.security.spring.service.ExampleDataManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.time.ZonedDateTime;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.CorsConfigurer;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
 public class ProjectSecurityConfig {
@@ -57,7 +65,9 @@ public class ProjectSecurityConfig {
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    http.csrf().disable().authorizeHttpRequests((requests) -> requests
+    http.csrf().disable()
+        .cors(customizer -> customizer.configurationSource(corsConfigurationSource()))
+        .authorizeHttpRequests((requests) -> requests
         .requestMatchers(
             AccountController.ACCOUNT_RESOURCE_PATH,
             AccountController.ACCOUNT_RESOURCE_PATH + "/**",
@@ -84,6 +94,18 @@ public class ProjectSecurityConfig {
     http.formLogin(withDefaults());
     http.httpBasic(withDefaults());
     return http.build();
+  }
+
+  private CorsConfigurationSource corsConfigurationSource() {
+    final CorsConfiguration configuration = new CorsConfiguration();
+    configuration.setAllowedOrigins(Arrays.asList(Constants.EXAMPLE_ALLOWED_CORS_PATHS));
+    configuration.setAllowedMethods(Collections.singletonList("*"));
+    configuration.setAllowedHeaders(Collections.singletonList("*"));
+    configuration.setAllowCredentials(true); // required for logins from allowedOrigins
+    configuration.setMaxAge(3600L); // how long browser caches the CORS details - as browser makes a pre-flight OPTIONS request for CORS config
+    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    source.registerCorsConfiguration("/**", configuration);
+    return source;
   }
 
   /**
