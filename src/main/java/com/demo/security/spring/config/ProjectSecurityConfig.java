@@ -34,14 +34,13 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configurers.CorsConfigurer;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -64,9 +63,18 @@ public class ProjectSecurityConfig {
   public static final String PROFILE_POSTGRES = "postgres";
 
   @Bean
-  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+  public SecurityFilterChain securityFilterChain(HttpSecurity http, Environment environment) throws Exception {
+    boolean disableHttp = Arrays.asList(environment.getActiveProfiles()).contains("prod");
     http.csrf().disable()
         .cors(customizer -> customizer.configurationSource(corsConfigurationSource()))
+        .requiresChannel(rcc -> {
+          // allow http for profiles other than 'prod', else allow only https
+          if (disableHttp) {
+            rcc.anyRequest().requiresSecure();
+          } else {
+            rcc.anyRequest().requiresInsecure();
+          }
+        })
         .authorizeHttpRequests((requests) -> requests
         .requestMatchers(
             AccountController.ACCOUNT_RESOURCE_PATH,
