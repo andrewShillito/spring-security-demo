@@ -64,15 +64,22 @@ public class ProjectSecurityConfig {
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http, Environment environment) throws Exception {
-    boolean disableHttp = Arrays.asList(environment.getActiveProfiles()).contains("prod");
+    boolean isProd = Arrays.asList(environment.getActiveProfiles()).contains("prod");
     http.csrf().disable()
         .cors(customizer -> customizer.configurationSource(corsConfigurationSource()))
         .requiresChannel(rcc -> {
           // allow http for profiles other than 'prod', else allow only https
-          if (disableHttp) {
+          if (isProd) {
             rcc.anyRequest().requiresSecure();
           } else {
             rcc.anyRequest().requiresInsecure();
+          }
+        })
+        .sessionManagement(smc -> {
+          // just fyi the view /invalidSession doesn't exist for now - so this is just an example config here
+          smc.invalidSessionUrl("/invalidSession");
+          if (isProd) {
+            smc.maximumSessions(1);
           }
         })
         .authorizeHttpRequests((requests) -> requests
@@ -95,7 +102,8 @@ public class ProjectSecurityConfig {
             NoticesController.NOTICES_RESOURCE_PATH,
             NoticesController.NOTICES_RESOURCE_PATH + "/**",
             ContactController.CONTACT_RESOURCE_PATH,
-            ContactController.CONTACT_RESOURCE_PATH + "/**"
+            ContactController.CONTACT_RESOURCE_PATH + "/**",
+            "/invalidSession"
         )
         .permitAll()
     );
