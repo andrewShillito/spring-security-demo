@@ -55,7 +55,6 @@ class NoticesControllerTest extends AbstractControllerTest {
     @Test
     void getNotices() throws Exception {
         // confirm empty notices
-        final String testUserName = getTestUserName();
         final MvcResult result = mockMvc.perform(get(NoticesController.NOTICES_RESOURCE_PATH)).andExpect(status().isOk()).andReturn();
         final List<NoticeDetails> noticeDetails = asNotices(result.getResponse().getContentAsString());
         assertEquals(0, noticeDetails.size());
