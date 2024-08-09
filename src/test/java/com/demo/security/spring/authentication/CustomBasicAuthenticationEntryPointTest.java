@@ -29,7 +29,7 @@ class CustomBasicAuthenticationEntryPointTest {
       // test arguments
       final List<String> headerValues = headerValueCaptor.getAllValues();
       assertEquals(2, headerValues.size());
-      assertEquals(headerValues.get(0), "Basic realm=\"http://localhost:8080\"");
+      assertEquals(headerValues.get(0), "Basic realm=\"C=US/O=DEMO\"");
       assertEquals(headerValues.get(1), "Example extra header value");
       assertEquals(errorIntCaptor.getValue(), HttpStatus.UNAUTHORIZED.value());
       assertEquals(bodyValueCaptor.getValue(), HttpStatus.UNAUTHORIZED.getReasonPhrase());

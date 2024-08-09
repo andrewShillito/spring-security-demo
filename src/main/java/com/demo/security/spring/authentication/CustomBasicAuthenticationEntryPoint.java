@@ -8,7 +8,6 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 /**
  * An example custom basic authentication entry point based on {@link org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint}
@@ -28,13 +27,15 @@ public class CustomBasicAuthenticationEntryPoint implements AuthenticationEntryP
   @Override
   public void commence(HttpServletRequest request, HttpServletResponse response,
       AuthenticationException authException) throws IOException, ServletException {
-    String exampleRealm = "http://localhost:8080"; // just using app uri
-    try {
-      exampleRealm = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
-    } catch (IllegalStateException e) {
-      log.warn(() -> "Example realm cannot be determined as no current servlet request attributes."
-          + " This is expected when testing but not at actual application runtime.", e);
-    }
+    /*
+    * Example realm names:
+    * domain: ATHENA.MIT.EDU
+    * X500:   C=US/O=OSF
+    * other:  NAMETYPE:rest/of.name=without-restrictions
+    * see https://www.gnu.org/software/shishi/manual/html_node/Realm-and-Principal-Naming.html
+    * */
+    // there is no domain for this example app so using an example X.500 format:
+    final String exampleRealm = "C=US/O=DEMO";
     response.setHeader("WWW-Authenticate", "Basic realm=\"" + exampleRealm + "\"");
     response.setHeader("example-extra-header", "Example extra header value");
     response.sendError(HttpStatus.UNAUTHORIZED.value(), HttpStatus.UNAUTHORIZED.getReasonPhrase());
