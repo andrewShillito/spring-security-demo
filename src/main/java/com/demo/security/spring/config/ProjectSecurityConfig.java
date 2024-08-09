@@ -2,6 +2,7 @@ package com.demo.security.spring.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+import com.demo.security.spring.authentication.CustomBasicAuthenticationEntryPoint;
 import com.demo.security.spring.controller.AccountController;
 import com.demo.security.spring.controller.BalanceController;
 import com.demo.security.spring.controller.CardsController;
@@ -108,7 +109,7 @@ public class ProjectSecurityConfig {
         .permitAll()
     );
     http.formLogin(withDefaults());
-    http.httpBasic(withDefaults());
+    http.httpBasic(httpBasicConfigurer -> httpBasicConfigurer.authenticationEntryPoint(new CustomBasicAuthenticationEntryPoint()));
     return http.build();
   }
 
