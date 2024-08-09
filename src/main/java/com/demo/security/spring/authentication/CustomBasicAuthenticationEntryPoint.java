@@ -28,7 +28,7 @@ public class CustomBasicAuthenticationEntryPoint implements AuthenticationEntryP
   public void commence(HttpServletRequest request, HttpServletResponse response,
       AuthenticationException authException) throws IOException, ServletException {
     /*
-    * Example realm names:
+    * Example realm names for kerberos ( not that this app uses kerberos ):
     * domain: ATHENA.MIT.EDU
     * X500:   C=US/O=OSF
     * other:  NAMETYPE:rest/of.name=without-restrictions
