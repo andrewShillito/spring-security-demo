@@ -52,10 +52,12 @@ class LoansControllerTest extends AbstractControllerTest {
 
     @Test
     void getLoanDetailsUnauthorized() throws Exception {
-        mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH))
-            .andExpect(status().isUnauthorized());
-        mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH).param(PARAM_USER_ID, String.valueOf(1)))
-            .andExpect(status().isUnauthorized());
+        testSecuredBaseUrlAuth(mockMvc, LoansController.LOANS_RESOURCE_PATH);
+    }
+
+    @Test
+    void testCors() {
+        _testCors(mockMvc, LoansController.LOANS_RESOURCE_PATH, "userId", "1", true);
     }
 
     @Test
@@ -67,6 +69,8 @@ class LoansControllerTest extends AbstractControllerTest {
         final List<Loan> loans = asLoans(result.getResponse().getContentAsString());
         assertNotNull(loans);
         assertEquals(0, loans.size());
+
+        // TODO: add non-empty response population and testing
     }
 
     private List<Loan> asLoans(String loansJson) {

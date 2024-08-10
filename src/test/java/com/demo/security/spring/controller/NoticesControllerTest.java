@@ -113,23 +113,8 @@ class NoticesControllerTest extends AbstractControllerTest {
     }
 
     @Test
-    void testCorsInvalidOrigin() throws Exception {
-        // invalid request one
-        final String exampleInvalidUrl = "http://www.someOtherSite.com";
-        mockMvc.perform(get(NoticesController.NOTICES_RESOURCE_PATH)
-            .with(user(faker.internet().username())).header("Origin", exampleInvalidUrl))
-            .andExpect(status().isForbidden());
-        // invalid options request
-        final MvcResult invalidResult = mockMvc.perform(options(NoticesController.NOTICES_RESOURCE_PATH)
-            .header("Access-Control-Request-Method", "GET")
-            .header("Origin", exampleInvalidUrl)
-        ).andReturn();
-        assertEquals(403, invalidResult.getResponse().getStatus());
-        assertEquals("Invalid CORS request", invalidResult.getResponse().getContentAsString());
-        // allowed cors requests
-        for (String origin : Constants.EXAMPLE_ALLOWED_CORS_PATHS) {
-            mockMvc.perform(get(NoticesController.NOTICES_RESOURCE_PATH).header("Origin", origin)).andExpect(status().isOk());
-        }
+    void testCors() throws Exception {
+        _testCors(mockMvc, NoticesController.NOTICES_RESOURCE_PATH, null, null, false);
     }
 
     @Test

@@ -109,7 +109,8 @@ public class ProjectSecurityConfig {
         .permitAll()
     );
     http.formLogin(withDefaults());
-    http.httpBasic(httpBasicConfigurer -> httpBasicConfigurer.authenticationEntryPoint(new CustomBasicAuthenticationEntryPoint()));
+    http.httpBasic(httpBasicConfigurer -> httpBasicConfigurer.authenticationEntryPoint(
+        new CustomBasicAuthenticationEntryPoint(objectMapper(), environment, isProd)));
     return http.build();
   }
 
