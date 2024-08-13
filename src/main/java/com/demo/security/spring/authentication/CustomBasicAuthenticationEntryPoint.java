@@ -48,20 +48,24 @@ public class CustomBasicAuthenticationEntryPoint implements AuthenticationEntryP
   @Override
   public void commence(HttpServletRequest request, HttpServletResponse response,
       AuthenticationException authException) throws IOException, ServletException {
-    response.setHeader("WWW-Authenticate", "Basic realm=\"" + getRealm(request) + "\"");
+    final String realm = getRealm(request);
+    response.setHeader("WWW-Authenticate", "Basic realm=\"" + realm + "\"");
     response.setHeader("example-extra-header", "Example extra header value");
-    response.sendError(HttpStatus.UNAUTHORIZED.value(), buildResponseBody(request, authException));
+    response.sendError(HttpStatus.UNAUTHORIZED.value(), buildResponseBody(request, authException, realm));
   }
 
-  protected String buildResponseBody(HttpServletRequest request, AuthenticationException authException) {
+  protected String buildResponseBody(
+      final HttpServletRequest request,
+      final AuthenticationException authException,
+      final String realm) {
     try {
       return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(
           AuthenticationErrorDetailsResponse.builder()
           .time(ZonedDateTime.now())
-          .realm(getRealm(request))
+          .realm(realm)
           .errorCode(HttpStatus.UNAUTHORIZED.value())
           .errorMessage(!isProd && authException != null ? authException.getMessage() : HttpStatus.UNAUTHORIZED.getReasonPhrase())
-          .requestUri(request != null ? request.getRequestURI() : getRealm(request))
+          .requestUri(request != null ? request.getRequestURI() : realm)
           .additionalInfo("Example additional info")
           .build());
     } catch (Exception e) {
@@ -76,7 +80,7 @@ public class CustomBasicAuthenticationEntryPoint implements AuthenticationEntryP
    * @param request the http request
    * @return an example realm
    */
-  protected String getRealm(HttpServletRequest request) {
+  protected String getRealm(final HttpServletRequest request) {
     /*
      * Example realm names for kerberos ( not that this app uses kerberos ):
      * domain: ATHENA.MIT.EDU
