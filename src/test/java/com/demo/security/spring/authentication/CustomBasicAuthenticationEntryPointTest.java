@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
+import org.springframework.mock.env.MockEnvironment;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.CredentialsExpiredException;
 
@@ -157,6 +158,14 @@ class CustomBasicAuthenticationEntryPointTest {
 
     final var expected = defaultExpected(expectedPort);
     expected.setErrorMessage(HttpStatus.UNAUTHORIZED.getReasonPhrase());
+  }
+
+  @Test
+  void testConstructor() {
+    assertThrows(NullPointerException.class, () -> new CustomBasicAuthenticationEntryPoint(null, new MockEnvironment(), false));
+    assertThrows(NullPointerException.class, () -> new CustomBasicAuthenticationEntryPoint(null, new MockEnvironment(), true));
+    assertThrows(NullPointerException.class, () -> new CustomBasicAuthenticationEntryPoint(objectMapper, null, false));
+    assertThrows(NullPointerException.class, () -> new CustomBasicAuthenticationEntryPoint(objectMapper, null, true));
   }
 
   private AuthenticationErrorDetailsResponse defaultExpected(String serverPort) {
