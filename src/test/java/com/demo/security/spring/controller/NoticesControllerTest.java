@@ -124,7 +124,7 @@ class NoticesControllerTest extends AbstractControllerTest {
         when(mockRepo.getAllActiveNotices()).thenReturn(null);
         controller.setNoticeDetailsRepository(mockRepo);
         assertNull(controller.getNotices());
-        verify(mockRepo, times(1));
+        verify(mockRepo, times(1)).getAllActiveNotices();
     }
 
     private List<NoticeDetails> asNotices(String noticesJson) throws IOException {
