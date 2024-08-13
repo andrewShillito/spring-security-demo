@@ -28,7 +28,7 @@ The default profiles populate a set of example users into the postgres db from [
 
 ### Other spring profiles
 
-#### inMemoryUsers
+#### inMemoryUsers - *support for in memory user details manager may be removed*
 
 Not really recommended as I maintained support for it more to make sure the application had cross-profile support at runtime and during test suites. Note that this profile also turns off docker-compose startup of postgres and adminer containers. The example users populated into system are stored in [example-users.json](src/main/resources/seed/example-users.json).
 
