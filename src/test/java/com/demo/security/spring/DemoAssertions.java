@@ -4,10 +4,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.demo.security.spring.model.Loan;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 
 public class DemoAssertions {
 
@@ -36,6 +38,26 @@ public class DemoAssertions {
     assertTrue(FUZZ_FACTOR_LIST.stream().anyMatch(factor -> nowTruncated.plusMinutes(factor).equals(actualTruncated)),
         "Expected datetime to be now-ish relative to " + ZonedDateTime.now() + " but was " + actual);
     assertEquals(nowTruncated.truncatedTo(ChronoUnit.DAYS), actualTruncated.truncatedTo(ChronoUnit.DAYS));
+  }
+
+  public static void assertNotBlank(String s) {
+    assertTrue(StringUtils.isNotBlank(s), "Expected string '" + s + "' to not be blank");
+  }
+
+  public static void assertNotEmpty(String s) {
+    assertTrue(StringUtils.isNotEmpty(s), "Expected string '" + s + "' to not be empty");
+  }
+
+  public static void assertLoansAreEmpty(List<Loan> loans) {
+    assertTrue(loans == null || loans.isEmpty(), "Expected loans to be empty but found " + loans);
+  }
+
+  public static void assertBlank(String toTest) {
+    assertTrue(org.apache.commons.lang3.StringUtils.isBlank(toTest), "Expected string to be blank but found " + toTest);
+  }
+
+  public static void assertEmpty(String toTest) {
+    assertTrue(org.apache.commons.lang3.StringUtils.isEmpty(toTest), "Expected string to be empty but found " + toTest);
   }
 
 }

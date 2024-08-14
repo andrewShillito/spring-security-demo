@@ -7,6 +7,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.core.env.Environment;
@@ -51,23 +52,27 @@ public class CustomBasicAuthenticationEntryPoint implements AuthenticationEntryP
     final String realm = getRealm(request);
     response.setHeader("WWW-Authenticate", "Basic realm=\"" + realm + "\"");
     response.setHeader("example-extra-header", "Example extra header value");
-    response.sendError(HttpStatus.UNAUTHORIZED.value(), buildResponseBody(request, authException, realm));
+    response.setStatus(HttpStatus.UNAUTHORIZED.value());
+    writeResponseBody(request, response, authException, realm);
   }
 
-  protected String buildResponseBody(
+  protected void writeResponseBody(
       final HttpServletRequest request,
+      final HttpServletResponse response,
       final AuthenticationException authException,
       final String realm) {
     try {
-      return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(
-          AuthenticationErrorDetailsResponse.builder()
-          .time(ZonedDateTime.now())
-          .realm(realm)
-          .errorCode(HttpStatus.UNAUTHORIZED.value())
-          .errorMessage(!isProd && authException != null ? authException.getMessage() : HttpStatus.UNAUTHORIZED.getReasonPhrase())
-          .requestUri(request != null ? request.getRequestURI() : realm)
-          .additionalInfo("Example additional info")
-          .build());
+      objectMapper.writerWithDefaultPrettyPrinter()
+          .writeValue(
+              response.getOutputStream(),
+              AuthenticationErrorDetailsResponse.builder()
+                  .time(ZonedDateTime.now().withZoneSameInstant(ZoneId.of("UTC")))
+                  .realm(realm)
+                  .errorCode(HttpStatus.UNAUTHORIZED.value())
+                  .errorMessage(!isProd && authException != null ? authException.getMessage() : HttpStatus.UNAUTHORIZED.getReasonPhrase())
+                  .requestUri(request != null ? request.getRequestURI() : realm)
+                  .additionalInfo("Example additional info")
+                  .build());
     } catch (Exception e) {
       throw new RuntimeException("Failed to produce AuthenticationErrorDetailsResponse with error ", e);
     }

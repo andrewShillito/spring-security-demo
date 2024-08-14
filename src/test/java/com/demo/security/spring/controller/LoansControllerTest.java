@@ -1,15 +1,18 @@
 package com.demo.security.spring.controller;
 
+import com.demo.security.spring.DemoAssertions;
+import com.demo.security.spring.controller.error.AuthenticationErrorDetailsResponse;
 import com.demo.security.spring.model.Loan;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
+import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -36,14 +39,14 @@ class LoansControllerTest extends AbstractControllerTest {
         MvcResult result = mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH))
             .andExpect(status().isBadRequest())
             .andReturn();
-        assertBlank(result.getResponse().getContentAsString());
+        DemoAssertions.assertBlank(result.getResponse().getContentAsString());
         List.of("", " ").stream().forEach(userIdParamValue -> {
             try {
                 MvcResult tempResult = mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
                         .param(PARAM_USER_ID, userIdParamValue))
                     .andExpect(status().isBadRequest())
                     .andReturn();
-                assertBlank(tempResult.getResponse().getContentAsString());
+                DemoAssertions.assertBlank(tempResult.getResponse().getContentAsString());
             } catch (Exception e) {
                 fail("Encountered exception when testing missing user id param " + userIdParamValue, e);
             }
@@ -53,6 +56,24 @@ class LoansControllerTest extends AbstractControllerTest {
     @Test
     void getLoanDetailsUnauthorized() throws Exception {
         testSecuredBaseUrlAuth(mockMvc, LoansController.LOANS_RESOURCE_PATH);
+        // testing of expected error message body
+        final MvcResult result = mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH).param("userId", "1"))
+            .andExpect(status().isUnauthorized())
+            .andReturn();
+        final String body = result.getResponse().getContentAsString();
+        assertNotNull(body);
+        DemoAssertions.assertNotEmpty(body);
+        var authErrorBody = objectMapper.readValue(body, AuthenticationErrorDetailsResponse.class);
+        assertNotNull(authErrorBody);
+        assertEquals(HttpStatus.UNAUTHORIZED.value(), authErrorBody.getErrorCode());
+        assertEquals("Full authentication is required to access this resource", authErrorBody.getErrorMessage());
+        assertEquals(LoansController.LOANS_RESOURCE_PATH, authErrorBody.getRequestUri());
+        assertEquals("http://localhost:80", authErrorBody.getRealm());
+        assertEquals("Example additional info", authErrorBody.getAdditionalInfo());
+        DemoAssertions.assertDateIsNowIsh(authErrorBody.getTime());
+        assertTrue(authErrorBody.getTime().getZone().equals(ZoneId.of("UTC")),
+            "Expected error body zone to be UTC but was " + authErrorBody.getTime().getZone()
+                + " with ZonedDateTime " + authErrorBody.getTime());
     }
 
     @Test
@@ -83,17 +104,5 @@ class LoansControllerTest extends AbstractControllerTest {
             fail("Failed when creating loans list from response body", e);
         }
         return null;
-    }
-
-    void assertLoansAreEmpty(List<Loan> loans) {
-        assertTrue(loans == null || loans.isEmpty(), "Expected loans to be empty but found " + loans);
-    }
-
-    void assertBlank(String toTest) {
-        assertTrue(StringUtils.isBlank(toTest), "Expected string to be blank but found " + toTest);
-    }
-
-    void assertEmpty(String toTest) {
-        assertTrue(StringUtils.isEmpty(toTest), "Expected string to be empty but found " + toTest);
     }
 }
