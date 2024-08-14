@@ -109,8 +109,11 @@ public class ProjectSecurityConfig {
         .permitAll()
     );
     http.formLogin(withDefaults());
+    // configuration specific to http basic
     http.httpBasic(httpBasicConfigurer -> httpBasicConfigurer.authenticationEntryPoint(
         new CustomBasicAuthenticationEntryPoint(objectMapper(), environment, isProd)));
+    // global config for authenticationEntryPoint is possible using
+    // http.exceptionHandling(customizer -> customizer.authenticationEntryPoint(new CustomBasicAuthenticationEntryPoint(objectMapper(), environment, isProd))));
     return http.build();
   }
 
