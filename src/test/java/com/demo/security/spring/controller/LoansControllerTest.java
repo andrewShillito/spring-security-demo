@@ -71,9 +71,7 @@ class LoansControllerTest extends AbstractControllerTest {
         assertEquals("http://localhost:80", authErrorBody.getRealm());
         assertEquals("Example additional info", authErrorBody.getAdditionalInfo());
         DemoAssertions.assertDateIsNowIsh(authErrorBody.getTime());
-        assertTrue(authErrorBody.getTime().getZone().equals(ZoneId.of("UTC")),
-            "Expected error body zone to be UTC but was " + authErrorBody.getTime().getZone()
-                + " with ZonedDateTime " + authErrorBody.getTime());
+        assertEquals(ZoneId.of("UTC"), authErrorBody.getTime().getZone());
     }
 
     @Test

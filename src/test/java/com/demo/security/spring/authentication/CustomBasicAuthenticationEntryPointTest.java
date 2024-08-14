@@ -209,9 +209,7 @@ class CustomBasicAuthenticationEntryPointTest {
     assertEquals(expected.getRealm(), actual.getRealm());
     assertEquals(expected.getAdditionalInfo(), actual.getAdditionalInfo());
     DemoAssertions.assertDateEquals(expected.getTime(), actual.getTime());
-    assertTrue(actual.getTime().getZone().equals(ZoneId.of("UTC")),
-        "Expected error body zone to be UTC but was " + actual.getTime().getZone()
-            + " with ZonedDateTime " + actual.getTime());
+    assertEquals(ZoneId.of("UTC"), actual.getTime().getZone());
   }
 
 }
