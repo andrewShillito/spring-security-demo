@@ -1,12 +1,21 @@
 package com.demo.security.spring.controller;
 
+import com.demo.security.spring.DemoAssertions;
+import com.demo.security.spring.controller.error.AuthenticationErrorDetailsResponse;
 import com.demo.security.spring.utils.Constants;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.time.ZoneId;
 import java.util.List;
 import net.datafaker.Faker;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
+import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -19,6 +28,12 @@ public abstract class AbstractControllerTest {
 
     private static final String EXTERNAL_USER_NAME = "user";
     private static final String EXTERNAL_USER_PASSWORD = "password";
+
+    @Autowired
+    protected ObjectMapper objectMapper;
+
+    @Autowired
+    protected Environment environment;
 
     public String getTestUserName() {
         return this.getClass().getName().substring(0, 1).toLowerCase() + this.getClass().getName().substring(1);
@@ -37,10 +52,51 @@ public abstract class AbstractControllerTest {
      * @throws Exception
      */
     public void testSecuredBaseUrlAuth(MockMvc mockMvc, String baseUrl) throws Exception {
-        mockMvc.perform(get(baseUrl)).andExpect(status().isUnauthorized());
-        mockMvc.perform(get(baseUrl + "/")).andExpect(status().isUnauthorized());
-        mockMvc.perform(get(baseUrl + "/" + "?" + getTestParam())).andExpect(status().isUnauthorized());
-        mockMvc.perform(get(baseUrl + "/" + "?" + "userId" + "1")).andExpect(status().isUnauthorized());
+        final String expectedErrorMessage = "Full authentication is required to access this resource";
+        testUnauthorizedErrorResponseBody(
+            executeMockUnauthorizedRequest(mockMvc, baseUrl),
+            expectedErrorMessage,
+            baseUrl);
+        testUnauthorizedErrorResponseBody(
+            executeMockUnauthorizedRequest(mockMvc, baseUrl + "/"),
+            expectedErrorMessage,
+            baseUrl + "/");
+        testUnauthorizedErrorResponseBody(
+            executeMockUnauthorizedRequest(mockMvc, baseUrl + "/?" + getTestParam()),
+            expectedErrorMessage,
+            baseUrl + "/");
+        testUnauthorizedErrorResponseBody(
+            executeMockUnauthorizedRequest(mockMvc, baseUrl + "/", "userId", "1"),
+            expectedErrorMessage,
+            baseUrl + "/");
+    }
+
+    private MockHttpServletResponse executeMockUnauthorizedRequest(MockMvc mockMvc, String url) throws Exception {
+        return mockMvc.perform(get(url)).andExpect(status().isUnauthorized()).andReturn().getResponse();
+    }
+
+    private MockHttpServletResponse executeMockUnauthorizedRequest(MockMvc mockMvc, String url, String paramName, String paramValue) throws Exception {
+        return mockMvc.perform(get(url).param(paramName, paramValue)).andExpect(status().isUnauthorized()).andReturn().getResponse();
+    }
+
+    protected void testUnauthorizedErrorResponseBody(
+        final MockHttpServletResponse response,
+        final String expectedMessage,
+        final String expectedUri
+        ) throws Exception {
+        // testing of expected error message body
+        final String body = response.getContentAsString();
+        assertNotNull(body);
+        DemoAssertions.assertNotEmpty(body);
+        var authErrorBody = objectMapper.readValue(body, AuthenticationErrorDetailsResponse.class);
+        assertNotNull(authErrorBody);
+        assertEquals(HttpStatus.UNAUTHORIZED.value(), authErrorBody.getErrorCode());
+        assertEquals(expectedMessage, authErrorBody.getErrorMessage());
+        assertEquals(expectedUri, authErrorBody.getRequestUri());
+        assertEquals("http://localhost:80", authErrorBody.getRealm());
+        assertEquals("Example additional info", authErrorBody.getAdditionalInfo());
+        DemoAssertions.assertDateIsNowIsh(authErrorBody.getTime());
+        assertEquals(ZoneId.of("UTC"), authErrorBody.getTime().getZone());
     }
 
     public void _testCors(MockMvc mockMvc, String resourcePath, String paramName, String paramValue, boolean requiresUser) {

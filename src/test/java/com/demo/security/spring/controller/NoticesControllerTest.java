@@ -4,8 +4,6 @@ import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.generate.NoticeDetailsFileGenerator;
 import com.demo.security.spring.model.NoticeDetails;
 import com.demo.security.spring.repository.NoticeDetailsRepository;
-import com.demo.security.spring.utils.Constants;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
@@ -19,7 +17,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.env.Environment;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -38,9 +35,6 @@ class NoticesControllerTest extends AbstractControllerTest {
     private MockMvc mockMvc;
 
     @Autowired
-    private ObjectMapper objectMapper;
-
-    @Autowired
     private NoticeDetailsRepository noticesRepository;
 
     @Autowired
@@ -48,9 +42,6 @@ class NoticesControllerTest extends AbstractControllerTest {
 
     @Autowired
     private Faker faker;
-
-    @Autowired
-    Environment environment;
 
     @Test
     void getNotices() throws Exception {

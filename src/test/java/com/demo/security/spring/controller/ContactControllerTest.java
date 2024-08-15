@@ -4,7 +4,6 @@ import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.controller.error.ErrorDetailsResponse;
 import com.demo.security.spring.generate.ContactMessagesFileGenerator;
 import com.demo.security.spring.model.ContactMessage;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,9 +38,6 @@ class ContactControllerTest extends AbstractControllerTest {
 
     @Autowired
     private ContactMessagesFileGenerator contactMessagesFileGenerator;
-
-    @Autowired
-    private ObjectMapper objectMapper;
 
     @Test
     void getContactPage() throws Exception {

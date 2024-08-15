@@ -1,18 +1,14 @@
 package com.demo.security.spring.controller;
 
 import com.demo.security.spring.DemoAssertions;
-import com.demo.security.spring.controller.error.AuthenticationErrorDetailsResponse;
 import com.demo.security.spring.model.Loan;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
-import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -27,9 +23,6 @@ class LoansControllerTest extends AbstractControllerTest {
 
     @Autowired
     MockMvc mockMvc;
-
-    @Autowired
-    ObjectMapper objectMapper;
 
     private static final String PARAM_USER_ID = "userId";
 
@@ -56,22 +49,6 @@ class LoansControllerTest extends AbstractControllerTest {
     @Test
     void getLoanDetailsUnauthorized() throws Exception {
         testSecuredBaseUrlAuth(mockMvc, LoansController.LOANS_RESOURCE_PATH);
-        // testing of expected error message body
-        final MvcResult result = mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH).param("userId", "1"))
-            .andExpect(status().isUnauthorized())
-            .andReturn();
-        final String body = result.getResponse().getContentAsString();
-        assertNotNull(body);
-        DemoAssertions.assertNotEmpty(body);
-        var authErrorBody = objectMapper.readValue(body, AuthenticationErrorDetailsResponse.class);
-        assertNotNull(authErrorBody);
-        assertEquals(HttpStatus.UNAUTHORIZED.value(), authErrorBody.getErrorCode());
-        assertEquals("Full authentication is required to access this resource", authErrorBody.getErrorMessage());
-        assertEquals(LoansController.LOANS_RESOURCE_PATH, authErrorBody.getRequestUri());
-        assertEquals("http://localhost:80", authErrorBody.getRealm());
-        assertEquals("Example additional info", authErrorBody.getAdditionalInfo());
-        DemoAssertions.assertDateIsNowIsh(authErrorBody.getTime());
-        assertEquals(ZoneId.of("UTC"), authErrorBody.getTime().getZone());
     }
 
     @Test
