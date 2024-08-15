@@ -11,7 +11,7 @@ import lombok.ToString;
 @Getter
 @EqualsAndHashCode
 @ToString
-public class ErrorDetailsResponse {
+public class ValidationErrorDetailsResponse {
 
   private String fieldName;
 

@@ -1,7 +1,7 @@
 package com.demo.security.spring.controller;
 
 import com.demo.security.spring.DemoAssertions;
-import com.demo.security.spring.controller.error.AuthenticationErrorDetailsResponse;
+import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
 import com.demo.security.spring.utils.Constants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.ZoneId;
@@ -88,7 +88,7 @@ public abstract class AbstractControllerTest {
         final String body = response.getContentAsString();
         assertNotNull(body);
         DemoAssertions.assertNotEmpty(body);
-        var authErrorBody = objectMapper.readValue(body, AuthenticationErrorDetailsResponse.class);
+        var authErrorBody = objectMapper.readValue(body, AuthErrorDetailsResponse.class);
         assertNotNull(authErrorBody);
         assertEquals(HttpStatus.UNAUTHORIZED.value(), authErrorBody.getErrorCode());
         assertEquals(expectedMessage, authErrorBody.getErrorMessage());

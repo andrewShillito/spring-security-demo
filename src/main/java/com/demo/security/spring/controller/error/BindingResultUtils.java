@@ -9,18 +9,18 @@ import org.springframework.validation.FieldError;
 
 public class BindingResultUtils {
 
-  public static List<ErrorDetailsResponse> generateErrorDetails(@NotNull BindingResult result) {
+  public static List<ValidationErrorDetailsResponse> generateErrorDetails(@NotNull BindingResult result) {
     Preconditions.checkNotNull(result);
-    final List<ErrorDetailsResponse> responses = new ArrayList<>();
+    final List<ValidationErrorDetailsResponse> responses = new ArrayList<>();
     if (result.hasFieldErrors()) {
       result.getFieldErrors().forEach(it -> responses.add(mapFieldErrorToErrorDetail(it)));
     }
     return responses;
   }
 
-  public static ErrorDetailsResponse mapFieldErrorToErrorDetail(@NotNull FieldError error) {
+  public static ValidationErrorDetailsResponse mapFieldErrorToErrorDetail(@NotNull FieldError error) {
     Preconditions.checkNotNull(error);
-    return ErrorDetailsResponse.builder()
+    return ValidationErrorDetailsResponse.builder()
         .fieldName(error.getField())
         .errorCode(error.getCode())
         .errorMessage(error.getDefaultMessage())

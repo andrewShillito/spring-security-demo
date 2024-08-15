@@ -1,7 +1,7 @@
 package com.demo.security.spring.controller;
 
 import com.demo.security.spring.DemoAssertions;
-import com.demo.security.spring.controller.error.ErrorDetailsResponse;
+import com.demo.security.spring.controller.error.ValidationErrorDetailsResponse;
 import com.demo.security.spring.generate.ContactMessagesFileGenerator;
 import com.demo.security.spring.model.ContactMessage;
 import java.io.IOException;
@@ -93,7 +93,7 @@ class ContactControllerTest extends AbstractControllerTest {
                     ReflectionTestUtils.invokeSetterMethod(message, field.getName(), value);
                     try {
                         final MvcResult result = expectBadRequest(executeValidPost(asString(message)));
-                        List<ErrorDetailsResponse> responseContent = asErrorDetailsList(result, 1);
+                        List<ValidationErrorDetailsResponse> responseContent = asErrorDetailsList(result, 1);
                         testErrorDetailsResponse(field.getName(), "".equals(value) ? null : value, responseContent.getFirst());
                     } catch (Exception e) {
                         fail(e);
@@ -102,8 +102,8 @@ class ContactControllerTest extends AbstractControllerTest {
             });
     }
 
-    private void testErrorDetailsResponse(String fieldName, String rejectedValue, ErrorDetailsResponse actual) {
-        final ErrorDetailsResponse expectedErrorDetails = ErrorDetailsResponse.builder()
+    private void testErrorDetailsResponse(String fieldName, String rejectedValue, ValidationErrorDetailsResponse actual) {
+        final ValidationErrorDetailsResponse expectedErrorDetails = ValidationErrorDetailsResponse.builder()
             .fieldName(fieldName)
             .errorCode("NotBlank")
             .errorMessage("must not be blank")
@@ -112,19 +112,19 @@ class ContactControllerTest extends AbstractControllerTest {
         testErrorDetailsResponse(expectedErrorDetails, actual);
     }
 
-    private void testErrorDetailsResponse(ErrorDetailsResponse expected, ErrorDetailsResponse actual) {
+    private void testErrorDetailsResponse(ValidationErrorDetailsResponse expected, ValidationErrorDetailsResponse actual) {
         assertEquals(expected, actual);
     }
 
-    private List<ErrorDetailsResponse> asErrorDetailsList(MvcResult mvcResult)
+    private List<ValidationErrorDetailsResponse> asErrorDetailsList(MvcResult mvcResult)
         throws IOException {
         List<Map> actualList = asList(mvcResult.getResponse().getContentAsString());
         return actualList.stream().map(this::asErrorDetails).toList();
     }
 
-    private List<ErrorDetailsResponse> asErrorDetailsList(MvcResult mvcResult, int expectedSize)
+    private List<ValidationErrorDetailsResponse> asErrorDetailsList(MvcResult mvcResult, int expectedSize)
         throws IOException {
-        final List<ErrorDetailsResponse> result = asErrorDetailsList(mvcResult);
+        final List<ValidationErrorDetailsResponse> result = asErrorDetailsList(mvcResult);
         assertEquals(result.size(), expectedSize);
         return result;
     }
@@ -172,8 +172,8 @@ class ContactControllerTest extends AbstractControllerTest {
         return objectMapper.readerForListOf(clazz).readValue(content);
     }
 
-    private ErrorDetailsResponse asErrorDetails(Map source) {
-        return ErrorDetailsResponse.builder()
+    private ValidationErrorDetailsResponse asErrorDetails(Map source) {
+        return ValidationErrorDetailsResponse.builder()
             .fieldName(getStringErrorField(source, "fieldName"))
             .errorCode(getStringErrorField(source, "errorCode"))
             .errorMessage(getStringErrorField(source, "errorMessage"))

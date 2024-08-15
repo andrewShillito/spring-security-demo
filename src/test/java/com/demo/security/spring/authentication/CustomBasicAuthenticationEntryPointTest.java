@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import com.demo.security.spring.DemoAssertions;
-import com.demo.security.spring.controller.error.AuthenticationErrorDetailsResponse;
+import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import jakarta.servlet.ServletException;
@@ -36,8 +36,8 @@ class CustomBasicAuthenticationEntryPointTest {
   void testResponseWithNullAuthException() throws IOException {
     final ObjectMapper mockObjectMapper = mock(ObjectMapper.class);
     final ObjectWriter mockWriter = mock(ObjectWriter.class);
-    final ArgumentCaptor<AuthenticationErrorDetailsResponse> errorDetailsCaptor = ArgumentCaptor.forClass(
-        AuthenticationErrorDetailsResponse.class);
+    final ArgumentCaptor<AuthErrorDetailsResponse> errorDetailsCaptor = ArgumentCaptor.forClass(
+        AuthErrorDetailsResponse.class);
     when(mockObjectMapper.writerWithDefaultPrettyPrinter()).thenReturn(mockWriter);
     doNothing().when(mockWriter).writeValue(any(OutputStream.class), errorDetailsCaptor.capture());
 
@@ -64,9 +64,9 @@ class CustomBasicAuthenticationEntryPointTest {
       assertEquals(2, headerValues.size());
       assertEquals(headerValues.get(0), "Basic realm=\"http://localhost:8080\"");
       assertEquals(headerValues.get(1), "Example extra header value");
-      AuthenticationErrorDetailsResponse actual = errorDetailsCaptor.getValue();
+      AuthErrorDetailsResponse actual = errorDetailsCaptor.getValue();
       assertNotNull(actual, "Expected non-null actual response from body " + actual);
-      assertAuthErrorEquals(defaultExpected(serverPort), actual);
+      DemoAssertions.assertAuthErrorEquals(defaultExpected(serverPort), actual);
     } catch (Exception e) {
       fail("Encountered unexpected exception", e);
     }
@@ -76,8 +76,8 @@ class CustomBasicAuthenticationEntryPointTest {
   void testResponseWithAuthException() throws IOException {
     final ObjectMapper mockObjectMapper = mock(ObjectMapper.class);
     final ObjectWriter mockWriter = mock(ObjectWriter.class);
-    final ArgumentCaptor<AuthenticationErrorDetailsResponse> errorDetailsCaptor = ArgumentCaptor.forClass(
-        AuthenticationErrorDetailsResponse.class);
+    final ArgumentCaptor<AuthErrorDetailsResponse> errorDetailsCaptor = ArgumentCaptor.forClass(
+        AuthErrorDetailsResponse.class);
     when(mockObjectMapper.writerWithDefaultPrettyPrinter()).thenReturn(mockWriter);
     doNothing().when(mockWriter).writeValue(any(OutputStream.class), errorDetailsCaptor.capture());
 
@@ -123,7 +123,7 @@ class CustomBasicAuthenticationEntryPointTest {
 
       final var actual = errorDetailsCaptor.getValue();
       assertNotNull(actual, "Expected non-null actual response from body " + actual);
-      assertAuthErrorEquals(expected, actual);
+      DemoAssertions.assertAuthErrorEquals(expected, actual);
     } catch (Exception e) {
       fail("Encountered unexpected exception", e);
     }
@@ -153,7 +153,8 @@ class CustomBasicAuthenticationEntryPointTest {
   void testProdProfile() throws ServletException, IOException {
     final ObjectMapper mockObjectMapper = mock(ObjectMapper.class);
     final ObjectWriter mockWriter = mock(ObjectWriter.class);
-    final ArgumentCaptor<AuthenticationErrorDetailsResponse> errorDetailsCaptor = ArgumentCaptor.forClass(AuthenticationErrorDetailsResponse.class);
+    final ArgumentCaptor<AuthErrorDetailsResponse> errorDetailsCaptor = ArgumentCaptor.forClass(
+        AuthErrorDetailsResponse.class);
     when(mockObjectMapper.writerWithDefaultPrettyPrinter()).thenReturn(mockWriter);
     doNothing().when(mockWriter).writeValue(any(OutputStream.class), errorDetailsCaptor.capture());
 
@@ -180,7 +181,7 @@ class CustomBasicAuthenticationEntryPointTest {
 
     var expected = defaultExpected("1234");
     expected.setErrorMessage(HttpStatus.UNAUTHORIZED.getReasonPhrase());
-    assertAuthErrorEquals(expected, errorDetailsCaptor.getValue());
+    DemoAssertions.assertAuthErrorEquals(expected, errorDetailsCaptor.getValue());
   }
 
   @Test
@@ -191,8 +192,8 @@ class CustomBasicAuthenticationEntryPointTest {
     assertThrows(NullPointerException.class, () -> new CustomBasicAuthenticationEntryPoint(new ObjectMapper(), null, true));
   }
 
-  private AuthenticationErrorDetailsResponse defaultExpected(String serverPort) {
-    return AuthenticationErrorDetailsResponse.builder()
+  private AuthErrorDetailsResponse defaultExpected(String serverPort) {
+    return AuthErrorDetailsResponse.builder()
         .time(ZonedDateTime.now())
         .realm("http://localhost:" + serverPort)
         .errorCode(HttpStatus.UNAUTHORIZED.value())
@@ -201,15 +202,4 @@ class CustomBasicAuthenticationEntryPointTest {
         .additionalInfo("Example additional info")
         .build();
   }
-
-  private void assertAuthErrorEquals(AuthenticationErrorDetailsResponse expected, AuthenticationErrorDetailsResponse actual) {
-    assertEquals(expected.getErrorCode(), actual.getErrorCode());
-    assertEquals(expected.getErrorMessage(), actual.getErrorMessage());
-    assertEquals(expected.getRequestUri(), actual.getRequestUri());
-    assertEquals(expected.getRealm(), actual.getRealm());
-    assertEquals(expected.getAdditionalInfo(), actual.getAdditionalInfo());
-    DemoAssertions.assertDateEquals(expected.getTime(), actual.getTime());
-    assertEquals(ZoneId.of("UTC"), actual.getTime().getZone());
-  }
-
 }

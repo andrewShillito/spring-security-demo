@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
 import com.demo.security.spring.model.Loan;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -58,6 +59,16 @@ public class DemoAssertions {
 
   public static void assertEmpty(String toTest) {
     assertTrue(org.apache.commons.lang3.StringUtils.isEmpty(toTest), "Expected string to be empty but found " + toTest);
+  }
+
+  public static void assertAuthErrorEquals(AuthErrorDetailsResponse expected, AuthErrorDetailsResponse actual) {
+    assertEquals(expected.getErrorCode(), actual.getErrorCode());
+    assertEquals(expected.getErrorMessage(), actual.getErrorMessage());
+    assertEquals(expected.getRequestUri(), actual.getRequestUri());
+    assertEquals(expected.getRealm(), actual.getRealm());
+    assertEquals(expected.getAdditionalInfo(), actual.getAdditionalInfo());
+    DemoAssertions.assertDateEquals(expected.getTime(), actual.getTime());
+    assertEquals(ZoneId.of("UTC"), actual.getTime().getZone());
   }
 
 }

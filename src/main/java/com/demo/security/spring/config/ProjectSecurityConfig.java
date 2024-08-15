@@ -2,6 +2,7 @@ package com.demo.security.spring.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+import com.demo.security.spring.authentication.CustomAccessDeniedHandler;
 import com.demo.security.spring.authentication.CustomBasicAuthenticationEntryPoint;
 import com.demo.security.spring.controller.AccountController;
 import com.demo.security.spring.controller.BalanceController;
@@ -112,6 +113,7 @@ public class ProjectSecurityConfig {
     // configuration specific to http basic
     http.httpBasic(httpBasicConfigurer -> httpBasicConfigurer.authenticationEntryPoint(
         new CustomBasicAuthenticationEntryPoint(objectMapper(), environment, isProd)));
+    http.exceptionHandling(customizer -> customizer.accessDeniedHandler(new CustomAccessDeniedHandler(objectMapper(), isProd)));
     // global config for authenticationEntryPoint is possible using
     // http.exceptionHandling(customizer -> customizer.authenticationEntryPoint(new CustomBasicAuthenticationEntryPoint(objectMapper(), environment, isProd))));
     return http.build();

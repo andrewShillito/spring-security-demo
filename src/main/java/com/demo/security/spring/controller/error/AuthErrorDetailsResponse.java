@@ -1,5 +1,7 @@
 package com.demo.security.spring.controller.error;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.time.ZonedDateTime;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -10,7 +12,8 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString
-public class AuthenticationErrorDetailsResponse {
+@JsonInclude(value = Include.NON_EMPTY)
+public class AuthErrorDetailsResponse {
 
   private ZonedDateTime time;
 
@@ -30,14 +33,14 @@ public class AuthenticationErrorDetailsResponse {
 
   public static class Builder {
 
-    private AuthenticationErrorDetailsResponse authErrorResponse;
+    private AuthErrorDetailsResponse authErrorResponse;
 
     public Builder() {
-      this.authErrorResponse = new AuthenticationErrorDetailsResponse();
+      this.authErrorResponse = new AuthErrorDetailsResponse();
     }
 
     public Builder clear() {
-      this.authErrorResponse = new AuthenticationErrorDetailsResponse();
+      this.authErrorResponse = new AuthErrorDetailsResponse();
       return this;
     }
 
@@ -71,7 +74,7 @@ public class AuthenticationErrorDetailsResponse {
       return this;
     }
 
-    public AuthenticationErrorDetailsResponse build() {
+    public AuthErrorDetailsResponse build() {
       return authErrorResponse;
     }
   }

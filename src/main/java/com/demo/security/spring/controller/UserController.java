@@ -1,7 +1,7 @@
 package com.demo.security.spring.controller;
 
 import com.demo.security.spring.controller.error.BindingResultUtils;
-import com.demo.security.spring.controller.error.ErrorDetailsResponse;
+import com.demo.security.spring.controller.error.ValidationErrorDetailsResponse;
 import com.demo.security.spring.controller.error.UserCreationException;
 import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
@@ -78,7 +78,7 @@ public class UserController {
       }
     } catch (Exception e) {
       final String errorMessage = "Failed to create user with error: " + e.getMessage();
-      final ErrorDetailsResponse response = ErrorDetailsResponse.builder().errorMessage(errorMessage).build();
+      final ValidationErrorDetailsResponse response = ValidationErrorDetailsResponse.builder().errorMessage(errorMessage).build();
       throw new UserCreationException(HttpStatus.BAD_REQUEST,
           objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response), e);
     }

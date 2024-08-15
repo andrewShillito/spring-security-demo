@@ -1,6 +1,6 @@
 package com.demo.security.spring.authentication;
 
-import com.demo.security.spring.controller.error.AuthenticationErrorDetailsResponse;
+import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Preconditions;
 import jakarta.servlet.ServletException;
@@ -65,7 +65,7 @@ public class CustomBasicAuthenticationEntryPoint implements AuthenticationEntryP
       objectMapper.writerWithDefaultPrettyPrinter()
           .writeValue(
               response.getOutputStream(),
-              AuthenticationErrorDetailsResponse.builder()
+              AuthErrorDetailsResponse.builder()
                   .time(ZonedDateTime.now().withZoneSameInstant(ZoneId.of("UTC")))
                   .realm(realm)
                   .errorCode(HttpStatus.UNAUTHORIZED.value())
@@ -74,7 +74,7 @@ public class CustomBasicAuthenticationEntryPoint implements AuthenticationEntryP
                   .additionalInfo("Example additional info")
                   .build());
     } catch (Exception e) {
-      throw new RuntimeException("Failed to produce AuthenticationErrorDetailsResponse with error ", e);
+      throw new RuntimeException("Failed to produce AuthErrorDetailsResponse with error ", e);
     }
   }
 
