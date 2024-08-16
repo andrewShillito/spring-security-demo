@@ -1,5 +1,6 @@
 package com.demo.security.spring.config;
 
+import com.demo.security.spring.utils.SpringProfileConstants;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
     + "org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration"
     + ",org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration")
 // can also turn off org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration if hibernate / jpa is added in
-@ActiveProfiles(value = ProjectSecurityConfig.PROFILE_IN_MEMORY_USERS)
+@ActiveProfiles(value = SpringProfileConstants.IN_MEMORY_USERS)
 class InMemoryProjectSecurityConfigTest {
 
     @Autowired

@@ -28,6 +28,7 @@ import com.demo.security.spring.service.JpaLoginService;
 import com.demo.security.spring.service.LoginService;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
 import com.demo.security.spring.utils.Constants;
+import com.demo.security.spring.utils.SpringProfileConstants;
 import com.demo.security.spring.utils.StartupDatabasePopulator;
 import com.demo.security.spring.service.ExampleDataManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -55,18 +56,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 public class ProjectSecurityConfig {
 
-  /**
-   * A spring profile which uses an in memory user details service - disables docker-compose startup
-   * of postgres and adminer
-   */
-  public static final String PROFILE_IN_MEMORY_USERS = "inMemoryUsers";
-
-  /** A profile which uses postgres database */
-  public static final String PROFILE_POSTGRES = "postgres";
-
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http, Environment environment) throws Exception {
-    boolean isProd = Arrays.asList(environment.getActiveProfiles()).contains("prod");
+    boolean isProd = Arrays.asList(environment.getActiveProfiles()).contains(SpringProfileConstants.PRODUCTION);
     http.csrf().disable()
         .cors(customizer -> customizer.configurationSource(corsConfigurationSource()))
         .requiresChannel(rcc -> {
@@ -82,6 +74,8 @@ public class ProjectSecurityConfig {
           smc.invalidSessionUrl("/invalidSession");
           if (isProd) {
             smc.maximumSessions(1);
+            // note that adding maxSessionsPreventsLogin would prevent additional logins once max sessions is reached
+            // instead of default behavior which allows login and expires previous sessions
           }
         })
         .authorizeHttpRequests((requests) -> requests
@@ -139,7 +133,7 @@ public class ProjectSecurityConfig {
    * applications
    */
   @Bean(name = "userDetailsService")
-  @Profile(PROFILE_IN_MEMORY_USERS)
+  @Profile(SpringProfileConstants.IN_MEMORY_USERS)
   public UserDetailsService inMemoryUserDetailsManager(final ExampleDataManager exampleDataManager) {
     return new InMemoryUserDetailsManager(exampleDataManager.getInMemoryUsers());
   }
@@ -152,7 +146,7 @@ public class ProjectSecurityConfig {
    * @return JdbcUserDetailsManager
    */
   @Bean(name = "userDetailsService")
-  @Profile("! " + PROFILE_IN_MEMORY_USERS)
+  @Profile("! " + SpringProfileConstants.IN_MEMORY_USERS)
   public UserDetailsService jpaUserDetailsService(final SecurityUserRepository repository) {
     return SpringDataJpaUserDetailsService
         .builder()
@@ -169,7 +163,7 @@ public class ProjectSecurityConfig {
    * @return StartupDatabasePopulator
    */
   @Bean
-  @Profile("! " + PROFILE_IN_MEMORY_USERS + " && " + PROFILE_POSTGRES)
+  @Profile("! " + SpringProfileConstants.IN_MEMORY_USERS + " && " + SpringProfileConstants.POSTGRES)
   public StartupDatabasePopulator startupDatabasePopulator(
       final SecurityUserRepository userRepository,
       final NoticeDetailsRepository noticeDetailsRepository,
@@ -190,7 +184,7 @@ public class ProjectSecurityConfig {
   }
 
   @Bean(name = "loginService")
-  @Profile(PROFILE_IN_MEMORY_USERS)
+  @Profile(SpringProfileConstants.IN_MEMORY_USERS)
   public LoginService inMemoryLoginService(UserDetailsService userDetailsService) {
     if (!(userDetailsService instanceof InMemoryUserDetailsManager)) {
       throw new RuntimeException("Provided userDetailsService was expected to be InMemoryUserDetailsManager but was "
@@ -200,7 +194,7 @@ public class ProjectSecurityConfig {
   }
 
   @Bean(name = "loginService")
-  @Profile("! " + PROFILE_IN_MEMORY_USERS)
+  @Profile("! " + SpringProfileConstants.IN_MEMORY_USERS)
   public LoginService jpaLoginService(final SecurityUserRepository securityUserRepository, final PasswordEncoder passwordEncoder) {
     return JpaLoginService.builder()
         .securityUserRepository(securityUserRepository)

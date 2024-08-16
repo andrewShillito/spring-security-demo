@@ -34,7 +34,6 @@ class CustomAccessDeniedHandlerTest {
         .andExpect(status().isForbidden())
         .andReturn()
         .getResponse();
-    System.out.println(response.getContentAsString());
     var expected = AuthErrorDetailsResponse.builder()
         .errorCode(HttpStatus.FORBIDDEN.value())
         .errorMessage("Access Denied")

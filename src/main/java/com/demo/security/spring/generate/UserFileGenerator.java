@@ -52,7 +52,7 @@ public class UserFileGenerator extends AbstractFileGenerator {
   }
 
   @Override
-  public Collection<?> generate(int count) {
+  public Collection<SecurityUser> generate(int count) {
     log.info(() -> "Starting user generation");
     final List<SecurityUser> generatedUsers = generateUsers(count);
     log.info(() -> "Generated " + generatedUsers.size() + " users");
@@ -136,11 +136,11 @@ public class UserFileGenerator extends AbstractFileGenerator {
     return user;
   }
 
-  private SecurityUser generateExternalUser(String username, String password) {
+  public SecurityUser generateExternalUser(String username, String password) {
     return generateUser(username, password, "external", getRolesForType("external"), true, false, false, false);
   }
 
-  private SecurityUser generateInternalUser(String username, String password) {
+  public SecurityUser generateInternalUser(String username, String password) {
     return generateUser(username, password, "internal", getRolesForType("internal"), true, false, false, false);
   }
 

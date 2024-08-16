@@ -3,6 +3,15 @@ package com.demo.security.spring;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.formLogin;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.logout;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
+import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.authenticated;
+import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.unauthenticated;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
 import com.demo.security.spring.model.Loan;
@@ -10,7 +19,11 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import lombok.NonNull;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 
 public class DemoAssertions {
 
@@ -71,4 +84,57 @@ public class DemoAssertions {
     assertEquals(ZoneId.of("UTC"), actual.getTime().getZone());
   }
 
+  public static MvcResult assertFormLoginSuccessful(
+      @NonNull MockMvc mockMvc,
+      @NonNull String username,
+      @NonNull String password
+  ) throws Exception {
+    return assertFormLoginSuccessful(mockMvc, username, password, false);
+  }
+
+  public static MvcResult assertFormLoginSuccessful(
+      @NonNull MockMvc mockMvc,
+      @NonNull String username,
+      @NonNull String password,
+      boolean isSecure
+  ) throws Exception {
+    if (isSecure) {
+      return mockMvc.perform(post("/login")
+              .secure(true)
+              .accept(MediaType.TEXT_HTML)
+              .param("username", username)
+              .param("password", password)
+              .with(csrf()))
+          .andExpect(status().isFound())
+          .andExpect(authenticated().withUsername(username))
+          .andExpect(redirectedUrl("/"))
+          .andReturn();
+    } else {
+      return mockMvc.perform(formLogin().user(username).password(password))
+          .andExpect(status().isFound())
+          .andExpect(authenticated().withUsername(username))
+          .andExpect(redirectedUrl("/"))
+          .andReturn();
+    }
+  }
+
+  public static void assertFormLogoutSuccessful(@NonNull MockMvc mockMvc) throws Exception {
+    assertFormLogoutSuccessful(mockMvc, false);
+  }
+
+  public static void assertFormLogoutSuccessful(@NonNull MockMvc mockMvc, boolean isSecure) throws Exception {
+    if (isSecure) {
+      // just a note, if you don't include the MediaType of 'text/html' the app won't redirect to login
+      // and will get 204 no content status instead with a null redirectUrl
+      mockMvc.perform(get("/logout").secure(true).with(csrf()).accept(MediaType.TEXT_HTML))
+          .andExpect(status().isFound())
+          .andExpect(unauthenticated())
+          .andExpect(redirectedUrl("/login?logout"));
+    } else {
+      mockMvc.perform(logout())
+          .andExpect(status().isFound())
+          .andExpect(unauthenticated())
+          .andExpect(redirectedUrl("/login?logout"));
+    }
+  }
 }

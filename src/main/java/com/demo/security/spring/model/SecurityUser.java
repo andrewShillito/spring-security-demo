@@ -40,7 +40,7 @@ import org.springframework.util.ReflectionUtils;
 @Table(name = "security_users")
 @Getter
 @Setter
-@ToString(exclude = {"username", "password"}) // don't want these in logs
+@ToString(exclude = {"password", "accounts", "loans", "cards"}) // some we don't want in logs and some can cause hibernate lazy initialization errors
 @SequenceGenerator(name = "security_users_id_seq", sequenceName = "security_users_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class SecurityUser implements UserDetails {

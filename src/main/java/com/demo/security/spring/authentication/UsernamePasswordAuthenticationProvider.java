@@ -1,8 +1,8 @@
 package com.demo.security.spring.authentication;
 
-import com.demo.security.spring.config.ProjectSecurityConfig;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.SecurityUserRepository;
+import com.demo.security.spring.utils.SpringProfileConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
  * InMemoryUserDetailsManager instead uses default spring-security authentication providers.
  */
 @Component
-@Profile(ProjectSecurityConfig.PROFILE_POSTGRES)
+@Profile(SpringProfileConstants.POSTGRES)
 public class UsernamePasswordAuthenticationProvider implements AuthenticationProvider {
 
   private SecurityUserRepository userRepository;
