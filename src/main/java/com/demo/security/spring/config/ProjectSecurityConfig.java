@@ -44,6 +44,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer.SessionFixationConfigurer;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -72,6 +73,8 @@ public class ProjectSecurityConfig {
         .sessionManagement(smc -> {
           // just fyi the view /invalidSession doesn't exist for now - so this is just an example config here
           smc.invalidSessionUrl("/invalidSession");
+          // using default session fixation protection strategy of change session id
+          smc.sessionFixation(SessionFixationConfigurer::changeSessionId);
           if (isProd) {
             smc.maximumSessions(1);
             // note that adding maxSessionsPreventsLogin would prevent additional logins once max sessions is reached
