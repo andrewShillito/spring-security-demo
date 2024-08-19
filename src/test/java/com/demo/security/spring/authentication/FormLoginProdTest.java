@@ -66,13 +66,8 @@ public class FormLoginProdTest {
     DemoAssertions.assertFormLoginUnSuccessful(mockMvc, username, "invalid", true);
     DemoAssertions.assertFormLoginUnSuccessful(mockMvc, internalUsername, "invalid", true);
     // incorrect username
-    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, username + "1", userRawPassword, true);
-    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, internalUsername + "1", userRawPassword, true);
-  }
-
-  @Test
-  void testInvalidExternalUserCannotLogon() throws Exception {
-    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, testDataGenerator.randomUsername() + "invalid", "invalid", true);
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, username + "invalid", userRawPassword, true);
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, internalUsername + "invalid", userRawPassword, true);
   }
 
   @Test

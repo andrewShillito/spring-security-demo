@@ -31,16 +31,32 @@ public class FormLoginDevTest {
   @Autowired
   protected TestDataGenerator testDataGenerator;
 
-  // TODO: add testing for:
-  //  invalid external user fails logon
-  //  internal user can long
-  //  invalid internal user fails long
-
   @Test
   void testFormLoginIsAvailable() throws Exception {
     // note that this is http form not https without prod profile
     mockMvc.perform(get("/login"))
         .andExpect(status().isOk());
+  }
+
+  @Test
+  void testInvalidLogons() throws Exception {
+    // non-existent user
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, testDataGenerator.randomUsername() + "invalid", "invalid");
+    // invalid external user password
+    final String username = testDataGenerator.randomUsername();
+    final String internalUsername = username + "internal";
+    final String userRawPassword = testDataGenerator.randomPassword();
+    testDataGenerator.generateExternalUser(username, userRawPassword, true);
+    testDataGenerator.generateInternalUser(internalUsername, userRawPassword, true);
+    // correct login
+    DemoAssertions.assertFormLoginSuccessful(mockMvc, username, userRawPassword);
+    DemoAssertions.assertFormLoginSuccessful(mockMvc, internalUsername, userRawPassword);
+    // incorrect user password
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, username, "invalid");
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, internalUsername, "invalid");
+    // incorrect username
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, username + "invalid", userRawPassword);
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, internalUsername + "invalid", userRawPassword);
   }
 
   @Test

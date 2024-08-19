@@ -121,6 +121,14 @@ public class DemoAssertions {
   public static MvcResult assertFormLoginUnSuccessful(
       @NonNull MockMvc mockMvc,
       @NonNull String username,
+      @NonNull String password
+  ) throws Exception {
+    return assertFormLoginUnSuccessful(mockMvc, username, password, false);
+  }
+
+  public static MvcResult assertFormLoginUnSuccessful(
+      @NonNull MockMvc mockMvc,
+      @NonNull String username,
       @NonNull String password,
       boolean isSecure
   ) throws Exception {
