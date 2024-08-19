@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
+import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.unauthenticated;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -26,6 +27,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Testing for {@link SpringProfileConstants#PRODUCTION} profile form login and concurrent user sessions
+ */
 @SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT, properties = "server.port=8443")
 @ActiveProfiles(value = { SpringProfileConstants.DEFAULT, SpringProfileConstants.PRODUCTION, SpringProfileConstants.H2 })
 @AutoConfigureMockMvc
@@ -94,6 +98,12 @@ public class FormLoginProdTest {
     final String userRawPassword = testDataGenerator.randomPassword();
     final SecurityUser user = testDataGenerator.generateExternalUser(username, userRawPassword, true);
 
+    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+            .secure(true)
+            .param("userId", user.getId().toString()))
+        .andExpect(status().isUnauthorized())
+        .andExpect(unauthenticated());
+
     var result = DemoAssertions.assertFormLoginSuccessful(mockMvc, username, userRawPassword, true);
     assertNotNull(result.getRequest().getSession());
     // use session details to perform a request to a secured endpoint for the same user's details
@@ -113,6 +123,12 @@ public class FormLoginProdTest {
     final String username = testDataGenerator.randomUsername();
     final String userRawPassword = testDataGenerator.randomPassword();
     final SecurityUser user = testDataGenerator.generateExternalUser(username, userRawPassword, true);
+
+    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+            .secure(true)
+            .param("userId", user.getId().toString()))
+        .andExpect(status().isUnauthorized())
+        .andExpect(unauthenticated());
 
     var loginResult = DemoAssertions.assertFormLoginSuccessful(mockMvc, username, userRawPassword, true);
     var firstSession = loginResult.getRequest().getSession();

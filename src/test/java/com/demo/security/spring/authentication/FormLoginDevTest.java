@@ -3,6 +3,7 @@ package com.demo.security.spring.authentication;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.unauthenticated;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -20,6 +21,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Testing for dev/test environment form login
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
@@ -83,6 +87,11 @@ public class FormLoginDevTest {
     final String userRawPassword = testDataGenerator.randomPassword();
     final SecurityUser user = testDataGenerator.generateExternalUser(username, userRawPassword, true);
 
+    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+            .param("userId", user.getId().toString()))
+        .andExpect(status().isUnauthorized())
+        .andExpect(unauthenticated());
+
     var result = DemoAssertions.assertFormLoginSuccessful(mockMvc, username, userRawPassword);
     assertNotNull(result.getRequest().getSession());
     // use session details to perform a request to a secured endpoint for the same user's details
@@ -102,6 +111,11 @@ public class FormLoginDevTest {
     final String userRawPassword = testDataGenerator.randomPassword();
     final SecurityUser user = testDataGenerator.generateExternalUser(username, userRawPassword, true);
 
+    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+            .param("userId", user.getId().toString()))
+        .andExpect(status().isUnauthorized())
+        .andExpect(unauthenticated());
+
     var loginResult = DemoAssertions.assertFormLoginSuccessful(mockMvc, username, userRawPassword);
     var firstSession = loginResult.getRequest().getSession();
     assertNotNull(firstSession);
@@ -118,5 +132,12 @@ public class FormLoginDevTest {
         .andReturn();
     var response = sessionRequestResult.getResponse();
     assertTrue(StringUtils.isNotBlank(response.getContentAsString()), "Expected response to be non-empty");
+
+    // and again for good measure
+    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+            .session((MockHttpSession) firstSession)
+            .param("userId", user.getId().toString()))
+        .andExpect(status().isOk())
+        .andReturn();
   }
 }
