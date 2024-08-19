@@ -118,6 +118,32 @@ public class DemoAssertions {
     }
   }
 
+  public static MvcResult assertFormLoginUnSuccessful(
+      @NonNull MockMvc mockMvc,
+      @NonNull String username,
+      @NonNull String password,
+      boolean isSecure
+  ) throws Exception {
+    if (isSecure) {
+      return mockMvc.perform(post("/login")
+              .secure(true)
+              .accept(MediaType.TEXT_HTML)
+              .param("username", username)
+              .param("password", password)
+              .with(csrf()))
+          .andExpect(status().isFound())
+          .andExpect(unauthenticated())
+          .andExpect(redirectedUrl("/login?error"))
+          .andReturn();
+    } else {
+      return mockMvc.perform(formLogin().user(username).password(password))
+          .andExpect(status().isFound())
+          .andExpect(unauthenticated())
+          .andExpect(redirectedUrl("/login?error"))
+          .andReturn();
+    }
+  }
+
   public static void assertFormLogoutSuccessful(@NonNull MockMvc mockMvc) throws Exception {
     assertFormLogoutSuccessful(mockMvc, false);
   }

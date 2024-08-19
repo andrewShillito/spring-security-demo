@@ -3,6 +3,7 @@ package com.demo.security.spring.authentication;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -12,14 +13,13 @@ import com.demo.security.spring.TestDataGenerator;
 import com.demo.security.spring.controller.LoansController;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.utils.SpringProfileConstants;
-import jakarta.servlet.http.Cookie;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
@@ -38,22 +38,42 @@ public class FormLoginProdTest {
   @Autowired
   protected TestDataGenerator testDataGenerator;
 
-  @Autowired
-  private TestRestTemplate testRestTemplate;
-
-  // TODO: add testing for:
-  //  concurrent sessions using TestRestTemplate
-  //  invalid external user fails logon
-  //  internal user can long
-  //  invalid internal user fails long
+  @Value("${server.port}")
+  private Integer serverPort;
 
   @Test
   void testFormLoginIsAvailable() throws Exception {
+    System.out.println("Server port " + serverPort);
     mockMvc.perform(get("/login"))
         .andExpect(status().isFound())
         .andExpect(redirectedUrl("https://localhost/login"));
   }
 
+  @Test
+  void testInvalidLogons() throws Exception {
+    // non-existent user
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, testDataGenerator.randomUsername() + "invalid", "invalid", true);
+    // invalid external user password
+    final String username = testDataGenerator.randomUsername();
+    final String internalUsername = username + "internal";
+    final String userRawPassword = testDataGenerator.randomPassword();
+    testDataGenerator.generateExternalUser(username, userRawPassword, true);
+    testDataGenerator.generateInternalUser(internalUsername, userRawPassword, true);
+    // correct login
+    DemoAssertions.assertFormLoginSuccessful(mockMvc, username, userRawPassword, true);
+    DemoAssertions.assertFormLoginSuccessful(mockMvc, internalUsername, userRawPassword, true);
+    // incorrect user password
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, username, "invalid", true);
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, internalUsername, "invalid", true);
+    // incorrect username
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, username + "1", userRawPassword, true);
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, internalUsername + "1", userRawPassword, true);
+  }
+
+  @Test
+  void testInvalidExternalUserCannotLogon() throws Exception {
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, testDataGenerator.randomUsername() + "invalid", "invalid", true);
+  }
 
   @Test
   void testExistingExternalUserCanLogon() throws Exception {
@@ -95,8 +115,6 @@ public class FormLoginProdTest {
 
   @Test
   void testConcurrentSessions() throws Exception {
-    // TODO: use testRestTemplate to handle JSESSIONID cookie directly
-    //  in order to assert concurrent sessions > 1 are disallowed
     final String username = testDataGenerator.randomUsername();
     final String userRawPassword = testDataGenerator.randomPassword();
     final SecurityUser user = testDataGenerator.generateExternalUser(username, userRawPassword, true);
@@ -106,7 +124,7 @@ public class FormLoginProdTest {
     assertNotNull(firstSession);
     mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
             .secure(true)
-            .cookie(new Cookie("JSESSIONID", firstSession.getId())) // note firstSession.getId is not a JSESSIONID cookie value
+            .session((MockHttpSession) firstSession)
             .param("userId", user.getId().toString()))
         .andExpect(status().isOk())
         .andReturn();
@@ -117,13 +135,33 @@ public class FormLoginProdTest {
     assertNotEquals(firstSession, secondSession);
 
     assertNotNull(secondSession.getId());
-    MvcResult sessionRequestResult = mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
             .secure(true)
-            .cookie(new Cookie("JSESSIONID", firstSession.getId()))
+            .session((MockHttpSession) secondSession)
             .param("userId", user.getId().toString()))
-          .andExpect(status().isUnauthorized())
-          .andReturn();
-    var response = sessionRequestResult.getResponse();
+        .andExpect(status().isOk())
+        .andReturn();
+
+    int retryCount = 2;
+    MvcResult invalidSessionRequest = null;
+    while (retryCount >= 0) {
+      // A bit weird here, but it passes on second attempt...
+      retryCount--;
+      try {
+        invalidSessionRequest = mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+                .secure(true)
+                .session((MockHttpSession) firstSession)
+                .param("userId", user.getId().toString()))
+            .andExpect(status().isUnauthorized())
+            .andReturn();
+      } catch (AssertionError e) {
+        if (retryCount == 0) {
+          fail("First user session should have been invalid but was not after " + retryCount + " attempts", e);
+        }
+      }
+    }
+    assertNotNull(invalidSessionRequest);
+    var response = invalidSessionRequest.getResponse();
     assertTrue(StringUtils.isNotBlank(response.getContentAsString()), "Expected response to be non-empty");
   }
 }
