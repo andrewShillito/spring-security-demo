@@ -7,7 +7,7 @@ import org.springframework.security.authentication.event.AuthenticationSuccessEv
 import org.springframework.security.authentication.event.LogoutSuccessEvent;
 
 /**
- * Sme demo authentication event listeners which log info
+ * Some demo authentication event listeners which log info
  */
 @Log4j2
 public class AuthenticationEvents {
