@@ -45,6 +45,9 @@ import org.springframework.util.ReflectionUtils;
 @JsonInclude(Include.NON_EMPTY)
 public class SecurityUser implements UserDetails {
 
+  /** Max number of failed attempts allowed within a given time window or in a row before lockout */
+  public static final int MAX_ALLOWED_FAILED_LOGIN_ATTEMPTS = 5;
+
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "security_users_id_seq")
   private Long id;
@@ -85,13 +88,25 @@ public class SecurityUser implements UserDetails {
   @Column(name = "password_expired_date")
   private ZonedDateTime passwordExpiredDate;
 
+  @Column(name = "failed_login_attempts")
+  private int failedLoginAttempts = 0;
+
+  @Column(name = "num_previous_lockouts")
+  private int numPreviousLockouts = 0;
+
   private boolean locked;
 
   @Column(name = "locked_date")
   private ZonedDateTime lockedDate;
 
+  @Column(name = "unlock_date")
+  private ZonedDateTime unlockDate;
+
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
   private List<SecurityAuthority> authorities;
+
+  /* I added the below one to many fields for quality of life when generating example data files but
+  removing them or making transient seems preferable since they are handled via separate repositories */
 
   @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE })
   private List<Account> accounts;
@@ -156,6 +171,27 @@ public class SecurityUser implements UserDetails {
     this.cards = cards;
     if (cards != null) {
       cards.stream().forEach(card -> card.setUser(this));
+    }
+  }
+
+  public void clearLockout() {
+    setLocked(false);
+    setLockedDate(null);
+    setFailedLoginAttempts(0);
+    setNumPreviousLockouts(1);
+  }
+
+  public void lock() {
+    // TODO: adding adaptive lock out time ( increasing by number of recent attempts / lockouts ) would be nice
+    setLocked(true);
+    setLockedDate(ZonedDateTime.now());
+    setUnlockDate(ZonedDateTime.now().plusMinutes(5));
+  }
+
+  public void incrementFailedLoginAttempts() {
+    setFailedLoginAttempts(getFailedLoginAttempts() + 1);
+    if (getFailedLoginAttempts() > MAX_ALLOWED_FAILED_LOGIN_ATTEMPTS) {
+      lock();
     }
   }
 

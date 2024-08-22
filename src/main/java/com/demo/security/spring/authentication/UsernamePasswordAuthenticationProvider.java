@@ -4,6 +4,7 @@ import com.demo.security.spring.model.AuthenticationFailureReason;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.utils.SpringProfileConstants;
+import java.time.ZonedDateTime;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
@@ -42,8 +43,7 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
   }
 
   @Autowired
-  public void setPasswordEncoder(
-      PasswordEncoder passwordEncoder) {
+  public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
     this.passwordEncoder = passwordEncoder;
   }
 
@@ -58,30 +58,45 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
     final SecurityUser user = userRepository.getSecurityUserByUsername(username);
     validateUser(username, password, user);
     authenticationAttemptManager.handleSuccessfulAuthentication(user);
+
     return new UsernamePasswordAuthenticationToken(username, password, user.getAuthorities());
   }
 
-  private void validateUser(final String username, final String providedPassword, final SecurityUser user) {
+  private void validateUser(final String username, final String providedPassword, SecurityUser user) {
     if (user == null) {
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.USER_NOT_FOUND);
       throw new UsernameNotFoundException("No account matching username " + username);
-    } else if (!user.isEnabled()) {
+    }
+    if (!user.isEnabled()) {
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.DISABLED);
       throw new DisabledException("The account for user " + username + " is not enabled");
-    } else if (user.isLocked()) {
-      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.LOCKED);
-      throw new LockedException("The account for user " + username + " is locked");
-    } else if (!user.isCredentialsNonExpired()) {
+    }
+    if (user.isLocked()) {
+      if (user.getUnlockDate() != null && ZonedDateTime.now().isAfter(user.getUnlockDate())) {
+        // clear user lockout and continue on
+        user.clearLockout();
+        user = userRepository.save(user);
+      } else {
+        authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.LOCKED);
+        throw new LockedException("The account for user " + username + " is locked");
+      }
+    }
+    if (!user.isCredentialsNonExpired()) {
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.CREDENTIALS_EXPIRED);
       throw new CredentialsExpiredException("The credentials for user " + username + " are expired");
-    } else if (user.isAccountExpired()) {
+    }
+    if (user.isAccountExpired()) {
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.ACCOUNT_EXPIRED);
       throw new AccountExpiredException("The account for user " + username + " has expired");
-    } else if (user.getAuthorities() == null || user.getAuthorities().isEmpty()) {
+    }
+    if (user.getAuthorities() == null || user.getAuthorities().isEmpty()) {
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.NO_AUTHORITIES);
       // note that authorities are fetched eagerly by hibernate
       throw new IllegalStateException("User " + username + " has no related authorities!");
-    } else if (!passwordEncoder.matches(providedPassword, user.getPassword())) {
+    }
+    if (!passwordEncoder.matches(providedPassword, user.getPassword())) {
+      user.incrementFailedLoginAttempts(); // can result in lockout
+      userRepository.save(user);
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.BAD_CREDENTIALS);
       throw new BadCredentialsException("Invalid credentials");
     }

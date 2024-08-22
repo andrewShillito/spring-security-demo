@@ -14,8 +14,11 @@ CREATE TABLE IF NOT EXISTS demo.security_users (
     account_expired_date timestamp with time zone,
     password_expired boolean not null default false,
     password_expired_date timestamp with time zone,
+    failed_login_attempts smallint,
+    num_previous_lockouts smallint, /* could probably go in a 1-1 user additional details table if there are other fields to put there as well */
     locked boolean not null default false,
     locked_date timestamp with time zone,
+    unlock_date timestamp with time zone,
     created_date timestamp with time zone not null,
     last_updated_date timestamp with time zone not null,
     last_login_date timestamp with time zone
