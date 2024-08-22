@@ -27,7 +27,7 @@ import org.springframework.stereotype.Component;
  * InMemoryUserDetailsManager instead uses default spring-security authentication providers.
  */
 @Component
-@Profile(SpringProfileConstants.POSTGRES)
+@Profile({ SpringProfileConstants.POSTGRES, SpringProfileConstants.H2 })
 public class UsernamePasswordAuthenticationProvider implements AuthenticationProvider {
 
   private SecurityUserRepository userRepository;
