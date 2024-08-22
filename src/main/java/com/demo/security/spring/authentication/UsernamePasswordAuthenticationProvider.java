@@ -75,6 +75,7 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
       if (user.getUnlockDate() != null && ZonedDateTime.now().isAfter(user.getUnlockDate())) {
         // clear user lockout and continue on
         user.clearLockout();
+        // TODO: fix this also - may throw exception during test
         user = userRepository.save(user);
       } else {
         authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.LOCKED);
@@ -96,6 +97,8 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
     }
     if (!passwordEncoder.matches(providedPassword, user.getPassword())) {
       user.incrementFailedLoginAttempts(); // can result in lockout
+      // TODO: throwing during test - I think because of persistent bag issue for authentications of other sub-classes
+      //          at java.base/java.util.ImmutableCollections.uoe(ImmutableCollections.java:142) - also related to immutable collection
       userRepository.save(user);
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.BAD_CREDENTIALS);
       throw new BadCredentialsException("Invalid credentials");
