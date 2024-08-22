@@ -2,6 +2,8 @@ package com.demo.security.spring.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+import com.demo.security.spring.authentication.AuthenticationAttemptManager;
+import com.demo.security.spring.events.AuthenticationEvents;
 import com.demo.security.spring.authentication.CustomAccessDeniedHandler;
 import com.demo.security.spring.authentication.CustomBasicAuthenticationEntryPoint;
 import com.demo.security.spring.controller.AccountController;
@@ -17,6 +19,7 @@ import com.demo.security.spring.generate.ContactMessagesFileGenerator;
 import com.demo.security.spring.generate.LoanGenerator;
 import com.demo.security.spring.generate.NoticeDetailsFileGenerator;
 import com.demo.security.spring.generate.UserFileGenerator;
+import com.demo.security.spring.repository.AuthenticationAttemptRepository;
 import com.demo.security.spring.repository.ContactMessageRepository;
 import com.demo.security.spring.repository.NoticeDetailsRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
@@ -59,7 +62,7 @@ public class ProjectSecurityConfig {
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http, Environment environment) throws Exception {
-    boolean isProd = Arrays.asList(environment.getActiveProfiles()).contains(SpringProfileConstants.PRODUCTION);
+    boolean isProd = environment.matchesProfiles(SpringProfileConstants.PRODUCTION);
     http.csrf().disable()
         .cors(customizer -> customizer.configurationSource(corsConfigurationSource()))
         .requiresChannel(rcc -> {
@@ -295,5 +298,15 @@ public class ProjectSecurityConfig {
         .noticeDetailsFileGenerator(noticeDetailsFileGenerator)
         .contactMessagesFileGenerator(contactMessagesFileGenerator)
         .build();
+  }
+
+  @Bean
+  public AuthenticationEvents authenticationEventListeners() {
+    return new AuthenticationEvents();
+  }
+
+  @Bean
+  public AuthenticationAttemptManager authenticationAttemptManager(AuthenticationAttemptRepository attemptRepository) {
+    return new AuthenticationAttemptManager().setAttemptRepository(attemptRepository);
   }
 }

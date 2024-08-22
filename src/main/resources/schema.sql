@@ -17,7 +17,36 @@ CREATE TABLE IF NOT EXISTS demo.security_users (
     locked boolean not null default false,
     locked_date timestamp with time zone,
     created_date timestamp with time zone not null,
-    last_updated_date timestamp with time zone not null
+    last_updated_date timestamp with time zone not null,
+    last_login_date timestamp with time zone
+);
+
+CREATE SEQUENCE IF NOT EXISTS demo.authentication_attempts_id_seq INCREMENT BY 50;
+
+/* Some of these column lengths are very approximate - no documentation was available for expected value max lengths */
+CREATE TABLE IF NOT EXISTS demo.authentication_attempts (
+    id bigint not null primary key default nextval('demo.authentication_attempts_id_seq'),
+    user_id bigint,
+    username varchar(100),
+    attempt_time timestamp with time zone not null,
+    successful boolean not null,
+    failure_reason varchar(50),
+    agent varchar(500),
+    requested_resource varchar(200),
+    remote_address varchar(32),
+    remote_host varchar(200),
+    remote_user varchar(200),
+    content_type varchar(100),
+    user_agent_family varchar(50),
+    user_agent_major varchar(50),
+    user_agent_minor varchar(50),
+    user_agent_patch varchar(50),
+    os_family varchar(200),
+    os_major varchar(50),
+    os_minor varchar(50),
+    os_patch varchar(50),
+    os_patch_minor varchar(50),
+    device_family varchar(200)
 );
 
 CREATE SEQUENCE IF NOT EXISTS demo.security_authorities_id_seq INCREMENT BY 50;

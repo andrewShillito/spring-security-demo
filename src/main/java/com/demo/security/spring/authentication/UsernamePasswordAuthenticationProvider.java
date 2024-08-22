@@ -1,16 +1,22 @@
 package com.demo.security.spring.authentication;
 
+import com.demo.security.spring.model.AuthenticationFailureReason;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.utils.SpringProfileConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.CredentialsExpiredException;
+import org.springframework.security.authentication.DisabledException;
+import org.springframework.security.authentication.LockedException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -28,6 +34,9 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
   private PasswordEncoder passwordEncoder;
 
   @Autowired
+  private AuthenticationAttemptManager authenticationAttemptManager;
+
+  @Autowired
   public void setUserRepository(SecurityUserRepository userRepository) {
     this.userRepository = userRepository;
   }
@@ -43,27 +52,38 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
     final String username = authentication.getName();
     final String password = authentication.getCredentials().toString();
     if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
+      authenticationAttemptManager.handleFailedAuthentication(username, null, AuthenticationFailureReason.BAD_CREDENTIALS);
       throw new BadCredentialsException("Missing required credentials for username or password");
     }
     final SecurityUser user = userRepository.getSecurityUserByUsername(username);
     validateUser(username, password, user);
+    authenticationAttemptManager.handleSuccessfulAuthentication(user);
     return new UsernamePasswordAuthenticationToken(username, password, user.getAuthorities());
   }
 
   private void validateUser(final String username, final String providedPassword, final SecurityUser user) {
     if (user == null) {
-      throw new BadCredentialsException("No user registered with username " + username);
-    } else if (!passwordEncoder.matches(providedPassword, user.getPassword())) {
-      throw new BadCredentialsException("Invalid credentials");
+      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.USER_NOT_FOUND);
+      throw new UsernameNotFoundException("No account matching username " + username);
     } else if (!user.isEnabled()) {
-      throw new BadCredentialsException("The account for user " + username + " is not yet enabled");
+      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.DISABLED);
+      throw new DisabledException("The account for user " + username + " is not enabled");
     } else if (user.isLocked()) {
-      throw new BadCredentialsException("The account for user " + username + " has been locked");
+      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.LOCKED);
+      throw new LockedException("The account for user " + username + " is locked");
+    } else if (!user.isCredentialsNonExpired()) {
+      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.CREDENTIALS_EXPIRED);
+      throw new CredentialsExpiredException("The credentials for user " + username + " are expired");
     } else if (user.isAccountExpired()) {
-      throw new BadCredentialsException("The account for user " + username + " has expired");
+      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.ACCOUNT_EXPIRED);
+      throw new AccountExpiredException("The account for user " + username + " has expired");
     } else if (user.getAuthorities() == null || user.getAuthorities().isEmpty()) {
+      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.NO_AUTHORITIES);
       // note that authorities are fetched eagerly by hibernate
       throw new IllegalStateException("User " + username + " has no related authorities!");
+    } else if (!passwordEncoder.matches(providedPassword, user.getPassword())) {
+      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.BAD_CREDENTIALS);
+      throw new BadCredentialsException("Invalid credentials");
     }
   }
 
