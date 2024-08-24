@@ -32,7 +32,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString(exclude = { "account", "user" } )
+@ToString(exclude = { "account" } )
 @SequenceGenerator(name = "account_transactions_transaction_id_seq", sequenceName = "account_transactions_transaction_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class AccountTransaction {
@@ -48,11 +48,9 @@ public class AccountTransaction {
   @NotNull
   private Account account;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "user_id", nullable = false, updatable = false, insertable = true)
-  @JsonIgnore
   @NotNull
-  private SecurityUser user;
+  @Column(name = "user_id", nullable = false, updatable = false, insertable = true)
+  private Long userId;
 
   @Column(name = "transaction_date")
   private ZonedDateTime transactionDate;

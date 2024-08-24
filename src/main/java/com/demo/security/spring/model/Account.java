@@ -1,6 +1,5 @@
 package com.demo.security.spring.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import jakarta.persistence.CascadeType;
@@ -11,8 +10,6 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
@@ -30,7 +27,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString(exclude = "user")
+@ToString
 @JsonInclude(Include.NON_EMPTY)
 public class Account {
 
@@ -39,11 +36,9 @@ public class Account {
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "accounts_account_number_seq")
   private Long accountNumber;
 
-  @ManyToOne
-  @JoinColumn(name = "user_id", nullable = false, updatable = false, insertable = true)
-  @JsonIgnore
   @NotNull
-  private SecurityUser user;
+  @Column(name = "user_id", nullable = false, updatable = false, insertable = true)
+  private Long userId;
 
   @Column(name = "account_type", length = 100)
   private String accountType;
@@ -63,7 +58,7 @@ public class Account {
     if (accountTransactions != null) {
       accountTransactions.stream().filter(Objects::nonNull).forEach(transaction -> {
         transaction.setAccount(this);
-        transaction.setUser(this.getUser());
+        transaction.setUserId(this.userId);
       });
     }
   }

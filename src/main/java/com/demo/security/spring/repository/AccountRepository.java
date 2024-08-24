@@ -8,13 +8,13 @@ import org.springframework.data.repository.CrudRepository;
 public interface AccountRepository extends CrudRepository<Account, Long> {
 
   @Query(value = "SELECT a FROM Account a"
-      + " LEFT JOIN AccountTransaction t ON a.accountNumber = t.account.accountNumber AND t.user.id = ?1"
-      + " WHERE a.user.id = ?1 ORDER BY t.transactionDate DESC")
+      + " LEFT JOIN AccountTransaction t ON a.accountNumber = t.account.accountNumber AND t.userId = ?1"
+      + " WHERE a.userId = ?1 ORDER BY t.transactionDate DESC")
   List<Account> findAllByUserId(Long userId);
 
   @Query(value = "SELECT a FROM Account a"
-      + " LEFT JOIN AccountTransaction t ON a.accountNumber = t.account.accountNumber AND t.user.id = ?1"
-      + " WHERE a.user.id = ?1 ORDER BY t.transactionDate DESC LIMIT 1")
+      + " LEFT JOIN AccountTransaction t ON a.accountNumber = t.account.accountNumber AND t.userId = ?1"
+      + " WHERE a.userId = ?1 ORDER BY t.transactionDate DESC LIMIT 1")
   Account findByUserId(Long userId);
 
 }

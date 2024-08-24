@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface LoanRepository extends CrudRepository<Loan, Long> {
 
-  @Query(value = "SELECT l FROM Loan l WHERE l.user.id = ?1 ORDER BY l.startDate ASC")
+  @Query(value = "SELECT l FROM Loan l WHERE l.userId = ?1 ORDER BY l.startDate ASC")
   List<Loan> findAllByUserId(Long userId);
 
 }

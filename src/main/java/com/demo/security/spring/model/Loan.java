@@ -1,18 +1,14 @@
 package com.demo.security.spring.model;
 
 import com.demo.security.spring.utils.DecimalScaleManager;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.SequenceGenerator;
@@ -30,7 +26,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString(exclude = { "user" })
+@ToString
 @SequenceGenerator(name = "loans_loan_number_seq", sequenceName = "loans_loan_number_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class Loan {
@@ -40,11 +36,9 @@ public class Loan {
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "loans_loan_number_seq")
   private Long loanNumber;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "user_id", nullable = false, updatable = false, insertable = true)
-  @JsonIgnore
   @NotNull
-  private SecurityUser user;
+  @Column(name = "user_id", nullable = false, updatable = false, insertable = true)
+  private Long userId;
 
   // TODO: create loan types enum
   @Column(name = "loan_type", length = 100)

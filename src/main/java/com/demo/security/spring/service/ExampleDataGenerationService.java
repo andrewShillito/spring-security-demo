@@ -50,7 +50,7 @@ public class ExampleDataGenerationService {
   public Account generateAccount(SecurityUser user) {
     Preconditions.checkNotNull(user);
     final Account account = accountFileGenerator.generateAccount();
-    account.setUser(user);
+    account.setUserId(user.getId());
     return account;
   }
 
@@ -66,7 +66,7 @@ public class ExampleDataGenerationService {
 
   public List<Card> generateCards(SecurityUser user) {
     Preconditions.checkNotNull(user);
-    return cardFileGenerator.generate().stream().peek(c -> c.setUser(user)).toList();
+    return cardFileGenerator.generate().stream().peek(c -> c.setUserId(user.getId())).toList();
   }
 
   public List<Card> generateCards(List<SecurityUser> users, boolean writeToFile) {
@@ -81,7 +81,7 @@ public class ExampleDataGenerationService {
 
   public List<Loan> generateLoans(SecurityUser user) {
     Preconditions.checkNotNull(user);
-    return loanFileGenerator.generate().stream().peek(l -> l.setUser(user)).toList();
+    return loanFileGenerator.generate().stream().peek(l -> l.setUserId(user.getId())).toList();
   }
 
   public List<Loan> generateLoans(List<SecurityUser> users, boolean writeToFile) {
