@@ -1,9 +1,9 @@
 package com.demo.security.spring;
 
-import com.demo.security.spring.generate.AccountGenerator;
-import com.demo.security.spring.generate.CardGenerator;
+import com.demo.security.spring.generate.AccountFileGenerator;
+import com.demo.security.spring.generate.CardFileGenerator;
 import com.demo.security.spring.generate.ContactMessagesFileGenerator;
-import com.demo.security.spring.generate.LoanGenerator;
+import com.demo.security.spring.generate.LoanFileGenerator;
 import com.demo.security.spring.generate.NoticeDetailsFileGenerator;
 import com.demo.security.spring.generate.UserFileGenerator;
 import com.demo.security.spring.model.SecurityUser;
@@ -11,7 +11,6 @@ import com.demo.security.spring.repository.SecurityUserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import lombok.Getter;
 import lombok.NonNull;
 import net.datafaker.Faker;
@@ -31,13 +30,13 @@ public class TestDataGenerator {
   private UserFileGenerator userFileGenerator;
 
   @Autowired
-  private AccountGenerator accountGenerator;
+  private AccountFileGenerator accountFileGenerator;
 
   @Autowired
-  private LoanGenerator loanGenerator;
+  private LoanFileGenerator loanFileGenerator;
 
   @Autowired
-  private CardGenerator cardGenerator;
+  private CardFileGenerator cardFileGenerator;
 
   @Autowired
   private ContactMessagesFileGenerator contactMessagesFileGenerator;
@@ -91,16 +90,5 @@ public class TestDataGenerator {
 
   private void postProcessGeneratedUser(@NonNull SecurityUser user) {
     user.setPassword(passwordEncoder.encode(user.getPassword()));
-    if (user.getAccounts() != null) {
-      user.getAccounts().stream().forEach(account -> {
-        if (account.getAccountTransactions() != null) {
-          // this is jpa related - because we have bi-directional references we need to make sure the
-          // seeded account transactions have User object set as well
-          account.getAccountTransactions().stream().filter(Objects::nonNull).forEach(transaction -> {
-            transaction.setUser(user);
-          });
-        }
-      });
-    }
   }
 }

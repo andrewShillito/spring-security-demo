@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.util.Collection;
+import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
 import org.apache.commons.lang3.StringUtils;
@@ -18,6 +19,7 @@ public abstract class AbstractFileGenerator extends AbstractGenerator<Collection
 
   protected final boolean overwriteFiles;
 
+  @Getter
   protected final File outputFile;
 
   public AbstractFileGenerator(Faker faker, ObjectMapper objectMapper, String fileName) {
@@ -55,6 +57,10 @@ public abstract class AbstractFileGenerator extends AbstractGenerator<Collection
     } catch (IOException e) {
       throw new RuntimeException("Failed data generation for file " + outputFile.getPath(), e);
     }
+  }
+
+  public String getOutputFileName() {
+    return outputFile != null ? outputFile.getName() : null;
   }
 
   protected void initOutputFile(final File file) {

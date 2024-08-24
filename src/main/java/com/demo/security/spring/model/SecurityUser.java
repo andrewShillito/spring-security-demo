@@ -105,18 +105,6 @@ public class SecurityUser implements UserDetails {
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
   private List<SecurityAuthority> authorities;
 
-  /* I added the below one to many fields for quality of life when generating example data files but
-  removing them or making transient seems preferable since they are handled via separate repositories */
-
-  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE })
-  private List<Account> accounts;
-
-  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE })
-  private List<Loan> loans;
-
-  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE })
-  private List<Card> cards;
-
   @Embedded
   private EntityControlDates controlDates = new EntityControlDates();
 
@@ -151,27 +139,6 @@ public class SecurityUser implements UserDetails {
   @Override
   public boolean isEnabled() {
     return enabled;
-  }
-
-  public void setAccounts(List<Account> accounts) {
-    this.accounts = accounts;
-    if (accounts != null) {
-      accounts.stream().forEach(account -> account.setUser(this));
-    }
-  }
-
-  public void setLoans(List<Loan> loans) {
-    this.loans = loans;
-    if (loans != null) {
-      loans.stream().forEach(loan -> loan.setUser(this));
-    }
-  }
-
-  public void setCards(List<Card> cards) {
-    this.cards = cards;
-    if (cards != null) {
-      cards.stream().forEach(card -> card.setUser(this));
-    }
   }
 
   public void clearLockout() {

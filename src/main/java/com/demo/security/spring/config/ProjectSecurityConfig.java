@@ -13,20 +13,22 @@ import com.demo.security.spring.controller.ContactController;
 import com.demo.security.spring.controller.LoansController;
 import com.demo.security.spring.controller.UserController;
 import com.demo.security.spring.controller.NoticesController;
-import com.demo.security.spring.generate.AccountGenerator;
-import com.demo.security.spring.generate.CardGenerator;
+import com.demo.security.spring.generate.AccountFileGenerator;
+import com.demo.security.spring.generate.CardFileGenerator;
 import com.demo.security.spring.generate.ContactMessagesFileGenerator;
-import com.demo.security.spring.generate.LoanGenerator;
+import com.demo.security.spring.generate.LoanFileGenerator;
 import com.demo.security.spring.generate.NoticeDetailsFileGenerator;
 import com.demo.security.spring.generate.UserFileGenerator;
+import com.demo.security.spring.repository.AccountRepository;
 import com.demo.security.spring.repository.AuthenticationAttemptRepository;
+import com.demo.security.spring.repository.CardRepository;
 import com.demo.security.spring.repository.ContactMessageRepository;
+import com.demo.security.spring.repository.LoanRepository;
 import com.demo.security.spring.repository.NoticeDetailsRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.serialization.ZonedDateTimeDeserializer;
 import com.demo.security.spring.serialization.ZonedDateTimeSerializer;
 import com.demo.security.spring.service.ExampleDataGenerationService;
-import com.demo.security.spring.service.InMemoryLoginService;
 import com.demo.security.spring.service.JpaLoginService;
 import com.demo.security.spring.service.LoginService;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
@@ -51,7 +53,6 @@ import org.springframework.security.config.annotation.web.configurers.SessionMan
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -132,19 +133,6 @@ public class ProjectSecurityConfig {
   }
 
   /**
-   * <em>For demo/dev-environment purposes only</em>
-   * <p>Seeds a number of users from a local csv file into an in-memory user details manager</p>
-   *
-   * @return an in memory user details manager which is only safe for local demo or sample
-   * applications
-   */
-  @Bean(name = "userDetailsService")
-  @Profile(SpringProfileConstants.IN_MEMORY_USERS)
-  public UserDetailsService inMemoryUserDetailsManager(final ExampleDataManager exampleDataManager) {
-    return new InMemoryUserDetailsManager(exampleDataManager.getInMemoryUsers());
-  }
-
-  /**
    * Create a jdbc user details manager. Note that the docker-compose file and
    * spring-boot-docker-compose by default start a postgres and adminer container.
    *
@@ -152,7 +140,6 @@ public class ProjectSecurityConfig {
    * @return JdbcUserDetailsManager
    */
   @Bean(name = "userDetailsService")
-  @Profile("! " + SpringProfileConstants.IN_MEMORY_USERS)
   public UserDetailsService jpaUserDetailsService(final SecurityUserRepository repository) {
     return SpringDataJpaUserDetailsService
         .builder()
@@ -169,18 +156,24 @@ public class ProjectSecurityConfig {
    * @return StartupDatabasePopulator
    */
   @Bean
-  @Profile("! " + SpringProfileConstants.IN_MEMORY_USERS + " && " + SpringProfileConstants.POSTGRES)
+  @Profile(SpringProfileConstants.POSTGRES)
   public StartupDatabasePopulator startupDatabasePopulator(
       final SecurityUserRepository userRepository,
       final NoticeDetailsRepository noticeDetailsRepository,
       final ContactMessageRepository contactMessageRepository,
-      final ExampleDataManager exampleDataManager
+      final ExampleDataManager exampleDataManager,
+      final AccountRepository accountRepository,
+      final CardRepository cardRepository,
+      final LoanRepository loanRepository
   ) {
     return StartupDatabasePopulator.builder()
         .exampleDataManager(exampleDataManager)
         .securityUserRepository(userRepository)
         .noticeDetailsRepository(noticeDetailsRepository)
         .contactMessageRepository(contactMessageRepository)
+        .accountRepository(accountRepository)
+        .cardRepository(cardRepository)
+        .loanRepository(loanRepository)
         .build();
   }
 
@@ -190,17 +183,6 @@ public class ProjectSecurityConfig {
   }
 
   @Bean(name = "loginService")
-  @Profile(SpringProfileConstants.IN_MEMORY_USERS)
-  public LoginService inMemoryLoginService(UserDetailsService userDetailsService) {
-    if (!(userDetailsService instanceof InMemoryUserDetailsManager)) {
-      throw new RuntimeException("Provided userDetailsService was expected to be InMemoryUserDetailsManager but was "
-          + userDetailsService.getClass().getName());
-    }
-    return InMemoryLoginService.builder().userDetailsService(userDetailsService).build();
-  }
-
-  @Bean(name = "loginService")
-  @Profile("! " + SpringProfileConstants.IN_MEMORY_USERS)
   public LoginService jpaLoginService(final SecurityUserRepository securityUserRepository, final PasswordEncoder passwordEncoder) {
     return JpaLoginService.builder()
         .securityUserRepository(securityUserRepository)
@@ -244,13 +226,17 @@ public class ProjectSecurityConfig {
   }
 
   @Bean
-  public CardGenerator cardGenerator(@Value("${example-data.cards.count:20}") int cardCount) {
-    return new CardGenerator(faker(), objectMapper(), cardCount);
+  public CardFileGenerator cardGenerator(@Value("${example-data.cards.count:20}") int cardCount) {
+    final CardFileGenerator cardFileGenerator = new CardFileGenerator(faker(), objectMapper());
+    cardFileGenerator.setItemCount(cardCount);
+    return cardFileGenerator;
   }
 
   @Bean
-  public LoanGenerator loanGenerator(@Value("${example-data.loan.count:20}") int loanCount) {
-    return new LoanGenerator(faker(), objectMapper(), loanCount);
+  public LoanFileGenerator loanGenerator(@Value("${example-data.loan.count:20}") int loanCount) {
+    LoanFileGenerator loanFileGenerator = new LoanFileGenerator(faker(), objectMapper());
+    loanFileGenerator.setItemCount(loanCount);
+    return loanFileGenerator;
   }
 
   @Bean
@@ -268,21 +254,17 @@ public class ProjectSecurityConfig {
   }
 
   @Bean
-  public AccountGenerator accountGenerator(@Value("${example-data.account.count:1}") int accountCount) {
-    return new AccountGenerator(faker(), objectMapper(), accountCount);
+  public AccountFileGenerator accountFileGenerator(@Value("${example-data.account.count:1}") int accountCount) {
+    final AccountFileGenerator accountFileGenerator = new AccountFileGenerator(faker(), objectMapper());
+    accountFileGenerator.setItemCount(accountCount);
+    return accountFileGenerator;
   }
 
   @Bean
   public UserFileGenerator userFileGenerator(
-      final LoanGenerator loanGenerator,
-      final AccountGenerator accountGenerator,
-      final CardGenerator cardGenerator,
       @Value("${example-data.user.count:20}") int userCount
   ) {
     final UserFileGenerator userFileGenerator = new UserFileGenerator(faker(), objectMapper());
-    userFileGenerator.setLoanGenerator(loanGenerator);
-    userFileGenerator.setAccountGenerator(accountGenerator);
-    userFileGenerator.setCardGenerator(cardGenerator);
     userFileGenerator.setItemCount(userCount);
     return userFileGenerator;
   }
@@ -290,11 +272,17 @@ public class ProjectSecurityConfig {
   @Bean
   public ExampleDataGenerationService exampleDataGenerationService(
       UserFileGenerator userFileGenerator,
+      AccountFileGenerator accountFileGenerator,
+      LoanFileGenerator loanFileGenerator,
+      CardFileGenerator cardFileGenerator,
       NoticeDetailsFileGenerator noticeDetailsFileGenerator,
       ContactMessagesFileGenerator contactMessagesFileGenerator
   ) {
     return ExampleDataGenerationService.builder()
         .userFileGenerator(userFileGenerator)
+        .accountFileGenerator(accountFileGenerator)
+        .loanFileGenerator(loanFileGenerator)
+        .cardFileGenerator(cardFileGenerator)
         .noticeDetailsFileGenerator(noticeDetailsFileGenerator)
         .contactMessagesFileGenerator(contactMessagesFileGenerator)
         .build();

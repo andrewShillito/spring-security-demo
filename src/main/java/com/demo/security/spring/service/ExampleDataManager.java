@@ -1,19 +1,20 @@
 package com.demo.security.spring.service;
 
+import com.demo.security.spring.model.Account;
+import com.demo.security.spring.model.Card;
 import com.demo.security.spring.model.ContactMessage;
+import com.demo.security.spring.model.Loan;
 import com.demo.security.spring.model.NoticeDetails;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.utils.ValidationUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 import lombok.Builder;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
@@ -33,20 +34,6 @@ public class ExampleDataManager {
   private boolean regenerateData;
 
   /**
-   * Returns a list of UserDetails from the result of {@link #getUsers()}
-   * which reads a json file of example {@link SecurityUser} records.
-   * Encodes the example users passwords with the provided encoder.
-   * @return list of user details object to be seeded into in-memory user details manager
-   */
-  public List<UserDetails> getInMemoryUsers() {
-    final List<SecurityUser> securityUsers = getUsers();
-    return securityUsers
-        .stream()
-        .map(it -> (UserDetails) it)
-        .collect(Collectors.toList());
-  }
-
-  /**
    * Reads a json file for users to seed into the database.
    * Because hibernate and data.sql don't always get along and this simplifies the handling of
    * user seeding by allowing the app to check if users exist before we try to seed them again.
@@ -58,7 +45,7 @@ public class ExampleDataManager {
     if (regenerateData) {
       securityUsers = generationService.generateUsers(true);
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/example-users.json");
+      final ClassPathResource resource = getClassPathResource("seed/" + generationService.getUserFileGenerator().getOutputFileName());
       if (!resource.exists()) {
         throw new RuntimeException("Unable to locate development environment users seed file");
       } else if (!resource.isReadable()) {
@@ -70,21 +57,72 @@ public class ExampleDataManager {
         throw new RuntimeException("Failed to read development environment users from classpath resource " + resource.getPath(), e);
       }
     }
-    return securityUsers.stream().peek(user -> {
-      user.setPassword(passwordEncoder.encode(user.getPassword()));
-      if (user.getAccounts() != null) {
-        user.getAccounts().stream().forEach(account -> {
-          if (account.getAccountTransactions() != null) {
-            // this is jpa related - because we have bi-directional references we need to make sure the
-            // seeded account transactions have User object set as well
-            account.getAccountTransactions().stream().filter(Objects::nonNull).forEach(transaction -> {
-              transaction.setUser(user);
-            });
-          }
-        });
+    return securityUsers.stream()
+        .peek(user -> user.setPassword(passwordEncoder.encode(user.getPassword())))
+        .toList();
+  }
+
+  public List<Account> getAccountsForUsers(List<SecurityUser> users) {
+    ValidationUtils.notEmpty(users);
+    List<Account> accounts;
+    if (regenerateData) {
+      accounts = generationService.generateAccounts(users, true);
+    } else {
+      final ClassPathResource resource = getClassPathResource("seed/" + generationService.getAccountFileGenerator().getOutputFileName());
+      if (!resource.exists()) {
+        throw new RuntimeException("Unable to locate development environment accounts seed file");
+      } else if (!resource.isReadable()) {
+        throw new RuntimeException("Unable to read from development environment accounts seed file");
       }
-    })
-    .toList();
+      try {
+        accounts = Arrays.stream(objectMapper.readValue(resource.getInputStream(), Account[].class)).toList();
+      } catch (IOException e) {
+        throw new RuntimeException("Failed to read development environment accounts from classpath resource " + resource.getPath(), e);
+      }
+    }
+    return accounts;
+  }
+
+  public List<Card> getCardsForUsers(List<SecurityUser> users) {
+    ValidationUtils.notEmpty(users);
+    List<Card> cards;
+    if (regenerateData) {
+      cards = generationService.generateCards(users, true);
+    } else {
+      final ClassPathResource resource = getClassPathResource("seed/" + generationService.getCardFileGenerator().getOutputFileName());
+      if (!resource.exists()) {
+        throw new RuntimeException("Unable to locate development environment cards seed file");
+      } else if (!resource.isReadable()) {
+        throw new RuntimeException("Unable to read from development environment cards seed file");
+      }
+      try {
+        cards = Arrays.stream(objectMapper.readValue(resource.getInputStream(), Card[].class)).toList();
+      } catch (IOException e) {
+        throw new RuntimeException("Failed to read development environment accounts from classpath resource " + resource.getPath(), e);
+      }
+    }
+    return cards;
+  }
+
+  public List<Loan> getLoansForUsers(List<SecurityUser> users) {
+    ValidationUtils.notEmpty(users);
+    List<Loan> loans;
+    if (regenerateData) {
+      loans = generationService.generateLoans(users, true);
+    } else {
+      final ClassPathResource resource = getClassPathResource("seed/" + generationService.getLoanFileGenerator().getOutputFileName());
+      if (!resource.exists()) {
+        throw new RuntimeException("Unable to locate development environment loans seed file");
+      } else if (!resource.isReadable()) {
+        throw new RuntimeException("Unable to read from development environment loans seed file");
+      }
+      try {
+        loans = Arrays.stream(objectMapper.readValue(resource.getInputStream(), Loan[].class)).toList();
+      } catch (IOException e) {
+        throw new RuntimeException("Failed to read development environment accounts from classpath resource " + resource.getPath(), e);
+      }
+    }
+    return loans;
   }
 
   public List<NoticeDetails> getNoticeDetails() {

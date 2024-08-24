@@ -10,16 +10,13 @@ import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
 
 @Log4j2
-public class LoanGenerator extends AbstractGenerator<List<Loan>> {
+public class LoanFileGenerator extends AbstractFileGenerator {
 
-  public LoanGenerator(Faker faker,
+  public static final String DEFAULT_OUTPUT_FILE = "example-loans.json";
+
+  public LoanFileGenerator(Faker faker,
       ObjectMapper objectMapper) {
-    super(faker, objectMapper);
-  }
-
-  public LoanGenerator(Faker faker,
-      ObjectMapper objectMapper, int itemCount) {
-    super(faker, objectMapper, itemCount);
+    super(faker, objectMapper, DEFAULT_OUTPUT_FILE);
   }
 
   @Override

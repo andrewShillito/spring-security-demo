@@ -10,7 +10,7 @@ This repository is an in-progress spring security example app.
 
 ## IntelliJ startup
 
-See existing run configurations defined in [.run](.run). These should be imported by intelliJ automatically. **SpringSecurityDemoApplication** is the default run config. It uses a local postgres container which is started automatically by spring-boot-docker-compose. Alternatively, you can run **SpringSecurityDemoApplication - inMemoryUsers** to startup without a db container but note that the security setup for the in memory profile is more limited.
+See existing run configurations defined in [.run](.run). These should be imported by intelliJ automatically. **SpringSecurityDemoApplication** is the default run config. It uses a local postgres container which is started automatically by spring-boot-docker-compose.
 
 ## Command line startup
 
@@ -28,13 +28,13 @@ The default profiles populate a set of example users into the postgres db from [
 
 ### Other spring profiles
 
-#### inMemoryUsers - *support for in memory user details manager may be removed*
+#### prod
 
-Not really recommended as I maintained support for it more to make sure the application had cross-profile support at runtime and during test suites. Note that this profile also turns off docker-compose startup of postgres and adminer containers. The example users populated into system are stored in [example-users.json](src/main/resources/seed/example-users.json).
+A demo production-like profile which changes some things about the security configuration for the app including requiring https and limited concurrent sessions for users.
 
 Example usage:
 
-`./mvnw spring-boot:run -Dspring-boot.run.profiles=inMemoryUsers`
+`./mvnw spring-boot:run -Dspring-boot.run.profiles=prod`
 
 ## To run test suites
 

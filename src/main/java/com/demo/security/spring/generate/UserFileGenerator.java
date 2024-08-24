@@ -7,8 +7,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
 
@@ -19,18 +17,6 @@ public class UserFileGenerator extends AbstractFileGenerator {
 
   public static final String DEFAULT_OUTPUT_FILE = "example-users.json";
 
-  @Getter
-  @Setter
-  private AccountGenerator accountGenerator;
-
-  @Getter
-  @Setter
-  private LoanGenerator loanGenerator;
-
-  @Getter
-  @Setter
-  private CardGenerator cardGenerator;
-
   public UserFileGenerator(Faker faker, ObjectMapper objectMapper) {
     this(faker, objectMapper, DEFAULT_OUTPUT_FILE);
   }
@@ -38,12 +24,6 @@ public class UserFileGenerator extends AbstractFileGenerator {
   public UserFileGenerator(Faker faker,
       ObjectMapper objectMapper, String fileName) {
     super(faker, objectMapper, fileName);
-  }
-
-  public UserFileGenerator(Faker faker,
-      ObjectMapper objectMapper, String outputFileDir, String fileName,
-      boolean overwriteFiles) {
-    super(faker, objectMapper, outputFileDir, fileName, overwriteFiles);
   }
 
   @Override
@@ -169,10 +149,7 @@ public class UserFileGenerator extends AbstractFileGenerator {
     user.setUserRole(user.getUserType() == UserType.internal ? "ADMIN" : "STANDARD");
     user.setAuthorities(toAuthorities(roles));
     user.setEmail(username + "@demo.com");
-    user.setAccounts(accountGenerator.generate());
     user.setControlDates(randomEntityControlDates());
-    user.setLoans(loanGenerator.generate());
-    user.setCards(cardGenerator.generate());
     return user;
   }
 

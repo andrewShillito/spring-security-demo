@@ -12,24 +12,16 @@ import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
 
 @Log4j2
-public class AccountGenerator extends AbstractGenerator<List<Account>> {
+public class AccountFileGenerator extends AbstractFileGenerator {
+
+  public static final String DEFAULT_OUTPUT_FILE = "example-accounts.json";
 
   protected static final BigDecimal DEFAULT_STARTING_BALANCE = BigDecimal.valueOf(500.00);
 
-  public AccountGenerator(Faker faker,
+  public AccountFileGenerator(Faker faker,
       ObjectMapper objectMapper) {
-    super(faker, objectMapper);
+    super(faker, objectMapper, DEFAULT_OUTPUT_FILE);
   }
-
-  public AccountGenerator(Faker faker,
-      ObjectMapper objectMapper, int itemCount) {
-    super(faker, objectMapper, itemCount);
-  }
-
-  /**
-   * The default item count is 1 for accounts but can be overridden with setItemCount()
-   */
-
 
   @Override
   public List<Account> generate() {
@@ -46,7 +38,7 @@ public class AccountGenerator extends AbstractGenerator<List<Account>> {
     return accounts;
   }
 
-  private Account generateAccount() {
+  public Account generateAccount() {
     final Account account = new Account();
     account.setAccountType(faker.random().nextBoolean() ? "Savings" : "Checking");
     account.setBranchAddress(faker.address().fullAddress());

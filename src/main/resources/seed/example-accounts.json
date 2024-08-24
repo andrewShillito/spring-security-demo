@@ -1,0 +1,3864 @@
+[ {
+  "accountType" : "Savings",
+  "branchAddress" : "Apt. 850 4741 Tamisha Harbors, East Aprylport, AZ 38237",
+  "createdDate" : {
+    "created" : "2024-08-02T02:06:27.776-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-08-23T14:38:58.382-04:00[America/New_York]",
+    "transactionSummary" : "Durable Granite Pants",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 9.19,
+    "closingBalance" : 490.81,
+    "createdDate" : {
+      "created" : "2024-08-23T14:38:58.382-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-31T22:24:05.121-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Bronze Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 52.91,
+    "closingBalance" : 543.72,
+    "createdDate" : {
+      "created" : "2024-07-31T22:24:05.121-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-02T11:42:39.651-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Wool Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 65.99,
+    "closingBalance" : 609.71,
+    "createdDate" : {
+      "created" : "2024-08-02T11:42:39.651-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-10T17:07:45.314-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Marble Coat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 51.24,
+    "closingBalance" : 660.95,
+    "createdDate" : {
+      "created" : "2024-07-10T17:07:45.314-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-21T10:57:50.739-04:00[America/New_York]",
+    "transactionSummary" : "Small Marble Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 69.70,
+    "closingBalance" : 591.25,
+    "createdDate" : {
+      "created" : "2024-06-21T10:57:50.739-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-09T13:42:48.68-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Aluminum Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 81.21,
+    "closingBalance" : 672.46,
+    "createdDate" : {
+      "created" : "2024-06-09T13:42:48.68-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-03T07:52:19.652-04:00[America/New_York]",
+    "transactionSummary" : "Practical Granite Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 13.79,
+    "closingBalance" : 658.67,
+    "createdDate" : {
+      "created" : "2024-07-03T07:52:19.652-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-21T10:24:37.55-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Copper Lamp",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 70.78,
+    "closingBalance" : 729.45,
+    "createdDate" : {
+      "created" : "2024-08-21T10:24:37.55-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-01T07:07:51.876-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Marble Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 37.32,
+    "closingBalance" : 766.77,
+    "createdDate" : {
+      "created" : "2024-08-01T07:07:51.876-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-29T05:08:51.405-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Iron Pants",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 66.20,
+    "closingBalance" : 700.57,
+    "createdDate" : {
+      "created" : "2024-07-29T05:08:51.405-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-04T16:47:36.961-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Aluminum Plate",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 7.41,
+    "closingBalance" : 693.16,
+    "createdDate" : {
+      "created" : "2024-06-04T16:47:36.961-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Checking",
+  "branchAddress" : "Suite 426 87413 Na Manors, North Lucien, NY 85826",
+  "createdDate" : {
+    "created" : "2024-08-05T17:33:59.239-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-08-08T01:10:53.685-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Cotton Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 69.21,
+    "closingBalance" : 430.79,
+    "createdDate" : {
+      "created" : "2024-08-08T01:10:53.685-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-09T07:22:33.569-04:00[America/New_York]",
+    "transactionSummary" : "Durable Marble Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 14.66,
+    "closingBalance" : 416.13,
+    "createdDate" : {
+      "created" : "2024-06-09T07:22:33.569-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-13T01:53:24.167-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Concrete Chair",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 2.24,
+    "closingBalance" : 418.37,
+    "createdDate" : {
+      "created" : "2024-07-13T01:53:24.167-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-14T07:18:49.502-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Concrete Pants",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 27.33,
+    "closingBalance" : 445.70,
+    "createdDate" : {
+      "created" : "2024-07-14T07:18:49.502-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-17T05:52:45.331-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Linen Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 5.89,
+    "closingBalance" : 451.59,
+    "createdDate" : {
+      "created" : "2024-06-17T05:52:45.331-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-01T19:21:37.163-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Wool Pants",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 83.20,
+    "closingBalance" : 534.79,
+    "createdDate" : {
+      "created" : "2024-08-01T19:21:37.163-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-30T05:11:16.146-04:00[America/New_York]",
+    "transactionSummary" : "Practical Bronze Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 74.61,
+    "closingBalance" : 609.40,
+    "createdDate" : {
+      "created" : "2024-06-30T05:11:16.146-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-01T15:37:55.199-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Rubber Watch",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 28.18,
+    "closingBalance" : 581.22,
+    "createdDate" : {
+      "created" : "2024-06-01T15:37:55.199-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-25T01:50:49.184-04:00[America/New_York]",
+    "transactionSummary" : "Practical Copper Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 65.86,
+    "closingBalance" : 515.36,
+    "createdDate" : {
+      "created" : "2024-05-25T01:50:49.184-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-01T09:48:48.405-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Silk Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 29.30,
+    "closingBalance" : 486.06,
+    "createdDate" : {
+      "created" : "2024-07-01T09:48:48.405-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-12T05:43:31.379-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Wooden Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 29.01,
+    "closingBalance" : 515.07,
+    "createdDate" : {
+      "created" : "2024-07-12T05:43:31.379-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-11T10:33:33.563-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Iron Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 71.89,
+    "closingBalance" : 443.18,
+    "createdDate" : {
+      "created" : "2024-06-11T10:33:33.563-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-09T06:13:02.471-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Concrete Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 20.71,
+    "closingBalance" : 463.89,
+    "createdDate" : {
+      "created" : "2024-06-09T06:13:02.471-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-03T11:59:50.667-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Wooden Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 21.46,
+    "closingBalance" : 442.43,
+    "createdDate" : {
+      "created" : "2024-08-03T11:59:50.667-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-21T15:20:52.78-04:00[America/New_York]",
+    "transactionSummary" : "Durable Plastic Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 19.75,
+    "closingBalance" : 422.68,
+    "createdDate" : {
+      "created" : "2024-07-21T15:20:52.78-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-28T15:58:00.432-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Silk Wallet",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 75.80,
+    "closingBalance" : 498.48,
+    "createdDate" : {
+      "created" : "2024-07-28T15:58:00.432-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-31T01:08:54.031-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Silk Clock",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 79.00,
+    "closingBalance" : 419.48,
+    "createdDate" : {
+      "created" : "2024-07-31T01:08:54.031-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-04T21:32:44.036-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Aluminum Lamp",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 57.71,
+    "closingBalance" : 361.77,
+    "createdDate" : {
+      "created" : "2024-06-04T21:32:44.036-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-25T07:24:39.19-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Granite Car",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 77.70,
+    "closingBalance" : 439.47,
+    "createdDate" : {
+      "created" : "2024-05-25T07:24:39.19-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-20T03:18:13.401-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Wooden Pants",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 23.63,
+    "closingBalance" : 415.84,
+    "createdDate" : {
+      "created" : "2024-08-20T03:18:13.401-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-26T17:50:34.74-04:00[America/New_York]",
+    "transactionSummary" : "Small Leather Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 61.64,
+    "closingBalance" : 477.48,
+    "createdDate" : {
+      "created" : "2024-06-26T17:50:34.74-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-07T01:48:52.915-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Plastic Chair",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 88.70,
+    "closingBalance" : 388.78,
+    "createdDate" : {
+      "created" : "2024-06-07T01:48:52.915-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Checking",
+  "branchAddress" : "Apt. 947 350 Leif Ways, Thompsonbury, SC 60739",
+  "createdDate" : {
+    "created" : "2024-06-04T04:35:49.61-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-06-29T15:40:24.149-04:00[America/New_York]",
+    "transactionSummary" : "Durable Silk Car",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 5.01,
+    "closingBalance" : 505.01,
+    "createdDate" : {
+      "created" : "2024-06-29T15:40:24.149-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-22T07:19:45.349-04:00[America/New_York]",
+    "transactionSummary" : "Small Aluminum Computer",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 5.37,
+    "closingBalance" : 499.64,
+    "createdDate" : {
+      "created" : "2024-08-22T07:19:45.349-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-11T21:49:34.352-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Concrete Clock",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 71.77,
+    "closingBalance" : 427.87,
+    "createdDate" : {
+      "created" : "2024-08-11T21:49:34.352-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-26T02:53:40.689-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Paper Computer",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 35.27,
+    "closingBalance" : 392.60,
+    "createdDate" : {
+      "created" : "2024-05-26T02:53:40.689-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-18T21:52:33.955-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Concrete Watch",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 61.19,
+    "closingBalance" : 331.41,
+    "createdDate" : {
+      "created" : "2024-05-18T21:52:33.955-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-27T17:12:23.743-04:00[America/New_York]",
+    "transactionSummary" : "Durable Wool Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 37.57,
+    "closingBalance" : 368.98,
+    "createdDate" : {
+      "created" : "2024-07-27T17:12:23.743-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-09T05:37:28.896-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Marble Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 58.31,
+    "closingBalance" : 310.67,
+    "createdDate" : {
+      "created" : "2024-08-09T05:37:28.896-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-28T05:25:49.402-04:00[America/New_York]",
+    "transactionSummary" : "Durable Steel Bench",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 93.26,
+    "closingBalance" : 217.41,
+    "createdDate" : {
+      "created" : "2024-07-28T05:25:49.402-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-15T22:44:58.753-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Iron Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 73.67,
+    "closingBalance" : 291.08,
+    "createdDate" : {
+      "created" : "2024-06-15T22:44:58.753-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-16T07:56:12.819-04:00[America/New_York]",
+    "transactionSummary" : "Practical Wooden Knife",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 85.54,
+    "closingBalance" : 376.62,
+    "createdDate" : {
+      "created" : "2024-07-16T07:56:12.819-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-22T16:51:26.437-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Rubber Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 55.84,
+    "closingBalance" : 320.78,
+    "createdDate" : {
+      "created" : "2024-05-22T16:51:26.437-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-16T03:58:02.314-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Granite Clock",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 36.58,
+    "closingBalance" : 357.36,
+    "createdDate" : {
+      "created" : "2024-05-16T03:58:02.314-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-15T09:25:34.828-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Marble Bottle",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 40.87,
+    "closingBalance" : 398.23,
+    "createdDate" : {
+      "created" : "2024-07-15T09:25:34.828-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-11T01:54:09.945-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Copper Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 61.09,
+    "closingBalance" : 337.14,
+    "createdDate" : {
+      "created" : "2024-07-11T01:54:09.945-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-16T12:55:23.249-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Copper Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 4.66,
+    "closingBalance" : 332.48,
+    "createdDate" : {
+      "created" : "2024-08-16T12:55:23.249-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-05T12:04:54.032-04:00[America/New_York]",
+    "transactionSummary" : "Small Steel Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 15.30,
+    "closingBalance" : 317.18,
+    "createdDate" : {
+      "created" : "2024-07-05T12:04:54.032-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-16T10:08:11.415-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Wooden Watch",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 9.28,
+    "closingBalance" : 307.90,
+    "createdDate" : {
+      "created" : "2024-07-16T10:08:11.415-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-09T19:45:15.695-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Granite Clock",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 44.64,
+    "closingBalance" : 263.26,
+    "createdDate" : {
+      "created" : "2024-08-09T19:45:15.695-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-16T11:21:50.795-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Bronze Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 59.29,
+    "closingBalance" : 322.55,
+    "createdDate" : {
+      "created" : "2024-07-16T11:21:50.795-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-15T07:43:55.681-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Granite Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 58.87,
+    "closingBalance" : 263.68,
+    "createdDate" : {
+      "created" : "2024-06-15T07:43:55.681-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-08T23:21:15.588-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Bronze Bag",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 8.99,
+    "closingBalance" : 254.69,
+    "createdDate" : {
+      "created" : "2024-06-08T23:21:15.588-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-26T02:43:13.593-04:00[America/New_York]",
+    "transactionSummary" : "Practical Linen Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 88.05,
+    "closingBalance" : 166.64,
+    "createdDate" : {
+      "created" : "2024-05-26T02:43:13.593-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-07T04:03:49.555-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Plastic Shoes",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 86.70,
+    "closingBalance" : 79.94,
+    "createdDate" : {
+      "created" : "2024-08-07T04:03:49.555-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-04T22:21:49.271-04:00[America/New_York]",
+    "transactionSummary" : "Durable Paper Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 97.84,
+    "closingBalance" : -17.90,
+    "createdDate" : {
+      "created" : "2024-06-04T22:21:49.271-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-23T16:13:42.813-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Paper Pants",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 27.07,
+    "closingBalance" : -44.97,
+    "createdDate" : {
+      "created" : "2024-07-23T16:13:42.813-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "3959 Fredric Stream, West Chang, MO 86452",
+  "createdDate" : {
+    "created" : "2024-05-20T07:20:09.644-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-08-21T13:12:23.991-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Concrete Computer",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 68.94,
+    "closingBalance" : 431.06,
+    "createdDate" : {
+      "created" : "2024-08-21T13:12:23.991-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-20T12:26:08.046-04:00[America/New_York]",
+    "transactionSummary" : "Durable Paper Bag",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 38.67,
+    "closingBalance" : 392.39,
+    "createdDate" : {
+      "created" : "2024-06-20T12:26:08.046-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-07T08:04:30.571-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Rubber Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 69.42,
+    "closingBalance" : 461.81,
+    "createdDate" : {
+      "created" : "2024-08-07T08:04:30.571-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-23T16:55:48.301-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Rubber Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 98.04,
+    "closingBalance" : 559.85,
+    "createdDate" : {
+      "created" : "2024-05-23T16:55:48.301-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-28T06:35:42.176-04:00[America/New_York]",
+    "transactionSummary" : "Small Bronze Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 57.48,
+    "closingBalance" : 502.37,
+    "createdDate" : {
+      "created" : "2024-07-28T06:35:42.176-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-06T14:22:57.578-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Iron Coat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 37.56,
+    "closingBalance" : 539.93,
+    "createdDate" : {
+      "created" : "2024-06-06T14:22:57.578-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-01T04:04:22.048-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Plastic Lamp",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 85.28,
+    "closingBalance" : 454.65,
+    "createdDate" : {
+      "created" : "2024-07-01T04:04:22.048-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-20T03:07:23.752-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Steel Chair",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 77.22,
+    "closingBalance" : 531.87,
+    "createdDate" : {
+      "created" : "2024-07-20T03:07:23.752-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-16T23:47:14.834-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Copper Pants",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 20.21,
+    "closingBalance" : 511.66,
+    "createdDate" : {
+      "created" : "2024-05-16T23:47:14.834-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-13T20:39:08.671-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Rubber Chair",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 88.03,
+    "closingBalance" : 423.63,
+    "createdDate" : {
+      "created" : "2024-08-13T20:39:08.671-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-11T07:56:02.335-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Wooden Chair",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 81.71,
+    "closingBalance" : 341.92,
+    "createdDate" : {
+      "created" : "2024-08-11T07:56:02.335-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-11T11:37:08.21-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Bronze Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 8.96,
+    "closingBalance" : 350.88,
+    "createdDate" : {
+      "created" : "2024-08-11T11:37:08.21-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-21T08:48:04.154-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Paper Coat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 14.22,
+    "closingBalance" : 365.10,
+    "createdDate" : {
+      "created" : "2024-06-21T08:48:04.154-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-03T05:44:35.769-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Silk Plate",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 54.95,
+    "closingBalance" : 310.15,
+    "createdDate" : {
+      "created" : "2024-06-03T05:44:35.769-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-26T03:22:09.891-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Wooden Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 12.32,
+    "closingBalance" : 322.47,
+    "createdDate" : {
+      "created" : "2024-06-26T03:22:09.891-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Checking",
+  "branchAddress" : "77500 Pacocha Port, South Shemikaville, DE 47702",
+  "createdDate" : {
+    "created" : "2024-06-20T23:09:51.533-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-08-04T15:12:23.184-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Cotton Bottle",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 76.35,
+    "closingBalance" : 576.35,
+    "createdDate" : {
+      "created" : "2024-08-04T15:12:23.184-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-29T04:18:00.298-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Plastic Bag",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 73.48,
+    "closingBalance" : 502.87,
+    "createdDate" : {
+      "created" : "2024-07-29T04:18:00.298-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-30T15:32:54.695-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Wool Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 71.66,
+    "closingBalance" : 431.21,
+    "createdDate" : {
+      "created" : "2024-07-30T15:32:54.695-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-08T15:16:23.883-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Marble Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 12.15,
+    "closingBalance" : 419.06,
+    "createdDate" : {
+      "created" : "2024-07-08T15:16:23.883-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-16T04:21:36.873-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Bronze Knife",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 29.87,
+    "closingBalance" : 448.93,
+    "createdDate" : {
+      "created" : "2024-07-16T04:21:36.873-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-20T21:18:44.803-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Rubber Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 85.98,
+    "closingBalance" : 362.95,
+    "createdDate" : {
+      "created" : "2024-06-20T21:18:44.803-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-20T06:52:46.689-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Wooden Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 50.02,
+    "closingBalance" : 312.93,
+    "createdDate" : {
+      "created" : "2024-07-20T06:52:46.689-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-04T12:48:59.171-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Plastic Shoes",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 43.46,
+    "closingBalance" : 269.47,
+    "createdDate" : {
+      "created" : "2024-07-04T12:48:59.171-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-01T18:07:29.598-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Marble Gloves",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 52.98,
+    "closingBalance" : 216.49,
+    "createdDate" : {
+      "created" : "2024-08-01T18:07:29.598-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Checking",
+  "branchAddress" : "529 Wilkinson Springs, Stehrmouth, MI 48493",
+  "createdDate" : {
+    "created" : "2024-07-14T01:17:52.656-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-06-09T22:26:55.51-04:00[America/New_York]",
+    "transactionSummary" : "Practical Steel Shoes",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 56.00,
+    "closingBalance" : 444.00,
+    "createdDate" : {
+      "created" : "2024-06-09T22:26:55.51-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-03T21:55:04.298-04:00[America/New_York]",
+    "transactionSummary" : "Small Paper Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 46.46,
+    "closingBalance" : 397.54,
+    "createdDate" : {
+      "created" : "2024-07-03T21:55:04.298-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-23T08:04:22.555-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Paper Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 12.11,
+    "closingBalance" : 409.65,
+    "createdDate" : {
+      "created" : "2024-08-23T08:04:22.555-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-04T19:58:46.788-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Marble Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 47.35,
+    "closingBalance" : 457.00,
+    "createdDate" : {
+      "created" : "2024-06-04T19:58:46.788-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-30T00:41:43.399-04:00[America/New_York]",
+    "transactionSummary" : "Durable Bronze Coat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 94.89,
+    "closingBalance" : 362.11,
+    "createdDate" : {
+      "created" : "2024-06-30T00:41:43.399-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Checking",
+  "branchAddress" : "Suite 670 3897 Block Divide, Cronafurt, TX 89107",
+  "createdDate" : {
+    "created" : "2024-07-13T07:02:39.395-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-07-25T06:06:16.867-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Bronze Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 75.55,
+    "closingBalance" : 424.45,
+    "createdDate" : {
+      "created" : "2024-07-25T06:06:16.867-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-09T02:14:36.542-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Copper Chair",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 38.69,
+    "closingBalance" : 463.14,
+    "createdDate" : {
+      "created" : "2024-06-09T02:14:36.542-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-03T23:40:00.559-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Rubber Chair",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 4.80,
+    "closingBalance" : 467.94,
+    "createdDate" : {
+      "created" : "2024-08-03T23:40:00.559-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-24T06:01:21.533-04:00[America/New_York]",
+    "transactionSummary" : "Practical Marble Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 80.00,
+    "closingBalance" : 387.94,
+    "createdDate" : {
+      "created" : "2024-07-24T06:01:21.533-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-04T06:54:00.262-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Rubber Bottle",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 3.54,
+    "closingBalance" : 391.48,
+    "createdDate" : {
+      "created" : "2024-07-04T06:54:00.262-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-19T21:09:37.945-04:00[America/New_York]",
+    "transactionSummary" : "Durable Wool Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 14.67,
+    "closingBalance" : 406.15,
+    "createdDate" : {
+      "created" : "2024-07-19T21:09:37.945-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-07T00:17:52.596-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Wool Wallet",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 5.42,
+    "closingBalance" : 411.57,
+    "createdDate" : {
+      "created" : "2024-08-07T00:17:52.596-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-11T00:58:02.272-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Bronze Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 57.96,
+    "closingBalance" : 469.53,
+    "createdDate" : {
+      "created" : "2024-08-11T00:58:02.272-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-14T13:59:53.484-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Iron Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 57.88,
+    "closingBalance" : 527.41,
+    "createdDate" : {
+      "created" : "2024-06-14T13:59:53.484-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-21T03:43:23.253-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Leather Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 94.63,
+    "closingBalance" : 432.78,
+    "createdDate" : {
+      "created" : "2024-06-21T03:43:23.253-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-22T01:21:41.128-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Bronze Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 9.32,
+    "closingBalance" : 423.46,
+    "createdDate" : {
+      "created" : "2024-07-22T01:21:41.128-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-05T05:14:59.532-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Wooden Gloves",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 26.52,
+    "closingBalance" : 449.98,
+    "createdDate" : {
+      "created" : "2024-06-05T05:14:59.532-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-26T04:44:19.085-04:00[America/New_York]",
+    "transactionSummary" : "Practical Iron Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 11.59,
+    "closingBalance" : 438.39,
+    "createdDate" : {
+      "created" : "2024-06-26T04:44:19.085-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-17T17:02:52.76-04:00[America/New_York]",
+    "transactionSummary" : "Small Iron Car",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 27.86,
+    "closingBalance" : 466.25,
+    "createdDate" : {
+      "created" : "2024-05-17T17:02:52.76-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-08T23:29:43.182-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Wooden Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 29.11,
+    "closingBalance" : 437.14,
+    "createdDate" : {
+      "created" : "2024-06-08T23:29:43.182-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-23T03:50:38.898-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Aluminum Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 12.01,
+    "closingBalance" : 425.13,
+    "createdDate" : {
+      "created" : "2024-07-23T03:50:38.898-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-08T14:41:42.005-04:00[America/New_York]",
+    "transactionSummary" : "Practical Granite Lamp",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 70.29,
+    "closingBalance" : 354.84,
+    "createdDate" : {
+      "created" : "2024-08-08T14:41:42.005-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "Suite 896 645 Bobby Glen, Jacobsstad, TX 33969",
+  "createdDate" : {
+    "created" : "2024-07-19T17:37:04.59-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-06-27T09:41:07.182-04:00[America/New_York]",
+    "transactionSummary" : "Practical Steel Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 77.33,
+    "closingBalance" : 577.33,
+    "createdDate" : {
+      "created" : "2024-06-27T09:41:07.182-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-19T05:15:51.39-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Leather Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 80.99,
+    "closingBalance" : 496.34,
+    "createdDate" : {
+      "created" : "2024-06-19T05:15:51.39-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-07T01:52:19.473-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Iron Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 91.21,
+    "closingBalance" : 405.13,
+    "createdDate" : {
+      "created" : "2024-07-07T01:52:19.473-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-09T17:06:27.847-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Granite Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 21.63,
+    "closingBalance" : 426.76,
+    "createdDate" : {
+      "created" : "2024-07-09T17:06:27.847-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-22T02:51:18.958-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Rubber Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 17.31,
+    "closingBalance" : 409.45,
+    "createdDate" : {
+      "created" : "2024-08-22T02:51:18.958-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-10T17:24:40.351-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Linen Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 78.64,
+    "closingBalance" : 330.81,
+    "createdDate" : {
+      "created" : "2024-06-10T17:24:40.351-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-08T17:03:34.919-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Linen Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 98.13,
+    "closingBalance" : 232.68,
+    "createdDate" : {
+      "created" : "2024-08-08T17:03:34.919-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-22T17:18:04.749-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Copper Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 22.62,
+    "closingBalance" : 210.06,
+    "createdDate" : {
+      "created" : "2024-06-22T17:18:04.749-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-20T05:58:45.202-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Linen Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 56.03,
+    "closingBalance" : 154.03,
+    "createdDate" : {
+      "created" : "2024-05-20T05:58:45.202-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-25T07:18:49.49-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Marble Bench",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 73.12,
+    "closingBalance" : 80.91,
+    "createdDate" : {
+      "created" : "2024-06-25T07:18:49.49-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-21T05:50:29.376-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Silk Watch",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 23.80,
+    "closingBalance" : 57.11,
+    "createdDate" : {
+      "created" : "2024-07-21T05:50:29.376-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-15T22:38:16.706-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Iron Bottle",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 68.81,
+    "closingBalance" : 125.92,
+    "createdDate" : {
+      "created" : "2024-07-15T22:38:16.706-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-16T18:26:57.596-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Wooden Gloves",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 3.06,
+    "closingBalance" : 122.86,
+    "createdDate" : {
+      "created" : "2024-05-16T18:26:57.596-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-20T15:21:19.167-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Paper Gloves",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 90.65,
+    "closingBalance" : 32.21,
+    "createdDate" : {
+      "created" : "2024-05-20T15:21:19.167-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-06T16:45:04.458-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Iron Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 56.94,
+    "closingBalance" : 89.15,
+    "createdDate" : {
+      "created" : "2024-07-06T16:45:04.458-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-17T17:01:01.811-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Silk Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 57.20,
+    "closingBalance" : 31.95,
+    "createdDate" : {
+      "created" : "2024-07-17T17:01:01.811-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-24T07:43:36.513-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Copper Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 69.04,
+    "closingBalance" : 100.99,
+    "createdDate" : {
+      "created" : "2024-05-24T07:43:36.513-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-19T04:16:11.846-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Concrete Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 36.18,
+    "closingBalance" : 137.17,
+    "createdDate" : {
+      "created" : "2024-08-19T04:16:11.846-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-10T15:29:10.735-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Iron Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 24.91,
+    "closingBalance" : 112.26,
+    "createdDate" : {
+      "created" : "2024-06-10T15:29:10.735-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-06T15:53:06.242-04:00[America/New_York]",
+    "transactionSummary" : "Practical Cotton Gloves",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 41.42,
+    "closingBalance" : 70.84,
+    "createdDate" : {
+      "created" : "2024-08-06T15:53:06.242-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-03T01:38:15.402-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Wooden Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 98.00,
+    "closingBalance" : -27.16,
+    "createdDate" : {
+      "created" : "2024-07-03T01:38:15.402-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-23T20:48:20.127-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Wooden Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 9.40,
+    "closingBalance" : -36.56,
+    "createdDate" : {
+      "created" : "2024-05-23T20:48:20.127-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-10T01:23:36.219-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Steel Coat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 46.56,
+    "closingBalance" : 10.00,
+    "createdDate" : {
+      "created" : "2024-08-10T01:23:36.219-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-18T15:30:18.277-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Cotton Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 74.45,
+    "closingBalance" : 84.45,
+    "createdDate" : {
+      "created" : "2024-05-18T15:30:18.277-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-08T11:08:59.747-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Leather Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 53.17,
+    "closingBalance" : 31.28,
+    "createdDate" : {
+      "created" : "2024-08-08T11:08:59.747-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-17T13:11:18.275-04:00[America/New_York]",
+    "transactionSummary" : "Durable Linen Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 86.79,
+    "closingBalance" : 118.07,
+    "createdDate" : {
+      "created" : "2024-08-17T13:11:18.275-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-20T19:37:30.814-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Granite Bench",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 63.57,
+    "closingBalance" : 54.50,
+    "createdDate" : {
+      "created" : "2024-08-20T19:37:30.814-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-02T10:23:00.972-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Linen Bottle",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 42.49,
+    "closingBalance" : 96.99,
+    "createdDate" : {
+      "created" : "2024-06-02T10:23:00.972-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-23T08:40:54.508-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Linen Bag",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 6.37,
+    "closingBalance" : 90.62,
+    "createdDate" : {
+      "created" : "2024-08-23T08:40:54.508-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Checking",
+  "branchAddress" : "Suite 667 810 Gislason Gateway, Runolfsdottirborough, NJ 53726",
+  "createdDate" : {
+    "created" : "2024-06-02T13:41:08.241-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-07-29T01:40:14.064-04:00[America/New_York]",
+    "transactionSummary" : "Practical Aluminum Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 75.09,
+    "closingBalance" : 424.91,
+    "createdDate" : {
+      "created" : "2024-07-29T01:40:14.064-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-29T01:48:03.502-04:00[America/New_York]",
+    "transactionSummary" : "Durable Concrete Bench",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 88.54,
+    "closingBalance" : 336.37,
+    "createdDate" : {
+      "created" : "2024-05-29T01:48:03.502-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-24T17:12:10.28-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Paper Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 82.58,
+    "closingBalance" : 418.95,
+    "createdDate" : {
+      "created" : "2024-05-24T17:12:10.28-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-14T10:57:03.956-04:00[America/New_York]",
+    "transactionSummary" : "Small Iron Knife",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 87.21,
+    "closingBalance" : 506.16,
+    "createdDate" : {
+      "created" : "2024-06-14T10:57:03.956-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-11T06:45:52.808-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Concrete Bench",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 84.04,
+    "closingBalance" : 422.12,
+    "createdDate" : {
+      "created" : "2024-07-11T06:45:52.808-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-23T18:53:00.439-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Paper Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 15.92,
+    "closingBalance" : 438.04,
+    "createdDate" : {
+      "created" : "2024-07-23T18:53:00.439-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-03T11:43:01.131-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Granite Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 80.56,
+    "closingBalance" : 518.60,
+    "createdDate" : {
+      "created" : "2024-07-03T11:43:01.131-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-05T00:25:48.55-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Aluminum Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 76.80,
+    "closingBalance" : 441.80,
+    "createdDate" : {
+      "created" : "2024-08-05T00:25:48.55-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-10T18:16:32.134-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Aluminum Clock",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 88.52,
+    "closingBalance" : 353.28,
+    "createdDate" : {
+      "created" : "2024-07-10T18:16:32.134-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-28T11:09:49.822-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Plastic Pants",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 97.70,
+    "closingBalance" : 255.58,
+    "createdDate" : {
+      "created" : "2024-05-28T11:09:49.822-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-09T08:53:28.755-04:00[America/New_York]",
+    "transactionSummary" : "Durable Wooden Lamp",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 15.86,
+    "closingBalance" : 239.72,
+    "createdDate" : {
+      "created" : "2024-06-09T08:53:28.755-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-23T07:38:48.594-04:00[America/New_York]",
+    "transactionSummary" : "Practical Iron Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 10.59,
+    "closingBalance" : 229.13,
+    "createdDate" : {
+      "created" : "2024-05-23T07:38:48.594-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-03T20:31:31.3-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Marble Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 83.01,
+    "closingBalance" : 312.14,
+    "createdDate" : {
+      "created" : "2024-08-03T20:31:31.3-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "Suite 421 23331 Kirlin Islands, Leuschkemouth, VT 07812",
+  "createdDate" : {
+    "created" : "2024-06-11T05:05:35.44-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-06-22T18:41:09.845-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Iron Shirt",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 99.87,
+    "closingBalance" : 599.87,
+    "createdDate" : {
+      "created" : "2024-06-22T18:41:09.845-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-23T01:21:46.819-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Concrete Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 60.01,
+    "closingBalance" : 659.88,
+    "createdDate" : {
+      "created" : "2024-05-23T01:21:46.819-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-29T02:23:25.995-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Marble Watch",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 99.07,
+    "closingBalance" : 758.95,
+    "createdDate" : {
+      "created" : "2024-05-29T02:23:25.995-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-13T11:27:36.858-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Copper Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 97.96,
+    "closingBalance" : 660.99,
+    "createdDate" : {
+      "created" : "2024-06-13T11:27:36.858-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-11T21:29:54.681-04:00[America/New_York]",
+    "transactionSummary" : "Durable Cotton Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 18.28,
+    "closingBalance" : 642.71,
+    "createdDate" : {
+      "created" : "2024-08-11T21:29:54.681-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-02T05:34:19.113-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Linen Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 14.56,
+    "closingBalance" : 657.27,
+    "createdDate" : {
+      "created" : "2024-06-02T05:34:19.113-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-25T10:18:27.628-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Rubber Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 7.23,
+    "closingBalance" : 664.50,
+    "createdDate" : {
+      "created" : "2024-07-25T10:18:27.628-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-19T16:13:31.177-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Silk Computer",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 96.64,
+    "closingBalance" : 567.86,
+    "createdDate" : {
+      "created" : "2024-08-19T16:13:31.177-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-08T01:31:58.856-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Cotton Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 65.54,
+    "closingBalance" : 633.40,
+    "createdDate" : {
+      "created" : "2024-08-08T01:31:58.856-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-29T10:26:25.886-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Plastic Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 86.58,
+    "closingBalance" : 546.82,
+    "createdDate" : {
+      "created" : "2024-07-29T10:26:25.886-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-15T18:36:06.18-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Cotton Shoes",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 24.45,
+    "closingBalance" : 522.37,
+    "createdDate" : {
+      "created" : "2024-06-15T18:36:06.18-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-30T16:47:47.312-04:00[America/New_York]",
+    "transactionSummary" : "Small Plastic Plate",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 97.91,
+    "closingBalance" : 424.46,
+    "createdDate" : {
+      "created" : "2024-07-30T16:47:47.312-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-15T14:25:38.257-04:00[America/New_York]",
+    "transactionSummary" : "Small Copper Bottle",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 46.33,
+    "closingBalance" : 470.79,
+    "createdDate" : {
+      "created" : "2024-06-15T14:25:38.257-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-04T06:55:14.549-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Wooden Chair",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 26.92,
+    "closingBalance" : 443.87,
+    "createdDate" : {
+      "created" : "2024-07-04T06:55:14.549-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-04T16:50:12.147-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Copper Chair",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 54.79,
+    "closingBalance" : 389.08,
+    "createdDate" : {
+      "created" : "2024-06-04T16:50:12.147-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-18T14:24:10.31-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Plastic Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 85.71,
+    "closingBalance" : 303.37,
+    "createdDate" : {
+      "created" : "2024-06-18T14:24:10.31-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-28T00:07:17.582-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Plastic Coat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 33.31,
+    "closingBalance" : 336.68,
+    "createdDate" : {
+      "created" : "2024-06-28T00:07:17.582-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-07T19:44:19.813-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Wool Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 7.10,
+    "closingBalance" : 343.78,
+    "createdDate" : {
+      "created" : "2024-07-07T19:44:19.813-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-10T18:05:20.068-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Linen Gloves",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 55.21,
+    "closingBalance" : 288.57,
+    "createdDate" : {
+      "created" : "2024-06-10T18:05:20.068-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-14T00:47:10.479-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Silk Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 96.79,
+    "closingBalance" : 191.78,
+    "createdDate" : {
+      "created" : "2024-07-14T00:47:10.479-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-11T03:09:53.933-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Concrete Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 33.06,
+    "closingBalance" : 158.72,
+    "createdDate" : {
+      "created" : "2024-08-11T03:09:53.933-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "Apt. 972 362 Alethia Loop, North Refugiofort, MD 53886",
+  "createdDate" : {
+    "created" : "2024-07-20T03:45:34.112-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-07-13T08:26:19.384-04:00[America/New_York]",
+    "transactionSummary" : "Durable Silk Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 17.16,
+    "closingBalance" : 517.16,
+    "createdDate" : {
+      "created" : "2024-07-13T08:26:19.384-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-12T21:31:04.624-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Plastic Watch",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 3.44,
+    "closingBalance" : 513.72,
+    "createdDate" : {
+      "created" : "2024-08-12T21:31:04.624-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-17T07:53:23.112-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Wool Lamp",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 59.57,
+    "closingBalance" : 454.15,
+    "createdDate" : {
+      "created" : "2024-07-17T07:53:23.112-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-14T09:42:28.023-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Aluminum Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 75.34,
+    "closingBalance" : 529.49,
+    "createdDate" : {
+      "created" : "2024-08-14T09:42:28.023-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-23T15:06:46.161-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Silk Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 49.89,
+    "closingBalance" : 479.60,
+    "createdDate" : {
+      "created" : "2024-07-23T15:06:46.161-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-05T19:17:25.48-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Concrete Bench",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 57.94,
+    "closingBalance" : 421.66,
+    "createdDate" : {
+      "created" : "2024-07-05T19:17:25.48-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-05T14:46:40.035-04:00[America/New_York]",
+    "transactionSummary" : "Practical Concrete Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 27.22,
+    "closingBalance" : 448.88,
+    "createdDate" : {
+      "created" : "2024-07-05T14:46:40.035-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-21T06:43:00.435-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Cotton Car",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 30.44,
+    "closingBalance" : 479.32,
+    "createdDate" : {
+      "created" : "2024-05-21T06:43:00.435-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-02T07:49:38.576-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Marble Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 75.71,
+    "closingBalance" : 403.61,
+    "createdDate" : {
+      "created" : "2024-08-02T07:49:38.576-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "Suite 345 3933 Margret Place, Bartellville, OK 82343",
+  "createdDate" : {
+    "created" : "2024-06-02T18:50:08.308-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-06-08T02:37:07.422-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Rubber Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 41.17,
+    "closingBalance" : 541.17,
+    "createdDate" : {
+      "created" : "2024-06-08T02:37:07.422-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-08T19:43:33.499-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Copper Coat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 15.89,
+    "closingBalance" : 557.06,
+    "createdDate" : {
+      "created" : "2024-08-08T19:43:33.499-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-18T23:48:29.275-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Concrete Lamp",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 61.63,
+    "closingBalance" : 495.43,
+    "createdDate" : {
+      "created" : "2024-08-18T23:48:29.275-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-10T12:38:21.839-04:00[America/New_York]",
+    "transactionSummary" : "Practical Linen Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 57.75,
+    "closingBalance" : 437.68,
+    "createdDate" : {
+      "created" : "2024-07-10T12:38:21.839-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-22T22:03:52.373-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Wool Plate",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 6.99,
+    "closingBalance" : 430.69,
+    "createdDate" : {
+      "created" : "2024-05-22T22:03:52.373-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-08T11:54:43.325-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Wool Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 54.89,
+    "closingBalance" : 375.80,
+    "createdDate" : {
+      "created" : "2024-07-08T11:54:43.325-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-18T07:41:34.995-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Aluminum Pants",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 72.57,
+    "closingBalance" : 448.37,
+    "createdDate" : {
+      "created" : "2024-06-18T07:41:34.995-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-08T07:46:55.029-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Silk Coat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 79.02,
+    "closingBalance" : 527.39,
+    "createdDate" : {
+      "created" : "2024-07-08T07:46:55.029-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-08T17:26:23.185-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Iron Watch",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 49.05,
+    "closingBalance" : 478.34,
+    "createdDate" : {
+      "created" : "2024-07-08T17:26:23.185-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-18T22:31:09.296-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Iron Knife",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 38.72,
+    "closingBalance" : 517.06,
+    "createdDate" : {
+      "created" : "2024-07-18T22:31:09.296-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-10T22:50:50.493-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Wooden Pants",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 61.28,
+    "closingBalance" : 455.78,
+    "createdDate" : {
+      "created" : "2024-06-10T22:50:50.493-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-07T07:58:13.503-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Paper Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 63.58,
+    "closingBalance" : 519.36,
+    "createdDate" : {
+      "created" : "2024-06-07T07:58:13.503-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-18T00:55:59.884-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Aluminum Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 85.57,
+    "closingBalance" : 604.93,
+    "createdDate" : {
+      "created" : "2024-08-18T00:55:59.884-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-16T21:21:01.429-04:00[America/New_York]",
+    "transactionSummary" : "Durable Bronze Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 33.30,
+    "closingBalance" : 638.23,
+    "createdDate" : {
+      "created" : "2024-06-16T21:21:01.429-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-09T12:08:51.968-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Linen Shirt",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 59.99,
+    "closingBalance" : 698.22,
+    "createdDate" : {
+      "created" : "2024-08-09T12:08:51.968-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-03T11:20:17.626-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Linen Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 28.94,
+    "closingBalance" : 727.16,
+    "createdDate" : {
+      "created" : "2024-08-03T11:20:17.626-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "Apt. 422 559 Wanita Station, Lake Harlandfort, NH 62237",
+  "createdDate" : {
+    "created" : "2024-07-25T16:25:56.532-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-06-01T07:06:32.39-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Rubber Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 64.33,
+    "closingBalance" : 435.67,
+    "createdDate" : {
+      "created" : "2024-06-01T07:06:32.39-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-03T03:46:03.2-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Linen Bottle",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 17.78,
+    "closingBalance" : 453.45,
+    "createdDate" : {
+      "created" : "2024-07-03T03:46:03.2-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-15T16:08:41.77-04:00[America/New_York]",
+    "transactionSummary" : "Small Iron Lamp",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 66.97,
+    "closingBalance" : 386.48,
+    "createdDate" : {
+      "created" : "2024-06-15T16:08:41.77-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-07T22:23:52.024-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Wooden Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 23.81,
+    "closingBalance" : 362.67,
+    "createdDate" : {
+      "created" : "2024-08-07T22:23:52.024-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-08T12:06:33.316-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Aluminum Coat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 7.25,
+    "closingBalance" : 369.92,
+    "createdDate" : {
+      "created" : "2024-07-08T12:06:33.316-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-04T11:42:44.91-04:00[America/New_York]",
+    "transactionSummary" : "Durable Copper Watch",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 46.81,
+    "closingBalance" : 416.73,
+    "createdDate" : {
+      "created" : "2024-06-04T11:42:44.91-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-10T22:28:15.772-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Paper Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 78.60,
+    "closingBalance" : 495.33,
+    "createdDate" : {
+      "created" : "2024-06-10T22:28:15.772-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-08T08:51:55.715-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Steel Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 74.88,
+    "closingBalance" : 570.21,
+    "createdDate" : {
+      "created" : "2024-08-08T08:51:55.715-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-22T16:07:23.575-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Plastic Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 60.65,
+    "closingBalance" : 630.86,
+    "createdDate" : {
+      "created" : "2024-05-22T16:07:23.575-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-18T16:40:21.758-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Wool Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 48.31,
+    "closingBalance" : 582.55,
+    "createdDate" : {
+      "created" : "2024-06-18T16:40:21.758-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-23T05:20:01.348-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Marble Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 65.06,
+    "closingBalance" : 647.61,
+    "createdDate" : {
+      "created" : "2024-06-23T05:20:01.348-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-04T11:25:02.434-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Steel Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 56.76,
+    "closingBalance" : 704.37,
+    "createdDate" : {
+      "created" : "2024-07-04T11:25:02.434-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-06T13:26:35.809-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Rubber Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 26.62,
+    "closingBalance" : 730.99,
+    "createdDate" : {
+      "created" : "2024-08-06T13:26:35.809-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-28T17:54:26.599-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Concrete Coat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 7.54,
+    "closingBalance" : 738.53,
+    "createdDate" : {
+      "created" : "2024-07-28T17:54:26.599-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-04T20:28:49.317-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Linen Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 72.71,
+    "closingBalance" : 811.24,
+    "createdDate" : {
+      "created" : "2024-06-04T20:28:49.317-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-19T17:47:55.555-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Concrete Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 60.81,
+    "closingBalance" : 872.05,
+    "createdDate" : {
+      "created" : "2024-06-19T17:47:55.555-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-26T10:38:30.942-04:00[America/New_York]",
+    "transactionSummary" : "Durable Copper Gloves",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 29.34,
+    "closingBalance" : 842.71,
+    "createdDate" : {
+      "created" : "2024-06-26T10:38:30.942-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-13T13:34:21.597-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Iron Bag",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 52.30,
+    "closingBalance" : 790.41,
+    "createdDate" : {
+      "created" : "2024-06-13T13:34:21.597-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-20T18:13:37.696-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Linen Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 47.06,
+    "closingBalance" : 837.47,
+    "createdDate" : {
+      "created" : "2024-07-20T18:13:37.696-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-31T10:55:55.661-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Steel Gloves",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 49.37,
+    "closingBalance" : 788.10,
+    "createdDate" : {
+      "created" : "2024-05-31T10:55:55.661-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Checking",
+  "branchAddress" : "615 Bogisich Cliffs, Lake Daniel, AK 74452",
+  "createdDate" : {
+    "created" : "2024-08-21T04:11:13.199-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-05-21T02:46:11.089-04:00[America/New_York]",
+    "transactionSummary" : "Small Leather Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 3.20,
+    "closingBalance" : 503.20,
+    "createdDate" : {
+      "created" : "2024-05-21T02:46:11.089-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-27T21:01:09.6-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Granite Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 74.15,
+    "closingBalance" : 577.35,
+    "createdDate" : {
+      "created" : "2024-05-27T21:01:09.6-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-11T08:38:02.178-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Aluminum Car",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 87.39,
+    "closingBalance" : 664.74,
+    "createdDate" : {
+      "created" : "2024-08-11T08:38:02.178-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-21T10:03:41.178-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Iron Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 71.46,
+    "closingBalance" : 593.28,
+    "createdDate" : {
+      "created" : "2024-05-21T10:03:41.178-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-27T06:23:23.618-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Paper Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 87.13,
+    "closingBalance" : 680.41,
+    "createdDate" : {
+      "created" : "2024-07-27T06:23:23.618-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-14T16:07:48.022-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Iron Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 43.92,
+    "closingBalance" : 724.33,
+    "createdDate" : {
+      "created" : "2024-07-14T16:07:48.022-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-18T01:56:53.314-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Cotton Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 81.40,
+    "closingBalance" : 642.93,
+    "createdDate" : {
+      "created" : "2024-05-18T01:56:53.314-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-19T10:50:17.246-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Marble Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 87.86,
+    "closingBalance" : 730.79,
+    "createdDate" : {
+      "created" : "2024-05-19T10:50:17.246-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-08T10:23:27.714-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Plastic Coat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 37.61,
+    "closingBalance" : 693.18,
+    "createdDate" : {
+      "created" : "2024-06-08T10:23:27.714-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-04T05:35:31.231-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Iron Bottle",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 77.05,
+    "closingBalance" : 770.23,
+    "createdDate" : {
+      "created" : "2024-07-04T05:35:31.231-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-20T21:38:01.9-04:00[America/New_York]",
+    "transactionSummary" : "Durable Iron Chair",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 78.90,
+    "closingBalance" : 691.33,
+    "createdDate" : {
+      "created" : "2024-07-20T21:38:01.9-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-20T07:01:48.66-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Concrete Chair",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 14.72,
+    "closingBalance" : 676.61,
+    "createdDate" : {
+      "created" : "2024-07-20T07:01:48.66-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "0625 Stroman Mills, Oscarburgh, OK 24517",
+  "createdDate" : {
+    "created" : "2024-08-20T02:48:38.891-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-08-08T21:59:16.701-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Steel Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 57.71,
+    "closingBalance" : 442.29,
+    "createdDate" : {
+      "created" : "2024-08-08T21:59:16.701-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-09T02:24:31.124-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Steel Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 18.92,
+    "closingBalance" : 461.21,
+    "createdDate" : {
+      "created" : "2024-06-09T02:24:31.124-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-10T10:17:39.389-04:00[America/New_York]",
+    "transactionSummary" : "Practical Plastic Lamp",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 69.66,
+    "closingBalance" : 391.55,
+    "createdDate" : {
+      "created" : "2024-06-10T10:17:39.389-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-28T06:43:04.29-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Aluminum Pants",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 52.11,
+    "closingBalance" : 443.66,
+    "createdDate" : {
+      "created" : "2024-07-28T06:43:04.29-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-19T18:40:03.722-04:00[America/New_York]",
+    "transactionSummary" : "Practical Cotton Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 62.74,
+    "closingBalance" : 380.92,
+    "createdDate" : {
+      "created" : "2024-08-19T18:40:03.722-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-19T17:59:43.529-04:00[America/New_York]",
+    "transactionSummary" : "Practical Copper Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 83.27,
+    "closingBalance" : 464.19,
+    "createdDate" : {
+      "created" : "2024-06-19T17:59:43.529-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-05T19:13:45.398-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Cotton Plate",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 26.44,
+    "closingBalance" : 437.75,
+    "createdDate" : {
+      "created" : "2024-06-05T19:13:45.398-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Checking",
+  "branchAddress" : "363 Buckridge Ways, Port Dionmouth, OH 77799",
+  "createdDate" : {
+    "created" : "2024-05-26T00:18:36.579-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-06-14T12:29:31.669-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Copper Pants",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 94.21,
+    "closingBalance" : 594.21,
+    "createdDate" : {
+      "created" : "2024-06-14T12:29:31.669-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-14T23:05:14.259-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Silk Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 34.37,
+    "closingBalance" : 628.58,
+    "createdDate" : {
+      "created" : "2024-06-14T23:05:14.259-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-19T21:10:39.199-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Leather Bottle",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 57.24,
+    "closingBalance" : 685.82,
+    "createdDate" : {
+      "created" : "2024-06-19T21:10:39.199-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-16T04:58:06.831-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Leather Clock",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 5.75,
+    "closingBalance" : 680.07,
+    "createdDate" : {
+      "created" : "2024-06-16T04:58:06.831-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-31T04:12:49.399-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Silk Lamp",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 70.01,
+    "closingBalance" : 610.06,
+    "createdDate" : {
+      "created" : "2024-07-31T04:12:49.399-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-02T16:17:03.434-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Wool Gloves",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 29.51,
+    "closingBalance" : 639.57,
+    "createdDate" : {
+      "created" : "2024-07-02T16:17:03.434-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-23T16:52:13.875-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Steel Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 88.76,
+    "closingBalance" : 550.81,
+    "createdDate" : {
+      "created" : "2024-05-23T16:52:13.875-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-24T22:12:43.1-04:00[America/New_York]",
+    "transactionSummary" : "Durable Copper Bottle",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 20.72,
+    "closingBalance" : 571.53,
+    "createdDate" : {
+      "created" : "2024-07-24T22:12:43.1-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-14T08:50:34.531-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Wool Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 49.18,
+    "closingBalance" : 620.71,
+    "createdDate" : {
+      "created" : "2024-08-14T08:50:34.531-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-09T03:35:18.155-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Bronze Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 33.82,
+    "closingBalance" : 586.89,
+    "createdDate" : {
+      "created" : "2024-06-09T03:35:18.155-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-10T13:22:20.632-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Leather Clock",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 69.96,
+    "closingBalance" : 656.85,
+    "createdDate" : {
+      "created" : "2024-08-10T13:22:20.632-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-28T13:22:54.866-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Wooden Watch",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 78.46,
+    "closingBalance" : 735.31,
+    "createdDate" : {
+      "created" : "2024-05-28T13:22:54.866-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-06T21:54:06.742-04:00[America/New_York]",
+    "transactionSummary" : "Practical Paper Chair",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 40.95,
+    "closingBalance" : 776.26,
+    "createdDate" : {
+      "created" : "2024-07-06T21:54:06.742-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-02T06:49:30.497-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Silk Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 30.39,
+    "closingBalance" : 745.87,
+    "createdDate" : {
+      "created" : "2024-07-02T06:49:30.497-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-28T07:58:10.877-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Plastic Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 97.75,
+    "closingBalance" : 843.62,
+    "createdDate" : {
+      "created" : "2024-07-28T07:58:10.877-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-16T17:50:09.3-04:00[America/New_York]",
+    "transactionSummary" : "Small Cotton Watch",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 1.63,
+    "closingBalance" : 845.25,
+    "createdDate" : {
+      "created" : "2024-07-16T17:50:09.3-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-25T10:10:39.787-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Leather Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 9.86,
+    "closingBalance" : 855.11,
+    "createdDate" : {
+      "created" : "2024-05-25T10:10:39.787-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-11T20:18:46.315-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Leather Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 59.41,
+    "closingBalance" : 914.52,
+    "createdDate" : {
+      "created" : "2024-08-11T20:18:46.315-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-25T09:52:02.994-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Bronze Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 34.11,
+    "closingBalance" : 948.63,
+    "createdDate" : {
+      "created" : "2024-07-25T09:52:02.994-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-22T06:07:55.462-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Marble Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 8.50,
+    "closingBalance" : 940.13,
+    "createdDate" : {
+      "created" : "2024-07-22T06:07:55.462-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-12T14:52:19.737-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Granite Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 10.59,
+    "closingBalance" : 929.54,
+    "createdDate" : {
+      "created" : "2024-06-12T14:52:19.737-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-24T16:37:04.698-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Bronze Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 76.11,
+    "closingBalance" : 853.43,
+    "createdDate" : {
+      "created" : "2024-06-24T16:37:04.698-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-03T08:09:25.917-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Aluminum Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 2.79,
+    "closingBalance" : 856.22,
+    "createdDate" : {
+      "created" : "2024-07-03T08:09:25.917-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-01T03:27:11.212-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Plastic Bag",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 64.08,
+    "closingBalance" : 792.14,
+    "createdDate" : {
+      "created" : "2024-06-01T03:27:11.212-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Checking",
+  "branchAddress" : "3125 VonRueden Square, New Elizebethland, AK 43736",
+  "createdDate" : {
+    "created" : "2024-07-30T20:40:03.278-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-07-22T18:04:12.875-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Aluminum Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 5.06,
+    "closingBalance" : 505.06,
+    "createdDate" : {
+      "created" : "2024-07-22T18:04:12.875-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-10T10:28:29.322-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Wool Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 40.10,
+    "closingBalance" : 464.96,
+    "createdDate" : {
+      "created" : "2024-07-10T10:28:29.322-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-06T19:53:34.61-04:00[America/New_York]",
+    "transactionSummary" : "Small Granite Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 8.45,
+    "closingBalance" : 456.51,
+    "createdDate" : {
+      "created" : "2024-06-06T19:53:34.61-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-08T12:07:55.754-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Bronze Clock",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 50.87,
+    "closingBalance" : 405.64,
+    "createdDate" : {
+      "created" : "2024-07-08T12:07:55.754-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-22T15:04:20.917-04:00[America/New_York]",
+    "transactionSummary" : "Durable Silk Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 88.65,
+    "closingBalance" : 316.99,
+    "createdDate" : {
+      "created" : "2024-06-22T15:04:20.917-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-02T02:30:19.282-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Rubber Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 50.93,
+    "closingBalance" : 266.06,
+    "createdDate" : {
+      "created" : "2024-08-02T02:30:19.282-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-02T02:39:59.355-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Copper Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 15.23,
+    "closingBalance" : 281.29,
+    "createdDate" : {
+      "created" : "2024-06-02T02:39:59.355-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-04T07:51:04.295-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Granite Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 16.05,
+    "closingBalance" : 265.24,
+    "createdDate" : {
+      "created" : "2024-07-04T07:51:04.295-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-20T21:13:10.574-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Paper Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 15.15,
+    "closingBalance" : 250.09,
+    "createdDate" : {
+      "created" : "2024-07-20T21:13:10.574-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-13T15:41:45.286-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Wooden Plate",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 81.65,
+    "closingBalance" : 168.44,
+    "createdDate" : {
+      "created" : "2024-06-13T15:41:45.286-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-05T08:33:13.944-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Wooden Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 99.73,
+    "closingBalance" : 268.17,
+    "createdDate" : {
+      "created" : "2024-06-05T08:33:13.944-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-01T10:30:17.112-04:00[America/New_York]",
+    "transactionSummary" : "Small Steel Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 7.88,
+    "closingBalance" : 276.05,
+    "createdDate" : {
+      "created" : "2024-08-01T10:30:17.112-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-22T19:03:22.059-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Marble Clock",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 74.46,
+    "closingBalance" : 350.51,
+    "createdDate" : {
+      "created" : "2024-05-22T19:03:22.059-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-08T10:22:43.823-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Marble Pants",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 31.51,
+    "closingBalance" : 382.02,
+    "createdDate" : {
+      "created" : "2024-06-08T10:22:43.823-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-05T07:15:34.771-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Iron Bag",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 21.08,
+    "closingBalance" : 360.94,
+    "createdDate" : {
+      "created" : "2024-08-05T07:15:34.771-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-21T22:17:35.467-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Iron Clock",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 56.73,
+    "closingBalance" : 417.67,
+    "createdDate" : {
+      "created" : "2024-08-21T22:17:35.467-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-05T06:01:56.211-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Steel Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 66.31,
+    "closingBalance" : 483.98,
+    "createdDate" : {
+      "created" : "2024-07-05T06:01:56.211-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "Apt. 186 897 Justin Hills, Hettingerview, TN 02516",
+  "createdDate" : {
+    "created" : "2024-05-22T16:24:45.974-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-06-20T10:18:06.223-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Marble Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 28.87,
+    "closingBalance" : 471.13,
+    "createdDate" : {
+      "created" : "2024-06-20T10:18:06.223-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-12T06:57:56.724-04:00[America/New_York]",
+    "transactionSummary" : "Practical Copper Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 87.90,
+    "closingBalance" : 559.03,
+    "createdDate" : {
+      "created" : "2024-08-12T06:57:56.724-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-02T05:47:01.403-04:00[America/New_York]",
+    "transactionSummary" : "Durable Aluminum Lamp",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 78.86,
+    "closingBalance" : 480.17,
+    "createdDate" : {
+      "created" : "2024-06-02T05:47:01.403-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-03T00:42:03.759-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Bronze Watch",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 35.31,
+    "closingBalance" : 515.48,
+    "createdDate" : {
+      "created" : "2024-06-03T00:42:03.759-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-06T12:04:47.307-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Concrete Shirt",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 78.18,
+    "closingBalance" : 593.66,
+    "createdDate" : {
+      "created" : "2024-06-06T12:04:47.307-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-06T03:00:43.682-04:00[America/New_York]",
+    "transactionSummary" : "Practical Concrete Pants",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 23.63,
+    "closingBalance" : 570.03,
+    "createdDate" : {
+      "created" : "2024-08-06T03:00:43.682-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-25T04:59:30.621-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Copper Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 91.80,
+    "closingBalance" : 478.23,
+    "createdDate" : {
+      "created" : "2024-05-25T04:59:30.621-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-30T00:43:12.925-04:00[America/New_York]",
+    "transactionSummary" : "Practical Granite Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 24.79,
+    "closingBalance" : 503.02,
+    "createdDate" : {
+      "created" : "2024-07-30T00:43:12.925-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Checking",
+  "branchAddress" : "434 Wisozk Knoll, Caspershire, OR 26559",
+  "createdDate" : {
+    "created" : "2024-08-18T02:46:33.353-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-08-19T03:23:56.892-04:00[America/New_York]",
+    "transactionSummary" : "Durable Plastic Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 34.96,
+    "closingBalance" : 465.04,
+    "createdDate" : {
+      "created" : "2024-08-19T03:23:56.892-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-05T21:49:48.383-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Cotton Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 89.06,
+    "closingBalance" : 375.98,
+    "createdDate" : {
+      "created" : "2024-08-05T21:49:48.383-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-22T00:08:38.696-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Silk Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 45.56,
+    "closingBalance" : 330.42,
+    "createdDate" : {
+      "created" : "2024-06-22T00:08:38.696-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-04T05:54:31.868-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Aluminum Coat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 93.51,
+    "closingBalance" : 236.91,
+    "createdDate" : {
+      "created" : "2024-07-04T05:54:31.868-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-31T11:58:01.394-04:00[America/New_York]",
+    "transactionSummary" : "Practical Concrete Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 96.71,
+    "closingBalance" : 333.62,
+    "createdDate" : {
+      "created" : "2024-07-31T11:58:01.394-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-13T12:09:58.956-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Bronze Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 36.18,
+    "closingBalance" : 297.44,
+    "createdDate" : {
+      "created" : "2024-07-13T12:09:58.956-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-01T14:25:02.466-04:00[America/New_York]",
+    "transactionSummary" : "Small Silk Bag",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 38.28,
+    "closingBalance" : 259.16,
+    "createdDate" : {
+      "created" : "2024-08-01T14:25:02.466-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "47118 Ami Corner, Russelmouth, UT 49826",
+  "createdDate" : {
+    "created" : "2024-07-03T22:40:15.451-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-07-17T15:37:28.445-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Cotton Coat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 45.10,
+    "closingBalance" : 454.90,
+    "createdDate" : {
+      "created" : "2024-07-17T15:37:28.445-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-20T19:38:15.35-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Steel Knife",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 1.52,
+    "closingBalance" : 456.42,
+    "createdDate" : {
+      "created" : "2024-07-20T19:38:15.35-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-06T06:23:25.854-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Linen Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 3.97,
+    "closingBalance" : 452.45,
+    "createdDate" : {
+      "created" : "2024-07-06T06:23:25.854-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-18T00:05:24.119-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Copper Shirt",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 31.15,
+    "closingBalance" : 483.60,
+    "createdDate" : {
+      "created" : "2024-07-18T00:05:24.119-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-01T04:57:44.265-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Silk Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 89.97,
+    "closingBalance" : 573.57,
+    "createdDate" : {
+      "created" : "2024-07-01T04:57:44.265-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-13T23:51:24.206-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Paper Knife",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 48.20,
+    "closingBalance" : 621.77,
+    "createdDate" : {
+      "created" : "2024-08-13T23:51:24.206-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-15T06:08:48.757-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Leather Clock",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 64.76,
+    "closingBalance" : 557.01,
+    "createdDate" : {
+      "created" : "2024-08-15T06:08:48.757-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-12T18:56:48.861-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Bronze Chair",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 26.45,
+    "closingBalance" : 583.46,
+    "createdDate" : {
+      "created" : "2024-07-12T18:56:48.861-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-10T02:00:49.121-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Iron Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 93.39,
+    "closingBalance" : 490.07,
+    "createdDate" : {
+      "created" : "2024-06-10T02:00:49.121-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-30T03:51:27.129-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Wooden Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 27.80,
+    "closingBalance" : 462.27,
+    "createdDate" : {
+      "created" : "2024-06-30T03:51:27.129-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-31T22:42:12.817-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Granite Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 30.48,
+    "closingBalance" : 431.79,
+    "createdDate" : {
+      "created" : "2024-07-31T22:42:12.817-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-15T04:26:57.063-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Wool Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 37.90,
+    "closingBalance" : 469.69,
+    "createdDate" : {
+      "created" : "2024-06-15T04:26:57.063-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-13T09:29:56.1-04:00[America/New_York]",
+    "transactionSummary" : "Durable Aluminum Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 38.99,
+    "closingBalance" : 430.70,
+    "createdDate" : {
+      "created" : "2024-06-13T09:29:56.1-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-29T14:41:38.216-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Bronze Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 55.02,
+    "closingBalance" : 375.68,
+    "createdDate" : {
+      "created" : "2024-05-29T14:41:38.216-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-27T13:13:59.197-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Bronze Bag",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 89.11,
+    "closingBalance" : 286.57,
+    "createdDate" : {
+      "created" : "2024-06-27T13:13:59.197-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-19T14:23:30.922-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Aluminum Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 91.88,
+    "closingBalance" : 194.69,
+    "createdDate" : {
+      "created" : "2024-08-19T14:23:30.922-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-20T02:57:07.018-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Marble Coat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 9.31,
+    "closingBalance" : 185.38,
+    "createdDate" : {
+      "created" : "2024-07-20T02:57:07.018-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-02T19:26:49.297-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Rubber Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 75.32,
+    "closingBalance" : 110.06,
+    "createdDate" : {
+      "created" : "2024-06-02T19:26:49.297-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-04T12:08:57.436-04:00[America/New_York]",
+    "transactionSummary" : "Awesome Rubber Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 86.98,
+    "closingBalance" : 197.04,
+    "createdDate" : {
+      "created" : "2024-06-04T12:08:57.436-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-09T17:39:19.337-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Rubber Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 53.42,
+    "closingBalance" : 143.62,
+    "createdDate" : {
+      "created" : "2024-07-09T17:39:19.337-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-08T21:24:59.095-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Rubber Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 40.75,
+    "closingBalance" : 102.87,
+    "createdDate" : {
+      "created" : "2024-08-08T21:24:59.095-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-27T06:04:33.016-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Steel Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 44.94,
+    "closingBalance" : 147.81,
+    "createdDate" : {
+      "created" : "2024-05-27T06:04:33.016-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-25T18:58:47.95-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Bronze Gloves",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 12.01,
+    "closingBalance" : 135.80,
+    "createdDate" : {
+      "created" : "2024-05-25T18:58:47.95-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-23T17:08:45.404-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Wool Chair",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 90.85,
+    "closingBalance" : 226.65,
+    "createdDate" : {
+      "created" : "2024-05-23T17:08:45.404-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-12T17:17:58.081-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Marble Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 47.58,
+    "closingBalance" : 179.07,
+    "createdDate" : {
+      "created" : "2024-08-12T17:17:58.081-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-06T12:48:56.07-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Paper Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 92.58,
+    "closingBalance" : 271.65,
+    "createdDate" : {
+      "created" : "2024-06-06T12:48:56.07-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-17T12:12:39.419-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Wooden Bench",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 71.09,
+    "closingBalance" : 200.56,
+    "createdDate" : {
+      "created" : "2024-06-17T12:12:39.419-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-03T15:45:28.216-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Cotton Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 46.99,
+    "closingBalance" : 247.55,
+    "createdDate" : {
+      "created" : "2024-07-03T15:45:28.216-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "Apt. 521 4930 Gulgowski Hills, North Cynthiaside, MI 14549",
+  "createdDate" : {
+    "created" : "2024-05-27T15:25:47.923-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-07-26T08:24:39.493-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Marble Shoes",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 4.75,
+    "closingBalance" : 495.25,
+    "createdDate" : {
+      "created" : "2024-07-26T08:24:39.493-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-16T23:06:59.352-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Copper Lamp",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 5.43,
+    "closingBalance" : 500.68,
+    "createdDate" : {
+      "created" : "2024-05-16T23:06:59.352-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-15T00:08:58.807-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Plastic Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 11.55,
+    "closingBalance" : 512.23,
+    "createdDate" : {
+      "created" : "2024-08-15T00:08:58.807-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-29T03:53:32.904-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Steel Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 43.17,
+    "closingBalance" : 555.40,
+    "createdDate" : {
+      "created" : "2024-07-29T03:53:32.904-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-19T06:59:03.709-04:00[America/New_York]",
+    "transactionSummary" : "Durable Copper Watch",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 95.28,
+    "closingBalance" : 460.12,
+    "createdDate" : {
+      "created" : "2024-06-19T06:59:03.709-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-12T04:50:33.694-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Wooden Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 27.34,
+    "closingBalance" : 487.46,
+    "createdDate" : {
+      "created" : "2024-07-12T04:50:33.694-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-26T02:46:43.19-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Cotton Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 25.81,
+    "closingBalance" : 513.27,
+    "createdDate" : {
+      "created" : "2024-07-26T02:46:43.19-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-25T15:36:48.307-04:00[America/New_York]",
+    "transactionSummary" : "Durable Cotton Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 15.12,
+    "closingBalance" : 528.39,
+    "createdDate" : {
+      "created" : "2024-06-25T15:36:48.307-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-18T04:29:42.885-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Leather Shoes",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 34.74,
+    "closingBalance" : 493.65,
+    "createdDate" : {
+      "created" : "2024-06-18T04:29:42.885-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-20T21:29:14.192-04:00[America/New_York]",
+    "transactionSummary" : "Practical Bronze Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 70.25,
+    "closingBalance" : 423.40,
+    "createdDate" : {
+      "created" : "2024-07-20T21:29:14.192-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-14T09:17:17.477-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Wool Watch",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 25.29,
+    "closingBalance" : 398.11,
+    "createdDate" : {
+      "created" : "2024-08-14T09:17:17.477-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-26T02:36:49.485-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Wooden Car",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 47.33,
+    "closingBalance" : 445.44,
+    "createdDate" : {
+      "created" : "2024-06-26T02:36:49.485-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-08T12:50:42.022-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Granite Bench",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 75.64,
+    "closingBalance" : 369.80,
+    "createdDate" : {
+      "created" : "2024-08-08T12:50:42.022-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-23T09:46:31.973-04:00[America/New_York]",
+    "transactionSummary" : "Durable Copper Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 62.08,
+    "closingBalance" : 431.88,
+    "createdDate" : {
+      "created" : "2024-06-23T09:46:31.973-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "Suite 560 0081 Refugia Fields, East Carmine, TN 55418",
+  "createdDate" : {
+    "created" : "2024-05-29T23:20:17.766-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-06-30T19:10:10.145-04:00[America/New_York]",
+    "transactionSummary" : "Practical Wooden Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 2.40,
+    "closingBalance" : 502.40,
+    "createdDate" : {
+      "created" : "2024-06-30T19:10:10.145-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-25T09:21:52.841-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Cotton Keyboard",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 5.28,
+    "closingBalance" : 497.12,
+    "createdDate" : {
+      "created" : "2024-07-25T09:21:52.841-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-10T02:15:55.623-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Steel Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 76.64,
+    "closingBalance" : 573.76,
+    "createdDate" : {
+      "created" : "2024-07-10T02:15:55.623-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-18T23:40:33.64-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Bronze Watch",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 57.24,
+    "closingBalance" : 516.52,
+    "createdDate" : {
+      "created" : "2024-08-18T23:40:33.64-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-31T09:01:20.522-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Granite Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 47.56,
+    "closingBalance" : 564.08,
+    "createdDate" : {
+      "created" : "2024-07-31T09:01:20.522-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-04T23:40:55.759-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Iron Bench",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 28.89,
+    "closingBalance" : 535.19,
+    "createdDate" : {
+      "created" : "2024-07-04T23:40:55.759-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-25T19:59:00.314-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Marble Watch",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 44.47,
+    "closingBalance" : 579.66,
+    "createdDate" : {
+      "created" : "2024-07-25T19:59:00.314-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-29T05:36:04.758-04:00[America/New_York]",
+    "transactionSummary" : "Small Aluminum Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 22.75,
+    "closingBalance" : 556.91,
+    "createdDate" : {
+      "created" : "2024-07-29T05:36:04.758-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-14T07:55:26.736-04:00[America/New_York]",
+    "transactionSummary" : "Practical Granite Table",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 46.94,
+    "closingBalance" : 603.85,
+    "createdDate" : {
+      "created" : "2024-06-14T07:55:26.736-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-07T16:37:10.168-04:00[America/New_York]",
+    "transactionSummary" : "Small Wool Pants",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 75.09,
+    "closingBalance" : 678.94,
+    "createdDate" : {
+      "created" : "2024-08-07T16:37:10.168-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-13T03:58:17.289-04:00[America/New_York]",
+    "transactionSummary" : "Durable Wool Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 93.15,
+    "closingBalance" : 585.79,
+    "createdDate" : {
+      "created" : "2024-07-13T03:58:17.289-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-28T19:30:34.941-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Marble Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 39.74,
+    "closingBalance" : 546.05,
+    "createdDate" : {
+      "created" : "2024-07-28T19:30:34.941-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-16T11:37:32.26-04:00[America/New_York]",
+    "transactionSummary" : "Practical Copper Watch",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 76.01,
+    "closingBalance" : 622.06,
+    "createdDate" : {
+      "created" : "2024-06-16T11:37:32.26-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-23T07:52:22.178-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Leather Knife",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 86.32,
+    "closingBalance" : 708.38,
+    "createdDate" : {
+      "created" : "2024-06-23T07:52:22.178-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-24T03:47:10.841-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Leather Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 86.52,
+    "closingBalance" : 621.86,
+    "createdDate" : {
+      "created" : "2024-05-24T03:47:10.841-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-02T16:42:45.124-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Marble Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 85.03,
+    "closingBalance" : 706.89,
+    "createdDate" : {
+      "created" : "2024-06-02T16:42:45.124-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-09T05:00:53.067-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Linen Knife",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 89.36,
+    "closingBalance" : 796.25,
+    "createdDate" : {
+      "created" : "2024-07-09T05:00:53.067-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-11T01:03:57.126-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Rubber Coat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 75.40,
+    "closingBalance" : 720.85,
+    "createdDate" : {
+      "created" : "2024-06-11T01:03:57.126-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-10T19:46:41.771-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Wool Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 40.33,
+    "closingBalance" : 761.18,
+    "createdDate" : {
+      "created" : "2024-06-10T19:46:41.771-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-12T01:53:54.935-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Plastic Car",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 41.16,
+    "closingBalance" : 802.34,
+    "createdDate" : {
+      "created" : "2024-06-12T01:53:54.935-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-23T01:01:02.64-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Iron Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 80.46,
+    "closingBalance" : 721.88,
+    "createdDate" : {
+      "created" : "2024-05-23T01:01:02.64-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-15T17:22:59.385-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Iron Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 38.51,
+    "closingBalance" : 760.39,
+    "createdDate" : {
+      "created" : "2024-07-15T17:22:59.385-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-22T21:57:08.493-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Copper Bag",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 66.55,
+    "closingBalance" : 693.84,
+    "createdDate" : {
+      "created" : "2024-05-22T21:57:08.493-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-08T20:07:46.908-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Copper Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 50.13,
+    "closingBalance" : 643.71,
+    "createdDate" : {
+      "created" : "2024-06-08T20:07:46.908-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-10T10:30:43.823-04:00[America/New_York]",
+    "transactionSummary" : "Practical Bronze Knife",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 22.94,
+    "closingBalance" : 666.65,
+    "createdDate" : {
+      "created" : "2024-08-10T10:30:43.823-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-27T07:58:42.943-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Concrete Lamp",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 62.16,
+    "closingBalance" : 728.81,
+    "createdDate" : {
+      "created" : "2024-07-27T07:58:42.943-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "Apt. 817 916 Christi Lane, Jastfort, WA 82325",
+  "createdDate" : {
+    "created" : "2024-07-14T12:27:48.679-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-08-11T22:35:17.393-04:00[America/New_York]",
+    "transactionSummary" : "Durable Granite Plate",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 28.87,
+    "closingBalance" : 471.13,
+    "createdDate" : {
+      "created" : "2024-08-11T22:35:17.393-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-23T16:34:43.541-04:00[America/New_York]",
+    "transactionSummary" : "Practical Plastic Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 75.91,
+    "closingBalance" : 395.22,
+    "createdDate" : {
+      "created" : "2024-07-23T16:34:43.541-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-02T03:07:00.777-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Steel Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 70.61,
+    "closingBalance" : 465.83,
+    "createdDate" : {
+      "created" : "2024-08-02T03:07:00.777-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-20T05:16:27.18-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Steel Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 95.69,
+    "closingBalance" : 561.52,
+    "createdDate" : {
+      "created" : "2024-08-20T05:16:27.18-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-09T15:05:21.28-04:00[America/New_York]",
+    "transactionSummary" : "Durable Plastic Clock",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 81.07,
+    "closingBalance" : 642.59,
+    "createdDate" : {
+      "created" : "2024-06-09T15:05:21.28-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-02T04:44:07.753-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Rubber Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 53.53,
+    "closingBalance" : 696.12,
+    "createdDate" : {
+      "created" : "2024-08-02T04:44:07.753-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-05T05:01:03.974-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Iron Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 60.77,
+    "closingBalance" : 756.89,
+    "createdDate" : {
+      "created" : "2024-06-05T05:01:03.974-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-15T21:39:55.152-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Silk Clock",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 41.84,
+    "closingBalance" : 798.73,
+    "createdDate" : {
+      "created" : "2024-08-15T21:39:55.152-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-11T03:34:50.302-04:00[America/New_York]",
+    "transactionSummary" : "Practical Linen Coat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 64.03,
+    "closingBalance" : 862.76,
+    "createdDate" : {
+      "created" : "2024-06-11T03:34:50.302-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-13T04:20:39.596-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Silk Wallet",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 97.03,
+    "closingBalance" : 765.73,
+    "createdDate" : {
+      "created" : "2024-07-13T04:20:39.596-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-13T11:02:54.067-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Silk Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 49.35,
+    "closingBalance" : 716.38,
+    "createdDate" : {
+      "created" : "2024-06-13T11:02:54.067-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Checking",
+  "branchAddress" : "760 Berry Ford, Lawerencestad, LA 15328",
+  "createdDate" : {
+    "created" : "2024-05-16T01:22:09.486-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-08-01T10:41:10.68-04:00[America/New_York]",
+    "transactionSummary" : "Small Granite Wallet",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 80.58,
+    "closingBalance" : 580.58,
+    "createdDate" : {
+      "created" : "2024-08-01T10:41:10.68-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-12T23:13:29.642-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Linen Car",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 32.72,
+    "closingBalance" : 613.30,
+    "createdDate" : {
+      "created" : "2024-08-12T23:13:29.642-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-10T23:19:10.808-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Marble Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 40.12,
+    "closingBalance" : 653.42,
+    "createdDate" : {
+      "created" : "2024-08-10T23:19:10.808-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-02T11:33:53.719-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Marble Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 74.06,
+    "closingBalance" : 579.36,
+    "createdDate" : {
+      "created" : "2024-06-02T11:33:53.719-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-21T08:36:48.417-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Rubber Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 57.06,
+    "closingBalance" : 636.42,
+    "createdDate" : {
+      "created" : "2024-07-21T08:36:48.417-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-16T22:26:01.133-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Leather Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 89.15,
+    "closingBalance" : 725.57,
+    "createdDate" : {
+      "created" : "2024-07-16T22:26:01.133-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-30T09:35:29.223-04:00[America/New_York]",
+    "transactionSummary" : "Small Granite Gloves",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 57.55,
+    "closingBalance" : 668.02,
+    "createdDate" : {
+      "created" : "2024-07-30T09:35:29.223-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-12T20:52:15.822-04:00[America/New_York]",
+    "transactionSummary" : "Aerodynamic Silk Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 97.17,
+    "closingBalance" : 570.85,
+    "createdDate" : {
+      "created" : "2024-06-12T20:52:15.822-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-06T12:48:15.338-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Cotton Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 86.28,
+    "closingBalance" : 657.13,
+    "createdDate" : {
+      "created" : "2024-06-06T12:48:15.338-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-22T15:28:40.959-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Copper Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 94.23,
+    "closingBalance" : 751.36,
+    "createdDate" : {
+      "created" : "2024-07-22T15:28:40.959-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-28T12:28:07.178-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Silk Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 46.14,
+    "closingBalance" : 797.50,
+    "createdDate" : {
+      "created" : "2024-07-28T12:28:07.178-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-11T00:14:16.387-04:00[America/New_York]",
+    "transactionSummary" : "Practical Paper Pants",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 33.48,
+    "closingBalance" : 830.98,
+    "createdDate" : {
+      "created" : "2024-08-11T00:14:16.387-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-25T06:21:55.269-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Iron Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 78.58,
+    "closingBalance" : 752.40,
+    "createdDate" : {
+      "created" : "2024-06-25T06:21:55.269-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-14T08:00:31.371-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Silk Knife",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 56.32,
+    "closingBalance" : 808.72,
+    "createdDate" : {
+      "created" : "2024-06-14T08:00:31.371-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-02T20:17:54.801-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Wool Clock",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 86.82,
+    "closingBalance" : 721.90,
+    "createdDate" : {
+      "created" : "2024-07-02T20:17:54.801-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-28T11:42:08.19-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Linen Watch",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 39.25,
+    "closingBalance" : 682.65,
+    "createdDate" : {
+      "created" : "2024-07-28T11:42:08.19-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-27T18:54:07.308-04:00[America/New_York]",
+    "transactionSummary" : "Mediocre Wooden Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 28.71,
+    "closingBalance" : 711.36,
+    "createdDate" : {
+      "created" : "2024-06-27T18:54:07.308-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-16T23:57:44.802-04:00[America/New_York]",
+    "transactionSummary" : "Small Aluminum Hat",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 45.78,
+    "closingBalance" : 665.58,
+    "createdDate" : {
+      "created" : "2024-05-16T23:57:44.802-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "842 Valentine Mountain, Blancheport, NJ 76037",
+  "createdDate" : {
+    "created" : "2024-06-29T23:36:00.786-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-08-11T22:58:36.069-04:00[America/New_York]",
+    "transactionSummary" : "Practical Bronze Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 71.51,
+    "closingBalance" : 571.51,
+    "createdDate" : {
+      "created" : "2024-08-11T22:58:36.069-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-23T23:35:30.981-04:00[America/New_York]",
+    "transactionSummary" : "Sleek Rubber Knife",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 97.81,
+    "closingBalance" : 669.32,
+    "createdDate" : {
+      "created" : "2024-06-23T23:35:30.981-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-12T10:29:17.412-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Cotton Wallet",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 40.46,
+    "closingBalance" : 709.78,
+    "createdDate" : {
+      "created" : "2024-08-12T10:29:17.412-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-30T13:44:40.78-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Wool Lamp",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 25.53,
+    "closingBalance" : 735.31,
+    "createdDate" : {
+      "created" : "2024-06-30T13:44:40.78-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-25T22:03:03.763-04:00[America/New_York]",
+    "transactionSummary" : "Small Marble Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 15.98,
+    "closingBalance" : 719.33,
+    "createdDate" : {
+      "created" : "2024-05-25T22:03:03.763-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-20T17:30:54.742-04:00[America/New_York]",
+    "transactionSummary" : "Intelligent Leather Knife",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 18.97,
+    "closingBalance" : 700.36,
+    "createdDate" : {
+      "created" : "2024-07-20T17:30:54.742-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-25T14:26:03.601-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Concrete Computer",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 7.96,
+    "closingBalance" : 708.32,
+    "createdDate" : {
+      "created" : "2024-05-25T14:26:03.601-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-31T08:21:37.039-04:00[America/New_York]",
+    "transactionSummary" : "Durable Rubber Bench",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 48.15,
+    "closingBalance" : 756.47,
+    "createdDate" : {
+      "created" : "2024-07-31T08:21:37.039-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-15T19:31:13.307-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Rubber Plate",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 35.58,
+    "closingBalance" : 792.05,
+    "createdDate" : {
+      "created" : "2024-08-15T19:31:13.307-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-22T01:46:02.103-04:00[America/New_York]",
+    "transactionSummary" : "Fantastic Plastic Keyboard",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 60.40,
+    "closingBalance" : 852.45,
+    "createdDate" : {
+      "created" : "2024-05-22T01:46:02.103-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-08-15T17:48:51.888-04:00[America/New_York]",
+    "transactionSummary" : "Ergonomic Paper Gloves",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 82.90,
+    "closingBalance" : 935.35,
+    "createdDate" : {
+      "created" : "2024-08-15T17:48:51.888-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-21T02:53:18.683-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Marble Shoes",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 67.56,
+    "closingBalance" : 1002.91,
+    "createdDate" : {
+      "created" : "2024-06-21T02:53:18.683-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-26T23:13:20.134-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Leather Clock",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 54.40,
+    "closingBalance" : 948.51,
+    "createdDate" : {
+      "created" : "2024-07-26T23:13:20.134-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-13T05:45:17.872-04:00[America/New_York]",
+    "transactionSummary" : "Enormous Granite Bench",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 59.95,
+    "closingBalance" : 888.56,
+    "createdDate" : {
+      "created" : "2024-06-13T05:45:17.872-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-10T22:33:32.336-04:00[America/New_York]",
+    "transactionSummary" : "Gorgeous Rubber Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 90.50,
+    "closingBalance" : 798.06,
+    "createdDate" : {
+      "created" : "2024-07-10T22:33:32.336-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-02T07:41:17.174-04:00[America/New_York]",
+    "transactionSummary" : "Practical Aluminum Plate",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 19.52,
+    "closingBalance" : 778.54,
+    "createdDate" : {
+      "created" : "2024-07-02T07:41:17.174-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-07T19:58:14.155-04:00[America/New_York]",
+    "transactionSummary" : "Rustic Marble Car",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 27.68,
+    "closingBalance" : 750.86,
+    "createdDate" : {
+      "created" : "2024-06-07T19:58:14.155-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-22T13:28:27.613-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Bronze Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 29.42,
+    "closingBalance" : 721.44,
+    "createdDate" : {
+      "created" : "2024-05-22T13:28:27.613-04:00[America/New_York]"
+    }
+  } ]
+}, {
+  "accountType" : "Savings",
+  "branchAddress" : "Apt. 197 459 Christin Field, West Damonbury, ND 62841",
+  "createdDate" : {
+    "created" : "2024-06-28T20:58:58.649-04:00[America/New_York]"
+  },
+  "accountTransactions" : [ {
+    "transactionDate" : "2024-08-17T03:11:44.271-04:00[America/New_York]",
+    "transactionSummary" : "Small Leather Shirt",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 36.07,
+    "closingBalance" : 463.93,
+    "createdDate" : {
+      "created" : "2024-08-17T03:11:44.271-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-22T10:16:24.602-04:00[America/New_York]",
+    "transactionSummary" : "Incredible Marble Bottle",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 65.15,
+    "closingBalance" : 398.78,
+    "createdDate" : {
+      "created" : "2024-07-22T10:16:24.602-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-24T01:09:47.841-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Wooden Bag",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 30.91,
+    "closingBalance" : 429.69,
+    "createdDate" : {
+      "created" : "2024-05-24T01:09:47.841-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-05-23T05:51:54.417-04:00[America/New_York]",
+    "transactionSummary" : "Synergistic Silk Hat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 8.80,
+    "closingBalance" : 438.49,
+    "createdDate" : {
+      "created" : "2024-05-23T05:51:54.417-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-15T22:24:16.796-04:00[America/New_York]",
+    "transactionSummary" : "Lightweight Steel Table",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 71.39,
+    "closingBalance" : 367.10,
+    "createdDate" : {
+      "created" : "2024-07-15T22:24:16.796-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-06-06T04:24:54.51-04:00[America/New_York]",
+    "transactionSummary" : "Heavy Duty Paper Shoes",
+    "transactionType" : "Withdrawal",
+    "transactionAmount" : 46.75,
+    "closingBalance" : 320.35,
+    "createdDate" : {
+      "created" : "2024-06-06T04:24:54.51-04:00[America/New_York]"
+    }
+  }, {
+    "transactionDate" : "2024-07-16T21:48:04.576-04:00[America/New_York]",
+    "transactionSummary" : "Practical Cotton Coat",
+    "transactionType" : "Deposit",
+    "transactionAmount" : 71.21,
+    "closingBalance" : 391.56,
+    "createdDate" : {
+      "created" : "2024-07-16T21:48:04.576-04:00[America/New_York]"
+    }
+  } ]
+} ]
