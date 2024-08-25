@@ -1,5 +1,6 @@
 package com.demo.security.spring.model;
 
+import com.demo.security.spring.utils.SecurityUtils;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -44,9 +45,6 @@ import org.springframework.util.ReflectionUtils;
 @SequenceGenerator(name = "security_users_id_seq", sequenceName = "security_users_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class SecurityUser implements UserDetails {
-
-  /** Max number of failed attempts allowed within a given time window or in a row before lockout */
-  public static final int MAX_ALLOWED_FAILED_LOGIN_ATTEMPTS = 5;
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "security_users_id_seq")
@@ -157,7 +155,7 @@ public class SecurityUser implements UserDetails {
 
   public void incrementFailedLoginAttempts() {
     setFailedLoginAttempts(getFailedLoginAttempts() + 1);
-    if (getFailedLoginAttempts() > MAX_ALLOWED_FAILED_LOGIN_ATTEMPTS) {
+    if (getFailedLoginAttempts() > SecurityUtils.MAX_ALLOWED_FAILED_LOGIN_ATTEMPTS) {
       lock();
     }
   }

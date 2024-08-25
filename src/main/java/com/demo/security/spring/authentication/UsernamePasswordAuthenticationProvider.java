@@ -34,7 +34,6 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
 
   private PasswordEncoder passwordEncoder;
 
-  @Autowired
   private AuthenticationAttemptManager authenticationAttemptManager;
 
   @Autowired
@@ -45,6 +44,11 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
   @Autowired
   public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
     this.passwordEncoder = passwordEncoder;
+  }
+
+  @Autowired
+  public void setAuthenticationAttemptManager(AuthenticationAttemptManager authenticationAttemptManager) {
+    this.authenticationAttemptManager = authenticationAttemptManager;
   }
 
   @Override

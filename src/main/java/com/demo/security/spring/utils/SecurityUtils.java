@@ -12,6 +12,9 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Log4j2
 public class SecurityUtils {
 
+  /** Max number of failed attempts allowed within a given time window or in a row before lockout */
+  public static final int MAX_ALLOWED_FAILED_LOGIN_ATTEMPTS = 5;
+
   /**
    * Returns the currently logged in user or null if there is none.
    * @return the current user
