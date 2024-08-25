@@ -71,17 +71,6 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.DISABLED);
       throw new DisabledException("The account for user " + username + " is not enabled");
     }
-    if (user.isLocked()) {
-      if (user.getUnlockDate() != null && ZonedDateTime.now().isAfter(user.getUnlockDate())) {
-        // clear user lockout and continue on
-        user.clearLockout();
-        // TODO: fix this also - may throw exception during test
-        user = userRepository.save(user);
-      } else {
-        authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.LOCKED);
-        throw new LockedException("The account for user " + username + " is locked");
-      }
-    }
     if (!user.isCredentialsNonExpired()) {
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.CREDENTIALS_EXPIRED);
       throw new CredentialsExpiredException("The credentials for user " + username + " are expired");
@@ -97,11 +86,19 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
     }
     if (!passwordEncoder.matches(providedPassword, user.getPassword())) {
       user.incrementFailedLoginAttempts(); // can result in lockout
-      // TODO: throwing during test - I think because of persistent bag issue for authentications of other sub-classes
-      //          at java.base/java.util.ImmutableCollections.uoe(ImmutableCollections.java:142) - also related to immutable collection
       userRepository.save(user);
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.BAD_CREDENTIALS);
       throw new BadCredentialsException("Invalid credentials");
+    }
+    if (user.isLocked()) { // we know that the credentials matched by the time we get here
+      if (user.getUnlockDate() != null && ZonedDateTime.now().isAfter(user.getUnlockDate())) {
+        // clear user lockout and continue on
+        user.clearLockout();
+        user = userRepository.save(user);
+      } else {
+        authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.LOCKED);
+        throw new LockedException("The account for user " + username + " is locked");
+      }
     }
   }
 

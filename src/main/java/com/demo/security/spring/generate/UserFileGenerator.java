@@ -177,10 +177,12 @@ public class UserFileGenerator extends AbstractFileGenerator {
   }
 
   private List<SecurityAuthority> toAuthorities(List<String> roles) {
-    return roles.stream().map(role -> {
-        SecurityAuthority authority = new SecurityAuthority();
+    List<SecurityAuthority> authorities = new ArrayList<>();
+    roles.stream().forEach(role -> {
+      SecurityAuthority authority = new SecurityAuthority();
       authority.setAuthority(role);
-      return authority;
-    }).toList();
+      authorities.add(authority);
+    });
+    return authorities;
   }
 }
