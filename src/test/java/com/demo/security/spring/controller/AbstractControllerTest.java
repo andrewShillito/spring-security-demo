@@ -1,7 +1,9 @@
 package com.demo.security.spring.controller;
 
 import com.demo.security.spring.DemoAssertions;
+import com.demo.security.spring.TestDataGenerator;
 import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
+import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.utils.Constants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.ZoneId;
@@ -26,14 +28,14 @@ public abstract class AbstractControllerTest {
 
     protected final Faker faker = new Faker();
 
-    private static final String EXTERNAL_USER_NAME = "user";
-    private static final String EXTERNAL_USER_PASSWORD = "password";
-
     @Autowired
     protected ObjectMapper objectMapper;
 
     @Autowired
     protected Environment environment;
+
+    @Autowired
+    protected TestDataGenerator testDataGenerator;
 
     public String getTestUserName() {
         return this.getClass().getName().substring(0, 1).toLowerCase() + this.getClass().getName().substring(1);
@@ -99,12 +101,17 @@ public abstract class AbstractControllerTest {
         assertEquals(ZoneId.of("UTC"), authErrorBody.getTime().getZone());
     }
 
+    public void _testCors(MockMvc mockMvc, String resourcePath, boolean requiresUser) {
+        _testCors(mockMvc, resourcePath, null, null, requiresUser);
+    }
+
     public void _testCors(MockMvc mockMvc, String resourcePath, String paramName, String paramValue, boolean requiresUser) {
         final String exampleInvalidUrl = "http://www.someOtherSite.com";
+        final SecurityUser user = testDataGenerator.generateExternalUser(true);
         List.of(exampleInvalidUrl, faker.internet().url()).forEach(invalidOrigin -> {
             try {
                 MvcResult invalidResult = mockMvc.perform(get(resourcePath)
-                        .with(user(EXTERNAL_USER_NAME).password(EXTERNAL_USER_PASSWORD))
+                        .with(user(user))
                         .header("Origin", invalidOrigin))
                     .andExpect(status().isForbidden())
                     .andReturn();
@@ -128,7 +135,7 @@ public abstract class AbstractControllerTest {
                     // TODO: for endpoints which are accessing user-specific data this will change in the future
                     //  to deny users from accessing any user info but their own
                     if (requiresUser) {
-                        mockMvc.perform(get(resourcePath).with(user(EXTERNAL_USER_NAME).password(EXTERNAL_USER_PASSWORD))
+                        mockMvc.perform(get(resourcePath).with(user(user))
                                 .param(paramName, paramValue)
                                 .header("Origin", origin))
                             .andExpect(status().isOk());
@@ -141,14 +148,14 @@ public abstract class AbstractControllerTest {
                 } else {
                     if (requiresUser) {
                         mockMvc.perform(get(resourcePath).header("Origin", origin)
-                                .with(user(EXTERNAL_USER_NAME).password(EXTERNAL_USER_PASSWORD)))
+                                .with(user(user)))
                             .andExpect(status().isOk());
                     } else {
                         mockMvc.perform(get(resourcePath).header("Origin", origin)).andExpect(status().isOk());
                     }
                 }
             } catch (Exception e) {
-                fail("Failed to access resource " + resourcePath + " from origin " + origin + " with params " + paramName + ": " + paramValue);
+                fail("Failed to access resource " + resourcePath + " from origin " + origin + " with params " + paramName + ": " + paramValue, e);
             }
         }
     }

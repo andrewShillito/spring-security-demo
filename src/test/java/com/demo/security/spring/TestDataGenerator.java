@@ -6,7 +6,11 @@ import com.demo.security.spring.generate.ContactMessageGenerator;
 import com.demo.security.spring.generate.LoanGenerator;
 import com.demo.security.spring.generate.NoticeDetailsGenerator;
 import com.demo.security.spring.generate.UserGenerator;
+import com.demo.security.spring.model.Loan;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.repository.AccountRepository;
+import com.demo.security.spring.repository.CardRepository;
+import com.demo.security.spring.repository.LoanRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
@@ -37,6 +41,15 @@ public class TestDataGenerator {
 
   @Autowired
   private CardGenerator cardGenerator;
+
+  @Autowired
+  private AccountRepository accountRepository;
+
+  @Autowired
+  private LoanRepository loanRepository;
+
+  @Autowired
+  private CardRepository cardRepository;
 
   @Autowired
   private ContactMessageGenerator contactMessageGenerator;
@@ -70,6 +83,16 @@ public class TestDataGenerator {
     return users;
   }
 
+  public SecurityUser generateExternalUser(boolean persist) {
+    final String username = randomUsername();
+    final String userRawPassword = randomPassword();
+    SecurityUser user = generateExternalUser(username, userRawPassword, true);
+    if (persist) {
+      securityUserRepository.save(user);
+    }
+    return user;
+  }
+
   public SecurityUser generateExternalUser(@NonNull String username, @NonNull String password, boolean persist) {
     final SecurityUser user = userGenerator.generateExternalUser(username, password);
     postProcessGeneratedUser(user);
@@ -90,5 +113,12 @@ public class TestDataGenerator {
 
   private void postProcessGeneratedUser(@NonNull SecurityUser user) {
     user.setPassword(passwordEncoder.encode(user.getPassword()));
+  }
+
+  public List<Loan> generateLoans(SecurityUser user, int count) {
+    final List<Loan> loans = loanGenerator.generate(count);
+    loans.forEach(l -> l.setUserId(user.getId()));
+    loanRepository.saveAll(loans);
+    return loans;
   }
 }

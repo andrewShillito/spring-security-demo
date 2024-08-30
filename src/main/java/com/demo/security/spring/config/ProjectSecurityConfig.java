@@ -32,6 +32,7 @@ import com.demo.security.spring.service.ExampleDataGenerationService;
 import com.demo.security.spring.service.JpaLoginService;
 import com.demo.security.spring.service.LoginService;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
+import com.demo.security.spring.service.UserDetailsManagerImpl;
 import com.demo.security.spring.utils.Constants;
 import com.demo.security.spring.utils.SpringProfileConstants;
 import com.demo.security.spring.utils.StartupDatabasePopulator;
@@ -48,8 +49,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer.SessionFixationConfigurer;
+import org.springframework.security.core.context.SecurityContextHolderStrategy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -303,5 +307,23 @@ public class ProjectSecurityConfig {
   @Bean
   public AuthenticationAttemptManager authenticationAttemptManager(AuthenticationAttemptRepository attemptRepository) {
     return new AuthenticationAttemptManager().setAttemptRepository(attemptRepository);
+  }
+
+  @Bean
+  public UserDetailsManagerImpl userDetailsManager(
+      AuthenticationManager authenticationManager,
+      SecurityUserRepository securityUserRepository,
+      PasswordEncoder passwordEncoder
+  ) {
+    return UserDetailsManagerImpl.builder()
+        .authenticationManager(authenticationManager)
+        .userRepository(securityUserRepository)
+        .passwordEncoder(passwordEncoder)
+        .build();
+  }
+
+  @Bean
+  public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+    return authConfig.getAuthenticationManager();
   }
 }

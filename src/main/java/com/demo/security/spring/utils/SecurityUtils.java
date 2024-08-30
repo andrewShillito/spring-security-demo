@@ -1,8 +1,8 @@
 package com.demo.security.spring.utils;
 
-import com.demo.security.spring.model.SecurityUser;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.context.request.RequestAttributes;
@@ -16,20 +16,26 @@ public class SecurityUtils {
   public static final int MAX_ALLOWED_FAILED_LOGIN_ATTEMPTS = 5;
 
   /**
-   * Returns the currently logged in user or null if there is none.
-   * @return the current user
+   * Returns the authentication for the currently logged in user.
    */
-  public SecurityUser getCurrentUser() {
+  public static Authentication getAuthentication() {
     SecurityContext context = SecurityContextHolder.getContext();
-    if (context != null && context.getAuthentication() != null) {
-      Object details = context.getAuthentication().getDetails();
-      if (details instanceof SecurityUser) {
-        return (SecurityUser) details;
-      } else {
-        log.error(() -> "Security context authentication contained unexpected details type " + details + "\nauth: " + context.getAuthentication());
-      }
+    if (context != null) {
+      return context.getAuthentication();
     }
     log.info(() -> "No authentication is currently present - user is not logged in");
+    return null;
+  }
+
+  /**
+   * Get the name of the existing logged in user
+   * @return the principal or null
+   */
+  public static String getPrincipalName() {
+    SecurityContext context = SecurityContextHolder.getContext();
+    if (context != null && context.getAuthentication() != null) {
+      return context.getAuthentication().getName();
+    }
     return null;
   }
 
