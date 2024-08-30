@@ -24,7 +24,7 @@ The above command is equivalent to:
 
 `./mvnw spring-boot:run -Dspring-boot.run.profiles=default,postgres`
 
-The default profiles populate a set of example users into the postgres db from [example-users.json](src/main/resources/seed/example-users.json). 
+The default profiles populate lists of example users, accounts, loans, cards, notices, and contact messages into the postgres db from files in directory [./src/main/resources/seed/](./src/main/resources/seed/). This data can be regenerated during startup as well using property `-Dexample-data.regenerate=true`. See [Regenerating dev environment example data](#regenerating-dev-environment-example-data) for details on regenerating example data. 
 
 ### Other spring profiles
 
@@ -40,7 +40,7 @@ Example usage:
 
 `./mvnw clean verify`
 
-## To regenerate dev environment example data
+## Regenerating dev environment example data
 
 Setting property `example-data.regenerate=true` either in properties files or from the command line ie: `-Dexample-data.regenerate=true` causes example data which is seeded into the DB to be regenerated during startup prior to it being populated into the db.
 When regenerated, the data is also written to `.json` files in [./src/main/resources/seed](./src/main/resources/seed) for reference. Those files are also used to populate the db during startup when `example-data.regenerate=false`.
