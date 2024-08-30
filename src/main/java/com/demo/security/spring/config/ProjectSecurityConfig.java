@@ -167,7 +167,8 @@ public class ProjectSecurityConfig {
       final LoanRepository loanRepository,
       final UserGenerator userGenerator,
       final ObjectMapper objectMapper,
-      final PasswordEncoder passwordEncoder
+      final PasswordEncoder passwordEncoder,
+      @Value("${example-data.regenerate:false}") boolean regenerateData
   ) {
     return StartupDatabasePopulator.builder()
         .exampleDataManager(exampleDataManager)
@@ -180,6 +181,7 @@ public class ProjectSecurityConfig {
         .userGenerator(userGenerator)
         .objectMapper(objectMapper)
         .passwordEncoder(passwordEncoder)
+        .regenerateData(regenerateData)
         .build();
   }
 

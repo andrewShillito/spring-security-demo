@@ -51,6 +51,8 @@ public class StartupDatabasePopulator {
 
   private ObjectMapper objectMapper;
 
+  private boolean regenerateData;
+
   @EventListener(ContextRefreshedEvent.class)
   public void seedDatabaseIfEmpty() {
     try {
@@ -77,12 +79,14 @@ public class StartupDatabasePopulator {
         usersPage = securityUserRepository.findAll(pageRequest);
       } while (usersPage.hasNext());
 
-      final String accountsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.ACCOUNTS_OUTPUT_FILE_NAME;
-      new JsonFileWriter<>(objectMapper, accountsOutputFile, accounts).write();
-      final String cardsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.CARDS_OUTPUT_FILE_NAME;
-      new JsonFileWriter<>(objectMapper, cardsOutputFile, cards).write();
-      final String loansOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.LOANS_OUTPUT_FILE_NAME;
-      new JsonFileWriter<>(objectMapper, loansOutputFile, loans).write();
+      if (regenerateData) {
+        final String accountsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.ACCOUNTS_OUTPUT_FILE_NAME;
+        new JsonFileWriter<>(objectMapper, accountsOutputFile, accounts).write();
+        final String cardsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.CARDS_OUTPUT_FILE_NAME;
+        new JsonFileWriter<>(objectMapper, cardsOutputFile, cards).write();
+        final String loansOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.LOANS_OUTPUT_FILE_NAME;
+        new JsonFileWriter<>(objectMapper, loansOutputFile, loans).write();
+      }
 
       log.info("Finished populating " + accounts.size() + " development environment accounts");
       log.info("Finished populating " + cards.size() + " development environment cards");
@@ -113,9 +117,11 @@ public class StartupDatabasePopulator {
         outputMap.add(userMap);
       }
 
-      final String outputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.USERS_OUTPUT_FILE_NAME;
-      new JsonFileWriter<>(objectMapper, outputFile, outputMap).write();
-      log.info(() -> "Finished populating " + users.size() + " development environment users");
+      if (regenerateData) {
+        final String outputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.USERS_OUTPUT_FILE_NAME;
+        new JsonFileWriter<>(objectMapper, outputFile, outputMap).write();
+        log.info(() -> "Finished populating " + users.size() + " development environment users");
+      }
     }
   }
 
@@ -127,8 +133,10 @@ public class StartupDatabasePopulator {
       final List<NoticeDetails> noticeDetails = exampleDataManager.getNoticeDetails();
       noticeDetailsRepository.saveAll(noticeDetails);
       final String outputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.NOTICES_OUTPUT_FILE_NAME;
-      new JsonFileWriter<>(objectMapper, outputFile, noticeDetails).write();
-      log.info(() -> "Finished populating " + noticeDetails.size() + " development environment notice details");
+      if (regenerateData) {
+        new JsonFileWriter<>(objectMapper, outputFile, noticeDetails).write();
+        log.info(() -> "Finished populating " + noticeDetails.size() + " development environment notice details");
+      }
     }
   }
 
@@ -140,8 +148,10 @@ public class StartupDatabasePopulator {
       final List<ContactMessage> contactMessages = exampleDataManager.getContactMessages();
       contactMessageRepository.saveAll(contactMessages);
       final String outputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.CONTACT_MESSAGES_OUTPUT_FILE_NAME;
-      new JsonFileWriter<>(objectMapper, outputFile, contactMessages).write();
-      log.info(() -> "Finished populating " + contactMessages.size() + " development environment contact messages");
+      if (regenerateData) {
+        new JsonFileWriter<>(objectMapper, outputFile, contactMessages).write();
+        log.info(() -> "Finished populating " + contactMessages.size() + " development environment contact messages");
+      }
     }
   }
 
