@@ -1,1 +1,5721 @@
-[ ]
+[ {
+  "loanNumber" : 1,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-05T15:38:28.787-04:00[America/New_York]",
+  "totalAmount" : 14081.46,
+  "amountPaid" : 8543.06,
+  "outstandingAmount" : 5538.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473357278-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 2,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-06T11:46:05.058-04:00[America/New_York]",
+  "totalAmount" : 249923.45,
+  "amountPaid" : 222.76,
+  "outstandingAmount" : 249700.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473603004-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 3,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-22T06:26:06.014-04:00[America/New_York]",
+  "totalAmount" : 352662.56,
+  "amountPaid" : 179368.70,
+  "outstandingAmount" : 173293.86,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473624414-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 4,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-23T06:02:30.807-04:00[America/New_York]",
+  "totalAmount" : 499694.42,
+  "amountPaid" : 432994.68,
+  "outstandingAmount" : 66699.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473633552-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 5,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-15T09:42:50.354-04:00[America/New_York]",
+  "totalAmount" : 324205.46,
+  "amountPaid" : 322115.29,
+  "outstandingAmount" : 2090.17,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473640034-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 6,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-02-25T20:11:40.965-05:00[America/New_York]",
+  "totalAmount" : 16308.08,
+  "amountPaid" : 12312.40,
+  "outstandingAmount" : 3995.68,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473645745-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 7,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-02T23:45:59.365-04:00[America/New_York]",
+  "totalAmount" : 237066.74,
+  "amountPaid" : 72878.39,
+  "outstandingAmount" : 164188.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473651666-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 8,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-20T05:05:36.421-04:00[America/New_York]",
+  "totalAmount" : 416022.20,
+  "amountPaid" : 271462.59,
+  "outstandingAmount" : 144559.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473657156-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 9,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-01T12:46:37.56-04:00[America/New_York]",
+  "totalAmount" : 169353.92,
+  "amountPaid" : 108673.84,
+  "outstandingAmount" : 60680.08,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473662757-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 10,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-14T16:36:25.761-04:00[America/New_York]",
+  "totalAmount" : 98916.62,
+  "amountPaid" : 68666.51,
+  "outstandingAmount" : 30250.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473668448-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 11,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-17T05:37:05.998-04:00[America/New_York]",
+  "totalAmount" : 122045.23,
+  "amountPaid" : 112038.53,
+  "outstandingAmount" : 10006.70,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473673878-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 12,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-19T23:31:43.703-04:00[America/New_York]",
+  "totalAmount" : 348242.65,
+  "amountPaid" : 54369.57,
+  "outstandingAmount" : 293873.08,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47367994-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 13,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-14T01:41:42.388-04:00[America/New_York]",
+  "totalAmount" : 291648.77,
+  "amountPaid" : 209820.09,
+  "outstandingAmount" : 81828.68,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47368559-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 14,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-09T00:25:54.953-05:00[America/New_York]",
+  "totalAmount" : 207534.26,
+  "amountPaid" : 44347.83,
+  "outstandingAmount" : 163186.43,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473691321-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 15,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-28T06:27:15.217-04:00[America/New_York]",
+  "totalAmount" : 246970.93,
+  "amountPaid" : 227062.78,
+  "outstandingAmount" : 19908.15,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473696862-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 16,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-09T06:57:06.746-04:00[America/New_York]",
+  "totalAmount" : 296301.58,
+  "amountPaid" : 190016.91,
+  "outstandingAmount" : 106284.67,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473702382-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 17,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-30T18:46:40.313-04:00[America/New_York]",
+  "totalAmount" : 327064.82,
+  "amountPaid" : 264579.93,
+  "outstandingAmount" : 62484.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473708203-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 18,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-21T06:55:27.212-04:00[America/New_York]",
+  "totalAmount" : 77626.73,
+  "amountPaid" : 68294.58,
+  "outstandingAmount" : 9332.15,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473713734-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 19,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-28T02:17:29.528-04:00[America/New_York]",
+  "totalAmount" : 369928.73,
+  "amountPaid" : 286018.85,
+  "outstandingAmount" : 83909.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473719204-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 20,
+  "userId" : 1,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-02T10:44:53.653-04:00[America/New_York]",
+  "totalAmount" : 163482.45,
+  "amountPaid" : 24036.08,
+  "outstandingAmount" : 139446.37,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473724875-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 21,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-06T07:36:22.603-04:00[America/New_York]",
+  "totalAmount" : 314024.99,
+  "amountPaid" : 256690.57,
+  "outstandingAmount" : 57334.42,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473730536-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 22,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-23T07:15:03.241-04:00[America/New_York]",
+  "totalAmount" : 296093.90,
+  "amountPaid" : 153265.52,
+  "outstandingAmount" : 142828.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473736437-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 23,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-26T09:04:25.908-04:00[America/New_York]",
+  "totalAmount" : 477189.69,
+  "amountPaid" : 235910.16,
+  "outstandingAmount" : 241279.53,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47374848-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 24,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-19T00:29:49.799-04:00[America/New_York]",
+  "totalAmount" : 426163.73,
+  "amountPaid" : 62821.74,
+  "outstandingAmount" : 363341.99,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473754411-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 25,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-15T19:50:02.117-04:00[America/New_York]",
+  "totalAmount" : 420003.35,
+  "amountPaid" : 13647.64,
+  "outstandingAmount" : 406355.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473759911-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 26,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-29T14:08:58.323-04:00[America/New_York]",
+  "totalAmount" : 181281.01,
+  "amountPaid" : 12433.69,
+  "outstandingAmount" : 168847.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473765712-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 27,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-27T05:02:46.46-04:00[America/New_York]",
+  "totalAmount" : 323193.06,
+  "amountPaid" : 231652.54,
+  "outstandingAmount" : 91540.52,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473771333-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 28,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-07T22:40:35.626-05:00[America/New_York]",
+  "totalAmount" : 470334.08,
+  "amountPaid" : 108765.23,
+  "outstandingAmount" : 361568.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473776923-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 29,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-18T12:32:06.19-04:00[America/New_York]",
+  "totalAmount" : 111136.14,
+  "amountPaid" : 91404.09,
+  "outstandingAmount" : 19732.05,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473782464-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 30,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-07T02:39:56.029-04:00[America/New_York]",
+  "totalAmount" : 312247.79,
+  "amountPaid" : 223916.34,
+  "outstandingAmount" : 88331.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473787994-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 31,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-14T16:46:16.218-04:00[America/New_York]",
+  "totalAmount" : 496036.06,
+  "amountPaid" : 323774.50,
+  "outstandingAmount" : 172261.56,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473793495-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 32,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-18T05:28:41.135-04:00[America/New_York]",
+  "totalAmount" : 229865.38,
+  "amountPaid" : 69226.66,
+  "outstandingAmount" : 160638.72,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473799206-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 33,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-25T03:53:31.547-04:00[America/New_York]",
+  "totalAmount" : 439840.38,
+  "amountPaid" : 211485.99,
+  "outstandingAmount" : 228354.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473804576-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 34,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-25T19:31:03.945-04:00[America/New_York]",
+  "totalAmount" : 152295.35,
+  "amountPaid" : 119871.11,
+  "outstandingAmount" : 32424.24,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473810487-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 35,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-01T17:31:44.821-04:00[America/New_York]",
+  "totalAmount" : 353471.53,
+  "amountPaid" : 158236.50,
+  "outstandingAmount" : 195235.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473816518-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 36,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-03T08:34:38.273-04:00[America/New_York]",
+  "totalAmount" : 471543.56,
+  "amountPaid" : 373579.29,
+  "outstandingAmount" : 97964.27,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473821909-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 37,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-18T17:39:23.818-04:00[America/New_York]",
+  "totalAmount" : 385440.41,
+  "amountPaid" : 275806.69,
+  "outstandingAmount" : 109633.72,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473827209-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 38,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-23T14:12:26.396-04:00[America/New_York]",
+  "totalAmount" : 321750.96,
+  "amountPaid" : 292096.12,
+  "outstandingAmount" : 29654.84,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473832769-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 39,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-28T03:45:33.184-04:00[America/New_York]",
+  "totalAmount" : 424413.32,
+  "amountPaid" : 182047.55,
+  "outstandingAmount" : 242365.77,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47383844-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 40,
+  "userId" : 2,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-16T01:09:25.787-04:00[America/New_York]",
+  "totalAmount" : 11857.22,
+  "amountPaid" : 4864.84,
+  "outstandingAmount" : 6992.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473844141-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 41,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-17T16:59:48.219-04:00[America/New_York]",
+  "totalAmount" : 232802.31,
+  "amountPaid" : 65820.55,
+  "outstandingAmount" : 166981.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473849952-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 42,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-09T02:36:19.365-05:00[America/New_York]",
+  "totalAmount" : 455010.55,
+  "amountPaid" : 432010.70,
+  "outstandingAmount" : 22999.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473855412-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 43,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-26T14:51:41.67-04:00[America/New_York]",
+  "totalAmount" : 210949.58,
+  "amountPaid" : 158068.63,
+  "outstandingAmount" : 52880.95,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473860903-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 44,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-11T11:54:19.753-04:00[America/New_York]",
+  "totalAmount" : 400544.08,
+  "amountPaid" : 356261.67,
+  "outstandingAmount" : 44282.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473871994-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 45,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-01T08:08:10.797-04:00[America/New_York]",
+  "totalAmount" : 473975.94,
+  "amountPaid" : 125481.36,
+  "outstandingAmount" : 348494.58,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473877945-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 46,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-26T06:39:59.402-04:00[America/New_York]",
+  "totalAmount" : 236839.07,
+  "amountPaid" : 53978.84,
+  "outstandingAmount" : 182860.23,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473883636-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 47,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-23T18:37:15.064-04:00[America/New_York]",
+  "totalAmount" : 455863.78,
+  "amountPaid" : 421666.25,
+  "outstandingAmount" : 34197.53,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473889477-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 48,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-29T08:12:36.451-04:00[America/New_York]",
+  "totalAmount" : 185895.25,
+  "amountPaid" : 50106.55,
+  "outstandingAmount" : 135788.70,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473894867-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 49,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-22T04:42:57.989-04:00[America/New_York]",
+  "totalAmount" : 397844.96,
+  "amountPaid" : 196181.02,
+  "outstandingAmount" : 201663.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473900377-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 50,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-11T22:46:24.769-04:00[America/New_York]",
+  "totalAmount" : 432928.68,
+  "amountPaid" : 207599.66,
+  "outstandingAmount" : 225329.02,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473906519-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 51,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-06T18:11:12.454-04:00[America/New_York]",
+  "totalAmount" : 320663.61,
+  "amountPaid" : 246283.19,
+  "outstandingAmount" : 74380.42,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.473912761-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 52,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-23T00:14:36.601-04:00[America/New_York]",
+  "totalAmount" : 76817.30,
+  "amountPaid" : 14812.19,
+  "outstandingAmount" : 62005.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474065741-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 53,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-21T08:31:21.425-04:00[America/New_York]",
+  "totalAmount" : 42784.62,
+  "amountPaid" : 26344.39,
+  "outstandingAmount" : 16440.23,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47408628-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 54,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-04T03:59:40.023-04:00[America/New_York]",
+  "totalAmount" : 239714.69,
+  "amountPaid" : 25166.46,
+  "outstandingAmount" : 214548.23,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474094024-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 55,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-11T03:27:13.532-04:00[America/New_York]",
+  "totalAmount" : 499117.64,
+  "amountPaid" : 106611.70,
+  "outstandingAmount" : 392505.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474100046-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 56,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-27T08:06:06.184-04:00[America/New_York]",
+  "totalAmount" : 136652.11,
+  "amountPaid" : 98427.81,
+  "outstandingAmount" : 38224.30,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474105576-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 57,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-10T06:49:39.355-04:00[America/New_York]",
+  "totalAmount" : 367327.32,
+  "amountPaid" : 113422.22,
+  "outstandingAmount" : 253905.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474111287-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 58,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-21T08:11:56.597-04:00[America/New_York]",
+  "totalAmount" : 18449.38,
+  "amountPaid" : 3375.77,
+  "outstandingAmount" : 15073.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474117188-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 59,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-05T12:44:06.901-04:00[America/New_York]",
+  "totalAmount" : 261299.82,
+  "amountPaid" : 141451.93,
+  "outstandingAmount" : 119847.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474122739-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 60,
+  "userId" : 3,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-21T21:14:32.605-04:00[America/New_York]",
+  "totalAmount" : 33754.65,
+  "amountPaid" : 5653.64,
+  "outstandingAmount" : 28101.01,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474128189-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 61,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-08T20:47:02.903-04:00[America/New_York]",
+  "totalAmount" : 413836.02,
+  "amountPaid" : 55002.63,
+  "outstandingAmount" : 358833.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474133619-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 62,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-05T17:56:50.541-04:00[America/New_York]",
+  "totalAmount" : 348533.62,
+  "amountPaid" : 262535.92,
+  "outstandingAmount" : 85997.70,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47413922-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 63,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-11T06:07:35.343-04:00[America/New_York]",
+  "totalAmount" : 433141.78,
+  "amountPaid" : 212950.00,
+  "outstandingAmount" : 220191.78,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.4741447-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 64,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-17T09:01:36.75-04:00[America/New_York]",
+  "totalAmount" : 143828.40,
+  "amountPaid" : 66162.20,
+  "outstandingAmount" : 77666.20,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474325543-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 65,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-06T16:00:00.06-04:00[America/New_York]",
+  "totalAmount" : 40185.45,
+  "amountPaid" : 21471.10,
+  "outstandingAmount" : 18714.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474421405-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 66,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-15T07:55:52.963-04:00[America/New_York]",
+  "totalAmount" : 95106.25,
+  "amountPaid" : 82678.89,
+  "outstandingAmount" : 12427.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474431333-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 67,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-09T23:40:09.957-04:00[America/New_York]",
+  "totalAmount" : 306493.00,
+  "amountPaid" : 237909.81,
+  "outstandingAmount" : 68583.19,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474438226-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 68,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-13T04:24:49.356-04:00[America/New_York]",
+  "totalAmount" : 319018.73,
+  "amountPaid" : 162141.66,
+  "outstandingAmount" : 156877.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474444629-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 69,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-10T04:01:09.066-04:00[America/New_York]",
+  "totalAmount" : 134451.14,
+  "amountPaid" : 65878.80,
+  "outstandingAmount" : 68572.34,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474451061-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 70,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-22T20:53:09.64-04:00[America/New_York]",
+  "totalAmount" : 105891.31,
+  "amountPaid" : 97482.97,
+  "outstandingAmount" : 8408.34,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474457573-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 71,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-10T16:53:20.023-04:00[America/New_York]",
+  "totalAmount" : 484688.64,
+  "amountPaid" : 234286.89,
+  "outstandingAmount" : 250401.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474464055-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 72,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-11T14:55:07.525-04:00[America/New_York]",
+  "totalAmount" : 488764.00,
+  "amountPaid" : 49835.32,
+  "outstandingAmount" : 438928.68,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474470568-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 73,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-13T05:21:26.873-04:00[America/New_York]",
+  "totalAmount" : 67606.25,
+  "amountPaid" : 20133.92,
+  "outstandingAmount" : 47472.33,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47447705-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 74,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-22T03:18:16.924-04:00[America/New_York]",
+  "totalAmount" : 42303.10,
+  "amountPaid" : 30629.84,
+  "outstandingAmount" : 11673.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474483121-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 75,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-28T15:23:30.258-04:00[America/New_York]",
+  "totalAmount" : 148625.40,
+  "amountPaid" : 130430.06,
+  "outstandingAmount" : 18195.34,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474489704-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 76,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-03T03:52:31.7-04:00[America/New_York]",
+  "totalAmount" : 397404.55,
+  "amountPaid" : 327527.43,
+  "outstandingAmount" : 69877.12,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474496056-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 77,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-29T23:22:51.911-04:00[America/New_York]",
+  "totalAmount" : 469226.23,
+  "amountPaid" : 5132.90,
+  "outstandingAmount" : 464093.33,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474502348-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 78,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-05T14:16:14.359-04:00[America/New_York]",
+  "totalAmount" : 349809.05,
+  "amountPaid" : 309781.70,
+  "outstandingAmount" : 40027.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47450852-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 79,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-15T09:08:55.363-04:00[America/New_York]",
+  "totalAmount" : 258344.99,
+  "amountPaid" : 24239.09,
+  "outstandingAmount" : 234105.90,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474514661-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 80,
+  "userId" : 4,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-22T15:01:54.302-04:00[America/New_York]",
+  "totalAmount" : 193549.41,
+  "amountPaid" : 93809.38,
+  "outstandingAmount" : 99740.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474520643-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 81,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-31T14:48:48.722-04:00[America/New_York]",
+  "totalAmount" : 301201.30,
+  "amountPaid" : 5069.00,
+  "outstandingAmount" : 296132.30,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474526814-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 82,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-26T13:28:59.797-04:00[America/New_York]",
+  "totalAmount" : 302550.33,
+  "amountPaid" : 281558.15,
+  "outstandingAmount" : 20992.18,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474533046-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 83,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-02T06:15:13.749-04:00[America/New_York]",
+  "totalAmount" : 195125.55,
+  "amountPaid" : 44172.33,
+  "outstandingAmount" : 150953.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474539108-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 84,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-11T00:26:29.856-04:00[America/New_York]",
+  "totalAmount" : 156200.93,
+  "amountPaid" : 89524.71,
+  "outstandingAmount" : 66676.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47454563-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 85,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-30T22:42:48.521-04:00[America/New_York]",
+  "totalAmount" : 234456.68,
+  "amountPaid" : 61145.52,
+  "outstandingAmount" : 173311.16,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474551762-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 86,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-12T10:27:56.302-04:00[America/New_York]",
+  "totalAmount" : 207220.41,
+  "amountPaid" : 146000.51,
+  "outstandingAmount" : 61219.90,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474558454-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 87,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-04T16:00:11.184-04:00[America/New_York]",
+  "totalAmount" : 339080.80,
+  "amountPaid" : 105815.98,
+  "outstandingAmount" : 233264.82,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474575947-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 88,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-15T04:21:00.451-04:00[America/New_York]",
+  "totalAmount" : 292637.10,
+  "amountPaid" : 67765.09,
+  "outstandingAmount" : 224872.01,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474582279-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 89,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-29T07:26:38.315-04:00[America/New_York]",
+  "totalAmount" : 323680.73,
+  "amountPaid" : 198765.66,
+  "outstandingAmount" : 124915.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474588351-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 90,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-06T16:15:18.896-04:00[America/New_York]",
+  "totalAmount" : 171201.25,
+  "amountPaid" : 92885.49,
+  "outstandingAmount" : 78315.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474594583-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 91,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-13T15:31:47.534-04:00[America/New_York]",
+  "totalAmount" : 47267.06,
+  "amountPaid" : 33471.03,
+  "outstandingAmount" : 13796.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474601255-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 92,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-05T11:25:26.412-04:00[America/New_York]",
+  "totalAmount" : 53051.79,
+  "amountPaid" : 13075.82,
+  "outstandingAmount" : 39975.97,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474607247-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 93,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-21T00:29:04.303-04:00[America/New_York]",
+  "totalAmount" : 65060.80,
+  "amountPaid" : 57672.69,
+  "outstandingAmount" : 7388.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474613348-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 94,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-11T06:47:15.882-04:00[America/New_York]",
+  "totalAmount" : 89957.51,
+  "amountPaid" : 63762.16,
+  "outstandingAmount" : 26195.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47461936-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 95,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-02T13:19:03.536-04:00[America/New_York]",
+  "totalAmount" : 97298.04,
+  "amountPaid" : 35472.00,
+  "outstandingAmount" : 61826.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474625451-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 96,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-23T07:08:00.143-04:00[America/New_York]",
+  "totalAmount" : 366952.78,
+  "amountPaid" : 205666.98,
+  "outstandingAmount" : 161285.80,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474631753-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 97,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-21T21:57:20.057-04:00[America/New_York]",
+  "totalAmount" : 102026.99,
+  "amountPaid" : 100324.69,
+  "outstandingAmount" : 1702.30,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474637875-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 98,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-17T06:45:15.783-04:00[America/New_York]",
+  "totalAmount" : 118688.38,
+  "amountPaid" : 71871.84,
+  "outstandingAmount" : 46816.54,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474645279-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 99,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-11T18:55:16.511-04:00[America/New_York]",
+  "totalAmount" : 41467.48,
+  "amountPaid" : 20364.49,
+  "outstandingAmount" : 21102.99,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474651561-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 100,
+  "userId" : 5,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-03T20:20:40.41-04:00[America/New_York]",
+  "totalAmount" : 406317.50,
+  "amountPaid" : 326456.58,
+  "outstandingAmount" : 79860.92,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474657702-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 101,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-29T15:35:57.4-04:00[America/New_York]",
+  "totalAmount" : 434003.63,
+  "amountPaid" : 307036.97,
+  "outstandingAmount" : 126966.66,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474663664-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 102,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-20T03:27:17.548-04:00[America/New_York]",
+  "totalAmount" : 403237.37,
+  "amountPaid" : 101392.34,
+  "outstandingAmount" : 301845.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474829007-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 103,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-02T08:56:46.203-04:00[America/New_York]",
+  "totalAmount" : 26379.56,
+  "amountPaid" : 3126.14,
+  "outstandingAmount" : 23253.42,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474850337-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 104,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-20T22:03:17.421-04:00[America/New_York]",
+  "totalAmount" : 100506.78,
+  "amountPaid" : 34499.40,
+  "outstandingAmount" : 66007.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474858873-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 105,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-30T15:57:25.366-04:00[America/New_York]",
+  "totalAmount" : 273168.70,
+  "amountPaid" : 192621.51,
+  "outstandingAmount" : 80547.19,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474865506-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 106,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-03T20:07:09.248-04:00[America/New_York]",
+  "totalAmount" : 315259.82,
+  "amountPaid" : 166935.43,
+  "outstandingAmount" : 148324.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474871968-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 107,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-30T14:34:00.271-04:00[America/New_York]",
+  "totalAmount" : 463087.13,
+  "amountPaid" : 25322.44,
+  "outstandingAmount" : 437764.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47487821-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 108,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-05T07:34:47.193-04:00[America/New_York]",
+  "totalAmount" : 317936.18,
+  "amountPaid" : 113154.46,
+  "outstandingAmount" : 204781.72,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474884442-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 109,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-20T20:22:49.212-04:00[America/New_York]",
+  "totalAmount" : 284220.86,
+  "amountPaid" : 16174.38,
+  "outstandingAmount" : 268046.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474890694-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 110,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-02T19:58:42.895-04:00[America/New_York]",
+  "totalAmount" : 376648.24,
+  "amountPaid" : 265407.76,
+  "outstandingAmount" : 111240.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474896695-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 111,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-07T11:30:26.21-04:00[America/New_York]",
+  "totalAmount" : 282737.82,
+  "amountPaid" : 207832.27,
+  "outstandingAmount" : 74905.55,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474903358-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 112,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-24T22:33:08.536-04:00[America/New_York]",
+  "totalAmount" : 469505.35,
+  "amountPaid" : 195009.97,
+  "outstandingAmount" : 274495.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47490968-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 113,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-10T17:57:45.761-04:00[America/New_York]",
+  "totalAmount" : 102154.52,
+  "amountPaid" : 1309.16,
+  "outstandingAmount" : 100845.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474915911-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 114,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-24T08:23:12.063-04:00[America/New_York]",
+  "totalAmount" : 258215.53,
+  "amountPaid" : 183498.17,
+  "outstandingAmount" : 74717.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474922344-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 115,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-14T10:35:39.569-04:00[America/New_York]",
+  "totalAmount" : 392727.88,
+  "amountPaid" : 183684.58,
+  "outstandingAmount" : 209043.30,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474928425-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 116,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-28T04:35:19.87-04:00[America/New_York]",
+  "totalAmount" : 148785.05,
+  "amountPaid" : 15290.65,
+  "outstandingAmount" : 133494.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474934527-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 117,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-07T16:34:48.681-04:00[America/New_York]",
+  "totalAmount" : 193042.54,
+  "amountPaid" : 71854.15,
+  "outstandingAmount" : 121188.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474940558-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 118,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-02T07:01:11.304-04:00[America/New_York]",
+  "totalAmount" : 447635.92,
+  "amountPaid" : 316330.92,
+  "outstandingAmount" : 131305.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47494665-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 119,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-09T00:16:44.252-04:00[America/New_York]",
+  "totalAmount" : 328363.85,
+  "amountPaid" : 188089.08,
+  "outstandingAmount" : 140274.77,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474952711-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 120,
+  "userId" : 6,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-26T03:34:15.886-04:00[America/New_York]",
+  "totalAmount" : 153962.03,
+  "amountPaid" : 20839.67,
+  "outstandingAmount" : 133122.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474958963-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 121,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-11T01:49:15.343-04:00[America/New_York]",
+  "totalAmount" : 462826.90,
+  "amountPaid" : 3751.76,
+  "outstandingAmount" : 459075.14,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474965696-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 122,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-08T20:13:32.612-04:00[America/New_York]",
+  "totalAmount" : 481643.74,
+  "amountPaid" : 194326.10,
+  "outstandingAmount" : 287317.64,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474971677-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 123,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-23T21:15:21.904-04:00[America/New_York]",
+  "totalAmount" : 105032.05,
+  "amountPaid" : 96291.24,
+  "outstandingAmount" : 8740.81,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474977588-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 124,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-03T10:28:11.007-04:00[America/New_York]",
+  "totalAmount" : 196541.74,
+  "amountPaid" : 101156.74,
+  "outstandingAmount" : 95385.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47498392-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 125,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-20T21:15:34.666-04:00[America/New_York]",
+  "totalAmount" : 269117.01,
+  "amountPaid" : 9673.66,
+  "outstandingAmount" : 259443.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474990172-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 126,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-15T06:01:40.208-04:00[America/New_York]",
+  "totalAmount" : 357490.08,
+  "amountPaid" : 235536.29,
+  "outstandingAmount" : 121953.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.474996474-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 127,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-13T12:04:53.605-04:00[America/New_York]",
+  "totalAmount" : 165875.94,
+  "amountPaid" : 56551.01,
+  "outstandingAmount" : 109324.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475004048-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 128,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-06T01:28:36.868-04:00[America/New_York]",
+  "totalAmount" : 401808.89,
+  "amountPaid" : 78183.47,
+  "outstandingAmount" : 323625.42,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475206402-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 129,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-30T23:13:48.528-04:00[America/New_York]",
+  "totalAmount" : 80995.97,
+  "amountPaid" : 10292.60,
+  "outstandingAmount" : 70703.37,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475676222-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 130,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-12T10:23:55.301-04:00[America/New_York]",
+  "totalAmount" : 468657.16,
+  "amountPaid" : 395061.17,
+  "outstandingAmount" : 73595.99,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475688585-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 131,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-25T23:14:36.929-04:00[America/New_York]",
+  "totalAmount" : 159981.17,
+  "amountPaid" : 77517.04,
+  "outstandingAmount" : 82464.13,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47569631-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 132,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-13T08:29:22.802-04:00[America/New_York]",
+  "totalAmount" : 476045.68,
+  "amountPaid" : 365855.33,
+  "outstandingAmount" : 110190.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475703584-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 133,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-08T13:20:04.713-04:00[America/New_York]",
+  "totalAmount" : 131834.63,
+  "amountPaid" : 61516.10,
+  "outstandingAmount" : 70318.53,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475710527-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 134,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-20T14:36:11.413-04:00[America/New_York]",
+  "totalAmount" : 309830.60,
+  "amountPaid" : 146493.21,
+  "outstandingAmount" : 163337.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.4757175-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 135,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-13T12:09:48.875-04:00[America/New_York]",
+  "totalAmount" : 226068.58,
+  "amountPaid" : 113625.59,
+  "outstandingAmount" : 112442.99,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475724764-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 136,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-30T12:40:43.737-04:00[America/New_York]",
+  "totalAmount" : 215507.99,
+  "amountPaid" : 145818.11,
+  "outstandingAmount" : 69689.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475731928-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 137,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-12T16:22:51.218-04:00[America/New_York]",
+  "totalAmount" : 230113.34,
+  "amountPaid" : 196958.22,
+  "outstandingAmount" : 33155.12,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475739402-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 138,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-28T04:26:53.033-04:00[America/New_York]",
+  "totalAmount" : 116129.42,
+  "amountPaid" : 71606.39,
+  "outstandingAmount" : 44523.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475746505-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 139,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-28T09:09:43.76-04:00[America/New_York]",
+  "totalAmount" : 126694.88,
+  "amountPaid" : 22557.99,
+  "outstandingAmount" : 104136.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475753559-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 140,
+  "userId" : 7,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-18T20:39:02.994-04:00[America/New_York]",
+  "totalAmount" : 132159.32,
+  "amountPaid" : 57096.04,
+  "outstandingAmount" : 75063.28,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475760742-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 141,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-03T04:35:24.745-04:00[America/New_York]",
+  "totalAmount" : 483251.70,
+  "amountPaid" : 222076.05,
+  "outstandingAmount" : 261175.65,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475767776-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 142,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-31T04:14:02.395-04:00[America/New_York]",
+  "totalAmount" : 291593.91,
+  "amountPaid" : 165452.73,
+  "outstandingAmount" : 126141.18,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475774759-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 143,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-03T05:37:43.623-04:00[America/New_York]",
+  "totalAmount" : 397961.24,
+  "amountPaid" : 369461.14,
+  "outstandingAmount" : 28500.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475781932-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 144,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-16T20:59:17.622-04:00[America/New_York]",
+  "totalAmount" : 481162.55,
+  "amountPaid" : 176568.24,
+  "outstandingAmount" : 304594.31,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475789086-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 145,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-30T05:36:40.421-04:00[America/New_York]",
+  "totalAmount" : 239445.95,
+  "amountPaid" : 166840.81,
+  "outstandingAmount" : 72605.14,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47579662-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 146,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-10T23:25:56.142-04:00[America/New_York]",
+  "totalAmount" : 341931.31,
+  "amountPaid" : 97941.02,
+  "outstandingAmount" : 243990.29,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475803623-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 147,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-31T07:15:17.839-04:00[America/New_York]",
+  "totalAmount" : 369729.66,
+  "amountPaid" : 76566.72,
+  "outstandingAmount" : 293162.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475810506-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 148,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-07T02:17:41.162-04:00[America/New_York]",
+  "totalAmount" : 405129.53,
+  "amountPaid" : 161354.40,
+  "outstandingAmount" : 243775.13,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47581766-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 149,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-17T11:36:13.319-04:00[America/New_York]",
+  "totalAmount" : 392514.26,
+  "amountPaid" : 305243.10,
+  "outstandingAmount" : 87271.16,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475824713-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 150,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-29T14:05:29.647-04:00[America/New_York]",
+  "totalAmount" : 496519.29,
+  "amountPaid" : 57524.75,
+  "outstandingAmount" : 438994.54,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.475831697-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 151,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-16T11:08:41.642-04:00[America/New_York]",
+  "totalAmount" : 161347.17,
+  "amountPaid" : 128974.43,
+  "outstandingAmount" : 32372.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47583866-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 152,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-15T03:34:35.553-04:00[America/New_York]",
+  "totalAmount" : 380128.43,
+  "amountPaid" : 118785.65,
+  "outstandingAmount" : 261342.78,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476016266-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 153,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-12T08:24:10.39-04:00[America/New_York]",
+  "totalAmount" : 474749.86,
+  "amountPaid" : 182099.78,
+  "outstandingAmount" : 292650.08,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476038549-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 154,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-25T22:31:10.267-04:00[America/New_York]",
+  "totalAmount" : 384667.19,
+  "amountPaid" : 100443.45,
+  "outstandingAmount" : 284223.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476047996-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 155,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-19T18:13:53.895-04:00[America/New_York]",
+  "totalAmount" : 37877.77,
+  "amountPaid" : 19411.10,
+  "outstandingAmount" : 18466.67,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476055691-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 156,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-07T14:34:13.609-04:00[America/New_York]",
+  "totalAmount" : 368448.95,
+  "amountPaid" : 25928.55,
+  "outstandingAmount" : 342520.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476062875-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 157,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-16T01:21:30.916-04:00[America/New_York]",
+  "totalAmount" : 92781.88,
+  "amountPaid" : 92069.25,
+  "outstandingAmount" : 712.63,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476070279-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 158,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-06T02:39:36.568-04:00[America/New_York]",
+  "totalAmount" : 401135.21,
+  "amountPaid" : 217738.70,
+  "outstandingAmount" : 183396.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476077422-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 159,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-14T22:05:30.807-04:00[America/New_York]",
+  "totalAmount" : 311842.29,
+  "amountPaid" : 237192.39,
+  "outstandingAmount" : 74649.90,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476084415-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 160,
+  "userId" : 8,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-13T06:40:09.124-04:00[America/New_York]",
+  "totalAmount" : 293125.35,
+  "amountPaid" : 184993.47,
+  "outstandingAmount" : 108131.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476091469-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 161,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-24T04:43:27.456-04:00[America/New_York]",
+  "totalAmount" : 51444.11,
+  "amountPaid" : 17892.05,
+  "outstandingAmount" : 33552.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476098652-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 162,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-03T17:01:00.422-04:00[America/New_York]",
+  "totalAmount" : 125911.25,
+  "amountPaid" : 115591.63,
+  "outstandingAmount" : 10319.62,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476105666-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 163,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-03T16:33:50.34-04:00[America/New_York]",
+  "totalAmount" : 75465.98,
+  "amountPaid" : 41080.26,
+  "outstandingAmount" : 34385.72,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476112649-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 164,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-15T11:46:43.669-04:00[America/New_York]",
+  "totalAmount" : 139217.25,
+  "amountPaid" : 110806.22,
+  "outstandingAmount" : 28411.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476119592-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 165,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-23T18:46:04.463-04:00[America/New_York]",
+  "totalAmount" : 470651.51,
+  "amountPaid" : 270213.10,
+  "outstandingAmount" : 200438.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476127417-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 166,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-07T05:29:06.969-04:00[America/New_York]",
+  "totalAmount" : 413245.68,
+  "amountPaid" : 112153.64,
+  "outstandingAmount" : 301092.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47613452-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 167,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-08T23:34:40.15-04:00[America/New_York]",
+  "totalAmount" : 398433.97,
+  "amountPaid" : 129291.31,
+  "outstandingAmount" : 269142.66,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476141824-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 168,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-23T17:56:10.379-04:00[America/New_York]",
+  "totalAmount" : 416848.27,
+  "amountPaid" : 238142.87,
+  "outstandingAmount" : 178705.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476148807-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 169,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-19T00:06:56.172-04:00[America/New_York]",
+  "totalAmount" : 60284.55,
+  "amountPaid" : 26185.81,
+  "outstandingAmount" : 34098.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476156001-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 170,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-16T12:25:26.575-04:00[America/New_York]",
+  "totalAmount" : 84943.86,
+  "amountPaid" : 82851.21,
+  "outstandingAmount" : 2092.65,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476163205-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 171,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-25T13:15:31.389-04:00[America/New_York]",
+  "totalAmount" : 476154.48,
+  "amountPaid" : 138370.36,
+  "outstandingAmount" : 337784.12,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476170599-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 172,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-29T10:21:40.42-04:00[America/New_York]",
+  "totalAmount" : 291002.50,
+  "amountPaid" : 160533.70,
+  "outstandingAmount" : 130468.80,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476198191-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 173,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-18T00:08:37.613-04:00[America/New_York]",
+  "totalAmount" : 228081.35,
+  "amountPaid" : 53315.54,
+  "outstandingAmount" : 174765.81,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476205645-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 174,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-27T07:24:30.355-04:00[America/New_York]",
+  "totalAmount" : 212916.52,
+  "amountPaid" : 153370.20,
+  "outstandingAmount" : 59546.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476212759-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 175,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-14T23:07:01.107-04:00[America/New_York]",
+  "totalAmount" : 203529.90,
+  "amountPaid" : 106637.02,
+  "outstandingAmount" : 96892.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476219942-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 176,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-19T07:17:16.795-04:00[America/New_York]",
+  "totalAmount" : 483078.71,
+  "amountPaid" : 396930.39,
+  "outstandingAmount" : 86148.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476227306-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 177,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-17T07:30:37.789-04:00[America/New_York]",
+  "totalAmount" : 55537.65,
+  "amountPaid" : 48175.41,
+  "outstandingAmount" : 7362.24,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476234329-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 178,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-13T04:28:02.306-04:00[America/New_York]",
+  "totalAmount" : 65987.92,
+  "amountPaid" : 7529.16,
+  "outstandingAmount" : 58458.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476241573-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 179,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-03T09:21:45.565-04:00[America/New_York]",
+  "totalAmount" : 109235.64,
+  "amountPaid" : 60630.95,
+  "outstandingAmount" : 48604.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476248867-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 180,
+  "userId" : 9,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-18T12:49:31.457-04:00[America/New_York]",
+  "totalAmount" : 409202.48,
+  "amountPaid" : 359271.74,
+  "outstandingAmount" : 49930.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47625595-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 181,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-06T22:46:19.69-04:00[America/New_York]",
+  "totalAmount" : 26814.60,
+  "amountPaid" : 13749.97,
+  "outstandingAmount" : 13064.63,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476263064-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 182,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-01T15:18:06.613-05:00[America/New_York]",
+  "totalAmount" : 155961.78,
+  "amountPaid" : 85925.80,
+  "outstandingAmount" : 70035.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476270117-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 183,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-23T05:56:53.279-04:00[America/New_York]",
+  "totalAmount" : 365506.85,
+  "amountPaid" : 298170.87,
+  "outstandingAmount" : 67335.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476277261-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 184,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-12T12:48:04.193-04:00[America/New_York]",
+  "totalAmount" : 90296.07,
+  "amountPaid" : 6371.56,
+  "outstandingAmount" : 83924.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476284274-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 185,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-06T14:31:50.512-04:00[America/New_York]",
+  "totalAmount" : 55654.33,
+  "amountPaid" : 25945.55,
+  "outstandingAmount" : 29708.78,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476291107-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 186,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-26T08:58:20.852-04:00[America/New_York]",
+  "totalAmount" : 377945.15,
+  "amountPaid" : 321319.05,
+  "outstandingAmount" : 56626.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47629807-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 187,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-16T05:48:02.217-04:00[America/New_York]",
+  "totalAmount" : 98432.88,
+  "amountPaid" : 47824.75,
+  "outstandingAmount" : 50608.13,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476305094-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 188,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-04T09:57:09.27-04:00[America/New_York]",
+  "totalAmount" : 218906.06,
+  "amountPaid" : 13910.56,
+  "outstandingAmount" : 204995.50,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476312067-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 189,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-10T06:38:00.243-04:00[America/New_York]",
+  "totalAmount" : 385303.36,
+  "amountPaid" : 240611.10,
+  "outstandingAmount" : 144692.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47631921-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 190,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-01T13:34:55.067-04:00[America/New_York]",
+  "totalAmount" : 349929.97,
+  "amountPaid" : 57483.18,
+  "outstandingAmount" : 292446.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476326364-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 191,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-29T04:02:19.292-04:00[America/New_York]",
+  "totalAmount" : 183759.60,
+  "amountPaid" : 43013.43,
+  "outstandingAmount" : 140746.17,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476347965-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 192,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-11T10:59:52.476-04:00[America/New_York]",
+  "totalAmount" : 137788.94,
+  "amountPaid" : 112380.10,
+  "outstandingAmount" : 25408.84,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476374826-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 193,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-30T06:03:57.244-04:00[America/New_York]",
+  "totalAmount" : 216443.80,
+  "amountPaid" : 23960.08,
+  "outstandingAmount" : 192483.72,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476393-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 194,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-10T01:29:34.371-04:00[America/New_York]",
+  "totalAmount" : 236632.47,
+  "amountPaid" : 155350.78,
+  "outstandingAmount" : 81281.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476411645-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 195,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-20T03:36:55.76-04:00[America/New_York]",
+  "totalAmount" : 463199.50,
+  "amountPaid" : 163900.88,
+  "outstandingAmount" : 299298.62,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476427776-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 196,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-03T08:21:05.647-04:00[America/New_York]",
+  "totalAmount" : 345254.42,
+  "amountPaid" : 200187.89,
+  "outstandingAmount" : 145066.53,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476443185-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 197,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-03T12:18:42.622-04:00[America/New_York]",
+  "totalAmount" : 188132.42,
+  "amountPaid" : 102465.06,
+  "outstandingAmount" : 85667.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476458554-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 198,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-05T14:34:52.506-04:00[America/New_York]",
+  "totalAmount" : 342590.45,
+  "amountPaid" : 153525.64,
+  "outstandingAmount" : 189064.81,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476474495-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 199,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-17T05:22:11.408-04:00[America/New_York]",
+  "totalAmount" : 446249.66,
+  "amountPaid" : 354080.12,
+  "outstandingAmount" : 92169.54,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476490455-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 200,
+  "userId" : 10,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-14T21:22:18.144-04:00[America/New_York]",
+  "totalAmount" : 462266.49,
+  "amountPaid" : 195649.17,
+  "outstandingAmount" : 266617.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476507287-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 201,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-16T17:00:36.429-04:00[America/New_York]",
+  "totalAmount" : 136747.40,
+  "amountPaid" : 62591.70,
+  "outstandingAmount" : 74155.70,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476524239-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 202,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-15T17:48:24.512-04:00[America/New_York]",
+  "totalAmount" : 209518.27,
+  "amountPaid" : 70204.42,
+  "outstandingAmount" : 139313.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476691406-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 203,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-10T05:40:48.438-04:00[America/New_York]",
+  "totalAmount" : 312517.46,
+  "amountPaid" : 181497.55,
+  "outstandingAmount" : 131019.91,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47672006-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 204,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-09T06:46:21.468-04:00[America/New_York]",
+  "totalAmount" : 256302.48,
+  "amountPaid" : 196247.63,
+  "outstandingAmount" : 60054.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476731061-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 205,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-30T16:13:24.221-04:00[America/New_York]",
+  "totalAmount" : 217943.09,
+  "amountPaid" : 76815.05,
+  "outstandingAmount" : 141128.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476738415-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 206,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-21T21:34:41.469-04:00[America/New_York]",
+  "totalAmount" : 402919.74,
+  "amountPaid" : 311934.00,
+  "outstandingAmount" : 90985.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476745067-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 207,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-24T00:59:30.795-04:00[America/New_York]",
+  "totalAmount" : 499554.17,
+  "amountPaid" : 71140.95,
+  "outstandingAmount" : 428413.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47675179-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 208,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-22T20:10:59.942-04:00[America/New_York]",
+  "totalAmount" : 46969.73,
+  "amountPaid" : 20591.00,
+  "outstandingAmount" : 26378.73,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476758603-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 209,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-06T10:22:34.981-04:00[America/New_York]",
+  "totalAmount" : 246612.38,
+  "amountPaid" : 223558.29,
+  "outstandingAmount" : 23054.09,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476765065-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 210,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-16T04:22:23.844-04:00[America/New_York]",
+  "totalAmount" : 372958.77,
+  "amountPaid" : 238316.16,
+  "outstandingAmount" : 134642.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476771577-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 211,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-12T05:20:33.949-04:00[America/New_York]",
+  "totalAmount" : 121196.28,
+  "amountPaid" : 2138.67,
+  "outstandingAmount" : 119057.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47677821-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 212,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-22T14:06:45.244-04:00[America/New_York]",
+  "totalAmount" : 248380.21,
+  "amountPaid" : 189253.34,
+  "outstandingAmount" : 59126.87,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476784672-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 213,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-16T00:41:50.415-04:00[America/New_York]",
+  "totalAmount" : 439857.03,
+  "amountPaid" : 361227.58,
+  "outstandingAmount" : 78629.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476791165-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 214,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-25T14:45:51.423-04:00[America/New_York]",
+  "totalAmount" : 474587.85,
+  "amountPaid" : 116274.68,
+  "outstandingAmount" : 358313.17,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476797737-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 215,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-04T23:21:57.53-04:00[America/New_York]",
+  "totalAmount" : 341414.71,
+  "amountPaid" : 159305.68,
+  "outstandingAmount" : 182109.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47680434-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 216,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-15T18:15:38.038-04:00[America/New_York]",
+  "totalAmount" : 293282.87,
+  "amountPaid" : 42214.32,
+  "outstandingAmount" : 251068.55,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476810752-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 217,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-24T19:48:01.955-04:00[America/New_York]",
+  "totalAmount" : 377965.76,
+  "amountPaid" : 307927.90,
+  "outstandingAmount" : 70037.86,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476817204-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 218,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-01T19:20:24.149-04:00[America/New_York]",
+  "totalAmount" : 61934.35,
+  "amountPaid" : 8952.74,
+  "outstandingAmount" : 52981.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476823756-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 219,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-02T03:00:12.906-04:00[America/New_York]",
+  "totalAmount" : 208671.80,
+  "amountPaid" : 98732.16,
+  "outstandingAmount" : 109939.64,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476830098-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 220,
+  "userId" : 11,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-03T08:44:01.886-04:00[America/New_York]",
+  "totalAmount" : 123953.91,
+  "amountPaid" : 86267.98,
+  "outstandingAmount" : 37685.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476836641-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 221,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-30T02:37:20.465-04:00[America/New_York]",
+  "totalAmount" : 348400.10,
+  "amountPaid" : 90347.22,
+  "outstandingAmount" : 258052.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476843223-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 222,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-04T14:42:57.64-04:00[America/New_York]",
+  "totalAmount" : 231944.61,
+  "amountPaid" : 44334.69,
+  "outstandingAmount" : 187609.92,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476849675-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 223,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-02-28T23:29:00.571-05:00[America/New_York]",
+  "totalAmount" : 385786.11,
+  "amountPaid" : 247763.52,
+  "outstandingAmount" : 138022.59,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476856428-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 224,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-18T13:42:38.636-04:00[America/New_York]",
+  "totalAmount" : 84844.66,
+  "amountPaid" : 31421.53,
+  "outstandingAmount" : 53423.13,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.4768628-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 225,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-28T23:10:21.401-04:00[America/New_York]",
+  "totalAmount" : 417788.17,
+  "amountPaid" : 402753.79,
+  "outstandingAmount" : 15034.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476869313-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 226,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-26T04:54:10.532-04:00[America/New_York]",
+  "totalAmount" : 192285.87,
+  "amountPaid" : 71789.27,
+  "outstandingAmount" : 120496.60,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476876146-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 227,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-05T09:02:37.355-05:00[America/New_York]",
+  "totalAmount" : 320305.05,
+  "amountPaid" : 157531.93,
+  "outstandingAmount" : 162773.12,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476882768-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 228,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-05T10:54:22.87-04:00[America/New_York]",
+  "totalAmount" : 441987.56,
+  "amountPaid" : 51357.09,
+  "outstandingAmount" : 390630.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476889461-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 229,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-12T02:11:19.708-04:00[America/New_York]",
+  "totalAmount" : 416926.17,
+  "amountPaid" : 250504.77,
+  "outstandingAmount" : 166421.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476896254-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 230,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-31T03:35:23.594-04:00[America/New_York]",
+  "totalAmount" : 238505.99,
+  "amountPaid" : 219002.21,
+  "outstandingAmount" : 19503.78,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476903026-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 231,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-07T16:57:59.579-05:00[America/New_York]",
+  "totalAmount" : 370385.30,
+  "amountPaid" : 236787.90,
+  "outstandingAmount" : 133597.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47691004-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 232,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-26T04:07:47.121-04:00[America/New_York]",
+  "totalAmount" : 284159.69,
+  "amountPaid" : 157764.30,
+  "outstandingAmount" : 126395.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476916472-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 233,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-12T19:57:48.549-04:00[America/New_York]",
+  "totalAmount" : 103787.68,
+  "amountPaid" : 28665.40,
+  "outstandingAmount" : 75122.28,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476922924-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 234,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-19T03:32:44.344-04:00[America/New_York]",
+  "totalAmount" : 315451.00,
+  "amountPaid" : 51825.61,
+  "outstandingAmount" : 263625.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476929607-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 235,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-19T16:54:33.767-04:00[America/New_York]",
+  "totalAmount" : 311181.07,
+  "amountPaid" : 119015.99,
+  "outstandingAmount" : 192165.08,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47693648-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 236,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-24T11:25:43.008-04:00[America/New_York]",
+  "totalAmount" : 460804.21,
+  "amountPaid" : 311852.85,
+  "outstandingAmount" : 148951.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476942912-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 237,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-10T04:15:04.566-04:00[America/New_York]",
+  "totalAmount" : 239540.92,
+  "amountPaid" : 178831.61,
+  "outstandingAmount" : 60709.31,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476949324-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 238,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-16T21:45:58.342-04:00[America/New_York]",
+  "totalAmount" : 287940.43,
+  "amountPaid" : 202706.57,
+  "outstandingAmount" : 85233.86,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476955817-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 239,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-10T02:07:36.913-04:00[America/New_York]",
+  "totalAmount" : 346740.14,
+  "amountPaid" : 60674.18,
+  "outstandingAmount" : 286065.96,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476962329-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 240,
+  "userId" : 12,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-10T11:36:10.687-04:00[America/New_York]",
+  "totalAmount" : 21709.71,
+  "amountPaid" : 1146.24,
+  "outstandingAmount" : 20563.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476968841-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 241,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-12T20:45:13.829-04:00[America/New_York]",
+  "totalAmount" : 412573.59,
+  "amountPaid" : 321292.70,
+  "outstandingAmount" : 91280.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476975474-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 242,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-07T04:17:33.875-04:00[America/New_York]",
+  "totalAmount" : 205700.53,
+  "amountPaid" : 60828.64,
+  "outstandingAmount" : 144871.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476982036-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 243,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-16T07:20:16.609-04:00[America/New_York]",
+  "totalAmount" : 462407.73,
+  "amountPaid" : 229561.44,
+  "outstandingAmount" : 232846.29,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476988498-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 244,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-04T01:31:17.289-04:00[America/New_York]",
+  "totalAmount" : 123447.20,
+  "amountPaid" : 8890.72,
+  "outstandingAmount" : 114556.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.476994931-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 245,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-09T20:20:41.388-04:00[America/New_York]",
+  "totalAmount" : 225525.72,
+  "amountPaid" : 34891.40,
+  "outstandingAmount" : 190634.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477001643-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 246,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-29T09:37:31.399-04:00[America/New_York]",
+  "totalAmount" : 317555.19,
+  "amountPaid" : 14407.13,
+  "outstandingAmount" : 303148.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477009228-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 247,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-03T20:10:39.302-04:00[America/New_York]",
+  "totalAmount" : 322738.22,
+  "amountPaid" : 199102.46,
+  "outstandingAmount" : 123635.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.4770156-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 248,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-10T20:43:56.883-04:00[America/New_York]",
+  "totalAmount" : 457565.02,
+  "amountPaid" : 317424.50,
+  "outstandingAmount" : 140140.52,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477022072-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 249,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-16T09:25:00.731-04:00[America/New_York]",
+  "totalAmount" : 170330.27,
+  "amountPaid" : 139811.55,
+  "outstandingAmount" : 30518.72,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477028614-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 250,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-04T17:52:45.063-04:00[America/New_York]",
+  "totalAmount" : 99874.75,
+  "amountPaid" : 35698.30,
+  "outstandingAmount" : 64176.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477035057-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 251,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-17T11:00:18.544-04:00[America/New_York]",
+  "totalAmount" : 449914.58,
+  "amountPaid" : 340139.41,
+  "outstandingAmount" : 109775.17,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477041679-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 252,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-24T12:31:24.458-04:00[America/New_York]",
+  "totalAmount" : 205541.55,
+  "amountPaid" : 45457.86,
+  "outstandingAmount" : 160083.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477172427-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 253,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-12T02:06:30.116-04:00[America/New_York]",
+  "totalAmount" : 476261.45,
+  "amountPaid" : 324709.93,
+  "outstandingAmount" : 151551.52,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477192635-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 254,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-23T17:45:18.509-04:00[America/New_York]",
+  "totalAmount" : 464282.62,
+  "amountPaid" : 72229.56,
+  "outstandingAmount" : 392053.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477200891-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 255,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-14T02:25:22.568-04:00[America/New_York]",
+  "totalAmount" : 27675.72,
+  "amountPaid" : 3778.41,
+  "outstandingAmount" : 23897.31,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477209076-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 256,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-28T21:57:17.469-04:00[America/New_York]",
+  "totalAmount" : 335495.73,
+  "amountPaid" : 199418.32,
+  "outstandingAmount" : 136077.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477224946-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 257,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-11T08:43:01.355-04:00[America/New_York]",
+  "totalAmount" : 135991.02,
+  "amountPaid" : 73296.50,
+  "outstandingAmount" : 62694.52,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477240005-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 258,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-09T02:06:52.722-04:00[America/New_York]",
+  "totalAmount" : 79619.71,
+  "amountPaid" : 69492.29,
+  "outstandingAmount" : 10127.42,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477248641-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 259,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-16T05:42:50.255-04:00[America/New_York]",
+  "totalAmount" : 395751.63,
+  "amountPaid" : 171198.70,
+  "outstandingAmount" : 224552.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477255194-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 260,
+  "userId" : 13,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-06T07:18:34.79-04:00[America/New_York]",
+  "totalAmount" : 135655.32,
+  "amountPaid" : 95330.46,
+  "outstandingAmount" : 40324.86,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477261796-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 261,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-25T18:09:07.005-04:00[America/New_York]",
+  "totalAmount" : 274652.28,
+  "amountPaid" : 184946.44,
+  "outstandingAmount" : 89705.84,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477268258-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 262,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-04T05:01:59.797-04:00[America/New_York]",
+  "totalAmount" : 263166.58,
+  "amountPaid" : 187148.13,
+  "outstandingAmount" : 76018.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477274661-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 263,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-21T02:47:41.836-04:00[America/New_York]",
+  "totalAmount" : 269806.23,
+  "amountPaid" : 30312.35,
+  "outstandingAmount" : 239493.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477281083-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 264,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-22T23:01:26.366-04:00[America/New_York]",
+  "totalAmount" : 479583.11,
+  "amountPaid" : 103905.77,
+  "outstandingAmount" : 375677.34,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477287936-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 265,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-30T16:43:47.869-04:00[America/New_York]",
+  "totalAmount" : 346911.88,
+  "amountPaid" : 198792.78,
+  "outstandingAmount" : 148119.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477294548-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 266,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-21T11:04:38.021-04:00[America/New_York]",
+  "totalAmount" : 66123.59,
+  "amountPaid" : 44356.78,
+  "outstandingAmount" : 21766.81,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47730081-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 267,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-23T15:14:13.409-04:00[America/New_York]",
+  "totalAmount" : 81888.23,
+  "amountPaid" : 14343.57,
+  "outstandingAmount" : 67544.66,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477307192-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 268,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-22T23:36:55.296-04:00[America/New_York]",
+  "totalAmount" : 348160.84,
+  "amountPaid" : 152936.22,
+  "outstandingAmount" : 195224.62,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477313885-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 269,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-28T06:14:51.798-04:00[America/New_York]",
+  "totalAmount" : 147049.54,
+  "amountPaid" : 44850.19,
+  "outstandingAmount" : 102199.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477320818-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 270,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-03T23:16:53.248-04:00[America/New_York]",
+  "totalAmount" : 418348.68,
+  "amountPaid" : 355185.66,
+  "outstandingAmount" : 63163.02,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477327521-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 271,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-23T20:18:48.333-04:00[America/New_York]",
+  "totalAmount" : 496389.57,
+  "amountPaid" : 388851.46,
+  "outstandingAmount" : 107538.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477333873-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 272,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-01T18:16:39.102-04:00[America/New_York]",
+  "totalAmount" : 83330.96,
+  "amountPaid" : 56442.63,
+  "outstandingAmount" : 26888.33,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477340445-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 273,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-25T16:16:07.705-04:00[America/New_York]",
+  "totalAmount" : 37045.45,
+  "amountPaid" : 1181.21,
+  "outstandingAmount" : 35864.24,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477347038-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 274,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-30T12:49:33.177-04:00[America/New_York]",
+  "totalAmount" : 427353.05,
+  "amountPaid" : 217159.44,
+  "outstandingAmount" : 210193.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.4773533-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 275,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-24T05:35:38.613-04:00[America/New_York]",
+  "totalAmount" : 246511.87,
+  "amountPaid" : 71124.37,
+  "outstandingAmount" : 175387.50,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477359612-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 276,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-02T22:38:43.807-04:00[America/New_York]",
+  "totalAmount" : 348596.17,
+  "amountPaid" : 220236.60,
+  "outstandingAmount" : 128359.57,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477365813-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 277,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-21T01:57:34.993-04:00[America/New_York]",
+  "totalAmount" : 127675.56,
+  "amountPaid" : 22072.32,
+  "outstandingAmount" : 105603.24,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477372045-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 278,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-07T23:51:17.853-04:00[America/New_York]",
+  "totalAmount" : 286554.65,
+  "amountPaid" : 118528.95,
+  "outstandingAmount" : 168025.70,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477378347-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 279,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-12T07:21:10.062-04:00[America/New_York]",
+  "totalAmount" : 396240.59,
+  "amountPaid" : 60339.53,
+  "outstandingAmount" : 335901.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477384589-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 280,
+  "userId" : 14,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-01T17:05:14.136-04:00[America/New_York]",
+  "totalAmount" : 471276.85,
+  "amountPaid" : 145059.13,
+  "outstandingAmount" : 326217.72,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477391482-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 281,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-22T06:40:52.36-04:00[America/New_York]",
+  "totalAmount" : 127614.71,
+  "amountPaid" : 90519.68,
+  "outstandingAmount" : 37095.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477397774-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 282,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-07T00:16:24.97-04:00[America/New_York]",
+  "totalAmount" : 257789.49,
+  "amountPaid" : 242642.99,
+  "outstandingAmount" : 15146.50,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477404006-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 283,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-30T09:24:37.629-04:00[America/New_York]",
+  "totalAmount" : 82827.02,
+  "amountPaid" : 21671.57,
+  "outstandingAmount" : 61155.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477410278-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 284,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-06T14:03:15.305-04:00[America/New_York]",
+  "totalAmount" : 331526.27,
+  "amountPaid" : 313095.08,
+  "outstandingAmount" : 18431.19,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.4774166-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 285,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-15T12:15:46.781-04:00[America/New_York]",
+  "totalAmount" : 105547.45,
+  "amountPaid" : 14228.95,
+  "outstandingAmount" : 91318.50,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477423202-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 286,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-30T06:21:42.188-04:00[America/New_York]",
+  "totalAmount" : 383080.68,
+  "amountPaid" : 173904.32,
+  "outstandingAmount" : 209176.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477429885-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 287,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-23T10:15:35.748-04:00[America/New_York]",
+  "totalAmount" : 154778.09,
+  "amountPaid" : 21499.54,
+  "outstandingAmount" : 133278.55,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477436447-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 288,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-08T18:31:32.723-04:00[America/New_York]",
+  "totalAmount" : 163103.54,
+  "amountPaid" : 75611.40,
+  "outstandingAmount" : 87492.14,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477454712-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 289,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-15T03:43:36.729-04:00[America/New_York]",
+  "totalAmount" : 450286.86,
+  "amountPaid" : 247587.06,
+  "outstandingAmount" : 202699.80,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477462877-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 290,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-21T19:14:38.306-04:00[America/New_York]",
+  "totalAmount" : 190665.42,
+  "amountPaid" : 85489.53,
+  "outstandingAmount" : 105175.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47746983-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 291,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-06T09:23:06.956-05:00[America/New_York]",
+  "totalAmount" : 250353.95,
+  "amountPaid" : 136690.26,
+  "outstandingAmount" : 113663.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477476233-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 292,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-16T09:08:24.92-04:00[America/New_York]",
+  "totalAmount" : 470904.47,
+  "amountPaid" : 442146.26,
+  "outstandingAmount" : 28758.21,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477482635-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 293,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-06T10:27:41.643-05:00[America/New_York]",
+  "totalAmount" : 293900.98,
+  "amountPaid" : 117844.82,
+  "outstandingAmount" : 176056.16,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477488897-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 294,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-26T23:11:46.698-04:00[America/New_York]",
+  "totalAmount" : 110279.70,
+  "amountPaid" : 107036.81,
+  "outstandingAmount" : 3242.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477495068-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 295,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-13T03:53:10.461-04:00[America/New_York]",
+  "totalAmount" : 341573.51,
+  "amountPaid" : 335911.57,
+  "outstandingAmount" : 5661.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47750136-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 296,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-09T16:41:43.595-04:00[America/New_York]",
+  "totalAmount" : 350250.24,
+  "amountPaid" : 204503.45,
+  "outstandingAmount" : 145746.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477507822-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 297,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-29T03:16:02.645-04:00[America/New_York]",
+  "totalAmount" : 32847.19,
+  "amountPaid" : 11972.58,
+  "outstandingAmount" : 20874.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477514415-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 298,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-03T20:44:20.485-04:00[America/New_York]",
+  "totalAmount" : 432700.81,
+  "amountPaid" : 346903.59,
+  "outstandingAmount" : 85797.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477520567-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 299,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-14T00:02:26.888-04:00[America/New_York]",
+  "totalAmount" : 128727.58,
+  "amountPaid" : 75150.64,
+  "outstandingAmount" : 53576.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477526718-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 300,
+  "userId" : 15,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-12T06:36:12.014-04:00[America/New_York]",
+  "totalAmount" : 332933.74,
+  "amountPaid" : 252823.05,
+  "outstandingAmount" : 80110.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47753291-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 301,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-04T01:21:40.278-04:00[America/New_York]",
+  "totalAmount" : 352114.36,
+  "amountPaid" : 307999.05,
+  "outstandingAmount" : 44115.31,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477539282-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 302,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-14T11:28:54.524-04:00[America/New_York]",
+  "totalAmount" : 18547.76,
+  "amountPaid" : 16930.56,
+  "outstandingAmount" : 1617.20,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477667084-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 303,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-02-26T15:52:32.069-05:00[America/New_York]",
+  "totalAmount" : 450399.93,
+  "amountPaid" : 405240.95,
+  "outstandingAmount" : 45158.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477687333-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 304,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-23T07:06:08.374-04:00[America/New_York]",
+  "totalAmount" : 205023.97,
+  "amountPaid" : 102753.17,
+  "outstandingAmount" : 102270.80,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477695588-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 305,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-26T14:28:59.963-04:00[America/New_York]",
+  "totalAmount" : 447372.82,
+  "amountPaid" : 356406.66,
+  "outstandingAmount" : 90966.16,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477702952-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 306,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-03T08:05:23.763-04:00[America/New_York]",
+  "totalAmount" : 391339.37,
+  "amountPaid" : 269798.37,
+  "outstandingAmount" : 121541.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477709204-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 307,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-20T13:19:14.605-04:00[America/New_York]",
+  "totalAmount" : 93996.25,
+  "amountPaid" : 8125.95,
+  "outstandingAmount" : 85870.30,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477715265-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 308,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-13T13:42:58.27-04:00[America/New_York]",
+  "totalAmount" : 371428.01,
+  "amountPaid" : 24730.16,
+  "outstandingAmount" : 346697.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477721457-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 309,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-18T03:30:13.565-04:00[America/New_York]",
+  "totalAmount" : 100132.11,
+  "amountPaid" : 74440.92,
+  "outstandingAmount" : 25691.19,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477727779-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 310,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-18T19:23:25.101-04:00[America/New_York]",
+  "totalAmount" : 269810.33,
+  "amountPaid" : 114844.07,
+  "outstandingAmount" : 154966.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477733991-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 311,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-04T07:34:38.769-04:00[America/New_York]",
+  "totalAmount" : 11780.73,
+  "amountPaid" : 11530.69,
+  "outstandingAmount" : 250.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477740353-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 312,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-30T01:07:13.577-04:00[America/New_York]",
+  "totalAmount" : 152210.93,
+  "amountPaid" : 120.54,
+  "outstandingAmount" : 152090.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477746575-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 313,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-21T00:06:28.83-04:00[America/New_York]",
+  "totalAmount" : 460906.61,
+  "amountPaid" : 247935.98,
+  "outstandingAmount" : 212970.63,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477753167-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 314,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-17T11:41:22.573-04:00[America/New_York]",
+  "totalAmount" : 384484.92,
+  "amountPaid" : 225957.05,
+  "outstandingAmount" : 158527.87,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47775971-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 315,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-12T13:36:16.336-04:00[America/New_York]",
+  "totalAmount" : 487420.62,
+  "amountPaid" : 274305.64,
+  "outstandingAmount" : 213114.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477765921-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 316,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-19T23:54:31.405-04:00[America/New_York]",
+  "totalAmount" : 115673.49,
+  "amountPaid" : 25764.73,
+  "outstandingAmount" : 89908.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477772123-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 317,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-04T06:29:51.637-04:00[America/New_York]",
+  "totalAmount" : 355388.87,
+  "amountPaid" : 113484.71,
+  "outstandingAmount" : 241904.16,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477778315-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 318,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-23T16:45:32.055-04:00[America/New_York]",
+  "totalAmount" : 203508.64,
+  "amountPaid" : 70612.87,
+  "outstandingAmount" : 132895.77,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477784777-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 319,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-14T15:43:14.6-04:00[America/New_York]",
+  "totalAmount" : 318038.51,
+  "amountPaid" : 108715.04,
+  "outstandingAmount" : 209323.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477791089-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 320,
+  "userId" : 16,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-24T03:22:44.141-04:00[America/New_York]",
+  "totalAmount" : 363187.70,
+  "amountPaid" : 228972.48,
+  "outstandingAmount" : 134215.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477797321-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 321,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-03T13:41:30.612-04:00[America/New_York]",
+  "totalAmount" : 118630.91,
+  "amountPaid" : 94175.80,
+  "outstandingAmount" : 24455.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477803673-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 322,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-09T12:43:08.903-04:00[America/New_York]",
+  "totalAmount" : 42737.67,
+  "amountPaid" : 37729.69,
+  "outstandingAmount" : 5007.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477809945-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 323,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-22T20:17:15.189-04:00[America/New_York]",
+  "totalAmount" : 216772.46,
+  "amountPaid" : 21100.84,
+  "outstandingAmount" : 195671.62,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477816217-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 324,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-10T19:06:11.92-04:00[America/New_York]",
+  "totalAmount" : 400790.05,
+  "amountPaid" : 290970.16,
+  "outstandingAmount" : 109819.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477822749-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 325,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-27T00:23:32.279-04:00[America/New_York]",
+  "totalAmount" : 462233.20,
+  "amountPaid" : 60220.05,
+  "outstandingAmount" : 402013.15,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477828981-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 326,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-02-29T16:04:48.602-05:00[America/New_York]",
+  "totalAmount" : 475086.01,
+  "amountPaid" : 453501.15,
+  "outstandingAmount" : 21584.86,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477835293-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 327,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-03T10:51:10.461-04:00[America/New_York]",
+  "totalAmount" : 390843.91,
+  "amountPaid" : 212564.68,
+  "outstandingAmount" : 178279.23,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477841635-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 328,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-14T16:30:02.784-04:00[America/New_York]",
+  "totalAmount" : 352532.70,
+  "amountPaid" : 267876.89,
+  "outstandingAmount" : 84655.81,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477848007-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 329,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-11T03:32:16.047-04:00[America/New_York]",
+  "totalAmount" : 49541.50,
+  "amountPaid" : 49532.69,
+  "outstandingAmount" : 8.81,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477854429-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 330,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-22T21:38:41-04:00[America/New_York]",
+  "totalAmount" : 264130.60,
+  "amountPaid" : 64266.93,
+  "outstandingAmount" : 199863.67,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477860891-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 331,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-23T22:54:06.041-04:00[America/New_York]",
+  "totalAmount" : 380133.47,
+  "amountPaid" : 144006.50,
+  "outstandingAmount" : 236126.97,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477867103-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 332,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-16T05:15:41.227-04:00[America/New_York]",
+  "totalAmount" : 330592.47,
+  "amountPaid" : 295882.27,
+  "outstandingAmount" : 34710.20,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477873395-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 333,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-15T18:17:30.214-04:00[America/New_York]",
+  "totalAmount" : 353851.48,
+  "amountPaid" : 92228.42,
+  "outstandingAmount" : 261623.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477879607-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 334,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-12T01:22:26.843-04:00[America/New_York]",
+  "totalAmount" : 416974.14,
+  "amountPaid" : 401609.72,
+  "outstandingAmount" : 15364.42,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477886049-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 335,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-03T10:27:53.741-04:00[America/New_York]",
+  "totalAmount" : 421264.42,
+  "amountPaid" : 95552.83,
+  "outstandingAmount" : 325711.59,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477892531-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 336,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-13T20:30:50.308-04:00[America/New_York]",
+  "totalAmount" : 167137.48,
+  "amountPaid" : 148799.79,
+  "outstandingAmount" : 18337.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477898923-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 337,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-05T15:13:17.564-04:00[America/New_York]",
+  "totalAmount" : 404621.28,
+  "amountPaid" : 318376.64,
+  "outstandingAmount" : 86244.64,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477905296-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 338,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-17T09:26:10.518-04:00[America/New_York]",
+  "totalAmount" : 391365.76,
+  "amountPaid" : 94679.37,
+  "outstandingAmount" : 296686.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477911557-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 339,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-30T02:11:20.231-04:00[America/New_York]",
+  "totalAmount" : 172194.14,
+  "amountPaid" : 168459.93,
+  "outstandingAmount" : 3734.21,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477917769-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 340,
+  "userId" : 17,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-26T19:21:55.958-04:00[America/New_York]",
+  "totalAmount" : 242951.86,
+  "amountPaid" : 195218.11,
+  "outstandingAmount" : 47733.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477924171-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 341,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-06T22:47:24.155-04:00[America/New_York]",
+  "totalAmount" : 286691.67,
+  "amountPaid" : 270079.03,
+  "outstandingAmount" : 16612.64,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477930924-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 342,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-29T11:16:15.229-04:00[America/New_York]",
+  "totalAmount" : 422079.50,
+  "amountPaid" : 325639.99,
+  "outstandingAmount" : 96439.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477937226-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 343,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-19T12:54:33.001-04:00[America/New_York]",
+  "totalAmount" : 432313.24,
+  "amountPaid" : 9938.47,
+  "outstandingAmount" : 422374.77,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477983574-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 344,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-18T17:32:35.111-04:00[America/New_York]",
+  "totalAmount" : 227818.01,
+  "amountPaid" : 48773.25,
+  "outstandingAmount" : 179044.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477990587-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 345,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-12T11:24:23.356-04:00[America/New_York]",
+  "totalAmount" : 407514.21,
+  "amountPaid" : 80450.90,
+  "outstandingAmount" : 327063.31,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.477997009-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 346,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-31T16:45:43.223-04:00[America/New_York]",
+  "totalAmount" : 411550.60,
+  "amountPaid" : 93714.47,
+  "outstandingAmount" : 317836.13,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478003231-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 347,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-29T00:34:33.566-04:00[America/New_York]",
+  "totalAmount" : 263052.57,
+  "amountPaid" : 230851.27,
+  "outstandingAmount" : 32201.30,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478010204-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 348,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-10T16:06:34.424-04:00[America/New_York]",
+  "totalAmount" : 387656.90,
+  "amountPaid" : 180241.76,
+  "outstandingAmount" : 207415.14,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478016596-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 349,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-18T02:52:23.433-04:00[America/New_York]",
+  "totalAmount" : 207387.15,
+  "amountPaid" : 81768.77,
+  "outstandingAmount" : 125618.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478022788-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 350,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-02T14:48:16.467-05:00[America/New_York]",
+  "totalAmount" : 39769.62,
+  "amountPaid" : 38160.42,
+  "outstandingAmount" : 1609.20,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47802918-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 351,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-04T18:46:14.765-04:00[America/New_York]",
+  "totalAmount" : 43998.03,
+  "amountPaid" : 31162.10,
+  "outstandingAmount" : 12835.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478035472-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 352,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-24T14:06:14.675-04:00[America/New_York]",
+  "totalAmount" : 313426.02,
+  "amountPaid" : 133000.98,
+  "outstandingAmount" : 180425.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478160018-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 353,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-12T07:08:07.798-04:00[America/New_York]",
+  "totalAmount" : 477699.10,
+  "amountPaid" : 72266.05,
+  "outstandingAmount" : 405433.05,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478179766-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 354,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-10T03:06:51.536-04:00[America/New_York]",
+  "totalAmount" : 338434.31,
+  "amountPaid" : 151671.19,
+  "outstandingAmount" : 186763.12,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478187821-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 355,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-06T22:09:13.879-04:00[America/New_York]",
+  "totalAmount" : 419513.24,
+  "amountPaid" : 103825.37,
+  "outstandingAmount" : 315687.87,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478194934-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 356,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-14T11:02:54.856-04:00[America/New_York]",
+  "totalAmount" : 216775.24,
+  "amountPaid" : 57859.48,
+  "outstandingAmount" : 158915.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478201557-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 357,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-24T10:05:20.092-04:00[America/New_York]",
+  "totalAmount" : 222180.59,
+  "amountPaid" : 203522.45,
+  "outstandingAmount" : 18658.14,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478207979-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 358,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-21T21:04:37.462-04:00[America/New_York]",
+  "totalAmount" : 114359.40,
+  "amountPaid" : 4035.97,
+  "outstandingAmount" : 110323.43,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478214281-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 359,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-18T23:43:32.756-04:00[America/New_York]",
+  "totalAmount" : 320869.86,
+  "amountPaid" : 194286.77,
+  "outstandingAmount" : 126583.09,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478220583-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 360,
+  "userId" : 18,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-14T12:11:30.226-04:00[America/New_York]",
+  "totalAmount" : 137460.39,
+  "amountPaid" : 106446.99,
+  "outstandingAmount" : 31013.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478226865-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 361,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-30T18:51:36.728-04:00[America/New_York]",
+  "totalAmount" : 66163.40,
+  "amountPaid" : 10671.18,
+  "outstandingAmount" : 55492.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478233137-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 362,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-27T06:06:06.276-04:00[America/New_York]",
+  "totalAmount" : 207144.12,
+  "amountPaid" : 87247.08,
+  "outstandingAmount" : 119897.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478239479-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 363,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-24T17:09:59.707-04:00[America/New_York]",
+  "totalAmount" : 188885.95,
+  "amountPaid" : 89953.84,
+  "outstandingAmount" : 98932.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47824571-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 364,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-15T14:44:43.119-04:00[America/New_York]",
+  "totalAmount" : 247514.77,
+  "amountPaid" : 162325.84,
+  "outstandingAmount" : 85188.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478251862-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 365,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-25T02:40:53.844-04:00[America/New_York]",
+  "totalAmount" : 208847.72,
+  "amountPaid" : 47144.83,
+  "outstandingAmount" : 161702.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478258064-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 366,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-09T22:57:12.976-04:00[America/New_York]",
+  "totalAmount" : 146097.51,
+  "amountPaid" : 63128.48,
+  "outstandingAmount" : 82969.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478264506-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 367,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-30T17:20:06.79-04:00[America/New_York]",
+  "totalAmount" : 352071.92,
+  "amountPaid" : 83737.33,
+  "outstandingAmount" : 268334.59,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478270788-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 368,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-02T10:02:37.6-04:00[America/New_York]",
+  "totalAmount" : 47178.39,
+  "amountPaid" : 18275.01,
+  "outstandingAmount" : 28903.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478278392-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 369,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-05T18:09:37.103-04:00[America/New_York]",
+  "totalAmount" : 23577.10,
+  "amountPaid" : 7054.41,
+  "outstandingAmount" : 16522.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478284775-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 370,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-20T14:39:32.768-04:00[America/New_York]",
+  "totalAmount" : 191421.67,
+  "amountPaid" : 106676.73,
+  "outstandingAmount" : 84744.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478291237-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 371,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-24T18:43:35.441-04:00[America/New_York]",
+  "totalAmount" : 195284.53,
+  "amountPaid" : 87430.82,
+  "outstandingAmount" : 107853.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478297709-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 372,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-15T07:30:02.745-04:00[America/New_York]",
+  "totalAmount" : 127585.00,
+  "amountPaid" : 9119.65,
+  "outstandingAmount" : 118465.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478304392-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 373,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-13T12:49:05.714-04:00[America/New_York]",
+  "totalAmount" : 41121.21,
+  "amountPaid" : 2157.34,
+  "outstandingAmount" : 38963.87,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478310804-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 374,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-01T23:47:33.203-04:00[America/New_York]",
+  "totalAmount" : 184652.65,
+  "amountPaid" : 139522.97,
+  "outstandingAmount" : 45129.68,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478316945-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 375,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-29T08:46:38.96-04:00[America/New_York]",
+  "totalAmount" : 323888.43,
+  "amountPaid" : 75147.39,
+  "outstandingAmount" : 248741.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478323408-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 376,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-15T11:59:29.011-04:00[America/New_York]",
+  "totalAmount" : 375207.05,
+  "amountPaid" : 306107.53,
+  "outstandingAmount" : 69099.52,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47832973-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 377,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-23T17:24:21.033-04:00[America/New_York]",
+  "totalAmount" : 190966.48,
+  "amountPaid" : 78592.27,
+  "outstandingAmount" : 112374.21,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478336032-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 378,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-09T21:33:59.415-04:00[America/New_York]",
+  "totalAmount" : 353359.29,
+  "amountPaid" : 11138.82,
+  "outstandingAmount" : 342220.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478342123-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 379,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-13T13:22:19.673-04:00[America/New_York]",
+  "totalAmount" : 128425.76,
+  "amountPaid" : 8966.43,
+  "outstandingAmount" : 119459.33,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478348395-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 380,
+  "userId" : 19,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-25T11:30:36.896-04:00[America/New_York]",
+  "totalAmount" : 253058.35,
+  "amountPaid" : 33303.33,
+  "outstandingAmount" : 219755.02,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478354697-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 381,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-24T01:58:58.974-04:00[America/New_York]",
+  "totalAmount" : 425614.47,
+  "amountPaid" : 415669.04,
+  "outstandingAmount" : 9945.43,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478361159-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 382,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-09T18:33:33.095-04:00[America/New_York]",
+  "totalAmount" : 395099.87,
+  "amountPaid" : 110952.15,
+  "outstandingAmount" : 284147.72,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478367481-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 383,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-25T20:02:17.663-04:00[America/New_York]",
+  "totalAmount" : 304793.40,
+  "amountPaid" : 143762.38,
+  "outstandingAmount" : 161031.02,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478386217-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 384,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-08T09:39:37.372-04:00[America/New_York]",
+  "totalAmount" : 423654.53,
+  "amountPaid" : 360676.18,
+  "outstandingAmount" : 62978.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478445649-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 385,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-01T23:33:52.899-05:00[America/New_York]",
+  "totalAmount" : 52888.03,
+  "amountPaid" : 30959.81,
+  "outstandingAmount" : 21928.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478462662-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 386,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-15T15:04:43.876-04:00[America/New_York]",
+  "totalAmount" : 25636.39,
+  "amountPaid" : 23217.68,
+  "outstandingAmount" : 2418.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478487699-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 387,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-06T11:13:47.372-04:00[America/New_York]",
+  "totalAmount" : 284928.14,
+  "amountPaid" : 15039.43,
+  "outstandingAmount" : 269888.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478504541-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 388,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-12T06:44:50.96-04:00[America/New_York]",
+  "totalAmount" : 78731.47,
+  "amountPaid" : 5229.97,
+  "outstandingAmount" : 73501.50,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478519629-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 389,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-24T20:12:29.221-04:00[America/New_York]",
+  "totalAmount" : 431245.46,
+  "amountPaid" : 224636.33,
+  "outstandingAmount" : 206609.13,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478535379-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 390,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-20T14:36:57.906-04:00[America/New_York]",
+  "totalAmount" : 256406.97,
+  "amountPaid" : 179296.13,
+  "outstandingAmount" : 77110.84,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478550338-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 391,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-12T14:58:04.86-04:00[America/New_York]",
+  "totalAmount" : 132999.55,
+  "amountPaid" : 66591.67,
+  "outstandingAmount" : 66407.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478563833-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 392,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-18T23:34:30.22-04:00[America/New_York]",
+  "totalAmount" : 20721.35,
+  "amountPaid" : 12100.44,
+  "outstandingAmount" : 8620.91,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478575646-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 393,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-15T07:38:45.727-04:00[America/New_York]",
+  "totalAmount" : 493102.19,
+  "amountPaid" : 426116.15,
+  "outstandingAmount" : 66986.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478586937-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 394,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-12T06:13:33.966-04:00[America/New_York]",
+  "totalAmount" : 256255.73,
+  "amountPaid" : 128174.14,
+  "outstandingAmount" : 128081.59,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478611954-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 395,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-07T12:46:52.328-04:00[America/New_York]",
+  "totalAmount" : 292110.76,
+  "amountPaid" : 273847.25,
+  "outstandingAmount" : 18263.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478626522-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 396,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-21T21:20:03.197-04:00[America/New_York]",
+  "totalAmount" : 470986.63,
+  "amountPaid" : 189931.01,
+  "outstandingAmount" : 281055.62,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478637924-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 397,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-11T03:27:34.294-04:00[America/New_York]",
+  "totalAmount" : 41160.57,
+  "amountPaid" : 20208.25,
+  "outstandingAmount" : 20952.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478649776-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 398,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-19T23:54:22.198-04:00[America/New_York]",
+  "totalAmount" : 332420.76,
+  "amountPaid" : 38545.45,
+  "outstandingAmount" : 293875.31,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478661979-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 399,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-27T12:08:15.483-04:00[America/New_York]",
+  "totalAmount" : 406507.02,
+  "amountPaid" : 71754.43,
+  "outstandingAmount" : 334752.59,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478674974-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 400,
+  "userId" : 20,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-10T12:14:03.507-04:00[America/New_York]",
+  "totalAmount" : 219811.81,
+  "amountPaid" : 156477.06,
+  "outstandingAmount" : 63334.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478687768-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 401,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-03T13:16:48.953-04:00[America/New_York]",
+  "totalAmount" : 282747.24,
+  "amountPaid" : 60367.79,
+  "outstandingAmount" : 222379.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478701204-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 402,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-14T06:24:18.245-04:00[America/New_York]",
+  "totalAmount" : 495779.75,
+  "amountPaid" : 8142.61,
+  "outstandingAmount" : 487637.14,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47886818-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 403,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-24T10:22:25.329-04:00[America/New_York]",
+  "totalAmount" : 404292.07,
+  "amountPaid" : 151099.81,
+  "outstandingAmount" : 253192.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478889931-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 404,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-29T23:41:07.711-04:00[America/New_York]",
+  "totalAmount" : 303152.98,
+  "amountPaid" : 273159.63,
+  "outstandingAmount" : 29993.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478897095-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 405,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-22T19:26:39.023-04:00[America/New_York]",
+  "totalAmount" : 377158.42,
+  "amountPaid" : 213609.42,
+  "outstandingAmount" : 163549.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478902816-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 406,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-19T18:02:12.384-04:00[America/New_York]",
+  "totalAmount" : 245353.44,
+  "amountPaid" : 72752.16,
+  "outstandingAmount" : 172601.28,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478908687-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 407,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-17T08:17:10.158-04:00[America/New_York]",
+  "totalAmount" : 165652.32,
+  "amountPaid" : 94994.93,
+  "outstandingAmount" : 70657.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478916842-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 408,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-19T01:20:01.052-04:00[America/New_York]",
+  "totalAmount" : 201145.25,
+  "amountPaid" : 20303.33,
+  "outstandingAmount" : 180841.92,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478928344-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 409,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-07T15:36:31.812-05:00[America/New_York]",
+  "totalAmount" : 41013.06,
+  "amountPaid" : 30230.75,
+  "outstandingAmount" : 10782.31,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478934966-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 410,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-22T08:34:23.5-04:00[America/New_York]",
+  "totalAmount" : 307066.96,
+  "amountPaid" : 125464.57,
+  "outstandingAmount" : 181602.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478940677-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 411,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-08T09:39:11.295-04:00[America/New_York]",
+  "totalAmount" : 471588.80,
+  "amountPaid" : 305917.00,
+  "outstandingAmount" : 165671.80,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478946128-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 412,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-17T23:30:58.428-04:00[America/New_York]",
+  "totalAmount" : 33367.91,
+  "amountPaid" : 24525.50,
+  "outstandingAmount" : 8842.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47895277-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 413,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-23T05:13:08.074-04:00[America/New_York]",
+  "totalAmount" : 126613.67,
+  "amountPaid" : 17896.19,
+  "outstandingAmount" : 108717.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478958601-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 414,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-06T20:13:30.266-04:00[America/New_York]",
+  "totalAmount" : 201768.88,
+  "amountPaid" : 33143.44,
+  "outstandingAmount" : 168625.44,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478964162-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 415,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-28T05:00:48.508-04:00[America/New_York]",
+  "totalAmount" : 88157.05,
+  "amountPaid" : 11992.95,
+  "outstandingAmount" : 76164.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478969662-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 416,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-28T19:08:53.484-04:00[America/New_York]",
+  "totalAmount" : 175867.44,
+  "amountPaid" : 104516.87,
+  "outstandingAmount" : 71350.57,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478975143-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 417,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-27T10:12:29.973-04:00[America/New_York]",
+  "totalAmount" : 438315.06,
+  "amountPaid" : 62436.39,
+  "outstandingAmount" : 375878.67,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478981404-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 418,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-30T04:02:42.32-04:00[America/New_York]",
+  "totalAmount" : 217508.19,
+  "amountPaid" : 110025.44,
+  "outstandingAmount" : 107482.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478986514-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 419,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-01T04:25:38.004-04:00[America/New_York]",
+  "totalAmount" : 11214.68,
+  "amountPaid" : 5215.68,
+  "outstandingAmount" : 5999.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478991654-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 420,
+  "userId" : 21,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-15T21:16:27.549-04:00[America/New_York]",
+  "totalAmount" : 14938.37,
+  "amountPaid" : 13908.31,
+  "outstandingAmount" : 1030.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.478996784-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 421,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-09T09:14:06.155-04:00[America/New_York]",
+  "totalAmount" : 421900.86,
+  "amountPaid" : 175355.62,
+  "outstandingAmount" : 246545.24,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479002324-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 422,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-16T05:16:15.052-04:00[America/New_York]",
+  "totalAmount" : 191068.98,
+  "amountPaid" : 104559.23,
+  "outstandingAmount" : 86509.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479007414-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 423,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-28T15:44:58.231-04:00[America/New_York]",
+  "totalAmount" : 416676.81,
+  "amountPaid" : 34288.21,
+  "outstandingAmount" : 382388.60,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479012553-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 424,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-06T14:24:05.243-04:00[America/New_York]",
+  "totalAmount" : 492661.87,
+  "amountPaid" : 35411.61,
+  "outstandingAmount" : 457250.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479017683-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 425,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-04T17:37:19.393-04:00[America/New_York]",
+  "totalAmount" : 31967.90,
+  "amountPaid" : 14599.96,
+  "outstandingAmount" : 17367.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479022663-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 426,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-30T19:33:03.954-04:00[America/New_York]",
+  "totalAmount" : 243762.98,
+  "amountPaid" : 93698.01,
+  "outstandingAmount" : 150064.97,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479027832-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 427,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-07T05:31:20.437-04:00[America/New_York]",
+  "totalAmount" : 361279.35,
+  "amountPaid" : 350276.75,
+  "outstandingAmount" : 11002.60,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479032962-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 428,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-31T02:33:42.468-04:00[America/New_York]",
+  "totalAmount" : 399202.22,
+  "amountPaid" : 20165.03,
+  "outstandingAmount" : 379037.19,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479037972-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 429,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-18T22:53:46.448-04:00[America/New_York]",
+  "totalAmount" : 42318.27,
+  "amountPaid" : 31115.77,
+  "outstandingAmount" : 11202.50,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479043232-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 430,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-10T09:22:50.944-04:00[America/New_York]",
+  "totalAmount" : 286479.97,
+  "amountPaid" : 50215.51,
+  "outstandingAmount" : 236264.46,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479048391-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 431,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-16T04:49:23.201-04:00[America/New_York]",
+  "totalAmount" : 478850.00,
+  "amountPaid" : 27331.16,
+  "outstandingAmount" : 451518.84,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479053351-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 432,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-15T16:34:26.738-04:00[America/New_York]",
+  "totalAmount" : 376861.07,
+  "amountPaid" : 286426.38,
+  "outstandingAmount" : 90434.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47905832-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 433,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-03T23:12:36.139-04:00[America/New_York]",
+  "totalAmount" : 84359.39,
+  "amountPaid" : 83728.97,
+  "outstandingAmount" : 630.42,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47906333-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 434,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-25T02:41:22.326-04:00[America/New_York]",
+  "totalAmount" : 498995.88,
+  "amountPaid" : 493752.58,
+  "outstandingAmount" : 5243.30,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47906877-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 435,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-28T23:25:39.297-04:00[America/New_York]",
+  "totalAmount" : 97087.16,
+  "amountPaid" : 3010.82,
+  "outstandingAmount" : 94076.34,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47907383-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 436,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-19T22:05:52.282-04:00[America/New_York]",
+  "totalAmount" : 180889.50,
+  "amountPaid" : 22548.67,
+  "outstandingAmount" : 158340.83,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479078829-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 437,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-27T19:34:46.576-04:00[America/New_York]",
+  "totalAmount" : 48511.71,
+  "amountPaid" : 8900.96,
+  "outstandingAmount" : 39610.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479083959-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 438,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-03T19:42:30.263-04:00[America/New_York]",
+  "totalAmount" : 88538.80,
+  "amountPaid" : 82089.82,
+  "outstandingAmount" : 6448.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479089008-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 439,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-09T21:43:29.552-04:00[America/New_York]",
+  "totalAmount" : 289846.61,
+  "amountPaid" : 10269.23,
+  "outstandingAmount" : 279577.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479093968-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 440,
+  "userId" : 22,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-10T19:28:12.652-04:00[America/New_York]",
+  "totalAmount" : 222057.95,
+  "amountPaid" : 175660.56,
+  "outstandingAmount" : 46397.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479099027-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 441,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-13T23:27:25.465-04:00[America/New_York]",
+  "totalAmount" : 193624.30,
+  "amountPaid" : 109175.59,
+  "outstandingAmount" : 84448.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479104177-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 442,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-31T04:37:22.763-04:00[America/New_York]",
+  "totalAmount" : 452612.76,
+  "amountPaid" : 3457.13,
+  "outstandingAmount" : 449155.63,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479109287-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 443,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-13T10:49:51.384-04:00[America/New_York]",
+  "totalAmount" : 369935.99,
+  "amountPaid" : 284462.89,
+  "outstandingAmount" : 85473.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479114366-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 444,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-02T02:27:24.089-04:00[America/New_York]",
+  "totalAmount" : 285983.85,
+  "amountPaid" : 240002.76,
+  "outstandingAmount" : 45981.09,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479119356-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 445,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-10T23:51:14.599-04:00[America/New_York]",
+  "totalAmount" : 209398.33,
+  "amountPaid" : 88238.05,
+  "outstandingAmount" : 121160.28,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479124375-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 446,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-30T18:18:16.655-04:00[America/New_York]",
+  "totalAmount" : 251079.36,
+  "amountPaid" : 82244.25,
+  "outstandingAmount" : 168835.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479129445-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 447,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-07T09:16:40.07-04:00[America/New_York]",
+  "totalAmount" : 317417.12,
+  "amountPaid" : 151044.86,
+  "outstandingAmount" : 166372.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479134595-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 448,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-20T04:30:24.442-04:00[America/New_York]",
+  "totalAmount" : 84217.17,
+  "amountPaid" : 1077.30,
+  "outstandingAmount" : 83139.87,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479139604-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 449,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-01T18:43:47.053-04:00[America/New_York]",
+  "totalAmount" : 416818.18,
+  "amountPaid" : 396707.23,
+  "outstandingAmount" : 20110.95,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479144724-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 450,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-11T10:44:05.144-04:00[America/New_York]",
+  "totalAmount" : 272497.17,
+  "amountPaid" : 269368.82,
+  "outstandingAmount" : 3128.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479149723-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 451,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-25T20:13:00.838-04:00[America/New_York]",
+  "totalAmount" : 78416.09,
+  "amountPaid" : 26013.14,
+  "outstandingAmount" : 52402.95,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479154743-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 452,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-12T19:46:59.798-04:00[America/New_York]",
+  "totalAmount" : 412083.75,
+  "amountPaid" : 399318.22,
+  "outstandingAmount" : 12765.53,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479288085-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 453,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-19T14:12:30.522-04:00[America/New_York]",
+  "totalAmount" : 451590.54,
+  "amountPaid" : 351761.41,
+  "outstandingAmount" : 99829.13,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479305909-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 454,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-01T12:07:35.756-04:00[America/New_York]",
+  "totalAmount" : 209718.94,
+  "amountPaid" : 61700.96,
+  "outstandingAmount" : 148017.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479312432-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 455,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-02T22:43:08.209-04:00[America/New_York]",
+  "totalAmount" : 389441.25,
+  "amountPaid" : 281823.40,
+  "outstandingAmount" : 107617.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479317581-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 456,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-09T17:40:52.767-04:00[America/New_York]",
+  "totalAmount" : 258286.40,
+  "amountPaid" : 12443.55,
+  "outstandingAmount" : 245842.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479323152-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 457,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-04T00:37:34.256-04:00[America/New_York]",
+  "totalAmount" : 85591.20,
+  "amountPaid" : 53086.32,
+  "outstandingAmount" : 32504.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479328302-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 458,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-02-21T12:35:42.008-05:00[America/New_York]",
+  "totalAmount" : 329746.67,
+  "amountPaid" : 236476.81,
+  "outstandingAmount" : 93269.86,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479333602-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 459,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-13T10:26:39.678-04:00[America/New_York]",
+  "totalAmount" : 472208.89,
+  "amountPaid" : 436759.28,
+  "outstandingAmount" : 35449.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479338741-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 460,
+  "userId" : 23,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-28T10:41:07.532-04:00[America/New_York]",
+  "totalAmount" : 401263.89,
+  "amountPaid" : 25088.83,
+  "outstandingAmount" : 376175.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479343891-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 461,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-08-06T09:36:17.618-04:00[America/New_York]",
+  "totalAmount" : 471319.72,
+  "amountPaid" : 280750.31,
+  "outstandingAmount" : 190569.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479348971-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 462,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-15T11:26:58.639-04:00[America/New_York]",
+  "totalAmount" : 442844.44,
+  "amountPaid" : 59745.76,
+  "outstandingAmount" : 383098.68,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47935402-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 463,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-04T12:29:36.996-04:00[America/New_York]",
+  "totalAmount" : 193976.86,
+  "amountPaid" : 128852.84,
+  "outstandingAmount" : 65124.02,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47935902-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 464,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-15T14:30:25.019-04:00[America/New_York]",
+  "totalAmount" : 17307.68,
+  "amountPaid" : 10468.20,
+  "outstandingAmount" : 6839.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47936426-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 465,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-20T16:09:07.541-04:00[America/New_York]",
+  "totalAmount" : 174361.93,
+  "amountPaid" : 118925.72,
+  "outstandingAmount" : 55436.21,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47936959-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 466,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-05T07:08:01.635-04:00[America/New_York]",
+  "totalAmount" : 335909.12,
+  "amountPaid" : 280789.74,
+  "outstandingAmount" : 55119.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47937476-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 467,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-28T03:15:21.575-04:00[America/New_York]",
+  "totalAmount" : 78385.87,
+  "amountPaid" : 7026.83,
+  "outstandingAmount" : 71359.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479379879-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 468,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-29T16:13:42.215-04:00[America/New_York]",
+  "totalAmount" : 265436.49,
+  "amountPaid" : 99908.50,
+  "outstandingAmount" : 165527.99,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479384869-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 469,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-08T16:46:44.021-04:00[America/New_York]",
+  "totalAmount" : 448860.14,
+  "amountPaid" : 364266.24,
+  "outstandingAmount" : 84593.90,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479389878-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 470,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-31T18:54:29.098-04:00[America/New_York]",
+  "totalAmount" : 445098.79,
+  "amountPaid" : 353702.84,
+  "outstandingAmount" : 91395.95,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479394868-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 471,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-19T02:46:58.211-04:00[America/New_York]",
+  "totalAmount" : 391808.74,
+  "amountPaid" : 245485.86,
+  "outstandingAmount" : 146322.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479399907-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 472,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-12T20:39:31.942-04:00[America/New_York]",
+  "totalAmount" : 394028.74,
+  "amountPaid" : 13637.97,
+  "outstandingAmount" : 380390.77,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479404857-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 473,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-23T14:40:30.455-04:00[America/New_York]",
+  "totalAmount" : 400991.27,
+  "amountPaid" : 45952.64,
+  "outstandingAmount" : 355038.63,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479409876-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 474,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-12T06:04:35.557-04:00[America/New_York]",
+  "totalAmount" : 72719.06,
+  "amountPaid" : 52114.02,
+  "outstandingAmount" : 20605.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479415096-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 475,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-19T09:10:53.465-04:00[America/New_York]",
+  "totalAmount" : 40207.34,
+  "amountPaid" : 9281.23,
+  "outstandingAmount" : 30926.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479420577-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 476,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-07T06:38:42.369-04:00[America/New_York]",
+  "totalAmount" : 334212.66,
+  "amountPaid" : 20078.25,
+  "outstandingAmount" : 314134.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479425416-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 477,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-28T20:52:17.953-04:00[America/New_York]",
+  "totalAmount" : 415452.73,
+  "amountPaid" : 335578.99,
+  "outstandingAmount" : 79873.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479430545-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 478,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-02T16:34:19.921-04:00[America/New_York]",
+  "totalAmount" : 253367.20,
+  "amountPaid" : 89354.47,
+  "outstandingAmount" : 164012.73,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479435545-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 479,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-18T07:02:15.305-04:00[America/New_York]",
+  "totalAmount" : 421497.44,
+  "amountPaid" : 225970.23,
+  "outstandingAmount" : 195527.21,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479440404-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 480,
+  "userId" : 24,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-11T18:15:49.45-04:00[America/New_York]",
+  "totalAmount" : 225014.36,
+  "amountPaid" : 32221.90,
+  "outstandingAmount" : 192792.46,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479445454-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 481,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-07T07:13:00.035-04:00[America/New_York]",
+  "totalAmount" : 369956.16,
+  "amountPaid" : 83458.94,
+  "outstandingAmount" : 286497.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479450674-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 482,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-16T13:43:52.583-04:00[America/New_York]",
+  "totalAmount" : 244334.00,
+  "amountPaid" : 142379.31,
+  "outstandingAmount" : 101954.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479456024-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 483,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-03T04:34:39.238-04:00[America/New_York]",
+  "totalAmount" : 268421.30,
+  "amountPaid" : 106193.54,
+  "outstandingAmount" : 162227.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479461003-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 484,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-06T12:32:43.785-04:00[America/New_York]",
+  "totalAmount" : 55263.64,
+  "amountPaid" : 32626.13,
+  "outstandingAmount" : 22637.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479465912-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 485,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-26T00:50:14.606-04:00[America/New_York]",
+  "totalAmount" : 232728.94,
+  "amountPaid" : 115794.79,
+  "outstandingAmount" : 116934.15,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479470892-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 486,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-12T06:23:22.444-04:00[America/New_York]",
+  "totalAmount" : 135263.54,
+  "amountPaid" : 104079.25,
+  "outstandingAmount" : 31184.29,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479475982-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 487,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-10T05:10:00.838-04:00[America/New_York]",
+  "totalAmount" : 346928.10,
+  "amountPaid" : 110557.92,
+  "outstandingAmount" : 236370.18,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479481191-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 488,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-09T07:19:04.019-05:00[America/New_York]",
+  "totalAmount" : 157257.64,
+  "amountPaid" : 39260.32,
+  "outstandingAmount" : 117997.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479486361-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 489,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-06T05:10:43.406-04:00[America/New_York]",
+  "totalAmount" : 348023.51,
+  "amountPaid" : 128428.05,
+  "outstandingAmount" : 219595.46,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479491471-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 490,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-31T13:49:09.606-04:00[America/New_York]",
+  "totalAmount" : 22070.74,
+  "amountPaid" : 19446.26,
+  "outstandingAmount" : 2624.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47949648-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 491,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-31T05:30:10.004-04:00[America/New_York]",
+  "totalAmount" : 125062.23,
+  "amountPaid" : 37721.73,
+  "outstandingAmount" : 87340.50,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47950157-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 492,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-03T07:40:04.641-04:00[America/New_York]",
+  "totalAmount" : 347182.24,
+  "amountPaid" : 158315.49,
+  "outstandingAmount" : 188866.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47950664-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 493,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-18T06:11:30.872-04:00[America/New_York]",
+  "totalAmount" : 184634.56,
+  "amountPaid" : 123171.63,
+  "outstandingAmount" : 61462.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479511649-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 494,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-27T07:41:22.043-04:00[America/New_York]",
+  "totalAmount" : 400116.66,
+  "amountPaid" : 353671.99,
+  "outstandingAmount" : 46444.67,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479516669-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 495,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-01T21:17:08.08-04:00[America/New_York]",
+  "totalAmount" : 377359.29,
+  "amountPaid" : 208808.44,
+  "outstandingAmount" : 168550.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479521668-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 496,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-12T10:34:00.542-04:00[America/New_York]",
+  "totalAmount" : 407291.39,
+  "amountPaid" : 202016.81,
+  "outstandingAmount" : 205274.58,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479526768-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 497,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-26T23:46:47.21-04:00[America/New_York]",
+  "totalAmount" : 202423.95,
+  "amountPaid" : 184389.47,
+  "outstandingAmount" : 18034.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479531867-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 498,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-31T04:19:06.47-04:00[America/New_York]",
+  "totalAmount" : 101641.75,
+  "amountPaid" : 91919.95,
+  "outstandingAmount" : 9721.80,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479537077-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 499,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-31T19:22:52.275-04:00[America/New_York]",
+  "totalAmount" : 209749.99,
+  "amountPaid" : 129051.25,
+  "outstandingAmount" : 80698.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479542277-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 500,
+  "userId" : 25,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-29T00:56:08.46-04:00[America/New_York]",
+  "totalAmount" : 194844.09,
+  "amountPaid" : 17959.47,
+  "outstandingAmount" : 176884.62,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479547457-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 501,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-17T21:20:09.331-04:00[America/New_York]",
+  "totalAmount" : 221853.54,
+  "amountPaid" : 125628.33,
+  "outstandingAmount" : 96225.21,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479552486-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 502,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-03T11:55:36.396-04:00[America/New_York]",
+  "totalAmount" : 352456.72,
+  "amountPaid" : 232767.04,
+  "outstandingAmount" : 119689.68,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479689917-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 503,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-22T10:28:45.651-04:00[America/New_York]",
+  "totalAmount" : 19971.82,
+  "amountPaid" : 7508.04,
+  "outstandingAmount" : 12463.78,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479708051-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 504,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-08T01:57:09.091-04:00[America/New_York]",
+  "totalAmount" : 112799.39,
+  "amountPaid" : 45884.40,
+  "outstandingAmount" : 66914.99,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479715004-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 505,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-28T12:27:06.001-04:00[America/New_York]",
+  "totalAmount" : 421525.71,
+  "amountPaid" : 187635.26,
+  "outstandingAmount" : 233890.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479720274-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 506,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-21T03:57:15.039-04:00[America/New_York]",
+  "totalAmount" : 492891.44,
+  "amountPaid" : 326718.99,
+  "outstandingAmount" : 166172.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479725484-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 507,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-06-18T18:18:34.585-04:00[America/New_York]",
+  "totalAmount" : 348488.56,
+  "amountPaid" : 167307.35,
+  "outstandingAmount" : 181181.21,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479730514-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 508,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-22T22:39:14.39-04:00[America/New_York]",
+  "totalAmount" : 227269.00,
+  "amountPaid" : 14809.29,
+  "outstandingAmount" : 212459.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479735814-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 509,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-25T08:40:33.21-04:00[America/New_York]",
+  "totalAmount" : 308731.83,
+  "amountPaid" : 231362.09,
+  "outstandingAmount" : 77369.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479741014-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 510,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-09T00:22:20.153-04:00[America/New_York]",
+  "totalAmount" : 308001.48,
+  "amountPaid" : 211224.18,
+  "outstandingAmount" : 96777.30,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479746183-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 511,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-24T22:32:18.451-04:00[America/New_York]",
+  "totalAmount" : 294917.58,
+  "amountPaid" : 186480.65,
+  "outstandingAmount" : 108436.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479751193-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 512,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-21T02:33:25.987-04:00[America/New_York]",
+  "totalAmount" : 236727.82,
+  "amountPaid" : 165385.69,
+  "outstandingAmount" : 71342.13,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479756052-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 513,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-26T12:14:16.081-04:00[America/New_York]",
+  "totalAmount" : 318008.42,
+  "amountPaid" : 82449.18,
+  "outstandingAmount" : 235559.24,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479761412-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 514,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-16T01:26:00.228-04:00[America/New_York]",
+  "totalAmount" : 392032.54,
+  "amountPaid" : 2651.26,
+  "outstandingAmount" : 389381.28,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479766332-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 515,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-05-29T02:53:19.603-04:00[America/New_York]",
+  "totalAmount" : 154964.94,
+  "amountPaid" : 45734.29,
+  "outstandingAmount" : 109230.65,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479771321-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 516,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-07-10T03:58:02.437-04:00[America/New_York]",
+  "totalAmount" : 47982.27,
+  "amountPaid" : 24320.81,
+  "outstandingAmount" : 23661.46,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479776501-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 517,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-30T14:27:16.05-04:00[America/New_York]",
+  "totalAmount" : 402701.20,
+  "amountPaid" : 66933.45,
+  "outstandingAmount" : 335767.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47978143-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 518,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-03-04T08:58:56.262-05:00[America/New_York]",
+  "totalAmount" : 302142.68,
+  "amountPaid" : 276913.64,
+  "outstandingAmount" : 25229.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.47978644-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 519,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-24T16:43:22.307-04:00[America/New_York]",
+  "totalAmount" : 192868.36,
+  "amountPaid" : 54334.37,
+  "outstandingAmount" : 138533.99,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479791499-04:00[America/New_York]"
+  }
+}, {
+  "loanNumber" : 520,
+  "userId" : 26,
+  "loanType" : "Mortgage",
+  "startDate" : "2024-04-07T00:16:25.355-04:00[America/New_York]",
+  "totalAmount" : 223896.45,
+  "amountPaid" : 76095.77,
+  "outstandingAmount" : 147800.68,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.479796389-04:00[America/New_York]"
+  }
+} ]

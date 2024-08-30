@@ -1,1 +1,5721 @@
-[ ]
+[ {
+  "id" : 1,
+  "cardNumber" : "3711-456603-83542",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 3447.67,
+  "amountUsed" : 2541.59,
+  "availableAmount" : 906.09,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.372526788-04:00[America/New_York]"
+  }
+}, {
+  "id" : 2,
+  "cardNumber" : "5019-2939-7904-7593",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 7476.56,
+  "amountUsed" : 6923.71,
+  "availableAmount" : 552.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.372964928-04:00[America/New_York]"
+  }
+}, {
+  "id" : 3,
+  "cardNumber" : "5019-8015-1734-9600",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 8745.95,
+  "amountUsed" : 5798.32,
+  "availableAmount" : 2947.63,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373010815-04:00[America/New_York]"
+  }
+}, {
+  "id" : 4,
+  "cardNumber" : "3482-040241-58551",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 9072.26,
+  "amountUsed" : 3095.20,
+  "availableAmount" : 5977.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373046723-04:00[America/New_York]"
+  }
+}, {
+  "id" : 5,
+  "cardNumber" : "6304821916832768",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 8557.41,
+  "amountUsed" : 3146.32,
+  "availableAmount" : 5411.09,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373066771-04:00[America/New_York]"
+  }
+}, {
+  "id" : 6,
+  "cardNumber" : "5019-8542-2889-2434",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 2277.77,
+  "amountUsed" : 1238.72,
+  "availableAmount" : 1039.05,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37308231-04:00[America/New_York]"
+  }
+}, {
+  "id" : 7,
+  "cardNumber" : "6767-1135-1145-3019-86",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 2756.24,
+  "amountUsed" : 2621.36,
+  "availableAmount" : 134.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373096497-04:00[America/New_York]"
+  }
+}, {
+  "id" : 8,
+  "cardNumber" : "6007-2292-2227-3216",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 5695.80,
+  "amountUsed" : 2906.35,
+  "availableAmount" : 2789.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373111506-04:00[America/New_York]"
+  }
+}, {
+  "id" : 9,
+  "cardNumber" : "6767-6473-7929-1904-717",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 8408.26,
+  "amountUsed" : 7478.97,
+  "availableAmount" : 929.30,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373125622-04:00[America/New_York]"
+  }
+}, {
+  "id" : 10,
+  "cardNumber" : "3472-498395-49594",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 6894.03,
+  "amountUsed" : 1070.32,
+  "availableAmount" : 5823.70,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373138707-04:00[America/New_York]"
+  }
+}, {
+  "id" : 11,
+  "cardNumber" : "6759-4611-8241-2777-02",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 8693.32,
+  "amountUsed" : 3675.41,
+  "availableAmount" : 5017.91,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373151762-04:00[America/New_York]"
+  }
+}, {
+  "id" : 12,
+  "cardNumber" : "4309-0271-3162-6734",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 3617.64,
+  "amountUsed" : 2074.24,
+  "availableAmount" : 1543.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373165197-04:00[America/New_York]"
+  }
+}, {
+  "id" : 13,
+  "cardNumber" : "6007-2210-3118-6721",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 2792.74,
+  "amountUsed" : 2718.76,
+  "availableAmount" : 73.99,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373177641-04:00[America/New_York]"
+  }
+}, {
+  "id" : 14,
+  "cardNumber" : "6767-6340-7690-7951",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 5802.96,
+  "amountUsed" : 2712.49,
+  "availableAmount" : 3090.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373190435-04:00[America/New_York]"
+  }
+}, {
+  "id" : 15,
+  "cardNumber" : "6709194538103930",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 3375.10,
+  "amountUsed" : 2300.35,
+  "availableAmount" : 1074.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373202919-04:00[America/New_York]"
+  }
+}, {
+  "id" : 16,
+  "cardNumber" : "6011-0059-8389-1220",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 1958.53,
+  "amountUsed" : 1301.67,
+  "availableAmount" : 656.86,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.3732301-04:00[America/New_York]"
+  }
+}, {
+  "id" : 17,
+  "cardNumber" : "6007-2267-6729-9382",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 1413.81,
+  "amountUsed" : 1049.70,
+  "availableAmount" : 364.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373248926-04:00[America/New_York]"
+  }
+}, {
+  "id" : 18,
+  "cardNumber" : "6516-2167-4037-6880",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 4481.49,
+  "amountUsed" : 2152.08,
+  "availableAmount" : 2329.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373262852-04:00[America/New_York]"
+  }
+}, {
+  "id" : 19,
+  "cardNumber" : "6767-9810-8175-3266-97",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 7612.97,
+  "amountUsed" : 5985.10,
+  "availableAmount" : 1627.87,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373295003-04:00[America/New_York]"
+  }
+}, {
+  "id" : 20,
+  "cardNumber" : "3832-751737-3588",
+  "userId" : 1,
+  "cardType" : "Visa",
+  "totalLimit" : 4443.90,
+  "amountUsed" : 1788.75,
+  "availableAmount" : 2655.16,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373310733-04:00[America/New_York]"
+  }
+}, {
+  "id" : 21,
+  "cardNumber" : "3699-348885-8519",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 9013.47,
+  "amountUsed" : 8438.21,
+  "availableAmount" : 575.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373328136-04:00[America/New_York]"
+  }
+}, {
+  "id" : 22,
+  "cardNumber" : "3045-780652-4936",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 4619.79,
+  "amountUsed" : 3244.35,
+  "availableAmount" : 1375.44,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373343295-04:00[America/New_York]"
+  }
+}, {
+  "id" : 23,
+  "cardNumber" : "6759-6424-4355-5919-64",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 7738.48,
+  "amountUsed" : 1660.25,
+  "availableAmount" : 6078.24,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373364876-04:00[America/New_York]"
+  }
+}, {
+  "id" : 24,
+  "cardNumber" : "6767-6690-8231-4602",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 8660.30,
+  "amountUsed" : 6433.10,
+  "availableAmount" : 2227.20,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373387639-04:00[America/New_York]"
+  }
+}, {
+  "id" : 25,
+  "cardNumber" : "6759-1766-3338-4456",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 6702.66,
+  "amountUsed" : 3970.97,
+  "availableAmount" : 2731.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373401766-04:00[America/New_York]"
+  }
+}, {
+  "id" : 26,
+  "cardNumber" : "3828-370219-2368",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 1934.22,
+  "amountUsed" : 1410.44,
+  "availableAmount" : 523.78,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373415281-04:00[America/New_York]"
+  }
+}, {
+  "id" : 27,
+  "cardNumber" : "5019-8298-0995-0397",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 3893.70,
+  "amountUsed" : 2102.28,
+  "availableAmount" : 1791.43,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373427384-04:00[America/New_York]"
+  }
+}, {
+  "id" : 28,
+  "cardNumber" : "6007-2292-3015-0463",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 4892.50,
+  "amountUsed" : 1373.51,
+  "availableAmount" : 3518.99,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373439868-04:00[America/New_York]"
+  }
+}, {
+  "id" : 29,
+  "cardNumber" : "4551-0107-1786-9162",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 6906.47,
+  "amountUsed" : 3178.63,
+  "availableAmount" : 3727.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37345187-04:00[America/New_York]"
+  }
+}, {
+  "id" : 30,
+  "cardNumber" : "5019-2940-8135-8266",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 2596.85,
+  "amountUsed" : 1928.79,
+  "availableAmount" : 668.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373476006-04:00[America/New_York]"
+  }
+}, {
+  "id" : 31,
+  "cardNumber" : "3622-686146-8576",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 9425.93,
+  "amountUsed" : 1591.20,
+  "availableAmount" : 7834.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373495002-04:00[America/New_York]"
+  }
+}, {
+  "id" : 32,
+  "cardNumber" : "5019-3649-1390-9535",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 9813.93,
+  "amountUsed" : 2960.73,
+  "availableAmount" : 6853.20,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373509409-04:00[America/New_York]"
+  }
+}, {
+  "id" : 33,
+  "cardNumber" : "4301-5175-1641-5644",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 6647.28,
+  "amountUsed" : 4492.94,
+  "availableAmount" : 2154.34,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373521833-04:00[America/New_York]"
+  }
+}, {
+  "id" : 34,
+  "cardNumber" : "4602-8860-5439-6698",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 9121.52,
+  "amountUsed" : 6791.27,
+  "availableAmount" : 2330.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373533605-04:00[America/New_York]"
+  }
+}, {
+  "id" : 35,
+  "cardNumber" : "6767-0338-6015-9284-76",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 9566.73,
+  "amountUsed" : 6071.86,
+  "availableAmount" : 3494.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37354676-04:00[America/New_York]"
+  }
+}, {
+  "id" : 36,
+  "cardNumber" : "5455-5001-1449-2117",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 2912.94,
+  "amountUsed" : 1913.89,
+  "availableAmount" : 999.05,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373866045-04:00[America/New_York]"
+  }
+}, {
+  "id" : 37,
+  "cardNumber" : "3823-631001-3467",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 3210.90,
+  "amountUsed" : 2040.36,
+  "availableAmount" : 1170.53,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373912263-04:00[America/New_York]"
+  }
+}, {
+  "id" : 38,
+  "cardNumber" : "1800-6625-1439-0878",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 6542.99,
+  "amountUsed" : 1889.80,
+  "availableAmount" : 4653.19,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373940015-04:00[America/New_York]"
+  }
+}, {
+  "id" : 39,
+  "cardNumber" : "3007-859033-5469",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 6082.86,
+  "amountUsed" : 5373.17,
+  "availableAmount" : 709.70,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373956066-04:00[America/New_York]"
+  }
+}, {
+  "id" : 40,
+  "cardNumber" : "6767-6056-5592-3239",
+  "userId" : 2,
+  "cardType" : "Visa",
+  "totalLimit" : 5277.23,
+  "amountUsed" : 1509.76,
+  "availableAmount" : 3767.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373969211-04:00[America/New_York]"
+  }
+}, {
+  "id" : 41,
+  "cardNumber" : "1800-0106-4671-9558",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 5289.95,
+  "amountUsed" : 1876.39,
+  "availableAmount" : 3413.56,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373982446-04:00[America/New_York]"
+  }
+}, {
+  "id" : 42,
+  "cardNumber" : "1800-9342-6993-3693",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 5962.55,
+  "amountUsed" : 5941.39,
+  "availableAmount" : 21.15,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.373994388-04:00[America/New_York]"
+  }
+}, {
+  "id" : 43,
+  "cardNumber" : "6007-2221-6773-1637",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 5512.14,
+  "amountUsed" : 1932.56,
+  "availableAmount" : 3579.58,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37400606-04:00[America/New_York]"
+  }
+}, {
+  "id" : 44,
+  "cardNumber" : "3789-744787-32571",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 9330.36,
+  "amountUsed" : 4023.76,
+  "availableAmount" : 5306.60,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37402688-04:00[America/New_York]"
+  }
+}, {
+  "id" : 45,
+  "cardNumber" : "3882-376092-2808",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 8565.13,
+  "amountUsed" : 2517.08,
+  "availableAmount" : 6048.05,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374039053-04:00[America/New_York]"
+  }
+}, {
+  "id" : 46,
+  "cardNumber" : "6759-7152-9111-8340",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 9091.46,
+  "amountUsed" : 6737.30,
+  "availableAmount" : 2354.16,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374050655-04:00[America/New_York]"
+  }
+}, {
+  "id" : 47,
+  "cardNumber" : "3455-288530-94930",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 3436.35,
+  "amountUsed" : 3282.13,
+  "availableAmount" : 154.21,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374061566-04:00[America/New_York]"
+  }
+}, {
+  "id" : 48,
+  "cardNumber" : "6516-2134-3935-6125",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 2279.14,
+  "amountUsed" : 1468.88,
+  "availableAmount" : 810.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374072376-04:00[America/New_York]"
+  }
+}, {
+  "id" : 49,
+  "cardNumber" : "2123-7043-6338-1083",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 8291.24,
+  "amountUsed" : 6595.31,
+  "availableAmount" : 1695.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374083127-04:00[America/New_York]"
+  }
+}, {
+  "id" : 50,
+  "cardNumber" : "5019-6146-2380-6748",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 8159.40,
+  "amountUsed" : 6305.82,
+  "availableAmount" : 1853.58,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374094999-04:00[America/New_York]"
+  }
+}, {
+  "id" : 51,
+  "cardNumber" : "6771780409564433",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 9757.29,
+  "amountUsed" : 2917.01,
+  "availableAmount" : 6840.29,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37410598-04:00[America/New_York]"
+  }
+}, {
+  "id" : 52,
+  "cardNumber" : "3868-516521-7286",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 1103.09,
+  "amountUsed" : 1012.49,
+  "availableAmount" : 90.60,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374336797-04:00[America/New_York]"
+  }
+}, {
+  "id" : 53,
+  "cardNumber" : "5106-2473-8574-6473",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 2079.50,
+  "amountUsed" : 1411.46,
+  "availableAmount" : 668.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374369539-04:00[America/New_York]"
+  }
+}, {
+  "id" : 54,
+  "cardNumber" : "6011-1052-4564-3359",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 6735.92,
+  "amountUsed" : 2156.98,
+  "availableAmount" : 4578.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374387133-04:00[America/New_York]"
+  }
+}, {
+  "id" : 55,
+  "cardNumber" : "3641-850297-9554",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 3274.73,
+  "amountUsed" : 2900.51,
+  "availableAmount" : 374.23,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374400728-04:00[America/New_York]"
+  }
+}, {
+  "id" : 56,
+  "cardNumber" : "6706939436956257",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 3847.45,
+  "amountUsed" : 1057.54,
+  "availableAmount" : 2789.90,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374413683-04:00[America/New_York]"
+  }
+}, {
+  "id" : 57,
+  "cardNumber" : "4222-0077-1901-8987",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 6627.41,
+  "amountUsed" : 2971.57,
+  "availableAmount" : 3655.83,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374425615-04:00[America/New_York]"
+  }
+}, {
+  "id" : 58,
+  "cardNumber" : "2123-8042-1538-8128",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 4974.72,
+  "amountUsed" : 2573.34,
+  "availableAmount" : 2401.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374437197-04:00[America/New_York]"
+  }
+}, {
+  "id" : 59,
+  "cardNumber" : "5441-0655-8042-0494",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 8077.27,
+  "amountUsed" : 3840.70,
+  "availableAmount" : 4236.57,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374447938-04:00[America/New_York]"
+  }
+}, {
+  "id" : 60,
+  "cardNumber" : "6759-6379-0405-6367-70",
+  "userId" : 3,
+  "cardType" : "Visa",
+  "totalLimit" : 8838.26,
+  "amountUsed" : 6206.93,
+  "availableAmount" : 2631.33,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374458528-04:00[America/New_York]"
+  }
+}, {
+  "id" : 61,
+  "cardNumber" : "5019-6902-4094-8147",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 2524.27,
+  "amountUsed" : 1423.06,
+  "availableAmount" : 1101.21,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374469569-04:00[America/New_York]"
+  }
+}, {
+  "id" : 62,
+  "cardNumber" : "3446-210952-89680",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 1303.43,
+  "amountUsed" : 1147.85,
+  "availableAmount" : 155.58,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37448066-04:00[America/New_York]"
+  }
+}, {
+  "id" : 63,
+  "cardNumber" : "3078-809744-4875",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 6885.62,
+  "amountUsed" : 1295.31,
+  "availableAmount" : 5590.31,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37449141-04:00[America/New_York]"
+  }
+}, {
+  "id" : 64,
+  "cardNumber" : "6771318809021843",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 9029.69,
+  "amountUsed" : 2756.60,
+  "availableAmount" : 6273.08,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374626306-04:00[America/New_York]"
+  }
+}, {
+  "id" : 65,
+  "cardNumber" : "6706895018621604",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 8191.64,
+  "amountUsed" : 6158.35,
+  "availableAmount" : 2033.29,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374740823-04:00[America/New_York]"
+  }
+}, {
+  "id" : 66,
+  "cardNumber" : "6759-3959-5770-3568",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 1170.19,
+  "amountUsed" : 1035.91,
+  "availableAmount" : 134.27,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374759228-04:00[America/New_York]"
+  }
+}, {
+  "id" : 67,
+  "cardNumber" : "5487-7218-6561-0119",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 1830.67,
+  "amountUsed" : 1315.12,
+  "availableAmount" : 515.55,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374773434-04:00[America/New_York]"
+  }
+}, {
+  "id" : 68,
+  "cardNumber" : "5571-7087-0539-6402",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 4574.32,
+  "amountUsed" : 3090.59,
+  "availableAmount" : 1483.73,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374786649-04:00[America/New_York]"
+  }
+}, {
+  "id" : 69,
+  "cardNumber" : "6595-2439-8971-7610",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 1412.57,
+  "amountUsed" : 1388.84,
+  "availableAmount" : 23.73,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374799484-04:00[America/New_York]"
+  }
+}, {
+  "id" : 70,
+  "cardNumber" : "6767-6250-4728-6095",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 5176.21,
+  "amountUsed" : 2336.47,
+  "availableAmount" : 2839.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374827297-04:00[America/New_York]"
+  }
+}, {
+  "id" : 71,
+  "cardNumber" : "6007-2279-8736-1614",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 6388.36,
+  "amountUsed" : 1182.96,
+  "availableAmount" : 5205.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374843678-04:00[America/New_York]"
+  }
+}, {
+  "id" : 72,
+  "cardNumber" : "3643-344863-3389",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 7506.02,
+  "amountUsed" : 6944.15,
+  "availableAmount" : 561.87,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374856281-04:00[America/New_York]"
+  }
+}, {
+  "id" : 73,
+  "cardNumber" : "3493-884798-60966",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 3338.45,
+  "amountUsed" : 2729.33,
+  "availableAmount" : 609.12,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374868454-04:00[America/New_York]"
+  }
+}, {
+  "id" : 74,
+  "cardNumber" : "2123-9156-9524-9943",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 6917.19,
+  "amountUsed" : 4107.38,
+  "availableAmount" : 2809.81,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374880187-04:00[America/New_York]"
+  }
+}, {
+  "id" : 75,
+  "cardNumber" : "4270-2131-9871-2956",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 2618.00,
+  "amountUsed" : 2304.79,
+  "availableAmount" : 313.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374892811-04:00[America/New_York]"
+  }
+}, {
+  "id" : 76,
+  "cardNumber" : "6759-5445-0266-8947",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 4784.68,
+  "amountUsed" : 1207.20,
+  "availableAmount" : 3577.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374904863-04:00[America/New_York]"
+  }
+}, {
+  "id" : 77,
+  "cardNumber" : "2123-8591-8081-7667",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 2772.92,
+  "amountUsed" : 2016.26,
+  "availableAmount" : 756.66,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374916926-04:00[America/New_York]"
+  }
+}, {
+  "id" : 78,
+  "cardNumber" : "6595-2453-5112-8300",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 1369.95,
+  "amountUsed" : 1270.17,
+  "availableAmount" : 99.78,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374928639-04:00[America/New_York]"
+  }
+}, {
+  "id" : 79,
+  "cardNumber" : "5019-7798-3856-8399",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 6478.70,
+  "amountUsed" : 3925.46,
+  "availableAmount" : 2553.25,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37493997-04:00[America/New_York]"
+  }
+}, {
+  "id" : 80,
+  "cardNumber" : "4239-9926-1269-6354",
+  "userId" : 4,
+  "cardType" : "Visa",
+  "totalLimit" : 2041.45,
+  "amountUsed" : 1600.89,
+  "availableAmount" : 440.55,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374951422-04:00[America/New_York]"
+  }
+}, {
+  "id" : 81,
+  "cardNumber" : "4664-6262-0038-2993",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 9633.94,
+  "amountUsed" : 9279.99,
+  "availableAmount" : 353.95,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374963485-04:00[America/New_York]"
+  }
+}, {
+  "id" : 82,
+  "cardNumber" : "3868-887008-1971",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 4223.00,
+  "amountUsed" : 2685.10,
+  "availableAmount" : 1537.91,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374975157-04:00[America/New_York]"
+  }
+}, {
+  "id" : 83,
+  "cardNumber" : "4969-4994-1586-4946",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 5369.38,
+  "amountUsed" : 5119.76,
+  "availableAmount" : 249.62,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.374986829-04:00[America/New_York]"
+  }
+}, {
+  "id" : 84,
+  "cardNumber" : "4541-5045-3940-9044",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 6580.84,
+  "amountUsed" : 4337.07,
+  "availableAmount" : 2243.77,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.3749982-04:00[America/New_York]"
+  }
+}, {
+  "id" : 85,
+  "cardNumber" : "5019-3071-4302-8501",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 3045.75,
+  "amountUsed" : 3015.42,
+  "availableAmount" : 30.33,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375009943-04:00[America/New_York]"
+  }
+}, {
+  "id" : 86,
+  "cardNumber" : "5019-1169-6810-9621",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 2057.84,
+  "amountUsed" : 1282.31,
+  "availableAmount" : 775.53,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375021214-04:00[America/New_York]"
+  }
+}, {
+  "id" : 87,
+  "cardNumber" : "6759-1129-3715-1815-076",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 8479.15,
+  "amountUsed" : 5093.74,
+  "availableAmount" : 3385.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375046251-04:00[America/New_York]"
+  }
+}, {
+  "id" : 88,
+  "cardNumber" : "6007-2267-1478-8651",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 8541.52,
+  "amountUsed" : 2483.91,
+  "availableAmount" : 6057.60,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375058104-04:00[America/New_York]"
+  }
+}, {
+  "id" : 89,
+  "cardNumber" : "6771992423851296",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 3401.29,
+  "amountUsed" : 2579.64,
+  "availableAmount" : 821.65,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375069906-04:00[America/New_York]"
+  }
+}, {
+  "id" : 90,
+  "cardNumber" : "6771783859159456",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 6160.92,
+  "amountUsed" : 1038.63,
+  "availableAmount" : 5122.29,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375081548-04:00[America/New_York]"
+  }
+}, {
+  "id" : 91,
+  "cardNumber" : "6767-4092-6558-5456-51",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 8883.29,
+  "amountUsed" : 8641.21,
+  "availableAmount" : 242.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375093-04:00[America/New_York]"
+  }
+}, {
+  "id" : 92,
+  "cardNumber" : "6767-2060-6798-1285",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 2898.58,
+  "amountUsed" : 2784.56,
+  "availableAmount" : 114.01,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375104311-04:00[America/New_York]"
+  }
+}, {
+  "id" : 93,
+  "cardNumber" : "6516-2161-7066-2015",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 9917.80,
+  "amountUsed" : 2042.01,
+  "availableAmount" : 7875.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375115382-04:00[America/New_York]"
+  }
+}, {
+  "id" : 94,
+  "cardNumber" : "6595-2466-8292-4292",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 6088.37,
+  "amountUsed" : 5835.68,
+  "availableAmount" : 252.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375126523-04:00[America/New_York]"
+  }
+}, {
+  "id" : 95,
+  "cardNumber" : "4914-5909-2112-6691",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 4661.40,
+  "amountUsed" : 2875.91,
+  "availableAmount" : 1785.49,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375137735-04:00[America/New_York]"
+  }
+}, {
+  "id" : 96,
+  "cardNumber" : "6516-2166-3619-2003",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 4811.93,
+  "amountUsed" : 4799.01,
+  "availableAmount" : 12.92,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375148966-04:00[America/New_York]"
+  }
+}, {
+  "id" : 97,
+  "cardNumber" : "5495-0124-4635-4959",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 8829.14,
+  "amountUsed" : 6435.64,
+  "availableAmount" : 2393.50,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375159847-04:00[America/New_York]"
+  }
+}, {
+  "id" : 98,
+  "cardNumber" : "6771628757880770",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 6292.40,
+  "amountUsed" : 4783.58,
+  "availableAmount" : 1508.82,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375185435-04:00[America/New_York]"
+  }
+}, {
+  "id" : 99,
+  "cardNumber" : "6011-1047-8584-9450",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 9047.27,
+  "amountUsed" : 4721.24,
+  "availableAmount" : 4326.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375203339-04:00[America/New_York]"
+  }
+}, {
+  "id" : 100,
+  "cardNumber" : "3779-020264-56238",
+  "userId" : 5,
+  "cardType" : "Visa",
+  "totalLimit" : 5286.34,
+  "amountUsed" : 5283.95,
+  "availableAmount" : 2.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375216093-04:00[America/New_York]"
+  }
+}, {
+  "id" : 101,
+  "cardNumber" : "5289-0377-3178-3554",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 4933.13,
+  "amountUsed" : 4563.34,
+  "availableAmount" : 369.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375227545-04:00[America/New_York]"
+  }
+}, {
+  "id" : 102,
+  "cardNumber" : "4319-4609-4822-7198",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 4563.43,
+  "amountUsed" : 1503.40,
+  "availableAmount" : 3060.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375421693-04:00[America/New_York]"
+  }
+}, {
+  "id" : 103,
+  "cardNumber" : "6706183354521120",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 1795.33,
+  "amountUsed" : 1414.76,
+  "availableAmount" : 380.57,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37546235-04:00[America/New_York]"
+  }
+}, {
+  "id" : 104,
+  "cardNumber" : "3861-652876-6958",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 3311.35,
+  "amountUsed" : 1834.57,
+  "availableAmount" : 1476.78,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375480434-04:00[America/New_York]"
+  }
+}, {
+  "id" : 105,
+  "cardNumber" : "3948-649599-76427",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 6582.92,
+  "amountUsed" : 5742.95,
+  "availableAmount" : 839.97,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375496364-04:00[America/New_York]"
+  }
+}, {
+  "id" : 106,
+  "cardNumber" : "3681-098776-6763",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 3272.22,
+  "amountUsed" : 1237.36,
+  "availableAmount" : 2034.86,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375513046-04:00[America/New_York]"
+  }
+}, {
+  "id" : 107,
+  "cardNumber" : "6767-2193-4659-4712",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 5067.05,
+  "amountUsed" : 4292.12,
+  "availableAmount" : 774.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375539476-04:00[America/New_York]"
+  }
+}, {
+  "id" : 108,
+  "cardNumber" : "5019-4671-7626-7366",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 3638.15,
+  "amountUsed" : 2389.37,
+  "availableAmount" : 1248.78,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375557059-04:00[America/New_York]"
+  }
+}, {
+  "id" : 109,
+  "cardNumber" : "3455-759633-27627",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 7853.94,
+  "amountUsed" : 4849.49,
+  "availableAmount" : 3004.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375570414-04:00[America/New_York]"
+  }
+}, {
+  "id" : 110,
+  "cardNumber" : "4261-7800-4344-6874",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 9253.40,
+  "amountUsed" : 5300.33,
+  "availableAmount" : 3953.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375582798-04:00[America/New_York]"
+  }
+}, {
+  "id" : 111,
+  "cardNumber" : "5209-4423-1279-3161",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 8859.26,
+  "amountUsed" : 6680.74,
+  "availableAmount" : 2178.52,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375606373-04:00[America/New_York]"
+  }
+}, {
+  "id" : 112,
+  "cardNumber" : "6007-2212-2974-4166",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 5526.85,
+  "amountUsed" : 2988.58,
+  "availableAmount" : 2538.27,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375623996-04:00[America/New_York]"
+  }
+}, {
+  "id" : 113,
+  "cardNumber" : "3012-889903-1325",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 4462.49,
+  "amountUsed" : 2579.46,
+  "availableAmount" : 1883.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37563664-04:00[America/New_York]"
+  }
+}, {
+  "id" : 114,
+  "cardNumber" : "6011-1013-4885-0991",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 2402.68,
+  "amountUsed" : 2332.36,
+  "availableAmount" : 70.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375650436-04:00[America/New_York]"
+  }
+}, {
+  "id" : 115,
+  "cardNumber" : "6771611638568079",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 5340.85,
+  "amountUsed" : 1085.16,
+  "availableAmount" : 4255.68,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375664443-04:00[America/New_York]"
+  }
+}, {
+  "id" : 116,
+  "cardNumber" : "4204-5862-2623-1995",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 7429.96,
+  "amountUsed" : 5521.21,
+  "availableAmount" : 1908.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375677397-04:00[America/New_York]"
+  }
+}, {
+  "id" : 117,
+  "cardNumber" : "6771893292672138",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 7212.60,
+  "amountUsed" : 3025.14,
+  "availableAmount" : 4187.46,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375688649-04:00[America/New_York]"
+  }
+}, {
+  "id" : 118,
+  "cardNumber" : "5019-7389-5420-9436",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 8098.52,
+  "amountUsed" : 1406.14,
+  "availableAmount" : 6692.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37570024-04:00[America/New_York]"
+  }
+}, {
+  "id" : 119,
+  "cardNumber" : "3063-892848-2539",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 6133.30,
+  "amountUsed" : 1745.94,
+  "availableAmount" : 4387.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375711532-04:00[America/New_York]"
+  }
+}, {
+  "id" : 120,
+  "cardNumber" : "3074-238635-4428",
+  "userId" : 6,
+  "cardType" : "Visa",
+  "totalLimit" : 7142.30,
+  "amountUsed" : 4391.72,
+  "availableAmount" : 2750.58,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375740908-04:00[America/New_York]"
+  }
+}, {
+  "id" : 121,
+  "cardNumber" : "3398-860956-57213",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 6973.90,
+  "amountUsed" : 4658.89,
+  "availableAmount" : 2315.01,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375766937-04:00[America/New_York]"
+  }
+}, {
+  "id" : 122,
+  "cardNumber" : "6516-2191-9312-5317",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 6395.67,
+  "amountUsed" : 4259.43,
+  "availableAmount" : 2136.24,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375793267-04:00[America/New_York]"
+  }
+}, {
+  "id" : 123,
+  "cardNumber" : "5223-1957-0236-4348",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 6279.51,
+  "amountUsed" : 4850.02,
+  "availableAmount" : 1429.50,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375819476-04:00[America/New_York]"
+  }
+}, {
+  "id" : 124,
+  "cardNumber" : "6007-2227-9896-8491",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 7049.03,
+  "amountUsed" : 2950.43,
+  "availableAmount" : 4098.60,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.3758426-04:00[America/New_York]"
+  }
+}, {
+  "id" : 125,
+  "cardNumber" : "6007-2243-8791-4761",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 4845.18,
+  "amountUsed" : 1538.02,
+  "availableAmount" : 3307.16,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375865714-04:00[America/New_York]"
+  }
+}, {
+  "id" : 126,
+  "cardNumber" : "5364-5954-4091-8710",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 6988.17,
+  "amountUsed" : 2718.46,
+  "availableAmount" : 4269.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375889128-04:00[America/New_York]"
+  }
+}, {
+  "id" : 127,
+  "cardNumber" : "4991-4003-9104-2210",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 8615.28,
+  "amountUsed" : 5606.19,
+  "availableAmount" : 3009.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.375924766-04:00[America/New_York]"
+  }
+}, {
+  "id" : 128,
+  "cardNumber" : "5019-4971-9314-1666",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 8301.68,
+  "amountUsed" : 1054.53,
+  "availableAmount" : 7247.15,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376122901-04:00[America/New_York]"
+  }
+}, {
+  "id" : 129,
+  "cardNumber" : "3879-467879-0134",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 2994.99,
+  "amountUsed" : 1085.72,
+  "availableAmount" : 1909.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376725303-04:00[America/New_York]"
+  }
+}, {
+  "id" : 130,
+  "cardNumber" : "3045-412046-5789",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 5720.52,
+  "amountUsed" : 1602.37,
+  "availableAmount" : 4118.15,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37676068-04:00[America/New_York]"
+  }
+}, {
+  "id" : 131,
+  "cardNumber" : "3491-245867-11424",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 6121.56,
+  "amountUsed" : 5316.90,
+  "availableAmount" : 804.67,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376779676-04:00[America/New_York]"
+  }
+}, {
+  "id" : 132,
+  "cardNumber" : "6759-2272-7821-1734",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 2349.12,
+  "amountUsed" : 1273.51,
+  "availableAmount" : 1075.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376793362-04:00[America/New_York]"
+  }
+}, {
+  "id" : 133,
+  "cardNumber" : "3706-739842-56327",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 1017.00,
+  "amountUsed" : 1001.05,
+  "availableAmount" : 15.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376805725-04:00[America/New_York]"
+  }
+}, {
+  "id" : 134,
+  "cardNumber" : "3816-105368-73099",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 5646.12,
+  "amountUsed" : 2108.04,
+  "availableAmount" : 3538.08,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376817477-04:00[America/New_York]"
+  }
+}, {
+  "id" : 135,
+  "cardNumber" : "6767-8119-4183-0382",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 8813.82,
+  "amountUsed" : 4818.72,
+  "availableAmount" : 3995.09,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37682926-04:00[America/New_York]"
+  }
+}, {
+  "id" : 136,
+  "cardNumber" : "3494-151079-55619",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 8940.08,
+  "amountUsed" : 1413.82,
+  "availableAmount" : 7526.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376841022-04:00[America/New_York]"
+  }
+}, {
+  "id" : 137,
+  "cardNumber" : "6011-1036-3268-8277",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 6258.06,
+  "amountUsed" : 3477.70,
+  "availableAmount" : 2780.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376852273-04:00[America/New_York]"
+  }
+}, {
+  "id" : 138,
+  "cardNumber" : "3033-038695-4148",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 8155.84,
+  "amountUsed" : 1988.98,
+  "availableAmount" : 6166.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376863555-04:00[America/New_York]"
+  }
+}, {
+  "id" : 139,
+  "cardNumber" : "5019-9674-7639-8738",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 1505.21,
+  "amountUsed" : 1417.59,
+  "availableAmount" : 87.62,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376874906-04:00[America/New_York]"
+  }
+}, {
+  "id" : 140,
+  "cardNumber" : "3061-357311-7607",
+  "userId" : 7,
+  "cardType" : "Visa",
+  "totalLimit" : 5310.24,
+  "amountUsed" : 1418.16,
+  "availableAmount" : 3892.09,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376886558-04:00[America/New_York]"
+  }
+}, {
+  "id" : 141,
+  "cardNumber" : "6007-2269-4333-8427",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 9354.41,
+  "amountUsed" : 9229.33,
+  "availableAmount" : 125.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376897719-04:00[America/New_York]"
+  }
+}, {
+  "id" : 142,
+  "cardNumber" : "6550-6600-8626-8390",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 6895.72,
+  "amountUsed" : 5377.07,
+  "availableAmount" : 1518.65,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37690869-04:00[America/New_York]"
+  }
+}, {
+  "id" : 143,
+  "cardNumber" : "3729-856343-16790",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 2073.43,
+  "amountUsed" : 1335.83,
+  "availableAmount" : 737.59,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376919631-04:00[America/New_York]"
+  }
+}, {
+  "id" : 144,
+  "cardNumber" : "6759-5894-6146-8544-091",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 8239.10,
+  "amountUsed" : 3978.33,
+  "availableAmount" : 4260.77,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376930341-04:00[America/New_York]"
+  }
+}, {
+  "id" : 145,
+  "cardNumber" : "5533-2371-4395-3787",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 4234.78,
+  "amountUsed" : 1158.83,
+  "availableAmount" : 3075.96,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376941733-04:00[America/New_York]"
+  }
+}, {
+  "id" : 146,
+  "cardNumber" : "5019-1683-0630-7839",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 5352.59,
+  "amountUsed" : 5265.24,
+  "availableAmount" : 87.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376952704-04:00[America/New_York]"
+  }
+}, {
+  "id" : 147,
+  "cardNumber" : "4377-4495-7996-7692",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 6929.43,
+  "amountUsed" : 6017.45,
+  "availableAmount" : 911.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376963384-04:00[America/New_York]"
+  }
+}, {
+  "id" : 148,
+  "cardNumber" : "6759-3792-2490-4282-34",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 9504.38,
+  "amountUsed" : 4937.43,
+  "availableAmount" : 4566.95,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376974114-04:00[America/New_York]"
+  }
+}, {
+  "id" : 149,
+  "cardNumber" : "4357-2143-4707-0938",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 6240.02,
+  "amountUsed" : 4069.66,
+  "availableAmount" : 2170.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376984804-04:00[America/New_York]"
+  }
+}, {
+  "id" : 150,
+  "cardNumber" : "3009-304517-2409",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 8618.42,
+  "amountUsed" : 5495.68,
+  "availableAmount" : 3122.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.376995815-04:00[America/New_York]"
+  }
+}, {
+  "id" : 151,
+  "cardNumber" : "3703-883341-57881",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 8416.21,
+  "amountUsed" : 7606.11,
+  "availableAmount" : 810.09,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377006946-04:00[America/New_York]"
+  }
+}, {
+  "id" : 152,
+  "cardNumber" : "6759-6539-6243-2641-054",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 7669.05,
+  "amountUsed" : 6600.04,
+  "availableAmount" : 1069.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377269434-04:00[America/New_York]"
+  }
+}, {
+  "id" : 153,
+  "cardNumber" : "3401-416974-36484",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 1306.45,
+  "amountUsed" : 1042.10,
+  "availableAmount" : 264.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377302186-04:00[America/New_York]"
+  }
+}, {
+  "id" : 154,
+  "cardNumber" : "3776-990923-25798",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 1729.44,
+  "amountUsed" : 1659.28,
+  "availableAmount" : 70.16,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377318837-04:00[America/New_York]"
+  }
+}, {
+  "id" : 155,
+  "cardNumber" : "3026-023061-4251",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 9289.47,
+  "amountUsed" : 4267.31,
+  "availableAmount" : 5022.16,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377332994-04:00[America/New_York]"
+  }
+}, {
+  "id" : 156,
+  "cardNumber" : "4485-9542-3114-8051",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 4273.37,
+  "amountUsed" : 2575.99,
+  "availableAmount" : 1697.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37736786-04:00[America/New_York]"
+  }
+}, {
+  "id" : 157,
+  "cardNumber" : "5019-3904-6049-4795",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 8132.14,
+  "amountUsed" : 6701.30,
+  "availableAmount" : 1430.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377396134-04:00[America/New_York]"
+  }
+}, {
+  "id" : 158,
+  "cardNumber" : "3157-440245-26389",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 6834.67,
+  "amountUsed" : 6672.00,
+  "availableAmount" : 162.67,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377440067-04:00[America/New_York]"
+  }
+}, {
+  "id" : 159,
+  "cardNumber" : "6759-9197-2455-1867-518",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 5148.11,
+  "amountUsed" : 2379.03,
+  "availableAmount" : 2769.08,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377468982-04:00[America/New_York]"
+  }
+}, {
+  "id" : 160,
+  "cardNumber" : "3488-950137-16067",
+  "userId" : 8,
+  "cardType" : "Visa",
+  "totalLimit" : 5632.07,
+  "amountUsed" : 4542.85,
+  "availableAmount" : 1089.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377553552-04:00[America/New_York]"
+  }
+}, {
+  "id" : 161,
+  "cardNumber" : "6759-6944-5930-5766-234",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 1746.82,
+  "amountUsed" : 1384.75,
+  "availableAmount" : 362.08,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377597455-04:00[America/New_York]"
+  }
+}, {
+  "id" : 162,
+  "cardNumber" : "6771123711697098",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 8890.00,
+  "amountUsed" : 2687.60,
+  "availableAmount" : 6202.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377619978-04:00[America/New_York]"
+  }
+}, {
+  "id" : 163,
+  "cardNumber" : "6759-5728-7447-5347-689",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 4648.33,
+  "amountUsed" : 3456.58,
+  "availableAmount" : 1191.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.377634866-04:00[America/New_York]"
+  }
+}, {
+  "id" : 164,
+  "cardNumber" : "6007-2291-5578-2969",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 8700.84,
+  "amountUsed" : 5370.23,
+  "availableAmount" : 3330.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378189697-04:00[America/New_York]"
+  }
+}, {
+  "id" : 165,
+  "cardNumber" : "6759-7501-2535-5865-44",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 2817.92,
+  "amountUsed" : 1908.89,
+  "availableAmount" : 909.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378263998-04:00[America/New_York]"
+  }
+}, {
+  "id" : 166,
+  "cardNumber" : "6304123321522450",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 8834.23,
+  "amountUsed" : 4547.82,
+  "availableAmount" : 4286.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378290558-04:00[America/New_York]"
+  }
+}, {
+  "id" : 167,
+  "cardNumber" : "3477-199410-41490",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 9021.30,
+  "amountUsed" : 7384.19,
+  "availableAmount" : 1637.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378313141-04:00[America/New_York]"
+  }
+}, {
+  "id" : 168,
+  "cardNumber" : "3708-782560-37046",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 5798.53,
+  "amountUsed" : 2937.04,
+  "availableAmount" : 2861.49,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378355361-04:00[America/New_York]"
+  }
+}, {
+  "id" : 169,
+  "cardNumber" : "3752-511188-50565",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 5936.31,
+  "amountUsed" : 2219.73,
+  "availableAmount" : 3716.58,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378383505-04:00[America/New_York]"
+  }
+}, {
+  "id" : 170,
+  "cardNumber" : "3835-912315-3427",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 5870.06,
+  "amountUsed" : 4177.78,
+  "availableAmount" : 1692.28,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37840764-04:00[America/New_York]"
+  }
+}, {
+  "id" : 171,
+  "cardNumber" : "6007-2210-7597-1038",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 4756.24,
+  "amountUsed" : 4004.83,
+  "availableAmount" : 751.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378428089-04:00[America/New_York]"
+  }
+}, {
+  "id" : 172,
+  "cardNumber" : "4222-8687-3608-3050",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 3708.35,
+  "amountUsed" : 1206.32,
+  "availableAmount" : 2502.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378513481-04:00[America/New_York]"
+  }
+}, {
+  "id" : 173,
+  "cardNumber" : "5019-2896-6312-2338",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 8865.85,
+  "amountUsed" : 2965.75,
+  "availableAmount" : 5900.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378549349-04:00[America/New_York]"
+  }
+}, {
+  "id" : 174,
+  "cardNumber" : "6767-0515-8527-5323-95",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 3832.01,
+  "amountUsed" : 3138.08,
+  "availableAmount" : 693.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378586299-04:00[America/New_York]"
+  }
+}, {
+  "id" : 175,
+  "cardNumber" : "3308-917888-75881",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 6034.15,
+  "amountUsed" : 5661.16,
+  "availableAmount" : 372.99,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378607088-04:00[America/New_York]"
+  }
+}, {
+  "id" : 176,
+  "cardNumber" : "6595-2420-0256-3282",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 3202.45,
+  "amountUsed" : 1787.97,
+  "availableAmount" : 1414.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37862381-04:00[America/New_York]"
+  }
+}, {
+  "id" : 177,
+  "cardNumber" : "3027-206640-2255",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 5562.03,
+  "amountUsed" : 4224.03,
+  "availableAmount" : 1338.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378655089-04:00[America/New_York]"
+  }
+}, {
+  "id" : 178,
+  "cardNumber" : "6550-6644-5648-1526",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 4375.06,
+  "amountUsed" : 3764.61,
+  "availableAmount" : 610.44,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378669386-04:00[America/New_York]"
+  }
+}, {
+  "id" : 179,
+  "cardNumber" : "5409-3230-9862-4580",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 3104.78,
+  "amountUsed" : 1515.29,
+  "availableAmount" : 1589.49,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378679936-04:00[America/New_York]"
+  }
+}, {
+  "id" : 180,
+  "cardNumber" : "6709336919925957",
+  "userId" : 9,
+  "cardType" : "Visa",
+  "totalLimit" : 3237.60,
+  "amountUsed" : 2489.97,
+  "availableAmount" : 747.63,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378690196-04:00[America/New_York]"
+  }
+}, {
+  "id" : 181,
+  "cardNumber" : "6011-2097-5105-4066",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 6451.43,
+  "amountUsed" : 4770.67,
+  "availableAmount" : 1680.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378710284-04:00[America/New_York]"
+  }
+}, {
+  "id" : 182,
+  "cardNumber" : "5019-4899-0592-6575",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 2873.87,
+  "amountUsed" : 1758.70,
+  "availableAmount" : 1115.17,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378721114-04:00[America/New_York]"
+  }
+}, {
+  "id" : 183,
+  "cardNumber" : "6007-2224-4386-5068",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 6791.42,
+  "amountUsed" : 1669.03,
+  "availableAmount" : 5122.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378730993-04:00[America/New_York]"
+  }
+}, {
+  "id" : 184,
+  "cardNumber" : "6759-5189-6308-0321",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 4475.09,
+  "amountUsed" : 3198.00,
+  "availableAmount" : 1277.09,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378740741-04:00[America/New_York]"
+  }
+}, {
+  "id" : 185,
+  "cardNumber" : "6759-3167-9589-6281",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 4464.60,
+  "amountUsed" : 2357.64,
+  "availableAmount" : 2106.96,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378750169-04:00[America/New_York]"
+  }
+}, {
+  "id" : 186,
+  "cardNumber" : "6007-2209-9802-5971",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 9939.80,
+  "amountUsed" : 4673.08,
+  "availableAmount" : 5266.72,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378760128-04:00[America/New_York]"
+  }
+}, {
+  "id" : 187,
+  "cardNumber" : "5019-1806-9208-5119",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 5398.03,
+  "amountUsed" : 3032.39,
+  "availableAmount" : 2365.64,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378772522-04:00[America/New_York]"
+  }
+}, {
+  "id" : 188,
+  "cardNumber" : "4713-9859-6032-4616",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 7619.31,
+  "amountUsed" : 3855.90,
+  "availableAmount" : 3763.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37880862-04:00[America/New_York]"
+  }
+}, {
+  "id" : 189,
+  "cardNumber" : "6759-0465-8249-5130-12",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 9435.59,
+  "amountUsed" : 6685.08,
+  "availableAmount" : 2750.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378822857-04:00[America/New_York]"
+  }
+}, {
+  "id" : 190,
+  "cardNumber" : "6767-9572-3674-8303-47",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 9388.90,
+  "amountUsed" : 6680.09,
+  "availableAmount" : 2708.81,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378833868-04:00[America/New_York]"
+  }
+}, {
+  "id" : 191,
+  "cardNumber" : "6007-2216-7785-6595",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 5026.02,
+  "amountUsed" : 2274.01,
+  "availableAmount" : 2752.01,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378852994-04:00[America/New_York]"
+  }
+}, {
+  "id" : 192,
+  "cardNumber" : "4233-2483-5767-9410",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 4424.78,
+  "amountUsed" : 3169.17,
+  "availableAmount" : 1255.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378944077-04:00[America/New_York]"
+  }
+}, {
+  "id" : 193,
+  "cardNumber" : "6007-2221-8851-0747",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 3270.34,
+  "amountUsed" : 2630.52,
+  "availableAmount" : 639.82,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.378989332-04:00[America/New_York]"
+  }
+}, {
+  "id" : 194,
+  "cardNumber" : "6706721996588260",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 5757.54,
+  "amountUsed" : 2775.74,
+  "availableAmount" : 2981.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379028837-04:00[America/New_York]"
+  }
+}, {
+  "id" : 195,
+  "cardNumber" : "5019-0322-1354-7475",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 2316.25,
+  "amountUsed" : 1669.02,
+  "availableAmount" : 647.23,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379041762-04:00[America/New_York]"
+  }
+}, {
+  "id" : 196,
+  "cardNumber" : "3562-778133-02555",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 4446.50,
+  "amountUsed" : 3639.51,
+  "availableAmount" : 806.99,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379051731-04:00[America/New_York]"
+  }
+}, {
+  "id" : 197,
+  "cardNumber" : "3477-493951-89099",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 1221.12,
+  "amountUsed" : 1024.57,
+  "availableAmount" : 196.55,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379061088-04:00[America/New_York]"
+  }
+}, {
+  "id" : 198,
+  "cardNumber" : "4922-0516-3132-2898",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 1869.10,
+  "amountUsed" : 1523.12,
+  "availableAmount" : 345.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379070356-04:00[America/New_York]"
+  }
+}, {
+  "id" : 199,
+  "cardNumber" : "6007-2267-4548-0492",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 7299.83,
+  "amountUsed" : 3679.37,
+  "availableAmount" : 3620.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379080866-04:00[America/New_York]"
+  }
+}, {
+  "id" : 200,
+  "cardNumber" : "6007-2296-6503-7565",
+  "userId" : 10,
+  "cardType" : "Visa",
+  "totalLimit" : 2549.97,
+  "amountUsed" : 1761.09,
+  "availableAmount" : 788.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379092808-04:00[America/New_York]"
+  }
+}, {
+  "id" : 201,
+  "cardNumber" : "5386-2291-7214-5201",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 7914.91,
+  "amountUsed" : 6185.16,
+  "availableAmount" : 1729.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379104731-04:00[America/New_York]"
+  }
+}, {
+  "id" : 202,
+  "cardNumber" : "5417-7585-8651-9828",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 2873.18,
+  "amountUsed" : 2725.37,
+  "availableAmount" : 147.80,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379434566-04:00[America/New_York]"
+  }
+}, {
+  "id" : 203,
+  "cardNumber" : "6759-6837-6700-2467-08",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 2256.80,
+  "amountUsed" : 1783.65,
+  "availableAmount" : 473.15,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379487456-04:00[America/New_York]"
+  }
+}, {
+  "id" : 204,
+  "cardNumber" : "3798-940192-58606",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 5231.96,
+  "amountUsed" : 1481.06,
+  "availableAmount" : 3750.91,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.3795372-04:00[America/New_York]"
+  }
+}, {
+  "id" : 205,
+  "cardNumber" : "6709246446476459",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 1333.54,
+  "amountUsed" : 1144.50,
+  "availableAmount" : 189.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379553131-04:00[America/New_York]"
+  }
+}, {
+  "id" : 206,
+  "cardNumber" : "6007-2258-5349-5573",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 4665.81,
+  "amountUsed" : 1481.45,
+  "availableAmount" : 3184.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379566005-04:00[America/New_York]"
+  }
+}, {
+  "id" : 207,
+  "cardNumber" : "5440-5897-8902-8981",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 4919.93,
+  "amountUsed" : 3108.70,
+  "availableAmount" : 1811.23,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379577757-04:00[America/New_York]"
+  }
+}, {
+  "id" : 208,
+  "cardNumber" : "5392-6564-0125-4812",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 5309.01,
+  "amountUsed" : 4934.25,
+  "availableAmount" : 374.77,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379600701-04:00[America/New_York]"
+  }
+}, {
+  "id" : 209,
+  "cardNumber" : "6771728418721882",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 8881.04,
+  "amountUsed" : 2848.31,
+  "availableAmount" : 6032.73,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379618184-04:00[America/New_York]"
+  }
+}, {
+  "id" : 210,
+  "cardNumber" : "6007-2237-6232-4810",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 6929.70,
+  "amountUsed" : 6106.59,
+  "availableAmount" : 823.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379629545-04:00[America/New_York]"
+  }
+}, {
+  "id" : 211,
+  "cardNumber" : "5019-9650-9536-3307",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 7811.80,
+  "amountUsed" : 7305.88,
+  "availableAmount" : 505.92,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379640767-04:00[America/New_York]"
+  }
+}, {
+  "id" : 212,
+  "cardNumber" : "6304938775875066",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 4252.49,
+  "amountUsed" : 3759.42,
+  "availableAmount" : 493.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379651527-04:00[America/New_York]"
+  }
+}, {
+  "id" : 213,
+  "cardNumber" : "6007-2282-8421-0967",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 6866.38,
+  "amountUsed" : 1689.78,
+  "availableAmount" : 5176.60,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379662157-04:00[America/New_York]"
+  }
+}, {
+  "id" : 214,
+  "cardNumber" : "6706389025017386",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 1237.36,
+  "amountUsed" : 1103.22,
+  "availableAmount" : 134.14,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379672557-04:00[America/New_York]"
+  }
+}, {
+  "id" : 215,
+  "cardNumber" : "6011-2075-3279-6435",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 8854.88,
+  "amountUsed" : 7353.92,
+  "availableAmount" : 1500.96,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379682876-04:00[America/New_York]"
+  }
+}, {
+  "id" : 216,
+  "cardNumber" : "6759-6555-2625-7420-20",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 5954.44,
+  "amountUsed" : 5268.00,
+  "availableAmount" : 686.44,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379694619-04:00[America/New_York]"
+  }
+}, {
+  "id" : 217,
+  "cardNumber" : "3772-257521-38048",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 7124.12,
+  "amountUsed" : 3750.22,
+  "availableAmount" : 3373.90,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379725227-04:00[America/New_York]"
+  }
+}, {
+  "id" : 218,
+  "cardNumber" : "2123-7467-3257-4039",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 8506.04,
+  "amountUsed" : 3462.03,
+  "availableAmount" : 5044.01,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379737019-04:00[America/New_York]"
+  }
+}, {
+  "id" : 219,
+  "cardNumber" : "3611-133763-3351",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 2544.06,
+  "amountUsed" : 1256.78,
+  "availableAmount" : 1287.27,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379747108-04:00[America/New_York]"
+  }
+}, {
+  "id" : 220,
+  "cardNumber" : "6011-1012-8449-1289",
+  "userId" : 11,
+  "cardType" : "Visa",
+  "totalLimit" : 8472.72,
+  "amountUsed" : 6523.38,
+  "availableAmount" : 1949.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379757037-04:00[America/New_York]"
+  }
+}, {
+  "id" : 221,
+  "cardNumber" : "4480-3380-5861-7668",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 9292.38,
+  "amountUsed" : 2783.25,
+  "availableAmount" : 6509.14,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379766996-04:00[America/New_York]"
+  }
+}, {
+  "id" : 222,
+  "cardNumber" : "1800-7466-8487-0999",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 6733.57,
+  "amountUsed" : 5348.42,
+  "availableAmount" : 1385.15,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379776855-04:00[America/New_York]"
+  }
+}, {
+  "id" : 223,
+  "cardNumber" : "6709178616466442",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 6955.72,
+  "amountUsed" : 5795.60,
+  "availableAmount" : 1160.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379786733-04:00[America/New_York]"
+  }
+}, {
+  "id" : 224,
+  "cardNumber" : "4205-4623-5307-1795",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 5118.97,
+  "amountUsed" : 3997.25,
+  "availableAmount" : 1121.72,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379796331-04:00[America/New_York]"
+  }
+}, {
+  "id" : 225,
+  "cardNumber" : "6767-5409-4781-4292-576",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 1187.86,
+  "amountUsed" : 1145.41,
+  "availableAmount" : 42.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37980608-04:00[America/New_York]"
+  }
+}, {
+  "id" : 226,
+  "cardNumber" : "5238-2447-3536-2839",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 2557.15,
+  "amountUsed" : 2480.95,
+  "availableAmount" : 76.20,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379816029-04:00[America/New_York]"
+  }
+}, {
+  "id" : 227,
+  "cardNumber" : "4816-8887-7769-7578",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 6487.48,
+  "amountUsed" : 2803.38,
+  "availableAmount" : 3684.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379825717-04:00[America/New_York]"
+  }
+}, {
+  "id" : 228,
+  "cardNumber" : "3016-066029-7264",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 1845.44,
+  "amountUsed" : 1613.65,
+  "availableAmount" : 231.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379835365-04:00[America/New_York]"
+  }
+}, {
+  "id" : 229,
+  "cardNumber" : "6709605255649391",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 9749.76,
+  "amountUsed" : 8508.50,
+  "availableAmount" : 1241.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379845114-04:00[America/New_York]"
+  }
+}, {
+  "id" : 230,
+  "cardNumber" : "3877-879833-1770",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 3241.64,
+  "amountUsed" : 2283.83,
+  "availableAmount" : 957.81,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379854762-04:00[America/New_York]"
+  }
+}, {
+  "id" : 231,
+  "cardNumber" : "3815-571361-9797",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 2582.31,
+  "amountUsed" : 1305.37,
+  "availableAmount" : 1276.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379864611-04:00[America/New_York]"
+  }
+}, {
+  "id" : 232,
+  "cardNumber" : "3884-613848-5588",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 2947.38,
+  "amountUsed" : 2158.73,
+  "availableAmount" : 788.64,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.3798747-04:00[America/New_York]"
+  }
+}, {
+  "id" : 233,
+  "cardNumber" : "5019-0714-4902-6151",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 4101.48,
+  "amountUsed" : 1991.36,
+  "availableAmount" : 2110.12,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379884238-04:00[America/New_York]"
+  }
+}, {
+  "id" : 234,
+  "cardNumber" : "4843-7223-2295-2765",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 7594.64,
+  "amountUsed" : 2841.72,
+  "availableAmount" : 4752.92,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379893826-04:00[America/New_York]"
+  }
+}, {
+  "id" : 235,
+  "cardNumber" : "3973-193570-27841",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 6534.14,
+  "amountUsed" : 6462.47,
+  "availableAmount" : 71.67,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379903444-04:00[America/New_York]"
+  }
+}, {
+  "id" : 236,
+  "cardNumber" : "6011-1061-4109-9241",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 5238.68,
+  "amountUsed" : 5220.76,
+  "availableAmount" : 17.92,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379912992-04:00[America/New_York]"
+  }
+}, {
+  "id" : 237,
+  "cardNumber" : "6759-2361-7458-8894-60",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 6315.94,
+  "amountUsed" : 6077.21,
+  "availableAmount" : 238.73,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379922751-04:00[America/New_York]"
+  }
+}, {
+  "id" : 238,
+  "cardNumber" : "6011-0076-2722-5583",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 6593.97,
+  "amountUsed" : 1542.51,
+  "availableAmount" : 5051.46,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.37993266-04:00[America/New_York]"
+  }
+}, {
+  "id" : 239,
+  "cardNumber" : "3877-931794-8144",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 7522.42,
+  "amountUsed" : 4035.24,
+  "availableAmount" : 3487.19,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379942448-04:00[America/New_York]"
+  }
+}, {
+  "id" : 240,
+  "cardNumber" : "6706545643935826",
+  "userId" : 12,
+  "cardType" : "Visa",
+  "totalLimit" : 9612.10,
+  "amountUsed" : 7511.21,
+  "availableAmount" : 2100.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379952327-04:00[America/New_York]"
+  }
+}, {
+  "id" : 241,
+  "cardNumber" : "4430-1591-7528-2678",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 1562.32,
+  "amountUsed" : 1261.81,
+  "availableAmount" : 300.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379962116-04:00[America/New_York]"
+  }
+}, {
+  "id" : 242,
+  "cardNumber" : "3847-463062-7910",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 9081.81,
+  "amountUsed" : 2949.52,
+  "availableAmount" : 6132.29,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379971724-04:00[America/New_York]"
+  }
+}, {
+  "id" : 243,
+  "cardNumber" : "2123-7502-9990-1395",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 6006.34,
+  "amountUsed" : 3757.50,
+  "availableAmount" : 2248.84,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379981352-04:00[America/New_York]"
+  }
+}, {
+  "id" : 244,
+  "cardNumber" : "3094-144535-62002",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 6365.31,
+  "amountUsed" : 2485.16,
+  "availableAmount" : 3880.16,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.379991241-04:00[America/New_York]"
+  }
+}, {
+  "id" : 245,
+  "cardNumber" : "6759-1722-7746-8627-832",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 2074.40,
+  "amountUsed" : 1907.95,
+  "availableAmount" : 166.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38000124-04:00[America/New_York]"
+  }
+}, {
+  "id" : 246,
+  "cardNumber" : "5006-5415-7600-2162",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 5081.19,
+  "amountUsed" : 2485.87,
+  "availableAmount" : 2595.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380012701-04:00[America/New_York]"
+  }
+}, {
+  "id" : 247,
+  "cardNumber" : "4409-0832-6760-6718",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 6804.37,
+  "amountUsed" : 4660.43,
+  "availableAmount" : 2143.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38002272-04:00[America/New_York]"
+  }
+}, {
+  "id" : 248,
+  "cardNumber" : "3056-944553-4975",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 9458.93,
+  "amountUsed" : 4266.88,
+  "availableAmount" : 5192.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380032509-04:00[America/New_York]"
+  }
+}, {
+  "id" : 249,
+  "cardNumber" : "4764-3021-4091-9620",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 1742.30,
+  "amountUsed" : 1671.87,
+  "availableAmount" : 70.44,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380042257-04:00[America/New_York]"
+  }
+}, {
+  "id" : 250,
+  "cardNumber" : "5349-1065-5704-3647",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 7237.96,
+  "amountUsed" : 5689.62,
+  "availableAmount" : 1548.34,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380051896-04:00[America/New_York]"
+  }
+}, {
+  "id" : 251,
+  "cardNumber" : "6011-1050-5332-5099",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 4321.77,
+  "amountUsed" : 1584.83,
+  "availableAmount" : 2736.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380062416-04:00[America/New_York]"
+  }
+}, {
+  "id" : 252,
+  "cardNumber" : "3073-160837-64894",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 6911.67,
+  "amountUsed" : 2254.91,
+  "availableAmount" : 4656.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380237608-04:00[America/New_York]"
+  }
+}, {
+  "id" : 253,
+  "cardNumber" : "6304157710631936",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 7268.50,
+  "amountUsed" : 6414.60,
+  "availableAmount" : 853.90,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380260821-04:00[America/New_York]"
+  }
+}, {
+  "id" : 254,
+  "cardNumber" : "6759-9296-2352-3842",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 6389.67,
+  "amountUsed" : 3712.65,
+  "availableAmount" : 2677.02,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38027074-04:00[America/New_York]"
+  }
+}, {
+  "id" : 255,
+  "cardNumber" : "5286-7479-6687-1832",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 5077.27,
+  "amountUsed" : 4360.16,
+  "availableAmount" : 717.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380280228-04:00[America/New_York]"
+  }
+}, {
+  "id" : 256,
+  "cardNumber" : "5019-0872-9971-1874",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 8269.82,
+  "amountUsed" : 5168.38,
+  "availableAmount" : 3101.43,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380301989-04:00[America/New_York]"
+  }
+}, {
+  "id" : 257,
+  "cardNumber" : "3717-968159-03657",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 4579.45,
+  "amountUsed" : 3923.35,
+  "availableAmount" : 656.09,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380319753-04:00[America/New_York]"
+  }
+}, {
+  "id" : 258,
+  "cardNumber" : "5019-8241-2882-7657",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 6849.38,
+  "amountUsed" : 4257.75,
+  "availableAmount" : 2591.63,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380329261-04:00[America/New_York]"
+  }
+}, {
+  "id" : 259,
+  "cardNumber" : "3208-399002-80748",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 2263.61,
+  "amountUsed" : 1269.64,
+  "availableAmount" : 993.97,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380337036-04:00[America/New_York]"
+  }
+}, {
+  "id" : 260,
+  "cardNumber" : "5019-3971-2385-3499",
+  "userId" : 13,
+  "cardType" : "Visa",
+  "totalLimit" : 1897.24,
+  "amountUsed" : 1375.24,
+  "availableAmount" : 522.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380344751-04:00[America/New_York]"
+  }
+}, {
+  "id" : 261,
+  "cardNumber" : "6007-2290-6264-3700",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 2134.59,
+  "amountUsed" : 1034.80,
+  "availableAmount" : 1099.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380352686-04:00[America/New_York]"
+  }
+}, {
+  "id" : 262,
+  "cardNumber" : "6007-2256-1113-8044",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 8543.80,
+  "amountUsed" : 6992.44,
+  "availableAmount" : 1551.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38036047-04:00[America/New_York]"
+  }
+}, {
+  "id" : 263,
+  "cardNumber" : "4965-0066-8012-6648",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 1630.61,
+  "amountUsed" : 1213.07,
+  "availableAmount" : 417.54,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380368085-04:00[America/New_York]"
+  }
+}, {
+  "id" : 264,
+  "cardNumber" : "5395-9904-8458-8094",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 3976.76,
+  "amountUsed" : 2768.39,
+  "availableAmount" : 1208.37,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380378284-04:00[America/New_York]"
+  }
+}, {
+  "id" : 265,
+  "cardNumber" : "3767-213291-63601",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 6194.77,
+  "amountUsed" : 3347.39,
+  "availableAmount" : 2847.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380387391-04:00[America/New_York]"
+  }
+}, {
+  "id" : 266,
+  "cardNumber" : "5019-0162-5130-5383",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 3044.11,
+  "amountUsed" : 1439.17,
+  "availableAmount" : 1604.94,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380395657-04:00[America/New_York]"
+  }
+}, {
+  "id" : 267,
+  "cardNumber" : "6759-5817-7377-4115-723",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 5615.48,
+  "amountUsed" : 1025.40,
+  "availableAmount" : 4590.08,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380403462-04:00[America/New_York]"
+  }
+}, {
+  "id" : 268,
+  "cardNumber" : "6767-7417-6448-4081-86",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 7115.82,
+  "amountUsed" : 3895.63,
+  "availableAmount" : 3220.20,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380411537-04:00[America/New_York]"
+  }
+}, {
+  "id" : 269,
+  "cardNumber" : "4868-1296-8977-5393",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 8795.22,
+  "amountUsed" : 6170.99,
+  "availableAmount" : 2624.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380419312-04:00[America/New_York]"
+  }
+}, {
+  "id" : 270,
+  "cardNumber" : "6011-2029-2395-2507",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 4254.98,
+  "amountUsed" : 3768.18,
+  "availableAmount" : 486.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380426776-04:00[America/New_York]"
+  }
+}, {
+  "id" : 271,
+  "cardNumber" : "3083-153161-9932",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 7228.82,
+  "amountUsed" : 1802.14,
+  "availableAmount" : 5426.68,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380434591-04:00[America/New_York]"
+  }
+}, {
+  "id" : 272,
+  "cardNumber" : "5497-3926-2573-7986",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 5840.73,
+  "amountUsed" : 4011.91,
+  "availableAmount" : 1828.82,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380442906-04:00[America/New_York]"
+  }
+}, {
+  "id" : 273,
+  "cardNumber" : "3469-365711-72095",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 9094.20,
+  "amountUsed" : 2639.56,
+  "availableAmount" : 6454.64,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380450801-04:00[America/New_York]"
+  }
+}, {
+  "id" : 274,
+  "cardNumber" : "6767-8896-5073-1819",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 8913.22,
+  "amountUsed" : 2353.27,
+  "availableAmount" : 6559.95,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380458596-04:00[America/New_York]"
+  }
+}, {
+  "id" : 275,
+  "cardNumber" : "3738-102298-03508",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 2712.52,
+  "amountUsed" : 2388.79,
+  "availableAmount" : 323.73,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380466411-04:00[America/New_York]"
+  }
+}, {
+  "id" : 276,
+  "cardNumber" : "3713-399749-55661",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 1545.68,
+  "amountUsed" : 1000.75,
+  "availableAmount" : 544.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380474256-04:00[America/New_York]"
+  }
+}, {
+  "id" : 277,
+  "cardNumber" : "3489-758131-93731",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 9837.87,
+  "amountUsed" : 8829.11,
+  "availableAmount" : 1008.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38048193-04:00[America/New_York]"
+  }
+}, {
+  "id" : 278,
+  "cardNumber" : "6007-2272-7247-7166",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 5196.64,
+  "amountUsed" : 2116.01,
+  "availableAmount" : 3080.63,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380501377-04:00[America/New_York]"
+  }
+}, {
+  "id" : 279,
+  "cardNumber" : "3796-332524-80570",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 2945.63,
+  "amountUsed" : 1844.12,
+  "availableAmount" : 1101.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380511196-04:00[America/New_York]"
+  }
+}, {
+  "id" : 280,
+  "cardNumber" : "3718-007542-06146",
+  "userId" : 14,
+  "cardType" : "Visa",
+  "totalLimit" : 2207.51,
+  "amountUsed" : 1735.21,
+  "availableAmount" : 472.29,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380519081-04:00[America/New_York]"
+  }
+}, {
+  "id" : 281,
+  "cardNumber" : "6709151542212826",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 5217.05,
+  "amountUsed" : 3922.83,
+  "availableAmount" : 1294.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380526916-04:00[America/New_York]"
+  }
+}, {
+  "id" : 282,
+  "cardNumber" : "5019-2039-2057-4769",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 5597.82,
+  "amountUsed" : 5020.09,
+  "availableAmount" : 577.73,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38053472-04:00[America/New_York]"
+  }
+}, {
+  "id" : 283,
+  "cardNumber" : "6771465295225923",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 8293.11,
+  "amountUsed" : 7293.76,
+  "availableAmount" : 999.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380542405-04:00[America/New_York]"
+  }
+}, {
+  "id" : 284,
+  "cardNumber" : "3074-019570-3520",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 1079.94,
+  "amountUsed" : 1005.29,
+  "availableAmount" : 74.65,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38055009-04:00[America/New_York]"
+  }
+}, {
+  "id" : 285,
+  "cardNumber" : "5313-5148-3923-6891",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 1716.55,
+  "amountUsed" : 1204.51,
+  "availableAmount" : 512.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380557554-04:00[America/New_York]"
+  }
+}, {
+  "id" : 286,
+  "cardNumber" : "3491-304328-62758",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 8212.93,
+  "amountUsed" : 6685.78,
+  "availableAmount" : 1527.15,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380565078-04:00[America/New_York]"
+  }
+}, {
+  "id" : 287,
+  "cardNumber" : "4413-9894-1092-4911",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 7985.89,
+  "amountUsed" : 3862.84,
+  "availableAmount" : 4123.05,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380572773-04:00[America/New_York]"
+  }
+}, {
+  "id" : 288,
+  "cardNumber" : "1800-3398-3775-0803",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 4247.14,
+  "amountUsed" : 3323.63,
+  "availableAmount" : 923.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380580317-04:00[America/New_York]"
+  }
+}, {
+  "id" : 289,
+  "cardNumber" : "3584-465815-10917",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 3217.05,
+  "amountUsed" : 1238.09,
+  "availableAmount" : 1978.96,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380587941-04:00[America/New_York]"
+  }
+}, {
+  "id" : 290,
+  "cardNumber" : "6759-6961-2888-4293-47",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 2273.39,
+  "amountUsed" : 1494.80,
+  "availableAmount" : 778.59,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380596397-04:00[America/New_York]"
+  }
+}, {
+  "id" : 291,
+  "cardNumber" : "6767-7735-7287-7621",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 7108.44,
+  "amountUsed" : 1462.05,
+  "availableAmount" : 5646.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380628919-04:00[America/New_York]"
+  }
+}, {
+  "id" : 292,
+  "cardNumber" : "6767-9012-8162-3297",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 4956.41,
+  "amountUsed" : 2628.23,
+  "availableAmount" : 2328.18,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380642024-04:00[America/New_York]"
+  }
+}, {
+  "id" : 293,
+  "cardNumber" : "1800-8968-4124-9478",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 6026.22,
+  "amountUsed" : 2695.57,
+  "availableAmount" : 3330.65,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380649979-04:00[America/New_York]"
+  }
+}, {
+  "id" : 294,
+  "cardNumber" : "6516-2155-4674-4630",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 1204.65,
+  "amountUsed" : 1139.58,
+  "availableAmount" : 65.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380657794-04:00[America/New_York]"
+  }
+}, {
+  "id" : 295,
+  "cardNumber" : "5019-3317-0210-9361",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 8128.75,
+  "amountUsed" : 4718.08,
+  "availableAmount" : 3410.68,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380665518-04:00[America/New_York]"
+  }
+}, {
+  "id" : 296,
+  "cardNumber" : "6767-1245-7410-1980-95",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 9989.05,
+  "amountUsed" : 5264.93,
+  "availableAmount" : 4724.12,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380672832-04:00[America/New_York]"
+  }
+}, {
+  "id" : 297,
+  "cardNumber" : "5019-1958-2740-6063",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 1485.36,
+  "amountUsed" : 1421.74,
+  "availableAmount" : 63.62,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380680116-04:00[America/New_York]"
+  }
+}, {
+  "id" : 298,
+  "cardNumber" : "4819-9133-9016-0338",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 3531.67,
+  "amountUsed" : 2122.75,
+  "availableAmount" : 1408.92,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38068774-04:00[America/New_York]"
+  }
+}, {
+  "id" : 299,
+  "cardNumber" : "6007-2269-6450-6092",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 7599.22,
+  "amountUsed" : 4109.90,
+  "availableAmount" : 3489.31,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380695375-04:00[America/New_York]"
+  }
+}, {
+  "id" : 300,
+  "cardNumber" : "6767-6246-5597-0134-354",
+  "userId" : 15,
+  "cardType" : "Visa",
+  "totalLimit" : 3590.26,
+  "amountUsed" : 2363.38,
+  "availableAmount" : 1226.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380702869-04:00[America/New_York]"
+  }
+}, {
+  "id" : 301,
+  "cardNumber" : "6595-2494-0462-4315",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 9922.03,
+  "amountUsed" : 4034.88,
+  "availableAmount" : 5887.15,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380710794-04:00[America/New_York]"
+  }
+}, {
+  "id" : 302,
+  "cardNumber" : "5128-4686-2109-9907",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 4601.83,
+  "amountUsed" : 1184.53,
+  "availableAmount" : 3417.31,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380854506-04:00[America/New_York]"
+  }
+}, {
+  "id" : 303,
+  "cardNumber" : "6759-2861-0648-1026",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 5867.57,
+  "amountUsed" : 3548.98,
+  "availableAmount" : 2318.58,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380890585-04:00[America/New_York]"
+  }
+}, {
+  "id" : 304,
+  "cardNumber" : "6759-5479-2651-0629",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 2845.12,
+  "amountUsed" : 1791.32,
+  "availableAmount" : 1053.80,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380901836-04:00[America/New_York]"
+  }
+}, {
+  "id" : 305,
+  "cardNumber" : "6767-9932-9364-5950-476",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 1429.36,
+  "amountUsed" : 1193.08,
+  "availableAmount" : 236.28,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380909581-04:00[America/New_York]"
+  }
+}, {
+  "id" : 306,
+  "cardNumber" : "3687-482654-7792",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 5287.18,
+  "amountUsed" : 3962.33,
+  "availableAmount" : 1324.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380917335-04:00[America/New_York]"
+  }
+}, {
+  "id" : 307,
+  "cardNumber" : "3429-293938-67400",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 7903.43,
+  "amountUsed" : 1541.91,
+  "availableAmount" : 6361.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380924549-04:00[America/New_York]"
+  }
+}, {
+  "id" : 308,
+  "cardNumber" : "6759-1969-3954-4410-37",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 6902.50,
+  "amountUsed" : 1702.28,
+  "availableAmount" : 5200.21,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380932354-04:00[America/New_York]"
+  }
+}, {
+  "id" : 309,
+  "cardNumber" : "6767-9433-5053-2107-27",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 2720.06,
+  "amountUsed" : 1559.63,
+  "availableAmount" : 1160.43,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380939918-04:00[America/New_York]"
+  }
+}, {
+  "id" : 310,
+  "cardNumber" : "3738-085269-69634",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 1646.45,
+  "amountUsed" : 1600.04,
+  "availableAmount" : 46.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380947172-04:00[America/New_York]"
+  }
+}, {
+  "id" : 311,
+  "cardNumber" : "5092-8228-7618-8280",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 9352.89,
+  "amountUsed" : 8506.79,
+  "availableAmount" : 846.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380954356-04:00[America/New_York]"
+  }
+}, {
+  "id" : 312,
+  "cardNumber" : "5019-9605-1155-5024",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 8043.93,
+  "amountUsed" : 4546.03,
+  "availableAmount" : 3497.90,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380961679-04:00[America/New_York]"
+  }
+}, {
+  "id" : 313,
+  "cardNumber" : "4703-1186-0420-1139",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 4669.96,
+  "amountUsed" : 4340.24,
+  "availableAmount" : 329.72,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380968793-04:00[America/New_York]"
+  }
+}, {
+  "id" : 314,
+  "cardNumber" : "3671-269898-1394",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 3023.85,
+  "amountUsed" : 1691.13,
+  "availableAmount" : 1332.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380976167-04:00[America/New_York]"
+  }
+}, {
+  "id" : 315,
+  "cardNumber" : "4357-0809-7837-1493",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 2020.70,
+  "amountUsed" : 1284.22,
+  "availableAmount" : 736.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380983751-04:00[America/New_York]"
+  }
+}, {
+  "id" : 316,
+  "cardNumber" : "6007-2260-5986-6674",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 8982.00,
+  "amountUsed" : 2002.97,
+  "availableAmount" : 6979.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380990875-04:00[America/New_York]"
+  }
+}, {
+  "id" : 317,
+  "cardNumber" : "6767-6283-3934-5438-68",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 9995.82,
+  "amountUsed" : 1875.14,
+  "availableAmount" : 8120.68,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.380998219-04:00[America/New_York]"
+  }
+}, {
+  "id" : 318,
+  "cardNumber" : "3011-769030-5871",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 6467.35,
+  "amountUsed" : 3701.95,
+  "availableAmount" : 2765.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381005422-04:00[America/New_York]"
+  }
+}, {
+  "id" : 319,
+  "cardNumber" : "4644-8975-1021-3716",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 2450.31,
+  "amountUsed" : 1494.31,
+  "availableAmount" : 956.01,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381012656-04:00[America/New_York]"
+  }
+}, {
+  "id" : 320,
+  "cardNumber" : "4752-6733-9461-0063",
+  "userId" : 16,
+  "cardType" : "Visa",
+  "totalLimit" : 2470.26,
+  "amountUsed" : 1822.75,
+  "availableAmount" : 647.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38101992-04:00[America/New_York]"
+  }
+}, {
+  "id" : 321,
+  "cardNumber" : "3743-492649-99037",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 8652.48,
+  "amountUsed" : 8246.08,
+  "availableAmount" : 406.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381026853-04:00[America/New_York]"
+  }
+}, {
+  "id" : 322,
+  "cardNumber" : "6759-3232-7917-7155-33",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 6040.70,
+  "amountUsed" : 2047.45,
+  "availableAmount" : 3993.25,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381033996-04:00[America/New_York]"
+  }
+}, {
+  "id" : 323,
+  "cardNumber" : "6759-7024-3925-1175",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 2915.52,
+  "amountUsed" : 1494.70,
+  "availableAmount" : 1420.82,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38104093-04:00[America/New_York]"
+  }
+}, {
+  "id" : 324,
+  "cardNumber" : "6759-4970-6880-7666",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 1002.09,
+  "amountUsed" : 1001.90,
+  "availableAmount" : 0.20,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381048324-04:00[America/New_York]"
+  }
+}, {
+  "id" : 325,
+  "cardNumber" : "3701-908630-50077",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 8330.45,
+  "amountUsed" : 1297.72,
+  "availableAmount" : 7032.73,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381055698-04:00[America/New_York]"
+  }
+}, {
+  "id" : 326,
+  "cardNumber" : "6007-2270-3927-8303",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 1541.19,
+  "amountUsed" : 1489.63,
+  "availableAmount" : 51.56,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381063031-04:00[America/New_York]"
+  }
+}, {
+  "id" : 327,
+  "cardNumber" : "6007-2255-2394-3986",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 2785.61,
+  "amountUsed" : 2702.76,
+  "availableAmount" : 82.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381069995-04:00[America/New_York]"
+  }
+}, {
+  "id" : 328,
+  "cardNumber" : "4038-0919-5903-3223",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 5387.70,
+  "amountUsed" : 4074.88,
+  "availableAmount" : 1312.83,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381077058-04:00[America/New_York]"
+  }
+}, {
+  "id" : 329,
+  "cardNumber" : "4362-2201-9998-5514",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 9244.75,
+  "amountUsed" : 7911.25,
+  "availableAmount" : 1333.49,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381084111-04:00[America/New_York]"
+  }
+}, {
+  "id" : 330,
+  "cardNumber" : "1800-2822-0898-7556",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 4922.92,
+  "amountUsed" : 3544.66,
+  "availableAmount" : 1378.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381091305-04:00[America/New_York]"
+  }
+}, {
+  "id" : 331,
+  "cardNumber" : "6007-2251-0255-0996",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 2259.32,
+  "amountUsed" : 1447.55,
+  "availableAmount" : 811.77,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381098759-04:00[America/New_York]"
+  }
+}, {
+  "id" : 332,
+  "cardNumber" : "6767-0005-3873-7324-738",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 1491.22,
+  "amountUsed" : 1073.26,
+  "availableAmount" : 417.96,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381106043-04:00[America/New_York]"
+  }
+}, {
+  "id" : 333,
+  "cardNumber" : "5019-2805-6334-7711",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 6156.85,
+  "amountUsed" : 1269.85,
+  "availableAmount" : 4887.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381113227-04:00[America/New_York]"
+  }
+}, {
+  "id" : 334,
+  "cardNumber" : "3404-623627-21335",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 7570.66,
+  "amountUsed" : 7375.41,
+  "availableAmount" : 195.25,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38112023-04:00[America/New_York]"
+  }
+}, {
+  "id" : 335,
+  "cardNumber" : "3412-405911-35785",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 8761.30,
+  "amountUsed" : 1183.23,
+  "availableAmount" : 7578.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381127514-04:00[America/New_York]"
+  }
+}, {
+  "id" : 336,
+  "cardNumber" : "3424-264531-45306",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 7688.92,
+  "amountUsed" : 4764.68,
+  "availableAmount" : 2924.23,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381134888-04:00[America/New_York]"
+  }
+}, {
+  "id" : 337,
+  "cardNumber" : "4763-9504-2402-9051",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 8760.72,
+  "amountUsed" : 2669.60,
+  "availableAmount" : 6091.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381142542-04:00[America/New_York]"
+  }
+}, {
+  "id" : 338,
+  "cardNumber" : "6706538408665126",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 5681.53,
+  "amountUsed" : 5000.33,
+  "availableAmount" : 681.21,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381149906-04:00[America/New_York]"
+  }
+}, {
+  "id" : 339,
+  "cardNumber" : "6550-6641-1771-9249",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 7101.96,
+  "amountUsed" : 3653.41,
+  "availableAmount" : 3448.56,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38115745-04:00[America/New_York]"
+  }
+}, {
+  "id" : 340,
+  "cardNumber" : "6011-1023-8582-4501",
+  "userId" : 17,
+  "cardType" : "Visa",
+  "totalLimit" : 4633.56,
+  "amountUsed" : 2111.20,
+  "availableAmount" : 2522.37,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381164684-04:00[America/New_York]"
+  }
+}, {
+  "id" : 341,
+  "cardNumber" : "5019-5732-8459-4623",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 3291.30,
+  "amountUsed" : 1499.87,
+  "availableAmount" : 1791.43,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381172208-04:00[America/New_York]"
+  }
+}, {
+  "id" : 342,
+  "cardNumber" : "5556-2846-7960-9195",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 8920.62,
+  "amountUsed" : 6292.24,
+  "availableAmount" : 2628.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381179552-04:00[America/New_York]"
+  }
+}, {
+  "id" : 343,
+  "cardNumber" : "3886-176537-8907",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 5511.07,
+  "amountUsed" : 1787.43,
+  "availableAmount" : 3723.65,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381243794-04:00[America/New_York]"
+  }
+}, {
+  "id" : 344,
+  "cardNumber" : "6595-2435-6680-3825",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 6010.03,
+  "amountUsed" : 5097.20,
+  "availableAmount" : 912.82,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381251629-04:00[America/New_York]"
+  }
+}, {
+  "id" : 345,
+  "cardNumber" : "4519-6129-0388-0266",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 1020.59,
+  "amountUsed" : 1018.41,
+  "availableAmount" : 2.18,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381259133-04:00[America/New_York]"
+  }
+}, {
+  "id" : 346,
+  "cardNumber" : "6759-2162-1174-0422-645",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 7758.61,
+  "amountUsed" : 2222.25,
+  "availableAmount" : 5536.37,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381266116-04:00[America/New_York]"
+  }
+}, {
+  "id" : 347,
+  "cardNumber" : "5019-4363-8584-6930",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 3460.32,
+  "amountUsed" : 1727.02,
+  "availableAmount" : 1733.30,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38127341-04:00[America/New_York]"
+  }
+}, {
+  "id" : 348,
+  "cardNumber" : "1800-2408-0530-5002",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 2358.98,
+  "amountUsed" : 1841.18,
+  "availableAmount" : 517.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381281024-04:00[America/New_York]"
+  }
+}, {
+  "id" : 349,
+  "cardNumber" : "4063-1792-0735-4042",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 8099.62,
+  "amountUsed" : 2738.06,
+  "availableAmount" : 5361.56,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381288749-04:00[America/New_York]"
+  }
+}, {
+  "id" : 350,
+  "cardNumber" : "6007-2270-6108-2896",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 1848.15,
+  "amountUsed" : 1697.96,
+  "availableAmount" : 150.19,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381296063-04:00[America/New_York]"
+  }
+}, {
+  "id" : 351,
+  "cardNumber" : "5019-1162-3423-0763",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 9807.68,
+  "amountUsed" : 7040.10,
+  "availableAmount" : 2767.58,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381303367-04:00[America/New_York]"
+  }
+}, {
+  "id" : 352,
+  "cardNumber" : "6304972697937381",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 4069.39,
+  "amountUsed" : 3580.28,
+  "availableAmount" : 489.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381433994-04:00[America/New_York]"
+  }
+}, {
+  "id" : 353,
+  "cardNumber" : "6007-2231-3917-5234",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 3395.88,
+  "amountUsed" : 2174.44,
+  "availableAmount" : 1221.44,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38145833-04:00[America/New_York]"
+  }
+}, {
+  "id" : 354,
+  "cardNumber" : "3651-689815-2791",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 6730.39,
+  "amountUsed" : 1660.88,
+  "availableAmount" : 5069.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381467738-04:00[America/New_York]"
+  }
+}, {
+  "id" : 355,
+  "cardNumber" : "6767-7656-4853-1232",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 3326.70,
+  "amountUsed" : 1251.10,
+  "availableAmount" : 2075.60,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381475473-04:00[America/New_York]"
+  }
+}, {
+  "id" : 356,
+  "cardNumber" : "6767-8416-7448-5868-692",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 5283.99,
+  "amountUsed" : 2364.01,
+  "availableAmount" : 2919.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381483167-04:00[America/New_York]"
+  }
+}, {
+  "id" : 357,
+  "cardNumber" : "5019-7587-1899-9486",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 8407.76,
+  "amountUsed" : 3312.70,
+  "availableAmount" : 5095.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381490622-04:00[America/New_York]"
+  }
+}, {
+  "id" : 358,
+  "cardNumber" : "6767-5391-9032-4506",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 9333.94,
+  "amountUsed" : 5294.48,
+  "availableAmount" : 4039.46,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381497865-04:00[America/New_York]"
+  }
+}, {
+  "id" : 359,
+  "cardNumber" : "4561-5022-1280-1565",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 7403.92,
+  "amountUsed" : 3609.59,
+  "availableAmount" : 3794.33,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381504949-04:00[America/New_York]"
+  }
+}, {
+  "id" : 360,
+  "cardNumber" : "3702-453116-37402",
+  "userId" : 18,
+  "cardType" : "Visa",
+  "totalLimit" : 7153.32,
+  "amountUsed" : 1474.75,
+  "availableAmount" : 5678.57,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381512142-04:00[America/New_York]"
+  }
+}, {
+  "id" : 361,
+  "cardNumber" : "6550-6616-2646-3863",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 1912.85,
+  "amountUsed" : 1002.78,
+  "availableAmount" : 910.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381519486-04:00[America/New_York]"
+  }
+}, {
+  "id" : 362,
+  "cardNumber" : "6709905820397884",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 6424.59,
+  "amountUsed" : 4757.09,
+  "availableAmount" : 1667.50,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38152665-04:00[America/New_York]"
+  }
+}, {
+  "id" : 363,
+  "cardNumber" : "6550-6625-8083-3539",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 9722.96,
+  "amountUsed" : 1648.36,
+  "availableAmount" : 8074.60,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381534024-04:00[America/New_York]"
+  }
+}, {
+  "id" : 364,
+  "cardNumber" : "6759-5649-9689-6636-612",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 3860.07,
+  "amountUsed" : 3188.88,
+  "availableAmount" : 671.19,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381541177-04:00[America/New_York]"
+  }
+}, {
+  "id" : 365,
+  "cardNumber" : "3097-633123-1477",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 7573.69,
+  "amountUsed" : 1222.92,
+  "availableAmount" : 6350.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381548321-04:00[America/New_York]"
+  }
+}, {
+  "id" : 366,
+  "cardNumber" : "1800-1939-3049-9721",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 4680.64,
+  "amountUsed" : 3668.36,
+  "availableAmount" : 1012.28,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381555585-04:00[America/New_York]"
+  }
+}, {
+  "id" : 367,
+  "cardNumber" : "3170-688878-04446",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 4923.58,
+  "amountUsed" : 4124.33,
+  "availableAmount" : 799.25,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381563119-04:00[America/New_York]"
+  }
+}, {
+  "id" : 368,
+  "cardNumber" : "6709047399446212",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 3228.74,
+  "amountUsed" : 2317.38,
+  "availableAmount" : 911.36,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381571705-04:00[America/New_York]"
+  }
+}, {
+  "id" : 369,
+  "cardNumber" : "6759-2162-5013-8921-60",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 6588.31,
+  "amountUsed" : 3802.46,
+  "availableAmount" : 2785.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.3815794-04:00[America/New_York]"
+  }
+}, {
+  "id" : 370,
+  "cardNumber" : "6759-4458-5057-1800",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 9863.64,
+  "amountUsed" : 7684.93,
+  "availableAmount" : 2178.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381586744-04:00[America/New_York]"
+  }
+}, {
+  "id" : 371,
+  "cardNumber" : "5019-0098-2291-6333",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 6274.06,
+  "amountUsed" : 1567.99,
+  "availableAmount" : 4706.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381594007-04:00[America/New_York]"
+  }
+}, {
+  "id" : 372,
+  "cardNumber" : "5192-6733-0133-4711",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 9609.74,
+  "amountUsed" : 6729.78,
+  "availableAmount" : 2879.96,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381601452-04:00[America/New_York]"
+  }
+}, {
+  "id" : 373,
+  "cardNumber" : "5241-4101-8945-1593",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 9971.95,
+  "amountUsed" : 2718.77,
+  "availableAmount" : 7253.18,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381609056-04:00[America/New_York]"
+  }
+}, {
+  "id" : 374,
+  "cardNumber" : "5019-4310-2118-4556",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 4495.58,
+  "amountUsed" : 3501.07,
+  "availableAmount" : 994.52,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381616721-04:00[America/New_York]"
+  }
+}, {
+  "id" : 375,
+  "cardNumber" : "5158-7039-4994-4506",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 7606.92,
+  "amountUsed" : 3582.86,
+  "availableAmount" : 4024.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381624555-04:00[America/New_York]"
+  }
+}, {
+  "id" : 376,
+  "cardNumber" : "4592-7095-7924-3108",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 2673.45,
+  "amountUsed" : 2092.98,
+  "availableAmount" : 580.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381631679-04:00[America/New_York]"
+  }
+}, {
+  "id" : 377,
+  "cardNumber" : "6304448184390194",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 8911.50,
+  "amountUsed" : 5825.40,
+  "availableAmount" : 3086.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381639163-04:00[America/New_York]"
+  }
+}, {
+  "id" : 378,
+  "cardNumber" : "6011-0011-7227-5069",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 6263.75,
+  "amountUsed" : 4233.85,
+  "availableAmount" : 2029.90,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381646307-04:00[America/New_York]"
+  }
+}, {
+  "id" : 379,
+  "cardNumber" : "3651-291015-5920",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 5921.47,
+  "amountUsed" : 3083.21,
+  "availableAmount" : 2838.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38165363-04:00[America/New_York]"
+  }
+}, {
+  "id" : 380,
+  "cardNumber" : "5019-3246-0771-5291",
+  "userId" : 19,
+  "cardType" : "Visa",
+  "totalLimit" : 5189.14,
+  "amountUsed" : 4302.91,
+  "availableAmount" : 886.23,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381661024-04:00[America/New_York]"
+  }
+}, {
+  "id" : 381,
+  "cardNumber" : "4481-2257-5452-1881",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 6569.00,
+  "amountUsed" : 5764.11,
+  "availableAmount" : 804.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381668208-04:00[America/New_York]"
+  }
+}, {
+  "id" : 382,
+  "cardNumber" : "6709968454380246",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 9082.22,
+  "amountUsed" : 5856.87,
+  "availableAmount" : 3225.35,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381675612-04:00[America/New_York]"
+  }
+}, {
+  "id" : 383,
+  "cardNumber" : "3149-171163-06339",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 4192.19,
+  "amountUsed" : 4164.21,
+  "availableAmount" : 27.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381704256-04:00[America/New_York]"
+  }
+}, {
+  "id" : 384,
+  "cardNumber" : "1800-6896-8931-6123",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 7109.37,
+  "amountUsed" : 3586.92,
+  "availableAmount" : 3522.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381788486-04:00[America/New_York]"
+  }
+}, {
+  "id" : 385,
+  "cardNumber" : "6759-6776-0706-2606",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 1431.62,
+  "amountUsed" : 1349.60,
+  "availableAmount" : 82.02,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381798655-04:00[America/New_York]"
+  }
+}, {
+  "id" : 386,
+  "cardNumber" : "5595-6800-7790-1253",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 2183.45,
+  "amountUsed" : 1783.04,
+  "availableAmount" : 400.41,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381814295-04:00[America/New_York]"
+  }
+}, {
+  "id" : 387,
+  "cardNumber" : "6759-7486-9685-4730",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 3436.68,
+  "amountUsed" : 2861.12,
+  "availableAmount" : 575.56,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381821899-04:00[America/New_York]"
+  }
+}, {
+  "id" : 388,
+  "cardNumber" : "4126-7612-0706-3536",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 2765.33,
+  "amountUsed" : 2756.01,
+  "availableAmount" : 9.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381829203-04:00[America/New_York]"
+  }
+}, {
+  "id" : 389,
+  "cardNumber" : "6767-3889-3233-7925",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 9993.56,
+  "amountUsed" : 1140.71,
+  "availableAmount" : 8852.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381836657-04:00[America/New_York]"
+  }
+}, {
+  "id" : 390,
+  "cardNumber" : "6759-0336-5666-0546",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 1488.85,
+  "amountUsed" : 1262.97,
+  "availableAmount" : 225.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381843951-04:00[America/New_York]"
+  }
+}, {
+  "id" : 391,
+  "cardNumber" : "3413-507800-19474",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 3963.93,
+  "amountUsed" : 3640.17,
+  "availableAmount" : 323.76,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381851666-04:00[America/New_York]"
+  }
+}, {
+  "id" : 392,
+  "cardNumber" : "4207-9663-9777-2588",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 3396.15,
+  "amountUsed" : 2074.25,
+  "availableAmount" : 1321.90,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.3818594-04:00[America/New_York]"
+  }
+}, {
+  "id" : 393,
+  "cardNumber" : "5019-4907-6922-6128",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 1560.62,
+  "amountUsed" : 1019.99,
+  "availableAmount" : 540.63,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381866434-04:00[America/New_York]"
+  }
+}, {
+  "id" : 394,
+  "cardNumber" : "3615-538617-5319",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 5898.86,
+  "amountUsed" : 4915.84,
+  "availableAmount" : 983.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381873697-04:00[America/New_York]"
+  }
+}, {
+  "id" : 395,
+  "cardNumber" : "6771922886827715",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 6740.51,
+  "amountUsed" : 1831.59,
+  "availableAmount" : 4908.92,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381880711-04:00[America/New_York]"
+  }
+}, {
+  "id" : 396,
+  "cardNumber" : "3682-721400-2564",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 6876.89,
+  "amountUsed" : 4110.30,
+  "availableAmount" : 2766.59,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381897182-04:00[America/New_York]"
+  }
+}, {
+  "id" : 397,
+  "cardNumber" : "6007-2244-7760-5188",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 4735.33,
+  "amountUsed" : 2628.86,
+  "availableAmount" : 2106.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38190678-04:00[America/New_York]"
+  }
+}, {
+  "id" : 398,
+  "cardNumber" : "3774-691768-69727",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 2145.53,
+  "amountUsed" : 1792.02,
+  "availableAmount" : 353.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381914475-04:00[America/New_York]"
+  }
+}, {
+  "id" : 399,
+  "cardNumber" : "5296-5590-7224-7437",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 2242.42,
+  "amountUsed" : 1628.90,
+  "availableAmount" : 613.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381921839-04:00[America/New_York]"
+  }
+}, {
+  "id" : 400,
+  "cardNumber" : "3586-023010-90586",
+  "userId" : 20,
+  "cardType" : "Visa",
+  "totalLimit" : 4037.32,
+  "amountUsed" : 1090.72,
+  "availableAmount" : 2946.60,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381928852-04:00[America/New_York]"
+  }
+}, {
+  "id" : 401,
+  "cardNumber" : "6304230501886744",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 7537.74,
+  "amountUsed" : 2937.03,
+  "availableAmount" : 4600.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.381936056-04:00[America/New_York]"
+  }
+}, {
+  "id" : 402,
+  "cardNumber" : "6759-3126-4497-9348-300",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 1420.97,
+  "amountUsed" : 1353.52,
+  "availableAmount" : 67.45,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382088154-04:00[America/New_York]"
+  }
+}, {
+  "id" : 403,
+  "cardNumber" : "6759-5556-9077-6607",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 3567.51,
+  "amountUsed" : 3471.98,
+  "availableAmount" : 95.53,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382111919-04:00[America/New_York]"
+  }
+}, {
+  "id" : 404,
+  "cardNumber" : "6759-8170-8057-6157",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 4395.28,
+  "amountUsed" : 3162.15,
+  "availableAmount" : 1233.13,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382122078-04:00[America/New_York]"
+  }
+}, {
+  "id" : 405,
+  "cardNumber" : "6595-2401-8757-7234",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 7351.16,
+  "amountUsed" : 3793.29,
+  "availableAmount" : 3557.87,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382129272-04:00[America/New_York]"
+  }
+}, {
+  "id" : 406,
+  "cardNumber" : "5543-1346-2449-7434",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 4537.29,
+  "amountUsed" : 1428.65,
+  "availableAmount" : 3108.65,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382136055-04:00[America/New_York]"
+  }
+}, {
+  "id" : 407,
+  "cardNumber" : "4783-4503-5152-7074",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 5571.34,
+  "amountUsed" : 3792.39,
+  "availableAmount" : 1778.95,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382142787-04:00[America/New_York]"
+  }
+}, {
+  "id" : 408,
+  "cardNumber" : "6007-2261-7710-4222",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 2963.56,
+  "amountUsed" : 1707.09,
+  "availableAmount" : 1256.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38214951-04:00[America/New_York]"
+  }
+}, {
+  "id" : 409,
+  "cardNumber" : "6759-9766-2174-8153-82",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 1589.29,
+  "amountUsed" : 1292.67,
+  "availableAmount" : 296.62,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382157024-04:00[America/New_York]"
+  }
+}, {
+  "id" : 410,
+  "cardNumber" : "5266-3225-1805-2143",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 3310.15,
+  "amountUsed" : 2251.62,
+  "availableAmount" : 1058.53,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382163587-04:00[America/New_York]"
+  }
+}, {
+  "id" : 411,
+  "cardNumber" : "6007-2202-4083-4659",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 2065.88,
+  "amountUsed" : 1256.99,
+  "availableAmount" : 808.89,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38217038-04:00[America/New_York]"
+  }
+}, {
+  "id" : 412,
+  "cardNumber" : "4294-1576-0109-2948",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 3097.96,
+  "amountUsed" : 2272.22,
+  "availableAmount" : 825.75,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382177102-04:00[America/New_York]"
+  }
+}, {
+  "id" : 413,
+  "cardNumber" : "6759-4590-4809-3908",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 3993.84,
+  "amountUsed" : 1245.20,
+  "availableAmount" : 2748.64,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382183695-04:00[America/New_York]"
+  }
+}, {
+  "id" : 414,
+  "cardNumber" : "3077-951880-5109",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 7744.16,
+  "amountUsed" : 4691.61,
+  "availableAmount" : 3052.55,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382190297-04:00[America/New_York]"
+  }
+}, {
+  "id" : 415,
+  "cardNumber" : "5133-1505-0216-9446",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 5563.08,
+  "amountUsed" : 4741.66,
+  "availableAmount" : 821.43,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38219686-04:00[America/New_York]"
+  }
+}, {
+  "id" : 416,
+  "cardNumber" : "6516-2104-0942-5393",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 6124.70,
+  "amountUsed" : 4485.99,
+  "availableAmount" : 1638.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382204394-04:00[America/New_York]"
+  }
+}, {
+  "id" : 417,
+  "cardNumber" : "6767-4814-6780-1389",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 2810.97,
+  "amountUsed" : 2025.85,
+  "availableAmount" : 785.12,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382211377-04:00[America/New_York]"
+  }
+}, {
+  "id" : 418,
+  "cardNumber" : "6709601255045235",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 1749.37,
+  "amountUsed" : 1314.42,
+  "availableAmount" : 434.95,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38221793-04:00[America/New_York]"
+  }
+}, {
+  "id" : 419,
+  "cardNumber" : "5019-4496-4257-4070",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 9031.35,
+  "amountUsed" : 5779.42,
+  "availableAmount" : 3251.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382224622-04:00[America/New_York]"
+  }
+}, {
+  "id" : 420,
+  "cardNumber" : "2123-5466-9147-3847",
+  "userId" : 21,
+  "cardType" : "Visa",
+  "totalLimit" : 6980.28,
+  "amountUsed" : 6488.99,
+  "availableAmount" : 491.29,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382231215-04:00[America/New_York]"
+  }
+}, {
+  "id" : 421,
+  "cardNumber" : "5019-0482-9813-3809",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 5862.38,
+  "amountUsed" : 5339.60,
+  "availableAmount" : 522.78,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382237757-04:00[America/New_York]"
+  }
+}, {
+  "id" : 422,
+  "cardNumber" : "3004-428056-7613",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 5795.94,
+  "amountUsed" : 5211.91,
+  "availableAmount" : 584.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382244921-04:00[America/New_York]"
+  }
+}, {
+  "id" : 423,
+  "cardNumber" : "5064-7563-7437-8726",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 6577.85,
+  "amountUsed" : 1893.06,
+  "availableAmount" : 4684.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382251233-04:00[America/New_York]"
+  }
+}, {
+  "id" : 424,
+  "cardNumber" : "6007-2266-5243-8749",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 3051.61,
+  "amountUsed" : 3042.00,
+  "availableAmount" : 9.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382257605-04:00[America/New_York]"
+  }
+}, {
+  "id" : 425,
+  "cardNumber" : "5099-8795-8630-2281",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 2761.96,
+  "amountUsed" : 2548.16,
+  "availableAmount" : 213.80,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382263857-04:00[America/New_York]"
+  }
+}, {
+  "id" : 426,
+  "cardNumber" : "6011-0056-7799-8513",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 3501.00,
+  "amountUsed" : 3423.15,
+  "availableAmount" : 77.86,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382270028-04:00[America/New_York]"
+  }
+}, {
+  "id" : 427,
+  "cardNumber" : "6706557703844723",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 4532.27,
+  "amountUsed" : 2173.48,
+  "availableAmount" : 2358.79,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38227611-04:00[America/New_York]"
+  }
+}, {
+  "id" : 428,
+  "cardNumber" : "5019-3287-8494-8708",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 6830.38,
+  "amountUsed" : 6046.16,
+  "availableAmount" : 784.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382282231-04:00[America/New_York]"
+  }
+}, {
+  "id" : 429,
+  "cardNumber" : "3251-541475-39657",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 1708.35,
+  "amountUsed" : 1310.50,
+  "availableAmount" : 397.85,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382288293-04:00[America/New_York]"
+  }
+}, {
+  "id" : 430,
+  "cardNumber" : "3084-182560-0589",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 5093.83,
+  "amountUsed" : 3086.72,
+  "availableAmount" : 2007.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382294204-04:00[America/New_York]"
+  }
+}, {
+  "id" : 431,
+  "cardNumber" : "6759-6260-0327-3465",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 2126.76,
+  "amountUsed" : 1602.20,
+  "availableAmount" : 524.56,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382300717-04:00[America/New_York]"
+  }
+}, {
+  "id" : 432,
+  "cardNumber" : "6706372276470173",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 1097.38,
+  "amountUsed" : 1015.90,
+  "availableAmount" : 81.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382306397-04:00[America/New_York]"
+  }
+}, {
+  "id" : 433,
+  "cardNumber" : "3463-298367-25602",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 4190.77,
+  "amountUsed" : 1577.74,
+  "availableAmount" : 2613.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382312138-04:00[America/New_York]"
+  }
+}, {
+  "id" : 434,
+  "cardNumber" : "5061-0552-1237-7518",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 1796.25,
+  "amountUsed" : 1646.74,
+  "availableAmount" : 149.51,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382317919-04:00[America/New_York]"
+  }
+}, {
+  "id" : 435,
+  "cardNumber" : "6595-2485-6260-2550",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 2339.62,
+  "amountUsed" : 1158.14,
+  "availableAmount" : 1181.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38232363-04:00[America/New_York]"
+  }
+}, {
+  "id" : 436,
+  "cardNumber" : "4879-2583-3225-0541",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 5133.65,
+  "amountUsed" : 2209.82,
+  "availableAmount" : 2923.83,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382329361-04:00[America/New_York]"
+  }
+}, {
+  "id" : 437,
+  "cardNumber" : "1800-8856-8338-9203",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 6926.14,
+  "amountUsed" : 4450.03,
+  "availableAmount" : 2476.12,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382335112-04:00[America/New_York]"
+  }
+}, {
+  "id" : 438,
+  "cardNumber" : "5395-2444-7597-7050",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 3465.20,
+  "amountUsed" : 2098.80,
+  "availableAmount" : 1366.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382341023-04:00[America/New_York]"
+  }
+}, {
+  "id" : 439,
+  "cardNumber" : "5223-3324-3475-4823",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 2197.42,
+  "amountUsed" : 2117.15,
+  "availableAmount" : 80.27,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382346764-04:00[America/New_York]"
+  }
+}, {
+  "id" : 440,
+  "cardNumber" : "4577-4376-9815-1858",
+  "userId" : 22,
+  "cardType" : "Visa",
+  "totalLimit" : 9741.97,
+  "amountUsed" : 9250.46,
+  "availableAmount" : 491.52,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382352485-04:00[America/New_York]"
+  }
+}, {
+  "id" : 441,
+  "cardNumber" : "6304576159487940",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 6299.07,
+  "amountUsed" : 3240.45,
+  "availableAmount" : 3058.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382358125-04:00[America/New_York]"
+  }
+}, {
+  "id" : 442,
+  "cardNumber" : "5019-9619-3135-5581",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 6114.90,
+  "amountUsed" : 4501.41,
+  "availableAmount" : 1613.49,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382363796-04:00[America/New_York]"
+  }
+}, {
+  "id" : 443,
+  "cardNumber" : "3060-440880-0772",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 7231.80,
+  "amountUsed" : 3978.06,
+  "availableAmount" : 3253.74,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382369687-04:00[America/New_York]"
+  }
+}, {
+  "id" : 444,
+  "cardNumber" : "3400-065451-64333",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 5259.94,
+  "amountUsed" : 1337.68,
+  "availableAmount" : 3922.26,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382375608-04:00[America/New_York]"
+  }
+}, {
+  "id" : 445,
+  "cardNumber" : "5019-0496-4713-3987",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 7684.01,
+  "amountUsed" : 5833.32,
+  "availableAmount" : 1850.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382381249-04:00[America/New_York]"
+  }
+}, {
+  "id" : 446,
+  "cardNumber" : "6767-8140-3707-2509-736",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 5548.77,
+  "amountUsed" : 4422.86,
+  "availableAmount" : 1125.92,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382386689-04:00[America/New_York]"
+  }
+}, {
+  "id" : 447,
+  "cardNumber" : "6759-9735-8438-7573",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 6185.16,
+  "amountUsed" : 2729.21,
+  "availableAmount" : 3455.95,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382392581-04:00[America/New_York]"
+  }
+}, {
+  "id" : 448,
+  "cardNumber" : "5460-8292-3261-0208",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 2029.33,
+  "amountUsed" : 1902.87,
+  "availableAmount" : 126.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382398392-04:00[America/New_York]"
+  }
+}, {
+  "id" : 449,
+  "cardNumber" : "6304715373187049",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 9847.28,
+  "amountUsed" : 2628.89,
+  "availableAmount" : 7218.39,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382403822-04:00[America/New_York]"
+  }
+}, {
+  "id" : 450,
+  "cardNumber" : "6550-6615-1866-0824",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 9896.57,
+  "amountUsed" : 7759.69,
+  "availableAmount" : 2136.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382409613-04:00[America/New_York]"
+  }
+}, {
+  "id" : 451,
+  "cardNumber" : "5141-1838-7703-8839",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 6649.16,
+  "amountUsed" : 6101.66,
+  "availableAmount" : 547.49,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382415193-04:00[America/New_York]"
+  }
+}, {
+  "id" : 452,
+  "cardNumber" : "3635-004254-6223",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 3646.78,
+  "amountUsed" : 2617.88,
+  "availableAmount" : 1028.90,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382546432-04:00[America/New_York]"
+  }
+}, {
+  "id" : 453,
+  "cardNumber" : "4745-9876-7199-3442",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 2439.74,
+  "amountUsed" : 2082.51,
+  "availableAmount" : 357.23,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38256645-04:00[America/New_York]"
+  }
+}, {
+  "id" : 454,
+  "cardNumber" : "3810-661239-0527",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 2521.64,
+  "amountUsed" : 1350.00,
+  "availableAmount" : 1171.65,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382573924-04:00[America/New_York]"
+  }
+}, {
+  "id" : 455,
+  "cardNumber" : "6706361382093367",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 3246.29,
+  "amountUsed" : 2971.99,
+  "availableAmount" : 274.29,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382580236-04:00[America/New_York]"
+  }
+}, {
+  "id" : 456,
+  "cardNumber" : "5287-7998-2333-8538",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 6765.97,
+  "amountUsed" : 3634.04,
+  "availableAmount" : 3131.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382586478-04:00[America/New_York]"
+  }
+}, {
+  "id" : 457,
+  "cardNumber" : "6516-2115-0263-9666",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 7517.48,
+  "amountUsed" : 6086.85,
+  "availableAmount" : 1430.64,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382592299-04:00[America/New_York]"
+  }
+}, {
+  "id" : 458,
+  "cardNumber" : "6011-2079-0879-5516",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 1760.68,
+  "amountUsed" : 1716.81,
+  "availableAmount" : 43.87,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38259811-04:00[America/New_York]"
+  }
+}, {
+  "id" : 459,
+  "cardNumber" : "6709154839975881",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 6592.41,
+  "amountUsed" : 4367.98,
+  "availableAmount" : 2224.44,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382603801-04:00[America/New_York]"
+  }
+}, {
+  "id" : 460,
+  "cardNumber" : "6007-2298-7670-7782",
+  "userId" : 23,
+  "cardType" : "Visa",
+  "totalLimit" : 9385.11,
+  "amountUsed" : 8538.56,
+  "availableAmount" : 846.55,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382610023-04:00[America/New_York]"
+  }
+}, {
+  "id" : 461,
+  "cardNumber" : "5009-2808-5710-8631",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 2655.95,
+  "amountUsed" : 2401.81,
+  "availableAmount" : 254.14,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382615904-04:00[America/New_York]"
+  }
+}, {
+  "id" : 462,
+  "cardNumber" : "2123-0949-3743-0263",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 3836.55,
+  "amountUsed" : 2343.08,
+  "availableAmount" : 1493.46,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382621635-04:00[America/New_York]"
+  }
+}, {
+  "id" : 463,
+  "cardNumber" : "6007-2282-8269-8403",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 8785.67,
+  "amountUsed" : 2476.95,
+  "availableAmount" : 6308.71,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382627315-04:00[America/New_York]"
+  }
+}, {
+  "id" : 464,
+  "cardNumber" : "3096-721657-5278",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 2149.03,
+  "amountUsed" : 1353.04,
+  "availableAmount" : 795.98,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382633126-04:00[America/New_York]"
+  }
+}, {
+  "id" : 465,
+  "cardNumber" : "5074-4600-9096-0432",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 8955.97,
+  "amountUsed" : 8702.89,
+  "availableAmount" : 253.08,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382638787-04:00[America/New_York]"
+  }
+}, {
+  "id" : 466,
+  "cardNumber" : "3810-621452-0133",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 2400.33,
+  "amountUsed" : 1274.90,
+  "availableAmount" : 1125.43,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382644308-04:00[America/New_York]"
+  }
+}, {
+  "id" : 467,
+  "cardNumber" : "6709577624738520",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 3394.58,
+  "amountUsed" : 1887.33,
+  "availableAmount" : 1507.25,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382649958-04:00[America/New_York]"
+  }
+}, {
+  "id" : 468,
+  "cardNumber" : "3417-180030-49991",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 5896.60,
+  "amountUsed" : 5806.58,
+  "availableAmount" : 90.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382655509-04:00[America/New_York]"
+  }
+}, {
+  "id" : 469,
+  "cardNumber" : "6771893033721483",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 6374.37,
+  "amountUsed" : 6321.91,
+  "availableAmount" : 52.46,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38266124-04:00[America/New_York]"
+  }
+}, {
+  "id" : 470,
+  "cardNumber" : "6007-2225-2767-9047",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 4714.11,
+  "amountUsed" : 1669.98,
+  "availableAmount" : 3044.13,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38266692-04:00[America/New_York]"
+  }
+}, {
+  "id" : 471,
+  "cardNumber" : "4501-1372-3344-0102",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 9588.09,
+  "amountUsed" : 4280.09,
+  "availableAmount" : 5308.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382672912-04:00[America/New_York]"
+  }
+}, {
+  "id" : 472,
+  "cardNumber" : "5333-6987-9762-4671",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 1897.95,
+  "amountUsed" : 1319.03,
+  "availableAmount" : 578.92,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382678442-04:00[America/New_York]"
+  }
+}, {
+  "id" : 473,
+  "cardNumber" : "5126-0746-2765-0560",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 1147.93,
+  "amountUsed" : 1037.71,
+  "availableAmount" : 110.22,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382684203-04:00[America/New_York]"
+  }
+}, {
+  "id" : 474,
+  "cardNumber" : "2123-7358-1240-5727",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 4600.18,
+  "amountUsed" : 2630.31,
+  "availableAmount" : 1969.87,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382689794-04:00[America/New_York]"
+  }
+}, {
+  "id" : 475,
+  "cardNumber" : "5019-7901-0061-5776",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 3379.76,
+  "amountUsed" : 2976.10,
+  "availableAmount" : 403.66,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382695194-04:00[America/New_York]"
+  }
+}, {
+  "id" : 476,
+  "cardNumber" : "6767-5173-0102-7802-020",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 2340.80,
+  "amountUsed" : 1900.33,
+  "availableAmount" : 440.47,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382701125-04:00[America/New_York]"
+  }
+}, {
+  "id" : 477,
+  "cardNumber" : "3875-707287-9795",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 4996.74,
+  "amountUsed" : 2625.79,
+  "availableAmount" : 2370.95,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382707117-04:00[America/New_York]"
+  }
+}, {
+  "id" : 478,
+  "cardNumber" : "5019-8008-1249-8765",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 9743.56,
+  "amountUsed" : 9116.24,
+  "availableAmount" : 627.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382713198-04:00[America/New_York]"
+  }
+}, {
+  "id" : 479,
+  "cardNumber" : "5019-5608-5707-2541",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 5008.99,
+  "amountUsed" : 2288.45,
+  "availableAmount" : 2720.54,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382719139-04:00[America/New_York]"
+  }
+}, {
+  "id" : 480,
+  "cardNumber" : "5019-4717-0437-8133",
+  "userId" : 24,
+  "cardType" : "Visa",
+  "totalLimit" : 5316.30,
+  "amountUsed" : 1325.30,
+  "availableAmount" : 3991.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38272495-04:00[America/New_York]"
+  }
+}, {
+  "id" : 481,
+  "cardNumber" : "3757-702359-91655",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 8068.47,
+  "amountUsed" : 5835.99,
+  "availableAmount" : 2232.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382730591-04:00[America/New_York]"
+  }
+}, {
+  "id" : 482,
+  "cardNumber" : "4048-8122-5533-1955",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 7247.29,
+  "amountUsed" : 1944.18,
+  "availableAmount" : 5303.11,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382736252-04:00[America/New_York]"
+  }
+}, {
+  "id" : 483,
+  "cardNumber" : "4100-7557-0609-1097",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 5616.14,
+  "amountUsed" : 4665.32,
+  "availableAmount" : 950.83,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382741882-04:00[America/New_York]"
+  }
+}, {
+  "id" : 484,
+  "cardNumber" : "6550-6634-7573-3537",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 5755.45,
+  "amountUsed" : 5573.05,
+  "availableAmount" : 182.40,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382747713-04:00[America/New_York]"
+  }
+}, {
+  "id" : 485,
+  "cardNumber" : "3042-761910-6668",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 1318.61,
+  "amountUsed" : 1120.23,
+  "availableAmount" : 198.38,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382753484-04:00[America/New_York]"
+  }
+}, {
+  "id" : 486,
+  "cardNumber" : "3740-032987-89977",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 3799.74,
+  "amountUsed" : 3789.74,
+  "availableAmount" : 10.00,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382759406-04:00[America/New_York]"
+  }
+}, {
+  "id" : 487,
+  "cardNumber" : "1800-3009-8160-8999",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 1479.30,
+  "amountUsed" : 1132.82,
+  "availableAmount" : 346.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382765106-04:00[America/New_York]"
+  }
+}, {
+  "id" : 488,
+  "cardNumber" : "5019-0769-2133-5533",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 1709.69,
+  "amountUsed" : 1217.64,
+  "availableAmount" : 492.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382770847-04:00[America/New_York]"
+  }
+}, {
+  "id" : 489,
+  "cardNumber" : "6759-1356-4547-6862-87",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 1314.83,
+  "amountUsed" : 1097.80,
+  "availableAmount" : 217.03,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382776568-04:00[America/New_York]"
+  }
+}, {
+  "id" : 490,
+  "cardNumber" : "6550-6694-7638-2612",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 4097.31,
+  "amountUsed" : 1089.24,
+  "availableAmount" : 3008.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382782509-04:00[America/New_York]"
+  }
+}, {
+  "id" : 491,
+  "cardNumber" : "4621-5103-1336-0314",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 4957.00,
+  "amountUsed" : 3515.66,
+  "availableAmount" : 1441.34,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38278816-04:00[America/New_York]"
+  }
+}, {
+  "id" : 492,
+  "cardNumber" : "6007-2286-5225-3524",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 9772.85,
+  "amountUsed" : 9262.44,
+  "availableAmount" : 510.42,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382794001-04:00[America/New_York]"
+  }
+}, {
+  "id" : 493,
+  "cardNumber" : "6706113212642305",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 1520.84,
+  "amountUsed" : 1241.55,
+  "availableAmount" : 279.29,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382799662-04:00[America/New_York]"
+  }
+}, {
+  "id" : 494,
+  "cardNumber" : "6550-6642-5517-6640",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 6697.68,
+  "amountUsed" : 4075.06,
+  "availableAmount" : 2622.61,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382805683-04:00[America/New_York]"
+  }
+}, {
+  "id" : 495,
+  "cardNumber" : "3771-106801-02888",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 1173.90,
+  "amountUsed" : 1016.81,
+  "availableAmount" : 157.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382811474-04:00[America/New_York]"
+  }
+}, {
+  "id" : 496,
+  "cardNumber" : "3837-327330-2502",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 3335.16,
+  "amountUsed" : 1815.63,
+  "availableAmount" : 1519.53,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382817245-04:00[America/New_York]"
+  }
+}, {
+  "id" : 497,
+  "cardNumber" : "4809-8647-1320-0255",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 3814.62,
+  "amountUsed" : 3410.96,
+  "availableAmount" : 403.65,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382822866-04:00[America/New_York]"
+  }
+}, {
+  "id" : 498,
+  "cardNumber" : "5121-5075-9987-6049",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 7799.99,
+  "amountUsed" : 6889.76,
+  "availableAmount" : 910.23,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382828246-04:00[America/New_York]"
+  }
+}, {
+  "id" : 499,
+  "cardNumber" : "6007-2209-6283-7153",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 3862.23,
+  "amountUsed" : 2791.55,
+  "availableAmount" : 1070.69,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382833897-04:00[America/New_York]"
+  }
+}, {
+  "id" : 500,
+  "cardNumber" : "5019-9460-8622-2587",
+  "userId" : 25,
+  "cardType" : "Visa",
+  "totalLimit" : 1124.84,
+  "amountUsed" : 1098.04,
+  "availableAmount" : 26.80,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382839307-04:00[America/New_York]"
+  }
+}, {
+  "id" : 501,
+  "cardNumber" : "5506-1617-1169-9635",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 4431.72,
+  "amountUsed" : 3113.30,
+  "availableAmount" : 1318.42,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382844807-04:00[America/New_York]"
+  }
+}, {
+  "id" : 502,
+  "cardNumber" : "6007-2295-4054-8703",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 1394.97,
+  "amountUsed" : 1394.49,
+  "availableAmount" : 0.48,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382969253-04:00[America/New_York]"
+  }
+}, {
+  "id" : 503,
+  "cardNumber" : "6759-7849-8680-5198-50",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 6954.42,
+  "amountUsed" : 5057.54,
+  "availableAmount" : 1896.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382989461-04:00[America/New_York]"
+  }
+}, {
+  "id" : 504,
+  "cardNumber" : "6011-1027-5713-0511",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 6875.79,
+  "amountUsed" : 1412.69,
+  "availableAmount" : 5463.10,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.382996675-04:00[America/New_York]"
+  }
+}, {
+  "id" : 505,
+  "cardNumber" : "6706726913562520",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 2130.33,
+  "amountUsed" : 1591.32,
+  "availableAmount" : 539.01,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383002907-04:00[America/New_York]"
+  }
+}, {
+  "id" : 506,
+  "cardNumber" : "2123-8907-7786-9001",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 3323.92,
+  "amountUsed" : 3012.84,
+  "availableAmount" : 311.07,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383008808-04:00[America/New_York]"
+  }
+}, {
+  "id" : 507,
+  "cardNumber" : "3889-661669-9986",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 5699.65,
+  "amountUsed" : 2342.11,
+  "availableAmount" : 3357.54,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38301488-04:00[America/New_York]"
+  }
+}, {
+  "id" : 508,
+  "cardNumber" : "6767-0908-7695-4709-95",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 8047.61,
+  "amountUsed" : 5289.29,
+  "availableAmount" : 2758.32,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38302038-04:00[America/New_York]"
+  }
+}, {
+  "id" : 509,
+  "cardNumber" : "6007-2209-2686-4269",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 6815.04,
+  "amountUsed" : 1845.77,
+  "availableAmount" : 4969.27,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383026211-04:00[America/New_York]"
+  }
+}, {
+  "id" : 510,
+  "cardNumber" : "5019-7429-1123-9924",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 2228.85,
+  "amountUsed" : 1443.88,
+  "availableAmount" : 784.97,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383031661-04:00[America/New_York]"
+  }
+}, {
+  "id" : 511,
+  "cardNumber" : "6759-6424-2736-5735-442",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 2059.47,
+  "amountUsed" : 1033.59,
+  "availableAmount" : 1025.88,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383037402-04:00[America/New_York]"
+  }
+}, {
+  "id" : 512,
+  "cardNumber" : "5277-0462-2066-9301",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 5450.34,
+  "amountUsed" : 4472.85,
+  "availableAmount" : 977.49,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383043133-04:00[America/New_York]"
+  }
+}, {
+  "id" : 513,
+  "cardNumber" : "4984-8893-7057-2735",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 5892.86,
+  "amountUsed" : 5668.69,
+  "availableAmount" : 224.17,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383048814-04:00[America/New_York]"
+  }
+}, {
+  "id" : 514,
+  "cardNumber" : "6771780224971771",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 8118.47,
+  "amountUsed" : 7511.01,
+  "availableAmount" : 607.46,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383054635-04:00[America/New_York]"
+  }
+}, {
+  "id" : 515,
+  "cardNumber" : "4372-7793-3221-1680",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 7494.27,
+  "amountUsed" : 3421.34,
+  "availableAmount" : 4072.93,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383060256-04:00[America/New_York]"
+  }
+}, {
+  "id" : 516,
+  "cardNumber" : "5118-3335-5882-0869",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 2497.97,
+  "amountUsed" : 1580.38,
+  "availableAmount" : 917.59,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383066047-04:00[America/New_York]"
+  }
+}, {
+  "id" : 517,
+  "cardNumber" : "3025-374038-5660",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 5499.90,
+  "amountUsed" : 2955.84,
+  "availableAmount" : 2544.06,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383071707-04:00[America/New_York]"
+  }
+}, {
+  "id" : 518,
+  "cardNumber" : "3042-028216-9337",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 9235.10,
+  "amountUsed" : 2484.32,
+  "availableAmount" : 6750.78,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383077438-04:00[America/New_York]"
+  }
+}, {
+  "id" : 519,
+  "cardNumber" : "3730-197116-36141",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 3131.96,
+  "amountUsed" : 1380.83,
+  "availableAmount" : 1751.13,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.383083179-04:00[America/New_York]"
+  }
+}, {
+  "id" : 520,
+  "cardNumber" : "6759-3401-6410-8928-126",
+  "userId" : 26,
+  "cardType" : "Visa",
+  "totalLimit" : 2518.02,
+  "amountUsed" : 2325.98,
+  "availableAmount" : 192.04,
+  "createdDate" : {
+    "created" : "2024-08-30T12:04:46.38308896-04:00[America/New_York]"
+  }
+} ]
