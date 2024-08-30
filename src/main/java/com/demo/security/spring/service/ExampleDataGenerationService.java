@@ -1,11 +1,11 @@
 package com.demo.security.spring.service;
 
-import com.demo.security.spring.generate.AccountFileGenerator;
-import com.demo.security.spring.generate.CardFileGenerator;
-import com.demo.security.spring.generate.ContactMessagesFileGenerator;
-import com.demo.security.spring.generate.LoanFileGenerator;
-import com.demo.security.spring.generate.NoticeDetailsFileGenerator;
-import com.demo.security.spring.generate.UserFileGenerator;
+import com.demo.security.spring.generate.AccountGenerator;
+import com.demo.security.spring.generate.CardGenerator;
+import com.demo.security.spring.generate.ContactMessageGenerator;
+import com.demo.security.spring.generate.LoanGenerator;
+import com.demo.security.spring.generate.NoticeDetailsGenerator;
+import com.demo.security.spring.generate.UserGenerator;
 import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.Card;
 import com.demo.security.spring.model.ContactMessage;
@@ -27,98 +27,81 @@ import lombok.extern.log4j.Log4j2;
 @Getter
 public class ExampleDataGenerationService {
 
-  private UserFileGenerator userFileGenerator;
+  private UserGenerator userGenerator;
 
-  private NoticeDetailsFileGenerator noticeDetailsFileGenerator;
+  private NoticeDetailsGenerator noticeDetailsGenerator;
 
-  private ContactMessagesFileGenerator contactMessagesFileGenerator;
+  private ContactMessageGenerator contactMessageGenerator;
 
-  private AccountFileGenerator accountFileGenerator;
+  private AccountGenerator accountGenerator;
 
-  private CardFileGenerator cardFileGenerator;
+  private CardGenerator cardGenerator;
 
-  private LoanFileGenerator loanFileGenerator;
+  private LoanGenerator loanGenerator;
 
-  // TODO: persist users prior to writing to file so userId is not null
-  public List<SecurityUser> generateUsers(boolean writeToFile) {
-    final List<SecurityUser> generatedUsers = userFileGenerator.generate();
-    if (writeToFile) {
-      userFileGenerator.write(generatedUsers);
-    }
-    return generatedUsers;
+  /**
+   * Note that this method does not write to json file as we need to persist first to have userIds.
+   * This is not an issue with other model types.
+   * @return a list of generated users with no id value set
+   */
+  public List<SecurityUser> generateUsers() {
+    return userGenerator.generate();
   }
 
   public Account generateAccount(SecurityUser user) {
     Preconditions.checkNotNull(user);
-    final Account account = accountFileGenerator.generateAccount();
+    final Account account = accountGenerator.generateAccount();
     account.setUserId(user.getId());
     account.getAccountTransactions().forEach(accountTransaction -> accountTransaction.setUserId(user.getId()));
     return account;
   }
 
-  public List<Account> generateAccounts(List<SecurityUser> users, boolean writeToFile) {
+  public List<Account> generateAccounts(List<SecurityUser> users) {
     ValidationUtils.notEmpty(users, "Users to generate accounts for cannot be empty");
     final List<Account> accounts = new ArrayList<>();
     users.forEach(u -> accounts.add(generateAccount(u)));
-    if (writeToFile) {
-      accountFileGenerator.write(accounts);
-    }
     return accounts;
   }
 
   public List<Card> generateCards(SecurityUser user) {
     Preconditions.checkNotNull(user);
     List<Card> cards = new ArrayList<>();
-    cardFileGenerator.generate().forEach(card -> {
+    cardGenerator.generate().forEach(card -> {
       card.setUserId(user.getId());
       cards.add(card);
     });
     return cards;
   }
 
-  public List<Card> generateCards(List<SecurityUser> users, boolean writeToFile) {
+  public List<Card> generateCards(List<SecurityUser> users) {
     ValidationUtils.notEmpty(users);
     final List<Card> cards = new ArrayList<>(); // flat - not grouped by user. > 1 per user is expected and we don't need to differentiate here between users
     users.forEach(u -> cards.addAll(generateCards(u)));
-    if (writeToFile) {
-      cardFileGenerator.write();
-    }
     return cards;
   }
 
   public List<Loan> generateLoans(SecurityUser user) {
     Preconditions.checkNotNull(user);
     List<Loan> loans = new ArrayList<>();
-    loanFileGenerator.generate().forEach(loan -> {
+    loanGenerator.generate().forEach(loan -> {
       loan.setUserId(user.getId());
       loans.add(loan);
     });
     return loans;
   }
 
-  public List<Loan> generateLoans(List<SecurityUser> users, boolean writeToFile) {
+  public List<Loan> generateLoans(List<SecurityUser> users) {
     ValidationUtils.notEmpty(users);
     final List<Loan> loans = new ArrayList<>(); // flat - not grouped by user. > 1 per user is expected and we don't need to differentiate here between users
     users.forEach(u -> loans.addAll(generateLoans(u)));
-    if (writeToFile) {
-      loanFileGenerator.write();
-    }
     return loans;
   }
 
-  public List<NoticeDetails> generateNotices(boolean writeToFile) {
-    final List<NoticeDetails> noticeDetails = noticeDetailsFileGenerator.generate();
-    if (writeToFile) {
-      noticeDetailsFileGenerator.write(noticeDetails);
-    }
-    return noticeDetails;
+  public List<NoticeDetails> generateNotices() {
+    return noticeDetailsGenerator.generate();
   }
 
-  public List<ContactMessage> generateMessages(boolean writeToFile) {
-    final List<ContactMessage> contactMessages = contactMessagesFileGenerator.generate();
-    if (writeToFile) {
-      contactMessagesFileGenerator.write(contactMessages);
-    }
-    return contactMessages;
+  public List<ContactMessage> generateMessages() {
+    return contactMessageGenerator.generate();
   }
 }

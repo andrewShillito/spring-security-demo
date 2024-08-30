@@ -12,15 +12,17 @@ import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
 
 @Log4j2
-public class AccountFileGenerator extends AbstractFileGenerator {
-
-  public static final String DEFAULT_OUTPUT_FILE = "example-accounts.json";
+public class AccountGenerator extends AbstractGenerator<List<Account>> {
 
   protected static final BigDecimal DEFAULT_STARTING_BALANCE = BigDecimal.valueOf(500.00);
 
-  public AccountFileGenerator(Faker faker,
+  public AccountGenerator(Faker faker,
       ObjectMapper objectMapper) {
-    super(faker, objectMapper, DEFAULT_OUTPUT_FILE);
+    this(faker, objectMapper, DEFAULT_ITEM_COUNT);
+  }
+
+  public AccountGenerator(Faker faker, ObjectMapper objectMapper, int itemCount) {
+    super(faker, objectMapper, itemCount);
   }
 
   @Override

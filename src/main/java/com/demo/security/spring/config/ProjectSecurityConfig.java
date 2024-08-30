@@ -13,12 +13,12 @@ import com.demo.security.spring.controller.ContactController;
 import com.demo.security.spring.controller.LoansController;
 import com.demo.security.spring.controller.UserController;
 import com.demo.security.spring.controller.NoticesController;
-import com.demo.security.spring.generate.AccountFileGenerator;
-import com.demo.security.spring.generate.CardFileGenerator;
-import com.demo.security.spring.generate.ContactMessagesFileGenerator;
-import com.demo.security.spring.generate.LoanFileGenerator;
-import com.demo.security.spring.generate.NoticeDetailsFileGenerator;
-import com.demo.security.spring.generate.UserFileGenerator;
+import com.demo.security.spring.generate.AccountGenerator;
+import com.demo.security.spring.generate.CardGenerator;
+import com.demo.security.spring.generate.ContactMessageGenerator;
+import com.demo.security.spring.generate.LoanGenerator;
+import com.demo.security.spring.generate.NoticeDetailsGenerator;
+import com.demo.security.spring.generate.UserGenerator;
 import com.demo.security.spring.repository.AccountRepository;
 import com.demo.security.spring.repository.AuthenticationAttemptRepository;
 import com.demo.security.spring.repository.CardRepository;
@@ -164,7 +164,10 @@ public class ProjectSecurityConfig {
       final ExampleDataManager exampleDataManager,
       final AccountRepository accountRepository,
       final CardRepository cardRepository,
-      final LoanRepository loanRepository
+      final LoanRepository loanRepository,
+      final UserGenerator userGenerator,
+      final ObjectMapper objectMapper,
+      final PasswordEncoder passwordEncoder
   ) {
     return StartupDatabasePopulator.builder()
         .exampleDataManager(exampleDataManager)
@@ -174,6 +177,9 @@ public class ProjectSecurityConfig {
         .accountRepository(accountRepository)
         .cardRepository(cardRepository)
         .loanRepository(loanRepository)
+        .userGenerator(userGenerator)
+        .objectMapper(objectMapper)
+        .passwordEncoder(passwordEncoder)
         .build();
   }
 
@@ -201,7 +207,6 @@ public class ProjectSecurityConfig {
       @Value("${example-data.regenerate:false}") boolean regenerateData
   ) {
     return ExampleDataManager.builder()
-        .passwordEncoder(passwordEncoder())
         .objectMapper(objectMapper())
         .generationService(generationService)
         .regenerateData(regenerateData)
@@ -226,65 +231,65 @@ public class ProjectSecurityConfig {
   }
 
   @Bean
-  public CardFileGenerator cardGenerator(@Value("${example-data.cards.count:20}") int cardCount) {
-    final CardFileGenerator cardFileGenerator = new CardFileGenerator(faker(), objectMapper());
-    cardFileGenerator.setItemCount(cardCount);
-    return cardFileGenerator;
+  public CardGenerator cardGenerator(@Value("${example-data.cards.count:20}") int cardCount) {
+    final CardGenerator cardGenerator = new CardGenerator(faker(), objectMapper());
+    cardGenerator.setItemCount(cardCount);
+    return cardGenerator;
   }
 
   @Bean
-  public LoanFileGenerator loanGenerator(@Value("${example-data.loan.count:20}") int loanCount) {
-    LoanFileGenerator loanFileGenerator = new LoanFileGenerator(faker(), objectMapper());
-    loanFileGenerator.setItemCount(loanCount);
-    return loanFileGenerator;
+  public LoanGenerator loanGenerator(@Value("${example-data.loan.count:20}") int loanCount) {
+    LoanGenerator loanGenerator = new LoanGenerator(faker(), objectMapper());
+    loanGenerator.setItemCount(loanCount);
+    return loanGenerator;
   }
 
   @Bean
-  public NoticeDetailsFileGenerator noticeDetailsFileGenerator(@Value("${example-data.notice.count:20}") int noticeCount) {
-    final NoticeDetailsFileGenerator noticeDetailsFileGenerator = new NoticeDetailsFileGenerator(faker(), objectMapper());
-    noticeDetailsFileGenerator.setItemCount(noticeCount);
-    return noticeDetailsFileGenerator;
+  public NoticeDetailsGenerator noticeDetailsFileGenerator(@Value("${example-data.notice.count:20}") int noticeCount) {
+    final NoticeDetailsGenerator noticeDetailsGenerator = new NoticeDetailsGenerator(faker(), objectMapper());
+    noticeDetailsGenerator.setItemCount(noticeCount);
+    return noticeDetailsGenerator;
   }
 
   @Bean
-  public ContactMessagesFileGenerator contactMessagesFileGenerator(@Value("${example-data.message.count:20}") int messageCount) {
-    final ContactMessagesFileGenerator contactMessagesFileGenerator = new ContactMessagesFileGenerator(faker(), objectMapper());
-    contactMessagesFileGenerator.setItemCount(messageCount);
-    return contactMessagesFileGenerator;
+  public ContactMessageGenerator contactMessagesFileGenerator(@Value("${example-data.message.count:20}") int messageCount) {
+    final ContactMessageGenerator contactMessageGenerator = new ContactMessageGenerator(faker(), objectMapper());
+    contactMessageGenerator.setItemCount(messageCount);
+    return contactMessageGenerator;
   }
 
   @Bean
-  public AccountFileGenerator accountFileGenerator(@Value("${example-data.account.count:1}") int accountCount) {
-    final AccountFileGenerator accountFileGenerator = new AccountFileGenerator(faker(), objectMapper());
-    accountFileGenerator.setItemCount(accountCount);
-    return accountFileGenerator;
+  public AccountGenerator accountFileGenerator(@Value("${example-data.account.count:1}") int accountCount) {
+    final AccountGenerator accountGenerator = new AccountGenerator(faker(), objectMapper());
+    accountGenerator.setItemCount(accountCount);
+    return accountGenerator;
   }
 
   @Bean
-  public UserFileGenerator userFileGenerator(
+  public UserGenerator userFileGenerator(
       @Value("${example-data.user.count:20}") int userCount
   ) {
-    final UserFileGenerator userFileGenerator = new UserFileGenerator(faker(), objectMapper());
-    userFileGenerator.setItemCount(userCount);
-    return userFileGenerator;
+    final UserGenerator userGenerator = new UserGenerator(faker(), objectMapper());
+    userGenerator.setItemCount(userCount);
+    return userGenerator;
   }
 
   @Bean
   public ExampleDataGenerationService exampleDataGenerationService(
-      UserFileGenerator userFileGenerator,
-      AccountFileGenerator accountFileGenerator,
-      LoanFileGenerator loanFileGenerator,
-      CardFileGenerator cardFileGenerator,
-      NoticeDetailsFileGenerator noticeDetailsFileGenerator,
-      ContactMessagesFileGenerator contactMessagesFileGenerator
+      UserGenerator userGenerator,
+      AccountGenerator accountGenerator,
+      LoanGenerator loanGenerator,
+      CardGenerator cardGenerator,
+      NoticeDetailsGenerator noticeDetailsGenerator,
+      ContactMessageGenerator contactMessageGenerator
   ) {
     return ExampleDataGenerationService.builder()
-        .userFileGenerator(userFileGenerator)
-        .accountFileGenerator(accountFileGenerator)
-        .loanFileGenerator(loanFileGenerator)
-        .cardFileGenerator(cardFileGenerator)
-        .noticeDetailsFileGenerator(noticeDetailsFileGenerator)
-        .contactMessagesFileGenerator(contactMessagesFileGenerator)
+        .userGenerator(userGenerator)
+        .accountGenerator(accountGenerator)
+        .loanGenerator(loanGenerator)
+        .cardGenerator(cardGenerator)
+        .noticeDetailsGenerator(noticeDetailsGenerator)
+        .contactMessageGenerator(contactMessageGenerator)
         .build();
   }
 

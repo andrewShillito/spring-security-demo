@@ -1,7 +1,7 @@
 package com.demo.security.spring.controller;
 
 import com.demo.security.spring.DemoAssertions;
-import com.demo.security.spring.generate.NoticeDetailsFileGenerator;
+import com.demo.security.spring.generate.NoticeDetailsGenerator;
 import com.demo.security.spring.model.NoticeDetails;
 import com.demo.security.spring.repository.NoticeDetailsRepository;
 import java.io.IOException;
@@ -38,7 +38,7 @@ class NoticesControllerTest extends AbstractControllerTest {
     private NoticeDetailsRepository noticesRepository;
 
     @Autowired
-    private NoticeDetailsFileGenerator noticesGenerator;
+    private NoticeDetailsGenerator noticesGenerator;
 
     @Autowired
     private Faker faker;

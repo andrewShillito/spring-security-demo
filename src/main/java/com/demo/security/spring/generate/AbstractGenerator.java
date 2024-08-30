@@ -86,4 +86,26 @@ public abstract class AbstractGenerator<T> implements Generator<T> {
     startAndEndDates.setEndDate(randomFutureDate());
     return startAndEndDates;
   }
+
+  public EntityStartAndEndDates currentDate() {
+    EntityStartAndEndDates startAndEndDates = new EntityStartAndEndDates();
+    startAndEndDates.setStartDate(ZonedDateTime.now().minusDays(faker.random().nextInt(1, 365)));
+    startAndEndDates.setEndDate(ZonedDateTime.now().plusDays(faker.random().nextInt(1, 365)));
+    return startAndEndDates;
+  }
+
+  public EntityStartAndEndDates futureDate() {
+    EntityStartAndEndDates startAndEndDates = new EntityStartAndEndDates();
+    startAndEndDates.setStartDate(ZonedDateTime.now().plusDays(faker.random().nextInt(1, 365)));
+    startAndEndDates.setEndDate(ZonedDateTime.now().plusDays(faker.random().nextInt(365, 730)));
+    return startAndEndDates;
+  }
+
+
+  public EntityStartAndEndDates pastDate() {
+    EntityStartAndEndDates startAndEndDates = new EntityStartAndEndDates();
+    startAndEndDates.setStartDate(ZonedDateTime.now().minusDays(faker.random().nextInt(365, 730)));
+    startAndEndDates.setEndDate(ZonedDateTime.now().minusDays(faker.random().nextInt(1, 365)));
+    return startAndEndDates;
+  }
 }

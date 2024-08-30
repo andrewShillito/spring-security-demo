@@ -2,7 +2,7 @@ package com.demo.security.spring.controller;
 
 import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.controller.error.ValidationErrorDetailsResponse;
-import com.demo.security.spring.generate.ContactMessagesFileGenerator;
+import com.demo.security.spring.generate.ContactMessageGenerator;
 import com.demo.security.spring.model.ContactMessage;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ class ContactControllerTest extends AbstractControllerTest {
     private MockMvc mockMvc;
 
     @Autowired
-    private ContactMessagesFileGenerator contactMessagesFileGenerator;
+    private ContactMessageGenerator contactMessageGenerator;
 
     @Test
     void getContactPage() throws Exception {
@@ -130,7 +130,7 @@ class ContactControllerTest extends AbstractControllerTest {
     }
 
     private ContactMessage randomContactMessage() {
-        return contactMessagesFileGenerator.generate(1).getFirst();
+        return contactMessageGenerator.generate(1).getFirst();
     }
 
     private String randomContactMessageString() throws IOException {

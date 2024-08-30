@@ -5,25 +5,22 @@ import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.model.UserType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
 
 @Log4j2
-public class UserFileGenerator extends AbstractFileGenerator {
+public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
 
   protected static final String DEFAULT_TESTING_PASSWORD = "password";
 
-  public static final String DEFAULT_OUTPUT_FILE = "example-users.json";
-
-  public UserFileGenerator(Faker faker, ObjectMapper objectMapper) {
-    this(faker, objectMapper, DEFAULT_OUTPUT_FILE);
+  public UserGenerator(Faker faker, ObjectMapper objectMapper) {
+    this(faker, objectMapper, DEFAULT_ITEM_COUNT);
   }
 
-  public UserFileGenerator(Faker faker,
-      ObjectMapper objectMapper, String fileName) {
-    super(faker, objectMapper, fileName);
+  public UserGenerator(Faker faker,
+      ObjectMapper objectMapper, int itemCount) {
+    super(faker, objectMapper, itemCount);
   }
 
   @Override
@@ -32,7 +29,7 @@ public class UserFileGenerator extends AbstractFileGenerator {
   }
 
   @Override
-  public Collection<SecurityUser> generate(int count) {
+  public List<SecurityUser> generate(int count) {
     log.info(() -> "Starting user generation");
     final List<SecurityUser> generatedUsers = generateUsers(count);
     log.info(() -> "Generated " + generatedUsers.size() + " users");
@@ -53,22 +50,6 @@ public class UserFileGenerator extends AbstractFileGenerator {
       users.add(faker.random().nextBoolean() ? generateRandomActiveUser(username) : generateRandomUser(username));
     }
     return users;
-  }
-
-  /**
-   * Override from super to handle transforming generated security users
-   * in order to write password ( which is json access write only ) to
-   * generated example-users.json for reference in dev/test envs.
-   * @param generated the generated data
-   */
-  @Override
-  public void write(Collection<?> generated) {
-    if (generated != null && !generated.isEmpty()) {
-      super.write(generated.stream()
-          .filter(it -> it instanceof SecurityUser)
-          .map(it -> ((SecurityUser) it).toMap())
-          .toList());
-    }
   }
 
   private SecurityUser generateRandomActiveUser(String username) {

@@ -8,24 +8,15 @@ import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
 
 @Log4j2
-public class NoticeDetailsFileGenerator extends AbstractFileGenerator {
+public class NoticeDetailsGenerator extends AbstractGenerator<List<NoticeDetails>> {
 
-  public static final String DEFAULT_FILE_NAME = "example-notice-details.json";
-
-  public NoticeDetailsFileGenerator(Faker faker,
+  public NoticeDetailsGenerator(Faker faker,
       ObjectMapper objectMapper) {
-    this(faker, objectMapper, DEFAULT_FILE_NAME);
+    this(faker, objectMapper, DEFAULT_ITEM_COUNT);
   }
 
-  public NoticeDetailsFileGenerator(Faker faker,
-      ObjectMapper objectMapper, String fileName) {
-    super(faker, objectMapper, fileName);
-  }
-
-  public NoticeDetailsFileGenerator(Faker faker,
-      ObjectMapper objectMapper, String outputFileDir, String fileName,
-      boolean overwriteFiles) {
-    super(faker, objectMapper, outputFileDir, fileName, overwriteFiles);
+  public NoticeDetailsGenerator(Faker faker, ObjectMapper objectMapper, int itemCount) {
+    super(faker, objectMapper, itemCount);
   }
 
   @Override

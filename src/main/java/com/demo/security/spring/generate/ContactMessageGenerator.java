@@ -8,24 +8,17 @@ import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
 
 @Log4j2
-public class ContactMessagesFileGenerator extends AbstractFileGenerator {
+public class ContactMessageGenerator extends AbstractGenerator<List<ContactMessage>> {
 
   public static final String DEFAULT_OUTPUT_FILE = "example-contact-messages.json";
 
-  public ContactMessagesFileGenerator(Faker faker,
+  public ContactMessageGenerator(Faker faker,
       ObjectMapper objectMapper) {
-    super(faker, objectMapper, DEFAULT_OUTPUT_FILE);
+    this(faker, objectMapper, DEFAULT_ITEM_COUNT);
   }
 
-  public ContactMessagesFileGenerator(Faker faker,
-      ObjectMapper objectMapper, String fileName) {
-    super(faker, objectMapper, fileName);
-  }
-
-  public ContactMessagesFileGenerator(Faker faker,
-      ObjectMapper objectMapper, String outputFileDir, String fileName,
-      boolean overwriteFiles) {
-    super(faker, objectMapper, outputFileDir, fileName, overwriteFiles);
+  public ContactMessageGenerator(Faker faker, ObjectMapper objectMapper, int itemCount) {
+    super(faker, objectMapper, itemCount);
   }
 
   @Override

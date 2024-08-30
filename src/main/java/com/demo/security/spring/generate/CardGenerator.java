@@ -9,13 +9,17 @@ import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
 
 @Log4j2
-public class CardFileGenerator extends AbstractFileGenerator {
+public class CardGenerator extends AbstractGenerator<List<Card>> {
 
   public static final String DEFAULT_OUTPUT_FILE = "example-cards.json";
 
-  public CardFileGenerator(Faker faker,
+  public CardGenerator(Faker faker,
       ObjectMapper objectMapper) {
-    super(faker, objectMapper, DEFAULT_OUTPUT_FILE);
+    this(faker, objectMapper, DEFAULT_ITEM_COUNT);
+  }
+
+  public CardGenerator(Faker faker, ObjectMapper objectMapper, int itemCount) {
+    super(faker, objectMapper, itemCount);
   }
 
   @Override

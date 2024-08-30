@@ -45,7 +45,7 @@ public abstract class AbstractFileGenerator extends AbstractGenerator<Collection
     write(generate());
   }
 
-  @Override
+//  @Override
   public void write(Collection<?> generated) {
     try {
       if (generated != null && !generated.isEmpty()) {

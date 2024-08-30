@@ -1,11 +1,11 @@
 package com.demo.security.spring;
 
-import com.demo.security.spring.generate.AccountFileGenerator;
-import com.demo.security.spring.generate.CardFileGenerator;
-import com.demo.security.spring.generate.ContactMessagesFileGenerator;
-import com.demo.security.spring.generate.LoanFileGenerator;
-import com.demo.security.spring.generate.NoticeDetailsFileGenerator;
-import com.demo.security.spring.generate.UserFileGenerator;
+import com.demo.security.spring.generate.AccountGenerator;
+import com.demo.security.spring.generate.CardGenerator;
+import com.demo.security.spring.generate.ContactMessageGenerator;
+import com.demo.security.spring.generate.LoanGenerator;
+import com.demo.security.spring.generate.NoticeDetailsGenerator;
+import com.demo.security.spring.generate.UserGenerator;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,22 +27,22 @@ public class TestDataGenerator {
   private ObjectMapper objectMapper;
 
   @Autowired
-  private UserFileGenerator userFileGenerator;
+  private UserGenerator userGenerator;
 
   @Autowired
-  private AccountFileGenerator accountFileGenerator;
+  private AccountGenerator accountGenerator;
 
   @Autowired
-  private LoanFileGenerator loanFileGenerator;
+  private LoanGenerator loanGenerator;
 
   @Autowired
-  private CardFileGenerator cardFileGenerator;
+  private CardGenerator cardGenerator;
 
   @Autowired
-  private ContactMessagesFileGenerator contactMessagesFileGenerator;
+  private ContactMessageGenerator contactMessageGenerator;
 
   @Autowired
-  private NoticeDetailsFileGenerator noticeDetailsFileGenerator;
+  private NoticeDetailsGenerator noticeDetailsGenerator;
 
   @Autowired
   private SecurityUserRepository securityUserRepository;
@@ -71,7 +71,7 @@ public class TestDataGenerator {
   }
 
   public SecurityUser generateExternalUser(@NonNull String username, @NonNull String password, boolean persist) {
-    final SecurityUser user = userFileGenerator.generateExternalUser(username, password);
+    final SecurityUser user = userGenerator.generateExternalUser(username, password);
     postProcessGeneratedUser(user);
     if (persist) {
       securityUserRepository.save(user);
@@ -80,7 +80,7 @@ public class TestDataGenerator {
   }
 
   public SecurityUser generateInternalUser(@NonNull String username, @NonNull String password, boolean persist) {
-    final SecurityUser user = userFileGenerator.generateInternalUser(username, password);
+    final SecurityUser user = userGenerator.generateInternalUser(username, password);
     postProcessGeneratedUser(user);
     if (persist) {
       securityUserRepository.save(user);

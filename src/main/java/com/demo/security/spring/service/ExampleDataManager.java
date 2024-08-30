@@ -15,7 +15,6 @@ import lombok.Builder;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * Handles retrieving lists of example users and other data from resource files for local dev environment testing.
@@ -25,13 +24,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Setter
 public class ExampleDataManager {
 
-  private PasswordEncoder passwordEncoder;
-
   private ObjectMapper objectMapper;
 
   private ExampleDataGenerationService generationService;
 
   private boolean regenerateData;
+
+  public static final String USERS_OUTPUT_FILE_NAME = "example-users.json";
+  public static final String ACCOUNTS_OUTPUT_FILE_NAME = "example-accounts.json";
+  public static final String LOANS_OUTPUT_FILE_NAME = "example-loans.json";
+  public static final String CARDS_OUTPUT_FILE_NAME = "example-cards.json";
+  public static final String NOTICES_OUTPUT_FILE_NAME = "example-notice-details.json";
+  public static final String CONTACT_MESSAGES_OUTPUT_FILE_NAME = "example-contact-messages.json";
 
   /**
    * Reads a json file for users to seed into the database.
@@ -43,9 +47,9 @@ public class ExampleDataManager {
   public List<SecurityUser> getUsers() {
     List<SecurityUser> securityUsers;
     if (regenerateData) {
-      securityUsers = generationService.generateUsers(true);
+      securityUsers = generationService.generateUsers();
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/" + generationService.getUserFileGenerator().getOutputFileName());
+      final ClassPathResource resource = getClassPathResource("seed/" + USERS_OUTPUT_FILE_NAME);
       if (!resource.exists()) {
         throw new RuntimeException("Unable to locate development environment users seed file");
       } else if (!resource.isReadable()) {
@@ -57,18 +61,16 @@ public class ExampleDataManager {
         throw new RuntimeException("Failed to read development environment users from classpath resource " + resource.getPath(), e);
       }
     }
-    return securityUsers.stream()
-        .peek(user -> user.setPassword(passwordEncoder.encode(user.getPassword())))
-        .toList();
+    return securityUsers;
   }
 
   public List<Account> getAccountsForUsers(List<SecurityUser> users) {
     ValidationUtils.notEmpty(users);
     List<Account> accounts;
     if (regenerateData) {
-      accounts = generationService.generateAccounts(users, true);
+      accounts = generationService.generateAccounts(users);
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/" + generationService.getAccountFileGenerator().getOutputFileName());
+      final ClassPathResource resource = getClassPathResource("seed/" + ACCOUNTS_OUTPUT_FILE_NAME);
       if (!resource.exists()) {
         throw new RuntimeException("Unable to locate development environment accounts seed file");
       } else if (!resource.isReadable()) {
@@ -87,9 +89,9 @@ public class ExampleDataManager {
     ValidationUtils.notEmpty(users);
     List<Card> cards;
     if (regenerateData) {
-      cards = generationService.generateCards(users, true);
+      cards = generationService.generateCards(users);
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/" + generationService.getCardFileGenerator().getOutputFileName());
+      final ClassPathResource resource = getClassPathResource("seed/" + CARDS_OUTPUT_FILE_NAME);
       if (!resource.exists()) {
         throw new RuntimeException("Unable to locate development environment cards seed file");
       } else if (!resource.isReadable()) {
@@ -108,9 +110,9 @@ public class ExampleDataManager {
     ValidationUtils.notEmpty(users);
     List<Loan> loans;
     if (regenerateData) {
-      loans = generationService.generateLoans(users, true);
+      loans = generationService.generateLoans(users);
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/" + generationService.getLoanFileGenerator().getOutputFileName());
+      final ClassPathResource resource = getClassPathResource("seed/" + LOANS_OUTPUT_FILE_NAME);
       if (!resource.exists()) {
         throw new RuntimeException("Unable to locate development environment loans seed file");
       } else if (!resource.isReadable()) {
@@ -128,9 +130,9 @@ public class ExampleDataManager {
   public List<NoticeDetails> getNoticeDetails() {
     List<NoticeDetails> noticeDetails;
     if (regenerateData) {
-      noticeDetails = generationService.generateNotices(true);
+      noticeDetails = generationService.generateNotices();
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/example-notice-details.json");
+      final ClassPathResource resource = getClassPathResource("seed/" + NOTICES_OUTPUT_FILE_NAME);
       try {
         noticeDetails = Arrays.stream(objectMapper.readValue(resource.getInputStream(), NoticeDetails[].class)).toList();
       } catch (IOException e) {
@@ -143,9 +145,9 @@ public class ExampleDataManager {
   public List<ContactMessage> getContactMessages() {
     List<ContactMessage> contactMessages;
     if (regenerateData) {
-      contactMessages = generationService.generateMessages(true);
+      contactMessages = generationService.generateMessages();
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/example-contact-messages.json");
+      final ClassPathResource resource = getClassPathResource("seed/" + CONTACT_MESSAGES_OUTPUT_FILE_NAME);
       try {
         contactMessages = Arrays.stream(objectMapper.readValue(resource.getInputStream(), ContactMessage[].class)).toList();
       } catch (IOException e) {
