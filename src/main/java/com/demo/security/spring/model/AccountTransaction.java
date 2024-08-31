@@ -31,7 +31,7 @@ import lombok.ToString;
 @Table(name = "account_transactions")
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode( exclude = { "account" })
 @ToString(exclude = { "account" } )
 @SequenceGenerator(name = "account_transactions_transaction_id_seq", sequenceName = "account_transactions_transaction_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)

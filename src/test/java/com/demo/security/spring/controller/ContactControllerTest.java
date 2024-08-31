@@ -41,7 +41,7 @@ class ContactControllerTest extends AbstractControllerTest {
 
     @Test
     void getContactPage() throws Exception {
-        mockMvc.perform(get(ContactController.CONTACT_RESOURCE_PATH)).andExpect(status().isMethodNotAllowed());
+        mockMvc.perform(get(ContactController.RESOURCE_PATH)).andExpect(status().isMethodNotAllowed());
     }
 
     @Test
@@ -67,7 +67,7 @@ class ContactControllerTest extends AbstractControllerTest {
     }
 
     private ResultActions executeValidPost(String content) throws Exception {
-        return mockMvc.perform(post(ContactController.CONTACT_RESOURCE_PATH)
+        return mockMvc.perform(post(ContactController.RESOURCE_PATH)
             .contentType(MediaType.APPLICATION_JSON)
             .content(content));
     }

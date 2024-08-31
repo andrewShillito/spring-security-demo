@@ -26,7 +26,7 @@ import lombok.ToString;
 @SequenceGenerator(name = "accounts_account_number_seq", sequenceName = "accounts_account_number_seq", allocationSize = 50, initialValue = 1)
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = { "accountTransactions" })
 @ToString
 @JsonInclude(Include.NON_EMPTY)
 public class Account {

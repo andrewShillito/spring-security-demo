@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Log4j2
 public class LoansController {
 
-  public static final String LOANS_RESOURCE_PATH = "/myLoans";
+  public static final String RESOURCE_PATH = "/myLoans";
 
   private LoanRepository loanRepository;
 
@@ -32,7 +32,7 @@ public class LoansController {
     this.userDetailsManager = userDetailsManager;
   }
 
-  @GetMapping(LOANS_RESOURCE_PATH)
+  @GetMapping(RESOURCE_PATH)
   public List<Loan> getLoansDetails() throws AuthenticationException {
     SecurityUser user = userDetailsManager.getAuthenticatedUser();
     if (user != null && user.getId() != null) {

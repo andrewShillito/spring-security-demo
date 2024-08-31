@@ -98,7 +98,7 @@ public class FormLoginProdTest {
     final String userRawPassword = testDataGenerator.randomPassword();
     final SecurityUser user = testDataGenerator.generateExternalUser(username, userRawPassword, true);
 
-    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+    mockMvc.perform(get(LoansController.RESOURCE_PATH)
             .secure(true)
             .param("userId", user.getId().toString()))
         .andExpect(status().isUnauthorized())
@@ -107,7 +107,7 @@ public class FormLoginProdTest {
     var result = DemoAssertions.assertFormLoginSuccessful(mockMvc, username, userRawPassword, true);
     assertNotNull(result.getRequest().getSession());
     // use session details to perform a request to a secured endpoint for the same user's details
-    var sessionRequestResult = mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+    var sessionRequestResult = mockMvc.perform(get(LoansController.RESOURCE_PATH)
             .secure(true)
             .session((MockHttpSession) result.getRequest().getSession())
             .param("userId", user.getId().toString()))
@@ -124,7 +124,7 @@ public class FormLoginProdTest {
     final String userRawPassword = testDataGenerator.randomPassword();
     final SecurityUser user = testDataGenerator.generateExternalUser(username, userRawPassword, true);
 
-    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+    mockMvc.perform(get(LoansController.RESOURCE_PATH)
             .secure(true)
             .param("userId", user.getId().toString()))
         .andExpect(status().isUnauthorized())
@@ -133,7 +133,7 @@ public class FormLoginProdTest {
     var loginResult = DemoAssertions.assertFormLoginSuccessful(mockMvc, username, userRawPassword, true);
     var firstSession = loginResult.getRequest().getSession();
     assertNotNull(firstSession);
-    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+    mockMvc.perform(get(LoansController.RESOURCE_PATH)
             .secure(true)
             .session((MockHttpSession) firstSession)
             .param("userId", user.getId().toString()))
@@ -146,7 +146,7 @@ public class FormLoginProdTest {
     assertNotEquals(firstSession, secondSession);
 
     assertNotNull(secondSession.getId());
-    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+    mockMvc.perform(get(LoansController.RESOURCE_PATH)
             .secure(true)
             .session((MockHttpSession) secondSession)
             .param("userId", user.getId().toString()))
@@ -159,7 +159,7 @@ public class FormLoginProdTest {
       // A bit weird here, but it passes on second attempt...
       retryCount--;
       try {
-        invalidSessionRequest = mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+        invalidSessionRequest = mockMvc.perform(get(LoansController.RESOURCE_PATH)
                 .secure(true)
                 .session((MockHttpSession) firstSession)
                 .param("userId", user.getId().toString()))

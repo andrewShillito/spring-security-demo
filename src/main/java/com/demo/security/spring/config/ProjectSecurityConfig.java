@@ -53,7 +53,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer.SessionFixationConfigurer;
-import org.springframework.security.core.context.SecurityContextHolderStrategy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -91,14 +90,14 @@ public class ProjectSecurityConfig {
         })
         .authorizeHttpRequests((requests) -> requests
         .requestMatchers(
-            AccountController.ACCOUNT_RESOURCE_PATH,
-            AccountController.ACCOUNT_RESOURCE_PATH + "/**",
-            BalanceController.BALANCE_RESOURCE_PATH,
-            BalanceController.BALANCE_RESOURCE_PATH + "/**",
-            CardsController.CARDS_RESOURCE_PATH,
-            CardsController.CARDS_RESOURCE_PATH + "/**",
-            LoansController.LOANS_RESOURCE_PATH,
-            LoansController.LOANS_RESOURCE_PATH + "/**")
+            AccountController.RESOURCE_PATH,
+            AccountController.RESOURCE_PATH + "/**",
+            BalanceController.RESOURCE_PATH,
+            BalanceController.RESOURCE_PATH + "/**",
+            CardsController.RESOURCE_PATH,
+            CardsController.RESOURCE_PATH + "/**",
+            LoansController.RESOURCE_PATH,
+            LoansController.RESOURCE_PATH + "/**")
         .authenticated()
         .requestMatchers(
             UserController.RESOURCE_PATH,
@@ -106,10 +105,10 @@ public class ProjectSecurityConfig {
         )
         .hasRole("ADMIN")
         .requestMatchers(
-            NoticesController.NOTICES_RESOURCE_PATH,
-            NoticesController.NOTICES_RESOURCE_PATH + "/**",
-            ContactController.CONTACT_RESOURCE_PATH,
-            ContactController.CONTACT_RESOURCE_PATH + "/**",
+            NoticesController.RESOURCE_PATH,
+            NoticesController.RESOURCE_PATH + "/**",
+            ContactController.RESOURCE_PATH,
+            ContactController.RESOURCE_PATH + "/**",
             "/invalidSession"
         )
         .permitAll()

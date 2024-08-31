@@ -14,17 +14,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
+import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.Loan;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import lombok.NonNull;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
+@Log4j2
 public class DemoAssertions {
 
   /** For fuzzy matching of datetime */

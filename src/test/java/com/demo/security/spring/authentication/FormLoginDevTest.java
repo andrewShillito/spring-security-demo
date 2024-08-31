@@ -87,7 +87,7 @@ public class FormLoginDevTest {
     final String userRawPassword = testDataGenerator.randomPassword();
     final SecurityUser user = testDataGenerator.generateExternalUser(username, userRawPassword, true);
 
-    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+    mockMvc.perform(get(LoansController.RESOURCE_PATH)
             .param("userId", user.getId().toString()))
         .andExpect(status().isUnauthorized())
         .andExpect(unauthenticated());
@@ -95,7 +95,7 @@ public class FormLoginDevTest {
     var result = DemoAssertions.assertFormLoginSuccessful(mockMvc, username, userRawPassword);
     assertNotNull(result.getRequest().getSession());
     // use session details to perform a request to a secured endpoint for the same user's details
-    var sessionRequestResult = mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+    var sessionRequestResult = mockMvc.perform(get(LoansController.RESOURCE_PATH)
             .session((MockHttpSession) result.getRequest().getSession())
             .param("userId", user.getId().toString()))
         .andExpect(status().isOk())
@@ -111,7 +111,7 @@ public class FormLoginDevTest {
     final String userRawPassword = testDataGenerator.randomPassword();
     final SecurityUser user = testDataGenerator.generateExternalUser(username, userRawPassword, true);
 
-    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+    mockMvc.perform(get(LoansController.RESOURCE_PATH)
             .param("userId", user.getId().toString()))
         .andExpect(status().isUnauthorized())
         .andExpect(unauthenticated());
@@ -125,7 +125,7 @@ public class FormLoginDevTest {
     assertNotNull(secondSession);
     assertNotEquals(firstSession, secondSession);
 
-    MvcResult sessionRequestResult = mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+    MvcResult sessionRequestResult = mockMvc.perform(get(LoansController.RESOURCE_PATH)
             .session((MockHttpSession) firstSession)
             .param("userId", user.getId().toString()))
         .andExpect(status().isOk())
@@ -134,7 +134,7 @@ public class FormLoginDevTest {
     assertTrue(StringUtils.isNotBlank(response.getContentAsString()), "Expected response to be non-empty");
 
     // and again for good measure
-    mockMvc.perform(get(LoansController.LOANS_RESOURCE_PATH)
+    mockMvc.perform(get(LoansController.RESOURCE_PATH)
             .session((MockHttpSession) firstSession)
             .param("userId", user.getId().toString()))
         .andExpect(status().isOk())

@@ -46,7 +46,7 @@ class NoticesControllerTest extends AbstractControllerTest {
     @Test
     void getNotices() throws Exception {
         // confirm empty notices
-        final MvcResult result = mockMvc.perform(get(NoticesController.NOTICES_RESOURCE_PATH)).andExpect(status().isOk()).andReturn();
+        final MvcResult result = mockMvc.perform(get(NoticesController.RESOURCE_PATH)).andExpect(status().isOk()).andReturn();
         final List<NoticeDetails> noticeDetails = asNotices(result.getResponse().getContentAsString());
         assertEquals(0, noticeDetails.size());
         // confirm non-empty notices
@@ -55,7 +55,7 @@ class NoticesControllerTest extends AbstractControllerTest {
         List<NoticeDetails> flattenedTestData = testData.flattened();
         Collections.shuffle(flattenedTestData);
         noticesRepository.saveAll(flattenedTestData);
-        final MvcResult nonEmptyResult = mockMvc.perform(get(NoticesController.NOTICES_RESOURCE_PATH)).andExpect(status().isOk()).andReturn();
+        final MvcResult nonEmptyResult = mockMvc.perform(get(NoticesController.RESOURCE_PATH)).andExpect(status().isOk()).andReturn();
         final List<NoticeDetails> nonEmptyNotices = asNotices(nonEmptyResult.getResponse().getContentAsString());
         assertEquals(10, nonEmptyNotices.size());
 
@@ -96,7 +96,7 @@ class NoticesControllerTest extends AbstractControllerTest {
         }
 
         // execute with a user to confirm no difference
-        final MvcResult withUserResult = mockMvc.perform(get(NoticesController.NOTICES_RESOURCE_PATH)
+        final MvcResult withUserResult = mockMvc.perform(get(NoticesController.RESOURCE_PATH)
                 .with(user(faker.internet().username())))
             .andExpect(status().isOk()).andReturn();
         final List<NoticeDetails> userNotices = asNotices(withUserResult.getResponse().getContentAsString());
@@ -105,7 +105,7 @@ class NoticesControllerTest extends AbstractControllerTest {
 
     @Test
     void testCors() throws Exception {
-        _testCors(mockMvc, NoticesController.NOTICES_RESOURCE_PATH, null, null, false);
+        _testCors(mockMvc, NoticesController.RESOURCE_PATH, null, null, false);
     }
 
     @Test

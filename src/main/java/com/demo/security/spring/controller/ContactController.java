@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Log4j2
 public class ContactController {
 
-  public static final String CONTACT_RESOURCE_PATH = "/contact";
+  public static final String RESOURCE_PATH = "/contact";
 
   private ContactMessageRepository contactMessageRepository;
 
@@ -37,7 +37,7 @@ public class ContactController {
     this.objectMapper = objectMapper;
   }
 
-  @PostMapping(value = CONTACT_RESOURCE_PATH, produces = "application/json")
+  @PostMapping(value = RESOURCE_PATH, produces = "application/json")
   public ResponseEntity<String> createContactMessage(
       @Valid @RequestBody final ContactMessage contactMessage,
       final BindingResult bindingResult) throws IOException

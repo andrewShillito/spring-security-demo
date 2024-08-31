@@ -6,6 +6,8 @@ import com.demo.security.spring.generate.ContactMessageGenerator;
 import com.demo.security.spring.generate.LoanGenerator;
 import com.demo.security.spring.generate.NoticeDetailsGenerator;
 import com.demo.security.spring.generate.UserGenerator;
+import com.demo.security.spring.model.Account;
+import com.demo.security.spring.model.Card;
 import com.demo.security.spring.model.Loan;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.AccountRepository;
@@ -120,5 +122,27 @@ public class TestDataGenerator {
     loans.forEach(l -> l.setUserId(user.getId()));
     loanRepository.saveAll(loans);
     return loans;
+  }
+
+  public List<Account> generateAccounts(SecurityUser user, int count) {
+    final List<Account> accounts = accountGenerator.generate(count);
+    accounts.forEach(a -> a.setUserId(user.getId()));
+    accountRepository.saveAll(accounts);
+    return accounts;
+  }
+
+  public Account generateAccount(SecurityUser user) {
+    Account account = accountGenerator.generateAccount();
+    account.setUserId(user.getId());
+    account.getAccountTransactions().forEach(txn -> txn.setUserId(user.getId()));
+    accountRepository.save(account);
+    return account;
+  }
+
+  public List<Card> generateCards(SecurityUser user, int count) {
+    final List<Card> cards = cardGenerator.generate(count);
+    cards.forEach(c -> c.setUserId(user.getId()));
+    cardRepository.saveAll(cards);
+    return cards;
   }
 }
