@@ -90,30 +90,27 @@ public class ProjectSecurityConfig {
         })
         .authorizeHttpRequests((requests) -> requests
         .requestMatchers(
-            AccountController.RESOURCE_PATH,
             AccountController.RESOURCE_PATH + "/**",
-            BalanceController.RESOURCE_PATH,
             BalanceController.RESOURCE_PATH + "/**",
-            CardsController.RESOURCE_PATH,
             CardsController.RESOURCE_PATH + "/**",
-            LoansController.RESOURCE_PATH,
-            LoansController.RESOURCE_PATH + "/**")
+            LoansController.RESOURCE_PATH + "/**",
+            "/v3/api-docs/**", // the json schema
+            "/swagger-ui/**",
+            "/swagger-ui.html" // redirects to /swagger-ui/index.html
+        )
         .authenticated()
         .requestMatchers(
-            UserController.RESOURCE_PATH,
             UserController.RESOURCE_PATH + "/**"
         )
         .hasRole("ADMIN")
         .requestMatchers(
-            NoticesController.RESOURCE_PATH,
             NoticesController.RESOURCE_PATH + "/**",
-            ContactController.RESOURCE_PATH,
             ContactController.RESOURCE_PATH + "/**",
             "/invalidSession"
         )
         .permitAll()
     );
-    http.formLogin(withDefaults());
+    http.formLogin(customizer -> customizer.defaultSuccessUrl(Constants.DEFAULT_LOGIN_REDIRECT_URL));
     // configuration specific to http basic
     http.httpBasic(httpBasicConfigurer -> httpBasicConfigurer.authenticationEntryPoint(
         new CustomBasicAuthenticationEntryPoint(objectMapper(), environment, isProd)));

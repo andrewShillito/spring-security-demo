@@ -13,4 +13,7 @@ public class Constants {
   /** For configuring and testing example CORS handling */
   public static final String[] EXAMPLE_ALLOWED_CORS_PATHS = new String[] { "http://localhost:9000", "https://localhost:9000" };
 
+  /** The default login redirect url */
+  public static final String DEFAULT_LOGIN_REDIRECT_URL = "/swagger-ui/index.html";
+
 }

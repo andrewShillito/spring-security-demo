@@ -14,8 +14,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
-import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.Loan;
+import com.demo.security.spring.utils.Constants;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
@@ -110,13 +110,13 @@ public class DemoAssertions {
               .with(csrf()))
           .andExpect(status().isFound())
           .andExpect(authenticated().withUsername(username))
-          .andExpect(redirectedUrl("/"))
+          .andExpect(redirectedUrl(Constants.DEFAULT_LOGIN_REDIRECT_URL))
           .andReturn();
     } else {
       return mockMvc.perform(formLogin().user(username).password(password))
           .andExpect(status().isFound())
           .andExpect(authenticated().withUsername(username))
-          .andExpect(redirectedUrl("/"))
+          .andExpect(redirectedUrl(Constants.DEFAULT_LOGIN_REDIRECT_URL))
           .andReturn();
     }
   }
