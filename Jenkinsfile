@@ -4,8 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         echo "Start build"
-        echo "Using maven version $(mvn --version)"
-        echo "Using java version $(java --version)"
+        echo "Using maven version \$(mvn --version)"
+        echo "Using java version \$(java --version)"
         sh 'git clone https://github.com/andrewShillito/spring-security-demo.git'
         sh 'pwd'
         sh 'ls'
@@ -16,16 +16,16 @@ pipeline {
     stage('JUnit Tests') {
       steps {
         echo "Start test"
-        echo "Using maven version $(mvn --version)"
-        echo "Using java version $(java --version)"
+        echo "Using maven version \$(mvn --version)"
+        echo "Using java version \$(java --version)"
         sh 'mvn clean verify'
       }
     }
     stage('Automation Tests') {
       steps {
         echo "Start test"
-        echo "Using maven version $(mvn --version)"
-        echo "Using java version $(java --version)"
+        echo "Using maven version \$(mvn --version)"
+        echo "Using java version \$(java --version)"
         sh 'mvn clean verify'
         sh 'mvn spring-boot:run &'
         // todo: wait for spring boot actuator health check
