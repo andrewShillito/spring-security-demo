@@ -77,8 +77,8 @@ Example data generation leverages the DataFaker library.
 - `example-data.account.count` - sets the number of accounts per user to create during regeneration
 - `example-data.user.count` - sets the number of randomized users to create during regeneration. There is also a set of standard non-randomized users which is always created.
 
-#### Troubleshooting
+## Troubleshooting
 
-##### Docker
+### Docker
 
 At times the automatic shutdown of associated docker containers does not process correctly and that can cause subsequent startups to fail. Removing the docker postgres & adminer containers as well as associated volumes and then starting up again usually resolves that issue. The development environment docker-compose used for this project is [docker-compose-postgres.yml](./docker-compose-postgres.yml).  
