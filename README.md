@@ -14,7 +14,7 @@ See existing run configurations defined in [.run](.run). These should be importe
 
 ## Command line startup
 
-Can be run with ./mvnw commands or using mvn if installed locally. Originally tested using mvn 3.6.3. 
+Can be run with `./mvnw` command or using `mvn` if installed locally. Originally tested using mvn version 3.6.3. 
 
 ### Default spring profile
 
@@ -36,9 +36,29 @@ Example usage:
 
 `./mvnw spring-boot:run -Dspring-boot.run.profiles=prod`
 
-## To run test suites
+## Test suites
 
 `./mvnw clean verify`
+
+The default test suite is [FullRegressionSuite.java](./src/test/java/com/demo/security/spring/suites/FullRegressionSuite.java)
+which runs all non-browser automation junit tests. To run any other existing test suite the command format is:
+
+`./mvnw clean verify -DrunSuite=${classPathToTestSuite}`
+
+For example to run the browser automation test suite [BrowserAutomationSuite.java](./src/test/java/com/demo/security/spring/suites/BrowserAutomationSuite.java):
+
+1. Start the application using an IDE or `mvn spring-boot:run`
+2. Execute this command to trigger the browser automation test suite:
+
+`./mvnw clean verify -DrunSuite=com.demo.security.spring.suites.BrowserAutomationSuite`
+
+Playwright will sow `ERR_CONNECTION_REFUSED` if the application is not running.
+
+The playwright testing setup supports some environment parameters:
+
+- `playwright.application.base-url` - The base url for the running spring boot application without http or https prefix. Default is 'localhost:8080'. 
+- `playwright.application.is-https` - Whether the spring boot app is using https or http - default is http.
+- `playwright.headless` - Controls if playwright shows the browser as the test suite runs. Default value is 'false' which means the browser will show.
 
 ## Regenerating dev environment example data
 
