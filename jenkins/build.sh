@@ -1,0 +1,1 @@
+docker build -t myjenkins-test:2.462.2-1 .
