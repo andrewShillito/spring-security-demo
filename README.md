@@ -56,9 +56,9 @@ Playwright will sow `ERR_CONNECTION_REFUSED` if the application is not running.
 
 The playwright testing setup supports some environment parameters:
 
-- `playwright.application.base-url` - The base url for the running spring boot application without http or https prefix. Default is 'localhost:8080'. 
-- `playwright.application.is-https` - Whether the spring boot app is using https or http - default is http.
-- `playwright.headless` - Controls if playwright shows the browser as the test suite runs. Default value is 'false' which means the browser will show.
+- `playwright.application.base-url` - The base url for the running spring boot application without http or https prefix. The default value is 'localhost:8080'. 
+- `playwright.application.is-https` - Whether the spring boot app is using https or http. The default value is 'false' which means it expects the application urls to use http.
+- `playwright.headless` - Controls if playwright shows the browser as the test suite runs. The default value is 'false' which means the browser will show.
 
 ## Regenerating dev environment example data
 
