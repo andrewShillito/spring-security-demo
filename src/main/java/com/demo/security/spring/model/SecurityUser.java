@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.google.common.base.Preconditions;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -20,9 +21,11 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import java.lang.reflect.Field;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
@@ -41,7 +44,7 @@ import org.springframework.util.ReflectionUtils;
 @Table(name = "security_users")
 @Getter
 @Setter
-@ToString(exclude = {"password", "accounts", "loans", "cards"}) // some we don't want in logs and some can cause hibernate lazy initialization errors
+@ToString(exclude = { "password" }) // don't want password in logs
 @SequenceGenerator(name = "security_users_id_seq", sequenceName = "security_users_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class SecurityUser implements UserDetails {
@@ -58,9 +61,9 @@ public class SecurityUser implements UserDetails {
   @Column(name = "email", length = 100)
   private String email;
 
-  @NotBlank
   @Column(name = "password", length = 500)
   @JsonProperty(access = Access.WRITE_ONLY)
+  @NotBlank
   private String password;
 
   @Column(name = "user_type", length = 100)
@@ -72,6 +75,7 @@ public class SecurityUser implements UserDetails {
   @Column(name = "user_role", length = 100)
   private String userRole = "STANDARD";
 
+  @NotNull
   private boolean enabled;
 
   @Column(name = "account_expired")
@@ -101,10 +105,55 @@ public class SecurityUser implements UserDetails {
   private ZonedDateTime unlockDate;
 
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+  @NotEmpty
   private List<SecurityAuthority> authorities;
 
   @Embedded
   private EntityControlDates controlDates = new EntityControlDates();
+
+  public SecurityUser() {
+  }
+
+  public SecurityUser(SecurityUser toClone) {
+    this();
+    Preconditions.checkNotNull(toClone);
+    // does not clone id
+    setUsername(toClone.getUsername());
+    setPassword(toClone.getPassword());
+
+    setEmail(toClone.getEmail());
+    setUserType(toClone.getUserType());
+    setUserRole(toClone.getUserRole());
+    setEnabled(toClone.isEnabled());
+    setAccountExpired(toClone.isAccountExpired());
+    setAccountExpiredDate(toClone.getAccountExpiredDate());
+    setPasswordExpired(toClone.isPasswordExpired());
+    setPasswordExpiredDate(toClone.getPasswordExpiredDate());
+    setFailedLoginAttempts(toClone.getFailedLoginAttempts());
+    setNumPreviousLockouts(toClone.getNumPreviousLockouts());
+    setLocked(toClone.isLocked());
+    setLockedDate(toClone.getLockedDate());
+    setUnlockDate(toClone.getUnlockDate());
+
+    List<SecurityAuthority> copiedAuthorities = new ArrayList<>();
+    if (toClone.getAuthorities() != null) {
+      toClone.getAuthorities().forEach(auth -> {
+        SecurityAuthority clonedAuthority = new SecurityAuthority();
+        clonedAuthority.setUser(this);
+        clonedAuthority.setAuthority(auth.getAuthority());
+        copiedAuthorities.add(clonedAuthority);
+      });
+    }
+    setAuthorities(copiedAuthorities);
+
+    if (toClone.getControlDates() != null) {
+      // ZonedDateTime is immutable but this still makes me a little uncomfortable
+      EntityControlDates clonedControlDates = new EntityControlDates();
+      clonedControlDates.setCreated(toClone.getControlDates().getCreated());
+      clonedControlDates.setLastUpdated(toClone.getControlDates().getLastUpdated());
+      setControlDates(clonedControlDates);
+    }
+  }
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {

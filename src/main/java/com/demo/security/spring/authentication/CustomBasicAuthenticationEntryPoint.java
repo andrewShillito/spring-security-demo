@@ -17,7 +17,6 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 
 /**
  * An example custom basic authentication entry point based on {@link org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint}
- * which adds an extra header in the response
  */
 @Log4j2
 public class CustomBasicAuthenticationEntryPoint implements AuthenticationEntryPoint {

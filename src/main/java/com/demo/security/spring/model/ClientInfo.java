@@ -20,33 +20,33 @@ import ua_parser.Parser;
 @Log4j2
 public class ClientInfo {
 
-  @Column(name = "remote_address")
+  @Column(name = "remote_address", length = 32)
   private String remoteAddress;
-  @Column(name = "remote_host")
+  @Column(name = "remote_host", length = 200)
   private String remoteHost;
-  @Column(name = "remote_user")
+  @Column(name = "remote_user", length = 200)
   private String remoteUser;
-  @Column(name = "content_type")
+  @Column(name = "content_type", length = 100)
   private String contentType;
-  @Column(name = "user_agent_family")
+  @Column(name = "user_agent_family", length = 50)
   private String userAgentFamily;
-  @Column(name = "user_agent_major")
+  @Column(name = "user_agent_major", length = 50)
   private String userAgentMajor;
-  @Column(name = "user_agent_minor")
+  @Column(name = "user_agent_minor", length = 50)
   private String userAgentMinor;
-  @Column(name = "user_agent_patch")
+  @Column(name = "user_agent_patch", length = 50)
   private String userAgentPatch;
-  @Column(name = "os_family")
+  @Column(name = "os_family", length = 200)
   private String osFamily;
-  @Column(name = "os_major")
+  @Column(name = "os_major", length = 50)
   private String osMajor;
-  @Column(name = "os_minor")
+  @Column(name = "os_minor", length = 50)
   private String osMinor;
-  @Column(name = "os_patch")
+  @Column(name = "os_patch", length = 50)
   private String osPatch;
-  @Column(name = "os_patch_minor")
+  @Column(name = "os_patch_minor", length = 50)
   private String osPatchMinor;
-  @Column(name = "device_family")
+  @Column(name = "device_family", length = 200)
   private String deviceFamily;
 
   public static ClientInfo fromRequest(@NonNull HttpServletRequest request) {

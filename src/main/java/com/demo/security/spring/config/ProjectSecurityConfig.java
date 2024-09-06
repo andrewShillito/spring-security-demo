@@ -1,8 +1,8 @@
 package com.demo.security.spring.config;
 
-import static org.springframework.security.config.Customizer.withDefaults;
-
 import com.demo.security.spring.authentication.AuthenticationAttemptManager;
+import com.demo.security.spring.authentication.CustomAuthenticationFailureHandler;
+import com.demo.security.spring.authentication.CustomAuthenticationSuccessHandler;
 import com.demo.security.spring.events.AuthenticationEvents;
 import com.demo.security.spring.authentication.CustomAccessDeniedHandler;
 import com.demo.security.spring.authentication.CustomBasicAuthenticationEntryPoint;
@@ -40,6 +40,7 @@ import com.demo.security.spring.service.ExampleDataManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import jakarta.validation.Validator;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.Collections;
@@ -94,6 +95,7 @@ public class ProjectSecurityConfig {
             BalanceController.RESOURCE_PATH + "/**",
             CardsController.RESOURCE_PATH + "/**",
             LoansController.RESOURCE_PATH + "/**",
+            "/actuator/**", /* TODO: add actuator and child paths as secured endpoints */
             "/v3/api-docs/**", // the json schema
             "/swagger-ui/**",
             "/swagger-ui.html" // redirects to /swagger-ui/index.html
@@ -110,10 +112,16 @@ public class ProjectSecurityConfig {
         )
         .permitAll()
     );
-    http.formLogin(customizer -> customizer.defaultSuccessUrl(Constants.DEFAULT_LOGIN_REDIRECT_URL));
+    http.formLogin(configurer -> configurer
+        .defaultSuccessUrl(Constants.DEFAULT_LOGIN_REDIRECT_URL)
+        // these example success and failure handlers are similar to default spring security behavior
+        .successHandler(new CustomAuthenticationSuccessHandler())
+        .failureHandler(new CustomAuthenticationFailureHandler())
+    ).logout(c -> c.invalidateHttpSession(true).clearAuthentication(true).deleteCookies("JSESSIONID"));
     // configuration specific to http basic
-    http.httpBasic(httpBasicConfigurer -> httpBasicConfigurer.authenticationEntryPoint(
-        new CustomBasicAuthenticationEntryPoint(objectMapper(), environment, isProd)));
+    http.httpBasic(httpBasicConfigurer -> httpBasicConfigurer
+        .authenticationEntryPoint(new CustomBasicAuthenticationEntryPoint(objectMapper(), environment, isProd))
+    );
     http.exceptionHandling(customizer -> customizer.accessDeniedHandler(new CustomAccessDeniedHandler(objectMapper(), isProd)));
     // global config for authenticationEntryPoint is possible using
     // http.exceptionHandling(customizer -> customizer.authenticationEntryPoint(new CustomBasicAuthenticationEntryPoint(objectMapper(), environment, isProd))));
@@ -309,12 +317,14 @@ public class ProjectSecurityConfig {
   public UserDetailsManagerImpl userDetailsManager(
       AuthenticationManager authenticationManager,
       SecurityUserRepository securityUserRepository,
-      PasswordEncoder passwordEncoder
+      PasswordEncoder passwordEncoder,
+      Validator validator
   ) {
     return UserDetailsManagerImpl.builder()
         .authenticationManager(authenticationManager)
         .userRepository(securityUserRepository)
         .passwordEncoder(passwordEncoder)
+        .validator(validator)
         .build();
   }
 

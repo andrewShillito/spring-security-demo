@@ -1,6 +1,6 @@
 package com.demo.security.spring.controller;
 
-import com.demo.security.spring.controller.error.BindingResultUtils;
+import com.demo.security.spring.error.ValidationErrorUtils;
 import com.demo.security.spring.model.ContactMessage;
 import com.demo.security.spring.repository.ContactMessageRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -67,7 +67,7 @@ public class ContactController {
     } else {
       try {
         final String body = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(
-            BindingResultUtils.generateErrorDetails(bindingResult));
+            ValidationErrorUtils.generateErrorDetails(bindingResult));
         log.info(() -> "Rejected contact message request which was invalid\n" + body);
         response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
       } catch (IOException e) {

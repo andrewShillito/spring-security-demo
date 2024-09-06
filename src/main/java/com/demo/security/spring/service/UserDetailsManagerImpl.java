@@ -1,9 +1,14 @@
 package com.demo.security.spring.service;
 
+import com.demo.security.spring.model.PasswordWrapper;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.utils.SecurityUtils;
 import com.google.common.base.Preconditions;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validator;
+import jakarta.validation.groups.Default;
+import java.util.Set;
 import javax.naming.AuthenticationException;
 import lombok.Builder;
 import lombok.extern.log4j.Log4j2;
@@ -31,11 +36,23 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
 
   private PasswordEncoder passwordEncoder;
 
+  private Validator validator;
+
   @Override
-  public void createUser(UserDetails user) {
-    // TODO: implement and replace JpaLoginService with this userDetailsManager impl
-//    user.setPassword(passwordEncoder.encode(user.getPassword()));
-//    return securityUserRepository.save(user);
+  public void createUser(final UserDetails user) {
+    if (user == null) {
+      throw new AssertionError("User to create is null");
+    } else if (!(user instanceof SecurityUser)) {
+      throw new IllegalArgumentException("User details type is unsupported. Expected " + SecurityUser.class.getName() + " but was " + user.getClass().getName());
+    }
+    final SecurityUser securityUser = (SecurityUser) user;
+    // validate password prior to saving as once encoded we cannot validate it as easily
+    final Set<ConstraintViolation<PasswordWrapper>> passwordErrors = validateUserPassword(securityUser);
+    if (passwordErrors != null && !passwordErrors.isEmpty()) {
+      throw new AssertionError("User password failed validation");
+    }
+    securityUser.setPassword(passwordEncoder.encode(securityUser.getPassword()));
+    userRepository.save(securityUser);
   }
 
   @Override
@@ -84,11 +101,7 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
   @Override
   public boolean userExists(String username) {
     if (StringUtils.isNotBlank(username)) {
-      try {
-        return loadUserByUsername(username) != null;
-      } catch (UsernameNotFoundException e) {
-        log.info(() -> "User with username " + username + " does not exist");
-      }
+      return userRepository.existsByUsernameIgnoreCase(username);
     }
     return false;
   }
@@ -120,5 +133,10 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
       }
     }
     return null;
+  }
+
+  public Set<ConstraintViolation<PasswordWrapper>> validateUserPassword(SecurityUser user) {
+    return validator.validateProperty(new PasswordWrapper().setPassword(user.getPassword()),
+        "password", Default.class);
   }
 }

@@ -14,6 +14,7 @@ import com.demo.security.spring.repository.AccountRepository;
 import com.demo.security.spring.repository.CardRepository;
 import com.demo.security.spring.repository.LoanRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
+import com.demo.security.spring.utils.Constants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,16 +71,17 @@ public class TestDataGenerator {
   }
 
   public String randomPassword() {
-    return faker.internet().password();
+    return faker.internet().password(Constants.PASSWORD_MIN_LENGTH, Constants.PASSWORD_MAX_LENGTH,
+        true, true, true);
   }
 
   public List<SecurityUser> generateUsers(int count, boolean persist, boolean internal) {
     final List<SecurityUser> users = new ArrayList<>();
     for (int i = 0; i < count; i++) {
       if (internal) {
-        users.add(generateInternalUser(faker.internet().username(), faker.internet().password(), persist));
+        users.add(generateInternalUser(faker.internet().username(), randomPassword(), persist));
       } else {
-        users.add(generateExternalUser(faker.internet().username(), faker.internet().password(), persist));
+        users.add(generateExternalUser(faker.internet().username(), randomPassword(), persist));
       }
     }
     return users;

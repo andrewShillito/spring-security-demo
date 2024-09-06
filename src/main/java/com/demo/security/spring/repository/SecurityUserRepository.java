@@ -13,6 +13,8 @@ public interface SecurityUserRepository extends PagingAndSortingRepository<Secur
 
   SecurityUser getSecurityUserByUsername(String username);
 
+  boolean existsByUsernameIgnoreCase(String username);
+
   @Query(value = "UPDATE SecurityUser u SET u.password = ?2 WHERE u.username = ?1")
   int updateUserPassword(String username, String password);
 

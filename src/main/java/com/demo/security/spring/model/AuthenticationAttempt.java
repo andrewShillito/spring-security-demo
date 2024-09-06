@@ -39,7 +39,7 @@ public class AuthenticationAttempt {
    *
    * Note that {@link ClientInfo#getRemoteUser()}} would also be the authenticated username if present
    */
-  @Column(name = "username")
+  @Column(name = "username", length = 100)
   private String username;
 
   @Column(name = "attempt_time")
@@ -48,14 +48,14 @@ public class AuthenticationAttempt {
   @Column(name = "successful")
   private boolean successful;
 
-  @Column(name = "failure_reason")
+  @Column(name = "failure_reason", length = 50)
   @Enumerated(EnumType.STRING)
   private AuthenticationFailureReason failureReason;
 
   /**
    * The resource path from the request
    */
-  @Column(name = "requested_resource")
+  @Column(name = "requested_resource", length = 200)
   private String requestedResource;
 
   @Embedded

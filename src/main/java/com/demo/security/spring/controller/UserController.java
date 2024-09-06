@@ -1,10 +1,11 @@
 package com.demo.security.spring.controller;
 
-import com.demo.security.spring.controller.error.BindingResultUtils;
+import com.demo.security.spring.error.ValidationErrorUtils;
 import com.demo.security.spring.controller.error.ValidationErrorDetailsResponse;
 import com.demo.security.spring.controller.error.UserCreationException;
 import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.model.UserCreationRequest;
 import com.demo.security.spring.service.LoginService;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -47,24 +48,28 @@ public class UserController {
     this.objectMapper = objectMapper;
   }
 
+  // TODO: Make this endpoint accessible without admin role
   /**
    * Create a new user if no validation errors for the given user and the provided username is unique.
    * Otherwise, it throws {@link UserCreationException}.
-   * @param user the user to be registered - must have a unique username
+   * @param userCreationRequest the user to be registered - must have a unique username
    * @param bindingResult the result of validating the provided user
    * @return a response entity containing {@link UserCreationResponse} object or throws {@link UserCreationException}
    */
   @PostMapping
-  public ResponseEntity<String> registerUser(@Valid @RequestBody final SecurityUser user, final BindingResult bindingResult)
-      throws JsonProcessingException {
-    ResponseEntity<String> responseEntity = null;
+  public ResponseEntity<UserCreationResponse> registerUser(
+      @Valid @RequestBody final UserCreationRequest userCreationRequest,
+      final BindingResult bindingResult)
+      throws JsonProcessingException
+  {
+    ResponseEntity<UserCreationResponse> responseEntity = null;
     if (bindingResult.hasErrors()) {
       final String body = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(
-          BindingResultUtils.generateErrorDetails(bindingResult));
+          ValidationErrorUtils.generateErrorDetails(bindingResult));
       throw new UserCreationException(HttpStatus.BAD_REQUEST, body);
     }
     try {
-      final SecurityUser createdUser = loginService.createUser(user);
+      final SecurityUser createdUser = loginService.createUser(userCreationRequest.toSecurityUser());
       if (createdUser.getId() != null) {
         final UserCreationResponse response = UserCreationResponse
             .builder()
@@ -74,7 +79,7 @@ public class UserController {
             .build();
         responseEntity = ResponseEntity
             .status(HttpStatus.CREATED.value())
-            .body(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response));
+            .body(response);
       }
     } catch (Exception e) {
       final String errorMessage = "Failed to create user with error: " + e.getMessage();

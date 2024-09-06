@@ -16,4 +16,10 @@ public class Constants {
   /** The default login redirect url */
   public static final String DEFAULT_LOGIN_REDIRECT_URL = "/swagger-ui/index.html";
 
+  /** The minimum allowed password length */
+  public static final int PASSWORD_MIN_LENGTH = 8;
+
+  /** The maximum allowed password length */
+  public static final int PASSWORD_MAX_LENGTH = 32;
+
 }

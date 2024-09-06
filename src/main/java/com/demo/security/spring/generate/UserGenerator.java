@@ -3,16 +3,21 @@ package com.demo.security.spring.generate;
 import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.model.UserType;
+import com.demo.security.spring.utils.Constants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
+import org.apache.commons.lang3.StringUtils;
 
 @Log4j2
 public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
 
   protected static final String DEFAULT_TESTING_PASSWORD = "password";
+
+  private final Random random = new Random();
 
   public UserGenerator(Faker faker, ObjectMapper objectMapper) {
     this(faker, objectMapper, DEFAULT_ITEM_COUNT);
@@ -56,7 +61,7 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
     final String type = faker.random().nextBoolean() ? "external" : "internal";
     return generateUser(
         username,
-        faker.internet().password(),
+        generatePassword(),
         type,
         getRolesForType(type),
         true,
@@ -70,7 +75,7 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
     final String type = faker.random().nextBoolean() ? "external" : "internal";
     return generateUser(
         username,
-        faker.internet().password(),
+        generatePassword(),
         type,
         getRolesForType(type),
     faker.random().nextBoolean(),
@@ -165,5 +170,22 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
       authorities.add(authority);
     });
     return authorities;
+  }
+
+  private String generatePassword() {
+    String generatedPassword = faker.internet().password(Constants.PASSWORD_MIN_LENGTH, Constants.PASSWORD_MAX_LENGTH,
+        true, true, true);
+    if (StringUtils.isWhitespace(generatedPassword.substring(0, 1))
+        || StringUtils.isWhitespace(generatedPassword.substring(generatedPassword.length() - 1))) {
+      generatedPassword = generatedPassword.trim();
+      if (generatedPassword.length() < Constants.PASSWORD_MIN_LENGTH) {
+        final StringBuilder sb = new StringBuilder(generatedPassword);
+        for (int i = 0; i < Constants.PASSWORD_MIN_LENGTH - generatedPassword.length(); i++) {
+          sb.append(random.nextInt(33, 127)); // 32 is space
+        }
+        generatedPassword = sb.toString();
+      }
+    }
+    return generatedPassword;
   }
 }

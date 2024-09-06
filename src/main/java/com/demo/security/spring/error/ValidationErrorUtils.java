@@ -1,16 +1,16 @@
-package com.demo.security.spring.controller.error;
+package com.demo.security.spring.error;
 
+import com.demo.security.spring.controller.error.ValidationErrorDetailsResponse;
 import com.google.common.base.Preconditions;
-import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.NonNull;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
-public class BindingResultUtils {
+public class ValidationErrorUtils {
 
-  public static List<ValidationErrorDetailsResponse> generateErrorDetails(@NotNull BindingResult result) {
-    Preconditions.checkNotNull(result);
+  public static List<ValidationErrorDetailsResponse> generateErrorDetails(@NonNull BindingResult result) {
     final List<ValidationErrorDetailsResponse> responses = new ArrayList<>();
     if (result.hasFieldErrors()) {
       result.getFieldErrors().forEach(it -> responses.add(mapFieldErrorToErrorDetail(it)));
@@ -18,7 +18,7 @@ public class BindingResultUtils {
     return responses;
   }
 
-  public static ValidationErrorDetailsResponse mapFieldErrorToErrorDetail(@NotNull FieldError error) {
+  public static ValidationErrorDetailsResponse mapFieldErrorToErrorDetail(@NonNull FieldError error) {
     Preconditions.checkNotNull(error);
     return ValidationErrorDetailsResponse.builder()
         .fieldName(error.getField())

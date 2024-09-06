@@ -45,4 +45,6 @@ public class SecurityAuthority implements GrantedAuthority {
   @Column(name = "authority", length = 100)
   private String authority;
 
+  public SecurityAuthority() {
+  }
 }
