@@ -34,7 +34,7 @@ A demo production-like profile which changes some things about the security conf
 
 Example usage:
 
-`./mvnw spring-boot:run -Dspring-boot.run.profiles=prod`
+`./mvnw spring-boot:run -Dspring-boot.run.profiles=prod,postgres`
 
 ## Test suites
 
