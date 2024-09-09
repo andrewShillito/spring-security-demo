@@ -77,6 +77,41 @@ Example data generation leverages the DataFaker library.
 - `example-data.account.count` - sets the number of accounts per user to create during regeneration
 - `example-data.user.count` - sets the number of randomized users to create during regeneration. There is also a set of standard non-randomized users which is always created.
 
+## Jenkins
+
+Based on [Jenkins Installing Docker](https://www.jenkins.io/doc/book/installing/docker/) and [Post-installation setup wizard](https://www.jenkins.io/doc/book/installing/docker/#setup-wizard).
+
+The docker image which is generated installs [default suggested plugins](https://github.com/jenkinsci/jenkins/blob/master/core/src/main/resources/jenkins/install/platform-plugins.json) and [blueocean plugins](https://plugins.jenkins.io/blueocean/).
+
+1. Create the jenkins-test container using the following commands
+
+```shell
+# starting from root directory of project
+
+# build the jenkins image defined in ./jenkins/Dockerfile
+bash ./jenkins/build.sh
+# start a jenkins container from that image
+bash ./jenkins/start.sh
+# Locate initial admin password which can be located as below in the container logs
+docker container logs -f jenkins-test
+
+###
+#Jenkins initial setup is required. An admin user has been created and a password generated.
+#Please use the following password to proceed to installation:
+
+#theAdminPassword
+
+#This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+###
+```
+
+2. Go to localhost:8082 and unlock jenkins using the initial admin password from the container logs
+3. The jenkins image produced by [build.sh](./jenkins/build.sh) contains all required plugins to run the existing [Jenkinsfile](./Jenkinsfile) so you can just press install suggested plugins or skip
+4. Setup your admin user as desired or skip to keep using the initial generated credentials
+5. Go to new item -> select pipeline
+6. Now you can either copy paste the Jenkinsfile into the pipeline script or use this github repository as the source for a pipeline Jenkinsfile
+7. Trigger the build to confirm setup was successful
+
 ## Troubleshooting
 
 ### Docker
