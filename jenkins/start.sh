@@ -4,4 +4,4 @@ docker run --name jenkins-test --restart=on-failure --detach \
   --publish 8082:8080 --publish 50000:50000 \
   --volume jenkins-data:/var/jenkins_home \
   --volume jenkins-docker-certs:/certs/client:ro \
-  myjenkins-test:2.462.2-1
+  myjenkins-test:2.475
