@@ -87,11 +87,11 @@ The docker image which is generated installs all required plugins for running th
 
 ```shell
 # starting from root directory of project
-
+cd ./jenkins
 # build the jenkins image defined in ./jenkins/Dockerfile
-bash ./jenkins/build.sh
+bash ./build.sh
 # start a jenkins container from that image
-bash ./jenkins/start.sh
+bash ./start.sh
 # Locate initial admin password which can be located as below in the container logs
 docker container logs -f jenkins-test
 
