@@ -81,7 +81,7 @@ Example data generation leverages the DataFaker library.
 
 Based on [Jenkins Installing Docker](https://www.jenkins.io/doc/book/installing/docker/) and [Post-installation setup wizard](https://www.jenkins.io/doc/book/installing/docker/#setup-wizard).
 
-The docker image which is generated installs [default suggested plugins](https://github.com/jenkinsci/jenkins/blob/master/core/src/main/resources/jenkins/install/platform-plugins.json) and [blueocean plugins](https://plugins.jenkins.io/blueocean/).
+The docker image which is generated installs all required plugins for running the pipeline defined in [Jenkinsfile](./Jenkinsfile).
 
 1. Create the jenkins-test container using the following commands
 
