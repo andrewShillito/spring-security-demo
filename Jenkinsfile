@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  environment {
-    GIT_CHECKOUT_DIR="./spring-security-demo"
-  }
   stages {
     stage('Build and test') {
       steps {
@@ -10,7 +7,7 @@ pipeline {
         sh 'echo "Using java version \$(java --version)"'
         sh 'pwd'
         sh 'ls'
-        dir($GIT_CHECKOUT_DIR) {
+        dir("./spring-security-demo") {
           sh 'echo "Using maven version \$(./mvnw --version)"'
           sh 'pwd'
           sh 'ls'
@@ -20,7 +17,7 @@ pipeline {
     }
     stage('Publish Jacoco results') {
       steps {
-        dir($GIT_CHECKOUT_DIR) {
+        dir("./spring-security-demo") {
           sh 'pwd'
           sh 'ls'
           jacoco( execPattern: '**/**.exec', classPattern: '**/**/classes/com', sourcePattern: '**/src/main/java' )
@@ -30,7 +27,7 @@ pipeline {
   }
   post {
     always {
-      dir($GIT_CHECKOUT_DIR) {
+      dir("./spring-security-demo") {
         junit(testResults: '**/target/surefire-reports/*.xml', skipPublishingChecks: true)
         archiveArtifacts(artifacts: 'target/**', allowEmptyArchive: true)
       }
