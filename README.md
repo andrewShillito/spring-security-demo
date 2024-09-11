@@ -81,7 +81,7 @@ Example data generation leverages the DataFaker library.
 
 Based on [Jenkins Installing Docker](https://www.jenkins.io/doc/book/installing/docker/) and [Post-installation setup wizard](https://www.jenkins.io/doc/book/installing/docker/#setup-wizard).
 
-The docker image which is generated installs all required plugins for running the pipeline defined in [Jenkinsfile](./Jenkinsfile).
+The docker image which is generated installs all required plugins for running the pipeline defined in [Jenkinsfile](./Jenkinsfile)
 
 1. Create the jenkins-test container using the following commands
 
@@ -109,8 +109,12 @@ docker container logs -f jenkins-test
 3. The jenkins image produced by [build.sh](./jenkins/build.sh) contains all required plugins to run the existing [Jenkinsfile](./Jenkinsfile) so you can just press install suggested plugins or skip
 4. Setup your admin user as desired or skip to keep using the initial generated credentials
 5. Go to new item -> select pipeline
-6. Now you can either copy paste the Jenkinsfile into the pipeline script or use this github repository as the source for a pipeline Jenkinsfile
-7. Trigger the build to confirm setup was successful
+6. In pipeline definition select 'Pipeline script from SCM'
+7. Select Git in SCM
+8. Add this repository's URL in the Repository URL input
+9. In Branch Specifier put '*/main' or whichever branch is preferred
+10. Script Path should be set to Jenkinsfile
+11. Save the build and test the pipeline by triggering it manually using the Build Now button
 
 ## Troubleshooting
 
