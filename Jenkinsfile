@@ -8,6 +8,7 @@ pipeline {
         sh 'pwd'
         sh 'ls'
         dir("./spring-security-demo") {
+          sh 'git pull'
           sh 'echo "Using maven version \$(./mvnw --version)"'
           sh 'pwd'
           sh 'ls'
