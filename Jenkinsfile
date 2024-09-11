@@ -14,7 +14,7 @@ pipeline {
           sh 'pwd'
           sh 'ls'
           sh 'git checkout initial-jenkins-pipeline-implementation && git pull'
-          sh './mvnw clean install package'
+          sh './mvnw clean install'
         }
       }
     }
