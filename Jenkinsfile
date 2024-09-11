@@ -13,8 +13,8 @@ pipeline {
           sh 'echo "Using maven version \$(./mvnw --version)"'
           sh 'pwd'
           sh 'ls'
-          sh 'git checkout main && git pull'
-          sh './mvnw clean install'
+          sh 'git checkout initial-jenkins-pipeline-implementation && git pull'
+          sh './mvnw clean install package'
         }
       }
     }
@@ -34,20 +34,18 @@ pipeline {
 //         }
 //       }
 //     }
-//     stage('Publish JUnit results') {
-//       steps {
-//         dir("./spring-security-demo") {
-//           junit(testResults: '**/target/surefire-reports/*.xml', skipPublishingChecks: true)
-//         }
-//       }
-//     }
+    stage('Publish Jacoco results') {
+      steps {
+        dir("./spring-security-demo") {
+          echo "WARNING: Jacoco reports are currently showing as empty on jenkins coverage report but can be found in archived artifacts at target/site/jacoco/index.html"
+          sh 'pwd'
+          sh 'ls'
+          jacoco( execPattern: '**/**.exec', classPattern: '**/**/classes/com', sourcePattern: '**/src/main' )
+        }
+      }
+    }
   }
   post {
-    success {
-      // TODO: jacoco reports currently showing as empty on
-      echo "WARNING: Jacoco reports are currently showing as empty on jenkins coverage report but can be found in archived artifacts at target/site/jacoco/index.html"
-      jacoco(execPattern: '**/target/*.exec', classPattern: '**/target/classes/com/security/spring/demo', sourcePattern: '**/src/main')
-    }
     always {
       dir("./spring-security-demo") {
         junit(testResults: '**/target/surefire-reports/*.xml', skipPublishingChecks: true)
