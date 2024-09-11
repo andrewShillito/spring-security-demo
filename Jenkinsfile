@@ -9,11 +9,10 @@ pipeline {
         sh 'git clone https://github.com/andrewShillito/spring-security-demo.git'
         sh 'ls'
         dir("./spring-security-demo") {
-          sh 'git pull'
-          sh 'echo "Using maven version \$(./mvnw --version)"'
           sh 'pwd'
+          sh 'git checkout main && git pull'
+          sh 'echo "Using maven version \$(./mvnw --version)"'
           sh 'ls'
-          sh 'git checkout initial-jenkins-pipeline-implementation && git pull'
           sh './mvnw clean install'
         }
       }
