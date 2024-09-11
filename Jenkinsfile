@@ -40,7 +40,7 @@ pipeline {
           echo "WARNING: Jacoco reports are currently showing as empty on jenkins coverage report but can be found in archived artifacts at target/site/jacoco/index.html"
           sh 'pwd'
           sh 'ls'
-          jacoco( execPattern: '**/**.exec', classPattern: '**/**/classes/com', sourcePattern: '**/src/main' )
+          jacoco( execPattern: '**/**.exec', classPattern: '**/**/classes/com', sourcePattern: '**/src/main/java' )
         }
       }
     }
