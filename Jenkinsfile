@@ -6,12 +6,14 @@ pipeline {
         cleanWs()
         sh 'echo "Using java version \$(java --version)"'
         sh 'pwd'
+        sh 'git clone https://github.com/andrewShillito/spring-security-demo.git'
         sh 'ls'
         dir("./spring-security-demo") {
           sh 'git pull'
           sh 'echo "Using maven version \$(./mvnw --version)"'
           sh 'pwd'
           sh 'ls'
+          sh 'git checkout initial-jenkins-pipeline-implementation && git pull'
           sh './mvnw clean install'
         }
       }
