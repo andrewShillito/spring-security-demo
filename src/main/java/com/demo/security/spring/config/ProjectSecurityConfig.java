@@ -20,6 +20,7 @@ import com.demo.security.spring.generate.LoanGenerator;
 import com.demo.security.spring.generate.NoticeDetailsGenerator;
 import com.demo.security.spring.generate.UserGenerator;
 import com.demo.security.spring.repository.AccountRepository;
+import com.demo.security.spring.repository.AccountTransactionRepository;
 import com.demo.security.spring.repository.AuthenticationAttemptRepository;
 import com.demo.security.spring.repository.CardRepository;
 import com.demo.security.spring.repository.ContactMessageRepository;
@@ -28,9 +29,21 @@ import com.demo.security.spring.repository.NoticeDetailsRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.serialization.ZonedDateTimeDeserializer;
 import com.demo.security.spring.serialization.ZonedDateTimeSerializer;
+import com.demo.security.spring.service.AccountService;
+import com.demo.security.spring.service.AccountServiceImpl;
+import com.demo.security.spring.service.BalanceService;
+import com.demo.security.spring.service.BalanceServiceImpl;
+import com.demo.security.spring.service.CachingSecurityUserService;
+import com.demo.security.spring.service.CardService;
+import com.demo.security.spring.service.CardServiceImpl;
 import com.demo.security.spring.service.ExampleDataGenerationService;
 import com.demo.security.spring.service.JpaLoginService;
+import com.demo.security.spring.service.LoanService;
+import com.demo.security.spring.service.LoanServiceImpl;
 import com.demo.security.spring.service.LoginService;
+import com.demo.security.spring.service.SecurityUserService;
+import com.demo.security.spring.service.SecurityUserValidationService;
+import com.demo.security.spring.service.SecurityUserValidationServiceImpl;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
 import com.demo.security.spring.service.UserDetailsManagerImpl;
 import com.demo.security.spring.utils.Constants;
@@ -57,6 +70,7 @@ import org.springframework.security.config.annotation.web.configurers.SessionMan
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -314,22 +328,68 @@ public class ProjectSecurityConfig {
   }
 
   @Bean
-  public UserDetailsManagerImpl userDetailsManager(
+  public UserDetailsManager userDetailsManager(
       AuthenticationManager authenticationManager,
       SecurityUserRepository securityUserRepository,
       PasswordEncoder passwordEncoder,
-      Validator validator
+      SecurityUserValidationService securityUserValidationService
   ) {
     return UserDetailsManagerImpl.builder()
         .authenticationManager(authenticationManager)
         .userRepository(securityUserRepository)
         .passwordEncoder(passwordEncoder)
-        .validator(validator)
+        .userValidationService(securityUserValidationService)
         .build();
+  }
+
+  @Bean
+  public SecurityUserService securityUserService(UserDetailsManager userDetailsManager) {
+    return CachingSecurityUserService.builder().userDetailsManager(userDetailsManager).build();
+  }
+
+  @Bean
+  public SecurityUserValidationService userValidationService(Validator validator) {
+    return SecurityUserValidationServiceImpl.builder().validator(validator).build();
   }
 
   @Bean
   public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
     return authConfig.getAuthenticationManager();
+  }
+
+  @Bean
+  public AccountService accountService(AccountRepository accountRepository, SecurityUserService securityUserService) {
+    AccountServiceImpl accountService = AccountServiceImpl.builder()
+        .accountRepository(accountRepository)
+        .build();
+    accountService.setSecurityUserService(securityUserService);
+    return accountService;
+  }
+
+  @Bean
+  public BalanceService balanceService(AccountTransactionRepository accountTransactionRepository, SecurityUserService securityUserService) {
+    BalanceServiceImpl balanceService = BalanceServiceImpl.builder()
+        .accountTransactionRepository(accountTransactionRepository)
+        .build();
+    balanceService.setSecurityUserService(securityUserService);
+    return balanceService;
+  }
+
+  @Bean
+  public CardService cardService(CardRepository cardRepository, SecurityUserService securityUserService) {
+    CardServiceImpl cardService = CardServiceImpl.builder()
+        .cardRepository(cardRepository)
+        .build();
+    cardService.setSecurityUserService(securityUserService);
+    return cardService;
+  }
+
+  @Bean
+  public LoanService loanService(LoanRepository loanRepository, SecurityUserService securityUserService) {
+    LoanServiceImpl loanService = LoanServiceImpl.builder()
+        .loanRepository(loanRepository)
+        .build();
+    loanService.setSecurityUserService(securityUserService);
+    return loanService;
   }
 }

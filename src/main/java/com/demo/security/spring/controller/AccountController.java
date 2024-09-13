@@ -1,10 +1,7 @@
 package com.demo.security.spring.controller;
 
 import com.demo.security.spring.model.Account;
-import com.demo.security.spring.model.SecurityUser;
-import com.demo.security.spring.repository.AccountRepository;
-import com.demo.security.spring.service.UserDetailsManagerImpl;
-import javax.naming.AuthenticationException;
+import com.demo.security.spring.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,28 +12,15 @@ public class AccountController {
 
   public static final String RESOURCE_PATH = "/myAccount";
 
-  private AccountRepository accountRepository;
-
-  private UserDetailsManagerImpl userDetailsManager;
+  private AccountService accountService;
 
   @Autowired
-  public void setAccountRepository(AccountRepository accountRepository) {
-    this.accountRepository = accountRepository;
-  }
-
-  @Autowired
-  public void setUserDetailsManager(
-      UserDetailsManagerImpl userDetailsManager) {
-    this.userDetailsManager = userDetailsManager;
+  public void setAccountService(AccountService accountService) {
+    this.accountService = accountService;
   }
 
   @GetMapping(RESOURCE_PATH)
-  public Account getAccountDetails(Authentication authentication) throws AuthenticationException {
-    // note that the original course project expects only a single account so I adhered to that here for now
-    SecurityUser user = userDetailsManager.getAuthenticatedUser(authentication);
-    if (user != null && user.getId() != null) {
-      return accountRepository.findByUserId(user.getId());
-    }
-    throw new AuthenticationException("Security user for authentication " + authentication + " could not be located or has null id!");
+  public Account getAccountDetails(Authentication authentication) {
+    return accountService.findOneForUser(authentication);
   }
 }

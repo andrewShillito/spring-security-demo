@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
@@ -15,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 class UserDetailsManagerImplTest {
 
   @Autowired
-  private UserDetailsManagerImpl userDetailsManager;
+  private UserDetailsManager userDetailsManager;
 
   @Autowired
   private TestDataGenerator testDataGenerator;

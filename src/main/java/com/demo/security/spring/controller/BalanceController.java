@@ -1,11 +1,8 @@
 package com.demo.security.spring.controller;
 
 import com.demo.security.spring.model.AccountTransaction;
-import com.demo.security.spring.model.SecurityUser;
-import com.demo.security.spring.repository.AccountTransactionRepository;
-import com.demo.security.spring.service.UserDetailsManagerImpl;
+import com.demo.security.spring.service.BalanceService;
 import java.util.List;
-import javax.naming.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,28 +13,15 @@ public class BalanceController {
 
   public static final String RESOURCE_PATH = "/myBalance";
 
-  private AccountTransactionRepository accountTransactionRepository;
-
-  private UserDetailsManagerImpl userDetailsManager;
+  private BalanceService balanceService;
 
   @Autowired
-  public void setAccountTransactionRepository(
-      AccountTransactionRepository accountTransactionRepository) {
-    this.accountTransactionRepository = accountTransactionRepository;
-  }
-
-  @Autowired
-  public void setUserDetailsManager(
-      UserDetailsManagerImpl userDetailsManager) {
-    this.userDetailsManager = userDetailsManager;
+  public void setBalanceService(BalanceService balanceService) {
+    this.balanceService = balanceService;
   }
 
   @GetMapping(RESOURCE_PATH)
-  public List<AccountTransaction> getBalanceDetails(Authentication authentication) throws AuthenticationException {
-    SecurityUser user = userDetailsManager.getAuthenticatedUser(authentication);
-    if (user != null && user.getId() != null) {
-      return accountTransactionRepository.findAllByUserIdOrderByTransactionDateDesc(user.getId());
-    }
-    throw new AuthenticationException("Security user for authentication " + authentication + " could not be located or has null id!");
+  public List<AccountTransaction> getBalanceDetails(Authentication authentication) {
+    return balanceService.getAllForUser(authentication);
   }
 }
