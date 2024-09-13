@@ -6,6 +6,7 @@ import com.demo.security.spring.repository.AccountRepository;
 import com.demo.security.spring.service.UserDetailsManagerImpl;
 import javax.naming.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,12 +31,12 @@ public class AccountController {
   }
 
   @GetMapping(RESOURCE_PATH)
-  public Account getAccountDetails() throws AuthenticationException {
+  public Account getAccountDetails(Authentication authentication) throws AuthenticationException {
     // note that the original course project expects only a single account so I adhered to that here for now
-    SecurityUser user = userDetailsManager.getAuthenticatedUser();
+    SecurityUser user = userDetailsManager.getAuthenticatedUser(authentication);
     if (user != null && user.getId() != null) {
       return accountRepository.findByUserId(user.getId());
     }
-    throw new AuthenticationException("User is not authenticated");
+    throw new AuthenticationException("Security user for authentication " + authentication + " could not be located or has null id!");
   }
 }

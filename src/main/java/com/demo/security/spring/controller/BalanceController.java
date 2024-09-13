@@ -7,6 +7,7 @@ import com.demo.security.spring.service.UserDetailsManagerImpl;
 import java.util.List;
 import javax.naming.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,11 +33,11 @@ public class BalanceController {
   }
 
   @GetMapping(RESOURCE_PATH)
-  public List<AccountTransaction> getBalanceDetails() throws AuthenticationException {
-    SecurityUser user = userDetailsManager.getAuthenticatedUser();
+  public List<AccountTransaction> getBalanceDetails(Authentication authentication) throws AuthenticationException {
+    SecurityUser user = userDetailsManager.getAuthenticatedUser(authentication);
     if (user != null && user.getId() != null) {
       return accountTransactionRepository.findAllByUserIdOrderByTransactionDateDesc(user.getId());
     }
-    throw new AuthenticationException("User is not authenticated");
+    throw new AuthenticationException("Security user for authentication " + authentication + " could not be located or has null id!");
   }
 }

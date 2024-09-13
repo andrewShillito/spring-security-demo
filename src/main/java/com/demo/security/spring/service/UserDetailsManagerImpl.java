@@ -118,6 +118,20 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
   }
 
   /**
+   * Return the {@link SecurityUser} for the given authentication or null.
+   * Users {@link #loadUserByUsername(String)} so can throw UsernameNotFoundException
+   * @param authentication the authentication to get the associated user for
+   * @return the SecurityUser for the given authentication or null
+   * @throws UsernameNotFoundException if user matching that username is not found
+   */
+  public SecurityUser getAuthenticatedUser(Authentication authentication) {
+    if (authentication != null && StringUtils.isNotBlank(authentication.getName())) {
+      return (SecurityUser) loadUserByUsername(authentication.getName());
+    }
+    return null;
+  }
+
+  /**
    * Get the currently authenticated {@link SecurityUser}.
    * @return the user associated with authentication in SecurityContextHolder or null
    */

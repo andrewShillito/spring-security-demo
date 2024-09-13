@@ -8,6 +8,7 @@ import java.util.List;
 import javax.naming.AuthenticationException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,11 +34,11 @@ public class LoansController {
   }
 
   @GetMapping(RESOURCE_PATH)
-  public List<Loan> getLoansDetails() throws AuthenticationException {
-    SecurityUser user = userDetailsManager.getAuthenticatedUser();
+  public List<Loan> getLoansDetails(Authentication authentication) throws AuthenticationException {
+    SecurityUser user = userDetailsManager.getAuthenticatedUser(authentication);
     if (user != null && user.getId() != null) {
       return loanRepository.findAllByUserId(user.getId());
     }
-    throw new AuthenticationException("User is not authenticated");
+    throw new AuthenticationException("Security user for authentication " + authentication + " could not be located or has null id!");
   }
 }
