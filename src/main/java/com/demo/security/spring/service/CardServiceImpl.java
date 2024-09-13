@@ -15,10 +15,15 @@ public class CardServiceImpl extends AbstractUserAwareService implements CardSer
 
   private CardRepository cardRepository;
 
+  private final Function<SecurityUser, List<Card>> getAllForUser = u -> cardRepository.findAllByUserId(u.getId());
+
   @Override
   public List<Card> getAllForUser(Authentication authentication) {
-    final Function<SecurityUser, List<Card>> getAllFunction = u -> cardRepository
-        .findAllByUserId(u.getId());
-    return executeForUser(authentication, getAllFunction);
+    return executeForUser(authentication, getAllForUser);
+  }
+
+  @Override
+  public List<Card> getAllForUser() {
+    return executeForUser(getAllForUser);
   }
 }

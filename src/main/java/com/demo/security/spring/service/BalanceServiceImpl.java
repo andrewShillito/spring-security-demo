@@ -15,11 +15,16 @@ public class BalanceServiceImpl extends AbstractUserAwareService implements Bala
 
   private AccountTransactionRepository accountTransactionRepository;
 
+  private final Function<SecurityUser, List<AccountTransaction>> getAllForUser = u ->
+      accountTransactionRepository.findAllByUserIdOrderByTransactionDateDesc(u.getId());
+
   @Override
   public List<AccountTransaction> getAllForUser(Authentication authentication) {
-    final Function<SecurityUser, List<AccountTransaction>> getAllFunction = u -> accountTransactionRepository
-        .findAllByUserIdOrderByTransactionDateDesc(u.getId());
-    return executeForUser(authentication, getAllFunction);
+    return executeForUser(authentication, getAllForUser);
   }
 
+  @Override
+  public List<AccountTransaction> gettAllForUser() {
+    return executeForUser(getAllForUser);
+  }
 }

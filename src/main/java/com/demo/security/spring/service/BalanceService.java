@@ -7,4 +7,6 @@ import org.springframework.security.core.Authentication;
 public interface BalanceService {
 
   List<AccountTransaction> getAllForUser(Authentication authentication);
+
+  List<AccountTransaction> gettAllForUser();
 }

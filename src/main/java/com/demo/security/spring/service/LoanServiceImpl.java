@@ -8,7 +8,6 @@ import java.util.function.Function;
 import lombok.Builder;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 @Log4j2
 @Builder
@@ -16,9 +15,15 @@ public class LoanServiceImpl extends AbstractUserAwareService implements LoanSer
 
   private LoanRepository loanRepository;
 
+  private final Function<SecurityUser, List<Loan>> getAllForUser = u -> loanRepository.findAllByUserId(u.getId());
+
   @Override
   public List<Loan> getLoansForUser(Authentication authentication) {
-    final Function<SecurityUser, List<Loan>> function = u -> loanRepository.findAllByUserId(u.getId());
-    return executeForUser(authentication, function);
+    return executeForUser(authentication, getAllForUser);
+  }
+
+  @Override
+  public List<Loan> getLoansForUser() {
+    return executeForUser(getAllForUser);
   }
 }

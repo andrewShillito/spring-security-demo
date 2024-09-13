@@ -8,4 +8,6 @@ public interface CardService {
 
   List<Card> getAllForUser(Authentication authentication);
 
+  List<Card> getAllForUser();
+
 }

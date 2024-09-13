@@ -7,4 +7,6 @@ public interface AccountService {
 
   Account findOneForUser(Authentication authentication);
 
+  Account findOneForUser();
+
 }

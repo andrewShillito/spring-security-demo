@@ -14,10 +14,16 @@ public class AccountServiceImpl extends AbstractUserAwareService implements Acco
 
   private AccountRepository accountRepository;
 
+  private final Function<SecurityUser, Account> getOneForUser = u -> accountRepository.findByUserId(u.getId());
+
   @Override
   public Account findOneForUser(Authentication authentication) {
-    // note that the original course project expects only a single account so I adhered to that here for now
-    Function<SecurityUser, Account> function = u -> accountRepository.findByUserId(u.getId());
-    return executeForUser(authentication, function);
+    // note that the original course project expects only a single account per user so I adhered to that here for now
+    return executeForUser(authentication, getOneForUser);
+  }
+
+  @Override
+  public Account findOneForUser() {
+    return executeForUser(getOneForUser);
   }
 }

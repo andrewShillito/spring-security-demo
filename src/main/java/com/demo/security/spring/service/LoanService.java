@@ -8,4 +8,6 @@ public interface LoanService {
 
   List<Loan> getLoansForUser(Authentication authentication);
 
+  List<Loan> getLoansForUser();
+
 }
