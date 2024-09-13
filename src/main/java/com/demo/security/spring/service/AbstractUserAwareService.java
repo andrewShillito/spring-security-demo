@@ -8,6 +8,11 @@ import org.springframework.security.authentication.InsufficientAuthenticationExc
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+/**
+ * Can be extended by classes to gain access to some generic methods for retrieving
+ * users and executing functions as the currently authenticated user or user associated
+ * with a provided authentication object.
+ */
 public abstract class AbstractUserAwareService implements UserAware {
 
   @Getter
