@@ -163,7 +163,7 @@ public class DemoAssertions {
     if (isSecure) {
       // just a note, if you don't include the MediaType of 'text/html' the app won't redirect to login
       // and will get 204 no content status instead with a null redirectUrl
-      mockMvc.perform(get("/logout").secure(true).with(csrf()).accept(MediaType.TEXT_HTML))
+      mockMvc.perform(post("/logout").secure(true).with(csrf()).accept(MediaType.TEXT_HTML))
           .andExpect(status().isFound())
           .andExpect(unauthenticated())
           .andExpect(redirectedUrl("/login?logout"));

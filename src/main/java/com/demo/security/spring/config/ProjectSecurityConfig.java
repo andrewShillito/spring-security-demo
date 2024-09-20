@@ -13,6 +13,7 @@ import com.demo.security.spring.controller.ContactController;
 import com.demo.security.spring.controller.LoansController;
 import com.demo.security.spring.controller.UserController;
 import com.demo.security.spring.controller.NoticesController;
+import com.demo.security.spring.filter.CsrfCookieFilter;
 import com.demo.security.spring.generate.AccountGenerator;
 import com.demo.security.spring.generate.CardGenerator;
 import com.demo.security.spring.generate.ContactMessageGenerator;
@@ -59,6 +60,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -67,22 +69,27 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer.SessionFixationConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
+@EnableCaching /* see https://medium.com/simform-engineering/spring-boot-caching-with-redis-1a36f719309f */
 public class ProjectSecurityConfig {
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http, Environment environment) throws Exception {
     boolean isProd = environment.matchesProfiles(SpringProfileConstants.PRODUCTION);
-    http.csrf().disable()
+    http.securityContext(contextConfigurer -> contextConfigurer.requireExplicitSave(false))
         .cors(customizer -> customizer.configurationSource(corsConfigurationSource()))
         .requiresChannel(rcc -> {
           // allow http for profiles other than 'prod', else allow only https
@@ -92,7 +99,13 @@ public class ProjectSecurityConfig {
             rcc.anyRequest().requiresInsecure();
           }
         })
+        .csrf(csrfConfigurer -> csrfConfigurer
+            .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+            .csrfTokenRequestHandler(new CsrfTokenRequestAttributeHandler())
+            .ignoringRequestMatchers(ContactController.RESOURCE_PATH + "/**"))
+        .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
         .sessionManagement(smc -> {
+          smc.sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
           // just fyi the view /invalidSession doesn't exist for now - so this is just an example config here
           smc.invalidSessionUrl("/invalidSession");
           // using default session fixation protection strategy of change session id
