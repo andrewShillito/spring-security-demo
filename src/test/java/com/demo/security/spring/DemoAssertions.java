@@ -8,22 +8,25 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.authenticated;
 import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.unauthenticated;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
+import com.demo.security.spring.model.EntityControlDates;
 import com.demo.security.spring.model.Loan;
+import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.utils.Constants;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Collection;
 import java.util.List;
 import lombok.NonNull;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -40,7 +43,10 @@ public class DemoAssertions {
    * @param actual the actual zonedDateTime
    */
   public static void assertDateEquals(ZonedDateTime expected, ZonedDateTime actual) {
-    assertEquals(expected.truncatedTo(ChronoUnit.SECONDS), actual.truncatedTo(ChronoUnit.SECONDS).withZoneSameInstant(ZoneId.systemDefault()));
+    assertBothNullOrNeitherAre(expected, actual);
+    if (expected != null) {
+      assertEquals(expected.truncatedTo(ChronoUnit.SECONDS), actual.truncatedTo(ChronoUnit.SECONDS).withZoneSameInstant(ZoneId.systemDefault()));
+    }
   }
 
   /**
@@ -63,6 +69,12 @@ public class DemoAssertions {
 
   public static void assertNotEmpty(String s) {
     assertTrue(StringUtils.isNotEmpty(s), "Expected string '" + s + "' to not be empty");
+  }
+
+  public static void assertStartsWith(String toTest, String expectedPrefix) {
+    assertNotEmpty(toTest);
+    assertNotEmpty(expectedPrefix);
+    assertTrue(toTest.startsWith(expectedPrefix), "Expected " + toTest + " to start with " + expectedPrefix + " but did not");
   }
 
   public static void assertLoansAreEmpty(List<Loan> loans) {
@@ -173,5 +185,57 @@ public class DemoAssertions {
           .andExpect(unauthenticated())
           .andExpect(redirectedUrl("/login?logout"));
     }
+  }
+
+  public static void assertIsBCryptHashed(String hashedString) {
+    assertStartsWith(hashedString, "{bcrypt}");
+  }
+
+  public static void assertUsersEqual(SecurityUser expected, SecurityUser actual) {
+    assertBothNullOrNeitherAre(expected, actual);
+    if (expected != null) {
+      assertEquals(expected.getId(), actual.getId());
+      assertEquals(expected.getUsername(), actual.getUsername());
+      assertEquals(expected.getEmail(), actual.getEmail());
+      assertEquals(expected.getUserType(), actual.getUserType());
+      assertEquals(expected.getUserRole(), actual.getUserRole());
+      assertEquals(expected.isEnabled(), actual.isEnabled());
+      assertEquals(expected.isAccountExpired(), actual.isAccountExpired());
+      assertEquals(expected.isAccountNonExpired(), actual.isAccountNonExpired());
+      assertDateEquals(expected.getAccountExpiredDate(), actual.getAccountExpiredDate());
+      assertEquals(expected.isPasswordExpired(), actual.isPasswordExpired());
+      assertDateEquals(expected.getPasswordExpiredDate(), actual.getPasswordExpiredDate());
+      assertEquals(expected.getFailedLoginAttempts(), actual.getFailedLoginAttempts());
+      assertEquals(expected.getNumPreviousLockouts(), actual.getNumPreviousLockouts());
+      assertEquals(expected.isLocked(), actual.isLocked());
+      assertDateEquals(expected.getLockedDate(), actual.getLockedDate());
+      assertDateEquals(expected.getUnlockDate(), actual.getUnlockDate());
+      assertAuthoritiesEquals(expected.getAuthorities(), actual.getAuthorities());
+      assertControlDatesEquals(expected.getControlDates(), actual.getControlDates());
+    }
+  }
+
+  public static void assertAuthoritiesEquals(Collection<? extends GrantedAuthority> expected,
+      Collection<? extends GrantedAuthority> actual) {
+    assertBothNullOrNeitherAre(expected, actual);
+    if (expected != null) {
+      assertEquals(expected.size(), actual.size());
+      for (var auth : expected) {
+        assertNotNull(expected, "Found unexpectedly null authority in " + expected);
+        assertTrue(actual.contains(auth));
+      }
+    }
+  }
+
+  public static void assertControlDatesEquals(EntityControlDates expected, EntityControlDates actual) {
+    assertBothNullOrNeitherAre(expected, actual);
+    if (expected != null) {
+      assertDateEquals(expected.getCreated(), actual.getCreated());
+      assertDateEquals(expected.getLastUpdated(), actual.getLastUpdated());
+    }
+  }
+
+  public static void assertBothNullOrNeitherAre(Object expected, Object actual) {
+    assertTrue((expected == null && actual == null) || (expected != null && actual != null));
   }
 }

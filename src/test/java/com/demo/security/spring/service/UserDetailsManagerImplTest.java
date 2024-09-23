@@ -2,8 +2,10 @@ package com.demo.security.spring.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.TestDataGenerator;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.repository.SecurityUserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,6 +23,9 @@ class UserDetailsManagerImplTest {
   @Autowired
   private TestDataGenerator testDataGenerator;
 
+  @Autowired
+  private SecurityUserRepository userRepository;
+
   @Test
   void testCreateUserValidPassword() {
     final String username = testDataGenerator.randomUsername();
@@ -28,6 +33,13 @@ class UserDetailsManagerImplTest {
     final SecurityUser validUser = testDataGenerator.generateExternalUser(username, password, false);
     validUser.setPassword(password); // make password unencrypted
     userDetailsManager.createUser(validUser);
+    SecurityUser createdUser = (SecurityUser) userDetailsManager.loadUserByUsername(validUser.getUsername());
+    assertNotNull(createdUser);
+    DemoAssertions.assertIsBCryptHashed(createdUser.getPassword());
+    DemoAssertions.assertUsersEqual(validUser, createdUser);
+    SecurityUser fromDb = userRepository.getSecurityUserByUsername(validUser.getUsername());
+    DemoAssertions.assertIsBCryptHashed(fromDb.getPassword());
+    DemoAssertions.assertUsersEqual(validUser, fromDb);
   }
 
   @Test
