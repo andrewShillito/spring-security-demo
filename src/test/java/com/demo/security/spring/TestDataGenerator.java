@@ -147,4 +147,8 @@ public class TestDataGenerator {
     cardRepository.saveAll(cards);
     return cards;
   }
+
+  public String randomEmail() {
+    return faker.internet().emailAddress();
+  }
 }

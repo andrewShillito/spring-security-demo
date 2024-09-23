@@ -45,12 +45,17 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
   public void updateUser(UserDetails user) {
     userValidationService.validateUser(user, false);
     SecurityUser securityUser = (SecurityUser) user;
-    // TODO: implement this method
+    userRepository.save(securityUser);
   }
 
   @Override
   public void deleteUser(String username) {
-    // TODO: implement this method
+    if (StringUtils.isNotBlank(username)) {
+      SecurityUser toDelete = userRepository.getSecurityUserByUsername(username);
+      if (toDelete != null) {
+        userRepository.delete(toDelete);
+      }
+    }
   }
 
   @Override
