@@ -55,7 +55,7 @@ class LoansControllerTest extends AbstractControllerTest {
 
     @Test
     void getLoanDetailsUnauthorized() throws Exception {
-        testSecuredBaseUrlAuth(mockMvc, LoansController.RESOURCE_PATH);
+        _testSecuredBaseUrlAuth(mockMvc, LoansController.RESOURCE_PATH);
     }
 
     @Test

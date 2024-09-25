@@ -20,6 +20,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -54,7 +55,7 @@ public class SecurityUser implements UserDetails {
   private Long id;
 
   @NotBlank
-  @Column(name = "username", length = 100)
+  @Column(name = "username", length = 100, unique = true)
   private String username;
 
   @NotBlank

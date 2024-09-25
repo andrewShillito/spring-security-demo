@@ -1,7 +1,9 @@
 package com.demo.security.spring;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.formLogin;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.logout;
@@ -16,7 +18,11 @@ import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
 import com.demo.security.spring.model.EntityControlDates;
 import com.demo.security.spring.model.Loan;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.model.UserCreationResponse;
 import com.demo.security.spring.utils.Constants;
+import com.demo.security.spring.utils.CookieNames;
+import com.demo.security.spring.utils.RoleNames;
+import jakarta.servlet.http.Cookie;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
@@ -26,6 +32,7 @@ import lombok.NonNull;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -34,7 +41,10 @@ import org.springframework.test.web.servlet.MvcResult;
 public class DemoAssertions {
 
   /** For fuzzy matching of datetime */
-  private static final List<Integer> FUZZ_FACTOR_LIST = List.of(-1, 0, 1);
+  private static final List<Integer> FUZZ_FACTOR_LIST_MINUTES = List.of(-1, 0, 1);
+
+  /** For fuzzy matching of datetime within 5 seconds*/
+  private static final List<Integer> FUZZ_FACTOR_LIST_SECONDS = List.of(-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5);
 
   /**
    * Checks that two zonedDateTime objects are equal when truncated to {@link ChronoUnit#SECONDS}.
@@ -50,17 +60,37 @@ public class DemoAssertions {
   }
 
   /**
+   * Asserts that two dates are fuzzily equal to each other within a time window +/- 5 seconds
+   * @param expected the expected datetime
+   * @param actual the actual datetime
+   * @see #FUZZ_FACTOR_LIST_SECONDS
+   */
+  public static void assertDateFuzzyEquals(ZonedDateTime expected, ZonedDateTime actual) {
+    assertBothNullOrNeitherAre(expected, actual);
+    final ZonedDateTime expectedTruncated = expected.truncatedTo(ChronoUnit.MINUTES);
+    final ZonedDateTime actualTruncated = actual.truncatedTo(ChronoUnit.MINUTES).withZoneSameInstant(ZoneId.systemDefault());
+    assertTrue(
+        FUZZ_FACTOR_LIST_SECONDS.stream().anyMatch(factor -> expectedTruncated.plusSeconds(factor).equals(actualTruncated)),
+        "Expected datetime to be now-ish relative to " + ZonedDateTime.now() + " but was " + actual);
+  }
+
+  /**
    * Checks that a date is equal to now +/- 1 minute. Fuzzy matching is for testing stability
    * while still asserting that the datetime is roughly 'now'. Does not do any zone id conversion.
    * @param actual the datetime to check against truncated {@link ZonedDateTime#now()}
+   * @see #FUZZ_FACTOR_LIST_MINUTES
    */
   public static void assertDateIsNowIsh(ZonedDateTime actual) {
     assertNotNull(actual);
     final ZonedDateTime nowTruncated = ZonedDateTime.now().truncatedTo(ChronoUnit.MINUTES);
     final ZonedDateTime actualTruncated = actual.truncatedTo(ChronoUnit.MINUTES).withZoneSameInstant(ZoneId.systemDefault());
-    assertTrue(FUZZ_FACTOR_LIST.stream().anyMatch(factor -> nowTruncated.plusMinutes(factor).equals(actualTruncated)),
+    assertTrue(
+        FUZZ_FACTOR_LIST_MINUTES.stream().anyMatch(factor -> nowTruncated.plusMinutes(factor).equals(actualTruncated)),
         "Expected datetime to be now-ish relative to " + ZonedDateTime.now() + " but was " + actual);
-    assertEquals(nowTruncated.truncatedTo(ChronoUnit.DAYS), actualTruncated.truncatedTo(ChronoUnit.DAYS));
+  }
+
+  public static void assertDatesSameDay(ZonedDateTime expected, ZonedDateTime actual) {
+    assertEquals(expected.truncatedTo(ChronoUnit.DAYS), actual.truncatedTo(ChronoUnit.DAYS));
   }
 
   public static void assertNotBlank(String s) {
@@ -220,9 +250,13 @@ public class DemoAssertions {
     assertBothNullOrNeitherAre(expected, actual);
     if (expected != null) {
       assertEquals(expected.size(), actual.size());
-      for (var auth : expected) {
+      for (var expectedAuth : expected) {
         assertNotNull(expected, "Found unexpectedly null authority in " + expected);
-        assertTrue(actual.contains(auth));
+        GrantedAuthority actualAuth = actual.stream()
+            .filter(it -> expectedAuth.getAuthority().equals(it.getAuthority()))
+            .findFirst()
+            .orElse(null);
+        assertNotNull(actualAuth, "Expected actual authorities to contain authority with name " + expectedAuth.getAuthority());
       }
     }
   }
@@ -237,5 +271,60 @@ public class DemoAssertions {
 
   public static void assertBothNullOrNeitherAre(Object expected, Object actual) {
     assertTrue((expected == null && actual == null) || (expected != null && actual != null));
+  }
+
+  public static void assertHasValidCsrfToken(MockHttpServletResponse response) {
+    assertNotNull(response);
+    Cookie xsrfCookie = getCookie(response, CookieNames.COOKIE_XSRF_TOKEN);
+    assertNotNull(xsrfCookie);
+    // a little redundant to check the name but it asserts that the getCookie didn't return something unexpected
+    assertEquals(CookieNames.COOKIE_XSRF_TOKEN, xsrfCookie.getName());
+    assertNotEmpty(xsrfCookie.getValue());
+    assertFalse(xsrfCookie.isHttpOnly());
+    // maximum age of -1 means the cookie will expire as soon as the browser is closed.
+    assertEquals(-1, xsrfCookie.getMaxAge());
+    assertEquals("/", xsrfCookie.getPath());
+    assertFalse(xsrfCookie.getSecure());
+  }
+
+  public static void assertHasNoCsrftoken(MockHttpServletResponse response) {
+    assertNotNull(response);
+    assertNull(getCookie(response, CookieNames.COOKIE_XSRF_TOKEN));
+  }
+
+  public static void assertHasValidSessionToken(MockHttpServletResponse response) {
+    assertNotNull(response);
+    Cookie sessionCookie = getCookie(response, CookieNames.COOKIE_SESSION_ID);
+    assertNotNull(sessionCookie);
+    // a little redundant to check the name but it asserts that the getCookie didn't return something unexpected
+    assertEquals(CookieNames.COOKIE_SESSION_ID, sessionCookie.getName());
+    assertNotEmpty(sessionCookie.getValue());
+    assertFalse(sessionCookie.isHttpOnly());
+    // maximum age of -1 means the cookie will expire as soon as the browser is closed.
+    assertEquals(-1, sessionCookie.getMaxAge());
+    assertEquals("/", sessionCookie.getPath());
+    assertFalse(sessionCookie.getSecure());
+  }
+
+  public static void assertHasNoSessionToken(MockHttpServletResponse response) {
+    assertNotNull(response);
+    assertNull(getCookie(response, CookieNames.COOKIE_SESSION_ID));
+  }
+
+  public static Cookie getCookie(MockHttpServletResponse response, String name) {
+    if (response != null) {
+      return response.getCookie(name);
+    }
+    return null;
+  }
+
+  public static void assertExpectedUserCreated(String expectedUsername, UserCreationResponse userCreationResponse) {
+    assertNotNull(userCreationResponse);
+    assertNotNull(userCreationResponse.getId());
+    assertNotNull(userCreationResponse.getAuthorities());
+    assertEquals(expectedUsername, userCreationResponse.getUsername());
+    assertEquals(1, userCreationResponse.getAuthorities().size());
+    assertEquals(RoleNames.ROLE_USER, userCreationResponse.getAuthorities().getFirst().getRole());
+    assertNotNull(userCreationResponse.getAuthorities().getFirst().getId());
   }
 }

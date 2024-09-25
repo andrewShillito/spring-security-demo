@@ -23,6 +23,9 @@ public class Constants {
   /** The default login redirect url */
   public static final String DEFAULT_LOGIN_REDIRECT_URL = SWAGGER_UI_URL;
 
+  /** The example invalid session url */
+  public static final String INVALID_SESSION_URL = "/invalidSession";
+
   /** The minimum allowed password length */
   public static final int PASSWORD_MIN_LENGTH = 8;
 

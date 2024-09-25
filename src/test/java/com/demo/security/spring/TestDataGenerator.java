@@ -10,6 +10,7 @@ import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.Card;
 import com.demo.security.spring.model.Loan;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.model.UserCreationRequest;
 import com.demo.security.spring.repository.AccountRepository;
 import com.demo.security.spring.repository.CardRepository;
 import com.demo.security.spring.repository.LoanRepository;
@@ -18,6 +19,7 @@ import com.demo.security.spring.utils.Constants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import lombok.Getter;
 import lombok.NonNull;
 import net.datafaker.Faker;
@@ -29,6 +31,8 @@ public class TestDataGenerator {
 
   @Autowired
   private Faker faker;
+
+  private final Random random = new Random();
 
   @Autowired
   private ObjectMapper objectMapper;
@@ -71,8 +75,26 @@ public class TestDataGenerator {
   }
 
   public String randomPassword() {
-    return faker.internet().password(Constants.PASSWORD_MIN_LENGTH, Constants.PASSWORD_MAX_LENGTH,
+    String generatedPassword = faker.internet().password(Constants.PASSWORD_MIN_LENGTH, Constants.PASSWORD_MAX_LENGTH - 1,
         true, true, true);
+    // there are times when faker password does not contain lower-case letter so we handle that case now for test stability
+    int result = random.nextInt(0, 3) % 3;
+    if (result == 0) {
+      // lowercase at the start
+      generatedPassword += randomLowerCaseLetter();
+    } else if (result == 1) {
+      // lowercase inside the string
+      generatedPassword = generatedPassword.substring(0, 4) + randomLowerCaseLetter() + generatedPassword.substring(4);
+    } else if (result == 2) {
+      // lowercase at the end
+      generatedPassword = generatedPassword + randomLowerCaseLetter();
+    }
+    return generatedPassword;
+  }
+
+  public char randomLowerCaseLetter() {
+    // lowercase is ascii 97 to 122 inclusive
+    return (char) random.nextInt(97, 123);
   }
 
   public List<SecurityUser> generateUsers(int count, boolean persist, boolean internal) {
@@ -150,5 +172,14 @@ public class TestDataGenerator {
 
   public String randomEmail() {
     return faker.internet().emailAddress();
+  }
+
+  public UserCreationRequest randomUserCreationRequest() {
+    return UserCreationRequest
+        .builder()
+        .username(randomUsername())
+        .password(randomPassword())
+        .email(randomEmail())
+        .build();
   }
 }

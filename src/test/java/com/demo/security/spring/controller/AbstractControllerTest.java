@@ -53,7 +53,7 @@ public abstract class AbstractControllerTest {
      * @param baseUrl
      * @throws Exception
      */
-    public void testSecuredBaseUrlAuth(MockMvc mockMvc, String baseUrl) throws Exception {
+    public void _testSecuredBaseUrlAuth(MockMvc mockMvc, String baseUrl) throws Exception {
         final String expectedErrorMessage = "Full authentication is required to access this resource";
         testUnauthorizedErrorResponseBody(
             executeMockUnauthorizedRequest(mockMvc, baseUrl),
@@ -132,8 +132,6 @@ public abstract class AbstractControllerTest {
         for (String origin : Constants.EXAMPLE_ALLOWED_CORS_PATHS) {
             try {
                 if (paramName != null && paramValue != null) {
-                    // TODO: for endpoints which are accessing user-specific data this will change in the future
-                    //  to deny users from accessing any user info but their own
                     if (requiresUser) {
                         mockMvc.perform(get(resourcePath).with(user(user))
                                 .param(paramName, paramValue)

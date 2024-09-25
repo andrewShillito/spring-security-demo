@@ -4,6 +4,7 @@ import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.model.UserType;
 import com.demo.security.spring.utils.Constants;
+import com.demo.security.spring.utils.RoleNames;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
         generateUser("user", false),
         generateUser("admin", true),
         generateUser("otherUser", false),
-        generateUser("otherAdmin", true, List.of("ROLE_ADMIN", "ROLE_USER")),
+        generateUser("otherAdmin", true, List.of(RoleNames.ROLE_ADMIN, RoleNames.ROLE_USER)),
         disable(generateUser("userDisabled", false)),
         disable(generateUser("adminDisabled", true))
     ));
@@ -87,9 +88,9 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
 
   private List<String> getRolesForType(String type) {
     if (type != null && type.equals("external")) {
-      return List.of("ROLE_USER");
+      return List.of(RoleNames.ROLE_USER);
     }
-    return List.of("ROLE_ADMIN");
+    return List.of(RoleNames.ROLE_ADMIN);
   }
 
   private SecurityUser generateUser(String username, boolean isInternal) {

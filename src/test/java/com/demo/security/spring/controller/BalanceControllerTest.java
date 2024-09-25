@@ -33,7 +33,7 @@ class BalanceControllerTest extends AbstractControllerTest {
 
     @Test
     void testUnauthenticated() throws Exception {
-        testSecuredBaseUrlAuth(mockMvc, BalanceController.RESOURCE_PATH);
+        _testSecuredBaseUrlAuth(mockMvc, BalanceController.RESOURCE_PATH);
     }
 
     @Test

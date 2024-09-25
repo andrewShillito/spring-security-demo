@@ -1,5 +1,6 @@
 package com.demo.security.spring.service;
 
+import com.demo.security.spring.controller.error.DuplicateUserException;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.utils.SecurityUtils;
@@ -36,6 +37,9 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
   @Override
   public void createUser(final UserDetails user) {
     userValidationService.validateUser(user, true);
+    if (userRepository.existsByUsernameIgnoreCase(user.getUsername())) {
+      throw new DuplicateUserException(user.getUsername());
+    }
     final SecurityUser securityUser = (SecurityUser) user;
     securityUser.setPassword(passwordEncoder.encode(securityUser.getPassword()));
     userRepository.save(securityUser);

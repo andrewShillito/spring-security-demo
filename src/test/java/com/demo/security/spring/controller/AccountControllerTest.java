@@ -27,7 +27,7 @@ class AccountControllerTest extends AbstractControllerTest {
     @Test
     void testGetAccountDetailsNotLoggedIn() throws Exception {
         mockMvc.perform(get(AccountController.RESOURCE_PATH)).andExpect(status().isUnauthorized());
-        testSecuredBaseUrlAuth(mockMvc, AccountController.RESOURCE_PATH);
+        _testSecuredBaseUrlAuth(mockMvc, AccountController.RESOURCE_PATH);
     }
 
     @Test

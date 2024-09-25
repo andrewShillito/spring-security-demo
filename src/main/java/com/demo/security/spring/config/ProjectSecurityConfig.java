@@ -3,6 +3,7 @@ package com.demo.security.spring.config;
 import com.demo.security.spring.authentication.AuthenticationAttemptManager;
 import com.demo.security.spring.authentication.CustomAuthenticationFailureHandler;
 import com.demo.security.spring.authentication.CustomAuthenticationSuccessHandler;
+import com.demo.security.spring.controller.RegisterController;
 import com.demo.security.spring.events.AuthenticationEvents;
 import com.demo.security.spring.authentication.CustomAccessDeniedHandler;
 import com.demo.security.spring.authentication.CustomBasicAuthenticationEntryPoint;
@@ -107,7 +108,7 @@ public class ProjectSecurityConfig {
         .sessionManagement(smc -> {
           smc.sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
           // just fyi the view /invalidSession doesn't exist for now - so this is just an example config here
-          smc.invalidSessionUrl("/invalidSession");
+          smc.invalidSessionUrl(Constants.INVALID_SESSION_URL);
           // using default session fixation protection strategy of change session id
           smc.sessionFixation(SessionFixationConfigurer::changeSessionId);
           if (isProd) {
@@ -122,6 +123,7 @@ public class ProjectSecurityConfig {
             BalanceController.RESOURCE_PATH + "/**",
             CardsController.RESOURCE_PATH + "/**",
             LoansController.RESOURCE_PATH + "/**",
+            UserController.RESOURCE_PATH + "/**",
             "/actuator/**", /* TODO: add actuator and child paths as secured endpoints */
             "/v3/api-docs/**", // the json schema
             "/swagger-ui/**",
@@ -129,13 +131,10 @@ public class ProjectSecurityConfig {
         )
         .authenticated()
         .requestMatchers(
-            UserController.RESOURCE_PATH + "/**"
-        )
-        .hasRole("ADMIN")
-        .requestMatchers(
             NoticesController.RESOURCE_PATH + "/**",
             ContactController.RESOURCE_PATH + "/**",
-            "/invalidSession"
+            RegisterController.RESOURCE_PATH + "/**",
+            Constants.INVALID_SESSION_URL
         )
         .permitAll()
     );
@@ -226,10 +225,9 @@ public class ProjectSecurityConfig {
   }
 
   @Bean(name = "loginService")
-  public LoginService jpaLoginService(final SecurityUserRepository securityUserRepository, final PasswordEncoder passwordEncoder) {
+  public LoginService jpaLoginService(UserDetailsManager userDetailsManager) {
     return JpaLoginService.builder()
-        .securityUserRepository(securityUserRepository)
-        .passwordEncoder(passwordEncoder)
+        .userDetailsManager(userDetailsManager)
         .build();
   }
 
