@@ -3,6 +3,7 @@ package com.demo.security.spring.controller;
 import com.demo.security.spring.model.Account;
 import com.demo.security.spring.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,7 @@ public class AccountController {
     this.accountService = accountService;
   }
 
-  @GetMapping(RESOURCE_PATH)
+  @GetMapping(value = RESOURCE_PATH, produces = MediaType.APPLICATION_JSON_VALUE)
   public Account getAccountDetails(Authentication authentication) {
     return accountService.findOneForUser(authentication);
   }

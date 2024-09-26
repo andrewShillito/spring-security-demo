@@ -23,6 +23,7 @@ public class UserCreationRequest {
   private String username;
 
   @IsValidPassword
+  @NotBlank
   private String password;
 
   @NotBlank

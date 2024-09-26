@@ -8,10 +8,12 @@ import com.demo.security.spring.utils.Constants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.ZoneId;
 import java.util.List;
+import java.util.Map;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -22,6 +24,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.options;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 public abstract class AbstractControllerTest {
@@ -172,5 +175,25 @@ public abstract class AbstractControllerTest {
         mockMvc.perform(get(baseUrl).with(user(testUserName))).andExpect(status().isOk());
         mockMvc.perform(get(baseUrl + "/").with(user(testUserName))).andExpect(status().isOk());
         mockMvc.perform(get(baseUrl + "/" + "?" + getTestParam()).with(user(testUserName))).andExpect(status().isOk());
+    }
+
+    /**
+     * Return the schema returned to logged in users in {@link Constants#SWAGGER_SCHEMA_URL}
+     * so it can be validated
+     * @param mockMvc the mockMvc object to use to make the request
+     * @param securityUser a valid user who can log in
+     * @return Map open-api generated json schema
+     * @throws Exception ClassCastException could be thrown as unchecked cast occurs
+     */
+    @SuppressWarnings("unchecked")
+    public Map<String, Object> getSwaggerSchema(MockMvc mockMvc, SecurityUser securityUser)
+        throws Exception {
+        var response = mockMvc.perform(get(Constants.SWAGGER_SCHEMA_URL).with(user(securityUser)))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+            .andReturn()
+            .getResponse();
+        DemoAssertions.assertNotEmpty(response.getContentAsString());
+        return (Map<String, Object>) objectMapper.readValue(response.getContentAsString(), Map.class);
     }
 }
