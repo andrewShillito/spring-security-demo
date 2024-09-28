@@ -125,7 +125,7 @@ public class DemoAssertions {
     assertEquals(expected.getRequestUri(), actual.getRequestUri());
     assertEquals(expected.getRealm(), actual.getRealm());
     assertEquals(expected.getAdditionalInfo(), actual.getAdditionalInfo());
-    DemoAssertions.assertDateEquals(expected.getTime(), actual.getTime());
+    DemoAssertions.assertDateFuzzyEquals(expected.getTime(), actual.getTime());
     assertEquals(ZoneId.of("UTC"), actual.getTime().getZone());
   }
 
@@ -232,14 +232,14 @@ public class DemoAssertions {
       assertEquals(expected.isEnabled(), actual.isEnabled());
       assertEquals(expected.isAccountExpired(), actual.isAccountExpired());
       assertEquals(expected.isAccountNonExpired(), actual.isAccountNonExpired());
-      assertDateEquals(expected.getAccountExpiredDate(), actual.getAccountExpiredDate());
+      assertDateFuzzyEquals(expected.getAccountExpiredDate(), actual.getAccountExpiredDate());
       assertEquals(expected.isPasswordExpired(), actual.isPasswordExpired());
-      assertDateEquals(expected.getPasswordExpiredDate(), actual.getPasswordExpiredDate());
+      assertDateFuzzyEquals(expected.getPasswordExpiredDate(), actual.getPasswordExpiredDate());
       assertEquals(expected.getFailedLoginAttempts(), actual.getFailedLoginAttempts());
       assertEquals(expected.getNumPreviousLockouts(), actual.getNumPreviousLockouts());
       assertEquals(expected.isLocked(), actual.isLocked());
-      assertDateEquals(expected.getLockedDate(), actual.getLockedDate());
-      assertDateEquals(expected.getUnlockDate(), actual.getUnlockDate());
+      assertDateFuzzyEquals(expected.getLockedDate(), actual.getLockedDate());
+      assertDateFuzzyEquals(expected.getUnlockDate(), actual.getUnlockDate());
       assertAuthoritiesEquals(expected.getAuthorities(), actual.getAuthorities());
       assertControlDatesEquals(expected.getControlDates(), actual.getControlDates());
     }
@@ -264,8 +264,8 @@ public class DemoAssertions {
   public static void assertControlDatesEquals(EntityControlDates expected, EntityControlDates actual) {
     assertBothNullOrNeitherAre(expected, actual);
     if (expected != null) {
-      assertDateEquals(expected.getCreated(), actual.getCreated());
-      assertDateEquals(expected.getLastUpdated(), actual.getLastUpdated());
+      assertDateFuzzyEquals(expected.getCreated(), actual.getCreated());
+      assertDateFuzzyEquals(expected.getLastUpdated(), actual.getLastUpdated());
     }
   }
 

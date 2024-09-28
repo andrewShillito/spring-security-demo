@@ -23,4 +23,7 @@ public class SpringProfileConstants {
   /** The mock production profile */
   public static final String PRODUCTION = "prod";
 
+  /** Turns off schema.sql based schema seeding  */
+  public static final String NO_SCHEMA_INIT = "noSchemaInit";
+
 }
