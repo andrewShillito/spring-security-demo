@@ -85,7 +85,7 @@ class AccountControllerTest extends AbstractControllerTest {
             AccountController.RESOURCE_PATH,
             HttpMethod.GET,
             "getAccountDetails",
-            List.of("account-controller"),
+            List.of("account", "get", "v1"),
             false,
             false,
             null,
