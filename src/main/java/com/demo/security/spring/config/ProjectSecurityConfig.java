@@ -202,7 +202,8 @@ public class ProjectSecurityConfig {
       final UserGenerator userGenerator,
       final ObjectMapper objectMapper,
       final PasswordEncoder passwordEncoder,
-      @Value("${example-data.regenerate:false}") boolean regenerateData
+      @Value("${example-data.regenerate:false}") boolean regenerateData,
+      @Value("${example-data.enabled:true}") boolean enabled
   ) {
     return StartupDatabasePopulator.builder()
         .exampleDataManager(exampleDataManager)
@@ -216,6 +217,7 @@ public class ProjectSecurityConfig {
         .objectMapper(objectMapper)
         .passwordEncoder(passwordEncoder)
         .regenerateData(regenerateData)
+        .enabled(enabled)
         .build();
   }
 

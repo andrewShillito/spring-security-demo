@@ -52,20 +52,20 @@ public class AccountTransaction {
   @Column(name = "user_id", nullable = false, updatable = false, insertable = true)
   private Long userId;
 
-  @Column(name = "transaction_date")
+  @Column(name = "transaction_date", nullable = false)
   private ZonedDateTime transactionDate;
 
-  @Column(name = "transaction_summary", length = 255)
+  @Column(name = "transaction_summary", length = 255, nullable = false)
   private String transactionSummary;
 
-  @Column(name = "transaction_type", length = 100)
+  @Column(name = "transaction_type", length = 100, nullable = false)
   @Enumerated(EnumType.STRING)
   private TransactionType transactionType;
 
-  @Column(name = "transaction_amount")
+  @Column(name = "transaction_amount", precision = 38, scale = 2, nullable = false)
   private BigDecimal transactionAmount;
 
-  @Column(name = "closing_balance")
+  @Column(name = "closing_balance", precision = 38, scale = 2, nullable = false)
   private BigDecimal closingBalance;
 
   @Embedded

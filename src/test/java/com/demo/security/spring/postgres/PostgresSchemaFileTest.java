@@ -1,7 +1,13 @@
 package com.demo.security.spring.postgres;
 
+import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.utils.SpringProfileConstants;
+import com.demo.security.spring.utils.TableNames;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import lombok.extern.log4j.Log4j2;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
@@ -20,22 +26,44 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @ActiveProfiles(value = { SpringProfileConstants.DEFAULT, SpringProfileConstants.POSTGRES })
 @Testcontainers
 @Log4j2
+@Order(1)
 public class PostgresSchemaFileTest extends AbstractPostgresSchemaTest {
 
   @Container
-  private static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres")
-      .withDatabaseName("test-security-demo");
+  private static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(POSTGRES_IMAGE_NAME)
+      .withDatabaseName(TEST_DB_NAME);
 
   @DynamicPropertySource
   static void postgresProperties(DynamicPropertyRegistry registry) {
     registry.add("spring.datasource.url", postgres::getJdbcUrl);
     registry.add("spring.datasource.username", postgres::getUsername);
     registry.add("spring.datasource.password", postgres::getPassword);
+    registry.add("example-data.enabled", () -> false); // turn off seeding of example data - will test that elsewhere
   }
 
   @Test
+  @Order(1)
   void testCanUsePostgresDuringTest() {
     _testPostgresContainerOk(postgres);
+  }
+
+  @Test
+  @Order(2)
+  void proofOfConcept() {
+    log.info("Validating generated vs. schema.sql created table columns");
+    Map<String, List<Map<String, Object>>> result = new HashMap<>();
+    for (String tableName : TableNames.NAMES) {
+      List<Map<String, Object>> columns = jdbcTemplate.queryForList("SELECT * FROM information_schema.columns"
+          + " WHERE table_name = ? ORDER BY column_name", tableName);
+      DemoAssertions.assertNotEmpty(columns);
+      for (var row : columns) {
+        row.remove("ordinal_position");
+        row.remove("dtd_identifier");
+        row.remove("column_default");
+      }
+      result.put(tableName, columns);
+    }
+    DATA.getAndUpdate(v -> { v.put("columns", result); return v; });
   }
 
   @Test

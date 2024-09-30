@@ -41,19 +41,19 @@ public class Loan {
   private Long userId;
 
   // TODO: create loan types enum
-  @Column(name = "loan_type", length = 100)
+  @Column(name = "loan_type", length = 100, nullable = false)
   private String loanType;
 
-  @Column(name = "start_date")
+  @Column(name = "start_date", nullable = false)
   private ZonedDateTime startDate;
 
-  @Column(name = "total_amount")
+  @Column(name = "total_amount", precision = 38, scale = 2, nullable = false)
   private BigDecimal totalAmount;
 
-  @Column(name = "amount_paid")
+  @Column(name = "amount_paid", precision = 38, scale = 2, nullable = false)
   private BigDecimal amountPaid;
 
-  @Column(name = "outstanding_amount")
+  @Column(name = "outstanding_amount", precision = 38, scale = 2, nullable = false)
   private BigDecimal outstandingAmount;
 
   @Embedded

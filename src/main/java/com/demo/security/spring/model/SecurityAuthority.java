@@ -42,7 +42,7 @@ public class SecurityAuthority implements GrantedAuthority {
 
   @NotBlank
   @IsValidRole
-  @Column(name = "authority", length = 100)
+  @Column(name = "authority", length = 100, nullable = false)
   private String authority;
 
   public SecurityAuthority() {

@@ -33,11 +33,11 @@ public class NoticeDetails {
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "notice_details_notice_id_seq")
   private Long noticeId;
 
-  @Column(name = "notice_summary", length = 255)
+  @Column(name = "notice_summary", length = 255, nullable = false)
   @NotBlank
   private String noticeSummary;
 
-  @Column(name = "notice_details", length = 500)
+  @Column(name = "notice_details", length = 500, nullable = false)
   @NotBlank
   private String noticeDetails;
 

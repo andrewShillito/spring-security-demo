@@ -40,11 +40,11 @@ public class Account {
   @Column(name = "user_id", nullable = false, updatable = false, insertable = true)
   private Long userId;
 
-  @Column(name = "account_type", length = 100)
+  @Column(name = "account_type", length = 100, nullable = false)
   private String accountType;
 
   // TODO: This is a free-text address, but Address object would be preferable
-  @Column(name = "branch_address", length = 255)
+  @Column(name = "branch_address", length = 255, nullable = false)
   private String branchAddress;
 
   @Embedded

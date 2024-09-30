@@ -54,37 +54,37 @@ public class SecurityUser implements UserDetails {
   private Long id;
 
   @NotBlank
-  @Column(name = "username", length = 100, unique = true)
+  @Column(name = "username", length = 100, unique = true, nullable = false)
   private String username;
 
   @NotBlank
-  @Column(name = "email", length = 100)
+  @Column(name = "email", length = 100, nullable = false)
   private String email;
 
-  @Column(name = "password", length = 500)
+  @Column(name = "password", length = 500, nullable = false)
   @JsonProperty(access = Access.WRITE_ONLY)
   @NotBlank
   private String password;
 
-  @Column(name = "user_type", length = 100)
+  @Column(name = "user_type", length = 100, nullable = false)
   @Enumerated(EnumType.STRING)
   @NotNull
   private UserType userType = UserType.external;
 
   @NotBlank
-  @Column(name = "user_role", length = 100)
+  @Column(name = "user_role", length = 100, nullable = false)
   private String userRole = "STANDARD";
 
   @NotNull
   private boolean enabled;
 
-  @Column(name = "account_expired")
+  @Column(name = "account_expired", nullable = false)
   private boolean accountExpired;
 
   @Column(name = "account_expired_date")
   private ZonedDateTime accountExpiredDate;
 
-  @Column(name = "password_expired")
+  @Column(name = "password_expired", nullable = false)
   private boolean passwordExpired;
 
   @Column(name = "password_expired_date")
@@ -96,6 +96,7 @@ public class SecurityUser implements UserDetails {
   @Column(name = "num_previous_lockouts")
   private int numPreviousLockouts = 0;
 
+  @Column(name = "locked", nullable = false)
   private boolean locked;
 
   @Column(name = "locked_date")
@@ -107,6 +108,9 @@ public class SecurityUser implements UserDetails {
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
   @NotEmpty
   private List<SecurityAuthority> authorities;
+
+  @Column(name = "last_login_date")
+  private ZonedDateTime lastLoginDate;
 
   @Embedded
   private EntityControlDates controlDates = new EntityControlDates();

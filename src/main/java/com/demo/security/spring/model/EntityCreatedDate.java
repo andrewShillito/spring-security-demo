@@ -19,7 +19,7 @@ import lombok.ToString;
 @JsonInclude(Include.NON_EMPTY)
 public class EntityCreatedDate {
 
-  @Column(name = "created_date")
+  @Column(name = "created_date", nullable = false)
   private ZonedDateTime created;
 
   @PrePersist

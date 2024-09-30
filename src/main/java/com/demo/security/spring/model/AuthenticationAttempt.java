@@ -42,10 +42,10 @@ public class AuthenticationAttempt {
   @Column(name = "username", length = 100)
   private String username;
 
-  @Column(name = "attempt_time")
+  @Column(name = "attempt_time", nullable = false)
   private ZonedDateTime attemptTime;
 
-  @Column(name = "successful")
+  @Column(name = "successful", nullable = false)
   private boolean successful;
 
   @Column(name = "failure_reason", length = 50)

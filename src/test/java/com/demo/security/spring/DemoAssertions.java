@@ -101,6 +101,11 @@ public class DemoAssertions {
     assertTrue(StringUtils.isNotEmpty(s), "Expected string '" + s + "' to not be empty");
   }
 
+  public static void assertNotEmpty(Collection<?> collection) {
+    assertNotNull(collection);
+    assertFalse(collection.isEmpty(), "Expected collection to  not be empty");
+  }
+
   public static void assertStartsWith(String toTest, String expectedPrefix) {
     assertNotEmpty(toTest);
     assertNotEmpty(expectedPrefix);

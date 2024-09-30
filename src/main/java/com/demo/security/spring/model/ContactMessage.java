@@ -34,22 +34,22 @@ public class ContactMessage {
   private Long contactId;
 
   @NotBlank
-  @Column(name = "contact_name", length = 50)
+  @Column(name = "contact_name", length = 50, nullable = false)
   private String contactName;
 
   @NotBlank
-  @Column(name = "contact_email", length = 100)
+  @Column(name = "contact_email", length = 100, nullable = false)
   private String contactEmail;
 
   @NotBlank
-  @Column(name = "subject", length = 500)
+  @Column(name = "subject", length = 500, nullable = false)
   private String subject;
 
   @NotBlank
-  @Column(name = "message", length = 2000)
+  @Column(name = "message", length = 2000, nullable = false)
   private String message;
 
-  @Column(name = "created_date")
+  @Column(name = "created_date", nullable = false)
   private ZonedDateTime created;
 
   @PrePersist
