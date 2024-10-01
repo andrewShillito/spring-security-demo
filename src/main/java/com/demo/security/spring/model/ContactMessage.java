@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.SequenceGenerator;
@@ -19,7 +20,10 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "contact_messages")
+@Table(name = "contact_messages", indexes = {
+    @Index(name = "ix_contact_messages_contact_email_subject", columnList = "contact_email,subject"),
+    @Index(name = "ix_contact_messages_created_date", columnList = "created_date")
+})
 @Getter
 @Setter
 @EqualsAndHashCode

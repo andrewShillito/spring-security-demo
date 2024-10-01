@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -19,7 +20,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "notice_details")
+@Table(name = "notice_details", indexes = {
+    @Index(name = "ix_notice_details_start_date_end_date", columnList = "start_date,end_date")
+})
 @Getter
 @Setter
 @EqualsAndHashCode

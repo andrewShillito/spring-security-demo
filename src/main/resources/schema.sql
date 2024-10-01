@@ -51,6 +51,10 @@ CREATE TABLE IF NOT EXISTS demo.authentication_attempts (
     device_family varchar(200)
 );
 
+CREATE INDEX IF NOT EXISTS ix_authentication_attempts_username on demo.authentication_attempts (username, failure_reason);
+CREATE INDEX IF NOT EXISTS ix_authentication_attempts_user_id on demo.authentication_attempts (user_id, failure_reason);
+CREATE INDEX IF NOT EXISTS ix_authentication_attempts_resource_path_username on demo.authentication_attempts (requested_resource, username);
+
 CREATE SEQUENCE IF NOT EXISTS demo.security_authorities_id_seq INCREMENT BY 50;
 
 CREATE TABLE IF NOT EXISTS demo.security_authorities
@@ -74,6 +78,8 @@ CREATE TABLE IF NOT EXISTS demo.accounts (
     constraint fk_accounts_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
 
+CREATE UNIQUE INDEX IF NOT EXISTS ix_accounts_user_id on demo.accounts (user_id, account_number);
+
 CREATE SEQUENCE IF NOT EXISTS demo.account_transactions_transaction_id_seq INCREMENT BY 50;
 
 CREATE TABLE IF NOT EXISTS demo.account_transactions (
@@ -90,6 +96,8 @@ CREATE TABLE IF NOT EXISTS demo.account_transactions (
     constraint fk_account_transactions_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
 
+CREATE INDEX IF NOT EXISTS ix_account_transactions_user_id on demo.account_transactions (user_id, account_number);
+
 CREATE SEQUENCE IF NOT EXISTS demo.loans_loan_number_seq INCREMENT BY 50;
 
 CREATE TABLE IF NOT EXISTS demo.loans (
@@ -103,6 +111,8 @@ CREATE TABLE IF NOT EXISTS demo.loans (
     created_date timestamp with time zone not null,
     constraint fk_loans_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS ix_loans_user_id_loan_type_loan_number on demo.loans (user_id, loan_type, loan_number);
 
 CREATE SEQUENCE IF NOT EXISTS demo.cards_card_id_seq INCREMENT BY 50;
 
@@ -118,6 +128,8 @@ CREATE TABLE IF NOT EXISTS demo.cards (
     constraint fk_cards_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
 
+CREATE UNIQUE INDEX IF NOT EXISTS ix_cards_user_id_card_type_card_number on demo.cards (user_id, card_type, card_number);
+
 CREATE SEQUENCE IF NOT EXISTS demo.notice_details_notice_id_seq INCREMENT BY 50;
 
 CREATE TABLE IF NOT EXISTS demo.notice_details (
@@ -130,6 +142,8 @@ CREATE TABLE IF NOT EXISTS demo.notice_details (
     last_updated_date timestamp with time zone not null
 );
 
+CREATE INDEX IF NOT EXISTS ix_notice_details_start_date_end_date on demo.notice_details (start_date, end_date);
+
 CREATE SEQUENCE IF NOT EXISTS demo.contact_messages_contact_id_seq INCREMENT BY 50;
 
 CREATE TABLE IF NOT EXISTS demo.contact_messages (
@@ -140,3 +154,6 @@ CREATE TABLE IF NOT EXISTS demo.contact_messages (
     message varchar(2000) not null,
     created_date timestamp with time zone not null
 );
+
+CREATE INDEX IF NOT EXISTS ix_contact_messages_contact_email_subject on demo.contact_messages (contact_email, subject);
+CREATE INDEX IF NOT EXISTS ix_contact_messages_created_date on demo.contact_messages (created_date);

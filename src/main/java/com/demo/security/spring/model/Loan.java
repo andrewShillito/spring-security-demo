@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.SequenceGenerator;
@@ -22,7 +23,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "loans")
+@Table(name = "loans", indexes = {
+    @Index(name = "ix_loans_user_id_loan_type_loan_number", columnList = "user_id,loan_type,loan_number", unique = true)
+})
 @Getter
 @Setter
 @EqualsAndHashCode

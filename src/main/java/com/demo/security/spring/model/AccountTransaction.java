@@ -13,6 +13,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
@@ -28,7 +29,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "account_transactions")
+@Table(name = "account_transactions", indexes = {
+    @Index(name = "ix_account_transactions_user_id", columnList = "user_id,account_number")
+})
 @Getter
 @Setter
 @EqualsAndHashCode( exclude = { "account" })
