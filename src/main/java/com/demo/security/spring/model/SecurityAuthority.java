@@ -10,6 +10,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
@@ -25,7 +26,9 @@ import org.springframework.security.core.GrantedAuthority;
 @Setter
 @ToString(exclude = "user")
 @Entity
-@Table(name = "security_authorities")
+@Table(name = "security_authorities", indexes = {
+    @Index(name = "ix_auth_user_id", columnList = "user_id,authority", unique = true)
+})
 @SequenceGenerator(name = "security_authorities_id_seq", sequenceName = "security_authorities_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
 public class SecurityAuthority implements GrantedAuthority {

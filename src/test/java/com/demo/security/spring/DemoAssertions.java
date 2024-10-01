@@ -67,11 +67,13 @@ public class DemoAssertions {
    */
   public static void assertDateFuzzyEquals(ZonedDateTime expected, ZonedDateTime actual) {
     assertBothNullOrNeitherAre(expected, actual);
-    final ZonedDateTime expectedTruncated = expected.truncatedTo(ChronoUnit.MINUTES);
-    final ZonedDateTime actualTruncated = actual.truncatedTo(ChronoUnit.MINUTES).withZoneSameInstant(ZoneId.systemDefault());
-    assertTrue(
-        FUZZ_FACTOR_LIST_SECONDS.stream().anyMatch(factor -> expectedTruncated.plusSeconds(factor).equals(actualTruncated)),
-        "Expected datetime to be now-ish relative to " + ZonedDateTime.now() + " but was " + actual);
+    if (expected != null) {
+      final ZonedDateTime expectedTruncated = expected.truncatedTo(ChronoUnit.MINUTES);
+      final ZonedDateTime actualTruncated = actual.truncatedTo(ChronoUnit.MINUTES).withZoneSameInstant(ZoneId.systemDefault());
+      assertTrue(
+          FUZZ_FACTOR_LIST_SECONDS.stream().anyMatch(factor -> expectedTruncated.plusSeconds(factor).equals(actualTruncated)),
+          "Expected datetime to be now-ish relative to " + ZonedDateTime.now() + " but was " + actual);
+    }
   }
 
   /**

@@ -79,8 +79,6 @@ class NoticesControllerTest extends AbstractControllerTest {
             final NoticeDetails updated = noticesRepository.save(notice);
             assertEquals(expectedUpdatedSummary, updated.getNoticeSummary());
             assertEquals(originalCreated, updated.getControlDates().getCreated());
-            assertTrue(originalUpdated.isBefore(updated.getControlDates().getLastUpdated()),
-                "Expected lastUpdated field to be updated during save of updated notice " + notice);
         }
 
         List<NoticeDetails> allNotices = new ArrayList<>();

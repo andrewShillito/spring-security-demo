@@ -1,5 +1,6 @@
 package com.demo.security.spring.postgres;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -58,22 +59,22 @@ public class PostgresSchemaHibernateTest extends AbstractPostgresSchemaTest {
   void proofOfConcept() {
     if (DATA != null && DATA.get().get("columns") != null) {
       log.info("Validating generated vs. schema.sql created table columns");
-      Map<String, List<Map<String, Object>>> result = new HashMap<>();
-      for (String tableName : TableNames.NAMES) {
-        List<Map<String, Object>> columns = jdbcTemplate.queryForList("SELECT * FROM information_schema.columns"
-            + " WHERE table_name = ? ORDER BY column_name", tableName );
-        DemoAssertions.assertNotEmpty(columns);
-        for (var row : columns) {
-          row.remove("ordinal_position");
-          row.remove("dtd_identifier");
-          row.remove("column_default");
-        }
-        result.put(tableName, columns);
-      }
       assertNotNull(DATA);
+      Map<String, List<Map<String, Object>>> result = getColumnsInfo();
       var columnsData = DATA.get().get("columns");
+      assertNotNull(columnsData);
       for (var entry : columnsData.entrySet()) {
         assertIterableEquals(entry.getValue(), result.get(entry.getKey()));
+      }
+
+      Map<String, List<Map<String, Object>>> indexData = DATA.get().get("indexes");
+      Map<String, List<Map<String, Object>>> indexes = getIndexes();
+      if (indexData != null && indexes != null) {
+        assertEquals(indexData.size(), indexes.size());
+        for (var entry : indexData.entrySet()) {
+          log.info("Validating " + entry + " against " + indexes.get(entry.getKey()));
+          assertIterableEquals(entry.getValue(), indexes.get(entry.getKey()));
+        }
       }
     } else {
       log.info("Not running custom db schema validation as DATA from postgres initialized with SQL is null. This test is being run alone.");

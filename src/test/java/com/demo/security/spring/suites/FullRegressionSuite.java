@@ -6,12 +6,13 @@ import org.junit.platform.suite.api.Suite;
 import org.junit.platform.suite.api.SuiteDisplayName;
 
 /**
- * Runs all JUnit tests with the exception of browser automation tests using playwright which can
+ * Runs all JUnit tests except postgres specific tests
+ * and browser automation tests using playwright which can
  * be run using: {@link BrowserAutomationSuite}
  */
 @Suite
 @SuiteDisplayName("Full Regression Test Suite")
 @SelectPackages("com.demo.security.spring")
-@ExcludePackages({ "com.demo.security.spring.suites", "com.demo.security.spring.playwright" })
+@ExcludePackages({ "com.demo.security.spring.suites", "com.demo.security.spring.playwright", "com.demo.security.spring.postgres" })
 public class FullRegressionSuite {
 }

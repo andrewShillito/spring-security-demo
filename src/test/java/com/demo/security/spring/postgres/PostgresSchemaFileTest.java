@@ -51,19 +51,10 @@ public class PostgresSchemaFileTest extends AbstractPostgresSchemaTest {
   @Order(2)
   void proofOfConcept() {
     log.info("Validating generated vs. schema.sql created table columns");
-    Map<String, List<Map<String, Object>>> result = new HashMap<>();
-    for (String tableName : TableNames.NAMES) {
-      List<Map<String, Object>> columns = jdbcTemplate.queryForList("SELECT * FROM information_schema.columns"
-          + " WHERE table_name = ? ORDER BY column_name", tableName);
-      DemoAssertions.assertNotEmpty(columns);
-      for (var row : columns) {
-        row.remove("ordinal_position");
-        row.remove("dtd_identifier");
-        row.remove("column_default");
-      }
-      result.put(tableName, columns);
-    }
+    Map<String, List<Map<String, Object>>> result = getColumnsInfo();
     DATA.getAndUpdate(v -> { v.put("columns", result); return v; });
+    Map<String, List<Map<String, Object>>> indexes = getIndexes();
+    DATA.getAndUpdate(v -> { v.put("indexes", indexes); return v; }); // https://www.postgresql.org/docs/current/view-pg-indexes.html
   }
 
   @Test

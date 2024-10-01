@@ -46,9 +46,18 @@ public abstract class AbstractPostgresSchemaTest {
 
   public static final String POSTGRES_IMAGE_NAME = "postgres:17.0-bookworm";
 
+  /** Stores map of:
+   * key    - type ie: columns, indexes
+   * value  - Map<String, List<Map<String, Object>> rows from query for the columns */
   public static AtomicReference<Map<String, Map<String, List<Map<String, Object>>>>> DATA = new AtomicReference<>(new HashMap<>());
 
-  void _testPostgresContainerOk(PostgreSQLContainer<?> postgres) {
+  /** SQL query to use for retrieving column definitions */
+  public static String COLUMNS_QUERY = "SELECT * FROM information_schema.columns"
+      + " WHERE table_name = ? ORDER BY column_name";
+
+  public static String INDEXES_QUERY = "SELECT * FROM pg_indexes WHERE schemaname = ? AND tablename = ? ORDER BY indexname;";
+
+  protected void _testPostgresContainerOk(PostgreSQLContainer<?> postgres) {
     assertNotNull(postgres);
     assertTrue(postgres.isCreated());
     assertTrue(postgres.isRunning());
@@ -65,7 +74,7 @@ public abstract class AbstractPostgresSchemaTest {
     assertTrue(usersTableExists);
   }
 
-  void _testTableNames() {
+  protected void _testTableNames() {
     List<Map<String, Object>> list = jdbcTemplate.queryForList("SELECT * FROM information_schema.tables"
         + " WHERE table_catalog = ? AND table_schema = ?", TEST_DB_NAME, TEST_SCHEMA_NAME);
     assertFalse(list.isEmpty());
@@ -78,11 +87,36 @@ public abstract class AbstractPostgresSchemaTest {
     }
   }
 
-  void _testTableColumns() {
+  protected void _testTableColumns() {
     for (String tableName : TableNames.NAMES) {
       List<Map<String, Object>> columns = jdbcTemplate.queryForList("SELECT * FROM information_schema.columns"
           + " WHERE table_name = ?", tableName);
       DemoAssertions.assertNotEmpty(columns);
     }
+  }
+
+  protected Map<String, List<Map<String, Object>>> getColumnsInfo() {
+    Map<String, List<Map<String, Object>>> result = new HashMap<>();
+    for (String tableName : TableNames.NAMES) {
+      List<Map<String, Object>> columns = jdbcTemplate.queryForList(COLUMNS_QUERY, tableName);
+      DemoAssertions.assertNotEmpty(columns);
+      for (var row : columns) {
+        row.remove("ordinal_position");
+        row.remove("dtd_identifier");
+        row.remove("column_default");
+      }
+      result.put(tableName, columns);
+    }
+    return result;
+  }
+
+  protected Map<String, List<Map<String, Object>>> getIndexes() {
+    Map<String, List<Map<String, Object>>> result = new HashMap<>();
+    for (String tableName : TableNames.NAMES) {
+      List<Map<String, Object>> indexes = jdbcTemplate.queryForList(INDEXES_QUERY, TEST_SCHEMA_NAME, tableName);
+      DemoAssertions.assertNotEmpty(indexes);
+      result.put(tableName, indexes);
+    }
+    return result;
   }
 }
