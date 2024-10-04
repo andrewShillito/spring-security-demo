@@ -8,6 +8,10 @@ This repository is an in-progress spring security example app.
 
 **Dockerhub access is required for the default spring profiles**
 
+## Building the project
+
+Run `mvn clean install` from the root directory of the project or if you wish to skip tests then run `mvn clean install -DskipTests`.
+
 ## IntelliJ startup
 
 See existing run configurations defined in [.run](.run). These should be imported by intelliJ automatically. **SpringSecurityDemoApplication** is the default run config. It uses a local postgres container which is started automatically by spring-boot-docker-compose.
@@ -34,7 +38,7 @@ A demo production-like profile which changes some things about the security conf
 
 Example usage:
 
-`./mvnw spring-boot:run -Dspring-boot.run.profiles=prod,postgres`
+`./mvnw spring-boot:run -Dspring-boot.run.profiles=default,prod,postgres,dockerCompose,liquibase`
 
 ## Test suites
 
@@ -52,7 +56,7 @@ For example to run the browser automation test suite [BrowserAutomationSuite.jav
 
 `./mvnw clean verify -DrunSuite=com.demo.security.spring.suites.BrowserAutomationSuite`
 
-Playwright will sow `ERR_CONNECTION_REFUSED` if the application is not running.
+Playwright will show `ERR_CONNECTION_REFUSED` if the application is not running.
 
 The playwright testing setup supports some environment parameters:
 
@@ -60,10 +64,14 @@ The playwright testing setup supports some environment parameters:
 - `playwright.application.is-https` - Whether the spring boot app is using https or http. The default value is 'false' which means it expects the application urls to use http.
 - `playwright.headless` - Controls if playwright shows the browser as the test suite runs. The default value is 'false' which means the browser will show.
 
+## Dev environment example data
+
+The default value for property `example-data.enabled` is `true` which enables insertion of example users, accounts, account transactions, cards, contact messages, loans, and notices into the database during application startup *if the database is empty of those items*. If you set `example-data.enabled=false` then initial example data will not be inserted into the database.
+
 ## Regenerating dev environment example data
 
 Setting property `example-data.regenerate=true` either in properties files or from the command line ie: `-Dexample-data.regenerate=true` causes example data which is seeded into the DB to be regenerated during startup prior to it being populated into the db.
-When regenerated, the data is also written to `.json` files in [./src/main/resources/seed](./src/main/resources/seed) for reference. Those files are also used to populate the db during startup when `example-data.regenerate=false`.
+When regenerated, the data is also written to the `.json` files in [./src/main/resources/seed](./src/main/resources/seed) for reference. Those files are also used to populate the db during startup when `example-data.enabled=true` and `example-data.regenerate=false`.
 The intelliJ run configuration `SpringSecurityDemoApplication Regenerate Example Data` can be used to startup and regenerate example data.
 
 Example data generation leverages the DataFaker library.

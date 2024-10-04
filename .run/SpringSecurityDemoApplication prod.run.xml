@@ -1,10 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="SpringSecurityDemoApplication Regenerate Example Data" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-    <option name="ACTIVE_PROFILES" value="default,postgres,dockerCompose,liquibase" />
+  <configuration default="false" name="SpringSecurityDemoApplication prod" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" value="default,prod,postgres,dockerCompose,liquibase" />
     <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
     <module name="SpringSecurityDemo" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.security.spring.SpringSecurityDemoApplication" />
-    <option name="VM_PARAMETERS" value="-Dexample-data.regenerate=true" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
