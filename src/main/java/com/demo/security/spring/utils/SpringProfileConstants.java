@@ -23,7 +23,10 @@ public class SpringProfileConstants {
   /** The mock production profile */
   public static final String PRODUCTION = "prod";
 
-  /** Turns off schema.sql based schema seeding  */
-  public static final String NO_SCHEMA_INIT = "noSchemaInit";
+  /** Profile to use spring-docker-compose to startup containers for the app to use ie: postgres */
+  public static final String DOCKER_COMPOSE = "dockerCompose";
+
+  /** Profile which turns on liquibase */
+  public static final String LIQUIBASE = "liquibase";
 
 }
