@@ -10,7 +10,7 @@ This repository is an in-progress spring security example app.
 
 ## Building the project
 
-Run `mvn clean install` from the root directory of the project or if you wish to skip tests then run `mvn clean install -DskipTests`.
+Run `./mvnw clean install` from the root directory of the project or if you wish to skip tests then run `./mvnw clean install -DskipTests`.
 
 ## IntelliJ startup
 
