@@ -18,10 +18,10 @@ import lombok.ToString;
 @JsonInclude(Include.NON_EMPTY)
 public class EntityStartAndEndDates {
 
-  @Column(name = "start_date")
+  @Column(name = "start_date", nullable = false)
   private ZonedDateTime startDate;
 
-  @Column(name = "end_date")
+  @Column(name = "end_date", nullable = false)
   private ZonedDateTime endDate;
 
 }

@@ -3,6 +3,8 @@ package com.demo.security.spring.validation;
 import com.demo.security.spring.utils.Constants;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
+import java.util.Map;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.CharUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -18,6 +20,7 @@ import org.apache.commons.lang3.StringUtils;
  * - 1 number
  * - 1 special character
  */
+@Log4j2
 public class IsPasswordValidator implements ConstraintValidator<IsValidPassword, String> {
 
   /**
@@ -28,10 +31,20 @@ public class IsPasswordValidator implements ConstraintValidator<IsValidPassword,
    */
   @Override
   public boolean isValid(String value, ConstraintValidatorContext context) {
-    return StringUtils.isNotBlank(value)
-        && meetsLengthRequirement(value)
-        && wasTrimmed(value)
-        && meetsCharacterContentRequirements(value);
+    if (StringUtils.isBlank(value)) {
+      log.info(() -> "Blank password rejected");
+      return false;
+    } else if (!meetsLengthRequirement(value)) {
+      log.info(() -> "Password did not satisfy length requirement");
+      return false;
+    } else if (!wasTrimmed(value)) {
+      log.info(() -> "Password was not correctly trimmed of whitespace prior to validation");
+      return false;
+    } else if (!meetsCharacterContentRequirements(value)) {
+      log.info(() -> "Password did not meet character content requirements");
+      return false;
+    }
+    return true;
   }
 
   /**
@@ -49,6 +62,7 @@ public class IsPasswordValidator implements ConstraintValidator<IsValidPassword,
     boolean containsUppercaseLetter = false;
     boolean containsNumber = false;
     boolean containsSpecialCharacter = false;
+    boolean containsDisallowedCharacter = false;
     for (char c : s.toCharArray()) {
       if (CharUtils.isAsciiPrintable(c)) {
         if (CharUtils.isAsciiAlphaUpper(c)) {
@@ -61,13 +75,25 @@ public class IsPasswordValidator implements ConstraintValidator<IsValidPassword,
           containsSpecialCharacter = true;
         }
       } else {
-        return false;
+        log.info(() -> "Password contains disallowed character " + c);
+        containsDisallowedCharacter = true;
+        break;
       }
+    }
+    if (log.isInfoEnabled()) {
+      log.info(Map.of(
+          "containsLowercaseLetter", containsLowercaseLetter,
+          "containsUppercaseLetter", containsUppercaseLetter,
+          "containsNumber", containsNumber,
+          "containsSpecialCharacter", containsSpecialCharacter,
+          "containsDisallowedCharacter", containsDisallowedCharacter
+      ));
     }
     return containsLowercaseLetter
         && containsUppercaseLetter
         && containsNumber
-        && containsSpecialCharacter;
+        && containsSpecialCharacter
+        && !containsDisallowedCharacter;
   }
 
   /**

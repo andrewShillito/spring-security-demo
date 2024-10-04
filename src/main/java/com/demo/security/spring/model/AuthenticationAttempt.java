@@ -8,6 +8,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,7 +18,11 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 
 @Entity
-@Table(name = "authentication_attempts")
+@Table(name = "authentication_attempts", indexes = {
+    @Index(name = "ix_authentication_attempts_username", columnList = "username,failure_reason"),
+    @Index(name = "ix_authentication_attempts_user_id", columnList = "user_id,failure_reason"),
+    @Index(name = "ix_authentication_attempts_resource_path_username", columnList = "requested_resource,username")
+})
 @Getter
 @Setter
 @Log4j2
@@ -42,10 +47,10 @@ public class AuthenticationAttempt {
   @Column(name = "username", length = 100)
   private String username;
 
-  @Column(name = "attempt_time")
+  @Column(name = "attempt_time", nullable = false)
   private ZonedDateTime attemptTime;
 
-  @Column(name = "successful")
+  @Column(name = "successful", nullable = false)
   private boolean successful;
 
   @Column(name = "failure_reason", length = 50)

@@ -3,6 +3,7 @@ package com.demo.security.spring.config;
 import com.demo.security.spring.authentication.AuthenticationAttemptManager;
 import com.demo.security.spring.authentication.CustomAuthenticationFailureHandler;
 import com.demo.security.spring.authentication.CustomAuthenticationSuccessHandler;
+import com.demo.security.spring.controller.RegisterController;
 import com.demo.security.spring.events.AuthenticationEvents;
 import com.demo.security.spring.authentication.CustomAccessDeniedHandler;
 import com.demo.security.spring.authentication.CustomBasicAuthenticationEntryPoint;
@@ -13,6 +14,7 @@ import com.demo.security.spring.controller.ContactController;
 import com.demo.security.spring.controller.LoansController;
 import com.demo.security.spring.controller.UserController;
 import com.demo.security.spring.controller.NoticesController;
+import com.demo.security.spring.filter.CsrfCookieFilter;
 import com.demo.security.spring.generate.AccountGenerator;
 import com.demo.security.spring.generate.CardGenerator;
 import com.demo.security.spring.generate.ContactMessageGenerator;
@@ -20,6 +22,7 @@ import com.demo.security.spring.generate.LoanGenerator;
 import com.demo.security.spring.generate.NoticeDetailsGenerator;
 import com.demo.security.spring.generate.UserGenerator;
 import com.demo.security.spring.repository.AccountRepository;
+import com.demo.security.spring.repository.AccountTransactionRepository;
 import com.demo.security.spring.repository.AuthenticationAttemptRepository;
 import com.demo.security.spring.repository.CardRepository;
 import com.demo.security.spring.repository.ContactMessageRepository;
@@ -28,9 +31,21 @@ import com.demo.security.spring.repository.NoticeDetailsRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.serialization.ZonedDateTimeDeserializer;
 import com.demo.security.spring.serialization.ZonedDateTimeSerializer;
+import com.demo.security.spring.service.AccountService;
+import com.demo.security.spring.service.AccountServiceImpl;
+import com.demo.security.spring.service.BalanceService;
+import com.demo.security.spring.service.BalanceServiceImpl;
+import com.demo.security.spring.service.CachingSecurityUserService;
+import com.demo.security.spring.service.CardService;
+import com.demo.security.spring.service.CardServiceImpl;
 import com.demo.security.spring.service.ExampleDataGenerationService;
 import com.demo.security.spring.service.JpaLoginService;
+import com.demo.security.spring.service.LoanService;
+import com.demo.security.spring.service.LoanServiceImpl;
 import com.demo.security.spring.service.LoginService;
+import com.demo.security.spring.service.SecurityUserService;
+import com.demo.security.spring.service.SecurityUserValidationService;
+import com.demo.security.spring.service.SecurityUserValidationServiceImpl;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
 import com.demo.security.spring.service.UserDetailsManagerImpl;
 import com.demo.security.spring.utils.Constants;
@@ -46,6 +61,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -54,21 +70,27 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer.SessionFixationConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
+@EnableCaching /* see https://medium.com/simform-engineering/spring-boot-caching-with-redis-1a36f719309f */
 public class ProjectSecurityConfig {
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http, Environment environment) throws Exception {
     boolean isProd = environment.matchesProfiles(SpringProfileConstants.PRODUCTION);
-    http.csrf().disable()
+    http.securityContext(contextConfigurer -> contextConfigurer.requireExplicitSave(false))
         .cors(customizer -> customizer.configurationSource(corsConfigurationSource()))
         .requiresChannel(rcc -> {
           // allow http for profiles other than 'prod', else allow only https
@@ -78,9 +100,15 @@ public class ProjectSecurityConfig {
             rcc.anyRequest().requiresInsecure();
           }
         })
+        .csrf(csrfConfigurer -> csrfConfigurer
+            .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+            .csrfTokenRequestHandler(new CsrfTokenRequestAttributeHandler())
+            .ignoringRequestMatchers(ContactController.RESOURCE_PATH + "/**"))
+        .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
         .sessionManagement(smc -> {
+          smc.sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
           // just fyi the view /invalidSession doesn't exist for now - so this is just an example config here
-          smc.invalidSessionUrl("/invalidSession");
+          smc.invalidSessionUrl(Constants.INVALID_SESSION_URL);
           // using default session fixation protection strategy of change session id
           smc.sessionFixation(SessionFixationConfigurer::changeSessionId);
           if (isProd) {
@@ -95,6 +123,7 @@ public class ProjectSecurityConfig {
             BalanceController.RESOURCE_PATH + "/**",
             CardsController.RESOURCE_PATH + "/**",
             LoansController.RESOURCE_PATH + "/**",
+            UserController.RESOURCE_PATH + "/**",
             "/actuator/**", /* TODO: add actuator and child paths as secured endpoints */
             "/v3/api-docs/**", // the json schema
             "/swagger-ui/**",
@@ -102,13 +131,10 @@ public class ProjectSecurityConfig {
         )
         .authenticated()
         .requestMatchers(
-            UserController.RESOURCE_PATH + "/**"
-        )
-        .hasRole("ADMIN")
-        .requestMatchers(
             NoticesController.RESOURCE_PATH + "/**",
             ContactController.RESOURCE_PATH + "/**",
-            "/invalidSession"
+            RegisterController.RESOURCE_PATH + "/**",
+            Constants.INVALID_SESSION_URL
         )
         .permitAll()
     );
@@ -176,7 +202,8 @@ public class ProjectSecurityConfig {
       final UserGenerator userGenerator,
       final ObjectMapper objectMapper,
       final PasswordEncoder passwordEncoder,
-      @Value("${example-data.regenerate:false}") boolean regenerateData
+      @Value("${example-data.regenerate:false}") boolean regenerateData,
+      @Value("${example-data.enabled:true}") boolean enabled
   ) {
     return StartupDatabasePopulator.builder()
         .exampleDataManager(exampleDataManager)
@@ -190,6 +217,7 @@ public class ProjectSecurityConfig {
         .objectMapper(objectMapper)
         .passwordEncoder(passwordEncoder)
         .regenerateData(regenerateData)
+        .enabled(enabled)
         .build();
   }
 
@@ -199,10 +227,9 @@ public class ProjectSecurityConfig {
   }
 
   @Bean(name = "loginService")
-  public LoginService jpaLoginService(final SecurityUserRepository securityUserRepository, final PasswordEncoder passwordEncoder) {
+  public LoginService jpaLoginService(UserDetailsManager userDetailsManager) {
     return JpaLoginService.builder()
-        .securityUserRepository(securityUserRepository)
-        .passwordEncoder(passwordEncoder)
+        .userDetailsManager(userDetailsManager)
         .build();
   }
 
@@ -314,22 +341,68 @@ public class ProjectSecurityConfig {
   }
 
   @Bean
-  public UserDetailsManagerImpl userDetailsManager(
+  public UserDetailsManager userDetailsManager(
       AuthenticationManager authenticationManager,
       SecurityUserRepository securityUserRepository,
       PasswordEncoder passwordEncoder,
-      Validator validator
+      SecurityUserValidationService securityUserValidationService
   ) {
     return UserDetailsManagerImpl.builder()
         .authenticationManager(authenticationManager)
         .userRepository(securityUserRepository)
         .passwordEncoder(passwordEncoder)
-        .validator(validator)
+        .userValidationService(securityUserValidationService)
         .build();
+  }
+
+  @Bean
+  public SecurityUserService securityUserService(UserDetailsManager userDetailsManager) {
+    return CachingSecurityUserService.builder().userDetailsManager(userDetailsManager).build();
+  }
+
+  @Bean
+  public SecurityUserValidationService userValidationService(Validator validator) {
+    return SecurityUserValidationServiceImpl.builder().validator(validator).build();
   }
 
   @Bean
   public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
     return authConfig.getAuthenticationManager();
+  }
+
+  @Bean
+  public AccountService accountService(AccountRepository accountRepository, SecurityUserService securityUserService) {
+    AccountServiceImpl accountService = AccountServiceImpl.builder()
+        .accountRepository(accountRepository)
+        .build();
+    accountService.setSecurityUserService(securityUserService);
+    return accountService;
+  }
+
+  @Bean
+  public BalanceService balanceService(AccountTransactionRepository accountTransactionRepository, SecurityUserService securityUserService) {
+    BalanceServiceImpl balanceService = BalanceServiceImpl.builder()
+        .accountTransactionRepository(accountTransactionRepository)
+        .build();
+    balanceService.setSecurityUserService(securityUserService);
+    return balanceService;
+  }
+
+  @Bean
+  public CardService cardService(CardRepository cardRepository, SecurityUserService securityUserService) {
+    CardServiceImpl cardService = CardServiceImpl.builder()
+        .cardRepository(cardRepository)
+        .build();
+    cardService.setSecurityUserService(securityUserService);
+    return cardService;
+  }
+
+  @Bean
+  public LoanService loanService(LoanRepository loanRepository, SecurityUserService securityUserService) {
+    LoanServiceImpl loanService = LoanServiceImpl.builder()
+        .loanRepository(loanRepository)
+        .build();
+    loanService.setSecurityUserService(securityUserService);
+    return loanService;
   }
 }

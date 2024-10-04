@@ -51,49 +51,57 @@ public class StartupDatabasePopulator {
 
   private ObjectMapper objectMapper;
 
+  /** Should the startup user, account, loans, cards, account transactions, etc... be regenerated before startup db population */
   private boolean regenerateData;
+
+  /** Enables / disables startup database population */
+  private boolean enabled;
 
   @EventListener(ContextRefreshedEvent.class)
   public void seedDatabaseIfEmpty() {
-    try {
-      populateUsers();
-      populateNoticeDetails();
-      populateContactMessages();
+    if (enabled) {
+      try {
+        populateUsers();
+        populateNoticeDetails();
+        populateContactMessages();
 
-      int pageNumber = 0;
-      List<Account> accounts = new ArrayList<>();
-      List<Card> cards = new ArrayList<>();
-      List<Loan> loans = new ArrayList<>();
-      Page<SecurityUser> usersPage;
-      do {
-        PageRequest pageRequest = PageRequest.of(pageNumber, 100);
-        usersPage = securityUserRepository.findAll(pageRequest);
+        int pageNumber = 0;
+        List<Account> accounts = new ArrayList<>();
+        List<Card> cards = new ArrayList<>();
+        List<Loan> loans = new ArrayList<>();
+        Page<SecurityUser> usersPage;
+        do {
+          PageRequest pageRequest = PageRequest.of(pageNumber, 100);
+          usersPage = securityUserRepository.findAll(pageRequest);
 
-        // populate accounts, cards, and loans
-        accounts.addAll(populateAccounts(usersPage));
-        cards.addAll(populateCards(usersPage));
-        loans.addAll(populateLoans(usersPage));
+          // populate accounts, cards, and loans
+          accounts.addAll(populateAccounts(usersPage));
+          cards.addAll(populateCards(usersPage));
+          loans.addAll(populateLoans(usersPage));
 
-        pageNumber++;
-        pageRequest = PageRequest.of(pageNumber, 100);
-        usersPage = securityUserRepository.findAll(pageRequest);
-      } while (usersPage.hasNext());
+          pageNumber++;
+          pageRequest = PageRequest.of(pageNumber, 100);
+          usersPage = securityUserRepository.findAll(pageRequest);
+        } while (usersPage.hasNext());
 
-      if (regenerateData) {
-        final String accountsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.ACCOUNTS_OUTPUT_FILE_NAME;
-        new JsonFileWriter<>(objectMapper, accountsOutputFile, accounts).write();
-        final String cardsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.CARDS_OUTPUT_FILE_NAME;
-        new JsonFileWriter<>(objectMapper, cardsOutputFile, cards).write();
-        final String loansOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.LOANS_OUTPUT_FILE_NAME;
-        new JsonFileWriter<>(objectMapper, loansOutputFile, loans).write();
+        if (regenerateData) {
+          final String accountsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.ACCOUNTS_OUTPUT_FILE_NAME;
+          new JsonFileWriter<>(objectMapper, accountsOutputFile, accounts).write();
+          final String cardsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.CARDS_OUTPUT_FILE_NAME;
+          new JsonFileWriter<>(objectMapper, cardsOutputFile, cards).write();
+          final String loansOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.LOANS_OUTPUT_FILE_NAME;
+          new JsonFileWriter<>(objectMapper, loansOutputFile, loans).write();
+        }
+
+        log.info("Finished populating " + accounts.size() + " development environment accounts");
+        log.info("Finished populating " + cards.size() + " development environment cards");
+        log.info("Finished populating " + loans.size() + " development environment loans");
+
+      } catch (Exception e) {
+        throw new RuntimeException("Failed to populate development environment with error!", e);
       }
-
-      log.info("Finished populating " + accounts.size() + " development environment accounts");
-      log.info("Finished populating " + cards.size() + " development environment cards");
-      log.info("Finished populating " + loans.size() + " development environment loans");
-
-    } catch (Exception e) {
-      throw new RuntimeException("Failed to populate development environment with error!", e);
+    } else {
+      log.info(() -> "Not seeding startup data as property example-data:enabled is false");
     }
   }
 

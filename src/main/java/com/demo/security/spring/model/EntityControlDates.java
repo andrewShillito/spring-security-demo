@@ -20,10 +20,10 @@ import lombok.ToString;
 @JsonInclude(Include.NON_EMPTY)
 public class EntityControlDates {
 
-  @Column(name = "created_date")
+  @Column(name = "created_date", nullable = false)
   private ZonedDateTime created;
 
-  @Column(name = "last_updated_date")
+  @Column(name = "last_updated_date", nullable = false)
   private ZonedDateTime lastUpdated;
 
   @PrePersist

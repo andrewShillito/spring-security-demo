@@ -1,6 +1,8 @@
 package com.demo.security.spring.playwright;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.demo.security.spring.utils.Constants;
 import com.microsoft.playwright.Locator;
@@ -37,6 +39,11 @@ public class BrowserLoginTest {
     usernameLocator.fill("user");
     passwordLocator.click();
     passwordLocator.fill("password");
+
+    String sessionId = PlaywrightTestUtils.getSessionId(page.context());
+    assertNotNull(sessionId);
+    String csrfToken = PlaywrightTestUtils.getCsrfToken(page.context());
+    assertNotNull(csrfToken);
     submitButton.click();
 
     // default redirect url is to swagger ui
@@ -46,6 +53,15 @@ public class BrowserLoginTest {
       page.locator("#swagger-ui div.information-container.wrapper a").click(); // opens a new tab
     });
     assertThat(swaggerSchemaPage).hasURL(Constants.SWAGGER_SCHEMA_URL);
+
+    PlaywrightTestUtils.assertHasSessionId(page.context());
+    PlaywrightTestUtils.assertHasCsrfToken(page.context());
+
+    String newSessionId = PlaywrightTestUtils.getSessionId(page.context());
+    String newCsrfToken = PlaywrightTestUtils.getCsrfToken(page.context());
+
+    assertNotEquals(sessionId, newSessionId);
+    assertNotEquals(csrfToken, newCsrfToken);
   }
 
 }

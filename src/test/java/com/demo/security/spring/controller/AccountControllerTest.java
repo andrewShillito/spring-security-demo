@@ -1,13 +1,19 @@
 package com.demo.security.spring.controller;
 
 import com.demo.security.spring.DemoAssertions;
+import com.demo.security.spring.api.ApiSchemaValidator;
 import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.SecurityUser;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import java.util.List;
+import java.util.Map;
+import org.apache.commons.lang3.tuple.MutablePair;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +33,7 @@ class AccountControllerTest extends AbstractControllerTest {
     @Test
     void testGetAccountDetailsNotLoggedIn() throws Exception {
         mockMvc.perform(get(AccountController.RESOURCE_PATH)).andExpect(status().isUnauthorized());
-        testSecuredBaseUrlAuth(mockMvc, AccountController.RESOURCE_PATH);
+        _testSecuredBaseUrlAuth(mockMvc, AccountController.RESOURCE_PATH);
     }
 
     @Test
@@ -60,6 +66,33 @@ class AccountControllerTest extends AbstractControllerTest {
                 .with(SecurityMockMvcRequestPostProcessors.user(otherUser)))
             .andExpect(status().isOk())
             .andReturn().getResponse().getContentAsString());
+    }
+
+    @Test
+    void testAccountApiSchema() throws Exception {
+        final SecurityUser user = testDataGenerator.generateExternalUser(true);
+        Map<String, Object> schema = getSwaggerSchema(mockMvc, user);
+
+        // this is PoC for api schema validation - can be improved
+        var apiSchemaValidator = new ApiSchemaValidator(schema);
+        assertNotNull(apiSchemaValidator);
+        apiSchemaValidator.hasPath(AccountController.RESOURCE_PATH);
+        apiSchemaValidator.hasMethod(AccountController.RESOURCE_PATH, HttpMethod.GET);
+        apiSchemaValidator.hasNotGotPath(faker.internet().url());
+        apiSchemaValidator.hasNotGotMethod(AccountController.RESOURCE_PATH, HttpMethod.POST);
+        apiSchemaValidator.hasMethodCount(AccountController.RESOURCE_PATH, 1);
+        apiSchemaValidator.validate(
+            AccountController.RESOURCE_PATH,
+            HttpMethod.GET,
+            "getAccountDetails",
+            List.of("account", "get", "v1"),
+            false,
+            false,
+            null,
+            200,
+            "OK",
+            List.of(new MutablePair<>(MediaType.APPLICATION_JSON_VALUE, "Account"))
+        );
     }
 
     private Account asAccount(String responseContent) throws JsonProcessingException {

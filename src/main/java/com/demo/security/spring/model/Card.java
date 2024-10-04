@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.SequenceGenerator;
@@ -21,7 +22,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "cards")
+@Table(name = "cards", indexes = {
+    @Index(name = "ix_cards_user_id_card_type_card_number", columnList = "user_id,card_type,card_number", unique = true)
+})
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -35,7 +38,7 @@ public class Card {
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cards_card_id_seq")
   private Long id;
 
-  @Column(name = "card_number", length = 100)
+  @Column(name = "card_number", length = 100, nullable = false)
   private String cardNumber;
 
   @NotNull
@@ -43,16 +46,16 @@ public class Card {
   private Long userId;
 
   // TODO: Create card type enum
-  @Column(name = "card_type", length = 100)
+  @Column(name = "card_type", length = 100, nullable = false)
   private String cardType;
 
-  @Column(name = "total_limit")
+  @Column(name = "total_limit", nullable = false, precision = 38, scale = 2)
   private BigDecimal totalLimit;
 
-  @Column(name = "amount_used")
+  @Column(name = "amount_used", nullable = false, precision = 38, scale = 2)
   private BigDecimal amountUsed;
 
-  @Column(name = "available_amount")
+  @Column(name = "available_amount", nullable = false, precision = 38, scale = 2)
   private BigDecimal availableAmount;
 
   @Embedded

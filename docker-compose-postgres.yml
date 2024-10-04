@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres
+    image: postgres:17.0-bookworm
     restart: unless-stopped
     environment:
       POSTGRES_USER: security_demo

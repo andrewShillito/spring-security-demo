@@ -10,6 +10,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
@@ -22,7 +23,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "accounts")
+@Table(name = "accounts", indexes = {
+    @Index(name = "ix_accounts_user_id", columnList = "user_id,account_number", unique = true)
+})
 @SequenceGenerator(name = "accounts_account_number_seq", sequenceName = "accounts_account_number_seq", allocationSize = 50, initialValue = 1)
 @Getter
 @Setter
@@ -40,11 +43,11 @@ public class Account {
   @Column(name = "user_id", nullable = false, updatable = false, insertable = true)
   private Long userId;
 
-  @Column(name = "account_type", length = 100)
+  @Column(name = "account_type", length = 100, nullable = false)
   private String accountType;
 
   // TODO: This is a free-text address, but Address object would be preferable
-  @Column(name = "branch_address", length = 255)
+  @Column(name = "branch_address", length = 255, nullable = false)
   private String branchAddress;
 
   @Embedded

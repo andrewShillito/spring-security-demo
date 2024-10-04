@@ -28,7 +28,7 @@ class CardsControllerTest extends AbstractControllerTest {
 
     @Test
     void testUnauthenticated() throws Exception {
-        testSecuredBaseUrlAuth(mockMvc, CardsController.RESOURCE_PATH);
+        _testSecuredBaseUrlAuth(mockMvc, CardsController.RESOURCE_PATH);
     }
 
     @Test

@@ -1,3 +1,5 @@
+-- when using liquibase this file is not used
+
 CREATE SCHEMA IF NOT EXISTS demo;
 
 CREATE SEQUENCE IF NOT EXISTS demo.security_users_id_seq INCREMENT BY 50;
@@ -14,8 +16,8 @@ CREATE TABLE IF NOT EXISTS demo.security_users (
     account_expired_date timestamp with time zone,
     password_expired boolean not null default false,
     password_expired_date timestamp with time zone,
-    failed_login_attempts smallint,
-    num_previous_lockouts smallint, /* could probably go in a 1-1 user additional details table if there are other fields to put there as well */
+    failed_login_attempts int,
+    num_previous_lockouts int, /* could probably go in a 1-1 user additional details table if there are other fields to put there as well */
     locked boolean not null default false,
     locked_date timestamp with time zone,
     unlock_date timestamp with time zone,
@@ -34,7 +36,6 @@ CREATE TABLE IF NOT EXISTS demo.authentication_attempts (
     attempt_time timestamp with time zone not null,
     successful boolean not null,
     failure_reason varchar(50),
-    agent varchar(500),
     requested_resource varchar(200),
     remote_address varchar(32),
     remote_host varchar(200),
@@ -52,6 +53,10 @@ CREATE TABLE IF NOT EXISTS demo.authentication_attempts (
     device_family varchar(200)
 );
 
+CREATE INDEX IF NOT EXISTS ix_authentication_attempts_username on demo.authentication_attempts (username, failure_reason);
+CREATE INDEX IF NOT EXISTS ix_authentication_attempts_user_id on demo.authentication_attempts (user_id, failure_reason);
+CREATE INDEX IF NOT EXISTS ix_authentication_attempts_resource_path_username on demo.authentication_attempts (requested_resource, username);
+
 CREATE SEQUENCE IF NOT EXISTS demo.security_authorities_id_seq INCREMENT BY 50;
 
 CREATE TABLE IF NOT EXISTS demo.security_authorities
@@ -67,29 +72,33 @@ CREATE UNIQUE INDEX IF NOT EXISTS ix_auth_user_id on demo.security_authorities (
 CREATE SEQUENCE IF NOT EXISTS demo.accounts_account_number_seq INCREMENT BY 50;
 
 CREATE TABLE IF NOT EXISTS demo.accounts (
-    user_id bigint not null, -- foreign key of security_users.id
     account_number bigint not null primary key default nextval('demo.accounts_account_number_seq'),
+    user_id bigint not null, -- foreign key of security_users.id
     account_type varchar(100) not null,
     branch_address varchar(255) not null,
-    created_date timestamp with time zone default null,
+    created_date timestamp with time zone not null,
     constraint fk_accounts_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS ix_accounts_user_id on demo.accounts (user_id, account_number);
 
 CREATE SEQUENCE IF NOT EXISTS demo.account_transactions_transaction_id_seq INCREMENT BY 50;
 
 CREATE TABLE IF NOT EXISTS demo.account_transactions (
     transaction_id bigint not null primary key default nextval('demo.account_transactions_transaction_id_seq'),
-    account_number integer not null,
+    account_number bigint not null,
     user_id bigint not null,
     transaction_date timestamp with time zone not null,
     transaction_summary varchar(255) not null,
     transaction_type varchar(100) not null,
-    transaction_amount decimal not null,
-    closing_balance decimal not null,
+    transaction_amount decimal(38, 2) not null,
+    closing_balance decimal(38, 2) not null,
     created_date timestamp with time zone not null,
     constraint fk_account_transactions_account_number FOREIGN KEY (account_number) REFERENCES demo.accounts (account_number) ON DELETE CASCADE,
     constraint fk_account_transactions_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
+
+CREATE INDEX IF NOT EXISTS ix_account_transactions_user_id on demo.account_transactions (user_id, account_number);
 
 CREATE SEQUENCE IF NOT EXISTS demo.loans_loan_number_seq INCREMENT BY 50;
 
@@ -98,12 +107,14 @@ CREATE TABLE IF NOT EXISTS demo.loans (
     user_id bigint not null,
     start_date timestamp with time zone not null,
     loan_type varchar(100) not null,
-    total_amount decimal not null,
-    amount_paid decimal not null,
-    outstanding_amount decimal not null,
+    total_amount decimal(38, 2) not null,
+    amount_paid decimal(38, 2) not null,
+    outstanding_amount decimal(38, 2) not null,
     created_date timestamp with time zone not null,
     constraint fk_loans_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS ix_loans_user_id_loan_type_loan_number on demo.loans (user_id, loan_type, loan_number);
 
 CREATE SEQUENCE IF NOT EXISTS demo.cards_card_id_seq INCREMENT BY 50;
 
@@ -112,12 +123,14 @@ CREATE TABLE IF NOT EXISTS demo.cards (
     card_number varchar(100) not null,
     user_id bigint not null,
     card_type varchar(100) not null,
-    total_limit decimal not null,
-    amount_used decimal not null,
-    available_amount decimal not null,
+    total_limit decimal(38, 2) not null,
+    amount_used decimal(38, 2) not null,
+    available_amount decimal(38, 2) not null,
     created_date timestamp with time zone not null,
     constraint fk_cards_user_id FOREIGN KEY (user_id) REFERENCES demo.security_users (id) ON DELETE CASCADE
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS ix_cards_user_id_card_type_card_number on demo.cards (user_id, card_type, card_number);
 
 CREATE SEQUENCE IF NOT EXISTS demo.notice_details_notice_id_seq INCREMENT BY 50;
 
@@ -131,6 +144,8 @@ CREATE TABLE IF NOT EXISTS demo.notice_details (
     last_updated_date timestamp with time zone not null
 );
 
+CREATE INDEX IF NOT EXISTS ix_notice_details_start_date_end_date on demo.notice_details (start_date, end_date);
+
 CREATE SEQUENCE IF NOT EXISTS demo.contact_messages_contact_id_seq INCREMENT BY 50;
 
 CREATE TABLE IF NOT EXISTS demo.contact_messages (
@@ -141,3 +156,6 @@ CREATE TABLE IF NOT EXISTS demo.contact_messages (
     message varchar(2000) not null,
     created_date timestamp with time zone not null
 );
+
+CREATE INDEX IF NOT EXISTS ix_contact_messages_contact_email_subject on demo.contact_messages (contact_email, subject);
+CREATE INDEX IF NOT EXISTS ix_contact_messages_created_date on demo.contact_messages (created_date);
