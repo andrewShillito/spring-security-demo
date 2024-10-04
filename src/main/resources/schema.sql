@@ -1,3 +1,5 @@
+-- when using liquibase this file is not used
+
 CREATE SCHEMA IF NOT EXISTS demo;
 
 CREATE SEQUENCE IF NOT EXISTS demo.security_users_id_seq INCREMENT BY 50;

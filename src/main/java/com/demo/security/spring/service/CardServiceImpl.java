@@ -15,7 +15,7 @@ public class CardServiceImpl extends AbstractUserAwareService implements CardSer
 
   private CardRepository cardRepository;
 
-  private final Function<SecurityUser, List<Card>> getAllForUser = u -> cardRepository.findAllByUserId(u.getId());
+  private final Function<SecurityUser, List<Card>> getAllForUser = u -> cardRepository.findAllByUserIdOrderById(u.getId());
 
   @Override
   public List<Card> getAllForUser(Authentication authentication) {

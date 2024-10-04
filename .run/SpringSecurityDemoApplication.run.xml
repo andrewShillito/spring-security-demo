@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="SpringSecurityDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-    <option name="ACTIVE_PROFILES" value="default,postgres" />
+    <option name="ACTIVE_PROFILES" value="default,postgres,dockerCompose,liquibase" />
     <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
     <module name="SpringSecurityDemo" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.security.spring.SpringSecurityDemoApplication" />

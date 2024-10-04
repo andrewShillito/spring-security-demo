@@ -16,6 +16,11 @@
 	<properties>
 		<java.version>21</java.version>
 		<runSuite>com.demo.security.spring.suites.FullRegressionSuite</runSuite>
+
+		<!-- liquibase properties -->
+		<defaultSchemaName>demo</defaultSchemaName>
+		<changelogSchemaName>demo</changelogSchemaName>
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -84,6 +89,18 @@
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.6.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-core -->
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+			<version>4.29.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.lbruun.springboot/preliquibase-spring-boot-starter -->
+		<dependency>
+			<groupId>net.lbruun.springboot</groupId>
+			<artifactId>preliquibase-spring-boot-starter</artifactId>
+			<version>1.5.1</version>
 		</dependency>
 
 		<!-- test dependencies -->

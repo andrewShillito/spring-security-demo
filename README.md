@@ -22,7 +22,7 @@ Can be run with `./mvnw` command or using `mvn` if installed locally. Originally
 
 The above command is equivalent to:
 
-`./mvnw spring-boot:run -Dspring-boot.run.profiles=default,postgres`
+`./mvnw spring-boot:run -Dspring-boot.run.profiles=default,postgres,dockerCompose,liquibase`
 
 The default profiles populate lists of example users, accounts, loans, cards, notices, and contact messages into the postgres db from files in directory [./src/main/resources/seed/](./src/main/resources/seed/). This data can be regenerated during startup as well using property `-Dexample-data.regenerate=true`. See [Regenerating dev environment example data](#regenerating-dev-environment-example-data) for details on regenerating example data. 
 
