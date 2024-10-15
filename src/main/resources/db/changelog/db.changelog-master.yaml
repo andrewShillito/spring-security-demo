@@ -869,4 +869,451 @@ databaseChangeLog:
         referencedTableName: security_users
         referencedTableSchemaName: demo
         validate: true
-
+- changeSet:
+    id: add-security-groups-1
+    author: andrewshillito ( generated )
+    comment: This change set assumes no existing data exists and as such it does not allow for persisting existing users or roles beyond the schema change.
+    changes:
+      - dropForeignKeyConstraint:
+          baseTableName: security_authorities
+          baseTableSchemaName: demo
+          constraintName: fk_security_authorities_user_id
+      - dropIndex:
+          schemaName: demo
+          tableName: security_authorities
+          indexName: ix_auth_user_id
+      - dropColumn:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: user_id
+      - dropColumn:
+          tableName: security_users
+          schemaName: demo
+          columns:
+            - column:
+                name: user_type
+            - column:
+                name: user_role
+      - addColumn:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: description
+                type: VARCHAR(255)
+                constraints:
+                  nullable: false
+      - createSequence:
+          cacheSize: 1
+          cycle: false
+          dataType: bigint
+          incrementBy: 50
+          maxValue: 9223372036854775807
+          minValue: 1
+          sequenceName: security_groups_id_seq
+          startValue: 1
+          schemaName: demo
+      - createTable:
+          schemaName: demo
+          tableName: security_groups
+          columns:
+            - column:
+                autoIncrement: true
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: security_groups_pkey
+                name: id
+                type: BIGINT
+            - column:
+                name: code
+                type: VARCHAR(100)
+            - column:
+                name: description
+                type: VARCHAR(255)
+                constraints:
+                  nullable: false
+      - createTable:
+          schemaName: demo
+          tableName: security_users_groups
+          columns:
+            - column:
+                name: user_id
+                type: BIGINT
+                autoIncrement: false
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: security_users_groups_pkey
+            - column:
+                name: group_id
+                type: BIGINT
+                autoIncrement: false
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: security_users_groups_pkey
+      - createTable:
+          schemaName: demo
+          tableName: security_groups_roles
+          columns:
+            - column:
+                name: group_id
+                type: BIGINT
+                autoIncrement: false
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: security_groups_roles_pkey
+            - column:
+                name: authority_id
+                type: BIGINT
+                autoIncrement: false
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: security_groups_roles_pkey
+      - createTable:
+          schemaName: demo
+          tableName: security_users_authorities
+          columns:
+            - column:
+                name: user_id
+                type: BIGINT
+                autoIncrement: false
+                constraints:
+                  nullable: false
+            - column:
+                name: authority_id
+                type: BIGINT
+                autoIncrement: false
+                constraints:
+                  nullable: false
+      - addForeignKeyConstraint:
+          baseColumnNames: authority_id
+          baseTableName: security_users_authorities
+          baseTableSchemaName: demo
+          constraintName: fk_security_users_authorities_authority_id
+          deferrable: false
+          initiallyDeferred: false
+          onDelete: CASCADE
+          onUpdate: NO ACTION
+          referencedColumnNames: id
+          referencedTableName: security_authorities
+          referencedTableSchemaName: demo
+          validate: true
+      - addForeignKeyConstraint:
+          baseColumnNames: user_id
+          baseTableName: security_users_authorities
+          baseTableSchemaName: demo
+          constraintName: fk_security_users_authorities_user_id
+          deferrable: false
+          initiallyDeferred: false
+          onDelete: CASCADE
+          onUpdate: NO ACTION
+          referencedColumnNames: id
+          referencedTableName: security_users
+          referencedTableSchemaName: demo
+          validate: true
+      - addForeignKeyConstraint:
+          baseColumnNames: user_id
+          baseTableName: security_users_groups
+          baseTableSchemaName: demo
+          constraintName: fk_security_users_groups_user_id
+          deferrable: false
+          initiallyDeferred: false
+          onDelete: CASCADE
+          onUpdate: NO ACTION
+          referencedColumnNames: id
+          referencedTableName: security_users
+          referencedTableSchemaName: demo
+          validate: true
+      - addForeignKeyConstraint:
+          baseColumnNames: group_id
+          baseTableName: security_users_groups
+          baseTableSchemaName: demo
+          constraintName: fk_security_users_groups_group_id
+          deferrable: false
+          initiallyDeferred: false
+          onDelete: CASCADE
+          onUpdate: NO ACTION
+          referencedColumnNames: id
+          referencedTableName: security_groups
+          referencedTableSchemaName: demo
+          validate: true
+      - addForeignKeyConstraint:
+          baseColumnNames: group_id
+          baseTableName: security_groups_roles
+          baseTableSchemaName: demo
+          constraintName: fk_security_groups_roles_user_id
+          deferrable: false
+          initiallyDeferred: false
+          onDelete: CASCADE
+          onUpdate: NO ACTION
+          referencedColumnNames: id
+          referencedTableName: security_groups
+          referencedTableSchemaName: demo
+          validate: true
+      - addForeignKeyConstraint:
+          baseColumnNames: authority_id
+          baseTableName: security_groups_roles
+          baseTableSchemaName: demo
+          constraintName: fk_security_groups_roles_group_id
+          deferrable: false
+          initiallyDeferred: false
+          onDelete: CASCADE
+          onUpdate: NO ACTION
+          referencedColumnNames: id
+          referencedTableName: security_authorities
+          referencedTableSchemaName: demo
+          validate: true
+- changeSet:
+    id: add-security-groups-2
+    author: andrewshillito ( generated )
+    changes:
+      - insert:
+          tableName: security_groups
+          schemaName: demo
+          columns:
+            - column:
+                name: code
+                value: GROUP_USER
+            - column:
+                name: description
+                value: A default user roles group for all users which allows viewing and managing a user's own user account
+      - insert:
+          tableName: security_groups
+          schemaName: demo
+          columns:
+            - column:
+                name: code
+                value: GROUP_ACCOUNT_HOLDER
+            - column:
+                name: description
+                value: A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions
+      - insert:
+          tableName: security_groups
+          schemaName: demo
+          columns:
+            - column:
+                name: code
+                value: GROUP_ADMIN_USERS
+            - column:
+                name: description
+                value: Roles group which allows administration of users
+      - insert:
+          tableName: security_groups
+          schemaName: demo
+          columns:
+            - column:
+                name: code
+                value: GROUP_ADMIN_ACCOUNTS
+            - column:
+                name: description
+                value: Roles group which allows administration of accounts
+      - insert:
+          tableName: security_groups
+          schemaName: demo
+          columns:
+            - column:
+                name: code
+                value: GROUP_ADMIN_CARDS
+            - column:
+                name: description
+                value: Roles group which allows administration of cards
+      - insert:
+          tableName: security_groups
+          schemaName: demo
+          columns:
+            - column:
+                name: code
+                value: GROUP_ADMIN_LOANS
+            - column:
+                name: description
+                value: Roles group which allows administration of loans
+      - insert:
+          tableName: security_groups
+          schemaName: demo
+          columns:
+            - column:
+                name: code
+                value: GROUP_ADMIN_TRANSACTIONS
+            - column:
+                name: description
+                value: Roles group which allows administration of account transactions
+      - insert:
+          tableName: security_groups
+          schemaName: demo
+          columns:
+            - column:
+                name: code
+                value: GROUP_ADMIN_SYSTEM
+            - column:
+                name: description
+                value: Roles group which allows administration of all entity types in the system
+- changeSet:
+    id: add-security-roles-1
+    author: andrewshillito ( generated )
+    changes:
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_USER
+            - column:
+                name: description
+                value: A role granted to all authenticated users
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_LOAN_VIEW
+            - column:
+                name: description
+                value: A role which allows a user to view their own loans
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_LOAN_APPLY
+            - column:
+                name: description
+                value: A role which allows a user to apply for loans
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_LOAN_EDIT
+            - column:
+                name: description
+                value: A role which allows a user to edit allowed fields of their own loans
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_CARD_VIEW
+            - column:
+                name: description
+                value: A role which allows a user to view their own cards
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_CARD_APPLY
+            - column:
+                name: description
+                value: A role which allows a user to apply for cards
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_CARD_EDIT
+            - column:
+                name: description
+                value: A role which allows a user to edit some fields of their own cards
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_ACCOUNT_VIEW
+            - column:
+                name: description
+                value: A role which allows a user to view their own accounts
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_ACCOUNT_APPLY
+            - column:
+                name: description
+                value: A role which allows a user to apply for accounts
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_ACCOUNT_EDIT
+            - column:
+                name: description
+                value: A role which allows a user to edit some fields of their own accounts
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_TRANSACTION_VIEW
+            - column:
+                name: description
+                value: A role which allows a user to view their own account transactions
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_TRANSACTION_CREATE
+            - column:
+                name: description
+                value: A role which allows a user to create transactions for their own accounts
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_TRANSACTION_EDIT
+            - column:
+                name: description
+                value: A role which allows a user to edit some fields of their own account transactions
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_USER_VIEW
+            - column:
+                name: description
+                value: A role which allows a user to view their user details
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_USER_EDIT
+            - column:
+                name: description
+                value: A role which allows a user to edit their user details
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_SELF_USER_DELETE
+            - column:
+                name: description
+                value: A role which allows a user to delete their user account

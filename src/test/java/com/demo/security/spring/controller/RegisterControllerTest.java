@@ -13,9 +13,8 @@ import com.demo.security.spring.controller.error.ValidationErrorDetailsResponse;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.model.UserCreationResponse;
 import com.demo.security.spring.model.UserCreationRequest;
-import com.demo.security.spring.model.UserType;
 import com.demo.security.spring.utils.Constants;
-import com.demo.security.spring.utils.RoleNames;
+import com.demo.security.spring.utils.AuthorityUserRoles;
 import com.demo.security.spring.validation.IsValidPassword;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.ZonedDateTime;
@@ -141,8 +140,6 @@ public class RegisterControllerTest extends AbstractControllerTest {
     assertNull(createdSecurityUser.getPassword()); // this is because password is write only
     assertNull(createdSecurityUser.getPasswordExpiredDate());
     assertFalse(createdSecurityUser.isPasswordExpired());
-    assertEquals(UserType.external, createdSecurityUser.getUserType());
-    assertEquals("STANDARD", createdSecurityUser.getUserRole());
     assertNotNull(createdSecurityUser.getControlDates());
     DemoAssertions.assertDateIsNowIsh(createdSecurityUser.getControlDates().getCreated());
     DemoAssertions.assertDateIsNowIsh(createdSecurityUser.getControlDates().getLastUpdated());
@@ -157,7 +154,8 @@ public class RegisterControllerTest extends AbstractControllerTest {
     assertTrue(createdSecurityUser.isCredentialsNonExpired());
     assertEquals(1, createdSecurityUser.getAuthorities().size());
     assertTrue(createdSecurityUser.getAuthorities().stream().findFirst().isPresent());
-    assertEquals(RoleNames.ROLE_USER, createdSecurityUser.getAuthorities().stream().findFirst().get().getAuthority());
+    assertEquals(
+        AuthorityUserRoles.ROLE_USER, createdSecurityUser.getAuthorities().stream().findFirst().get().getAuthority());
     DemoAssertions.assertFormLogoutSuccessful(mockMvc);
   }
 

@@ -2,40 +2,43 @@ package com.demo.security.spring.model;
 
 import com.demo.security.spring.utils.SecurityUtils;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import com.google.common.base.Preconditions;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import java.lang.reflect.Field;
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
+import javax.annotation.Nonnull;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.message.ParameterizedMessageFactory;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.ReflectionUtils;
@@ -47,6 +50,8 @@ import org.springframework.util.ReflectionUtils;
 @ToString(exclude = { "password" }) // don't want password in logs
 @SequenceGenerator(name = "security_users_id_seq", sequenceName = "security_users_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Log4j2
 public class SecurityUser implements UserDetails {
 
   @Id
@@ -65,15 +70,6 @@ public class SecurityUser implements UserDetails {
   @JsonProperty(access = Access.WRITE_ONLY)
   @NotBlank
   private String password;
-
-  @Column(name = "user_type", length = 100, nullable = false)
-  @Enumerated(EnumType.STRING)
-  @NotNull
-  private UserType userType = UserType.external;
-
-  @NotBlank
-  @Column(name = "user_role", length = 100, nullable = false)
-  private String userRole = "STANDARD";
 
   @NotNull
   private boolean enabled;
@@ -105,9 +101,22 @@ public class SecurityUser implements UserDetails {
   @Column(name = "unlock_date")
   private ZonedDateTime unlockDate;
 
-  @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-  @NotEmpty
-  private List<SecurityAuthority> authorities;
+  // this supports single authorities being assigned to a user as well as roles which contain 0 to many roles
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(
+      name = "security_users_authorities",
+      joinColumns = @JoinColumn(name = "user_id"),
+      inverseJoinColumns = @JoinColumn(name = "authority_id")
+  )
+  private Set<SecurityAuthority> authorities;
+
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(
+      name = "security_users_groups",
+      joinColumns = @JoinColumn(name = "user_id"),
+      inverseJoinColumns = @JoinColumn(name = "group_id")
+  )
+  private Set<SecurityGroup> groups;
 
   @Column(name = "last_login_date")
   private ZonedDateTime lastLoginDate;
@@ -126,8 +135,8 @@ public class SecurityUser implements UserDetails {
     setPassword(toClone.getPassword());
 
     setEmail(toClone.getEmail());
-    setUserType(toClone.getUserType());
-    setUserRole(toClone.getUserRole());
+//    setUserType(toClone.getUserType());
+//    setUserRole(toClone.getUserRole());
     setEnabled(toClone.isEnabled());
     setAccountExpired(toClone.isAccountExpired());
     setAccountExpiredDate(toClone.getAccountExpiredDate());
@@ -139,16 +148,18 @@ public class SecurityUser implements UserDetails {
     setLockedDate(toClone.getLockedDate());
     setUnlockDate(toClone.getUnlockDate());
 
-    List<SecurityAuthority> copiedAuthorities = new ArrayList<>();
-    if (toClone.getAuthorities() != null) {
-      toClone.getAuthorities().forEach(auth -> {
-        SecurityAuthority clonedAuthority = new SecurityAuthority();
-        clonedAuthority.setUser(this);
-        clonedAuthority.setAuthority(auth.getAuthority());
-        copiedAuthorities.add(clonedAuthority);
-      });
-    }
-    setAuthorities(copiedAuthorities);
+    setGroups(toClone.getGroups());
+
+//    List<SecurityAuthority> copiedAuthorities = new ArrayList<>();
+//    if (toClone.getAuthorities() != null) {
+//      toClone.getAuthorities().forEach(auth -> {
+//        SecurityAuthority clonedAuthority = new SecurityAuthority();
+//        clonedAuthority.setUser(this);
+//        clonedAuthority.setAuthority(auth.getAuthority());
+//        copiedAuthorities.add(clonedAuthority);
+//      });
+//    }
+//    setAuthorities(copiedAuthorities);
 
     if (toClone.getControlDates() != null) {
       // ZonedDateTime is immutable but this still makes me a little uncomfortable
@@ -159,14 +170,28 @@ public class SecurityUser implements UserDetails {
     }
   }
 
+  /**
+   * Returns the union of {@link #authorities} and {@link #groups#authorities}
+   * or empty set if none present. Never returns null.
+   * @return empty or populated set produced as the union of single authorities and role authorities applicable to this user
+   */
   @Override
+  @Nonnull
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return authorities;
-  }
+    Set<SecurityAuthority> derivedAuthorities = new HashSet<>();
+    if (groups != null && !groups.isEmpty()) {
 
-  public void setAuthorities(List<SecurityAuthority> authorities) {
-    authorities.forEach(auth -> { if (auth.getUser() == null) { auth.setUser(this); } });
-    this.authorities = authorities;
+      if (this.authorities != null) {
+        derivedAuthorities.addAll(this.authorities);
+      }
+
+      groups.forEach(group -> {
+        if (group != null && group.getAuthorities() != null && !group.getAuthorities().isEmpty()) {
+          derivedAuthorities.addAll(group.getAuthorities());
+        }
+      });
+    }
+    return derivedAuthorities;
   }
 
   @Override
@@ -225,8 +250,14 @@ public class SecurityUser implements UserDetails {
   public Map<String, Object> toMap() {
     Map<String, Object> result = new TreeMap<>(new SecurityUserExampleDataComparator());
     Arrays.stream(this.getClass().getDeclaredFields()).forEach(field -> {
+      log.info(() -> "Retrieving field " + field);
       field.setAccessible(true);
-      result.put(field.getName(), ReflectionUtils.getField(field, this));
+      Object value = ReflectionUtils.getField(field, this);
+      if (value instanceof ParameterizedMessageFactory || value instanceof Logger) {
+        log.info(() -> "Not including field " + field.getName() + " in user info map");
+      } else {
+        result.put(field.getName(), value);
+      }
     });
     return result;
   }

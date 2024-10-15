@@ -9,9 +9,11 @@ import com.demo.security.spring.generate.UserGenerator;
 import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.Card;
 import com.demo.security.spring.model.ContactMessage;
+import com.demo.security.spring.model.SecurityGroupConfig;
 import com.demo.security.spring.model.Loan;
 import com.demo.security.spring.model.NoticeDetails;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.utils.AuthorityGroups;
 import com.demo.security.spring.utils.ValidationUtils;
 import com.google.common.base.Preconditions;
 import java.util.ArrayList;
@@ -46,6 +48,55 @@ public class ExampleDataGenerationService {
    */
   public List<SecurityUser> generateUsers() {
     return userGenerator.generate();
+  }
+
+  /**
+   * Generate minimal information required for mapping security groups to associated authorities
+   * @return list of SecurityGroupConfig - never null
+   */
+  public List<SecurityGroupConfig> generateSecurityGroups() {
+    List<SecurityGroupConfig> groupInfo = new ArrayList<>();
+    groupInfo.add(
+        new SecurityGroupConfig()
+            .setGroupName(AuthorityGroups.GROUP_USER)
+            .setAuthorities(AuthorityGroups.GROUP_USER_ROLES)
+    );
+    groupInfo.add(
+        new SecurityGroupConfig()
+            .setGroupName(AuthorityGroups.GROUP_ACCOUNT_HOLDER)
+            .setAuthorities(AuthorityGroups.GROUP_ACCOUNT_HOLDER_ROLES)
+    );
+    groupInfo.add(
+        new SecurityGroupConfig()
+            .setGroupName(AuthorityGroups.GROUP_ADMIN_USERS)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_USERS_ROLES)
+    );
+    groupInfo.add(
+        new SecurityGroupConfig()
+            .setGroupName(AuthorityGroups.GROUP_ADMIN_ACCOUNTS)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_ACCOUNTS_ROLES)
+    );
+    groupInfo.add(
+        new SecurityGroupConfig()
+            .setGroupName(AuthorityGroups.GROUP_ADMIN_CARDS)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_CARDS_ROLES)
+    );
+    groupInfo.add(
+        new SecurityGroupConfig()
+            .setGroupName(AuthorityGroups.GROUP_ADMIN_LOANS)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_LOANS_ROLES)
+    );
+    groupInfo.add(
+        new SecurityGroupConfig()
+            .setGroupName(AuthorityGroups.GROUP_ADMIN_TRANSACTIONS)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_TRANSACTIONS_ROLES)
+    );
+    groupInfo.add(
+        new SecurityGroupConfig()
+            .setGroupName(AuthorityGroups.GROUP_ADMIN_SYSTEM)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_SYSTEM_ROLES)
+    );
+    return groupInfo;
   }
 
   public Account generateAccount(SecurityUser user) {

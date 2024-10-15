@@ -1,14 +1,19 @@
 package com.demo.security.spring.generate;
 
 import com.demo.security.spring.model.SecurityAuthority;
+import com.demo.security.spring.model.SecurityGroup;
 import com.demo.security.spring.model.SecurityUser;
-import com.demo.security.spring.model.UserType;
+import com.demo.security.spring.repository.SecurityAuthorityRepository;
+import com.demo.security.spring.repository.SecurityGroupRepository;
+import com.demo.security.spring.utils.AuthorityGroups;
 import com.demo.security.spring.utils.Constants;
-import com.demo.security.spring.utils.RoleNames;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 import lombok.extern.log4j.Log4j2;
 import net.datafaker.Faker;
 import org.apache.commons.lang3.StringUtils;
@@ -17,6 +22,10 @@ import org.apache.commons.lang3.StringUtils;
 public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
 
   protected static final String DEFAULT_TESTING_PASSWORD = "password";
+
+  private SecurityGroupRepository securityGroupRepository;
+
+  private SecurityAuthorityRepository authorityRepository;
 
   private final Random random = new Random();
 
@@ -27,6 +36,18 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
   public UserGenerator(Faker faker,
       ObjectMapper objectMapper, int itemCount) {
     super(faker, objectMapper, itemCount);
+  }
+
+  public UserGenerator setSecurityGroupRepository(
+      SecurityGroupRepository securityGroupRepository) {
+    this.securityGroupRepository = securityGroupRepository;
+    return this;
+  }
+
+  public UserGenerator setAuthorityRepository(
+      SecurityAuthorityRepository authorityRepository) {
+    this.authorityRepository = authorityRepository;
+    return this;
   }
 
   @Override
@@ -45,9 +66,14 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
   private List<SecurityUser> generateUsers(int count) {
     final List<SecurityUser> users = new ArrayList<>(List.of(
         generateUser("user", false),
-        generateUser("admin", true),
+        generateUser("systemAdmin", true),
         generateUser("otherUser", false),
-        generateUser("otherAdmin", true, List.of(RoleNames.ROLE_ADMIN, RoleNames.ROLE_USER)),
+        generateUser("otherSystemAdmin", true, null, AuthorityGroups.GROUP_ADMIN_SYSTEM_ROLES),
+        generateUser("loanAdmin", true, null, AuthorityGroups.GROUP_ADMIN_LOANS_ROLES),
+        generateUser("cardAdmin", true, null, AuthorityGroups.GROUP_ADMIN_CARDS_ROLES),
+        generateUser("accountAdmin", true, null, AuthorityGroups.GROUP_ADMIN_ACCOUNTS_ROLES),
+        generateUser("userAdmin", true, null, AuthorityGroups.GROUP_ADMIN_USERS_ROLES),
+        generateUser("transactionsAdmin", true, null, AuthorityGroups.GROUP_ADMIN_TRANSACTIONS_ROLES),
         disable(generateUser("userDisabled", false)),
         disable(generateUser("adminDisabled", true))
     ));
@@ -63,8 +89,8 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
     return generateUser(
         username,
         generatePassword(),
-        type,
-        getRolesForType(type),
+        null,
+        getGroupsForType(type),
         true,
         false,
         false,
@@ -77,45 +103,65 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
     return generateUser(
         username,
         generatePassword(),
-        type,
-        getRolesForType(type),
-    faker.random().nextBoolean(),
+        null,
+        getGroupsForType(type),
+        faker.random().nextBoolean(),
         faker.random().nextBoolean(),
         faker.random().nextBoolean(),
         faker.random().nextBoolean()
         );
   }
 
-  private List<String> getRolesForType(String type) {
+  private Set<String> getGroupsForType(String type) {
+    Set<String> groups = new HashSet<>();
     if (type != null && type.equals("external")) {
-      return List.of(RoleNames.ROLE_USER);
+      groups.add(AuthorityGroups.GROUP_ACCOUNT_HOLDER);
+      groups.add(AuthorityGroups.GROUP_USER);
+    } else {
+      groups.add(AuthorityGroups.GROUP_ADMIN_SYSTEM);
+      groups.add(AuthorityGroups.GROUP_USER);
     }
-    return List.of(RoleNames.ROLE_ADMIN);
+    return groups;
   }
 
   private SecurityUser generateUser(String username, boolean isInternal) {
     return isInternal ? generateInternalUser(username, DEFAULT_TESTING_PASSWORD) :  generateExternalUser(username, DEFAULT_TESTING_PASSWORD);
   }
 
-  private SecurityUser generateUser(String username, boolean isInternal, List<String> roles) {
+  private SecurityUser generateUser(String username, boolean isInternal, Collection<String> authorityNames, Collection<String> groups) {
     final SecurityUser user = isInternal ? generateInternalUser(username, DEFAULT_TESTING_PASSWORD) : generateExternalUser(username, DEFAULT_TESTING_PASSWORD);
-    user.setAuthorities(toAuthorities(roles));
+    user.setGroups(getGroupsForNames(groups));
+    user.setAuthorities(getAuthoritiesForNames(authorityNames));
     return user;
   }
 
+  private Set<SecurityGroup> getGroupsForNames(Collection<String> groupNames) {
+    if (groupNames != null && !groupNames.isEmpty()) {
+      return securityGroupRepository.retrieveAllByCode(groupNames);
+    }
+    return new HashSet<>();
+  }
+
+  private Set<SecurityAuthority> getAuthoritiesForNames(Collection<String> authorityNames) {
+    if (authorityNames != null && !authorityNames.isEmpty()) {
+      return authorityRepository.findAllByAuthorityIn(authorityNames);
+    }
+    return new HashSet<>();
+  }
+
   public SecurityUser generateExternalUser(String username, String password) {
-    return generateUser(username, password, "external", getRolesForType("external"), true, false, false, false);
+    return generateUser(username, password, null, getGroupsForType("external"), true, false, false, false);
   }
 
   public SecurityUser generateInternalUser(String username, String password) {
-    return generateUser(username, password, "internal", getRolesForType("internal"), true, false, false, false);
+    return generateUser(username, password, null, getGroupsForType("internal"), true, false, false, false);
   }
 
   private SecurityUser generateUser(
       String username,
       String password,
-      String type,
-      List<String> roles,
+      Collection<String> authorities,
+      Collection<String> groups,
       boolean enabled,
       boolean accountExpired,
       boolean passwordExpired,
@@ -132,9 +178,8 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
     user.setLocked(isLocked);
     user.setLockedDate(isLocked ? randomPastDate() : null);
     // user type and role will be replaced in the future with better role-based structures
-    user.setUserType(UserType.valueOf(type));
-    user.setUserRole(user.getUserType() == UserType.internal ? "ADMIN" : "STANDARD");
-    user.setAuthorities(toAuthorities(roles));
+    user.setGroups(getGroupsForNames(groups));
+    user.setAuthorities(getAuthoritiesForNames(authorities));
     user.setEmail(username + "@demo.com");
     user.setControlDates(randomEntityControlDates());
     return user;
@@ -161,16 +206,6 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
     user.setLocked(true);
     user.setLockedDate(randomPastDate());
     return user;
-  }
-
-  private List<SecurityAuthority> toAuthorities(List<String> roles) {
-    List<SecurityAuthority> authorities = new ArrayList<>();
-    roles.stream().forEach(role -> {
-      SecurityAuthority authority = new SecurityAuthority();
-      authority.setAuthority(role);
-      authorities.add(authority);
-    });
-    return authorities;
   }
 
   private String generatePassword() {

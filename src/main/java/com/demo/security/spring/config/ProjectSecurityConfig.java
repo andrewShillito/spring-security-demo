@@ -28,6 +28,9 @@ import com.demo.security.spring.repository.CardRepository;
 import com.demo.security.spring.repository.ContactMessageRepository;
 import com.demo.security.spring.repository.LoanRepository;
 import com.demo.security.spring.repository.NoticeDetailsRepository;
+import com.demo.security.spring.repository.SecurityAuthorityRepository;
+import com.demo.security.spring.repository.SecurityGroupAuthorityRepository;
+import com.demo.security.spring.repository.SecurityGroupRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.serialization.ZonedDateTimeDeserializer;
 import com.demo.security.spring.serialization.ZonedDateTimeSerializer;
@@ -56,6 +59,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.validation.Validator;
+import jakarta.validation.constraints.NotNull;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.Collections;
@@ -195,6 +199,9 @@ public class ProjectSecurityConfig {
       final SecurityUserRepository userRepository,
       final NoticeDetailsRepository noticeDetailsRepository,
       final ContactMessageRepository contactMessageRepository,
+      final SecurityAuthorityRepository authorityRepository,
+      final SecurityGroupRepository securityGroupRepository,
+      final SecurityGroupAuthorityRepository securityGroupAuthorityRepository,
       final ExampleDataManager exampleDataManager,
       final AccountRepository accountRepository,
       final CardRepository cardRepository,
@@ -213,6 +220,9 @@ public class ProjectSecurityConfig {
         .accountRepository(accountRepository)
         .cardRepository(cardRepository)
         .loanRepository(loanRepository)
+        .authorityRepository(authorityRepository)
+        .securityGroupRepository(securityGroupRepository)
+        .securityGroupAuthorityRepository(securityGroupAuthorityRepository)
         .userGenerator(userGenerator)
         .objectMapper(objectMapper)
         .passwordEncoder(passwordEncoder)
@@ -304,9 +314,13 @@ public class ProjectSecurityConfig {
 
   @Bean
   public UserGenerator userFileGenerator(
-      @Value("${example-data.user.count:20}") int userCount
+      @Value("${example-data.user.count:20}") int userCount,
+      @NotNull SecurityGroupRepository securityGroupRepository,
+      @NotNull SecurityAuthorityRepository authorityRepository
   ) {
-    final UserGenerator userGenerator = new UserGenerator(faker(), objectMapper());
+    final UserGenerator userGenerator = new UserGenerator(faker(), objectMapper())
+        .setSecurityGroupRepository(securityGroupRepository)
+        .setAuthorityRepository(authorityRepository);
     userGenerator.setItemCount(userCount);
     return userGenerator;
   }

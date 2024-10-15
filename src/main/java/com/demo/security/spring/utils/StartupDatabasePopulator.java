@@ -5,20 +5,28 @@ import com.demo.security.spring.generate.UserGenerator;
 import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.Card;
 import com.demo.security.spring.model.ContactMessage;
+import com.demo.security.spring.model.ExampleSecurityGroupDataWrapper;
+import com.demo.security.spring.model.SecurityGroupConfig;
 import com.demo.security.spring.model.Loan;
 import com.demo.security.spring.model.NoticeDetails;
+import com.demo.security.spring.model.SecurityAuthority;
+import com.demo.security.spring.model.SecurityGroup;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.AccountRepository;
 import com.demo.security.spring.repository.CardRepository;
 import com.demo.security.spring.repository.ContactMessageRepository;
 import com.demo.security.spring.repository.LoanRepository;
 import com.demo.security.spring.repository.NoticeDetailsRepository;
+import com.demo.security.spring.repository.SecurityAuthorityRepository;
+import com.demo.security.spring.repository.SecurityGroupAuthorityRepository;
+import com.demo.security.spring.repository.SecurityGroupRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.service.ExampleDataManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import lombok.Builder;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -38,6 +46,12 @@ public class StartupDatabasePopulator {
   private NoticeDetailsRepository noticeDetailsRepository;
 
   private ContactMessageRepository contactMessageRepository;
+
+  private SecurityGroupRepository securityGroupRepository;
+
+  private SecurityAuthorityRepository authorityRepository;
+
+  private SecurityGroupAuthorityRepository securityGroupAuthorityRepository;
 
   private AccountRepository accountRepository;
 
@@ -61,6 +75,7 @@ public class StartupDatabasePopulator {
   public void seedDatabaseIfEmpty() {
     if (enabled) {
       try {
+        populateSecurityGroups();
         populateUsers();
         populateNoticeDetails();
         populateContactMessages();
@@ -102,6 +117,46 @@ public class StartupDatabasePopulator {
       }
     } else {
       log.info(() -> "Not seeding startup data as property example-data:enabled is false");
+    }
+  }
+
+  private void populateSecurityGroups() {
+    if (securityGroupAuthorityRepository.count() > 0) {
+      log.info(() -> "Not repopulating development environment security group authorities as the table already contains data");
+    } else {
+      log.info(() -> "Populating development environment security group authorities");
+      ExampleSecurityGroupDataWrapper groupInfo = exampleDataManager.getAuthorityGroups();
+      if (groupInfo == null || (!groupInfo.hasGroups() && !groupInfo.hasGroupsConfig())) {
+        log.error(() -> "Security groups are empty! This is likely an issue as no user security groups exist");
+      } else {
+        List<SecurityGroup> persistedGroups = new ArrayList<>();
+        if (groupInfo.hasGroups()) {
+          log.info(() -> "Populating existing security groups");
+          securityGroupRepository.saveAll(groupInfo.getGroups()).forEach(persistedGroups::add);
+        } else {
+          log.info(() -> "Populating security groups from groups configuration");
+          for (var info : groupInfo.getGroupConfigs()) {
+            SecurityGroup group = securityGroupRepository.getSecurityGroupByCode(info.getGroupName());
+            if (group != null) {
+              Set<SecurityAuthority> authority = authorityRepository.findAllByAuthorityIn(info.getAuthorities());
+              group.getAuthorities().addAll(authority);
+              persistedGroups.add(securityGroupRepository.save(group));
+            } else {
+              log.error(() -> "No security group matching " + info + " was found!");
+            }
+          }
+          if (regenerateData) {
+            final String outputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.GROUPS_OUTPUT_FILE_NAME;
+            new JsonFileWriter<>(objectMapper, outputFile, persistedGroups).write();
+            log.info(() -> "Finished populating " + persistedGroups.size() + " development environment security groups");
+          }
+        }
+        if (regenerateData) {
+          final String outputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.GROUPS_OUTPUT_FILE_NAME;
+          new JsonFileWriter<>(objectMapper, outputFile, persistedGroups).write();
+          log.info(() -> "Finished populating " + persistedGroups.size() + " development environment security groups");
+        }
+      }
     }
   }
 

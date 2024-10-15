@@ -3,6 +3,9 @@ package com.demo.security.spring.service;
 import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.Card;
 import com.demo.security.spring.model.ContactMessage;
+import com.demo.security.spring.model.ExampleSecurityGroupDataWrapper;
+import com.demo.security.spring.model.SecurityGroup;
+import com.demo.security.spring.model.SecurityGroupConfig;
 import com.demo.security.spring.model.Loan;
 import com.demo.security.spring.model.NoticeDetails;
 import com.demo.security.spring.model.SecurityUser;
@@ -30,12 +33,43 @@ public class ExampleDataManager {
 
   private boolean regenerateData;
 
+  public static final String GROUPS_OUTPUT_FILE_NAME = "example-roles.json";
+  public static final String GROUPS_CONFIG_OUTPUT_FILE_NAME = "example-roles-config.json";
   public static final String USERS_OUTPUT_FILE_NAME = "example-users.json";
   public static final String ACCOUNTS_OUTPUT_FILE_NAME = "example-accounts.json";
   public static final String LOANS_OUTPUT_FILE_NAME = "example-loans.json";
   public static final String CARDS_OUTPUT_FILE_NAME = "example-cards.json";
   public static final String NOTICES_OUTPUT_FILE_NAME = "example-notice-details.json";
   public static final String CONTACT_MESSAGES_OUTPUT_FILE_NAME = "example-contact-messages.json";
+
+  public ExampleSecurityGroupDataWrapper getAuthorityGroups() {
+    ExampleSecurityGroupDataWrapper result = new ExampleSecurityGroupDataWrapper();
+    if (regenerateData) {
+      result.setGroupConfigs(generationService.generateSecurityGroups());
+    } else {
+      result.setGroups(Arrays.stream(getClassPathResource("seed/" + GROUPS_OUTPUT_FILE_NAME, SecurityGroup[].class)).toList());
+//      final ClassPathResource groupsFile = getClassPathResource("seed/" + GROUPS_OUTPUT_FILE_NAME);
+//      final ClassPathResource configsFile = getClassPathResource("seed/" + GROUPS_CONFIG_OUTPUT_FILE_NAME);
+//      if (groupsFile.exists() && groupsFile.isReadable()) {
+//        try {
+//          ;
+//
+//        } catch (IOException e) {
+//          throw new RuntimeException("Failed to read development environment roles from classpath resource " + groupsFile.getPath(), e);
+//        }
+//      } else if (configsFile.exists() && configsFile.isReadable()) {
+//        try {
+//          result.setGroupConfigs(Arrays.stream(objectMapper.readValue(configsFile.getInputStream(), SecurityGroupConfig[].class)).toList());
+//        } catch (IOException e) {
+//          throw new RuntimeException("Failed to read development environment roles config from classpath resource " + configsFile.getPath(), e);
+//        }
+//      } else {
+//        throw new RuntimeException("Unable to locate or read development environment roles seed '"
+//            + GROUPS_OUTPUT_FILE_NAME + "' and roles config " + GROUPS_CONFIG_OUTPUT_FILE_NAME + " files");
+//      }
+    }
+    return result;
+  }
 
   /**
    * Reads a json file for users to seed into the database.
@@ -49,17 +83,7 @@ public class ExampleDataManager {
     if (regenerateData) {
       securityUsers = generationService.generateUsers();
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/" + USERS_OUTPUT_FILE_NAME);
-      if (!resource.exists()) {
-        throw new RuntimeException("Unable to locate development environment users seed file");
-      } else if (!resource.isReadable()) {
-        throw new RuntimeException("Unable to read from development environment users seed file");
-      }
-      try {
-        securityUsers = Arrays.stream(objectMapper.readValue(resource.getInputStream(), SecurityUser[].class)).toList();
-      } catch (IOException e) {
-        throw new RuntimeException("Failed to read development environment users from classpath resource " + resource.getPath(), e);
-      }
+      securityUsers = Arrays.stream(getClassPathResource("seed/" + USERS_OUTPUT_FILE_NAME, SecurityUser[].class)).toList();
     }
     return securityUsers;
   }
@@ -70,17 +94,7 @@ public class ExampleDataManager {
     if (regenerateData) {
       accounts = generationService.generateAccounts(users);
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/" + ACCOUNTS_OUTPUT_FILE_NAME);
-      if (!resource.exists()) {
-        throw new RuntimeException("Unable to locate development environment accounts seed file");
-      } else if (!resource.isReadable()) {
-        throw new RuntimeException("Unable to read from development environment accounts seed file");
-      }
-      try {
-        accounts = Arrays.stream(objectMapper.readValue(resource.getInputStream(), Account[].class)).toList();
-      } catch (IOException e) {
-        throw new RuntimeException("Failed to read development environment accounts from classpath resource " + resource.getPath(), e);
-      }
+      accounts = Arrays.stream(getClassPathResource("seed/" + ACCOUNTS_OUTPUT_FILE_NAME, Account[].class)).toList();
     }
     return accounts;
   }
@@ -91,17 +105,7 @@ public class ExampleDataManager {
     if (regenerateData) {
       cards = generationService.generateCards(users);
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/" + CARDS_OUTPUT_FILE_NAME);
-      if (!resource.exists()) {
-        throw new RuntimeException("Unable to locate development environment cards seed file");
-      } else if (!resource.isReadable()) {
-        throw new RuntimeException("Unable to read from development environment cards seed file");
-      }
-      try {
-        cards = Arrays.stream(objectMapper.readValue(resource.getInputStream(), Card[].class)).toList();
-      } catch (IOException e) {
-        throw new RuntimeException("Failed to read development environment accounts from classpath resource " + resource.getPath(), e);
-      }
+      cards = Arrays.stream(getClassPathResource("seed/" + CARDS_OUTPUT_FILE_NAME, Card[].class)).toList();
     }
     return cards;
   }
@@ -112,17 +116,7 @@ public class ExampleDataManager {
     if (regenerateData) {
       loans = generationService.generateLoans(users);
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/" + LOANS_OUTPUT_FILE_NAME);
-      if (!resource.exists()) {
-        throw new RuntimeException("Unable to locate development environment loans seed file");
-      } else if (!resource.isReadable()) {
-        throw new RuntimeException("Unable to read from development environment loans seed file");
-      }
-      try {
-        loans = Arrays.stream(objectMapper.readValue(resource.getInputStream(), Loan[].class)).toList();
-      } catch (IOException e) {
-        throw new RuntimeException("Failed to read development environment accounts from classpath resource " + resource.getPath(), e);
-      }
+      loans = Arrays.stream(getClassPathResource("seed/" + LOANS_OUTPUT_FILE_NAME, Loan[].class)).toList();
     }
     return loans;
   }
@@ -132,12 +126,7 @@ public class ExampleDataManager {
     if (regenerateData) {
       noticeDetails = generationService.generateNotices();
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/" + NOTICES_OUTPUT_FILE_NAME);
-      try {
-        noticeDetails = Arrays.stream(objectMapper.readValue(resource.getInputStream(), NoticeDetails[].class)).toList();
-      } catch (IOException e) {
-        throw new RuntimeException("Failed to read development environment notice details from classpath resource " + resource.getPath(), e);
-      }
+      noticeDetails = Arrays.stream(getClassPathResource("seed/" + NOTICES_OUTPUT_FILE_NAME, NoticeDetails[].class)).toList();
     }
     return noticeDetails;
   }
@@ -147,12 +136,7 @@ public class ExampleDataManager {
     if (regenerateData) {
       contactMessages = generationService.generateMessages();
     } else {
-      final ClassPathResource resource = getClassPathResource("seed/" + CONTACT_MESSAGES_OUTPUT_FILE_NAME);
-      try {
-        contactMessages = Arrays.stream(objectMapper.readValue(resource.getInputStream(), ContactMessage[].class)).toList();
-      } catch (IOException e) {
-        throw new RuntimeException("Failed to read development environment contact messages from classpath resource " + resource.getPath(), e);
-      }
+      contactMessages = Arrays.stream(getClassPathResource("seed/" + CONTACT_MESSAGES_OUTPUT_FILE_NAME, ContactMessage[].class)).toList();
     }
     return contactMessages;
   }
@@ -174,5 +158,22 @@ public class ExampleDataManager {
       throw new IllegalStateException("Unable to read classpath resource at '" + path + "'");
     }
     return resource;
+  }
+
+  /**
+   * Return the content of a given classpath resource mapped to the requested class.
+   * Will throw if resource does not exist, cannot be read, or if mapping fails
+   * @param path the path to the classpath resource
+   * @param clazz the class to return
+   * @return mapped content as type T from the given classpath resource or throws RuntimeException
+   * @param <T> the type to return
+   */
+  private <T> T getClassPathResource(String path, Class<T> clazz) {
+    ClassPathResource resource = getClassPathResource(path);
+    try {
+      return objectMapper.readValue(resource.getInputStream(), clazz);
+    } catch (IOException e) {
+      throw new RuntimeException("Failed to read classpath resource " + resource.getPath() + " as class " + clazz, e);
+    }
   }
 }
