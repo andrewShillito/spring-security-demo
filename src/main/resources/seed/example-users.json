@@ -23,6 +23,10 @@
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
     }, {
+      "id" : 15,
+      "authority" : "ROLE_SELF_USER_EDIT",
+      "description" : "A role which allows a user to edit their user details"
+    }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
@@ -30,73 +34,69 @@
       "id" : 16,
       "authority" : "ROLE_SELF_USER_DELETE",
       "description" : "A role which allows a user to delete their user account"
-    }, {
-      "id" : 15,
-      "authority" : "ROLE_SELF_USER_EDIT",
-      "description" : "A role which allows a user to edit their user details"
     } ]
   }, {
     "id" : 2,
     "code" : "GROUP_ACCOUNT_HOLDER",
     "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
     "authorities" : [ {
-      "id" : 1,
-      "authority" : "ROLE_USER",
-      "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
+      "id" : 6,
+      "authority" : "ROLE_SELF_CARD_APPLY",
+      "description" : "A role which allows a user to apply for cards"
     }, {
       "id" : 12,
       "authority" : "ROLE_SELF_TRANSACTION_CREATE",
       "description" : "A role which allows a user to create transactions for their own accounts"
     }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
-      "id" : 9,
-      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
-      "description" : "A role which allows a user to apply for accounts"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
+      "id" : 1,
+      "authority" : "ROLE_USER",
+      "description" : "A role granted to all authenticated users"
     }, {
       "id" : 10,
       "authority" : "ROLE_SELF_ACCOUNT_EDIT",
       "description" : "A role which allows a user to edit some fields of their own accounts"
     }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
+      "id" : 3,
+      "authority" : "ROLE_SELF_LOAN_APPLY",
+      "description" : "A role which allows a user to apply for loans"
     }, {
       "id" : 8,
       "authority" : "ROLE_SELF_ACCOUNT_VIEW",
       "description" : "A role which allows a user to view their own accounts"
+    }, {
+      "id" : 5,
+      "authority" : "ROLE_SELF_CARD_VIEW",
+      "description" : "A role which allows a user to view their own cards"
+    }, {
+      "id" : 2,
+      "authority" : "ROLE_SELF_LOAN_VIEW",
+      "description" : "A role which allows a user to view their own loans"
+    }, {
+      "id" : 7,
+      "authority" : "ROLE_SELF_CARD_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own cards"
+    }, {
+      "id" : 9,
+      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
+      "description" : "A role which allows a user to apply for accounts"
+    }, {
+      "id" : 13,
+      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own account transactions"
+    }, {
+      "id" : 4,
+      "authority" : "ROLE_SELF_LOAN_EDIT",
+      "description" : "A role which allows a user to edit allowed fields of their own loans"
+    }, {
+      "id" : 11,
+      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
+      "description" : "A role which allows a user to view their own account transactions"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.992438767-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.992488261-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.349488834-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.349520183-04:00[America/New_York]"
   }
 }, {
   "id" : 2,
@@ -147,8 +147,8 @@
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.995945786-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.995964381-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.355850042-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.355853489-04:00[America/New_York]"
   }
 }, {
   "id" : 3,
@@ -179,76 +179,76 @@
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
     }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
-    }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
+    }, {
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
     "id" : 2,
     "code" : "GROUP_ACCOUNT_HOLDER",
     "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
     "authorities" : [ {
-      "id" : 1,
-      "authority" : "ROLE_USER",
-      "description" : "A role granted to all authenticated users"
+      "id" : 6,
+      "authority" : "ROLE_SELF_CARD_APPLY",
+      "description" : "A role which allows a user to apply for cards"
     }, {
       "id" : 12,
       "authority" : "ROLE_SELF_TRANSACTION_CREATE",
       "description" : "A role which allows a user to create transactions for their own accounts"
     }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
+      "id" : 1,
+      "authority" : "ROLE_USER",
+      "description" : "A role granted to all authenticated users"
     }, {
       "id" : 10,
       "authority" : "ROLE_SELF_ACCOUNT_EDIT",
       "description" : "A role which allows a user to edit some fields of their own accounts"
     }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
+      "id" : 3,
+      "authority" : "ROLE_SELF_LOAN_APPLY",
+      "description" : "A role which allows a user to apply for loans"
     }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 9,
-      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
-      "description" : "A role which allows a user to apply for accounts"
+      "id" : 8,
+      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
+      "description" : "A role which allows a user to view their own accounts"
     }, {
       "id" : 5,
       "authority" : "ROLE_SELF_CARD_VIEW",
       "description" : "A role which allows a user to view their own cards"
     }, {
+      "id" : 2,
+      "authority" : "ROLE_SELF_LOAN_VIEW",
+      "description" : "A role which allows a user to view their own loans"
+    }, {
+      "id" : 7,
+      "authority" : "ROLE_SELF_CARD_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own cards"
+    }, {
+      "id" : 9,
+      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
+      "description" : "A role which allows a user to apply for accounts"
+    }, {
+      "id" : 13,
+      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own account transactions"
+    }, {
+      "id" : 4,
+      "authority" : "ROLE_SELF_LOAN_EDIT",
+      "description" : "A role which allows a user to edit allowed fields of their own loans"
+    }, {
       "id" : 11,
       "authority" : "ROLE_SELF_TRANSACTION_VIEW",
       "description" : "A role which allows a user to view their own account transactions"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.996166484-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.996168588-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.356120605-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.356126185-04:00[America/New_York]"
   }
 }, {
   "id" : 4,
@@ -269,8 +269,8 @@
   "groups" : [ ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.996281061-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.996282133-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.356363765-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.356367292-04:00[America/New_York]"
   }
 }, {
   "id" : 5,
@@ -291,8 +291,8 @@
   "groups" : [ ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.996374769-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.996375751-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.356563434-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.356565868-04:00[America/New_York]"
   }
 }, {
   "id" : 6,
@@ -313,8 +313,8 @@
   "groups" : [ ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.996460161-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.996461053-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.35675694-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.356759615-04:00[America/New_York]"
   }
 }, {
   "id" : 7,
@@ -335,8 +335,8 @@
   "groups" : [ ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.996548899-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.996549781-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.35696814-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.356970605-04:00[America/New_York]"
   }
 }, {
   "id" : 8,
@@ -357,8 +357,8 @@
   "groups" : [ ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.996638128-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.99663907-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.35716349-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.357165845-04:00[America/New_York]"
   }
 }, {
   "id" : 9,
@@ -379,8 +379,8 @@
   "groups" : [ ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.996727057-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.996727989-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.357386322-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.357388627-04:00[America/New_York]"
   }
 }, {
   "id" : 10,
@@ -403,14 +403,6 @@
     "code" : "GROUP_USER",
     "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
     "authorities" : [ {
-      "id" : 14,
-      "authority" : "ROLE_SELF_USER_VIEW",
-      "description" : "A role which allows a user to view their user details"
-    }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
@@ -418,69 +410,77 @@
       "id" : 15,
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
+    }, {
+      "id" : 14,
+      "authority" : "ROLE_SELF_USER_VIEW",
+      "description" : "A role which allows a user to view their user details"
+    }, {
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
     "id" : 2,
     "code" : "GROUP_ACCOUNT_HOLDER",
     "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
     "authorities" : [ {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
-    }, {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
+      "id" : 6,
+      "authority" : "ROLE_SELF_CARD_APPLY",
+      "description" : "A role which allows a user to apply for cards"
     }, {
       "id" : 12,
       "authority" : "ROLE_SELF_TRANSACTION_CREATE",
       "description" : "A role which allows a user to create transactions for their own accounts"
     }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
-    }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
     }, {
       "id" : 10,
       "authority" : "ROLE_SELF_ACCOUNT_EDIT",
       "description" : "A role which allows a user to edit some fields of their own accounts"
     }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
+      "id" : 3,
+      "authority" : "ROLE_SELF_LOAN_APPLY",
+      "description" : "A role which allows a user to apply for loans"
+    }, {
+      "id" : 8,
+      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
+      "description" : "A role which allows a user to view their own accounts"
+    }, {
+      "id" : 5,
+      "authority" : "ROLE_SELF_CARD_VIEW",
+      "description" : "A role which allows a user to view their own cards"
+    }, {
+      "id" : 2,
+      "authority" : "ROLE_SELF_LOAN_VIEW",
+      "description" : "A role which allows a user to view their own loans"
+    }, {
+      "id" : 7,
+      "authority" : "ROLE_SELF_CARD_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own cards"
     }, {
       "id" : 9,
       "authority" : "ROLE_SELF_ACCOUNT_APPLY",
       "description" : "A role which allows a user to apply for accounts"
+    }, {
+      "id" : 13,
+      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own account transactions"
+    }, {
+      "id" : 4,
+      "authority" : "ROLE_SELF_LOAN_EDIT",
+      "description" : "A role which allows a user to edit allowed fields of their own loans"
+    }, {
+      "id" : 11,
+      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
+      "description" : "A role which allows a user to view their own account transactions"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.996807319-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.996808251-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.357582654-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.357585119-04:00[America/New_York]"
   }
 }, {
   "id" : 11,
@@ -511,13 +511,13 @@
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
     }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
-    }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
+    }, {
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
     "id" : 8,
@@ -531,23 +531,23 @@
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.99689749-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.996898452-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.357787242-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.357789386-04:00[America/New_York]"
   }
 }, {
   "id" : 12,
-  "username" : "nelson.murphy",
-  "email" : "nelson.murphy@demo.com",
-  "password" : "TAu!y2Z*E0io@A$",
+  "username" : "craig.kris",
+  "email" : "craig.kris@demo.com",
+  "password" : "!lP3EG*n2",
   "enabled" : false,
   "accountExpired" : true,
-  "accountExpiredDate" : "2024-08-25T22:24:25.086-04:00[America/New_York]",
-  "passwordExpired" : true,
-  "passwordExpiredDate" : "2024-09-06T11:28:22.464-04:00[America/New_York]",
+  "accountExpiredDate" : "2024-07-14T01:16:59.503-04:00[America/New_York]",
+  "passwordExpired" : false,
+  "passwordExpiredDate" : null,
   "failedLoginAttempts" : 0,
   "numPreviousLockouts" : 0,
-  "locked" : true,
-  "lockedDate" : "2024-08-25T15:06:01.379-04:00[America/New_York]",
+  "locked" : false,
+  "lockedDate" : null,
   "unlockDate" : null,
   "authorities" : [ ],
   "groups" : [ {
@@ -555,14 +555,6 @@
     "code" : "GROUP_USER",
     "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
     "authorities" : [ {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
-    }, {
-      "id" : 14,
-      "authority" : "ROLE_SELF_USER_VIEW",
-      "description" : "A role which allows a user to view their user details"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
@@ -570,80 +562,40 @@
       "id" : 15,
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
+    }, {
+      "id" : 14,
+      "authority" : "ROLE_SELF_USER_VIEW",
+      "description" : "A role which allows a user to view their user details"
+    }, {
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
-    "id" : 2,
-    "code" : "GROUP_ACCOUNT_HOLDER",
-    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
+    "id" : 8,
+    "code" : "GROUP_ADMIN_SYSTEM",
+    "description" : "Roles group which allows administration of all entity types in the system",
     "authorities" : [ {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
-    }, {
-      "id" : 10,
-      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own accounts"
-    }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
-    }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
-    }, {
-      "id" : 9,
-      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
-      "description" : "A role which allows a user to apply for accounts"
-    }, {
-      "id" : 12,
-      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
-      "description" : "A role which allows a user to create transactions for their own accounts"
-    }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.996988252-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.996989224-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.358038107-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.358040852-04:00[America/New_York]"
   }
 }, {
   "id" : 13,
-  "username" : "shane.collins",
-  "email" : "shane.collins@demo.com",
-  "password" : "r63GO43A&",
-  "enabled" : false,
+  "username" : "kenton.nicolas",
+  "email" : "kenton.nicolas@demo.com",
+  "password" : "R&0PWiUS8N8Z5B9Ua79",
+  "enabled" : true,
   "accountExpired" : true,
-  "accountExpiredDate" : "2024-07-23T22:15:06.223-04:00[America/New_York]",
-  "passwordExpired" : true,
-  "passwordExpiredDate" : "2024-07-08T11:46:12.75-04:00[America/New_York]",
+  "accountExpiredDate" : "2024-10-07T02:37:48.415-04:00[America/New_York]",
+  "passwordExpired" : false,
+  "passwordExpiredDate" : null,
   "failedLoginAttempts" : 0,
   "numPreviousLockouts" : 0,
   "locked" : false,
@@ -659,6 +611,10 @@
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
     }, {
+      "id" : 15,
+      "authority" : "ROLE_SELF_USER_EDIT",
+      "description" : "A role which allows a user to edit their user details"
+    }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
@@ -666,82 +622,78 @@
       "id" : 16,
       "authority" : "ROLE_SELF_USER_DELETE",
       "description" : "A role which allows a user to delete their user account"
-    }, {
-      "id" : 15,
-      "authority" : "ROLE_SELF_USER_EDIT",
-      "description" : "A role which allows a user to edit their user details"
     } ]
   }, {
     "id" : 2,
     "code" : "GROUP_ACCOUNT_HOLDER",
     "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
     "authorities" : [ {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
+      "id" : 6,
+      "authority" : "ROLE_SELF_CARD_APPLY",
+      "description" : "A role which allows a user to apply for cards"
     }, {
       "id" : 12,
       "authority" : "ROLE_SELF_TRANSACTION_CREATE",
       "description" : "A role which allows a user to create transactions for their own accounts"
     }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
-    }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
     }, {
       "id" : 10,
       "authority" : "ROLE_SELF_ACCOUNT_EDIT",
       "description" : "A role which allows a user to edit some fields of their own accounts"
     }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
       "id" : 3,
       "authority" : "ROLE_SELF_LOAN_APPLY",
       "description" : "A role which allows a user to apply for loans"
     }, {
+      "id" : 8,
+      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
+      "description" : "A role which allows a user to view their own accounts"
+    }, {
+      "id" : 5,
+      "authority" : "ROLE_SELF_CARD_VIEW",
+      "description" : "A role which allows a user to view their own cards"
+    }, {
+      "id" : 2,
+      "authority" : "ROLE_SELF_LOAN_VIEW",
+      "description" : "A role which allows a user to view their own loans"
+    }, {
+      "id" : 7,
+      "authority" : "ROLE_SELF_CARD_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own cards"
+    }, {
       "id" : 9,
       "authority" : "ROLE_SELF_ACCOUNT_APPLY",
       "description" : "A role which allows a user to apply for accounts"
+    }, {
+      "id" : 13,
+      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own account transactions"
+    }, {
+      "id" : 4,
+      "authority" : "ROLE_SELF_LOAN_EDIT",
+      "description" : "A role which allows a user to edit allowed fields of their own loans"
+    }, {
+      "id" : 11,
+      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
+      "description" : "A role which allows a user to view their own account transactions"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.997070919-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.997071881-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.358265217-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.358267792-04:00[America/New_York]"
   }
 }, {
   "id" : 14,
-  "username" : "chas.renner",
-  "email" : "chas.renner@demo.com",
-  "password" : "hCuJs#&k81$@1mV!c&",
+  "username" : "ali.bartell",
+  "email" : "ali.bartell@demo.com",
+  "password" : "WA%E%31r5m^",
   "enabled" : true,
-  "accountExpired" : false,
-  "accountExpiredDate" : null,
+  "accountExpired" : true,
+  "accountExpiredDate" : "2024-09-18T22:45:00.74-04:00[America/New_York]",
   "passwordExpired" : false,
   "passwordExpiredDate" : null,
   "failedLoginAttempts" : 0,
@@ -759,86 +711,38 @@
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
     }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
+      "id" : 15,
+      "authority" : "ROLE_SELF_USER_EDIT",
+      "description" : "A role which allows a user to edit their user details"
     }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
     }, {
-      "id" : 15,
-      "authority" : "ROLE_SELF_USER_EDIT",
-      "description" : "A role which allows a user to edit their user details"
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
-    "id" : 2,
-    "code" : "GROUP_ACCOUNT_HOLDER",
-    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
+    "id" : 8,
+    "code" : "GROUP_ADMIN_SYSTEM",
+    "description" : "Roles group which allows administration of all entity types in the system",
     "authorities" : [ {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 9,
-      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
-      "description" : "A role which allows a user to apply for accounts"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
-    }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
-    }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 12,
-      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
-      "description" : "A role which allows a user to create transactions for their own accounts"
-    }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
-      "id" : 10,
-      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own accounts"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.997325772-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.997327726-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.358579382-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.358581927-04:00[America/New_York]"
   }
 }, {
   "id" : 15,
-  "username" : "darrin.halvorson",
-  "email" : "darrin.halvorson@demo.com",
-  "password" : "71NDd$OlY3F7qd!",
+  "username" : "nolan.mohr",
+  "email" : "nolan.mohr@demo.com",
+  "password" : "$g#a%0vU2UG8QHpOH#@N&7",
   "enabled" : true,
   "accountExpired" : false,
   "accountExpiredDate" : null,
@@ -872,73 +776,25 @@
       "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
-    "id" : 2,
-    "code" : "GROUP_ACCOUNT_HOLDER",
-    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
+    "id" : 8,
+    "code" : "GROUP_ADMIN_SYSTEM",
+    "description" : "Roles group which allows administration of all entity types in the system",
     "authorities" : [ {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
-      "id" : 10,
-      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own accounts"
-    }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
-    }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
-    }, {
-      "id" : 12,
-      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
-      "description" : "A role which allows a user to create transactions for their own accounts"
-    }, {
-      "id" : 9,
-      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
-      "description" : "A role which allows a user to apply for accounts"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
-    }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.997665046-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.99766734-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.358908215-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.358911401-04:00[America/New_York]"
   }
 }, {
   "id" : 16,
-  "username" : "chung.runte",
-  "email" : "chung.runte@demo.com",
-  "password" : "aIpdYU!g7h2&PR&$#ehw%$",
+  "username" : "jeremiah.nitzsche",
+  "email" : "jeremiah.nitzsche@demo.com",
+  "password" : "91oqe#6SyNj&C8@29Z6D8JM3H07*gJ1!",
   "enabled" : true,
   "accountExpired" : false,
   "accountExpiredDate" : null,
@@ -959,6 +815,10 @@
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
     }, {
+      "id" : 15,
+      "authority" : "ROLE_SELF_USER_EDIT",
+      "description" : "A role which allows a user to edit their user details"
+    }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
@@ -966,31 +826,75 @@
       "id" : 16,
       "authority" : "ROLE_SELF_USER_DELETE",
       "description" : "A role which allows a user to delete their user account"
-    }, {
-      "id" : 15,
-      "authority" : "ROLE_SELF_USER_EDIT",
-      "description" : "A role which allows a user to edit their user details"
     } ]
   }, {
-    "id" : 8,
-    "code" : "GROUP_ADMIN_SYSTEM",
-    "description" : "Roles group which allows administration of all entity types in the system",
+    "id" : 2,
+    "code" : "GROUP_ACCOUNT_HOLDER",
+    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
     "authorities" : [ {
+      "id" : 6,
+      "authority" : "ROLE_SELF_CARD_APPLY",
+      "description" : "A role which allows a user to apply for cards"
+    }, {
+      "id" : 12,
+      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
+      "description" : "A role which allows a user to create transactions for their own accounts"
+    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
+    }, {
+      "id" : 10,
+      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own accounts"
+    }, {
+      "id" : 3,
+      "authority" : "ROLE_SELF_LOAN_APPLY",
+      "description" : "A role which allows a user to apply for loans"
+    }, {
+      "id" : 8,
+      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
+      "description" : "A role which allows a user to view their own accounts"
+    }, {
+      "id" : 5,
+      "authority" : "ROLE_SELF_CARD_VIEW",
+      "description" : "A role which allows a user to view their own cards"
+    }, {
+      "id" : 2,
+      "authority" : "ROLE_SELF_LOAN_VIEW",
+      "description" : "A role which allows a user to view their own loans"
+    }, {
+      "id" : 7,
+      "authority" : "ROLE_SELF_CARD_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own cards"
+    }, {
+      "id" : 9,
+      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
+      "description" : "A role which allows a user to apply for accounts"
+    }, {
+      "id" : 13,
+      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own account transactions"
+    }, {
+      "id" : 4,
+      "authority" : "ROLE_SELF_LOAN_EDIT",
+      "description" : "A role which allows a user to edit allowed fields of their own loans"
+    }, {
+      "id" : 11,
+      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
+      "description" : "A role which allows a user to view their own account transactions"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.997780585-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.997781667-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.359283526-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.359286101-04:00[America/New_York]"
   }
 }, {
   "id" : 17,
-  "username" : "mitchell.schmidt",
-  "email" : "mitchell.schmidt@demo.com",
-  "password" : "^!4M#9P*%b",
+  "username" : "theresia.kassulke",
+  "email" : "theresia.kassulke@demo.com",
+  "password" : "u48KmrI@%P182PX@!1$12$lnp55Np5",
   "enabled" : true,
   "accountExpired" : false,
   "accountExpiredDate" : null,
@@ -1024,34 +928,82 @@
       "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
-    "id" : 8,
-    "code" : "GROUP_ADMIN_SYSTEM",
-    "description" : "Roles group which allows administration of all entity types in the system",
+    "id" : 2,
+    "code" : "GROUP_ACCOUNT_HOLDER",
+    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
     "authorities" : [ {
+      "id" : 6,
+      "authority" : "ROLE_SELF_CARD_APPLY",
+      "description" : "A role which allows a user to apply for cards"
+    }, {
+      "id" : 12,
+      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
+      "description" : "A role which allows a user to create transactions for their own accounts"
+    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
+    }, {
+      "id" : 10,
+      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own accounts"
+    }, {
+      "id" : 3,
+      "authority" : "ROLE_SELF_LOAN_APPLY",
+      "description" : "A role which allows a user to apply for loans"
+    }, {
+      "id" : 8,
+      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
+      "description" : "A role which allows a user to view their own accounts"
+    }, {
+      "id" : 5,
+      "authority" : "ROLE_SELF_CARD_VIEW",
+      "description" : "A role which allows a user to view their own cards"
+    }, {
+      "id" : 2,
+      "authority" : "ROLE_SELF_LOAN_VIEW",
+      "description" : "A role which allows a user to view their own loans"
+    }, {
+      "id" : 7,
+      "authority" : "ROLE_SELF_CARD_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own cards"
+    }, {
+      "id" : 9,
+      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
+      "description" : "A role which allows a user to apply for accounts"
+    }, {
+      "id" : 13,
+      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own account transactions"
+    }, {
+      "id" : 4,
+      "authority" : "ROLE_SELF_LOAN_EDIT",
+      "description" : "A role which allows a user to edit allowed fields of their own loans"
+    }, {
+      "id" : 11,
+      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
+      "description" : "A role which allows a user to view their own account transactions"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.997927824-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.997928956-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.359556634-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.359559629-04:00[America/New_York]"
   }
 }, {
   "id" : 18,
-  "username" : "justin.gaylord",
-  "email" : "justin.gaylord@demo.com",
-  "password" : "9YRo%@8Jj$j7u6J@N@s^$wl%8I0x5*%",
+  "username" : "lekisha.stiedemann",
+  "email" : "lekisha.stiedemann@demo.com",
+  "password" : "&vn8@4z1&zK!50#$0Y4",
   "enabled" : true,
-  "accountExpired" : true,
-  "accountExpiredDate" : "2024-10-09T19:31:37.75-04:00[America/New_York]",
-  "passwordExpired" : true,
-  "passwordExpiredDate" : "2024-07-28T11:48:42.113-04:00[America/New_York]",
+  "accountExpired" : false,
+  "accountExpiredDate" : null,
+  "passwordExpired" : false,
+  "passwordExpiredDate" : null,
   "failedLoginAttempts" : 0,
   "numPreviousLockouts" : 0,
-  "locked" : true,
-  "lockedDate" : "2024-07-11T18:02:07.034-04:00[America/New_York]",
+  "locked" : false,
+  "lockedDate" : null,
   "unlockDate" : null,
   "authorities" : [ ],
   "groups" : [ {
@@ -1063,10 +1015,6 @@
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
     }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
-    }, {
       "id" : 15,
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
@@ -1074,6 +1022,10 @@
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
+    }, {
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
     "id" : 8,
@@ -1087,14 +1039,14 @@
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.998066106-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.998067228-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.359900545-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.359902869-04:00[America/New_York]"
   }
 }, {
   "id" : 19,
-  "username" : "rocio.torp",
-  "email" : "rocio.torp@demo.com",
-  "password" : "3kmG&IXUaJ8I@N5J0s9",
+  "username" : "thomas.upton",
+  "email" : "thomas.upton@demo.com",
+  "password" : "8!9MuJ8AP*$GNo@5*35*46T3",
   "enabled" : true,
   "accountExpired" : false,
   "accountExpiredDate" : null,
@@ -1102,8 +1054,8 @@
   "passwordExpiredDate" : null,
   "failedLoginAttempts" : 0,
   "numPreviousLockouts" : 0,
-  "locked" : false,
-  "lockedDate" : null,
+  "locked" : true,
+  "lockedDate" : "2024-09-27T10:41:19.704-04:00[America/New_York]",
   "unlockDate" : null,
   "authorities" : [ ],
   "groups" : [ {
@@ -1111,6 +1063,14 @@
     "code" : "GROUP_USER",
     "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
     "authorities" : [ {
+      "id" : 1,
+      "authority" : "ROLE_USER",
+      "description" : "A role granted to all authenticated users"
+    }, {
+      "id" : 15,
+      "authority" : "ROLE_SELF_USER_EDIT",
+      "description" : "A role which allows a user to edit their user details"
+    }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
@@ -1118,35 +1078,75 @@
       "id" : 16,
       "authority" : "ROLE_SELF_USER_DELETE",
       "description" : "A role which allows a user to delete their user account"
-    }, {
-      "id" : 15,
-      "authority" : "ROLE_SELF_USER_EDIT",
-      "description" : "A role which allows a user to edit their user details"
-    }, {
-      "id" : 1,
-      "authority" : "ROLE_USER",
-      "description" : "A role granted to all authenticated users"
     } ]
   }, {
-    "id" : 8,
-    "code" : "GROUP_ADMIN_SYSTEM",
-    "description" : "Roles group which allows administration of all entity types in the system",
+    "id" : 2,
+    "code" : "GROUP_ACCOUNT_HOLDER",
+    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
     "authorities" : [ {
+      "id" : 6,
+      "authority" : "ROLE_SELF_CARD_APPLY",
+      "description" : "A role which allows a user to apply for cards"
+    }, {
+      "id" : 12,
+      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
+      "description" : "A role which allows a user to create transactions for their own accounts"
+    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
+    }, {
+      "id" : 10,
+      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own accounts"
+    }, {
+      "id" : 3,
+      "authority" : "ROLE_SELF_LOAN_APPLY",
+      "description" : "A role which allows a user to apply for loans"
+    }, {
+      "id" : 8,
+      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
+      "description" : "A role which allows a user to view their own accounts"
+    }, {
+      "id" : 5,
+      "authority" : "ROLE_SELF_CARD_VIEW",
+      "description" : "A role which allows a user to view their own cards"
+    }, {
+      "id" : 2,
+      "authority" : "ROLE_SELF_LOAN_VIEW",
+      "description" : "A role which allows a user to view their own loans"
+    }, {
+      "id" : 7,
+      "authority" : "ROLE_SELF_CARD_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own cards"
+    }, {
+      "id" : 9,
+      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
+      "description" : "A role which allows a user to apply for accounts"
+    }, {
+      "id" : 13,
+      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own account transactions"
+    }, {
+      "id" : 4,
+      "authority" : "ROLE_SELF_LOAN_EDIT",
+      "description" : "A role which allows a user to edit allowed fields of their own loans"
+    }, {
+      "id" : 11,
+      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
+      "description" : "A role which allows a user to view their own account transactions"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.998172959-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.998174081-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.360134829-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.360137283-04:00[America/New_York]"
   }
 }, {
   "id" : 20,
-  "username" : "ludivina.vandervort",
-  "email" : "ludivina.vandervort@demo.com",
-  "password" : "Ww!dG9Toz47Z^4zFTj@H@T@!v^zV5W83",
+  "username" : "dave.littel",
+  "email" : "dave.littel@demo.com",
+  "password" : "#HTlFM0&s5zg2x0t1^2978O@I^*q1",
   "enabled" : true,
   "accountExpired" : false,
   "accountExpiredDate" : null,
@@ -1163,6 +1163,14 @@
     "code" : "GROUP_USER",
     "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
     "authorities" : [ {
+      "id" : 1,
+      "authority" : "ROLE_USER",
+      "description" : "A role granted to all authenticated users"
+    }, {
+      "id" : 15,
+      "authority" : "ROLE_SELF_USER_EDIT",
+      "description" : "A role which allows a user to edit their user details"
+    }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
@@ -1170,14 +1178,6 @@
       "id" : 16,
       "authority" : "ROLE_SELF_USER_DELETE",
       "description" : "A role which allows a user to delete their user account"
-    }, {
-      "id" : 15,
-      "authority" : "ROLE_SELF_USER_EDIT",
-      "description" : "A role which allows a user to edit their user details"
-    }, {
-      "id" : 1,
-      "authority" : "ROLE_USER",
-      "description" : "A role granted to all authenticated users"
     } ]
   }, {
     "id" : 8,
@@ -1191,23 +1191,23 @@
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.998255936-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.998256898-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.360349495-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.360353002-04:00[America/New_York]"
   }
 }, {
   "id" : 21,
-  "username" : "claudio.frami",
-  "email" : "claudio.frami@demo.com",
-  "password" : "it49Km^0Bk@!s@z^tIs$oeZD",
-  "enabled" : true,
+  "username" : "maribeth.weissnat",
+  "email" : "maribeth.weissnat@demo.com",
+  "password" : "$bX**t2v&cCEIE4yp!S",
+  "enabled" : false,
   "accountExpired" : false,
   "accountExpiredDate" : null,
-  "passwordExpired" : true,
-  "passwordExpiredDate" : "2024-08-21T14:52:55.625-04:00[America/New_York]",
+  "passwordExpired" : false,
+  "passwordExpiredDate" : null,
   "failedLoginAttempts" : 0,
   "numPreviousLockouts" : 0,
   "locked" : true,
-  "lockedDate" : "2024-09-25T16:29:55.387-04:00[America/New_York]",
+  "lockedDate" : "2024-07-25T15:25:56.899-04:00[America/New_York]",
   "unlockDate" : null,
   "authorities" : [ ],
   "groups" : [ {
@@ -1215,14 +1215,6 @@
     "code" : "GROUP_USER",
     "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
     "authorities" : [ {
-      "id" : 14,
-      "authority" : "ROLE_SELF_USER_VIEW",
-      "description" : "A role which allows a user to view their user details"
-    }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
@@ -1230,27 +1222,43 @@
       "id" : 15,
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
+    }, {
+      "id" : 14,
+      "authority" : "ROLE_SELF_USER_VIEW",
+      "description" : "A role which allows a user to view their user details"
+    }, {
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
     "id" : 2,
     "code" : "GROUP_ACCOUNT_HOLDER",
     "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
     "authorities" : [ {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
+      "id" : 6,
+      "authority" : "ROLE_SELF_CARD_APPLY",
+      "description" : "A role which allows a user to apply for cards"
     }, {
       "id" : 12,
       "authority" : "ROLE_SELF_TRANSACTION_CREATE",
       "description" : "A role which allows a user to create transactions for their own accounts"
     }, {
+      "id" : 1,
+      "authority" : "ROLE_USER",
+      "description" : "A role granted to all authenticated users"
+    }, {
+      "id" : 10,
+      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own accounts"
+    }, {
       "id" : 3,
       "authority" : "ROLE_SELF_LOAN_APPLY",
       "description" : "A role which allows a user to apply for loans"
+    }, {
+      "id" : 8,
+      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
+      "description" : "A role which allows a user to view their own accounts"
     }, {
       "id" : 5,
       "authority" : "ROLE_SELF_CARD_VIEW",
@@ -1260,54 +1268,46 @@
       "authority" : "ROLE_SELF_LOAN_VIEW",
       "description" : "A role which allows a user to view their own loans"
     }, {
+      "id" : 7,
+      "authority" : "ROLE_SELF_CARD_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own cards"
+    }, {
       "id" : 9,
       "authority" : "ROLE_SELF_ACCOUNT_APPLY",
       "description" : "A role which allows a user to apply for accounts"
+    }, {
+      "id" : 13,
+      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own account transactions"
     }, {
       "id" : 4,
       "authority" : "ROLE_SELF_LOAN_EDIT",
       "description" : "A role which allows a user to edit allowed fields of their own loans"
     }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
       "id" : 11,
       "authority" : "ROLE_SELF_TRANSACTION_VIEW",
       "description" : "A role which allows a user to view their own account transactions"
-    }, {
-      "id" : 1,
-      "authority" : "ROLE_USER",
-      "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 10,
-      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own accounts"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.998332451-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.998333663-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.360572909-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.360575744-04:00[America/New_York]"
   }
 }, {
   "id" : 22,
-  "username" : "cyndi.wisozk",
-  "email" : "cyndi.wisozk@demo.com",
-  "password" : "$!z%8ZD^RQ7xVHKR0pDt@&6%w2@0",
-  "enabled" : false,
-  "accountExpired" : true,
-  "accountExpiredDate" : "2024-09-30T16:41:44.137-04:00[America/New_York]",
-  "passwordExpired" : true,
-  "passwordExpiredDate" : "2024-07-28T12:59:20.51-04:00[America/New_York]",
+  "username" : "thanh.gorczany",
+  "email" : "thanh.gorczany@demo.com",
+  "password" : "ZX^k@&$X6^1507xD^ja%0",
+  "enabled" : true,
+  "accountExpired" : false,
+  "accountExpiredDate" : null,
+  "passwordExpired" : false,
+  "passwordExpiredDate" : null,
   "failedLoginAttempts" : 0,
   "numPreviousLockouts" : 0,
   "locked" : true,
-  "lockedDate" : "2024-08-20T12:08:56.675-04:00[America/New_York]",
+  "lockedDate" : "2024-09-06T01:06:38.548-04:00[America/New_York]",
   "unlockDate" : null,
   "authorities" : [ ],
   "groups" : [ {
@@ -1315,90 +1315,42 @@
     "code" : "GROUP_USER",
     "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
     "authorities" : [ {
+      "id" : 1,
+      "authority" : "ROLE_USER",
+      "description" : "A role granted to all authenticated users"
+    }, {
       "id" : 15,
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
-    }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
     }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
     }, {
-      "id" : 1,
-      "authority" : "ROLE_USER",
-      "description" : "A role granted to all authenticated users"
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
-    "id" : 2,
-    "code" : "GROUP_ACCOUNT_HOLDER",
-    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
+    "id" : 8,
+    "code" : "GROUP_ADMIN_SYSTEM",
+    "description" : "Roles group which allows administration of all entity types in the system",
     "authorities" : [ {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 12,
-      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
-      "description" : "A role which allows a user to create transactions for their own accounts"
-    }, {
-      "id" : 9,
-      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
-      "description" : "A role which allows a user to apply for accounts"
-    }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
-      "id" : 10,
-      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own accounts"
-    }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.998414827-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.998415819-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.36081141-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.360817882-04:00[America/New_York]"
   }
 }, {
   "id" : 23,
-  "username" : "felisha.bashirian",
-  "email" : "felisha.bashirian@demo.com",
-  "password" : "r7aO109KYW^",
+  "username" : "lon.ziemann",
+  "email" : "lon.ziemann@demo.com",
+  "password" : "V54tPe*i0hCr!^!jtQ8Ix%RD",
   "enabled" : true,
   "accountExpired" : false,
   "accountExpiredDate" : null,
@@ -1415,21 +1367,21 @@
     "code" : "GROUP_USER",
     "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
     "authorities" : [ {
-      "id" : 15,
-      "authority" : "ROLE_SELF_USER_EDIT",
-      "description" : "A role which allows a user to edit their user details"
-    }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
     }, {
+      "id" : 15,
+      "authority" : "ROLE_SELF_USER_EDIT",
+      "description" : "A role which allows a user to edit their user details"
+    }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
+    }, {
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
     "id" : 8,
@@ -1443,23 +1395,23 @@
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.998501241-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.998502093-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.36108031-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.361083035-04:00[America/New_York]"
   }
 }, {
   "id" : 24,
-  "username" : "bill.bode",
-  "email" : "bill.bode@demo.com",
-  "password" : "24G5!1s^SX3G^$e711Gi!!&$2&!hXVm",
-  "enabled" : true,
-  "accountExpired" : false,
-  "accountExpiredDate" : null,
+  "username" : "oliver.johnston",
+  "email" : "oliver.johnston@demo.com",
+  "password" : "Z*0$N39!V^q$*TM2KoOI",
+  "enabled" : false,
+  "accountExpired" : true,
+  "accountExpiredDate" : "2024-09-09T13:06:26.268-04:00[America/New_York]",
   "passwordExpired" : false,
   "passwordExpiredDate" : null,
   "failedLoginAttempts" : 0,
   "numPreviousLockouts" : 0,
-  "locked" : false,
-  "lockedDate" : null,
+  "locked" : true,
+  "lockedDate" : "2024-07-15T10:44:15.502-04:00[America/New_York]",
   "unlockDate" : null,
   "authorities" : [ ],
   "groups" : [ {
@@ -1467,14 +1419,6 @@
     "code" : "GROUP_USER",
     "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
     "authorities" : [ {
-      "id" : 14,
-      "authority" : "ROLE_SELF_USER_VIEW",
-      "description" : "A role which allows a user to view their user details"
-    }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
@@ -1482,6 +1426,14 @@
       "id" : 15,
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
+    }, {
+      "id" : 14,
+      "authority" : "ROLE_SELF_USER_VIEW",
+      "description" : "A role which allows a user to view their user details"
+    }, {
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
     "id" : 8,
@@ -1495,23 +1447,23 @@
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.998579139-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.998580101-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.361360721-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.361362765-04:00[America/New_York]"
   }
 }, {
   "id" : 25,
-  "username" : "alfonso.osinski",
-  "email" : "alfonso.osinski@demo.com",
-  "password" : "RC^aD8B0O%75WZ%MLP7WP$M",
-  "enabled" : true,
+  "username" : "odis.friesen",
+  "email" : "odis.friesen@demo.com",
+  "password" : "t1nO^3s20zm7B4!Cmq57!Jv!&2",
+  "enabled" : false,
   "accountExpired" : false,
   "accountExpiredDate" : null,
-  "passwordExpired" : false,
-  "passwordExpiredDate" : null,
+  "passwordExpired" : true,
+  "passwordExpiredDate" : "2024-08-25T06:06:45.851-04:00[America/New_York]",
   "failedLoginAttempts" : 0,
   "numPreviousLockouts" : 0,
-  "locked" : false,
-  "lockedDate" : null,
+  "locked" : true,
+  "lockedDate" : "2024-10-03T04:17:53.434-04:00[America/New_York]",
   "unlockDate" : null,
   "authorities" : [ ],
   "groups" : [ {
@@ -1527,13 +1479,113 @@
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
     }, {
+      "id" : 14,
+      "authority" : "ROLE_SELF_USER_VIEW",
+      "description" : "A role which allows a user to view their user details"
+    }, {
       "id" : 16,
       "authority" : "ROLE_SELF_USER_DELETE",
       "description" : "A role which allows a user to delete their user account"
+    } ]
+  }, {
+    "id" : 2,
+    "code" : "GROUP_ACCOUNT_HOLDER",
+    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
+    "authorities" : [ {
+      "id" : 6,
+      "authority" : "ROLE_SELF_CARD_APPLY",
+      "description" : "A role which allows a user to apply for cards"
+    }, {
+      "id" : 12,
+      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
+      "description" : "A role which allows a user to create transactions for their own accounts"
+    }, {
+      "id" : 1,
+      "authority" : "ROLE_USER",
+      "description" : "A role granted to all authenticated users"
+    }, {
+      "id" : 10,
+      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own accounts"
+    }, {
+      "id" : 3,
+      "authority" : "ROLE_SELF_LOAN_APPLY",
+      "description" : "A role which allows a user to apply for loans"
+    }, {
+      "id" : 8,
+      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
+      "description" : "A role which allows a user to view their own accounts"
+    }, {
+      "id" : 5,
+      "authority" : "ROLE_SELF_CARD_VIEW",
+      "description" : "A role which allows a user to view their own cards"
+    }, {
+      "id" : 2,
+      "authority" : "ROLE_SELF_LOAN_VIEW",
+      "description" : "A role which allows a user to view their own loans"
+    }, {
+      "id" : 7,
+      "authority" : "ROLE_SELF_CARD_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own cards"
+    }, {
+      "id" : 9,
+      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
+      "description" : "A role which allows a user to apply for accounts"
+    }, {
+      "id" : 13,
+      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own account transactions"
+    }, {
+      "id" : 4,
+      "authority" : "ROLE_SELF_LOAN_EDIT",
+      "description" : "A role which allows a user to edit allowed fields of their own loans"
+    }, {
+      "id" : 11,
+      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
+      "description" : "A role which allows a user to view their own account transactions"
+    } ]
+  } ],
+  "lastLoginDate" : null,
+  "controlDates" : {
+    "created" : "2024-10-16T21:18:54.361541794-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.361544429-04:00[America/New_York]"
+  }
+}, {
+  "id" : 26,
+  "username" : "toya.hayes",
+  "email" : "toya.hayes@demo.com",
+  "password" : "kW9nco7H@%",
+  "enabled" : false,
+  "accountExpired" : false,
+  "accountExpiredDate" : null,
+  "passwordExpired" : false,
+  "passwordExpiredDate" : null,
+  "failedLoginAttempts" : 0,
+  "numPreviousLockouts" : 0,
+  "locked" : true,
+  "lockedDate" : "2024-07-09T22:14:13.872-04:00[America/New_York]",
+  "unlockDate" : null,
+  "authorities" : [ ],
+  "groups" : [ {
+    "id" : 1,
+    "code" : "GROUP_USER",
+    "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
+    "authorities" : [ {
+      "id" : 1,
+      "authority" : "ROLE_USER",
+      "description" : "A role granted to all authenticated users"
+    }, {
+      "id" : 15,
+      "authority" : "ROLE_SELF_USER_EDIT",
+      "description" : "A role which allows a user to edit their user details"
     }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
+    }, {
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
     "id" : 8,
@@ -1547,114 +1599,14 @@
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.998749602-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.998750874-04:00[America/New_York]"
-  }
-}, {
-  "id" : 26,
-  "username" : "tanner.tremblay",
-  "email" : "tanner.tremblay@demo.com",
-  "password" : "@@d7@kr4@1^T",
-  "enabled" : true,
-  "accountExpired" : false,
-  "accountExpiredDate" : null,
-  "passwordExpired" : false,
-  "passwordExpiredDate" : null,
-  "failedLoginAttempts" : 0,
-  "numPreviousLockouts" : 0,
-  "locked" : false,
-  "lockedDate" : null,
-  "unlockDate" : null,
-  "authorities" : [ ],
-  "groups" : [ {
-    "id" : 1,
-    "code" : "GROUP_USER",
-    "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
-    "authorities" : [ {
-      "id" : 15,
-      "authority" : "ROLE_SELF_USER_EDIT",
-      "description" : "A role which allows a user to edit their user details"
-    }, {
-      "id" : 14,
-      "authority" : "ROLE_SELF_USER_VIEW",
-      "description" : "A role which allows a user to view their user details"
-    }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
-    }, {
-      "id" : 1,
-      "authority" : "ROLE_USER",
-      "description" : "A role granted to all authenticated users"
-    } ]
-  }, {
-    "id" : 2,
-    "code" : "GROUP_ACCOUNT_HOLDER",
-    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
-    "authorities" : [ {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 10,
-      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own accounts"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
-    }, {
-      "id" : 9,
-      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
-      "description" : "A role which allows a user to apply for accounts"
-    }, {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
-    }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 1,
-      "authority" : "ROLE_USER",
-      "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
-    }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 12,
-      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
-      "description" : "A role which allows a user to create transactions for their own accounts"
-    } ]
-  } ],
-  "lastLoginDate" : null,
-  "controlDates" : {
-    "created" : "2024-10-15T09:21:31.998828782-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.998829744-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.361720582-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.361722636-04:00[America/New_York]"
   }
 }, {
   "id" : 27,
-  "username" : "francie.fahey",
-  "email" : "francie.fahey@demo.com",
-  "password" : "@g*r$#p9!VtKgj%M80N",
+  "username" : "maddie.christiansen",
+  "email" : "maddie.christiansen@demo.com",
+  "password" : "#q9a51L4aV^$&7d9X@aTaagh$",
   "enabled" : true,
   "accountExpired" : false,
   "accountExpiredDate" : null,
@@ -1662,8 +1614,8 @@
   "passwordExpiredDate" : null,
   "failedLoginAttempts" : 0,
   "numPreviousLockouts" : 0,
-  "locked" : false,
-  "lockedDate" : null,
+  "locked" : true,
+  "lockedDate" : "2024-10-09T22:52:01.949-04:00[America/New_York]",
   "unlockDate" : null,
   "authorities" : [ ],
   "groups" : [ {
@@ -1675,10 +1627,6 @@
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
     }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
-    }, {
       "id" : 15,
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
@@ -1686,75 +1634,31 @@
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
+    }, {
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
-    "id" : 2,
-    "code" : "GROUP_ACCOUNT_HOLDER",
-    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
+    "id" : 8,
+    "code" : "GROUP_ADMIN_SYSTEM",
+    "description" : "Roles group which allows administration of all entity types in the system",
     "authorities" : [ {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
-    }, {
-      "id" : 10,
-      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own accounts"
-    }, {
-      "id" : 9,
-      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
-      "description" : "A role which allows a user to apply for accounts"
-    }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
-    }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
-      "id" : 12,
-      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
-      "description" : "A role which allows a user to create transactions for their own accounts"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.998913252-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.998914144-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.361895594-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.361898369-04:00[America/New_York]"
   }
 }, {
   "id" : 28,
-  "username" : "bettina.conroy",
-  "email" : "bettina.conroy@demo.com",
-  "password" : "bN**38^N$9NFxQ7c",
+  "username" : "marta.predovic",
+  "email" : "marta.predovic@demo.com",
+  "password" : "sN7d7$20d6i8e2U%ou#W4O#*OBg",
   "enabled" : true,
   "accountExpired" : false,
   "accountExpiredDate" : null,
@@ -1775,6 +1679,10 @@
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
     }, {
+      "id" : 15,
+      "authority" : "ROLE_SELF_USER_EDIT",
+      "description" : "A role which allows a user to edit their user details"
+    }, {
       "id" : 14,
       "authority" : "ROLE_SELF_USER_VIEW",
       "description" : "A role which allows a user to view their user details"
@@ -1782,43 +1690,19 @@
       "id" : 16,
       "authority" : "ROLE_SELF_USER_DELETE",
       "description" : "A role which allows a user to delete their user account"
-    }, {
-      "id" : 15,
-      "authority" : "ROLE_SELF_USER_EDIT",
-      "description" : "A role which allows a user to edit their user details"
     } ]
   }, {
     "id" : 2,
     "code" : "GROUP_ACCOUNT_HOLDER",
     "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
     "authorities" : [ {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
+      "id" : 6,
+      "authority" : "ROLE_SELF_CARD_APPLY",
+      "description" : "A role which allows a user to apply for cards"
     }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
-    }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
+      "id" : 12,
+      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
+      "description" : "A role which allows a user to create transactions for their own accounts"
     }, {
       "id" : 1,
       "authority" : "ROLE_USER",
@@ -1828,42 +1712,62 @@
       "authority" : "ROLE_SELF_ACCOUNT_EDIT",
       "description" : "A role which allows a user to edit some fields of their own accounts"
     }, {
-      "id" : 12,
-      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
-      "description" : "A role which allows a user to create transactions for their own accounts"
+      "id" : 3,
+      "authority" : "ROLE_SELF_LOAN_APPLY",
+      "description" : "A role which allows a user to apply for loans"
+    }, {
+      "id" : 8,
+      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
+      "description" : "A role which allows a user to view their own accounts"
+    }, {
+      "id" : 5,
+      "authority" : "ROLE_SELF_CARD_VIEW",
+      "description" : "A role which allows a user to view their own cards"
+    }, {
+      "id" : 2,
+      "authority" : "ROLE_SELF_LOAN_VIEW",
+      "description" : "A role which allows a user to view their own loans"
+    }, {
+      "id" : 7,
+      "authority" : "ROLE_SELF_CARD_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own cards"
     }, {
       "id" : 9,
       "authority" : "ROLE_SELF_ACCOUNT_APPLY",
       "description" : "A role which allows a user to apply for accounts"
     }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
+      "id" : 13,
+      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
+      "description" : "A role which allows a user to edit some fields of their own account transactions"
     }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
+      "id" : 4,
+      "authority" : "ROLE_SELF_LOAN_EDIT",
+      "description" : "A role which allows a user to edit allowed fields of their own loans"
+    }, {
+      "id" : 11,
+      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
+      "description" : "A role which allows a user to view their own account transactions"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.998989196-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.998990108-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.362144335-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.362146529-04:00[America/New_York]"
   }
 }, {
   "id" : 29,
-  "username" : "joel.grady",
-  "email" : "joel.grady@demo.com",
-  "password" : "yCCF*@^U!5",
-  "enabled" : true,
-  "accountExpired" : true,
-  "accountExpiredDate" : "2024-07-16T05:26:17.814-04:00[America/New_York]",
+  "username" : "rubie.treutel",
+  "email" : "rubie.treutel@demo.com",
+  "password" : "Q$A43!27X1nsX*kT78$ia%D!8",
+  "enabled" : false,
+  "accountExpired" : false,
+  "accountExpiredDate" : null,
   "passwordExpired" : true,
-  "passwordExpiredDate" : "2024-10-11T03:16:17.035-04:00[America/New_York]",
+  "passwordExpiredDate" : "2024-10-06T07:54:28.02-04:00[America/New_York]",
   "failedLoginAttempts" : 0,
   "numPreviousLockouts" : 0,
-  "locked" : false,
-  "lockedDate" : null,
+  "locked" : true,
+  "lockedDate" : "2024-08-06T14:42:54.253-04:00[America/New_York]",
   "unlockDate" : null,
   "authorities" : [ ],
   "groups" : [ {
@@ -1871,10 +1775,6 @@
     "code" : "GROUP_USER",
     "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
     "authorities" : [ {
-      "id" : 14,
-      "authority" : "ROLE_SELF_USER_VIEW",
-      "description" : "A role which allows a user to view their user details"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
@@ -1883,87 +1783,43 @@
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
     }, {
+      "id" : 14,
+      "authority" : "ROLE_SELF_USER_VIEW",
+      "description" : "A role which allows a user to view their user details"
+    }, {
       "id" : 16,
       "authority" : "ROLE_SELF_USER_DELETE",
       "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
-    "id" : 2,
-    "code" : "GROUP_ACCOUNT_HOLDER",
-    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
+    "id" : 8,
+    "code" : "GROUP_ADMIN_SYSTEM",
+    "description" : "Roles group which allows administration of all entity types in the system",
     "authorities" : [ {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
-      "id" : 10,
-      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own accounts"
-    }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 12,
-      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
-      "description" : "A role which allows a user to create transactions for their own accounts"
-    }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 9,
-      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
-      "description" : "A role which allows a user to apply for accounts"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
-    }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
-    }, {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.999061283-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.999062125-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.362310379-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.362312323-04:00[America/New_York]"
   }
 }, {
   "id" : 30,
-  "username" : "ulysses.nolan",
-  "email" : "ulysses.nolan@demo.com",
-  "password" : "^!&F34sF1%Nr",
+  "username" : "phylis.brekke",
+  "email" : "phylis.brekke@demo.com",
+  "password" : "#eixaIsDHPy^!Z0U",
   "enabled" : true,
-  "accountExpired" : false,
-  "accountExpiredDate" : null,
-  "passwordExpired" : false,
-  "passwordExpiredDate" : null,
+  "accountExpired" : true,
+  "accountExpiredDate" : "2024-08-03T17:45:23.961-04:00[America/New_York]",
+  "passwordExpired" : true,
+  "passwordExpiredDate" : "2024-09-28T11:06:58.303-04:00[America/New_York]",
   "failedLoginAttempts" : 0,
   "numPreviousLockouts" : 0,
-  "locked" : false,
-  "lockedDate" : null,
+  "locked" : true,
+  "lockedDate" : "2024-10-11T00:46:04.547-04:00[America/New_York]",
   "unlockDate" : null,
   "authorities" : [ ],
   "groups" : [ {
@@ -1971,14 +1827,6 @@
     "code" : "GROUP_USER",
     "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
     "authorities" : [ {
-      "id" : 14,
-      "authority" : "ROLE_SELF_USER_VIEW",
-      "description" : "A role which allows a user to view their user details"
-    }, {
-      "id" : 16,
-      "authority" : "ROLE_SELF_USER_DELETE",
-      "description" : "A role which allows a user to delete their user account"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
@@ -1986,75 +1834,35 @@
       "id" : 15,
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
+    }, {
+      "id" : 14,
+      "authority" : "ROLE_SELF_USER_VIEW",
+      "description" : "A role which allows a user to view their user details"
+    }, {
+      "id" : 16,
+      "authority" : "ROLE_SELF_USER_DELETE",
+      "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
-    "id" : 2,
-    "code" : "GROUP_ACCOUNT_HOLDER",
-    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
+    "id" : 8,
+    "code" : "GROUP_ADMIN_SYSTEM",
+    "description" : "Roles group which allows administration of all entity types in the system",
     "authorities" : [ {
-      "id" : 9,
-      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
-      "description" : "A role which allows a user to apply for accounts"
-    }, {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
-    }, {
-      "id" : 10,
-      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own accounts"
-    }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 12,
-      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
-      "description" : "A role which allows a user to create transactions for their own accounts"
-    }, {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.999142116-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.999143138-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.362447068-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.362448521-04:00[America/New_York]"
   }
 }, {
   "id" : 31,
-  "username" : "ronald.waters",
-  "email" : "ronald.waters@demo.com",
-  "password" : "2#P31S#fI**",
+  "username" : "cornelius.russel",
+  "email" : "cornelius.russel@demo.com",
+  "password" : "JH5*RUV^01gvw&",
   "enabled" : true,
   "accountExpired" : false,
   "accountExpiredDate" : null,
@@ -2075,79 +1883,31 @@
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
     }, {
-      "id" : 14,
-      "authority" : "ROLE_SELF_USER_VIEW",
-      "description" : "A role which allows a user to view their user details"
-    }, {
       "id" : 15,
       "authority" : "ROLE_SELF_USER_EDIT",
       "description" : "A role which allows a user to edit their user details"
+    }, {
+      "id" : 14,
+      "authority" : "ROLE_SELF_USER_VIEW",
+      "description" : "A role which allows a user to view their user details"
     }, {
       "id" : 16,
       "authority" : "ROLE_SELF_USER_DELETE",
       "description" : "A role which allows a user to delete their user account"
     } ]
   }, {
-    "id" : 2,
-    "code" : "GROUP_ACCOUNT_HOLDER",
-    "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
+    "id" : 8,
+    "code" : "GROUP_ADMIN_SYSTEM",
+    "description" : "Roles group which allows administration of all entity types in the system",
     "authorities" : [ {
-      "id" : 2,
-      "authority" : "ROLE_SELF_LOAN_VIEW",
-      "description" : "A role which allows a user to view their own loans"
-    }, {
-      "id" : 4,
-      "authority" : "ROLE_SELF_LOAN_EDIT",
-      "description" : "A role which allows a user to edit allowed fields of their own loans"
-    }, {
-      "id" : 11,
-      "authority" : "ROLE_SELF_TRANSACTION_VIEW",
-      "description" : "A role which allows a user to view their own account transactions"
-    }, {
-      "id" : 5,
-      "authority" : "ROLE_SELF_CARD_VIEW",
-      "description" : "A role which allows a user to view their own cards"
-    }, {
-      "id" : 9,
-      "authority" : "ROLE_SELF_ACCOUNT_APPLY",
-      "description" : "A role which allows a user to apply for accounts"
-    }, {
-      "id" : 12,
-      "authority" : "ROLE_SELF_TRANSACTION_CREATE",
-      "description" : "A role which allows a user to create transactions for their own accounts"
-    }, {
-      "id" : 13,
-      "authority" : "ROLE_SELF_TRANSACTION_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own account transactions"
-    }, {
-      "id" : 6,
-      "authority" : "ROLE_SELF_CARD_APPLY",
-      "description" : "A role which allows a user to apply for cards"
-    }, {
-      "id" : 3,
-      "authority" : "ROLE_SELF_LOAN_APPLY",
-      "description" : "A role which allows a user to apply for loans"
-    }, {
-      "id" : 7,
-      "authority" : "ROLE_SELF_CARD_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own cards"
-    }, {
       "id" : 1,
       "authority" : "ROLE_USER",
       "description" : "A role granted to all authenticated users"
-    }, {
-      "id" : 10,
-      "authority" : "ROLE_SELF_ACCOUNT_EDIT",
-      "description" : "A role which allows a user to edit some fields of their own accounts"
-    }, {
-      "id" : 8,
-      "authority" : "ROLE_SELF_ACCOUNT_VIEW",
-      "description" : "A role which allows a user to view their own accounts"
     } ]
   } ],
   "lastLoginDate" : null,
   "controlDates" : {
-    "created" : "2024-10-15T09:21:31.999213912-04:00[America/New_York]",
-    "lastUpdated" : "2024-10-15T09:21:31.999214774-04:00[America/New_York]"
+    "created" : "2024-10-16T21:18:54.362563369-04:00[America/New_York]",
+    "lastUpdated" : "2024-10-16T21:18:54.362564711-04:00[America/New_York]"
   }
 } ]

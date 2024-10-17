@@ -108,17 +108,21 @@ public class StartupDatabasePopulator {
             loans.addAll(populateLoans(usersPage));
 
             pageNumber++;
-            pageRequest = PageRequest.of(pageNumber, 100);
-            usersPage = securityUserRepository.findAll(pageRequest);
           } while (usersPage.hasNext());
 
           if (regenerateData) {
-            final String accountsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.ACCOUNTS_OUTPUT_FILE_NAME;
-            new JsonFileWriter<>(objectMapper, accountsOutputFile, accounts).write();
-            final String cardsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.CARDS_OUTPUT_FILE_NAME;
-            new JsonFileWriter<>(objectMapper, cardsOutputFile, cards).write();
-            final String loansOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.LOANS_OUTPUT_FILE_NAME;
-            new JsonFileWriter<>(objectMapper, loansOutputFile, loans).write();
+            if (populateAccounts && !accounts.isEmpty()) {
+              final String accountsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.ACCOUNTS_OUTPUT_FILE_NAME;
+              new JsonFileWriter<>(objectMapper, accountsOutputFile, accounts).write();
+            }
+            if (populateCards && !cards.isEmpty()) {
+              final String cardsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.CARDS_OUTPUT_FILE_NAME;
+              new JsonFileWriter<>(objectMapper, cardsOutputFile, cards).write();
+            }
+            if (populateLoans && !loans.isEmpty()) {
+              final String loansOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.LOANS_OUTPUT_FILE_NAME;
+              new JsonFileWriter<>(objectMapper, loansOutputFile, loans).write();
+            }
           }
 
           log.info("Finished populating " + accounts.size() + " development environment accounts");
@@ -162,13 +166,8 @@ public class StartupDatabasePopulator {
               log.error(() -> "No security group matching " + info + " was found!");
             }
           }
-          if (regenerateData) {
-            final String outputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.GROUPS_OUTPUT_FILE_NAME;
-            new JsonFileWriter<>(objectMapper, outputFile, persistedGroups).write();
-            log.info(() -> "Finished populating " + persistedGroups.size() + " development environment security groups");
-          }
         }
-        if (regenerateData) {
+        if (regenerateData && !persistedGroups.isEmpty()) {
           final String outputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.GROUPS_OUTPUT_FILE_NAME;
           new JsonFileWriter<>(objectMapper, outputFile, persistedGroups).write();
           log.info(() -> "Finished populating " + persistedGroups.size() + " development environment security groups");
