@@ -234,8 +234,6 @@ public class DemoAssertions {
       assertEquals(expected.getId(), actual.getId());
       assertEquals(expected.getUsername(), actual.getUsername());
       assertEquals(expected.getEmail(), actual.getEmail());
-//      assertEquals(expected.getUserType(), actual.getUserType());
-//      assertEquals(expected.getUserRole(), actual.getUserRole());
       assertEquals(expected.isEnabled(), actual.isEnabled());
       assertEquals(expected.isAccountExpired(), actual.isAccountExpired());
       assertEquals(expected.isAccountNonExpired(), actual.isAccountNonExpired());
@@ -328,10 +326,6 @@ public class DemoAssertions {
   public static void assertExpectedUserCreated(String expectedUsername, UserCreationResponse userCreationResponse) {
     assertNotNull(userCreationResponse);
     assertNotNull(userCreationResponse.getId());
-    assertNotNull(userCreationResponse.getAuthorities());
     assertEquals(expectedUsername, userCreationResponse.getUsername());
-    assertEquals(1, userCreationResponse.getAuthorities().size());
-    assertEquals(AuthorityUserRoles.ROLE_USER, userCreationResponse.getAuthorities().getFirst().getRole());
-    assertNotNull(userCreationResponse.getAuthorities().getFirst().getId());
   }
 }

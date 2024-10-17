@@ -25,7 +25,6 @@ import jakarta.validation.constraints.NotNull;
 import java.lang.reflect.Field;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -33,13 +32,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import javax.annotation.Nonnull;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.message.ParameterizedMessageFactory;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.ReflectionUtils;
 
@@ -52,6 +51,7 @@ import org.springframework.util.ReflectionUtils;
 @JsonInclude(Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Log4j2
+@EqualsAndHashCode
 public class SecurityUser implements UserDetails {
 
   @Id
@@ -135,8 +135,6 @@ public class SecurityUser implements UserDetails {
     setPassword(toClone.getPassword());
 
     setEmail(toClone.getEmail());
-//    setUserType(toClone.getUserType());
-//    setUserRole(toClone.getUserRole());
     setEnabled(toClone.isEnabled());
     setAccountExpired(toClone.isAccountExpired());
     setAccountExpiredDate(toClone.getAccountExpiredDate());
@@ -147,19 +145,8 @@ public class SecurityUser implements UserDetails {
     setLocked(toClone.isLocked());
     setLockedDate(toClone.getLockedDate());
     setUnlockDate(toClone.getUnlockDate());
-
-    setGroups(toClone.getGroups());
-
-//    List<SecurityAuthority> copiedAuthorities = new ArrayList<>();
-//    if (toClone.getAuthorities() != null) {
-//      toClone.getAuthorities().forEach(auth -> {
-//        SecurityAuthority clonedAuthority = new SecurityAuthority();
-//        clonedAuthority.setUser(this);
-//        clonedAuthority.setAuthority(auth.getAuthority());
-//        copiedAuthorities.add(clonedAuthority);
-//      });
-//    }
-//    setAuthorities(copiedAuthorities);
+    setGroups(new HashSet<>(toClone.getGroups()));
+    setAuthorities(new HashSet<>(toClone.getAuthorities()));
 
     if (toClone.getControlDates() != null) {
       // ZonedDateTime is immutable but this still makes me a little uncomfortable
@@ -177,14 +164,23 @@ public class SecurityUser implements UserDetails {
    */
   @Override
   @Nonnull
-  public Collection<? extends GrantedAuthority> getAuthorities() {
+  public Set<SecurityAuthority> getAuthorities() {
+    return this.authorities == null ? new HashSet<>() : this.authorities;
+  }
+
+  @Nonnull
+  public Set<SecurityGroup> getGroups() {
+    return this.groups == null ? new HashSet<>() : this.groups;
+  }
+
+  public Set<SecurityAuthority> deriveAuthorities() {
     Set<SecurityAuthority> derivedAuthorities = new HashSet<>();
+
+    if (this.authorities != null) {
+      derivedAuthorities.addAll(this.authorities);
+    }
+
     if (groups != null && !groups.isEmpty()) {
-
-      if (this.authorities != null) {
-        derivedAuthorities.addAll(this.authorities);
-      }
-
       groups.forEach(group -> {
         if (group != null && group.getAuthorities() != null && !group.getAuthorities().isEmpty()) {
           derivedAuthorities.addAll(group.getAuthorities());

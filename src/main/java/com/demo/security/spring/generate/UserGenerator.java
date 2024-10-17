@@ -137,7 +137,7 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
 
   private Set<SecurityGroup> getGroupsForNames(Collection<String> groupNames) {
     if (groupNames != null && !groupNames.isEmpty()) {
-      return securityGroupRepository.retrieveAllByCode(groupNames);
+      return securityGroupRepository.findAllByCodeIn(groupNames);
     }
     return new HashSet<>();
   }

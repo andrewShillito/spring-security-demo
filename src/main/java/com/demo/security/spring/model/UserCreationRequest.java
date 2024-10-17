@@ -1,12 +1,9 @@
 package com.demo.security.spring.model;
 
-import com.demo.security.spring.utils.AuthorityUserRoles;
 import com.demo.security.spring.validation.IsValidPassword;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import java.util.HashSet;
-import java.util.Set;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,14 +37,6 @@ public class UserCreationRequest {
     user.setUsername(username);
     user.setEmail(email);
     user.setEnabled(true);
-
-    // existing basic auth roles which will be flushed out more soon
-    Set<SecurityAuthority> authorities = new HashSet<>();
-    SecurityAuthority authority = new SecurityAuthority();
-    authority.setAuthority(AuthorityUserRoles.ROLE_USER);
-    authorities.add(authority);
-    user.setAuthorities(authorities);
-
     return user;
   }
 

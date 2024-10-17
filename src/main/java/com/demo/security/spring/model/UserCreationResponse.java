@@ -14,8 +14,6 @@ public class UserCreationResponse {
 
   private String username;
 
-  private List<AuthorityCreationResponse> authorities;
-
   public static Builder builder() {
     return new Builder();
   }
@@ -40,11 +38,6 @@ public class UserCreationResponse {
 
     public Builder username(String username) {
       userCreationResponse.setUsername(username);
-      return this;
-    }
-
-    public Builder authorities(List<AuthorityCreationResponse> authorityCreationResponses) {
-      userCreationResponse.setAuthorities(authorityCreationResponses);
       return this;
     }
   }

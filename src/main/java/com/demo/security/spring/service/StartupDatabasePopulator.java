@@ -1,4 +1,4 @@
-package com.demo.security.spring.utils;
+package com.demo.security.spring.service;
 
 import com.demo.security.spring.generate.JsonFileWriter;
 import com.demo.security.spring.generate.UserGenerator;
@@ -6,7 +6,6 @@ import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.Card;
 import com.demo.security.spring.model.ContactMessage;
 import com.demo.security.spring.model.ExampleSecurityGroupDataWrapper;
-import com.demo.security.spring.model.SecurityGroupConfig;
 import com.demo.security.spring.model.Loan;
 import com.demo.security.spring.model.NoticeDetails;
 import com.demo.security.spring.model.SecurityAuthority;
@@ -21,7 +20,6 @@ import com.demo.security.spring.repository.SecurityAuthorityRepository;
 import com.demo.security.spring.repository.SecurityGroupAuthorityRepository;
 import com.demo.security.spring.repository.SecurityGroupRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
-import com.demo.security.spring.service.ExampleDataManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,6 +69,20 @@ public class StartupDatabasePopulator {
   /** Enables / disables startup database population */
   private boolean enabled;
 
+  private boolean populateSecurityGroups;
+
+  private boolean populateUsers;
+
+  private boolean populateNoticeDetails;
+
+  private boolean populateContactDetails;
+
+  private boolean populateAccounts;
+
+  private boolean populateCards;
+
+  private boolean populateLoans;
+
   @EventListener(ContextRefreshedEvent.class)
   public void seedDatabaseIfEmpty() {
     if (enabled) {
@@ -80,38 +92,39 @@ public class StartupDatabasePopulator {
         populateNoticeDetails();
         populateContactMessages();
 
-        int pageNumber = 0;
-        List<Account> accounts = new ArrayList<>();
-        List<Card> cards = new ArrayList<>();
-        List<Loan> loans = new ArrayList<>();
-        Page<SecurityUser> usersPage;
-        do {
-          PageRequest pageRequest = PageRequest.of(pageNumber, 100);
-          usersPage = securityUserRepository.findAll(pageRequest);
+        if (populateUsers) {
+          int pageNumber = 0;
+          List<Account> accounts = new ArrayList<>();
+          List<Card> cards = new ArrayList<>();
+          List<Loan> loans = new ArrayList<>();
+          Page<SecurityUser> usersPage;
+          do {
+            PageRequest pageRequest = PageRequest.of(pageNumber, 100);
+            usersPage = securityUserRepository.findAll(pageRequest);
 
-          // populate accounts, cards, and loans
-          accounts.addAll(populateAccounts(usersPage));
-          cards.addAll(populateCards(usersPage));
-          loans.addAll(populateLoans(usersPage));
+            // populate accounts, cards, and loans
+            accounts.addAll(populateAccounts(usersPage));
+            cards.addAll(populateCards(usersPage));
+            loans.addAll(populateLoans(usersPage));
 
-          pageNumber++;
-          pageRequest = PageRequest.of(pageNumber, 100);
-          usersPage = securityUserRepository.findAll(pageRequest);
-        } while (usersPage.hasNext());
+            pageNumber++;
+            pageRequest = PageRequest.of(pageNumber, 100);
+            usersPage = securityUserRepository.findAll(pageRequest);
+          } while (usersPage.hasNext());
 
-        if (regenerateData) {
-          final String accountsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.ACCOUNTS_OUTPUT_FILE_NAME;
-          new JsonFileWriter<>(objectMapper, accountsOutputFile, accounts).write();
-          final String cardsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.CARDS_OUTPUT_FILE_NAME;
-          new JsonFileWriter<>(objectMapper, cardsOutputFile, cards).write();
-          final String loansOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.LOANS_OUTPUT_FILE_NAME;
-          new JsonFileWriter<>(objectMapper, loansOutputFile, loans).write();
+          if (regenerateData) {
+            final String accountsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.ACCOUNTS_OUTPUT_FILE_NAME;
+            new JsonFileWriter<>(objectMapper, accountsOutputFile, accounts).write();
+            final String cardsOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.CARDS_OUTPUT_FILE_NAME;
+            new JsonFileWriter<>(objectMapper, cardsOutputFile, cards).write();
+            final String loansOutputFile = JsonFileWriter.DEFAULT_OUTPUT_DIRECTORY + ExampleDataManager.LOANS_OUTPUT_FILE_NAME;
+            new JsonFileWriter<>(objectMapper, loansOutputFile, loans).write();
+          }
+
+          log.info("Finished populating " + accounts.size() + " development environment accounts");
+          log.info("Finished populating " + cards.size() + " development environment cards");
+          log.info("Finished populating " + loans.size() + " development environment loans");
         }
-
-        log.info("Finished populating " + accounts.size() + " development environment accounts");
-        log.info("Finished populating " + cards.size() + " development environment cards");
-        log.info("Finished populating " + loans.size() + " development environment loans");
-
       } catch (Exception e) {
         throw new RuntimeException("Failed to populate development environment with error!", e);
       }
@@ -121,6 +134,10 @@ public class StartupDatabasePopulator {
   }
 
   private void populateSecurityGroups() {
+    if (!populateSecurityGroups) {
+      log.info(() -> "Population of security groups is disabled");
+      return;
+    }
     if (securityGroupAuthorityRepository.count() > 0) {
       log.info(() -> "Not repopulating development environment security group authorities as the table already contains data");
     } else {
@@ -161,6 +178,10 @@ public class StartupDatabasePopulator {
   }
 
   private void populateUsers() {
+    if (!populateUsers) {
+      log.info(() -> "Population of security users is disabled. This also prevents accounts, cards, and loans population since they require users to exist.");
+      return;
+    }
     if (securityUserRepository.count() > 0) {
       log.info(() -> "Not repopulating development environment users as the table already contains data");
     } else {
@@ -189,6 +210,10 @@ public class StartupDatabasePopulator {
   }
 
   private void populateNoticeDetails() {
+    if (!populateNoticeDetails) {
+      log.info(() -> "Population of notices is disabled");
+      return;
+    }
     if (noticeDetailsRepository.count() > 0) {
       log.info(() -> "Not repopulating development environment notice details as the table already contains data");
     } else {
@@ -204,6 +229,10 @@ public class StartupDatabasePopulator {
   }
 
   private void populateContactMessages() {
+    if (!populateContactDetails) {
+      log.info(() -> "Population of contact messages is disabled");
+      return;
+    }
     if (contactMessageRepository.count() > 0) {
       log.info(() -> "Not repopulating development environment contact messages as the table already contains data");
     } else {
@@ -219,6 +248,10 @@ public class StartupDatabasePopulator {
   }
 
   private List<Account> populateAccounts(Page<SecurityUser> users) {
+    if (!populateAccounts) {
+      log.info(() -> "Population of accounts is disabled");
+      return new ArrayList<>();
+    }
     if (accountRepository.count() > 0) {
       log.info(() -> "Not repopulating development environment accounts as the table already contains data");
       return new ArrayList<>();
@@ -230,6 +263,10 @@ public class StartupDatabasePopulator {
   }
 
   private List<Card> populateCards(Page<SecurityUser> users) {
+    if (!populateCards) {
+      log.info(() -> "Population of cards is disabled");
+      return new ArrayList<>();
+    }
     if (cardRepository.count() > 0) {
       log.info(() -> "Not repopulating development environment cards as the table already contains data");
       return new ArrayList<>();
@@ -242,6 +279,10 @@ public class StartupDatabasePopulator {
   }
 
   private List<Loan> populateLoans(Page<SecurityUser> users) {
+    if (!populateLoans) {
+      log.info(() -> "Population of loans is disabled");
+      return new ArrayList<>();
+    }
     if (loanRepository.count() > 0) {
       log.info(() -> "Not repopulating development environment loans as the table already contains data");
       return new ArrayList<>();

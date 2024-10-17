@@ -53,7 +53,7 @@ import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
 import com.demo.security.spring.service.UserDetailsManagerImpl;
 import com.demo.security.spring.utils.Constants;
 import com.demo.security.spring.utils.SpringProfileConstants;
-import com.demo.security.spring.utils.StartupDatabasePopulator;
+import com.demo.security.spring.service.StartupDatabasePopulator;
 import com.demo.security.spring.service.ExampleDataManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
@@ -107,7 +107,7 @@ public class ProjectSecurityConfig {
         .csrf(csrfConfigurer -> csrfConfigurer
             .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
             .csrfTokenRequestHandler(new CsrfTokenRequestAttributeHandler())
-            .ignoringRequestMatchers(ContactController.RESOURCE_PATH + "/**"))
+            .ignoringRequestMatchers(ContactController.RESOURCE_PATH + "/**")) // RegisterController.RESOURCE_PATH + "/**"
         .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
         .sessionManagement(smc -> {
           smc.sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
@@ -194,7 +194,7 @@ public class ProjectSecurityConfig {
    * @return StartupDatabasePopulator
    */
   @Bean
-  @Profile(SpringProfileConstants.POSTGRES)
+  @Profile({ SpringProfileConstants.POSTGRES, SpringProfileConstants.H2 })
   public StartupDatabasePopulator startupDatabasePopulator(
       final SecurityUserRepository userRepository,
       final NoticeDetailsRepository noticeDetailsRepository,
@@ -210,7 +210,14 @@ public class ProjectSecurityConfig {
       final ObjectMapper objectMapper,
       final PasswordEncoder passwordEncoder,
       @Value("${example-data.regenerate:false}") boolean regenerateData,
-      @Value("${example-data.enabled:true}") boolean enabled
+      @Value("${example-data.enabled:true}") boolean enabled,
+      @Value("${example-data.populateSecurityGroups:true}") boolean populateSecurityGroups,
+      @Value("${example-data.populateUsers:true}") boolean populateUsers,
+      @Value("${example-data.populateNoticeDetails:true}") boolean populateNoticeDetails,
+      @Value("${example-data.populateContactDetails:true}") boolean populateContactDetails,
+      @Value("${example-data.populateAccounts:true}") boolean populateAccounts,
+      @Value("${example-data.populateCards:true}") boolean populateCards,
+      @Value("${example-data.populateLoans:true}") boolean populateLoans
   ) {
     return StartupDatabasePopulator.builder()
         .exampleDataManager(exampleDataManager)
@@ -228,6 +235,13 @@ public class ProjectSecurityConfig {
         .passwordEncoder(passwordEncoder)
         .regenerateData(regenerateData)
         .enabled(enabled)
+        .populateSecurityGroups(populateSecurityGroups)
+        .populateUsers(populateUsers)
+        .populateNoticeDetails(populateNoticeDetails)
+        .populateContactDetails(populateContactDetails)
+        .populateAccounts(populateAccounts)
+        .populateCards(populateCards)
+        .populateLoans(populateLoans)
         .build();
   }
 

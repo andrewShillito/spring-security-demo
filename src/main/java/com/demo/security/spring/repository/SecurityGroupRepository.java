@@ -12,9 +12,6 @@ public interface SecurityGroupRepository extends CrudRepository<SecurityGroup, L
 
   SecurityGroup getSecurityGroupByCode(String code);
 
-  @Query(value = "SELECT g FROM SecurityGroup g JOIN SecurityGroupAuthority j ON j.group.id = g.id LEFT JOIN FETCH SecurityAuthority a ON a.id = j.authority.id WHERE g.code IN ?1")
-  Set<SecurityGroup> retrieveAllByCode(Collection<String> code);
-
-//  Set<SecurityGroup> findAllByUsersIsContaining(SecurityUser user);
+  Set<SecurityGroup> findAllByCodeIn(Collection<String> code);
 
 }

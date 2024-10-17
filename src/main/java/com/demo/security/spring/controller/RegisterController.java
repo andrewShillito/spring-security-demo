@@ -4,14 +4,16 @@ import com.demo.security.spring.controller.error.DuplicateUserException;
 import com.demo.security.spring.controller.error.UserCreationException;
 import com.demo.security.spring.controller.error.ValidationErrorDetailsResponse;
 import com.demo.security.spring.error.ValidationErrorUtils;
-import com.demo.security.spring.model.AuthorityCreationResponse;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.model.UserCreationRequest;
 import com.demo.security.spring.model.UserCreationResponse;
+import com.demo.security.spring.repository.SecurityGroupRepository;
 import com.demo.security.spring.service.LoginService;
+import com.demo.security.spring.utils.AuthorityGroups;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.validation.Valid;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -33,6 +35,8 @@ public class RegisterController {
 
   private ObjectMapper objectMapper;
 
+  private SecurityGroupRepository securityGroupRepository;
+
   @Autowired
   public void setLoginService(LoginService loginService) {
     this.loginService = loginService;
@@ -41,6 +45,12 @@ public class RegisterController {
   @Autowired
   public void setObjectMapper(ObjectMapper objectMapper) {
     this.objectMapper = objectMapper;
+  }
+
+  @Autowired
+  public void setSecurityGroupRepository(
+      SecurityGroupRepository securityGroupRepository) {
+    this.securityGroupRepository = securityGroupRepository;
   }
 
   /**
@@ -63,13 +73,15 @@ public class RegisterController {
       throw new UserCreationException(HttpStatus.BAD_REQUEST, body);
     }
     try {
-      final SecurityUser createdUser = loginService.createUser(userCreationRequest.toSecurityUser());
+      SecurityUser createdUser = userCreationRequest.toSecurityUser();
+      createdUser.setGroups(securityGroupRepository.findAllByCodeIn(
+          List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ACCOUNT_HOLDER)));
+      createdUser = loginService.createUser(createdUser);
       if (createdUser.getId() != null) {
         final UserCreationResponse response = UserCreationResponse
             .builder()
             .id(createdUser.getId())
             .username(createdUser.getUsername())
-            .authorities(createdUser.getAuthorities().stream().map(AuthorityCreationResponse::fromAuthority).toList())
             .build();
         responseEntity = ResponseEntity
             .status(HttpStatus.CREATED.value())

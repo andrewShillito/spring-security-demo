@@ -9,15 +9,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotBlank;
 import java.util.HashSet;
 import java.util.Set;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -32,18 +30,13 @@ import org.springframework.security.core.GrantedAuthority;
 })
 @SequenceGenerator(name = "security_authorities_id_seq", sequenceName = "security_authorities_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
+@EqualsAndHashCode
 public class SecurityAuthority implements GrantedAuthority {
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "security_authorities_id_seq")
   private Long id;
 
-//  @ManyToMany(mappedBy = "authorities")
-//  @JoinTable(
-//      name = "security_users_authorities",
-//      joinColumns = @JoinColumn(name = "authority_id"),
-//      inverseJoinColumns = @JoinColumn(name = "user_id")
-//  )
   @Transient
   private Set<SecurityUser> users = new HashSet<>();
 
@@ -56,27 +49,6 @@ public class SecurityAuthority implements GrantedAuthority {
   @Column(name = "description", length = 255, nullable = false)
   private String description;
 
-//  @ManyToMany(mappedBy = "authorities")
-//  @JoinTable(
-//      name = "security_groups_roles",
-//      joinColumns = @JoinColumn(name = "authority_id"),
-//      inverseJoinColumns = @JoinColumn(name = "group_id")
-//  )
   @Transient
   private Set<SecurityGroup> groups = new HashSet<>();
-
-//  @OneToMany(mappedBy = "authority", fetch = FetchType.EAGER)
-//  @NotEmpty
-//  @Getter(value = AccessLevel.NONE)
-//  private Set<SecurityGroupAuthority> groups;
-
-//  public Set<SecurityGroup> getGroups() {
-//    if (groups != null && !groups.isEmpty()) {
-//      return groups.stream().map(SecurityGroupAuthority::getGroup).filter(Objects::nonNull).collect(Collectors.toSet());
-//    }
-//    return new HashSet<>();
-//  }
-
-  public SecurityAuthority() {
-  }
 }

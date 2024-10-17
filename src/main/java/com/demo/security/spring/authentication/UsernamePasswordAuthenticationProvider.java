@@ -1,12 +1,18 @@
 package com.demo.security.spring.authentication;
 
 import com.demo.security.spring.model.AuthenticationFailureReason;
+import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.utils.SpringProfileConstants;
+import jakarta.validation.constraints.NotNull;
 import java.time.ZonedDateTime;
+import java.util.Set;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -19,6 +25,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.stereotype.Component;
 
 /**
@@ -63,7 +70,7 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
     validateUser(username, password, user);
     authenticationAttemptManager.handleSuccessfulAuthentication(user);
 
-    return new UsernamePasswordAuthenticationToken(username, password, user.getAuthorities());
+    return new UsernamePasswordAuthenticationToken(username, password, user.deriveAuthorities());
   }
 
   private void validateUser(final String username, final String providedPassword, SecurityUser user) {
@@ -83,7 +90,8 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.ACCOUNT_EXPIRED);
       throw new AccountExpiredException("The account for user " + username + " has expired");
     }
-    if (user.getAuthorities() == null || user.getAuthorities().isEmpty()) {
+    Set<SecurityAuthority> authorities = user.deriveAuthorities();
+    if (authorities.isEmpty()) {
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.NO_AUTHORITIES);
       // note that authorities are fetched eagerly by hibernate
       throw new IllegalStateException("User " + username + " has no related authorities!");

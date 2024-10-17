@@ -10,17 +10,21 @@ import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.TestDataGenerator;
 import com.demo.security.spring.controller.error.DuplicateUserException;
 import com.demo.security.spring.controller.error.ValidationErrorDetailsResponse;
+import com.demo.security.spring.model.SecurityGroup;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.model.UserCreationResponse;
 import com.demo.security.spring.model.UserCreationRequest;
+import com.demo.security.spring.repository.SecurityUserGroupRepository;
+import com.demo.security.spring.utils.AuthorityGroups;
 import com.demo.security.spring.utils.Constants;
-import com.demo.security.spring.utils.AuthorityUserRoles;
 import com.demo.security.spring.validation.IsValidPassword;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -48,6 +52,9 @@ public class RegisterControllerTest extends AbstractControllerTest {
 
   @Autowired
   private UserDetailsManager userDetailsManager;
+
+  @Autowired
+  private SecurityUserGroupRepository securityUserGroupRepository;
 
   @Test
   void testCors() throws Exception {
@@ -125,6 +132,9 @@ public class RegisterControllerTest extends AbstractControllerTest {
     assertNotNull(userCreationResponse);
     DemoAssertions.assertExpectedUserCreated(request.getUsername(), userCreationResponse);
 
+    SecurityUser user = (SecurityUser) userDetailsManager.loadUserByUsername(request.getUsername());
+    assertNotNull(user);
+
     // now we login as that newly registered user using form login
     DemoAssertions.assertFormLoginSuccessful(mockMvc, request.getUsername(), request.getPassword());
     var userDetails = mockMvc.perform(get(UserController.RESOURCE_PATH).with(csrf()).with(user(request.getUsername())))
@@ -152,10 +162,12 @@ public class RegisterControllerTest extends AbstractControllerTest {
     assertEquals(0, createdSecurityUser.getNumPreviousLockouts());
     assertFalse(createdSecurityUser.isAccountExpired());
     assertTrue(createdSecurityUser.isCredentialsNonExpired());
-    assertEquals(1, createdSecurityUser.getAuthorities().size());
-    assertTrue(createdSecurityUser.getAuthorities().stream().findFirst().isPresent());
-    assertEquals(
-        AuthorityUserRoles.ROLE_USER, createdSecurityUser.getAuthorities().stream().findFirst().get().getAuthority());
+    assertEquals(2, createdSecurityUser.getGroups().size());
+    assertEquals(16, createdSecurityUser.deriveAuthorities().size());
+    assertIterableEquals(
+        new HashSet<>(List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ACCOUNT_HOLDER)),
+        createdSecurityUser.getGroups().stream().map(SecurityGroup::getCode).collect(Collectors.toSet())
+    );
     DemoAssertions.assertFormLogoutSuccessful(mockMvc);
   }
 
