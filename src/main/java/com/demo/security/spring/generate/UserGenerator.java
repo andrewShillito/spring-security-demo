@@ -68,12 +68,12 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
         generateUser("user", false),
         generateUser("systemAdmin", true),
         generateUser("otherUser", false),
-        generateUser("otherSystemAdmin", true, null, AuthorityGroups.GROUP_ADMIN_SYSTEM_ROLES),
-        generateUser("loanAdmin", true, null, AuthorityGroups.GROUP_ADMIN_LOANS_ROLES),
-        generateUser("cardAdmin", true, null, AuthorityGroups.GROUP_ADMIN_CARDS_ROLES),
-        generateUser("accountAdmin", true, null, AuthorityGroups.GROUP_ADMIN_ACCOUNTS_ROLES),
-        generateUser("userAdmin", true, null, AuthorityGroups.GROUP_ADMIN_USERS_ROLES),
-        generateUser("transactionsAdmin", true, null, AuthorityGroups.GROUP_ADMIN_TRANSACTIONS_ROLES),
+        generateUser("otherSystemAdmin", true),
+        generateUser("loanAdmin", true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_LOANS)),
+        generateUser("cardAdmin", true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_CARDS)),
+        generateUser("accountAdmin", true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_ACCOUNTS)),
+        generateUser("userAdmin", true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_USERS)),
+        generateUser("transactionsAdmin", true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_TRANSACTIONS)),
         disable(generateUser("userDisabled", false)),
         disable(generateUser("adminDisabled", true))
     ));

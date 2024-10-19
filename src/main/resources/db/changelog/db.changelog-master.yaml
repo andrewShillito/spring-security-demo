@@ -1317,3 +1317,113 @@ databaseChangeLog:
             - column:
                 name: description
                 value: A role which allows a user to delete their user account
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_ADMIN
+            - column:
+                name: description
+                value: Role which grants a user basic admin rights
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_ADMIN_USERS_VIEW
+            - column:
+                name: description
+                value: Role which allows admin to view any user's users
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_ADMIN_USERS_EDIT
+            - column:
+                name: description
+                value: Role which allows admin to edit any user's users
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_ADMIN_ACCOUNTS_VIEW
+            - column:
+                name: description
+                value: Role which allows admin to view any user's accounts
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_ADMIN_ACCOUNTS_EDIT
+            - column:
+                name: description
+                value: Role which allows admin to edit any user's accounts
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_ADMIN_CARDS_VIEW
+            - column:
+                name: description
+                value: Role which allows admin to view any user's cards
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_ADMIN_CARDS_EDIT
+            - column:
+                name: description
+                value: Role which allows admin to edit any user's cards
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_ADMIN_LOANS_VIEW
+            - column:
+                name: description
+                value: Role which allows admin to view any user's loans
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_ADMIN_LOANS_EDIT
+            - column:
+                name: description
+                value: Role which allows admin to edit any user's loans
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_ADMIN_TRANSACTIONS_VIEW
+            - column:
+                name: description
+                value: Role which allows admin to view any user's transactions
+      - insert:
+          tableName: security_authorities
+          schemaName: demo
+          columns:
+            - column:
+                name: authority
+                value: ROLE_ADMIN_TRANSACTIONS_EDIT
+            - column:
+                name: description
+                value: Role which allows admin to edit any user's transactions

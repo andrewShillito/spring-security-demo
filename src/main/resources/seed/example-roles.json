@@ -81,24 +81,60 @@
   "code" : "GROUP_ADMIN_USERS",
   "description" : "Roles group which allows administration of users",
   "authorities" : [ {
+    "id" : 17,
+    "authority" : "ROLE_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
     "id" : 1,
     "authority" : "ROLE_USER",
     "description" : "A role granted to all authenticated users"
+  }, {
+    "id" : 18,
+    "authority" : "ROLE_ADMIN_USERS_VIEW",
+    "description" : "Role which allows admin to view any user's users"
+  }, {
+    "id" : 19,
+    "authority" : "ROLE_ADMIN_USERS_EDIT",
+    "description" : "Role which allows admin to edit any user's users"
   } ]
 }, {
   "id" : 4,
   "code" : "GROUP_ADMIN_ACCOUNTS",
   "description" : "Roles group which allows administration of accounts",
   "authorities" : [ {
+    "id" : 20,
+    "authority" : "ROLE_ADMIN_ACCOUNTS_VIEW",
+    "description" : "Role which allows admin to view any user's accounts"
+  }, {
+    "id" : 17,
+    "authority" : "ROLE_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
     "id" : 1,
     "authority" : "ROLE_USER",
     "description" : "A role granted to all authenticated users"
+  }, {
+    "id" : 21,
+    "authority" : "ROLE_ADMIN_ACCOUNTS_EDIT",
+    "description" : "Role which allows admin to edit any user's accounts"
   } ]
 }, {
   "id" : 5,
   "code" : "GROUP_ADMIN_CARDS",
   "description" : "Roles group which allows administration of cards",
   "authorities" : [ {
+    "id" : 23,
+    "authority" : "ROLE_ADMIN_CARDS_EDIT",
+    "description" : "Role which allows admin to edit any user's cards"
+  }, {
+    "id" : 17,
+    "authority" : "ROLE_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
+    "id" : 22,
+    "authority" : "ROLE_ADMIN_CARDS_VIEW",
+    "description" : "Role which allows admin to view any user's cards"
+  }, {
     "id" : 1,
     "authority" : "ROLE_USER",
     "description" : "A role granted to all authenticated users"
@@ -108,26 +144,94 @@
   "code" : "GROUP_ADMIN_LOANS",
   "description" : "Roles group which allows administration of loans",
   "authorities" : [ {
+    "id" : 17,
+    "authority" : "ROLE_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
     "id" : 1,
     "authority" : "ROLE_USER",
     "description" : "A role granted to all authenticated users"
+  }, {
+    "id" : 24,
+    "authority" : "ROLE_ADMIN_LOANS_VIEW",
+    "description" : "Role which allows admin to view any user's loans"
+  }, {
+    "id" : 25,
+    "authority" : "ROLE_ADMIN_LOANS_EDIT",
+    "description" : "Role which allows admin to edit any user's loans"
   } ]
 }, {
   "id" : 7,
   "code" : "GROUP_ADMIN_TRANSACTIONS",
   "description" : "Roles group which allows administration of account transactions",
   "authorities" : [ {
+    "id" : 27,
+    "authority" : "ROLE_ADMIN_TRANSACTIONS_EDIT",
+    "description" : "Role which allows admin to edit any user's transactions"
+  }, {
+    "id" : 17,
+    "authority" : "ROLE_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
     "id" : 1,
     "authority" : "ROLE_USER",
     "description" : "A role granted to all authenticated users"
+  }, {
+    "id" : 26,
+    "authority" : "ROLE_ADMIN_TRANSACTIONS_VIEW",
+    "description" : "Role which allows admin to view any user's transactions"
   } ]
 }, {
   "id" : 8,
   "code" : "GROUP_ADMIN_SYSTEM",
   "description" : "Roles group which allows administration of all entity types in the system",
   "authorities" : [ {
+    "id" : 23,
+    "authority" : "ROLE_ADMIN_CARDS_EDIT",
+    "description" : "Role which allows admin to edit any user's cards"
+  }, {
+    "id" : 20,
+    "authority" : "ROLE_ADMIN_ACCOUNTS_VIEW",
+    "description" : "Role which allows admin to view any user's accounts"
+  }, {
+    "id" : 27,
+    "authority" : "ROLE_ADMIN_TRANSACTIONS_EDIT",
+    "description" : "Role which allows admin to edit any user's transactions"
+  }, {
+    "id" : 17,
+    "authority" : "ROLE_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
+    "id" : 22,
+    "authority" : "ROLE_ADMIN_CARDS_VIEW",
+    "description" : "Role which allows admin to view any user's cards"
+  }, {
     "id" : 1,
     "authority" : "ROLE_USER",
     "description" : "A role granted to all authenticated users"
+  }, {
+    "id" : 24,
+    "authority" : "ROLE_ADMIN_LOANS_VIEW",
+    "description" : "Role which allows admin to view any user's loans"
+  }, {
+    "id" : 25,
+    "authority" : "ROLE_ADMIN_LOANS_EDIT",
+    "description" : "Role which allows admin to edit any user's loans"
+  }, {
+    "id" : 26,
+    "authority" : "ROLE_ADMIN_TRANSACTIONS_VIEW",
+    "description" : "Role which allows admin to view any user's transactions"
+  }, {
+    "id" : 18,
+    "authority" : "ROLE_ADMIN_USERS_VIEW",
+    "description" : "Role which allows admin to view any user's users"
+  }, {
+    "id" : 19,
+    "authority" : "ROLE_ADMIN_USERS_EDIT",
+    "description" : "Role which allows admin to edit any user's users"
+  }, {
+    "id" : 21,
+    "authority" : "ROLE_ADMIN_ACCOUNTS_EDIT",
+    "description" : "Role which allows admin to edit any user's accounts"
   } ]
 } ]

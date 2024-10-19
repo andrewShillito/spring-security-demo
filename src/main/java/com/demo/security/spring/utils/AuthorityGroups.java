@@ -44,6 +44,7 @@ public class AuthorityGroups {
   /** The set of rules which is granted if you belong to the ADMIN_USERS group */
   public static final Set<String> GROUP_ADMIN_USERS_ROLES = Set.of(
       ROLE_USER,
+      ROLE_ADMIN,
       ROLE_ADMIN_USERS_VIEW,
       ROLE_ADMIN_USERS_EDIT
   );
@@ -54,6 +55,7 @@ public class AuthorityGroups {
   /** The set of rules which is granted if you belong to the ADMIN_ACCOUNTS group */
   public static final Set<String> GROUP_ADMIN_ACCOUNTS_ROLES = Set.of(
       ROLE_USER,
+      ROLE_ADMIN,
       ROLE_ADMIN_ACCOUNTS_VIEW,
       ROLE_ADMIN_ACCOUNTS_EDIT
   );
@@ -64,6 +66,7 @@ public class AuthorityGroups {
   /** The set of rules which is granted if you belong to the ADMIN_CARDS group */
   public static final Set<String> GROUP_ADMIN_CARDS_ROLES = Set.of(
       ROLE_USER,
+      ROLE_ADMIN,
       ROLE_ADMIN_CARDS_VIEW,
       ROLE_ADMIN_CARDS_EDIT
   );
@@ -74,6 +77,7 @@ public class AuthorityGroups {
   /** The set of rules which is granted if you belong to the ADMIN_LOANS group */
   public static final Set<String> GROUP_ADMIN_LOANS_ROLES = Set.of(
       ROLE_USER,
+      ROLE_ADMIN,
       ROLE_ADMIN_LOANS_VIEW,
       ROLE_ADMIN_LOANS_EDIT
   );
@@ -84,6 +88,7 @@ public class AuthorityGroups {
   /** The set of rules which is granted if you belong to the ADMIN_TRANSACTIONS group */
   public static final Set<String> GROUP_ADMIN_TRANSACTIONS_ROLES = Set.of(
       ROLE_USER,
+      ROLE_ADMIN,
       ROLE_ADMIN_TRANSACTIONS_VIEW,
       ROLE_ADMIN_TRANSACTIONS_EDIT
   );
@@ -94,6 +99,7 @@ public class AuthorityGroups {
   /** The set of rules which is granted if you belong to the ADMIN_SYSTEM group */
   public static final Set<String> GROUP_ADMIN_SYSTEM_ROLES = Set.of(
       ROLE_USER,
+      ROLE_ADMIN,
       ROLE_ADMIN_USERS_VIEW,
       ROLE_ADMIN_USERS_EDIT,
       ROLE_ADMIN_ACCOUNTS_VIEW,

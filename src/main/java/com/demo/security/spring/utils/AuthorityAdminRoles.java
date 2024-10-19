@@ -2,7 +2,7 @@ package com.demo.security.spring.utils;
 
 public class AuthorityAdminRoles {
 
-  /** Placeholder basic role that someone has admin rights */
+  /** Role which grants a user basic admin rights */
   public static final String ROLE_ADMIN = "ROLE_ADMIN";
   /** Role which allows admin to view any user's users */
   public static final String ROLE_ADMIN_USERS_VIEW = "ROLE_ADMIN_USERS_VIEW";
