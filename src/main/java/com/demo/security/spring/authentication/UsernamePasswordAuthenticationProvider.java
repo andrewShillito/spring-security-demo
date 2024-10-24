@@ -70,7 +70,7 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
     validateUser(username, password, user);
     authenticationAttemptManager.handleSuccessfulAuthentication(user);
 
-    return new UsernamePasswordAuthenticationToken(username, password, user.deriveAuthorities());
+    return new UsernamePasswordAuthenticationToken(username, password, user.getAuthorities());
   }
 
   private void validateUser(final String username, final String providedPassword, SecurityUser user) {
@@ -90,7 +90,7 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.ACCOUNT_EXPIRED);
       throw new AccountExpiredException("The account for user " + username + " has expired");
     }
-    Set<SecurityAuthority> authorities = user.deriveAuthorities();
+    Set<SecurityAuthority> authorities = user.getAuthorities();
     if (authorities.isEmpty()) {
       authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.NO_AUTHORITIES);
       // note that authorities are fetched eagerly by hibernate

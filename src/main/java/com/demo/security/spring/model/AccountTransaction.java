@@ -2,6 +2,7 @@ package com.demo.security.spring.model;
 
 import com.demo.security.spring.utils.DecimalScaleManager;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import jakarta.persistence.Column;
@@ -38,6 +39,7 @@ import lombok.ToString;
 @ToString(exclude = { "account" } )
 @SequenceGenerator(name = "account_transactions_transaction_id_seq", sequenceName = "account_transactions_transaction_id_seq", allocationSize = 50, initialValue = 1)
 @JsonInclude(Include.NON_EMPTY)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AccountTransaction {
 
   @Id
@@ -73,6 +75,10 @@ public class AccountTransaction {
 
   @Embedded
   private EntityCreatedDate createdDate = new EntityCreatedDate();
+
+  public Long getAccountNumber() {
+    return account != null ? account.getAccountNumber() : null;
+  }
 
   @PrePersist
   protected void onCreate() {

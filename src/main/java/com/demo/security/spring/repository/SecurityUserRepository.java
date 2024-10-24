@@ -1,8 +1,6 @@
 package com.demo.security.spring.repository;
 
 import com.demo.security.spring.model.SecurityUser;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;

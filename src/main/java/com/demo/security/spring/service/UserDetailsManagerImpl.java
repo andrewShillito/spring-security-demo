@@ -90,7 +90,7 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
   protected Authentication createNewAuthentication(Authentication currentAuth, String newPassword) {
     UserDetails user = loadUserByUsername(currentAuth.getName());
     UsernamePasswordAuthenticationToken newAuthentication = UsernamePasswordAuthenticationToken.authenticated(user,
-        newPassword, ((SecurityUser) user).deriveAuthorities());
+        newPassword, ((SecurityUser) user).getAuthorities());
     newAuthentication.setDetails(user); // TODO: check this - jdbc impl from spring sets this to old auth user details, not new
     return newAuthentication;
   }

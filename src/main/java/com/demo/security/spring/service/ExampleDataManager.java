@@ -33,8 +33,8 @@ public class ExampleDataManager {
 
   private boolean regenerateData;
 
-  public static final String GROUPS_OUTPUT_FILE_NAME = "example-roles.json";
-  public static final String GROUPS_CONFIG_OUTPUT_FILE_NAME = "example-roles-config.json";
+  public static final String GROUPS_OUTPUT_FILE_NAME = "example-authorities.json";
+  public static final String GROUPS_CONFIG_OUTPUT_FILE_NAME = "example-authorities-config.json";
   public static final String USERS_OUTPUT_FILE_NAME = "example-users.json";
   public static final String ACCOUNTS_OUTPUT_FILE_NAME = "example-accounts.json";
   public static final String LOANS_OUTPUT_FILE_NAME = "example-loans.json";
@@ -48,25 +48,6 @@ public class ExampleDataManager {
       result.setGroupConfigs(generationService.generateSecurityGroups());
     } else {
       result.setGroups(Arrays.stream(getClassPathResource("seed/" + GROUPS_OUTPUT_FILE_NAME, SecurityGroup[].class)).toList());
-//      final ClassPathResource groupsFile = getClassPathResource("seed/" + GROUPS_OUTPUT_FILE_NAME);
-//      final ClassPathResource configsFile = getClassPathResource("seed/" + GROUPS_CONFIG_OUTPUT_FILE_NAME);
-//      if (groupsFile.exists() && groupsFile.isReadable()) {
-//        try {
-//          ;
-//
-//        } catch (IOException e) {
-//          throw new RuntimeException("Failed to read development environment roles from classpath resource " + groupsFile.getPath(), e);
-//        }
-//      } else if (configsFile.exists() && configsFile.isReadable()) {
-//        try {
-//          result.setGroupConfigs(Arrays.stream(objectMapper.readValue(configsFile.getInputStream(), SecurityGroupConfig[].class)).toList());
-//        } catch (IOException e) {
-//          throw new RuntimeException("Failed to read development environment roles config from classpath resource " + configsFile.getPath(), e);
-//        }
-//      } else {
-//        throw new RuntimeException("Unable to locate or read development environment roles seed '"
-//            + GROUPS_OUTPUT_FILE_NAME + "' and roles config " + GROUPS_CONFIG_OUTPUT_FILE_NAME + " files");
-//      }
     }
     return result;
   }

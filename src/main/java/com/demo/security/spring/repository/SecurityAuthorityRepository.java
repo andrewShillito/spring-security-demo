@@ -8,10 +8,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface SecurityAuthorityRepository extends CrudRepository<SecurityAuthority, Long> {
 
-//  SecurityAuthority getSecurityAuthoritiesByAuthority(String authority);
-
   Set<SecurityAuthority> findAllByAuthorityIn(Collection<String> authorities);
-
-//  Set<SecurityAuthority> findAllByUsersIsContaining(SecurityUser user);
 
 }

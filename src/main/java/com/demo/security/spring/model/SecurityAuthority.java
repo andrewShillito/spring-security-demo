@@ -1,6 +1,6 @@
 package com.demo.security.spring.model;
 
-import com.demo.security.spring.validation.IsValidRole;
+import com.demo.security.spring.validation.IsValidAuth;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import jakarta.persistence.Column;
@@ -41,7 +41,7 @@ public class SecurityAuthority implements GrantedAuthority {
   private Set<SecurityUser> users = new HashSet<>();
 
   @NotBlank
-  @IsValidRole
+  @IsValidAuth
   @Column(name = "authority", length = 100, nullable = false)
   private String authority;
 

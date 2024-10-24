@@ -15,12 +15,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 @Documented
-@Constraint(validatedBy = IsRoleValidator.class)
+@Constraint(validatedBy = IsAuthValidator.class)
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
 @Retention(RUNTIME)
-public @interface IsValidRole {
+public @interface IsValidAuth {
 
-  String message() default "Invalid role. Roles are required to be non-blank uppercase strings prefixed by ROLE_ with no whitespace";
+  String message() default "Invalid authority. Authorities are required to be non-blank uppercase strings prefixed by AUTH_ or ROLE_ with no whitespace";
 
   Class<?>[] groups() default {};
 

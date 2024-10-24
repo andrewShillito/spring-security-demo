@@ -137,7 +137,7 @@ public class RegisterControllerTest extends AbstractControllerTest {
 
     // now we login as that newly registered user using form login
     DemoAssertions.assertFormLoginSuccessful(mockMvc, request.getUsername(), request.getPassword());
-    var userDetails = mockMvc.perform(get(UserController.RESOURCE_PATH).with(csrf()).with(user(request.getUsername())))
+    var userDetails = mockMvc.perform(get(UserController.RESOURCE_PATH).with(csrf()).with(user(user)))
         .andExpect(status().isOk())
         .andExpect(content().contentType(MediaType.APPLICATION_JSON))
         .andReturn().getResponse();
@@ -163,7 +163,7 @@ public class RegisterControllerTest extends AbstractControllerTest {
     assertFalse(createdSecurityUser.isAccountExpired());
     assertTrue(createdSecurityUser.isCredentialsNonExpired());
     assertEquals(2, createdSecurityUser.getGroups().size());
-    assertEquals(16, createdSecurityUser.deriveAuthorities().size());
+    assertEquals(16, createdSecurityUser.getAuthorities().size());
     assertIterableEquals(
         new HashSet<>(List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ACCOUNT_HOLDER)),
         createdSecurityUser.getGroups().stream().map(SecurityGroup::getCode).collect(Collectors.toSet())

@@ -1,20 +1,33 @@
 package com.demo.security.spring.playwright;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.fail;
 
+import com.demo.security.spring.DemoAssertions;
+import com.demo.security.spring.config.ProjectSecurityConfig;
+import com.demo.security.spring.controller.UserController;
+import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.utils.Constants;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.junit.UsePlaywright;
+import java.io.IOException;
 import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpStatus;
 
 /**
  * Browser automation integration login test which requires the application to be running
  */
 @UsePlaywright(value = PlaywrightOptions.class)
 public class BrowserLoginTest {
+
+  private static final ObjectMapper objectMapper = new ProjectSecurityConfig().objectMapper();
 
   @Test
   void testLoginBasic(Page page) {
@@ -62,6 +75,22 @@ public class BrowserLoginTest {
 
     assertNotEquals(sessionId, newSessionId);
     assertNotEquals(csrfToken, newCsrfToken);
+
+    APIResponse response = page.request().get(UserController.RESOURCE_PATH);
+    assertEquals(HttpStatus.OK.value(), response.status());
+    String body = new String(response.body());
+    DemoAssertions.assertNotEmpty(body);
+
+    SecurityUser user = null;
+    try {
+      user = objectMapper.readValue(body, SecurityUser.class);
+    } catch (IOException e) {
+      fail("Unable to map get /user to SecurityUser type with error", e);
+    }
+    assertNotNull(user);
+    assertEquals("user", user.getUsername());
+    assertNull(user.getPassword());
+    // TODO: add more testing of resulting groups etc...
   }
 
 }

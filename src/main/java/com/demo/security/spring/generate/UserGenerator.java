@@ -131,7 +131,7 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
   private SecurityUser generateUser(String username, boolean isInternal, Collection<String> authorityNames, Collection<String> groups) {
     final SecurityUser user = isInternal ? generateInternalUser(username, DEFAULT_TESTING_PASSWORD) : generateExternalUser(username, DEFAULT_TESTING_PASSWORD);
     user.setGroups(getGroupsForNames(groups));
-    user.setAuthorities(getAuthoritiesForNames(authorityNames));
+    user.setSecurityAuthorities(getAuthoritiesForNames(authorityNames));
     return user;
   }
 
@@ -179,7 +179,7 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
     user.setLockedDate(isLocked ? randomPastDate() : null);
     // user type and role will be replaced in the future with better role-based structures
     user.setGroups(getGroupsForNames(groups));
-    user.setAuthorities(getAuthoritiesForNames(authorities));
+    user.setSecurityAuthorities(getAuthoritiesForNames(authorities));
     user.setEmail(username + "@demo.com");
     user.setControlDates(randomEntityControlDates());
     return user;

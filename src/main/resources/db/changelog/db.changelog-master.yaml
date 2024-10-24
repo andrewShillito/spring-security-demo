@@ -1163,167 +1163,167 @@ databaseChangeLog:
           columns:
             - column:
                 name: authority
-                value: ROLE_USER
+                value: AUTH_USER
             - column:
                 name: description
-                value: A role granted to all authenticated users
+                value: A privilege granted to all authenticated users
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_LOAN_VIEW
+                value: AUTH_SELF_LOAN_VIEW
             - column:
                 name: description
-                value: A role which allows a user to view their own loans
+                value: A privilege which allows a user to view their own loans
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_LOAN_APPLY
+                value: AUTH_SELF_LOAN_APPLY
             - column:
                 name: description
-                value: A role which allows a user to apply for loans
+                value: A privilege which allows a user to apply for loans
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_LOAN_EDIT
+                value: AUTH_SELF_LOAN_EDIT
             - column:
                 name: description
-                value: A role which allows a user to edit allowed fields of their own loans
+                value: A privilege which allows a user to edit allowed fields of their own loans
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_CARD_VIEW
+                value: AUTH_SELF_CARD_VIEW
             - column:
                 name: description
-                value: A role which allows a user to view their own cards
+                value: A privilege which allows a user to view their own cards
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_CARD_APPLY
+                value: AUTH_SELF_CARD_APPLY
             - column:
                 name: description
-                value: A role which allows a user to apply for cards
+                value: A privilege which allows a user to apply for cards
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_CARD_EDIT
+                value: AUTH_SELF_CARD_EDIT
             - column:
                 name: description
-                value: A role which allows a user to edit some fields of their own cards
+                value: A privilege which allows a user to edit some fields of their own cards
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_ACCOUNT_VIEW
+                value: AUTH_SELF_ACCOUNT_VIEW
             - column:
                 name: description
-                value: A role which allows a user to view their own accounts
+                value: A privilege which allows a user to view their own accounts
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_ACCOUNT_APPLY
+                value: AUTH_SELF_ACCOUNT_APPLY
             - column:
                 name: description
-                value: A role which allows a user to apply for accounts
+                value: A privilege which allows a user to apply for accounts
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_ACCOUNT_EDIT
+                value: AUTH_SELF_ACCOUNT_EDIT
             - column:
                 name: description
-                value: A role which allows a user to edit some fields of their own accounts
+                value: A privilege which allows a user to edit some fields of their own accounts
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_TRANSACTION_VIEW
+                value: AUTH_SELF_TRANSACTION_VIEW
             - column:
                 name: description
-                value: A role which allows a user to view their own account transactions
+                value: A privilege which allows a user to view their own account transactions
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_TRANSACTION_CREATE
+                value: AUTH_SELF_TRANSACTION_CREATE
             - column:
                 name: description
-                value: A role which allows a user to create transactions for their own accounts
+                value: A privilege which allows a user to create transactions for their own accounts
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_TRANSACTION_EDIT
+                value: AUTH_SELF_TRANSACTION_EDIT
             - column:
                 name: description
-                value: A role which allows a user to edit some fields of their own account transactions
+                value: A privilege which allows a user to edit some fields of their own account transactions
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_USER_VIEW
+                value: AUTH_SELF_USER_VIEW
             - column:
                 name: description
-                value: A role which allows a user to view their user details
+                value: A privilege which allows a user to view their user details
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_USER_EDIT
+                value: AUTH_SELF_USER_EDIT
             - column:
                 name: description
-                value: A role which allows a user to edit their user details
+                value: A privilege which allows a user to edit their user details
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_SELF_USER_DELETE
+                value: AUTH_SELF_USER_DELETE
             - column:
                 name: description
-                value: A role which allows a user to delete their user account
+                value: A privilege which allows a user to delete their user account
       - insert:
           tableName: security_authorities
           schemaName: demo
           columns:
             - column:
                 name: authority
-                value: ROLE_ADMIN
+                value: AUTH_ADMIN
             - column:
                 name: description
                 value: Role which grants a user basic admin rights
@@ -1333,7 +1333,7 @@ databaseChangeLog:
           columns:
             - column:
                 name: authority
-                value: ROLE_ADMIN_USERS_VIEW
+                value: AUTH_ADMIN_USERS_VIEW
             - column:
                 name: description
                 value: Role which allows admin to view any user's users
@@ -1343,7 +1343,7 @@ databaseChangeLog:
           columns:
             - column:
                 name: authority
-                value: ROLE_ADMIN_USERS_EDIT
+                value: AUTH_ADMIN_USERS_EDIT
             - column:
                 name: description
                 value: Role which allows admin to edit any user's users
@@ -1353,7 +1353,7 @@ databaseChangeLog:
           columns:
             - column:
                 name: authority
-                value: ROLE_ADMIN_ACCOUNTS_VIEW
+                value: AUTH_ADMIN_ACCOUNTS_VIEW
             - column:
                 name: description
                 value: Role which allows admin to view any user's accounts
@@ -1363,7 +1363,7 @@ databaseChangeLog:
           columns:
             - column:
                 name: authority
-                value: ROLE_ADMIN_ACCOUNTS_EDIT
+                value: AUTH_ADMIN_ACCOUNTS_EDIT
             - column:
                 name: description
                 value: Role which allows admin to edit any user's accounts
@@ -1373,7 +1373,7 @@ databaseChangeLog:
           columns:
             - column:
                 name: authority
-                value: ROLE_ADMIN_CARDS_VIEW
+                value: AUTH_ADMIN_CARDS_VIEW
             - column:
                 name: description
                 value: Role which allows admin to view any user's cards
@@ -1383,7 +1383,7 @@ databaseChangeLog:
           columns:
             - column:
                 name: authority
-                value: ROLE_ADMIN_CARDS_EDIT
+                value: AUTH_ADMIN_CARDS_EDIT
             - column:
                 name: description
                 value: Role which allows admin to edit any user's cards
@@ -1393,7 +1393,7 @@ databaseChangeLog:
           columns:
             - column:
                 name: authority
-                value: ROLE_ADMIN_LOANS_VIEW
+                value: AUTH_ADMIN_LOANS_VIEW
             - column:
                 name: description
                 value: Role which allows admin to view any user's loans
@@ -1403,7 +1403,7 @@ databaseChangeLog:
           columns:
             - column:
                 name: authority
-                value: ROLE_ADMIN_LOANS_EDIT
+                value: AUTH_ADMIN_LOANS_EDIT
             - column:
                 name: description
                 value: Role which allows admin to edit any user's loans
@@ -1413,7 +1413,7 @@ databaseChangeLog:
           columns:
             - column:
                 name: authority
-                value: ROLE_ADMIN_TRANSACTIONS_VIEW
+                value: AUTH_ADMIN_TRANSACTIONS_VIEW
             - column:
                 name: description
                 value: Role which allows admin to view any user's transactions
@@ -1423,7 +1423,7 @@ databaseChangeLog:
           columns:
             - column:
                 name: authority
-                value: ROLE_ADMIN_TRANSACTIONS_EDIT
+                value: AUTH_ADMIN_TRANSACTIONS_EDIT
             - column:
                 name: description
                 value: Role which allows admin to edit any user's transactions

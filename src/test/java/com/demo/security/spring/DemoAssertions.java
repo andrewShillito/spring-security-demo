@@ -17,17 +17,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
 import com.demo.security.spring.model.EntityControlDates;
 import com.demo.security.spring.model.Loan;
+import com.demo.security.spring.model.SecurityGroup;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.model.UserCreationResponse;
 import com.demo.security.spring.utils.Constants;
 import com.demo.security.spring.utils.CookieNames;
-import com.demo.security.spring.utils.AuthorityUserRoles;
 import jakarta.servlet.http.Cookie;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import lombok.NonNull;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
@@ -36,6 +38,8 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import com.google.common.collect.Sets;
+import com.google.common.collect.Sets.SetView;
 
 @Log4j2
 public class DemoAssertions {
@@ -245,15 +249,42 @@ public class DemoAssertions {
       assertEquals(expected.isLocked(), actual.isLocked());
       assertDateFuzzyEquals(expected.getLockedDate(), actual.getLockedDate());
       assertDateFuzzyEquals(expected.getUnlockDate(), actual.getUnlockDate());
-      assertAuthoritiesEquals(expected.getAuthorities(), actual.getAuthorities());
+      assertSecurityAuthoritiesEquals(expected.getSecurityAuthorities(), actual.getSecurityAuthorities());
+      assertSecurityAuthoritiesEquals(expected.getAuthorities(), actual.getAuthorities());
+      assertGroupsEquals(expected.getGroups(), actual.getGroups());
       assertControlDatesEquals(expected.getControlDates(), actual.getControlDates());
     }
   }
 
-  public static void assertAuthoritiesEquals(Collection<? extends GrantedAuthority> expected,
-      Collection<? extends GrantedAuthority> actual) {
+  public static void assertGroupsEquals(Set<SecurityGroup> expected, Set<SecurityGroup> actual) {
+    assertBothNullOrEmptyOrNeitherAre(expected, actual);
+    if (expected != null) {
+      if (actual == null) {
+        actual = new HashSet<>(); // for case where expected is empty and actual is null
+      }
+      assertSetsEqual(expected, actual);
+    }
+  }
+
+  public static void assertSetsEqual(Set<SecurityGroup> expected, Set<SecurityGroup> actual) {
     assertBothNullOrNeitherAre(expected, actual);
     if (expected != null) {
+      assertEquals(expected.size(), actual.size(), "Expected set sizes " + expected.size()
+          + " to match " + actual.size() + " but didn't"
+          + "for expected: " + expected + " and actual: " + actual);
+      SetView<SecurityGroup> difference = Sets.symmetricDifference(expected, actual);
+      assertTrue(difference.isEmpty(), "Expected symmetric difference to be empty but was "
+          + difference + " for expected: " + expected + " and actual: " + actual);
+    }
+  }
+
+  public static void assertSecurityAuthoritiesEquals(Collection<? extends GrantedAuthority> expected,
+      Collection<? extends GrantedAuthority> actual) {
+    assertBothNullOrEmptyOrNeitherAre(expected, actual);
+    if (expected != null) {
+      if (actual == null) {
+        actual = new HashSet<>(); // for case where expected is empty and actual is null
+      }
       assertEquals(expected.size(), actual.size());
       for (var expectedAuth : expected) {
         assertNotNull(expected, "Found unexpectedly null authority in " + expected);
@@ -276,6 +307,21 @@ public class DemoAssertions {
 
   public static void assertBothNullOrNeitherAre(Object expected, Object actual) {
     assertTrue((expected == null && actual == null) || (expected != null && actual != null));
+  }
+
+  public static void assertBothNullOrEmptyOrNeitherAre(Collection<?> expected, Collection<?> actual) {
+    if (expected != null && actual != null) {
+      assertTrue((expected.isEmpty() && actual.isEmpty()) || (!expected.isEmpty() && !actual.isEmpty()),
+          "Expected both to be empty or both to be non-empty but got expected: " + expected + " actual: " + actual
+      );
+    } else {
+      // one of expected / actual is null
+      if (expected == null) {
+        assertTrue(actual == null || actual.isEmpty(), "Expected is null but actual was not empty. Actual: " + actual);
+      } else {
+        assertTrue(expected.isEmpty(), "Expected is not empty but actual was null expected: " + expected + " actual: " +  actual);
+      }
+    }
   }
 
   public static void assertHasValidCsrfToken(MockHttpServletResponse response) {

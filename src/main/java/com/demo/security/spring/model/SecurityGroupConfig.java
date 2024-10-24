@@ -5,7 +5,7 @@ import java.util.Set;
 import lombok.Getter;
 
 /**
- * Used to move user role and authority information to/from example-roles-config.json
+ * Used to move user role and authority information to/from example-authorities-config.json
  */
 @Getter
 public class SecurityGroupConfig {

@@ -1,0 +1,609 @@
+[ {
+  "id" : 1,
+  "code" : "GROUP_USER",
+  "description" : "A default user roles group for all users which allows viewing and managing a user's own user account",
+  "authorities" : [ {
+    "id" : 1,
+    "authority" : "AUTH_USER",
+    "description" : "A privilege granted to all authenticated users"
+  }, {
+    "id" : 15,
+    "authority" : "AUTH_SELF_USER_EDIT",
+    "description" : "A privilege which allows a user to edit their user details"
+  }, {
+    "id" : 14,
+    "authority" : "AUTH_SELF_USER_VIEW",
+    "description" : "A privilege which allows a user to view their user details"
+  }, {
+    "id" : 16,
+    "authority" : "AUTH_SELF_USER_DELETE",
+    "description" : "A privilege which allows a user to delete their user account"
+  } ]
+}, {
+  "id" : 2,
+  "code" : "GROUP_ACCOUNT_HOLDER",
+  "description" : "A default roles group for all users which allows applying for, viewing, and managing a user's own accounts, cards, loans, and transactions",
+  "authorities" : [ {
+    "id" : 6,
+    "authority" : "AUTH_SELF_CARD_APPLY",
+    "description" : "A privilege which allows a user to apply for cards"
+  }, {
+    "id" : 12,
+    "authority" : "AUTH_SELF_TRANSACTION_CREATE",
+    "description" : "A privilege which allows a user to create transactions for their own accounts"
+  }, {
+    "id" : 1,
+    "authority" : "AUTH_USER",
+    "description" : "A privilege granted to all authenticated users"
+  }, {
+    "id" : 10,
+    "authority" : "AUTH_SELF_ACCOUNT_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own accounts"
+  }, {
+    "id" : 3,
+    "authority" : "AUTH_SELF_LOAN_APPLY",
+    "description" : "A privilege which allows a user to apply for loans"
+  }, {
+    "id" : 8,
+    "authority" : "AUTH_SELF_ACCOUNT_VIEW",
+    "description" : "A privilege which allows a user to view their own accounts"
+  }, {
+    "id" : 5,
+    "authority" : "AUTH_SELF_CARD_VIEW",
+    "description" : "A privilege which allows a user to view their own cards"
+  }, {
+    "id" : 15,
+    "authority" : "AUTH_SELF_USER_EDIT",
+    "description" : "A privilege which allows a user to edit their user details"
+  }, {
+    "id" : 2,
+    "authority" : "AUTH_SELF_LOAN_VIEW",
+    "description" : "A privilege which allows a user to view their own loans"
+  }, {
+    "id" : 7,
+    "authority" : "AUTH_SELF_CARD_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own cards"
+  }, {
+    "id" : 9,
+    "authority" : "AUTH_SELF_ACCOUNT_APPLY",
+    "description" : "A privilege which allows a user to apply for accounts"
+  }, {
+    "id" : 13,
+    "authority" : "AUTH_SELF_TRANSACTION_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own account transactions"
+  }, {
+    "id" : 14,
+    "authority" : "AUTH_SELF_USER_VIEW",
+    "description" : "A privilege which allows a user to view their user details"
+  }, {
+    "id" : 16,
+    "authority" : "AUTH_SELF_USER_DELETE",
+    "description" : "A privilege which allows a user to delete their user account"
+  }, {
+    "id" : 4,
+    "authority" : "AUTH_SELF_LOAN_EDIT",
+    "description" : "A privilege which allows a user to edit allowed fields of their own loans"
+  }, {
+    "id" : 11,
+    "authority" : "AUTH_SELF_TRANSACTION_VIEW",
+    "description" : "A privilege which allows a user to view their own account transactions"
+  } ]
+}, {
+  "id" : 3,
+  "code" : "GROUP_ADMIN_USERS",
+  "description" : "Roles group which allows administration of users",
+  "authorities" : [ {
+    "id" : 6,
+    "authority" : "AUTH_SELF_CARD_APPLY",
+    "description" : "A privilege which allows a user to apply for cards"
+  }, {
+    "id" : 12,
+    "authority" : "AUTH_SELF_TRANSACTION_CREATE",
+    "description" : "A privilege which allows a user to create transactions for their own accounts"
+  }, {
+    "id" : 1,
+    "authority" : "AUTH_USER",
+    "description" : "A privilege granted to all authenticated users"
+  }, {
+    "id" : 10,
+    "authority" : "AUTH_SELF_ACCOUNT_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own accounts"
+  }, {
+    "id" : 3,
+    "authority" : "AUTH_SELF_LOAN_APPLY",
+    "description" : "A privilege which allows a user to apply for loans"
+  }, {
+    "id" : 8,
+    "authority" : "AUTH_SELF_ACCOUNT_VIEW",
+    "description" : "A privilege which allows a user to view their own accounts"
+  }, {
+    "id" : 5,
+    "authority" : "AUTH_SELF_CARD_VIEW",
+    "description" : "A privilege which allows a user to view their own cards"
+  }, {
+    "id" : 17,
+    "authority" : "AUTH_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
+    "id" : 15,
+    "authority" : "AUTH_SELF_USER_EDIT",
+    "description" : "A privilege which allows a user to edit their user details"
+  }, {
+    "id" : 2,
+    "authority" : "AUTH_SELF_LOAN_VIEW",
+    "description" : "A privilege which allows a user to view their own loans"
+  }, {
+    "id" : 7,
+    "authority" : "AUTH_SELF_CARD_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own cards"
+  }, {
+    "id" : 9,
+    "authority" : "AUTH_SELF_ACCOUNT_APPLY",
+    "description" : "A privilege which allows a user to apply for accounts"
+  }, {
+    "id" : 18,
+    "authority" : "AUTH_ADMIN_USERS_VIEW",
+    "description" : "Role which allows admin to view any user's users"
+  }, {
+    "id" : 19,
+    "authority" : "AUTH_ADMIN_USERS_EDIT",
+    "description" : "Role which allows admin to edit any user's users"
+  }, {
+    "id" : 13,
+    "authority" : "AUTH_SELF_TRANSACTION_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own account transactions"
+  }, {
+    "id" : 14,
+    "authority" : "AUTH_SELF_USER_VIEW",
+    "description" : "A privilege which allows a user to view their user details"
+  }, {
+    "id" : 16,
+    "authority" : "AUTH_SELF_USER_DELETE",
+    "description" : "A privilege which allows a user to delete their user account"
+  }, {
+    "id" : 4,
+    "authority" : "AUTH_SELF_LOAN_EDIT",
+    "description" : "A privilege which allows a user to edit allowed fields of their own loans"
+  }, {
+    "id" : 11,
+    "authority" : "AUTH_SELF_TRANSACTION_VIEW",
+    "description" : "A privilege which allows a user to view their own account transactions"
+  } ]
+}, {
+  "id" : 4,
+  "code" : "GROUP_ADMIN_ACCOUNTS",
+  "description" : "Roles group which allows administration of accounts",
+  "authorities" : [ {
+    "id" : 6,
+    "authority" : "AUTH_SELF_CARD_APPLY",
+    "description" : "A privilege which allows a user to apply for cards"
+  }, {
+    "id" : 12,
+    "authority" : "AUTH_SELF_TRANSACTION_CREATE",
+    "description" : "A privilege which allows a user to create transactions for their own accounts"
+  }, {
+    "id" : 1,
+    "authority" : "AUTH_USER",
+    "description" : "A privilege granted to all authenticated users"
+  }, {
+    "id" : 10,
+    "authority" : "AUTH_SELF_ACCOUNT_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own accounts"
+  }, {
+    "id" : 20,
+    "authority" : "AUTH_ADMIN_ACCOUNTS_VIEW",
+    "description" : "Role which allows admin to view any user's accounts"
+  }, {
+    "id" : 3,
+    "authority" : "AUTH_SELF_LOAN_APPLY",
+    "description" : "A privilege which allows a user to apply for loans"
+  }, {
+    "id" : 8,
+    "authority" : "AUTH_SELF_ACCOUNT_VIEW",
+    "description" : "A privilege which allows a user to view their own accounts"
+  }, {
+    "id" : 5,
+    "authority" : "AUTH_SELF_CARD_VIEW",
+    "description" : "A privilege which allows a user to view their own cards"
+  }, {
+    "id" : 17,
+    "authority" : "AUTH_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
+    "id" : 15,
+    "authority" : "AUTH_SELF_USER_EDIT",
+    "description" : "A privilege which allows a user to edit their user details"
+  }, {
+    "id" : 2,
+    "authority" : "AUTH_SELF_LOAN_VIEW",
+    "description" : "A privilege which allows a user to view their own loans"
+  }, {
+    "id" : 7,
+    "authority" : "AUTH_SELF_CARD_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own cards"
+  }, {
+    "id" : 9,
+    "authority" : "AUTH_SELF_ACCOUNT_APPLY",
+    "description" : "A privilege which allows a user to apply for accounts"
+  }, {
+    "id" : 13,
+    "authority" : "AUTH_SELF_TRANSACTION_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own account transactions"
+  }, {
+    "id" : 14,
+    "authority" : "AUTH_SELF_USER_VIEW",
+    "description" : "A privilege which allows a user to view their user details"
+  }, {
+    "id" : 16,
+    "authority" : "AUTH_SELF_USER_DELETE",
+    "description" : "A privilege which allows a user to delete their user account"
+  }, {
+    "id" : 4,
+    "authority" : "AUTH_SELF_LOAN_EDIT",
+    "description" : "A privilege which allows a user to edit allowed fields of their own loans"
+  }, {
+    "id" : 21,
+    "authority" : "AUTH_ADMIN_ACCOUNTS_EDIT",
+    "description" : "Role which allows admin to edit any user's accounts"
+  }, {
+    "id" : 11,
+    "authority" : "AUTH_SELF_TRANSACTION_VIEW",
+    "description" : "A privilege which allows a user to view their own account transactions"
+  } ]
+}, {
+  "id" : 5,
+  "code" : "GROUP_ADMIN_CARDS",
+  "description" : "Roles group which allows administration of cards",
+  "authorities" : [ {
+    "id" : 6,
+    "authority" : "AUTH_SELF_CARD_APPLY",
+    "description" : "A privilege which allows a user to apply for cards"
+  }, {
+    "id" : 12,
+    "authority" : "AUTH_SELF_TRANSACTION_CREATE",
+    "description" : "A privilege which allows a user to create transactions for their own accounts"
+  }, {
+    "id" : 22,
+    "authority" : "AUTH_ADMIN_CARDS_VIEW",
+    "description" : "Role which allows admin to view any user's cards"
+  }, {
+    "id" : 1,
+    "authority" : "AUTH_USER",
+    "description" : "A privilege granted to all authenticated users"
+  }, {
+    "id" : 10,
+    "authority" : "AUTH_SELF_ACCOUNT_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own accounts"
+  }, {
+    "id" : 23,
+    "authority" : "AUTH_ADMIN_CARDS_EDIT",
+    "description" : "Role which allows admin to edit any user's cards"
+  }, {
+    "id" : 3,
+    "authority" : "AUTH_SELF_LOAN_APPLY",
+    "description" : "A privilege which allows a user to apply for loans"
+  }, {
+    "id" : 8,
+    "authority" : "AUTH_SELF_ACCOUNT_VIEW",
+    "description" : "A privilege which allows a user to view their own accounts"
+  }, {
+    "id" : 5,
+    "authority" : "AUTH_SELF_CARD_VIEW",
+    "description" : "A privilege which allows a user to view their own cards"
+  }, {
+    "id" : 17,
+    "authority" : "AUTH_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
+    "id" : 15,
+    "authority" : "AUTH_SELF_USER_EDIT",
+    "description" : "A privilege which allows a user to edit their user details"
+  }, {
+    "id" : 2,
+    "authority" : "AUTH_SELF_LOAN_VIEW",
+    "description" : "A privilege which allows a user to view their own loans"
+  }, {
+    "id" : 7,
+    "authority" : "AUTH_SELF_CARD_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own cards"
+  }, {
+    "id" : 9,
+    "authority" : "AUTH_SELF_ACCOUNT_APPLY",
+    "description" : "A privilege which allows a user to apply for accounts"
+  }, {
+    "id" : 13,
+    "authority" : "AUTH_SELF_TRANSACTION_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own account transactions"
+  }, {
+    "id" : 14,
+    "authority" : "AUTH_SELF_USER_VIEW",
+    "description" : "A privilege which allows a user to view their user details"
+  }, {
+    "id" : 16,
+    "authority" : "AUTH_SELF_USER_DELETE",
+    "description" : "A privilege which allows a user to delete their user account"
+  }, {
+    "id" : 4,
+    "authority" : "AUTH_SELF_LOAN_EDIT",
+    "description" : "A privilege which allows a user to edit allowed fields of their own loans"
+  }, {
+    "id" : 11,
+    "authority" : "AUTH_SELF_TRANSACTION_VIEW",
+    "description" : "A privilege which allows a user to view their own account transactions"
+  } ]
+}, {
+  "id" : 6,
+  "code" : "GROUP_ADMIN_LOANS",
+  "description" : "Roles group which allows administration of loans",
+  "authorities" : [ {
+    "id" : 6,
+    "authority" : "AUTH_SELF_CARD_APPLY",
+    "description" : "A privilege which allows a user to apply for cards"
+  }, {
+    "id" : 12,
+    "authority" : "AUTH_SELF_TRANSACTION_CREATE",
+    "description" : "A privilege which allows a user to create transactions for their own accounts"
+  }, {
+    "id" : 1,
+    "authority" : "AUTH_USER",
+    "description" : "A privilege granted to all authenticated users"
+  }, {
+    "id" : 24,
+    "authority" : "AUTH_ADMIN_LOANS_VIEW",
+    "description" : "Role which allows admin to view any user's loans"
+  }, {
+    "id" : 10,
+    "authority" : "AUTH_SELF_ACCOUNT_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own accounts"
+  }, {
+    "id" : 3,
+    "authority" : "AUTH_SELF_LOAN_APPLY",
+    "description" : "A privilege which allows a user to apply for loans"
+  }, {
+    "id" : 8,
+    "authority" : "AUTH_SELF_ACCOUNT_VIEW",
+    "description" : "A privilege which allows a user to view their own accounts"
+  }, {
+    "id" : 5,
+    "authority" : "AUTH_SELF_CARD_VIEW",
+    "description" : "A privilege which allows a user to view their own cards"
+  }, {
+    "id" : 17,
+    "authority" : "AUTH_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
+    "id" : 25,
+    "authority" : "AUTH_ADMIN_LOANS_EDIT",
+    "description" : "Role which allows admin to edit any user's loans"
+  }, {
+    "id" : 15,
+    "authority" : "AUTH_SELF_USER_EDIT",
+    "description" : "A privilege which allows a user to edit their user details"
+  }, {
+    "id" : 2,
+    "authority" : "AUTH_SELF_LOAN_VIEW",
+    "description" : "A privilege which allows a user to view their own loans"
+  }, {
+    "id" : 7,
+    "authority" : "AUTH_SELF_CARD_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own cards"
+  }, {
+    "id" : 9,
+    "authority" : "AUTH_SELF_ACCOUNT_APPLY",
+    "description" : "A privilege which allows a user to apply for accounts"
+  }, {
+    "id" : 13,
+    "authority" : "AUTH_SELF_TRANSACTION_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own account transactions"
+  }, {
+    "id" : 14,
+    "authority" : "AUTH_SELF_USER_VIEW",
+    "description" : "A privilege which allows a user to view their user details"
+  }, {
+    "id" : 16,
+    "authority" : "AUTH_SELF_USER_DELETE",
+    "description" : "A privilege which allows a user to delete their user account"
+  }, {
+    "id" : 4,
+    "authority" : "AUTH_SELF_LOAN_EDIT",
+    "description" : "A privilege which allows a user to edit allowed fields of their own loans"
+  }, {
+    "id" : 11,
+    "authority" : "AUTH_SELF_TRANSACTION_VIEW",
+    "description" : "A privilege which allows a user to view their own account transactions"
+  } ]
+}, {
+  "id" : 7,
+  "code" : "GROUP_ADMIN_TRANSACTIONS",
+  "description" : "Roles group which allows administration of account transactions",
+  "authorities" : [ {
+    "id" : 6,
+    "authority" : "AUTH_SELF_CARD_APPLY",
+    "description" : "A privilege which allows a user to apply for cards"
+  }, {
+    "id" : 12,
+    "authority" : "AUTH_SELF_TRANSACTION_CREATE",
+    "description" : "A privilege which allows a user to create transactions for their own accounts"
+  }, {
+    "id" : 27,
+    "authority" : "AUTH_ADMIN_TRANSACTIONS_EDIT",
+    "description" : "Role which allows admin to edit any user's transactions"
+  }, {
+    "id" : 1,
+    "authority" : "AUTH_USER",
+    "description" : "A privilege granted to all authenticated users"
+  }, {
+    "id" : 10,
+    "authority" : "AUTH_SELF_ACCOUNT_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own accounts"
+  }, {
+    "id" : 3,
+    "authority" : "AUTH_SELF_LOAN_APPLY",
+    "description" : "A privilege which allows a user to apply for loans"
+  }, {
+    "id" : 8,
+    "authority" : "AUTH_SELF_ACCOUNT_VIEW",
+    "description" : "A privilege which allows a user to view their own accounts"
+  }, {
+    "id" : 5,
+    "authority" : "AUTH_SELF_CARD_VIEW",
+    "description" : "A privilege which allows a user to view their own cards"
+  }, {
+    "id" : 17,
+    "authority" : "AUTH_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
+    "id" : 26,
+    "authority" : "AUTH_ADMIN_TRANSACTIONS_VIEW",
+    "description" : "Role which allows admin to view any user's transactions"
+  }, {
+    "id" : 15,
+    "authority" : "AUTH_SELF_USER_EDIT",
+    "description" : "A privilege which allows a user to edit their user details"
+  }, {
+    "id" : 2,
+    "authority" : "AUTH_SELF_LOAN_VIEW",
+    "description" : "A privilege which allows a user to view their own loans"
+  }, {
+    "id" : 7,
+    "authority" : "AUTH_SELF_CARD_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own cards"
+  }, {
+    "id" : 9,
+    "authority" : "AUTH_SELF_ACCOUNT_APPLY",
+    "description" : "A privilege which allows a user to apply for accounts"
+  }, {
+    "id" : 13,
+    "authority" : "AUTH_SELF_TRANSACTION_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own account transactions"
+  }, {
+    "id" : 14,
+    "authority" : "AUTH_SELF_USER_VIEW",
+    "description" : "A privilege which allows a user to view their user details"
+  }, {
+    "id" : 16,
+    "authority" : "AUTH_SELF_USER_DELETE",
+    "description" : "A privilege which allows a user to delete their user account"
+  }, {
+    "id" : 4,
+    "authority" : "AUTH_SELF_LOAN_EDIT",
+    "description" : "A privilege which allows a user to edit allowed fields of their own loans"
+  }, {
+    "id" : 11,
+    "authority" : "AUTH_SELF_TRANSACTION_VIEW",
+    "description" : "A privilege which allows a user to view their own account transactions"
+  } ]
+}, {
+  "id" : 8,
+  "code" : "GROUP_ADMIN_SYSTEM",
+  "description" : "Roles group which allows administration of all entity types in the system",
+  "authorities" : [ {
+    "id" : 27,
+    "authority" : "AUTH_ADMIN_TRANSACTIONS_EDIT",
+    "description" : "Role which allows admin to edit any user's transactions"
+  }, {
+    "id" : 1,
+    "authority" : "AUTH_USER",
+    "description" : "A privilege granted to all authenticated users"
+  }, {
+    "id" : 20,
+    "authority" : "AUTH_ADMIN_ACCOUNTS_VIEW",
+    "description" : "Role which allows admin to view any user's accounts"
+  }, {
+    "id" : 3,
+    "authority" : "AUTH_SELF_LOAN_APPLY",
+    "description" : "A privilege which allows a user to apply for loans"
+  }, {
+    "id" : 8,
+    "authority" : "AUTH_SELF_ACCOUNT_VIEW",
+    "description" : "A privilege which allows a user to view their own accounts"
+  }, {
+    "id" : 5,
+    "authority" : "AUTH_SELF_CARD_VIEW",
+    "description" : "A privilege which allows a user to view their own cards"
+  }, {
+    "id" : 17,
+    "authority" : "AUTH_ADMIN",
+    "description" : "Role which grants a user basic admin rights"
+  }, {
+    "id" : 26,
+    "authority" : "AUTH_ADMIN_TRANSACTIONS_VIEW",
+    "description" : "Role which allows admin to view any user's transactions"
+  }, {
+    "id" : 15,
+    "authority" : "AUTH_SELF_USER_EDIT",
+    "description" : "A privilege which allows a user to edit their user details"
+  }, {
+    "id" : 2,
+    "authority" : "AUTH_SELF_LOAN_VIEW",
+    "description" : "A privilege which allows a user to view their own loans"
+  }, {
+    "id" : 9,
+    "authority" : "AUTH_SELF_ACCOUNT_APPLY",
+    "description" : "A privilege which allows a user to apply for accounts"
+  }, {
+    "id" : 14,
+    "authority" : "AUTH_SELF_USER_VIEW",
+    "description" : "A privilege which allows a user to view their user details"
+  }, {
+    "id" : 16,
+    "authority" : "AUTH_SELF_USER_DELETE",
+    "description" : "A privilege which allows a user to delete their user account"
+  }, {
+    "id" : 4,
+    "authority" : "AUTH_SELF_LOAN_EDIT",
+    "description" : "A privilege which allows a user to edit allowed fields of their own loans"
+  }, {
+    "id" : 21,
+    "authority" : "AUTH_ADMIN_ACCOUNTS_EDIT",
+    "description" : "Role which allows admin to edit any user's accounts"
+  }, {
+    "id" : 11,
+    "authority" : "AUTH_SELF_TRANSACTION_VIEW",
+    "description" : "A privilege which allows a user to view their own account transactions"
+  }, {
+    "id" : 6,
+    "authority" : "AUTH_SELF_CARD_APPLY",
+    "description" : "A privilege which allows a user to apply for cards"
+  }, {
+    "id" : 12,
+    "authority" : "AUTH_SELF_TRANSACTION_CREATE",
+    "description" : "A privilege which allows a user to create transactions for their own accounts"
+  }, {
+    "id" : 22,
+    "authority" : "AUTH_ADMIN_CARDS_VIEW",
+    "description" : "Role which allows admin to view any user's cards"
+  }, {
+    "id" : 24,
+    "authority" : "AUTH_ADMIN_LOANS_VIEW",
+    "description" : "Role which allows admin to view any user's loans"
+  }, {
+    "id" : 10,
+    "authority" : "AUTH_SELF_ACCOUNT_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own accounts"
+  }, {
+    "id" : 23,
+    "authority" : "AUTH_ADMIN_CARDS_EDIT",
+    "description" : "Role which allows admin to edit any user's cards"
+  }, {
+    "id" : 25,
+    "authority" : "AUTH_ADMIN_LOANS_EDIT",
+    "description" : "Role which allows admin to edit any user's loans"
+  }, {
+    "id" : 7,
+    "authority" : "AUTH_SELF_CARD_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own cards"
+  }, {
+    "id" : 18,
+    "authority" : "AUTH_ADMIN_USERS_VIEW",
+    "description" : "Role which allows admin to view any user's users"
+  }, {
+    "id" : 19,
+    "authority" : "AUTH_ADMIN_USERS_EDIT",
+    "description" : "Role which allows admin to edit any user's users"
+  }, {
+    "id" : 13,
+    "authority" : "AUTH_SELF_TRANSACTION_EDIT",
+    "description" : "A privilege which allows a user to edit some fields of their own account transactions"
+  } ]
+} ]

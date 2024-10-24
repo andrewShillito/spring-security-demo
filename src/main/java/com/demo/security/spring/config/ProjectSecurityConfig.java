@@ -51,6 +51,8 @@ import com.demo.security.spring.service.SecurityUserValidationService;
 import com.demo.security.spring.service.SecurityUserValidationServiceImpl;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
 import com.demo.security.spring.service.UserDetailsManagerImpl;
+import com.demo.security.spring.utils.AuthorityAdminPrivileges;
+import com.demo.security.spring.utils.AuthorityUserPrivileges;
 import com.demo.security.spring.utils.Constants;
 import com.demo.security.spring.utils.SpringProfileConstants;
 import com.demo.security.spring.service.StartupDatabasePopulator;
@@ -70,6 +72,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -122,25 +125,56 @@ public class ProjectSecurityConfig {
           }
         })
         .authorizeHttpRequests((requests) -> requests
-        .requestMatchers(
-            AccountController.RESOURCE_PATH + "/**",
-            BalanceController.RESOURCE_PATH + "/**",
-            CardsController.RESOURCE_PATH + "/**",
-            LoansController.RESOURCE_PATH + "/**",
-            UserController.RESOURCE_PATH + "/**",
-            "/actuator/**", /* TODO: add actuator and child paths as secured endpoints */
-            "/v3/api-docs/**", // the json schema
-            "/swagger-ui/**",
-            "/swagger-ui.html" // redirects to /swagger-ui/index.html
-        )
-        .authenticated()
-        .requestMatchers(
-            NoticesController.RESOURCE_PATH + "/**",
-            ContactController.RESOURCE_PATH + "/**",
-            RegisterController.RESOURCE_PATH + "/**",
-            Constants.INVALID_SESSION_URL
-        )
-        .permitAll()
+             // account controller endpoints
+            .requestMatchers(HttpMethod.GET, AccountController.RESOURCE_PATH + "/**")
+            .hasAnyAuthority(AuthorityUserPrivileges.AUTH_SELF_ACCOUNT_VIEW, AuthorityAdminPrivileges.AUTH_ADMIN_ACCOUNTS_VIEW)
+            .requestMatchers(HttpMethod.POST, AccountController.RESOURCE_PATH + "/**")
+            .hasAuthority(AuthorityUserPrivileges.AUTH_SELF_ACCOUNT_APPLY)
+            .requestMatchers(HttpMethod.PATCH, AccountController.RESOURCE_PATH + "/**")
+            .hasAnyAuthority(AuthorityUserPrivileges.AUTH_SELF_ACCOUNT_EDIT, AuthorityAdminPrivileges.AUTH_ADMIN_ACCOUNTS_EDIT)
+            // account transaction endpoints
+            .requestMatchers(HttpMethod.GET, BalanceController.RESOURCE_PATH + "/**")
+            .hasAnyAuthority(AuthorityUserPrivileges.AUTH_SELF_TRANSACTION_VIEW, AuthorityAdminPrivileges.AUTH_ADMIN_TRANSACTIONS_VIEW)
+            .requestMatchers(HttpMethod.POST, BalanceController.RESOURCE_PATH + "/**")
+            .hasAuthority(AuthorityUserPrivileges.AUTH_SELF_TRANSACTION_CREATE)
+            .requestMatchers(HttpMethod.PATCH, BalanceController.RESOURCE_PATH + "/**")
+            .hasAnyAuthority(AuthorityUserPrivileges.AUTH_SELF_TRANSACTION_EDIT, AuthorityAdminPrivileges.AUTH_ADMIN_TRANSACTIONS_EDIT)
+            // card controller endpoints
+            .requestMatchers(HttpMethod.GET, CardsController.RESOURCE_PATH + "/**")
+            .hasAnyAuthority(AuthorityUserPrivileges.AUTH_SELF_CARD_VIEW, AuthorityAdminPrivileges.AUTH_ADMIN_CARDS_VIEW)
+            .requestMatchers(HttpMethod.POST, CardsController.RESOURCE_PATH + "/**")
+            .hasAuthority(AuthorityUserPrivileges.AUTH_SELF_CARD_APPLY)
+            .requestMatchers(HttpMethod.PATCH, CardsController.RESOURCE_PATH + "/**")
+            .hasAnyAuthority(AuthorityUserPrivileges.AUTH_SELF_CARD_EDIT, AuthorityAdminPrivileges.AUTH_ADMIN_CARDS_EDIT)
+            // loans controller
+            .requestMatchers(HttpMethod.GET, LoansController.RESOURCE_PATH + "/**")
+            .hasAnyAuthority(AuthorityUserPrivileges.AUTH_SELF_LOAN_VIEW, AuthorityAdminPrivileges.AUTH_ADMIN_LOANS_VIEW)
+            .requestMatchers(HttpMethod.POST, LoansController.RESOURCE_PATH + "/**")
+            .hasAuthority(AuthorityUserPrivileges.AUTH_SELF_LOAN_APPLY)
+            .requestMatchers(HttpMethod.PATCH, LoansController.RESOURCE_PATH + "/**")
+            .hasAnyAuthority(AuthorityUserPrivileges.AUTH_SELF_LOAN_EDIT, AuthorityAdminPrivileges.AUTH_ADMIN_LOANS_EDIT)
+            // user controller
+            .requestMatchers(HttpMethod.GET, UserController.RESOURCE_PATH + "/**")
+            .hasAnyAuthority(AuthorityUserPrivileges.AUTH_SELF_USER_VIEW, AuthorityAdminPrivileges.AUTH_ADMIN_USERS_VIEW)
+            .requestMatchers(HttpMethod.PATCH, UserController.RESOURCE_PATH + "/**")
+            .hasAnyAuthority(AuthorityUserPrivileges.AUTH_SELF_USER_EDIT, AuthorityAdminPrivileges.AUTH_ADMIN_USERS_EDIT)
+            .requestMatchers(HttpMethod.DELETE, UserController.RESOURCE_PATH + "/**")
+            .hasAuthority(AuthorityUserPrivileges.AUTH_SELF_USER_DELETE)
+            // swagger ui
+            .requestMatchers(HttpMethod.GET,
+                "/v3/api-docs/**", // the json schema
+                "/swagger-ui/**",
+                "/swagger-ui.html") // redirects to /swagger-ui/index.html
+            .hasAuthority(AuthorityUserPrivileges.AUTH_USER)
+            // actuator
+            .requestMatchers("/actuator/**").hasAuthority(AuthorityAdminPrivileges.AUTH_ADMIN)
+            // unsecured endpoints
+            .requestMatchers(
+                NoticesController.RESOURCE_PATH + "/**",
+                ContactController.RESOURCE_PATH + "/**",
+                RegisterController.RESOURCE_PATH + "/**",
+                Constants.INVALID_SESSION_URL
+            ).permitAll()
     );
     http.formLogin(configurer -> configurer
         .defaultSuccessUrl(Constants.DEFAULT_LOGIN_REDIRECT_URL)

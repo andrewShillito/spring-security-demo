@@ -108,7 +108,8 @@ public class SecurityUser implements UserDetails {
       joinColumns = @JoinColumn(name = "user_id"),
       inverseJoinColumns = @JoinColumn(name = "authority_id")
   )
-  private Set<SecurityAuthority> authorities;
+  @Setter
+  private Set<SecurityAuthority> securityAuthorities;
 
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
@@ -146,7 +147,7 @@ public class SecurityUser implements UserDetails {
     setLockedDate(toClone.getLockedDate());
     setUnlockDate(toClone.getUnlockDate());
     setGroups(new HashSet<>(toClone.getGroups()));
-    setAuthorities(new HashSet<>(toClone.getAuthorities()));
+    setSecurityAuthorities(new HashSet<>(toClone.getSecurityAuthorities()));
 
     if (toClone.getControlDates() != null) {
       // ZonedDateTime is immutable but this still makes me a little uncomfortable
@@ -158,14 +159,12 @@ public class SecurityUser implements UserDetails {
   }
 
   /**
-   * Returns the union of {@link #authorities} and {@link #groups#authorities}
+   * Returns the union of {@link #securityAuthorities} and {@link #groups#securityAuthorities}
    * or empty set if none present. Never returns null.
    * @return empty or populated set produced as the union of single authorities and role authorities applicable to this user
    */
-  @Override
-  @Nonnull
-  public Set<SecurityAuthority> getAuthorities() {
-    return this.authorities == null ? new HashSet<>() : this.authorities;
+  public Set<SecurityAuthority> getSecurityAuthorities() {
+    return this.securityAuthorities != null ? securityAuthorities : null;
   }
 
   @Nonnull
@@ -173,11 +172,14 @@ public class SecurityUser implements UserDetails {
     return this.groups == null ? new HashSet<>() : this.groups;
   }
 
-  public Set<SecurityAuthority> deriveAuthorities() {
+  @Override
+  @Nonnull
+  @JsonIgnore
+  public Set<SecurityAuthority> getAuthorities() {
     Set<SecurityAuthority> derivedAuthorities = new HashSet<>();
 
-    if (this.authorities != null) {
-      derivedAuthorities.addAll(this.authorities);
+    if (this.securityAuthorities != null) {
+      derivedAuthorities.addAll(this.securityAuthorities);
     }
 
     if (groups != null && !groups.isEmpty()) {
