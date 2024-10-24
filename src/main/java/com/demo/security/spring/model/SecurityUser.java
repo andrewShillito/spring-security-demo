@@ -164,7 +164,7 @@ public class SecurityUser implements UserDetails {
    * @return empty or populated set produced as the union of single authorities and role authorities applicable to this user
    */
   public Set<SecurityAuthority> getSecurityAuthorities() {
-    return this.securityAuthorities != null ? securityAuthorities : null;
+    return this.securityAuthorities != null ? securityAuthorities : new HashSet<>();
   }
 
   @Nonnull

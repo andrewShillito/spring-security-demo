@@ -2,9 +2,12 @@ package com.demo.security.spring.playwright;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import com.demo.security.spring.model.SecurityGroup;
+import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.utils.CookieNames;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.options.Cookie;
+import org.junit.platform.commons.util.StringUtils;
 
 public class PlaywrightTestUtils {
 
@@ -61,5 +64,22 @@ public class PlaywrightTestUtils {
    */
   public static Cookie getCookie(BrowserContext context, String name) {
     return context.cookies().stream().filter(it -> name.equals(it.name)).findFirst().orElse(null);
+  }
+
+  /**
+   * Return the {@link SecurityGroup} matching the given group code or null if none
+   * @param user the security user to search the groups for
+   * @param code the code for the security group
+   * @return SecurityGroup or null if none match or null or empty input params
+   */
+  public static SecurityGroup getSecurityGroup(SecurityUser user, String code) {
+    if (StringUtils.isNotBlank(code) && user != null && !user.getGroups().isEmpty()) {
+      return user.getGroups()
+          .stream()
+          .filter(it -> code.equals(it.getCode()))
+          .findFirst()
+          .orElse(null);
+    }
+    return null;
   }
 }

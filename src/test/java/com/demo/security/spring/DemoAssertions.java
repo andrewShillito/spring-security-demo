@@ -266,13 +266,13 @@ public class DemoAssertions {
     }
   }
 
-  public static void assertSetsEqual(Set<SecurityGroup> expected, Set<SecurityGroup> actual) {
+  public static void assertSetsEqual(Set<?> expected, Set<?> actual) {
     assertBothNullOrNeitherAre(expected, actual);
     if (expected != null) {
       assertEquals(expected.size(), actual.size(), "Expected set sizes " + expected.size()
           + " to match " + actual.size() + " but didn't"
           + "for expected: " + expected + " and actual: " + actual);
-      SetView<SecurityGroup> difference = Sets.symmetricDifference(expected, actual);
+      SetView<?> difference = Sets.symmetricDifference(expected, actual);
       assertTrue(difference.isEmpty(), "Expected symmetric difference to be empty but was "
           + difference + " for expected: " + expected + " and actual: " + actual);
     }

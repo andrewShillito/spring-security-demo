@@ -5,12 +5,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.config.ProjectSecurityConfig;
 import com.demo.security.spring.controller.UserController;
+import com.demo.security.spring.model.SecurityAuthority;
+import com.demo.security.spring.model.SecurityGroup;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.utils.AuthorityGroups;
 import com.demo.security.spring.utils.Constants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIResponse;
@@ -18,8 +22,11 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.junit.UsePlaywright;
 import java.io.IOException;
+import java.util.Set;
+import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
+import com.google.common.collect.Sets;
 
 /**
  * Browser automation integration login test which requires the application to be running
@@ -90,7 +97,23 @@ public class BrowserLoginTest {
     assertNotNull(user);
     assertEquals("user", user.getUsername());
     assertNull(user.getPassword());
-    // TODO: add more testing of resulting groups etc...
+    assertNotNull(user.getGroups());
+    assertNotNull(user.getAuthorities());
+    assertNotNull(user.getSecurityAuthorities());
+    assertTrue(user.getSecurityAuthorities().isEmpty());
+    assertEquals(2, user.getGroups().size());
+    SecurityGroup groupUser = PlaywrightTestUtils.getSecurityGroup(user, AuthorityGroups.GROUP_USER);
+    assertNotNull(groupUser);
+    assertNotNull(groupUser.getAuthorities());
+    assertEquals(4, groupUser.getAuthorities().size());
+    SecurityGroup groupAccountHolder = PlaywrightTestUtils.getSecurityGroup(user, AuthorityGroups.GROUP_ACCOUNT_HOLDER);
+    assertNotNull(groupAccountHolder);
+    assertNotNull(groupAccountHolder.getAuthorities());
+    assertEquals(16, groupAccountHolder.getAuthorities().size());
+    assertEquals(16, user.getAuthorities().size());
+    assertEquals(16, Sets.union(groupUser.getAuthorities(), groupAccountHolder.getAuthorities()).size());
+    Set<String> authorityNames = user.getAuthorities().stream().map(SecurityAuthority::getAuthority).collect(Collectors.toSet());
+    DemoAssertions.assertSetsEqual(authorityNames, AuthorityGroups.GROUP_ACCOUNT_HOLDER_AUTHS);
   }
 
 }

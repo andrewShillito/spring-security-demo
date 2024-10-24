@@ -59,42 +59,42 @@ public class ExampleDataGenerationService {
     groupInfo.add(
         new SecurityGroupConfig()
             .setGroupName(AuthorityGroups.GROUP_USER)
-            .setAuthorities(AuthorityGroups.GROUP_USER_ROLES)
+            .setAuthorities(AuthorityGroups.GROUP_USER_AUTHS)
     );
     groupInfo.add(
         new SecurityGroupConfig()
             .setGroupName(AuthorityGroups.GROUP_ACCOUNT_HOLDER)
-            .setAuthorities(AuthorityGroups.GROUP_ACCOUNT_HOLDER_ROLES)
+            .setAuthorities(AuthorityGroups.GROUP_ACCOUNT_HOLDER_AUTHS)
     );
     groupInfo.add(
         new SecurityGroupConfig()
             .setGroupName(AuthorityGroups.GROUP_ADMIN_USERS)
-            .setAuthorities(AuthorityGroups.GROUP_ADMIN_USERS_ROLES)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_USERS_AUTHS)
     );
     groupInfo.add(
         new SecurityGroupConfig()
             .setGroupName(AuthorityGroups.GROUP_ADMIN_ACCOUNTS)
-            .setAuthorities(AuthorityGroups.GROUP_ADMIN_ACCOUNTS_ROLES)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_ACCOUNTS_AUTHS)
     );
     groupInfo.add(
         new SecurityGroupConfig()
             .setGroupName(AuthorityGroups.GROUP_ADMIN_CARDS)
-            .setAuthorities(AuthorityGroups.GROUP_ADMIN_CARDS_ROLES)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_CARDS_AUTHS)
     );
     groupInfo.add(
         new SecurityGroupConfig()
             .setGroupName(AuthorityGroups.GROUP_ADMIN_LOANS)
-            .setAuthorities(AuthorityGroups.GROUP_ADMIN_LOANS_ROLES)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_LOANS_AUTHS)
     );
     groupInfo.add(
         new SecurityGroupConfig()
             .setGroupName(AuthorityGroups.GROUP_ADMIN_TRANSACTIONS)
-            .setAuthorities(AuthorityGroups.GROUP_ADMIN_TRANSACTIONS_ROLES)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_TRANSACTIONS_AUTHS)
     );
     groupInfo.add(
         new SecurityGroupConfig()
             .setGroupName(AuthorityGroups.GROUP_ADMIN_SYSTEM)
-            .setAuthorities(AuthorityGroups.GROUP_ADMIN_SYSTEM_ROLES)
+            .setAuthorities(AuthorityGroups.GROUP_ADMIN_SYSTEM_AUTHS)
     );
     return groupInfo;
   }
