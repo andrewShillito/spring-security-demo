@@ -21,7 +21,29 @@ import org.apache.commons.lang3.StringUtils;
 @Log4j2
 public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
 
-  protected static final String DEFAULT_TESTING_PASSWORD = "password";
+  public static final String EXAMPLE_USERNAME_USER = "user";
+
+  public static final String EXAMPLE_USERNAME_USER_OTHER = "otherUser";
+
+  public static final String EXAMPLE_USERNAME_SYSTEM_ADMIN = "systemAdmin";
+
+  public static final String EXAMPLE_USERNAME_SYSTEM_ADMIN_OTHER = "otherSystemAdmin";
+
+  public static final String EXAMPLE_USERNAME_LOAN_ADMIN = "loanAdmin";
+
+  public static final String EXAMPLE_USERNAME_CARD_ADMIN = "cardAdmin";
+
+  public static final String EXAMPLE_USERNAME_ACCOUNT_ADMIN = "accountAdmin";
+
+  public static final String EXAMPLE_USERNAME_USER_ADMIN = "userAdmin";
+
+  public static final String EXAMPLE_USERNAME_TRANSACTION_ADMIN = "transactionAdmin";
+
+  public static final String EXAMPLE_USERNAME_DISABLED_USER = "userDisabled";
+
+  public static final String EXAMPLE_USERNAME_DISABLED_ADMIN = "transactionAdmin";
+
+  public static final String DEFAULT_TESTING_PASSWORD = "password";
 
   private SecurityGroupRepository securityGroupRepository;
 
@@ -65,17 +87,17 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
 
   private List<SecurityUser> generateUsers(int count) {
     final List<SecurityUser> users = new ArrayList<>(List.of(
-        generateUser("user", false),
-        generateUser("systemAdmin", true),
-        generateUser("otherUser", false),
-        generateUser("otherSystemAdmin", true),
-        generateUser("loanAdmin", true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_LOANS)),
-        generateUser("cardAdmin", true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_CARDS)),
-        generateUser("accountAdmin", true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_ACCOUNTS)),
-        generateUser("userAdmin", true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_USERS)),
-        generateUser("transactionsAdmin", true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_TRANSACTIONS)),
-        disable(generateUser("userDisabled", false)),
-        disable(generateUser("adminDisabled", true))
+        generateUser(EXAMPLE_USERNAME_USER, false),
+        generateUser(EXAMPLE_USERNAME_SYSTEM_ADMIN, true),
+        generateUser(EXAMPLE_USERNAME_USER_OTHER, false),
+        generateUser(EXAMPLE_USERNAME_SYSTEM_ADMIN_OTHER, true),
+        generateUser(EXAMPLE_USERNAME_LOAN_ADMIN, true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_LOANS)),
+        generateUser(EXAMPLE_USERNAME_CARD_ADMIN, true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_CARDS)),
+        generateUser(EXAMPLE_USERNAME_ACCOUNT_ADMIN, true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_ACCOUNTS)),
+        generateUser(EXAMPLE_USERNAME_USER_ADMIN, true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_USERS)),
+        generateUser(EXAMPLE_USERNAME_TRANSACTION_ADMIN, true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_TRANSACTIONS)),
+        disable(generateUser( EXAMPLE_USERNAME_DISABLED_USER, false)),
+        disable(generateUser(EXAMPLE_USERNAME_DISABLED_ADMIN, true))
     ));
     for (int i = 0; i < count; i++) {
       final String username = faker.internet().username();

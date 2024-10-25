@@ -2,6 +2,7 @@ package com.demo.security.spring.playwright;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -11,6 +12,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.config.ProjectSecurityConfig;
 import com.demo.security.spring.controller.UserController;
+import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
+import com.demo.security.spring.generate.UserGenerator;
 import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityGroup;
 import com.demo.security.spring.model.SecurityUser;
@@ -37,7 +40,7 @@ public class BrowserLoginTest {
   private static final ObjectMapper objectMapper = new ProjectSecurityConfig().objectMapper();
 
   @Test
-  void testLoginBasic(Page page) {
+  void testLoginExampleUser(Page page) {
     final String loginPath = "login";
     page.navigate(loginPath);
     assertThat(page).hasURL(loginPath);
@@ -56,9 +59,9 @@ public class BrowserLoginTest {
 
     // enter data
     usernameLocator.click();
-    usernameLocator.fill("user");
+    usernameLocator.fill(UserGenerator.EXAMPLE_USERNAME_USER);
     passwordLocator.click();
-    passwordLocator.fill("password");
+    passwordLocator.fill(UserGenerator.DEFAULT_TESTING_PASSWORD);
 
     String sessionId = PlaywrightTestUtils.getSessionId(page.context());
     assertNotNull(sessionId);
@@ -114,6 +117,29 @@ public class BrowserLoginTest {
     assertEquals(16, Sets.union(groupUser.getAuthorities(), groupAccountHolder.getAuthorities()).size());
     Set<String> authorityNames = user.getAuthorities().stream().map(SecurityAuthority::getAuthority).collect(Collectors.toSet());
     DemoAssertions.assertSetsEqual(authorityNames, AuthorityGroups.GROUP_ACCOUNT_HOLDER_AUTHS);
+
+    APIResponse actuatorResponse = page.request().get("/actuator");
+    assertFalse(actuatorResponse.ok());
+    assertEquals(HttpStatus.FORBIDDEN.value(), actuatorResponse.status());
+    try {
+      var errorResponse = objectMapper.readValue(actuatorResponse.body(), AuthErrorDetailsResponse.class);
+      assertEquals("/actuator", errorResponse.getRequestUri());
+      DemoAssertions.assertDateIsNowIsh(errorResponse.getTime());
+      assertEquals("Access Denied", errorResponse.getErrorMessage());
+      assertEquals("Example additional info", errorResponse.getAdditionalInfo());
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
+
+  @Test
+  void testLoginSystemAdmin(Page page) {
+    PlaywrightTestUtils.logon(page, UserGenerator.EXAMPLE_USERNAME_SYSTEM_ADMIN, UserGenerator.DEFAULT_TESTING_PASSWORD);
+    APIResponse actuatorResponse = page.request().get("/actuator");
+    assertTrue(actuatorResponse.ok());
+    assertEquals(HttpStatus.OK.value(), actuatorResponse.status());
+  }
+
+
 
 }

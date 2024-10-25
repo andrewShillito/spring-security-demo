@@ -1,11 +1,15 @@
 package com.demo.security.spring.playwright;
 
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.demo.security.spring.model.SecurityGroup;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.utils.Constants;
 import com.demo.security.spring.utils.CookieNames;
 import com.microsoft.playwright.BrowserContext;
+import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.Cookie;
 import org.junit.platform.commons.util.StringUtils;
 
@@ -81,5 +85,29 @@ public class PlaywrightTestUtils {
           .orElse(null);
     }
     return null;
+  }
+
+  public static void logon(Page page, String username, String password) {
+    final String loginPath = "login";
+    page.navigate(loginPath);
+    assertThat(page).hasURL(loginPath);
+    final Locator usernameLocator = page.locator("input#username");
+    final Locator passwordLocator = page.locator("input#password");
+    final Locator submitButton = page.locator("button");
+
+    // enter data
+    usernameLocator.click();
+    usernameLocator.fill(username);
+    passwordLocator.click();
+    passwordLocator.fill(password);
+
+    String sessionId = PlaywrightTestUtils.getSessionId(page.context());
+    assertNotNull(sessionId);
+    String csrfToken = PlaywrightTestUtils.getCsrfToken(page.context());
+    assertNotNull(csrfToken);
+    submitButton.click();
+
+    // default redirect url is to swagger ui
+    assertThat(page).hasURL(Constants.SWAGGER_UI_URL);
   }
 }
