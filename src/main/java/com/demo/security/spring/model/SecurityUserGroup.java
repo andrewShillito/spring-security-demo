@@ -1,8 +1,5 @@
-package com.demo.security.spring.model.remove;
+package com.demo.security.spring.model;
 
-import com.demo.security.spring.model.SecurityAuthority;
-import com.demo.security.spring.model.SecurityGroup;
-import com.demo.security.spring.model.SecurityUser;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;

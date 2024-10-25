@@ -1,4 +1,4 @@
-package com.demo.security.spring.model.remove;
+package com.demo.security.spring.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
