@@ -8,12 +8,6 @@ public class SpringProfileConstants {
   /** The default spring profile name */
   public static final String DEFAULT = "default";
 
-  /**
-   * A spring profile which uses an in memory user details service - disables docker-compose startup
-   * of postgres and adminer
-   */
-  public static final String IN_MEMORY_USERS = "inMemoryUsers";
-
   /** A profile which uses postgres database */
   public static final String POSTGRES = "postgres";
 
