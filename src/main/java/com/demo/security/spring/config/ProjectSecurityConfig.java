@@ -173,7 +173,8 @@ public class ProjectSecurityConfig {
                 NoticesController.RESOURCE_PATH + "/**",
                 ContactController.RESOURCE_PATH + "/**",
                 RegisterController.RESOURCE_PATH + "/**",
-                Constants.INVALID_SESSION_URL
+                Constants.INVALID_SESSION_URL,
+                "/"
             ).permitAll()
     );
     http.formLogin(configurer -> configurer
