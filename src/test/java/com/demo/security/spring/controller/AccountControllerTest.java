@@ -3,10 +3,17 @@ package com.demo.security.spring.controller;
 import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.api.ApiSchemaValidator;
 import com.demo.security.spring.model.Account;
+import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.repository.SecurityAuthorityRepository;
+import com.demo.security.spring.repository.SecurityUserRepository;
+import com.demo.security.spring.utils.AuthorityGroups;
+import com.demo.security.spring.utils.AuthorityUserPrivileges;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +36,12 @@ class AccountControllerTest extends AbstractControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @Autowired
+    private SecurityUserRepository userRepository;
+
+    @Autowired
+    private SecurityAuthorityRepository authorityRepository;
 
     @Test
     void testGetAccountDetailsNotLoggedIn() throws Exception {
@@ -95,7 +108,59 @@ class AccountControllerTest extends AbstractControllerTest {
         );
     }
 
+    @Test
+    void testNotAuthorizedExternalUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateExternalUser(username, password, true, u -> {
+            u.getGroups().removeIf(it -> AuthorityGroups.GROUP_ACCOUNT_HOLDER.equals(it.getCode()));
+        });
+        mockMvc.perform(get(AccountController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
+        addViewAccountPrivilege(user);
+        mockMvc.perform(get(AccountController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
+    }
+
+    @Test
+    void testNotAuthorizedAdminUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateAdminUser(username, password, true, u -> {
+            u.getGroups().removeIf(it -> AuthorityGroups.GROUP_ADMIN_SYSTEM.equals(it.getCode()));
+        });
+        mockMvc.perform(get(AccountController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+        addViewAccountPrivilege(user);
+        mockMvc.perform(get(AccountController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
+    }
+
+    @Test
+    void testAuthorizedAdminUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateAdminUser(username, password, true);
+        mockMvc.perform(get(AccountController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
+    }
+
     private Account asAccount(String responseContent) throws JsonProcessingException {
         return objectMapper.readValue(responseContent, Account.class);
+    }
+
+    private void addViewAccountPrivilege(SecurityUser user) {
+        SecurityAuthority authority = authorityRepository.findByAuthorityEquals(AuthorityUserPrivileges.AUTH_SELF_ACCOUNT_VIEW);
+        assertNotNull(authority);
+        Set<SecurityAuthority> authorities = new HashSet<>();
+        authorities.add(authority);
+        user.setSecurityAuthorities(authorities);
+        userRepository.save(user);
     }
 }

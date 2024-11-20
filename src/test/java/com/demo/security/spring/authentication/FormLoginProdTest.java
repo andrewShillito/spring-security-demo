@@ -59,19 +59,19 @@ public class FormLoginProdTest {
     DemoAssertions.assertFormLoginUnSuccessful(mockMvc, testDataGenerator.randomUsername() + "invalid", "invalid", true);
     // invalid external user password
     final String username = testDataGenerator.randomUsername();
-    final String internalUsername = username + "internal";
+    final String adminUsername = username + "internal";
     final String userRawPassword = testDataGenerator.randomPassword();
     testDataGenerator.generateExternalUser(username, userRawPassword, true);
-    testDataGenerator.generateInternalUser(internalUsername, userRawPassword, true);
+    testDataGenerator.generateAdminUser(adminUsername, userRawPassword, true);
     // correct login
     DemoAssertions.assertFormLoginSuccessful(mockMvc, username, userRawPassword, true);
-    DemoAssertions.assertFormLoginSuccessful(mockMvc, internalUsername, userRawPassword, true);
+    DemoAssertions.assertFormLoginSuccessful(mockMvc, adminUsername, userRawPassword, true);
     // incorrect user password
     DemoAssertions.assertFormLoginUnSuccessful(mockMvc, username, "invalid", true);
-    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, internalUsername, "invalid", true);
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, adminUsername, "invalid", true);
     // incorrect username
     DemoAssertions.assertFormLoginUnSuccessful(mockMvc, username + "invalid", userRawPassword, true);
-    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, internalUsername + "invalid", userRawPassword, true);
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, adminUsername + "invalid", userRawPassword, true);
   }
 
   @Test

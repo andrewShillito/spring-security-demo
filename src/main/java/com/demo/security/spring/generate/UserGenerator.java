@@ -130,8 +130,7 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
         faker.random().nextBoolean(),
         faker.random().nextBoolean(),
         faker.random().nextBoolean(),
-        faker.random().nextBoolean()
-        );
+        faker.random().nextBoolean());
   }
 
   private Set<String> getGroupsForType(String type) {
@@ -146,12 +145,12 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
     return groups;
   }
 
-  private SecurityUser generateUser(String username, boolean isInternal) {
-    return isInternal ? generateInternalUser(username, DEFAULT_TESTING_PASSWORD) :  generateExternalUser(username, DEFAULT_TESTING_PASSWORD);
+  private SecurityUser generateUser(String username, boolean isAdmin) {
+    return isAdmin ? generateAdminUser(username, DEFAULT_TESTING_PASSWORD) :  generateExternalUser(username, DEFAULT_TESTING_PASSWORD);
   }
 
-  private SecurityUser generateUser(String username, boolean isInternal, Collection<String> authorityNames, Collection<String> groups) {
-    final SecurityUser user = isInternal ? generateInternalUser(username, DEFAULT_TESTING_PASSWORD) : generateExternalUser(username, DEFAULT_TESTING_PASSWORD);
+  private SecurityUser generateUser(String username, boolean isAdmin, Collection<String> authorityNames, Collection<String> groups) {
+    final SecurityUser user = isAdmin ? generateAdminUser(username, DEFAULT_TESTING_PASSWORD) : generateExternalUser(username, DEFAULT_TESTING_PASSWORD);
     user.setGroups(getGroupsForNames(groups));
     user.setSecurityAuthorities(getAuthoritiesForNames(authorityNames));
     return user;
@@ -175,7 +174,7 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
     return generateUser(username, password, null, getGroupsForType("external"), true, false, false, false);
   }
 
-  public SecurityUser generateInternalUser(String username, String password) {
+  public SecurityUser generateAdminUser(String username, String password) {
     return generateUser(username, password, null, getGroupsForType("internal"), true, false, false, false);
   }
 

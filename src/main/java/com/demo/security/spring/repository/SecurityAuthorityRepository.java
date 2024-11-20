@@ -10,4 +10,6 @@ public interface SecurityAuthorityRepository extends CrudRepository<SecurityAuth
 
   Set<SecurityAuthority> findAllByAuthorityIn(Collection<String> authorities);
 
+  SecurityAuthority findByAuthorityEquals(String authority);
+
 }

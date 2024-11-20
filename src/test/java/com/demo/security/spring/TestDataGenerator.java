@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Consumer;
 import lombok.Getter;
 import lombok.NonNull;
 import net.datafaker.Faker;
@@ -101,7 +102,7 @@ public class TestDataGenerator {
     final List<SecurityUser> users = new ArrayList<>();
     for (int i = 0; i < count; i++) {
       if (internal) {
-        users.add(generateInternalUser(faker.internet().username(), randomPassword(), persist));
+        users.add(generateAdminUser(faker.internet().username(), randomPassword(), persist));
       } else {
         users.add(generateExternalUser(faker.internet().username(), randomPassword(), persist));
       }
@@ -120,17 +121,31 @@ public class TestDataGenerator {
   }
 
   public SecurityUser generateExternalUser(@NonNull String username, @NonNull String password, boolean persist) {
+    return generateExternalUser(username, password, persist, null);
+  }
+
+  public SecurityUser generateExternalUser(@NonNull String username, @NonNull String password, boolean persist, Consumer<SecurityUser> mutator) {
     final SecurityUser user = userGenerator.generateExternalUser(username, password);
     postProcessGeneratedUser(user);
+    if (mutator != null) {
+      mutator.accept(user);
+    }
     if (persist) {
       securityUserRepository.save(user);
     }
     return user;
   }
 
-  public SecurityUser generateInternalUser(@NonNull String username, @NonNull String password, boolean persist) {
-    final SecurityUser user = userGenerator.generateInternalUser(username, password);
+  public SecurityUser generateAdminUser(@NonNull String username, @NonNull String password, boolean persist) {
+    return generateAdminUser(username, password, persist, null);
+  }
+
+  public SecurityUser generateAdminUser(@NonNull String username, @NonNull String password, boolean persist, Consumer<SecurityUser> mutator) {
+    final SecurityUser user = userGenerator.generateAdminUser(username, password);
     postProcessGeneratedUser(user);
+    if (mutator != null) {
+      mutator.accept(user);
+    }
     if (persist) {
       securityUserRepository.save(user);
     }

@@ -16,7 +16,7 @@ public class AuthorityUserPrivileges {
   public static final String AUTH_SELF_CARD_APPLY = "AUTH_SELF_CARD_APPLY";
   /** Privilege which allows a user to edit their own cards */
   public static final String AUTH_SELF_CARD_EDIT = "AUTH_SELF_CARD_EDIT";
-  /** Privilege which allows a user to view their own cards */
+  /** Privilege which allows a user to view their own account */
   public static final String AUTH_SELF_ACCOUNT_VIEW = "AUTH_SELF_ACCOUNT_VIEW";
   /** Privilege which allows a user to create their own account */
   public static final String AUTH_SELF_ACCOUNT_APPLY = "AUTH_SELF_ACCOUNT_APPLY";
