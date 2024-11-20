@@ -14,6 +14,7 @@ import com.demo.security.spring.controller.ContactController;
 import com.demo.security.spring.controller.LoansController;
 import com.demo.security.spring.controller.UserController;
 import com.demo.security.spring.controller.NoticesController;
+import com.demo.security.spring.events.AuthorizationEvents;
 import com.demo.security.spring.filter.CsrfCookieFilter;
 import com.demo.security.spring.generate.AccountGenerator;
 import com.demo.security.spring.generate.CardGenerator;
@@ -68,12 +69,15 @@ import java.util.Collections;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authorization.AuthorizationEventPublisher;
+import org.springframework.security.authorization.SpringAuthorizationEventPublisher;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer.SessionFixationConfigurer;
@@ -396,6 +400,17 @@ public class ProjectSecurityConfig {
   @Bean
   public AuthenticationEvents authenticationEventListeners() {
     return new AuthenticationEvents();
+  }
+
+  @Bean
+  public AuthorizationEventPublisher authorizationEventPublisher
+      (ApplicationEventPublisher applicationEventPublisher) {
+    return new SpringAuthorizationEventPublisher(applicationEventPublisher);
+  }
+
+  @Bean
+  public AuthorizationEvents authorizationEventListeners() {
+    return new AuthorizationEvents();
   }
 
   @Bean
