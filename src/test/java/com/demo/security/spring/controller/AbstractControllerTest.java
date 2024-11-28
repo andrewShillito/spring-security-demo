@@ -4,6 +4,7 @@ import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.TestDataGenerator;
 import com.demo.security.spring.controller.error.AuthErrorDetailsResponse;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.service.UserAuthorityManager;
 import com.demo.security.spring.utils.Constants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.ZoneId;
@@ -39,6 +40,9 @@ public abstract class AbstractControllerTest {
 
     @Autowired
     protected TestDataGenerator testDataGenerator;
+
+    @Autowired
+    protected UserAuthorityManager userAuthorityManager;
 
     public String getTestUserName() {
         return this.getClass().getName().substring(0, 1).toLowerCase() + this.getClass().getName().substring(1);

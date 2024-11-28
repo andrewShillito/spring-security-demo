@@ -8,6 +8,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.demo.security.spring.model.Account;
 import com.demo.security.spring.model.AccountTransaction;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.utils.AuthorityGroups;
+import com.demo.security.spring.utils.AuthorityUserPrivileges;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -62,6 +64,67 @@ class BalanceControllerTest extends AbstractControllerTest {
             .andReturn().getResponse().getContentAsString());
         normalizeDates(actualTransactions);
         assertIterableEquals(account.getAccountTransactions(), actualTransactions);
+    }
+
+    @Test
+    void testNotAuthorizedExternalUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateExternalUser(username, password, true, u -> {
+            u.getGroups().removeIf(it -> AuthorityGroups.GROUP_ACCOUNT_HOLDER.equals(it.getCode()));
+        });
+        mockMvc.perform(get(BalanceController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
+        userAuthorityManager.addAuthorities(user, List.of(
+            AuthorityUserPrivileges.AUTH_SELF_LOAN_VIEW,
+            AuthorityUserPrivileges.AUTH_SELF_CARD_EDIT,
+            AuthorityUserPrivileges.AUTH_SELF_TRANSACTION_EDIT
+        ));
+        mockMvc.perform(get(BalanceController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
+        userAuthorityManager.addAuthority(user, AuthorityUserPrivileges.AUTH_SELF_TRANSACTION_VIEW);
+        mockMvc.perform(get(BalanceController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
+    }
+
+    @Test
+    void testNotAuthorizedAdminUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateAdminUser(username, password, true, u -> {
+            u.getGroups().removeIf(it -> AuthorityGroups.GROUP_ADMIN_SYSTEM.equals(it.getCode()));
+        });
+        mockMvc.perform(get(AccountController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+        userAuthorityManager.addAuthorities(user, List.of(
+            AuthorityUserPrivileges.AUTH_SELF_TRANSACTION_CREATE,
+            AuthorityUserPrivileges.AUTH_SELF_CARD_VIEW,
+            AuthorityUserPrivileges.AUTH_SELF_ACCOUNT_APPLY
+        ));
+        mockMvc.perform(get(BalanceController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
+        userAuthorityManager.addAuthority(user, AuthorityUserPrivileges.AUTH_SELF_TRANSACTION_VIEW);
+        mockMvc.perform(get(BalanceController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
+    }
+
+    @Test
+    void testAuthorizedAdminUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateAdminUser(username, password, true);
+        mockMvc.perform(get(BalanceController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
     }
 
     private List<AccountTransaction> asAccountTransaction(String responseBody) throws JsonProcessingException {

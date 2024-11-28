@@ -192,6 +192,18 @@ public class SecurityUser implements UserDetails {
     return derivedAuthorities;
   }
 
+  public void addAuthority(SecurityAuthority authority) {
+    if (authority != null) {
+      securityAuthorities.add(authority);
+    }
+  }
+
+  public void addGroup(SecurityGroup group) {
+    if (group != null) {
+      groups.add(group);
+    }
+  }
+
   @Override
   @JsonIgnore
   public boolean isAccountNonExpired() {

@@ -3,17 +3,12 @@ package com.demo.security.spring.controller;
 import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.api.ApiSchemaValidator;
 import com.demo.security.spring.model.Account;
-import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
-import com.demo.security.spring.repository.SecurityAuthorityRepository;
-import com.demo.security.spring.repository.SecurityUserRepository;
 import com.demo.security.spring.utils.AuthorityGroups;
 import com.demo.security.spring.utils.AuthorityUserPrivileges;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,12 +31,6 @@ class AccountControllerTest extends AbstractControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
-    @Autowired
-    private SecurityUserRepository userRepository;
-
-    @Autowired
-    private SecurityAuthorityRepository authorityRepository;
 
     @Test
     void testGetAccountDetailsNotLoggedIn() throws Exception {
@@ -119,6 +108,11 @@ class AccountControllerTest extends AbstractControllerTest {
                 .with(SecurityMockMvcRequestPostProcessors.user(user)))
             .andExpect(status().isForbidden());
 
+        addUnrelatedPrivilege(user);
+        mockMvc.perform(get(AccountController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
         addViewAccountPrivilege(user);
         mockMvc.perform(get(AccountController.RESOURCE_PATH)
                 .with(SecurityMockMvcRequestPostProcessors.user(user)))
@@ -135,6 +129,12 @@ class AccountControllerTest extends AbstractControllerTest {
         mockMvc.perform(get(AccountController.RESOURCE_PATH)
                 .with(SecurityMockMvcRequestPostProcessors.user(user)))
             .andExpect(status().isForbidden());
+
+        addUnrelatedPrivilege(user);
+        mockMvc.perform(get(AccountController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
         addViewAccountPrivilege(user);
         mockMvc.perform(get(AccountController.RESOURCE_PATH)
                 .with(SecurityMockMvcRequestPostProcessors.user(user)))
@@ -156,11 +156,10 @@ class AccountControllerTest extends AbstractControllerTest {
     }
 
     private void addViewAccountPrivilege(SecurityUser user) {
-        SecurityAuthority authority = authorityRepository.findByAuthorityEquals(AuthorityUserPrivileges.AUTH_SELF_ACCOUNT_VIEW);
-        assertNotNull(authority);
-        Set<SecurityAuthority> authorities = new HashSet<>();
-        authorities.add(authority);
-        user.setSecurityAuthorities(authorities);
-        userRepository.save(user);
+        userAuthorityManager.addAuthority(user, AuthorityUserPrivileges.AUTH_SELF_ACCOUNT_VIEW);
+    }
+
+    private void addUnrelatedPrivilege(SecurityUser user) {
+        userAuthorityManager.addAuthority(user, AuthorityUserPrivileges.AUTH_SELF_CARD_VIEW);
     }
 }

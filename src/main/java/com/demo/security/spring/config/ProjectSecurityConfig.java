@@ -51,6 +51,7 @@ import com.demo.security.spring.service.SecurityUserService;
 import com.demo.security.spring.service.SecurityUserValidationService;
 import com.demo.security.spring.service.SecurityUserValidationServiceImpl;
 import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
+import com.demo.security.spring.service.UserAuthorityManager;
 import com.demo.security.spring.service.UserDetailsManagerImpl;
 import com.demo.security.spring.utils.AuthorityAdminPrivileges;
 import com.demo.security.spring.utils.AuthorityUserPrivileges;
@@ -482,5 +483,17 @@ public class ProjectSecurityConfig {
         .build();
     loanService.setSecurityUserService(securityUserService);
     return loanService;
+  }
+
+  @Bean
+  public UserAuthorityManager userAuthorityManager(
+      SecurityAuthorityRepository authorityRepository,
+      SecurityGroupRepository groupRepository,
+      SecurityUserRepository userRepository) {
+    return UserAuthorityManager.builder()
+        .authorityRepository(authorityRepository)
+        .groupRepository(groupRepository)
+        .userRepository(userRepository)
+        .build();
   }
 }

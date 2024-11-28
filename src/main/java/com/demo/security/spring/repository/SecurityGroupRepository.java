@@ -11,4 +11,6 @@ public interface SecurityGroupRepository extends CrudRepository<SecurityGroup, L
 
   Set<SecurityGroup> findAllByCodeIn(Collection<String> code);
 
+  SecurityGroup findByCodeEquals(String code);
+
 }
