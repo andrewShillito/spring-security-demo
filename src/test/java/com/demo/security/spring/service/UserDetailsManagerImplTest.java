@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,6 +26,9 @@ class UserDetailsManagerImplTest {
 
   @Autowired
   private SecurityUserRepository userRepository;
+
+  @Autowired
+  private PasswordEncoder passwordEncoder;
 
   @Test
   void testCreateUserValidPassword() {
@@ -48,6 +52,7 @@ class UserDetailsManagerImplTest {
     final String password = testDataGenerator.randomPassword();
     SecurityUser invalidUser = testDataGenerator.generateExternalUser(username, password, false);
     // encrypted password fails validation due to being too long
+    invalidUser.setPassword(passwordEncoder.encode(password));
     expectAssertionError(invalidUser);
 
     invalidUser = new SecurityUser(invalidUser);

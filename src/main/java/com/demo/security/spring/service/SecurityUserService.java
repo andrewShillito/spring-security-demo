@@ -17,7 +17,7 @@ public interface SecurityUserService {
 
   boolean userExists(String username);
 
-  UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
+  SecurityUser loadUserByUsername(String username) throws UsernameNotFoundException;
 
   SecurityUser getAuthenticatedUser(Authentication authentication);
 

@@ -15,6 +15,7 @@ import com.demo.security.spring.repository.AccountRepository;
 import com.demo.security.spring.repository.CardRepository;
 import com.demo.security.spring.repository.LoanRepository;
 import com.demo.security.spring.repository.SecurityUserRepository;
+import com.demo.security.spring.service.SecurityUserService;
 import com.demo.security.spring.utils.Constants;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public class TestDataGenerator {
   private NoticeDetailsGenerator noticeDetailsGenerator;
 
   @Autowired
-  private SecurityUserRepository securityUserRepository;
+  private SecurityUserService userService;
 
   @Autowired
   private PasswordEncoder passwordEncoder;
@@ -113,11 +114,7 @@ public class TestDataGenerator {
   public SecurityUser generateExternalUser(boolean persist) {
     final String username = randomUsername();
     final String userRawPassword = randomPassword();
-    SecurityUser user = generateExternalUser(username, userRawPassword, true);
-    if (persist) {
-      securityUserRepository.save(user);
-    }
-    return user;
+    return generateExternalUser(username, userRawPassword, persist);
   }
 
   public SecurityUser generateExternalUser(@NonNull String username, @NonNull String password, boolean persist) {
@@ -126,12 +123,11 @@ public class TestDataGenerator {
 
   public SecurityUser generateExternalUser(@NonNull String username, @NonNull String password, boolean persist, Consumer<SecurityUser> mutator) {
     final SecurityUser user = userGenerator.generateExternalUser(username, password);
-    postProcessGeneratedUser(user);
     if (mutator != null) {
       mutator.accept(user);
     }
     if (persist) {
-      securityUserRepository.save(user);
+      userService.createUser(user);
     }
     return user;
   }
@@ -142,18 +138,13 @@ public class TestDataGenerator {
 
   public SecurityUser generateAdminUser(@NonNull String username, @NonNull String password, boolean persist, Consumer<SecurityUser> mutator) {
     final SecurityUser user = userGenerator.generateAdminUser(username, password);
-    postProcessGeneratedUser(user);
     if (mutator != null) {
       mutator.accept(user);
     }
     if (persist) {
-      securityUserRepository.save(user);
+      userService.createUser(user);
     }
     return user;
-  }
-
-  private void postProcessGeneratedUser(@NonNull SecurityUser user) {
-    user.setPassword(passwordEncoder.encode(user.getPassword()));
   }
 
   public List<Loan> generateLoans(SecurityUser user, int count) {

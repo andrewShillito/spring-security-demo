@@ -50,8 +50,8 @@ import com.demo.security.spring.service.LoginService;
 import com.demo.security.spring.service.SecurityUserService;
 import com.demo.security.spring.service.SecurityUserValidationService;
 import com.demo.security.spring.service.SecurityUserValidationServiceImpl;
-import com.demo.security.spring.service.SpringDataJpaUserDetailsService;
 import com.demo.security.spring.service.UserAuthorityManager;
+import com.demo.security.spring.service.UserCache;
 import com.demo.security.spring.service.UserDetailsManagerImpl;
 import com.demo.security.spring.utils.AuthorityAdminPrivileges;
 import com.demo.security.spring.utils.AuthorityUserPrivileges;
@@ -62,11 +62,13 @@ import com.demo.security.spring.service.ExampleDataManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.google.common.cache.CacheBuilder;
 import jakarta.validation.Validator;
 import jakarta.validation.constraints.NotNull;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.concurrent.TimeUnit;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.EnableCaching;
@@ -83,7 +85,6 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer.SessionFixationConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.UserDetailsManager;
@@ -208,21 +209,6 @@ public class ProjectSecurityConfig {
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     source.registerCorsConfiguration("/**", configuration);
     return source;
-  }
-
-  /**
-   * Create a jdbc user details manager. Note that the docker-compose file and
-   * spring-boot-docker-compose by default start a postgres and adminer container.
-   *
-   * @param repository - a spring data jpa repository
-   * @return JdbcUserDetailsManager
-   */
-  @Bean(name = "userDetailsService")
-  public UserDetailsService jpaUserDetailsService(final SecurityUserRepository repository) {
-    return SpringDataJpaUserDetailsService
-        .builder()
-        .securityUserRepository(repository)
-        .build();
   }
 
   /**
@@ -435,8 +421,12 @@ public class ProjectSecurityConfig {
   }
 
   @Bean
-  public SecurityUserService securityUserService(UserDetailsManager userDetailsManager) {
-    return CachingSecurityUserService.builder().userDetailsManager(userDetailsManager).build();
+  public SecurityUserService securityUserService(UserDetailsManager userDetailsManager,
+      UserCache userCache) {
+    return CachingSecurityUserService.builder()
+        .userDetailsManager(userDetailsManager)
+        .userCache(userCache)
+        .build();
   }
 
   @Bean
@@ -489,11 +479,20 @@ public class ProjectSecurityConfig {
   public UserAuthorityManager userAuthorityManager(
       SecurityAuthorityRepository authorityRepository,
       SecurityGroupRepository groupRepository,
-      SecurityUserRepository userRepository) {
+      SecurityUserRepository userRepository,
+      UserCache userCache) {
     return UserAuthorityManager.builder()
         .authorityRepository(authorityRepository)
         .groupRepository(groupRepository)
         .userRepository(userRepository)
+        .userCache(userCache)
+        .build();
+  }
+
+  @Bean
+  public UserCache userCache() {
+    return UserCache.builder()
+        .cache(CacheBuilder.newBuilder().maximumSize(1000).expireAfterAccess(5, TimeUnit.MINUTES).build())
         .build();
   }
 }

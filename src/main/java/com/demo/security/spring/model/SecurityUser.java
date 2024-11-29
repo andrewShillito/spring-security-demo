@@ -194,12 +194,18 @@ public class SecurityUser implements UserDetails {
 
   public void addAuthority(SecurityAuthority authority) {
     if (authority != null) {
+      if (securityAuthorities == null) {
+        securityAuthorities = new HashSet<>();
+      }
       securityAuthorities.add(authority);
     }
   }
 
   public void addGroup(SecurityGroup group) {
     if (group != null) {
+      if (groups == null) {
+        groups = new HashSet<>();
+      }
       groups.add(group);
     }
   }

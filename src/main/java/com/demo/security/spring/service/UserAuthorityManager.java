@@ -24,6 +24,8 @@ public class UserAuthorityManager {
 
   private SecurityGroupRepository groupRepository;
 
+  private UserCache userCache;
+
   @Transactional
   public SecurityUser addAuthorities(@Nonnull SecurityUser user, @Nonnull Collection<String> authorities) {
     if (!authorities.isEmpty()) {
@@ -34,6 +36,7 @@ public class UserAuthorityManager {
       if (!auths.isEmpty()) {
         auths.forEach(user::addAuthority);
         userRepository.save(user);
+        userCache.put(user);
       }
     }
     return user;
@@ -52,6 +55,7 @@ public class UserAuthorityManager {
       });
       if (user.getSecurityAuthorities().size() != startingSize) {
         userRepository.save(user);
+        userCache.put(user);
       } else {
         log.warn(() -> "User '" + user.getUsername() + "' already has all authorities attempt was made to add " + authorities);
       }
@@ -78,7 +82,9 @@ public class UserAuthorityManager {
   @Transactional
   public SecurityUser addAuthority(@Nonnull SecurityUser user, @Nonnull SecurityAuthority authority) {
     user.addAuthority(authority);
-    return userRepository.save(user);
+    SecurityUser updated = userRepository.save(user);
+    userCache.put(updated);
+    return updated;
   }
 
   @Transactional
@@ -100,7 +106,9 @@ public class UserAuthorityManager {
   @Transactional
   public SecurityUser addGroup(@Nonnull SecurityUser user, @Nonnull SecurityGroup group) {
     user.addGroup(group);
-    return userRepository.save(user);
+    SecurityUser updated = userRepository.save(user);
+    userCache.put(updated);
+    return updated;
   }
 
 }

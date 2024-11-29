@@ -1,10 +1,7 @@
 package com.demo.security.spring.controller;
 
 import com.demo.security.spring.model.Loan;
-import com.demo.security.spring.model.SecurityUser;
-import com.demo.security.spring.repository.LoanRepository;
 import com.demo.security.spring.service.LoanService;
-import com.demo.security.spring.service.SecurityUserService;
 import java.util.List;
 import javax.naming.AuthenticationException;
 import lombok.extern.log4j.Log4j2;

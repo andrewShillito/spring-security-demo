@@ -2,6 +2,7 @@ package com.demo.security.spring.service;
 
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.utils.SecurityUtils;
+import com.google.common.cache.Cache;
 import lombok.Builder;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
@@ -16,38 +17,47 @@ public class CachingSecurityUserService implements SecurityUserService {
 
   private UserDetailsManager userDetailsManager;
 
-  private SecurityUserValidationService userValidationService;
+  private UserCache userCache;
 
   @Override
   public void createUser(final SecurityUser user) {
-    userValidationService.validateUser(user, true);
     userDetailsManager.createUser(user);
+    userCache.put(user);
   }
 
   @Override
   public void updateUser(SecurityUser user) {
-    userValidationService.validateUser(user, false);
     userDetailsManager.updateUser(user);
+    userCache.put(user);
   }
 
   @Override
   public void deleteUser(String username) {
     userDetailsManager.deleteUser(username);
+    userCache.invalidate(username);
   }
 
   @Override
   public void changePassword(String oldPassword, String newPassword) {
+    userCache.invalidate(SecurityUtils.getPrincipalName());
     userDetailsManager.changePassword(oldPassword, newPassword);
   }
 
   @Override
   public boolean userExists(String username) {
-    return userDetailsManager.userExists(username);
+    if (StringUtils.isNotBlank(username)) {
+      return userCache.isPresent(username) || userDetailsManager.userExists(username);
+    }
+    return false;
   }
 
   @Override
-  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    return userDetailsManager.loadUserByUsername(username);
+  public SecurityUser loadUserByUsername(String username) throws UsernameNotFoundException {
+    SecurityUser cachedUser = userCache.get(username);
+    if (cachedUser != null) {
+      return cachedUser;
+    }
+    return(SecurityUser) userDetailsManager.loadUserByUsername(username);
   }
 
   /**
