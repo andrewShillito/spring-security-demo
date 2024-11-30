@@ -27,54 +27,22 @@ public class AuthenticationAttemptManager {
   @Transactional(propagation = Propagation.REQUIRED)
   public void handleFailedAuthentication(String username, SecurityUser user, @NonNull AuthenticationFailureReason reason) {
     if (user == null && reason != AuthenticationFailureReason.USER_NOT_FOUND) {
-      log.error(() -> "User is unexpectedly null!");
+      log.warn(() -> "User for authentication attempt record is null");
     }
-    switch (reason) {
-      case ACCOUNT_EXPIRED -> handleAccountExpired(username, user);
-      case BAD_CREDENTIALS -> handleBadCredentials(username, user);
-      case CREDENTIALS_EXPIRED -> handleCredentialsExpired(username, user);
-      case DISABLED -> handleDisabled(username, user);
-      case LOCKED -> handleLocked(username, user);
-      case NO_AUTHORITIES -> handleNoAuthorities(username, user);
-      case USER_NOT_FOUND -> handleUserNotFound(username);
+    if (user == null) {
+      persist(buildFailedAttempt(username, reason));
+    } else {
+      persist(buildFailedAttempt(username, user, reason));
     }
   }
 
   @Transactional(propagation = Propagation.REQUIRED)
-  public void handleSuccessfulAuthentication(String username) {
-    if (StringUtils.isBlank(username)) {
-      log.error(() -> "Cannot record successful authentication due to null username");
+  public void handleSuccessfulAuthentication(String username, SecurityUser user) {
+    if (StringUtils.isBlank(username) && user == null) {
+      log.error(() -> "Unable to create authentication attempt record as username and user are null and blank");
     } else {
-      persist(buildSuccessfulAttempt(username));
+      persist(buildSuccessfulAttempt(username, user));
     }
-  }
-
-  private void handleAccountExpired(String username, final SecurityUser user) {
-    persist(buildFailedAttempt(username, user, AuthenticationFailureReason.ACCOUNT_EXPIRED));
-  }
-
-  private void handleBadCredentials(String username, final SecurityUser user) {
-    persist(buildFailedAttempt(username, user, AuthenticationFailureReason.BAD_CREDENTIALS));
-  }
-
-  private void handleCredentialsExpired(String username, final SecurityUser user) {
-    persist(buildFailedAttempt(username, user, AuthenticationFailureReason.CREDENTIALS_EXPIRED));
-  }
-
-  private void handleDisabled(String username, final SecurityUser user) {
-    persist(buildFailedAttempt(username, user, AuthenticationFailureReason.DISABLED));
-  }
-
-  protected void handleLocked(String username, final SecurityUser user) {
-    persist(buildFailedAttempt(username, user, AuthenticationFailureReason.LOCKED));
-  }
-
-  private void handleNoAuthorities(String username, final SecurityUser user) {
-    persist(buildFailedAttempt(username, user, AuthenticationFailureReason.NO_AUTHORITIES));
-  }
-
-  private void handleUserNotFound(String username) {
-    persist(buildFailedAttempt(username, AuthenticationFailureReason.USER_NOT_FOUND));
   }
 
   private AuthenticationAttempt buildFailedAttempt(String username, SecurityUser user, AuthenticationFailureReason failureReason) {
@@ -91,13 +59,22 @@ public class AuthenticationAttemptManager {
     }
   }
 
-  private AuthenticationAttempt buildSuccessfulAttempt(String username) {
-    return AuthenticationAttempt.builder()
-        .username(username)
-        .fromRequest(SecurityUtils.getCurrentRequest())
-        .now()
-        .success(true)
-        .build();
+  private AuthenticationAttempt buildSuccessfulAttempt(String username, SecurityUser user) {
+    if (user == null) {
+      return AuthenticationAttempt.builder()
+          .username(username)
+          .fromRequest(SecurityUtils.getCurrentRequest())
+          .now()
+          .success(true)
+          .build();
+    } else {
+      return AuthenticationAttempt.builder()
+          .fromUser(user)
+          .fromRequest(SecurityUtils.getCurrentRequest())
+          .now()
+          .success(true)
+          .build();
+    }
   }
 
   private AuthenticationAttempt buildFailedAttempt(String username, AuthenticationFailureReason failureReason) {

@@ -36,7 +36,8 @@ public class AuthenticationEvents {
   public void onSuccess(AuthenticationSuccessEvent event) {
     if (event.getAuthentication() != null) {
       log.info(() -> "Login successful for user " + event.getAuthentication().getName());
-      authenticationAttemptManager.handleSuccessfulAuthentication(event.getAuthentication().getName());
+      String username = event.getAuthentication().getName();
+      authenticationAttemptManager.handleSuccessfulAuthentication(username, getForUsername(username));
     } else {
       log.error(() -> "Login successful but event authentication is null " + event);
     }

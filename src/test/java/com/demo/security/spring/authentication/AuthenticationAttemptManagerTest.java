@@ -1,17 +1,22 @@
 package com.demo.security.spring.authentication;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 import com.demo.security.spring.DemoAssertions;
 import com.demo.security.spring.TestDataGenerator;
 import com.demo.security.spring.model.AuthenticationAttempt;
 import com.demo.security.spring.model.AuthenticationFailureReason;
+import com.demo.security.spring.model.ClientInfo;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.AuthenticationAttemptRepository;
 import com.demo.security.spring.service.UserCache;
 import java.util.List;
 import java.util.function.Consumer;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,9 +27,6 @@ import org.springframework.transaction.annotation.Transactional;
 @AutoConfigureMockMvc
 @Transactional
 public class AuthenticationAttemptManagerTest {
-
-  @Autowired
-  private AuthenticationAttemptManager authenticationAttemptManager;
 
   @Autowired
   private AuthenticationAttemptRepository authenticationAttemptRepository;
@@ -52,6 +54,7 @@ public class AuthenticationAttemptManagerTest {
       assertEquals(i, user.getFailedLoginAttempts());
       assertEquals(0, user.getNumPreviousLockouts());
       validateLastAttempt(user, AuthenticationFailureReason.BAD_CREDENTIALS);
+      assertEquals(user, userCache.get(user.getUsername()));
       if (i == 6) {
         assertTrue(user.isLocked());
         DemoAssertions.assertDateIsNowIsh(user.getLockedDate());
@@ -89,6 +92,60 @@ public class AuthenticationAttemptManagerTest {
     final String password = testDataGenerator.randomPassword();
     SecurityUser user = setup(password, it -> it.setPasswordExpired(true), true);
     validateSingleAttempt(user, AuthenticationFailureReason.CREDENTIALS_EXPIRED);
+  }
+
+  @Test
+  void testFailedAuthenticationAttempt() {
+    final AuthenticationAttemptRepository mockRepository = mock(AuthenticationAttemptRepository.class);
+    final AuthenticationAttemptManager attemptManager = new AuthenticationAttemptManager().setAttemptRepository(mockRepository);
+    final String username = testDataGenerator.randomUsername();
+    final String password = testDataGenerator.randomPassword();
+    final SecurityUser testUser = testDataGenerator.generateExternalUser(username, password, false);
+
+    assertThrows(NullPointerException.class, () -> attemptManager.handleFailedAuthentication(null, null, null));
+    attemptManager.handleFailedAuthentication(null, null, AuthenticationFailureReason.BAD_CREDENTIALS);
+    attemptManager.handleFailedAuthentication(username, null, AuthenticationFailureReason.BAD_CREDENTIALS);
+    attemptManager.handleFailedAuthentication(null, testUser, AuthenticationFailureReason.BAD_CREDENTIALS);
+    attemptManager.handleFailedAuthentication(username, testUser, AuthenticationFailureReason.BAD_CREDENTIALS);
+
+    ArgumentCaptor<AuthenticationAttempt> captor = ArgumentCaptor.forClass(AuthenticationAttempt.class);
+    verify(mockRepository, times(4)).save(captor.capture());
+
+    final List<AuthenticationAttempt> values = captor.getAllValues();
+    assertEquals(4, values.size());
+
+    validateAttempt(null, null, false,
+        AuthenticationFailureReason.BAD_CREDENTIALS, values.getFirst());
+    validateAttempt(username, null, false,
+        AuthenticationFailureReason.BAD_CREDENTIALS, values.get(1));
+    validateAttempt(username, testUser.getId(), false,
+        AuthenticationFailureReason.BAD_CREDENTIALS, values.get(2));
+    validateAttempt(username, testUser.getId(), false,
+        AuthenticationFailureReason.BAD_CREDENTIALS, values.get(3));
+  }
+
+  @Test
+  void testSuccessfulAuthenticationAttempt() {
+    final AuthenticationAttemptRepository mockRepository = mock(AuthenticationAttemptRepository.class);
+    final AuthenticationAttemptManager attemptManager = new AuthenticationAttemptManager().setAttemptRepository(mockRepository);
+    final String username = testDataGenerator.randomUsername();
+    final String password = testDataGenerator.randomPassword();
+    final SecurityUser testUser = testDataGenerator.generateExternalUser(username, password, false);
+
+    attemptManager.handleSuccessfulAuthentication(null, null);
+    attemptManager.handleSuccessfulAuthentication(username, null);
+    attemptManager.handleSuccessfulAuthentication(null, testUser);
+    attemptManager.handleSuccessfulAuthentication(username, testUser);
+
+    ArgumentCaptor<AuthenticationAttempt> captor = ArgumentCaptor.forClass(AuthenticationAttempt.class);
+    verify(mockRepository, times(3)).save(captor.capture());
+
+    final List<AuthenticationAttempt> values = captor.getAllValues();
+    assertEquals(3, values.size());
+
+    validateAttempt(username, null, true, null, values.getFirst());
+    validateAttempt(username, testUser.getId(), true, null, values.get(1));
+    validateAttempt(username, testUser.getId(), true, null, values.get(2));
   }
 
   private SecurityUser setup() throws Exception {
@@ -161,6 +218,23 @@ public class AuthenticationAttemptManagerTest {
     // not much in client info when testing this way but can validate what is there at least
     assertEquals("127.0.0.1", attempt.getClientInfo().getRemoteAddress());
     assertEquals("localhost", attempt.getClientInfo().getRemoteHost());
+  }
+
+  private void validateAttempt(
+      String expectedUsername,
+      Long expectedUserId,
+      boolean isSuccessful,
+      AuthenticationFailureReason failureReason,
+      AuthenticationAttempt toValidate) {
+    assertEquals(expectedUsername, toValidate.getUsername());
+    assertEquals(expectedUserId, toValidate.getUserId());
+    assertEquals(isSuccessful, toValidate.isSuccessful());
+    assertEquals(failureReason, toValidate.getFailureReason());
+    DemoAssertions.assertDateIsNowIsh(toValidate.getAttemptTime());
+    ClientInfo clientInfo = toValidate.getClientInfo();
+    assertNotNull(clientInfo);
+    assertEquals("127.0.0.1", clientInfo.getRemoteAddress());
+    assertEquals("localhost", clientInfo.getRemoteHost());
   }
 
 }
