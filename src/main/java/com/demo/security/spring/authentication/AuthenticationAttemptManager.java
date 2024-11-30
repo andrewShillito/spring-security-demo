@@ -7,6 +7,7 @@ import com.demo.security.spring.repository.AuthenticationAttemptRepository;
 import com.demo.security.spring.utils.SecurityUtils;
 import lombok.NonNull;
 import lombok.extern.log4j.Log4j2;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,11 +41,11 @@ public class AuthenticationAttemptManager {
   }
 
   @Transactional(propagation = Propagation.REQUIRED)
-  public void handleSuccessfulAuthentication(SecurityUser user) {
-    if (user == null) {
-      log.error(() -> "Cannot record successful authentication due to null user");
+  public void handleSuccessfulAuthentication(String username) {
+    if (StringUtils.isBlank(username)) {
+      log.error(() -> "Cannot record successful authentication due to null username");
     } else {
-      persist(buildSuccessfulAttempt(user));
+      persist(buildSuccessfulAttempt(username));
     }
   }
 
@@ -90,9 +91,9 @@ public class AuthenticationAttemptManager {
     }
   }
 
-  private AuthenticationAttempt buildSuccessfulAttempt(SecurityUser user) {
+  private AuthenticationAttempt buildSuccessfulAttempt(String username) {
     return AuthenticationAttempt.builder()
-        .fromUser(user)
+        .username(username)
         .fromRequest(SecurityUtils.getCurrentRequest())
         .now()
         .success(true)

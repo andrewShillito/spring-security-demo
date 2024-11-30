@@ -1,18 +1,15 @@
 package com.demo.security.spring.authentication;
 
-import com.demo.security.spring.model.AuthenticationFailureReason;
 import com.demo.security.spring.model.SecurityAuthority;
 import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.SecurityUserRepository;
+import com.demo.security.spring.service.UserCache;
 import com.demo.security.spring.utils.SpringProfileConstants;
-import jakarta.validation.constraints.NotNull;
 import java.time.ZonedDateTime;
 import java.util.Set;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -25,7 +22,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.stereotype.Component;
 
 /**
@@ -35,13 +31,14 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Profile({ SpringProfileConstants.POSTGRES, SpringProfileConstants.H2 })
+@Log4j2
 public class UsernamePasswordAuthenticationProvider implements AuthenticationProvider {
 
   private SecurityUserRepository userRepository;
 
   private PasswordEncoder passwordEncoder;
 
-  private AuthenticationAttemptManager authenticationAttemptManager;
+  private UserCache userCache;
 
   @Autowired
   public void setUserRepository(SecurityUserRepository userRepository) {
@@ -54,8 +51,8 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
   }
 
   @Autowired
-  public void setAuthenticationAttemptManager(AuthenticationAttemptManager authenticationAttemptManager) {
-    this.authenticationAttemptManager = authenticationAttemptManager;
+  public void setUserCache(UserCache userCache) {
+    this.userCache = userCache;
   }
 
   @Override
@@ -63,43 +60,34 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
     final String username = authentication.getName();
     final String password = authentication.getCredentials().toString();
     if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
-      authenticationAttemptManager.handleFailedAuthentication(username, null, AuthenticationFailureReason.BAD_CREDENTIALS);
       throw new BadCredentialsException("Missing required credentials for username or password");
     }
-    final SecurityUser user = userRepository.getSecurityUserByUsername(username);
+    SecurityUser user = userCache.get(username);
+    if (user == null) {
+      user = userRepository.getSecurityUserByUsername(username);
+    }
     validateUser(username, password, user);
-    authenticationAttemptManager.handleSuccessfulAuthentication(user);
-
     return new UsernamePasswordAuthenticationToken(username, password, user.getAuthorities());
   }
 
   private void validateUser(final String username, final String providedPassword, SecurityUser user) {
     if (user == null) {
-      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.USER_NOT_FOUND);
       throw new UsernameNotFoundException("No account matching username " + username);
     }
     if (!user.isEnabled()) {
-      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.DISABLED);
       throw new DisabledException("The account for user " + username + " is not enabled");
     }
     if (!user.isCredentialsNonExpired()) {
-      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.CREDENTIALS_EXPIRED);
       throw new CredentialsExpiredException("The credentials for user " + username + " are expired");
     }
     if (user.isAccountExpired()) {
-      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.ACCOUNT_EXPIRED);
       throw new AccountExpiredException("The account for user " + username + " has expired");
     }
     Set<SecurityAuthority> authorities = user.getAuthorities();
     if (authorities.isEmpty()) {
-      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.NO_AUTHORITIES);
-      // note that authorities are fetched eagerly by hibernate
-      throw new IllegalStateException("User " + username + " has no related authorities!");
+      log.warn(() -> "User " + username + " has no related authorities!");
     }
     if (!passwordEncoder.matches(providedPassword, user.getPassword())) {
-      user.incrementFailedLoginAttempts(); // can result in lockout
-      userRepository.save(user);
-      authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.BAD_CREDENTIALS);
       throw new BadCredentialsException("Invalid credentials");
     }
     if (user.isLocked()) { // we know that the credentials matched by the time we get here
@@ -107,8 +95,8 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
         // clear user lockout and continue on
         user.clearLockout();
         user = userRepository.save(user);
+        userCache.put(user);
       } else {
-        authenticationAttemptManager.handleFailedAuthentication(username, user, AuthenticationFailureReason.LOCKED);
         throw new LockedException("The account for user " + username + " is locked");
       }
     }

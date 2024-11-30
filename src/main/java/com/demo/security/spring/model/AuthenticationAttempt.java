@@ -15,6 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.time.ZonedDateTime;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
 
 @Entity
@@ -26,6 +27,7 @@ import lombok.extern.log4j.Log4j2;
 @Getter
 @Setter
 @Log4j2
+@ToString
 @SequenceGenerator(name = "authentication_attempts_id_seq", sequenceName = "authentication_attempts_id_seq", allocationSize = 50, initialValue = 1)
 public class AuthenticationAttempt {
 

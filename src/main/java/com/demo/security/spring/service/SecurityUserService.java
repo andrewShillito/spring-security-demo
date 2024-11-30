@@ -23,4 +23,6 @@ public interface SecurityUserService {
 
   SecurityUser getAuthenticatedUser();
 
+  void incrementFailedLogons(SecurityUser user);
+
 }

@@ -93,4 +93,14 @@ public class CachingSecurityUserService implements SecurityUserService {
     }
     return null;
   }
+
+  @Override
+  public void incrementFailedLogons(SecurityUser user) {
+    if (user == null) {
+      log.error(() -> "Cannot increment failed logon for null user");
+      return;
+    }
+    user.incrementFailedLoginAttempts();
+    updateUser(user);
+  }
 }

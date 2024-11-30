@@ -385,8 +385,13 @@ public class ProjectSecurityConfig {
   }
 
   @Bean
-  public AuthenticationEvents authenticationEventListeners() {
-    return new AuthenticationEvents();
+  public AuthenticationEvents authenticationEventListeners(
+      AuthenticationAttemptManager authenticationAttemptManager,
+      SecurityUserService userService) {
+    return AuthenticationEvents.builder()
+        .authenticationAttemptManager(authenticationAttemptManager)
+        .userService(userService)
+        .build();
   }
 
   @Bean

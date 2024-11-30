@@ -17,6 +17,8 @@ public enum AuthenticationFailureReason {
 
   NO_AUTHORITIES,
 
-  USER_NOT_FOUND
+  USER_NOT_FOUND,
+
+  SERVICE_EXCEPTION
 
 }
