@@ -78,12 +78,20 @@ Example data generation leverages the DataFaker library.
 
 #### Some other related properties:
 
+- `example-data.accounts.count` - sets the number of accounts per user to create during regeneration
+- `example-data.accounts.populate` - sets if startup population of example accounts data should run 
 - `example-data.cards.count` - sets the number of cards per user to create during regeneration
-- `example-data.loan.count` - sets the number of loans per user to create during regeneration
-- `example-data.notice.count` - sets the number of notices to create during regeneration
-- `example-data.message.count` - sets the number of contact messages to create during regeneration
-- `example-data.account.count` - sets the number of accounts per user to create during regeneration
-- `example-data.user.count` - sets the number of randomized users to create during regeneration. There is also a set of standard non-randomized users which is always created.
+- `example-data.cards.populate` - sets if startup population of example cards data should run 
+- `example-data.loans.count` - sets the number of loans per user to create during regeneration
+- `example-data.loans.populate` - sets if startup population of example loans data should run 
+- `example-data.messages.count` - sets the number of contact messages to create during regeneration
+- `example-data.messages.populate` - sets if startup population of example contact messages data should run 
+- `example-data.notices.count` - sets the number of notices to create during regeneration
+- `example-data.notices.populate` - sets if startup population of example notices data should run 
+- `example-data.users.count` - sets the number of randomized users to create during regeneration. There is also a set of standard non-randomized users which is always created.
+- `example-data.users.populate` - sets if startup population of example users data should run 
+
+*Populating example user data is required for accounts, cards, and loans example data population to run.*
 
 ## Jenkins
 

@@ -238,12 +238,12 @@ public class ProjectSecurityConfig {
       @Value("${example-data.regenerate:false}") boolean regenerateData,
       @Value("${example-data.enabled:true}") boolean enabled,
       @Value("${example-data.populateSecurityGroups:true}") boolean populateSecurityGroups,
-      @Value("${example-data.populateUsers:true}") boolean populateUsers,
-      @Value("${example-data.populateNoticeDetails:true}") boolean populateNoticeDetails,
-      @Value("${example-data.populateContactDetails:true}") boolean populateContactDetails,
-      @Value("${example-data.populateAccounts:true}") boolean populateAccounts,
-      @Value("${example-data.populateCards:true}") boolean populateCards,
-      @Value("${example-data.populateLoans:true}") boolean populateLoans
+      @Value("${example-data.users.populate:true}") boolean populateUsers,
+      @Value("${example-data.notices.populate:true}") boolean populateNoticeDetails,
+      @Value("${example-data.messages.populate:true}") boolean populateContactDetails,
+      @Value("${example-data.accounts.populate:true}") boolean populateAccounts,
+      @Value("${example-data.cards.populate:true}") boolean populateCards,
+      @Value("${example-data.loans.populate:true}") boolean populateLoans
   ) {
     return StartupDatabasePopulator.builder()
         .exampleDataManager(exampleDataManager)
@@ -325,28 +325,28 @@ public class ProjectSecurityConfig {
   }
 
   @Bean
-  public LoanGenerator loanGenerator(@Value("${example-data.loan.count:20}") int loanCount) {
+  public LoanGenerator loanGenerator(@Value("${example-data.loans.count:20}") int loanCount) {
     LoanGenerator loanGenerator = new LoanGenerator(faker(), objectMapper());
     loanGenerator.setItemCount(loanCount);
     return loanGenerator;
   }
 
   @Bean
-  public NoticeDetailsGenerator noticeDetailsFileGenerator(@Value("${example-data.notice.count:20}") int noticeCount) {
+  public NoticeDetailsGenerator noticeDetailsFileGenerator(@Value("${example-data.notices.count:20}") int noticeCount) {
     final NoticeDetailsGenerator noticeDetailsGenerator = new NoticeDetailsGenerator(faker(), objectMapper());
     noticeDetailsGenerator.setItemCount(noticeCount);
     return noticeDetailsGenerator;
   }
 
   @Bean
-  public ContactMessageGenerator contactMessagesFileGenerator(@Value("${example-data.message.count:20}") int messageCount) {
+  public ContactMessageGenerator contactMessagesFileGenerator(@Value("${example-data.messages.count:20}") int messageCount) {
     final ContactMessageGenerator contactMessageGenerator = new ContactMessageGenerator(faker(), objectMapper());
     contactMessageGenerator.setItemCount(messageCount);
     return contactMessageGenerator;
   }
 
   @Bean
-  public AccountGenerator accountFileGenerator(@Value("${example-data.account.count:1}") int accountCount) {
+  public AccountGenerator accountFileGenerator(@Value("${example-data.accounts.count:1}") int accountCount) {
     final AccountGenerator accountGenerator = new AccountGenerator(faker(), objectMapper());
     accountGenerator.setItemCount(accountCount);
     return accountGenerator;
@@ -354,7 +354,7 @@ public class ProjectSecurityConfig {
 
   @Bean
   public UserGenerator userFileGenerator(
-      @Value("${example-data.user.count:20}") int userCount,
+      @Value("${example-data.users.count:20}") int userCount,
       @NotNull SecurityGroupRepository securityGroupRepository,
       @NotNull SecurityAuthorityRepository authorityRepository
   ) {
