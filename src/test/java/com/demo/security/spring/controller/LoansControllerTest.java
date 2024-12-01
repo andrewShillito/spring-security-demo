@@ -2,6 +2,8 @@ package com.demo.security.spring.controller;
 
 import com.demo.security.spring.model.Loan;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.utils.AuthorityGroups;
+import com.demo.security.spring.utils.AuthorityUserPrivileges;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -97,6 +99,70 @@ class LoansControllerTest extends AbstractControllerTest {
             .andReturn().getResponse().getContentAsString());
         assertEquals(otherUserLoans.size(), actualOtherUserLoans.size());
         assertIterableEquals(otherUserLoans, actualOtherUserLoans);
+    }
+
+
+    @Test
+    void testNotAuthorizedExternalUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateExternalUser(username, password, true, u -> {
+            u.getGroups().removeIf(it -> AuthorityGroups.GROUP_ACCOUNT_HOLDER.equals(it.getCode()));
+        });
+        mockMvc.perform(get(LoansController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
+        userAuthorityManager.addAuthorities(user, List.of(
+            AuthorityUserPrivileges.AUTH_SELF_LOAN_APPLY,
+            AuthorityUserPrivileges.AUTH_SELF_LOAN_EDIT,
+            AuthorityUserPrivileges.AUTH_SELF_CARD_EDIT,
+            AuthorityUserPrivileges.AUTH_SELF_TRANSACTION_EDIT
+        ));
+        mockMvc.perform(get(LoansController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
+        userAuthorityManager.addAuthority(user, AuthorityUserPrivileges.AUTH_SELF_LOAN_VIEW);
+        mockMvc.perform(get(LoansController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
+    }
+
+    @Test
+    void testNotAuthorizedAdminUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateAdminUser(username, password, true, u -> {
+            u.getGroups().removeIf(it -> AuthorityGroups.GROUP_ADMIN_SYSTEM.equals(it.getCode()));
+        });
+        mockMvc.perform(get(AccountController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+        userAuthorityManager.addAuthorities(user, List.of(
+            AuthorityUserPrivileges.AUTH_SELF_LOAN_APPLY,
+            AuthorityUserPrivileges.AUTH_SELF_LOAN_EDIT,
+            AuthorityUserPrivileges.AUTH_SELF_CARD_EDIT,
+            AuthorityUserPrivileges.AUTH_SELF_TRANSACTION_EDIT
+        ));
+        mockMvc.perform(get(LoansController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
+        userAuthorityManager.addAuthority(user, AuthorityUserPrivileges.AUTH_SELF_LOAN_VIEW);
+        mockMvc.perform(get(LoansController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
+    }
+
+    @Test
+    void testAuthorizedAdminUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateAdminUser(username, password, true);
+        mockMvc.perform(get(LoansController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
     }
 
     private List<Loan> asLoans(String loansJson) {

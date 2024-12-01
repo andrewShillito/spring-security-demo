@@ -7,6 +7,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.demo.security.spring.model.Card;
 import com.demo.security.spring.model.SecurityUser;
+import com.demo.security.spring.utils.AuthorityGroups;
+import com.demo.security.spring.utils.AuthorityUserPrivileges;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.Arrays;
 import java.util.List;
@@ -61,6 +63,67 @@ class CardsControllerTest extends AbstractControllerTest {
                 .with(SecurityMockMvcRequestPostProcessors.user(otherUser)))
             .andExpect(status().isOk())
             .andReturn().getResponse().getContentAsString());
+    }
+
+    @Test
+    void testNotAuthorizedExternalUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateExternalUser(username, password, true, u -> {
+            u.getGroups().removeIf(it -> AuthorityGroups.GROUP_ACCOUNT_HOLDER.equals(it.getCode()));
+        });
+        mockMvc.perform(get(CardsController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
+        userAuthorityManager.addAuthorities(user, List.of(
+            AuthorityUserPrivileges.AUTH_SELF_LOAN_VIEW,
+            AuthorityUserPrivileges.AUTH_SELF_CARD_EDIT,
+            AuthorityUserPrivileges.AUTH_SELF_TRANSACTION_EDIT
+        ));
+        mockMvc.perform(get(CardsController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
+        userAuthorityManager.addAuthority(user, AuthorityUserPrivileges.AUTH_SELF_CARD_VIEW);
+        mockMvc.perform(get(CardsController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
+    }
+
+    @Test
+    void testNotAuthorizedAdminUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateAdminUser(username, password, true, u -> {
+            u.getGroups().removeIf(it -> AuthorityGroups.GROUP_ADMIN_SYSTEM.equals(it.getCode()));
+        });
+        mockMvc.perform(get(AccountController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+        userAuthorityManager.addAuthorities(user, List.of(
+            AuthorityUserPrivileges.AUTH_SELF_TRANSACTION_CREATE,
+            AuthorityUserPrivileges.AUTH_SELF_CARD_APPLY,
+            AuthorityUserPrivileges.AUTH_SELF_ACCOUNT_APPLY
+        ));
+        mockMvc.perform(get(CardsController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isForbidden());
+
+        userAuthorityManager.addAuthority(user, AuthorityUserPrivileges.AUTH_SELF_CARD_VIEW);
+        mockMvc.perform(get(CardsController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
+    }
+
+    @Test
+    void testAuthorizedAdminUser() throws Exception {
+        final String username = testDataGenerator.randomUsername();
+        final String password = testDataGenerator.randomPassword();
+        final SecurityUser user = testDataGenerator.generateAdminUser(username, password, true);
+        mockMvc.perform(get(CardsController.RESOURCE_PATH)
+                .with(SecurityMockMvcRequestPostProcessors.user(user)))
+            .andExpect(status().isOk());
     }
 
     private List<Card> asCards(String responseBody) throws JsonProcessingException {
