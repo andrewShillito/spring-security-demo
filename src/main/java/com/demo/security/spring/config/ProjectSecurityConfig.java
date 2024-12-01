@@ -43,10 +43,8 @@ import com.demo.security.spring.service.CachingSecurityUserService;
 import com.demo.security.spring.service.CardService;
 import com.demo.security.spring.service.CardServiceImpl;
 import com.demo.security.spring.service.ExampleDataGenerationService;
-import com.demo.security.spring.service.JpaLoginService;
 import com.demo.security.spring.service.LoanService;
 import com.demo.security.spring.service.LoanServiceImpl;
-import com.demo.security.spring.service.LoginService;
 import com.demo.security.spring.service.SecurityUserService;
 import com.demo.security.spring.service.SecurityUserValidationService;
 import com.demo.security.spring.service.SecurityUserValidationServiceImpl;
@@ -274,13 +272,6 @@ public class ProjectSecurityConfig {
   @Bean
   public PasswordEncoder passwordEncoder() {
     return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-  }
-
-  @Bean(name = "loginService")
-  public LoginService jpaLoginService(UserDetailsManager userDetailsManager) {
-    return JpaLoginService.builder()
-        .userDetailsManager(userDetailsManager)
-        .build();
   }
 
   /**

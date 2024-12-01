@@ -8,7 +8,7 @@ import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.model.UserCreationRequest;
 import com.demo.security.spring.model.UserCreationResponse;
 import com.demo.security.spring.repository.SecurityGroupRepository;
-import com.demo.security.spring.service.LoginService;
+import com.demo.security.spring.service.SecurityUserService;
 import com.demo.security.spring.utils.AuthorityGroups;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -31,15 +31,15 @@ public class RegisterController {
 
   public static final String RESOURCE_PATH = "/register";
 
-  private LoginService loginService;
+  private SecurityUserService userService;
 
   private ObjectMapper objectMapper;
 
   private SecurityGroupRepository securityGroupRepository;
 
   @Autowired
-  public void setLoginService(LoginService loginService) {
-    this.loginService = loginService;
+  public void setUserService(SecurityUserService userService) {
+    this.userService = userService;
   }
 
   @Autowired
@@ -76,7 +76,7 @@ public class RegisterController {
       SecurityUser createdUser = userCreationRequest.toSecurityUser();
       createdUser.setGroups(securityGroupRepository.findAllByCodeIn(
           List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ACCOUNT_HOLDER)));
-      createdUser = loginService.createUser(createdUser);
+      userService.createUser(createdUser);
       if (createdUser.getId() != null) {
         final UserCreationResponse response = UserCreationResponse
             .builder()
