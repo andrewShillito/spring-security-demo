@@ -41,7 +41,7 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
 
   public static final String EXAMPLE_USERNAME_DISABLED_USER = "userDisabled";
 
-  public static final String EXAMPLE_USERNAME_DISABLED_ADMIN = "transactionAdmin";
+  public static final String EXAMPLE_USERNAME_DISABLED_ADMIN = "adminDisabled";
 
   public static final String DEFAULT_TESTING_PASSWORD = "password";
 
@@ -96,7 +96,7 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
         generateUser(EXAMPLE_USERNAME_ACCOUNT_ADMIN, true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_ACCOUNTS)),
         generateUser(EXAMPLE_USERNAME_USER_ADMIN, true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_USERS)),
         generateUser(EXAMPLE_USERNAME_TRANSACTION_ADMIN, true, null, List.of(AuthorityGroups.GROUP_USER, AuthorityGroups.GROUP_ADMIN_TRANSACTIONS)),
-        disable(generateUser( EXAMPLE_USERNAME_DISABLED_USER, false)),
+        disable(generateUser(EXAMPLE_USERNAME_DISABLED_USER, false)),
         disable(generateUser(EXAMPLE_USERNAME_DISABLED_ADMIN, true))
     ));
     for (int i = 0; i < count; i++) {
