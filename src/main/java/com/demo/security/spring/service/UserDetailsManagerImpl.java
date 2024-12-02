@@ -28,11 +28,11 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
 
   private AuthenticationManager authenticationManager;
 
-  private SecurityContextHolderStrategy securityContextHolderStrategy = SecurityContextHolder.getContextHolderStrategy();
-
   private PasswordEncoder passwordEncoder;
 
   private SecurityUserValidationService userValidationService;
+
+  private UserCache userCache;
 
   @Override
   public void createUser(final UserDetails user) {
@@ -42,14 +42,14 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
     }
     final SecurityUser securityUser = (SecurityUser) user;
     securityUser.setPassword(passwordEncoder.encode(securityUser.getPassword()));
-    userRepository.save(securityUser);
+    userCache.put(userRepository.save(securityUser));
   }
 
   @Override
   public void updateUser(UserDetails user) {
     userValidationService.validateUser(user, false);
     SecurityUser securityUser = (SecurityUser) user;
-    userRepository.save(securityUser);
+    userCache.put(userRepository.save(securityUser));
   }
 
   @Override
@@ -58,6 +58,7 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
       SecurityUser toDelete = userRepository.getSecurityUserByUsername(username);
       if (toDelete != null) {
         userRepository.delete(toDelete);
+        userCache.invalidate(username);
       }
     }
   }
@@ -80,25 +81,22 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
     if (userRepository.updateUserPassword(username, passwordEncoder.encode(newPassword)) != 1) {
       throw new RuntimeException("Failed to update user " + username + " password");
     }
-    securityContextHolderStrategy.clearContext();
-    SecurityContext newSecurityContext = securityContextHolderStrategy.createEmptyContext();
-    Authentication newAuthentication = createNewAuthentication(authentication, newPassword);
+    userCache.invalidate(username);
+    SecurityContextHolderStrategy contextHolderStrategy = SecurityContextHolder.getContextHolderStrategy();
+    contextHolderStrategy.clearContext();
+    SecurityContext newSecurityContext = contextHolderStrategy.createEmptyContext();
+    SecurityUser user = (SecurityUser) loadUserByUsername(authentication.getName());
+    UsernamePasswordAuthenticationToken newAuthentication = UsernamePasswordAuthenticationToken.authenticated(user, newPassword, user.getAuthorities());
+    newAuthentication.setDetails(user);
     newSecurityContext.setAuthentication(newAuthentication);
-    securityContextHolderStrategy.setContext(newSecurityContext);
-  }
-
-  protected Authentication createNewAuthentication(Authentication currentAuth, String newPassword) {
-    UserDetails user = loadUserByUsername(currentAuth.getName());
-    UsernamePasswordAuthenticationToken newAuthentication = UsernamePasswordAuthenticationToken.authenticated(user,
-        newPassword, ((SecurityUser) user).getAuthorities());
-    newAuthentication.setDetails(user); // TODO: check this - jdbc impl from spring sets this to old auth user details, not new
-    return newAuthentication;
+    contextHolderStrategy.setContext(newSecurityContext);
+    userCache.put(user);
   }
 
   @Override
   public boolean userExists(String username) {
     if (StringUtils.isNotBlank(username)) {
-      return userRepository.existsByUsernameIgnoreCase(username);
+      return userCache.isPresent(username) || userRepository.existsByUsernameIgnoreCase(username);
     }
     return false;
   }
@@ -107,7 +105,10 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     Preconditions.checkArgument(StringUtils.isNotBlank(username),
         "Username " + username + " is not valid");
-    final SecurityUser user = userRepository.getSecurityUserByUsername(username);
+    SecurityUser user = userCache.get(username);
+    if (user == null) {
+      user = userRepository.getSecurityUserByUsername(username);
+    }
     if (user == null) {
       throw new UsernameNotFoundException("User with username " + username + " was not found.");
     }

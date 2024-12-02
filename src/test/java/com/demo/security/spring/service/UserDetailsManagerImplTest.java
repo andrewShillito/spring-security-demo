@@ -8,14 +8,21 @@ import com.demo.security.spring.model.SecurityUser;
 import com.demo.security.spring.repository.SecurityUserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.context.SecurityContextHolderStrategy;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.UserDetailsManager;
+import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
 @Transactional
+@AutoConfigureMockMvc
 class UserDetailsManagerImplTest {
 
   @Autowired
@@ -29,6 +36,9 @@ class UserDetailsManagerImplTest {
 
   @Autowired
   private PasswordEncoder passwordEncoder;
+
+  @Autowired
+  private MockMvc mockMvc;
 
   @Test
   void testCreateUserValidPassword() {
@@ -149,6 +159,64 @@ class UserDetailsManagerImplTest {
     expectUsernameNotFoundException(validUser.getUsername());
     assertFalse(userRepository.existsByUsernameIgnoreCase(validUser.getUsername()));
     assertNull(userRepository.getSecurityUserByUsername(validUser.getUsername()));
+  }
+
+  @Test
+  void testChangePassword() throws Exception {
+    String username = testDataGenerator.randomUsername();
+    String password = testDataGenerator.randomPassword();
+    SecurityUser user = testDataGenerator.generateExternalUser(username, password, true);
+
+    // assert can log in using the existing password
+    DemoAssertions.assertFormLoginSuccessful(mockMvc, username, password);
+
+    // manually set the auth in the security context
+    UsernamePasswordAuthenticationToken authentication = UsernamePasswordAuthenticationToken.authenticated(user,
+        password, ((SecurityUser) user).getAuthorities());
+    authentication.setDetails(user);
+
+    SecurityContextHolderStrategy contextHolderStrategy = SecurityContextHolder.getContextHolderStrategy();
+    SecurityContext context = contextHolderStrategy.getContext();
+    context.setAuthentication(authentication);
+
+    String newPassword = testDataGenerator.randomPassword();
+    userDetailsManager.changePassword(password, newPassword);
+
+    DemoAssertions.assertFormLogoutSuccessful(mockMvc);
+    DemoAssertions.assertFormLoginUnSuccessful(mockMvc, username, password);
+    DemoAssertions.assertFormLoginSuccessful(mockMvc, username, newPassword);
+    DemoAssertions.assertFormLogoutSuccessful(mockMvc);
+
+    // clean up
+    SecurityContextHolder.getContextHolderStrategy().clearContext();
+  }
+
+  @Test
+  void testUserExists() {
+    // invalid args
+    assertFalse(userDetailsManager.userExists(null));
+    assertFalse(userDetailsManager.userExists(""));
+    assertFalse(userDetailsManager.userExists(" "));
+
+    // valid args for unknown users
+    assertFalse(userDetailsManager.userExists("asdfbasdfhjsafd"));
+    assertFalse(userDetailsManager.userExists(testDataGenerator.randomUsername() + " should not exist"));
+
+    String username = testDataGenerator.randomUsername();
+    String password = testDataGenerator.randomPassword();
+    testDataGenerator.generateExternalUser(username, password, true);
+    assertTrue(userDetailsManager.userExists(username));
+    assertTrue(userDetailsManager.userExists(username.toLowerCase()));
+    assertTrue(userDetailsManager.userExists(username.toUpperCase()));
+    assertFalse(userDetailsManager.userExists(username + " should not exist "));
+
+    username = testDataGenerator.randomUsername();
+    password = testDataGenerator.randomPassword();
+    testDataGenerator.generateAdminUser(username, password, true);
+    assertTrue(userDetailsManager.userExists(username));
+    assertTrue(userDetailsManager.userExists(username.toLowerCase()));
+    assertTrue(userDetailsManager.userExists(username.toUpperCase()));
+    assertFalse(userDetailsManager.userExists(username + " should not exist "));
   }
 
   public void expectAssertionError(SecurityUser user) {

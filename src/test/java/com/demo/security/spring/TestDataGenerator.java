@@ -77,26 +77,7 @@ public class TestDataGenerator {
   }
 
   public String randomPassword() {
-    String generatedPassword = faker.internet().password(Constants.PASSWORD_MIN_LENGTH, Constants.PASSWORD_MAX_LENGTH - 1,
-        true, true, true);
-    // there are times when faker password does not contain lower-case letter so we handle that case now for test stability
-    int result = random.nextInt(0, 3) % 3;
-    if (result == 0) {
-      // lowercase at the start
-      generatedPassword += randomLowerCaseLetter();
-    } else if (result == 1) {
-      // lowercase inside the string
-      generatedPassword = generatedPassword.substring(0, 4) + randomLowerCaseLetter() + generatedPassword.substring(4);
-    } else if (result == 2) {
-      // lowercase at the end
-      generatedPassword = generatedPassword + randomLowerCaseLetter();
-    }
-    return generatedPassword;
-  }
-
-  public char randomLowerCaseLetter() {
-    // lowercase is ascii 97 to 122 inclusive
-    return (char) random.nextInt(97, 123);
+    return userGenerator.generatePassword();
   }
 
   public List<SecurityUser> generateUsers(int count, boolean persist, boolean internal) {

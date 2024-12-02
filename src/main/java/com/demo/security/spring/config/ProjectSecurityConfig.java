@@ -39,7 +39,7 @@ import com.demo.security.spring.service.AccountService;
 import com.demo.security.spring.service.AccountServiceImpl;
 import com.demo.security.spring.service.BalanceService;
 import com.demo.security.spring.service.BalanceServiceImpl;
-import com.demo.security.spring.service.CachingSecurityUserService;
+import com.demo.security.spring.service.SecurityUserServiceImpl;
 import com.demo.security.spring.service.CardService;
 import com.demo.security.spring.service.CardServiceImpl;
 import com.demo.security.spring.service.ExampleDataGenerationService;
@@ -406,6 +406,7 @@ public class ProjectSecurityConfig {
       AuthenticationManager authenticationManager,
       SecurityUserRepository securityUserRepository,
       PasswordEncoder passwordEncoder,
+      UserCache userCache,
       SecurityUserValidationService securityUserValidationService
   ) {
     return UserDetailsManagerImpl.builder()
@@ -413,15 +414,14 @@ public class ProjectSecurityConfig {
         .userRepository(securityUserRepository)
         .passwordEncoder(passwordEncoder)
         .userValidationService(securityUserValidationService)
+        .userCache(userCache)
         .build();
   }
 
   @Bean
-  public SecurityUserService securityUserService(UserDetailsManager userDetailsManager,
-      UserCache userCache) {
-    return CachingSecurityUserService.builder()
+  public SecurityUserService securityUserService(UserDetailsManager userDetailsManager) {
+    return SecurityUserServiceImpl.builder()
         .userDetailsManager(userDetailsManager)
-        .userCache(userCache)
         .build();
   }
 

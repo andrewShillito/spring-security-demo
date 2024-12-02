@@ -116,8 +116,7 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
         true,
         false,
         false,
-        false
-        );
+        false);
   }
 
   private SecurityUser generateRandomUser(String username) {
@@ -229,20 +228,26 @@ public class UserGenerator extends AbstractGenerator<List<SecurityUser>> {
     return user;
   }
 
-  private String generatePassword() {
-    String generatedPassword = faker.internet().password(Constants.PASSWORD_MIN_LENGTH, Constants.PASSWORD_MAX_LENGTH,
+  public String generatePassword() {
+    String generatedPassword = faker.internet().password(Constants.PASSWORD_MIN_LENGTH, Constants.PASSWORD_MAX_LENGTH - 1,
         true, true, true);
-    if (StringUtils.isWhitespace(generatedPassword.substring(0, 1))
-        || StringUtils.isWhitespace(generatedPassword.substring(generatedPassword.length() - 1))) {
-      generatedPassword = generatedPassword.trim();
-      if (generatedPassword.length() < Constants.PASSWORD_MIN_LENGTH) {
-        final StringBuilder sb = new StringBuilder(generatedPassword);
-        for (int i = 0; i < Constants.PASSWORD_MIN_LENGTH - generatedPassword.length(); i++) {
-          sb.append(random.nextInt(33, 127)); // 32 is space
-        }
-        generatedPassword = sb.toString();
-      }
+    // there are times when faker password does not contain lower-case letter so we handle that case now for test stability
+    int index = random.nextInt(0, generatedPassword.length());
+    if (index == 0) {
+      // lowercase at the start
+      generatedPassword = randomLowerCaseLetter() + generatedPassword;
+    } else if (index == generatedPassword.length() - 1) {
+      // lowercase at the end
+      generatedPassword += randomLowerCaseLetter();
+    } else {
+      // lowercase added somewhere in the middle
+      generatedPassword = generatedPassword.substring(0, index) + randomLowerCaseLetter() + generatedPassword.substring(index);
     }
     return generatedPassword;
+  }
+
+  private char randomLowerCaseLetter() {
+    // lowercase is ascii 97 to 122 inclusive
+    return (char) random.nextInt(97, 123);
   }
 }

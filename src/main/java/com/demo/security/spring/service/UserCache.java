@@ -37,7 +37,7 @@ public class UserCache {
 
   public SecurityUser get(String username) {
     if (StringUtils.isNotBlank(username)) {
-      return cache.getIfPresent(normalizeKey(username.toUpperCase()));
+      return cache.getIfPresent(normalizeKey(username));
     }
     return null;
   }
