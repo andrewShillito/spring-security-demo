@@ -171,8 +171,8 @@ class UserDetailsManagerImplTest {
     DemoAssertions.assertFormLoginSuccessful(mockMvc, username, password);
 
     // manually set the auth in the security context
-    UsernamePasswordAuthenticationToken authentication = UsernamePasswordAuthenticationToken.authenticated(user,
-        password, ((SecurityUser) user).getAuthorities());
+    UsernamePasswordAuthenticationToken authentication = UsernamePasswordAuthenticationToken.authenticated(username,
+        password, user.getAuthorities());
     authentication.setDetails(user);
 
     SecurityContextHolderStrategy contextHolderStrategy = SecurityContextHolder.getContextHolderStrategy();
