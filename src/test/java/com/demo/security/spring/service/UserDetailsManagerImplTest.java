@@ -180,6 +180,11 @@ class UserDetailsManagerImplTest {
     context.setAuthentication(authentication);
 
     String newPassword = testDataGenerator.randomPassword();
+
+    // invalid existing password
+    assertThrows(RuntimeException.class, () -> userDetailsManager.changePassword(
+        testDataGenerator.randomPassword(), newPassword));
+
     userDetailsManager.changePassword(password, newPassword);
 
     DemoAssertions.assertFormLogoutSuccessful(mockMvc);
@@ -189,6 +194,9 @@ class UserDetailsManagerImplTest {
 
     // clean up
     SecurityContextHolder.getContextHolderStrategy().clearContext();
+
+    // no user logged in
+    assertThrows(RuntimeException.class, () -> userDetailsManager.changePassword(newPassword, testDataGenerator.randomPassword()));
   }
 
   @Test
